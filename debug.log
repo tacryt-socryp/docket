@@ -1,0 +1,2 @@
+[1696:3540:0426/222727:6002060:ERROR:proxy_resolver_winhttp.cc(94)] WinHttpGetProxyForUrl failed: 12006
+[1696:300:0426/225153:7467799:ERROR:window_impl.cc(55)] Failed to unregister class Chrome_WidgetWin_0. Error = 1412

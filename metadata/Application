@@ -1,0 +1,26 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "roomList"
+        ],
+        "stores": [
+            "MyStore"
+        ],
+        "views": [
+            "mainCarousel",
+            "myCanvas",
+            "roomPanels"
+        ],
+        "controllers": [
+            "controllerData"
+        ],
+        "name": "Booking"
+    },
+    "designerId": "application"
+}

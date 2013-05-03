@@ -1,0 +1,40 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "html": "<canvas id=\"canvasRoom\" width=\"1024\" height=\"768\"></canvas>",
+        "itemId": "roomPanels",
+        "ui": "light",
+        "designer|userClassName": "roomPanels",
+        "designer|userAlias": "roomPanels",
+        "designer|displayName": "roomOne",
+        "designer|createAlias": "roomOne",
+        "layout": "card",
+        "scrollable": "horizontal"
+    },
+    "designerId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "initialize",
+                "fn": "initialize",
+                "implHandler": [
+                    "var canvas = document.getElementById('canvasRoom');\r",
+                    "var ctx = canvas.getContext('2d');\r",
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "9a3a2921-77df-434a-b54c-3e0834a5ee20"
+        }
+    ]
+}

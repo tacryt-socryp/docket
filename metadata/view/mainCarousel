@@ -1,0 +1,56 @@
+{
+    "type": "Ext.carousel.Carousel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "ui": "light",
+        "designer|userClassName": "mainCarousel",
+        "designer|userAlias": "mainCarousel",
+        "designer|initialView": true,
+        "direction": "vertical"
+    },
+    "designerId": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "b38d31e5-98e6-4c5a-8033-f9c127bf9668",
+            "masterInstanceId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "roomTwo",
+                "designer|createAlias": "roomTwo"
+            },
+            "designerId": "a513eb27-6437-4ec2-bebe-6e19bd124254",
+            "masterInstanceId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "roomThree",
+                "designer|createAlias": "roomThree"
+            },
+            "designerId": "722439bf-5b52-4cab-a948-0b8b69271318",
+            "masterInstanceId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728"
+        }
+    ]
+}

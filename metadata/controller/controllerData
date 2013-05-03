@@ -1,0 +1,38 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "controllerData",
+        "designer|userAlias": "controllerData"
+    },
+    "designerId": "ec66217e-c77c-4ad2-a781-e5bf4140c133",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "calendarRest",
+                "fn": "calendarRest",
+                "implHandler": [
+                    "var userID = 1;\r",
+                    "var parameters = \"parameters\";\r",
+                    "var example = \"http://www.google.com/calendar/feeds/georgiakeyclub.com_r5agsfj79q4a2rv6viii536odk%40group.calendar.google.com/public/basic\";\r",
+                    "\r",
+                    "var url = \"https://www.googleapis.com/calendar/v3/\" + \"/users/\" + userID + \"/lists?\" + parameters;\r",
+                    "\r",
+                    "var response = UrlFetchApp.fetch(url);\r",
+                    ""
+                ]
+            },
+            "designerId": "ce0113eb-141e-4592-ab84-21ef550f6312"
+        }
+    ]
+}

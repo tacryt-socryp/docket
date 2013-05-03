@@ -1,0 +1,95 @@
+{
+    "name": "Booking",
+    "settings": {
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "urlPrefix": "http://loganfynne.com",
+        "exportPath": "",
+        "buildShouldOverwriteIndex": true
+    },
+    "xdsVersion": "2.2.1",
+    "xdsBuild": 951,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000500,
+    "framework": "touch22",
+    "topInstanceFileMap": {
+        "f89b6b25-6c19-4b94-86a9-fb489da7899b": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d": {
+            "paths": [
+                "metadata/view/mainCarousel",
+                "app/view/override/mainCarousel.js",
+                "app/view/mainCarousel.js"
+            ],
+            "className": "mainCarousel"
+        },
+        "ec66217e-c77c-4ad2-a781-e5bf4140c133": {
+            "paths": [
+                "metadata/controller/controllerData",
+                "app/controller/override/controllerData.js",
+                "app/controller/controllerData.js"
+            ],
+            "className": "controllerData"
+        },
+        "373e9087-348b-419a-bbba-8ef612e06d57": {
+            "paths": [
+                "metadata/model/roomList",
+                "app/model/override/roomList.js",
+                "app/model/roomList.js"
+            ],
+            "className": "roomList"
+        },
+        "8714683d-0a2e-4225-a248-8932813f1f38": {
+            "paths": [
+                "metadata/store/MyStore",
+                "app/store/override/MyStore.js",
+                "app/store/MyStore.js"
+            ],
+            "className": "MyStore"
+        },
+        "01539f98-9c71-422b-8ba8-6021b79148ac": {
+            "paths": [
+                "metadata/view/myCanvas",
+                "app/view/override/myCanvas.js",
+                "app/view/myCanvas.js"
+            ],
+            "className": "myCanvas"
+        },
+        "aef2cb4a-a14c-4ab0-94d9-34679ccf6728": {
+            "paths": [
+                "metadata/view/roomPanels",
+                "app/view/override/roomPanels.js",
+                "app/view/roomPanels.js"
+            ],
+            "className": "roomPanels"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
+            "aef2cb4a-a14c-4ab0-94d9-34679ccf6728",
+            "01539f98-9c71-422b-8ba8-6021b79148ac"
+        ],
+        "store": [
+            "8714683d-0a2e-4225-a248-8932813f1f38"
+        ],
+        "controller": [
+            "ec66217e-c77c-4ad2-a781-e5bf4140c133"
+        ],
+        "model": [
+            "373e9087-348b-419a-bbba-8ef612e06d57"
+        ],
+        "resource": [
+            "f89b6b25-6c19-4b94-86a9-fb489da7899b"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
