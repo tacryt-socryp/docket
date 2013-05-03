@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "initialize",
                 "fn": "initialize",
                 "implHandler": [
                     "this.canvas.on({\r",
@@ -41,7 +40,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTap",
                 "fn": "onTap",
                 "designer|params": [
                     "e"
@@ -60,7 +58,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTouchStart",
                 "fn": "onTouchStart",
                 "designer|params": [
                     "e"
@@ -79,7 +76,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTouchEnd",
                 "fn": "onTouchEnd",
                 "designer|params": [
                     "e"
@@ -98,7 +94,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTouchMove",
                 "fn": "onTouchMove",
                 "designer|params": [
                     "e"

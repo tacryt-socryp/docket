@@ -19,7 +19,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "calendarRest",
                 "fn": "calendarRest",
                 "implHandler": [
                     "var userID = 1;\r",

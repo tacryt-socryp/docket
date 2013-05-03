@@ -9,10 +9,10 @@
         "exportPath": "",
         "buildShouldOverwriteIndex": true
     },
-    "xdsVersion": "2.2.1",
-    "xdsBuild": 951,
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 971,
     "schemaVersion": 1,
-    "upgradeVersion": 210000000500,
+    "upgradeVersion": 210000000501,
     "framework": "touch22",
     "topInstanceFileMap": {
         "f89b6b25-6c19-4b94-86a9-fb489da7899b": {
@@ -68,11 +68,20 @@
                 "app/view/roomPanels.js"
             ],
             "className": "roomPanels"
+        },
+        "7a75e53e-c02c-45d2-8b9e-d3eecefe654d": {
+            "paths": [
+                "metadata/view/drawComponent",
+                "app/view/override/drawComponent.js",
+                "app/view/drawComponent.js"
+            ],
+            "className": "drawComponent"
         }
     },
     "viewOrderMap": {
         "view": [
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
+            "7a75e53e-c02c-45d2-8b9e-d3eecefe654d",
             "aef2cb4a-a14c-4ab0-94d9-34679ccf6728",
             "01539f98-9c71-422b-8ba8-6021b79148ac"
         ],

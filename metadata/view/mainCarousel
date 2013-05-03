@@ -21,8 +21,12 @@
                 "type": "array"
             },
             "codeClass": null,
-            "designerId": "b38d31e5-98e6-4c5a-8033-f9c127bf9668",
-            "masterInstanceId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728"
+            "userConfig": {
+                "designer|displayName": "roomOne",
+                "designer|createAlias": "roomOne"
+            },
+            "designerId": "0ffd80cf-62f0-4d31-b893-e0c6d3c71452",
+            "masterInstanceId": "7a75e53e-c02c-45d2-8b9e-d3eecefe654d"
         },
         {
             "type": "linkedinstance",
@@ -35,8 +39,8 @@
                 "designer|displayName": "roomTwo",
                 "designer|createAlias": "roomTwo"
             },
-            "designerId": "a513eb27-6437-4ec2-bebe-6e19bd124254",
-            "masterInstanceId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728"
+            "designerId": "437ff022-09cf-49ee-9312-c130d31ce5fd",
+            "masterInstanceId": "7a75e53e-c02c-45d2-8b9e-d3eecefe654d"
         },
         {
             "type": "linkedinstance",
@@ -49,8 +53,8 @@
                 "designer|displayName": "roomThree",
                 "designer|createAlias": "roomThree"
             },
-            "designerId": "722439bf-5b52-4cab-a948-0b8b69271318",
-            "masterInstanceId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728"
+            "designerId": "4eef86cc-17dc-41b4-bddb-55d7a2c91057",
+            "masterInstanceId": "7a75e53e-c02c-45d2-8b9e-d3eecefe654d"
         }
     ]
 }

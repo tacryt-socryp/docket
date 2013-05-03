@@ -15,7 +15,8 @@
         "views": [
             "mainCarousel",
             "myCanvas",
-            "roomPanels"
+            "roomPanels",
+            "drawComponent"
         ],
         "controllers": [
             "controllerData"

@@ -1,0 +1,44 @@
+{
+    "type": "Ext.draw.Component",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "docked": "left",
+        "height": "100%",
+        "minWidth": "100%",
+        "designer|userClassName": "drawComponent",
+        "designer|userAlias": "drawComponent"
+    },
+    "designerId": "7a75e53e-c02c-45d2-8b9e-d3eecefe654d",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "surface = drawComponent.surface;\r",
+                    "\r",
+                    "surface.add({\r",
+                    "    type: 'circle',\r",
+                    "    radius: 10,\r",
+                    "    fill: '#f00',\r",
+                    "    x: 10,\r",
+                    "    y: 10,\r",
+                    "    group: 'circles'\r",
+                    "});"
+                ]
+            },
+            "designerId": "3a7eaf74-00b4-4372-8f7d-388afd6a7cd5"
+        }
+    ]
+}
