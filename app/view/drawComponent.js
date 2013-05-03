@@ -35,7 +35,7 @@ Ext.define('Booking.view.drawComponent', {
             x: 10,
             y: 10,
             group: 'circles'
-        });
+        }).show(true);
     }
 
 });

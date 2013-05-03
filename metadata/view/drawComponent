@@ -35,7 +35,7 @@
                     "    x: 10,\r",
                     "    y: 10,\r",
                     "    group: 'circles'\r",
-                    "});"
+                    "}).show(true);"
                 ]
             },
             "designerId": "3a7eaf74-00b4-4372-8f7d-388afd6a7cd5"
