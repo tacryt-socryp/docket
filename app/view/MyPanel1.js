@@ -18,54 +18,17 @@ Ext.define('Booking.view.MyPanel1', {
 
     config: {
         height: '100%',
-        html: '<canvas id="drawableCanvas" width="500px" height="500px"></canvas>',
+        html: '<canvas id="mycanvas" width="500px" height="500px"></canvas>',
         width: '100%',
         listeners: [
             {
                 fn: 'onPanelInitialize',
                 event: 'initialize'
-            },
-            {
-                fn: 'onPanelPainted',
-                single: true,
-                event: 'painted'
-            },
-            {
-                fn: 'onPanelActivate',
-                event: 'activate'
             }
         ]
     },
 
     onPanelInitialize: function(component, eOpts) {
-        var canvas = document.getElementById('mycanvas');        
-        var context = canvas.getContext("2d");
-        var cw = canvas.width;
-        var ch = canvas.height;
-        context.strokeStyle = 'black';
-        context.moveTo(0,0);
-        context.lineTo(cw,ch);
-        context.stroke();
-        context.fillRect(25,25,100,100);
-        context.clearRect(45,45,60,60);
-        context.strokeRect(50,50,50,50);
-    },
-
-    onPanelPainted: function(element, eOpts) {
-        var canvas = document.getElementById('mycanvas');        
-        var context = canvas.getContext("2d");
-        var cw = canvas.width;
-        var ch = canvas.height;
-        context.strokeStyle = 'black';
-        context.moveTo(0,0);
-        context.lineTo(cw,ch);
-        context.stroke();
-        context.fillRect(25,25,100,100);
-        context.clearRect(45,45,60,60);
-        context.strokeRect(50,50,50,50);
-    },
-
-    onPanelActivate: function(container, newActiveItem, oldActiveItem, eOpts) {
         var canvas = document.getElementById('mycanvas');        
         var context = canvas.getContext("2d");
         var cw = canvas.width;

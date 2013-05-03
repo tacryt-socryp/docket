@@ -51,6 +51,7 @@
         },
         "769fcfe4-471a-4c19-9f11-9acdbb96b8a9": {
             "id": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
+            "expanded": false,
             "cn": [
                 {
                     "id": "cc9adac2-5da8-4c10-8a68-96d7becf3b6d"
@@ -62,12 +63,6 @@
             "cn": [
                 {
                     "id": "3bb8ef31-0c5a-435c-9583-81c1ffb61cb4"
-                },
-                {
-                    "id": "68742554-7eb4-40f2-81cb-c668928be042"
-                },
-                {
-                    "id": "e9c8264c-ce30-4a53-86da-c0f129a47c9e"
                 }
             ]
         },
