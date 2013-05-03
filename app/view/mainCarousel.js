@@ -18,7 +18,7 @@ Ext.define('Booking.view.mainCarousel', {
     alias: 'widget.mainCarousel',
 
     requires: [
-        'Booking.view.drawComponent'
+        'Booking.view.roomPanels'
     ],
 
     config: {

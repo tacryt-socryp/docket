@@ -20,22 +20,20 @@ Ext.define('Booking.view.drawComponent', {
     config: {
         docked: 'left',
         height: '100%',
-        minWidth: '100%'
+        itemId: 'myComponent',
+        width: '100%'
     },
 
     initialize: function() {
         this.callParent();
 
-        surface = drawComponent.surface;
-
-        surface.add({
+        drawComponent.getSurface('main').add({
             type: 'circle',
-            radius: 10,
-            fill: '#f00',
-            x: 10,
-            y: 10,
-            group: 'circles'
-        }).show(true);
+            fill: '#79BB3F',
+            radius: 100,
+            x: 100,
+            y: 100
+        });
     }
 
 });

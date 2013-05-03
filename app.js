@@ -25,20 +25,23 @@ Ext.application({
     stores: [
         'MyStore'
     ],
-    views: [
-        'mainCarousel',
-        'myCanvas',
-        'roomPanels',
-        'drawComponent'
-    ],
-    controllers: [
-        'controllerData'
-    ],
     name: 'Booking',
 
     launch: function() {
+        var drawComponent = new Ext.draw.Component({
+            items: [{
+                type: 'circle',
+                fill: '#79BB3F',
+                radius: 100,
+                x: 100,
+                y: 100
+            }]
+        });
 
-        Ext.create('Booking.view.mainCarousel', {fullscreen: true});
+        new Ext.Panel({
+            fullscreen: true,
+            items: [drawComponent]
+        });
     }
 
 });

@@ -12,16 +12,37 @@
         "stores": [
             "MyStore"
         ],
-        "views": [
-            "mainCarousel",
-            "myCanvas",
-            "roomPanels",
-            "drawComponent"
-        ],
-        "controllers": [
-            "controllerData"
-        ],
         "name": "Booking"
     },
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "var drawComponent = new Ext.draw.Component({\r",
+                    "    items: [{\r",
+                    "        type: 'circle',\r",
+                    "        fill: '#79BB3F',\r",
+                    "        radius: 100,\r",
+                    "        x: 100,\r",
+                    "        y: 100\r",
+                    "    }]\r",
+                    "});\r",
+                    "\r",
+                    "new Ext.Panel({\r",
+                    "    fullscreen: true,\r",
+                    "    items: [drawComponent]\r",
+                    "});"
+                ]
+            },
+            "designerId": "38d9773d-ca55-471b-96e1-cd0b212f07f3"
+        }
+    ]
 }

@@ -6,13 +6,25 @@
     },
     "codeClass": null,
     "userConfig": {
-        "html": "<canvas id=\"canvasRoom\" width=\"1024\" height=\"768\"></canvas>",
-        "itemId": "roomPanels",
+        "html": null,
+        "itemId": "roomPanels2",
         "ui": "light",
         "designer|userClassName": "roomPanels",
         "designer|userAlias": "roomPanels",
         "layout": "card",
         "scrollable": "horizontal"
     },
-    "designerId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728"
+    "designerId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "d9400587-5ec0-4769-9697-7e5ff055dc16",
+            "masterInstanceId": "8f92ad4b-c5b0-444e-b95f-d52389b0745c"
+        }
+    ]
 }

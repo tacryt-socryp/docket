@@ -17,14 +17,22 @@ Ext.define('Booking.view.roomPanels', {
     extend: 'Ext.Panel',
     alias: 'widget.roomPanels',
 
+    requires: [
+        'Booking.view.drawComponent'
+    ],
+
     config: {
-        html: '<canvas id="canvasRoom" width="1024" height="768"></canvas>',
-        itemId: 'roomPanels',
+        itemId: 'roomPanels2',
         ui: 'light',
         layout: {
             type: 'card'
         },
-        scrollable: 'horizontal'
+        scrollable: 'horizontal',
+        items: [
+            {
+                xtype: 'drawComponent'
+            }
+        ]
     }
 
 });
