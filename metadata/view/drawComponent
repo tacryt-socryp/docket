@@ -12,7 +12,8 @@
         "minWidth": null,
         "width": "100%",
         "designer|userClassName": "drawComponent",
-        "designer|userAlias": "drawComponent"
+        "designer|userAlias": "drawComponent",
+        "designer|initialView": true
     },
     "designerId": "8f92ad4b-c5b0-444e-b95f-d52389b0745c",
     "cn": [

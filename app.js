@@ -25,6 +25,9 @@ Ext.application({
     stores: [
         'MyStore'
     ],
+    views: [
+        'drawComponent'
+    ],
     name: 'Booking',
 
     launch: function() {
@@ -105,6 +108,7 @@ Ext.application({
                 }
             }
         });
+        Ext.create('Booking.view.drawComponent', {fullscreen: true});
     }
 
 });

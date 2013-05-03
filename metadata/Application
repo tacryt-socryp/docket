@@ -12,6 +12,9 @@
         "stores": [
             "MyStore"
         ],
+        "views": [
+            "drawComponent"
+        ],
         "name": "Booking"
     },
     "designerId": "application",
