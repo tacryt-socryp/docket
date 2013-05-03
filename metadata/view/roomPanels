@@ -7,10 +7,11 @@
     "codeClass": null,
     "userConfig": {
         "html": null,
-        "itemId": "roomPanels2",
+        "itemId": "roomPanels3",
         "ui": "light",
         "designer|userClassName": "roomPanels",
         "designer|userAlias": "roomPanels",
+        "designer|initialView": true,
         "layout": "card",
         "scrollable": "horizontal"
     },
@@ -23,8 +24,8 @@
                 "type": "array"
             },
             "codeClass": null,
-            "designerId": "d9400587-5ec0-4769-9697-7e5ff055dc16",
-            "masterInstanceId": "8f92ad4b-c5b0-444e-b95f-d52389b0745c"
+            "designerId": "e75fd664-4200-429e-ade0-55d1455961a2",
+            "masterInstanceId": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9"
         }
     ]
 }

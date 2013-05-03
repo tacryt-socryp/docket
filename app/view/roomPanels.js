@@ -22,7 +22,7 @@ Ext.define('Booking.view.roomPanels', {
     ],
 
     config: {
-        itemId: 'roomPanels2',
+        itemId: 'roomPanels3',
         ui: 'light',
         layout: {
             type: 'card'

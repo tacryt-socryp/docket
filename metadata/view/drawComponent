@@ -12,10 +12,9 @@
         "minWidth": null,
         "width": "100%",
         "designer|userClassName": "drawComponent",
-        "designer|userAlias": "drawComponent",
-        "designer|initialView": true
+        "designer|userAlias": "drawComponent"
     },
-    "designerId": "8f92ad4b-c5b0-444e-b95f-d52389b0745c",
+    "designerId": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
     "cn": [
         {
             "type": "fixedfunction",
@@ -29,13 +28,21 @@
                 "implHandler": [
                     "this.callParent();\r",
                     "\r",
-                    "drawComponent.getSurface('main').add({\r",
+                    "Booking.view.drawComponent.getSurface('main').add({\r",
                     "    type: 'circle',\r",
                     "    fill: '#79BB3F',\r",
                     "    radius: 100,\r",
                     "    x: 100,\r",
                     "    y: 100\r",
-                    "});"
+                    "}).show(true);\r",
+                    "\r",
+                    "myComponent.surface.add({\r",
+                    "    type: 'circle',\r",
+                    "    fill: '#ffc',\r",
+                    "    radius: 100,\r",
+                    "    x: 300,\r",
+                    "    y: 300\r",
+                    "}).show(true);"
                 ]
             },
             "designerId": "cc9adac2-5da8-4c10-8a68-96d7becf3b6d"

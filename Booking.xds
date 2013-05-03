@@ -61,7 +61,7 @@
             ],
             "className": "roomPanels"
         },
-        "8f92ad4b-c5b0-444e-b95f-d52389b0745c": {
+        "769fcfe4-471a-4c19-9f11-9acdbb96b8a9": {
             "paths": [
                 "metadata/view/drawComponent",
                 "app/view/override/drawComponent.js",
@@ -72,10 +72,10 @@
     },
     "viewOrderMap": {
         "view": [
-            "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "aef2cb4a-a14c-4ab0-94d9-34679ccf6728",
+            "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "01539f98-9c71-422b-8ba8-6021b79148ac",
-            "8f92ad4b-c5b0-444e-b95f-d52389b0745c"
+            "769fcfe4-471a-4c19-9f11-9acdbb96b8a9"
         ],
         "store": [
             "8714683d-0a2e-4225-a248-8932813f1f38"
