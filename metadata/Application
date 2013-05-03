@@ -13,8 +13,7 @@
             "MyStore"
         ],
         "views": [
-            "roomPanels",
-            "drawComponent"
+            "MyPanel1"
         ],
         "name": "Booking"
     },

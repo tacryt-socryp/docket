@@ -26,14 +26,13 @@ Ext.application({
         'MyStore'
     ],
     views: [
-        'roomPanels',
-        'drawComponent'
+        'MyPanel1'
     ],
     name: 'Booking',
 
     launch: function() {
 
-        Ext.create('Booking.view.roomPanels', {fullscreen: true});
+        Ext.create('Booking.view.MyPanel1', {fullscreen: true});
     }
 
 });

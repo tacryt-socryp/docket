@@ -68,6 +68,14 @@
                 "app/view/drawComponent.js"
             ],
             "className": "drawComponent"
+        },
+        "ccda1bba-13d1-4d81-93df-3918027b0dd7": {
+            "paths": [
+                "metadata/view/MyPanel1",
+                "app/view/override/MyPanel1.js",
+                "app/view/MyPanel1.js"
+            ],
+            "className": "MyPanel1"
         }
     },
     "viewOrderMap": {
@@ -75,7 +83,8 @@
             "aef2cb4a-a14c-4ab0-94d9-34679ccf6728",
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "01539f98-9c71-422b-8ba8-6021b79148ac",
-            "769fcfe4-471a-4c19-9f11-9acdbb96b8a9"
+            "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
+            "ccda1bba-13d1-4d81-93df-3918027b0dd7"
         ],
         "store": [
             "8714683d-0a2e-4225-a248-8932813f1f38"

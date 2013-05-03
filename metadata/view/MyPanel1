@@ -1,0 +1,97 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": "100%",
+        "html": "<canvas id=\"drawableCanvas\" width=\"500px\" height=\"500px\"></canvas>",
+        "width": "100%",
+        "designer|userClassName": "MyPanel1",
+        "designer|initialView": true
+    },
+    "designerId": "ccda1bba-13d1-4d81-93df-3918027b0dd7",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelInitialize",
+                "implHandler": [
+                    "var canvas = document.getElementById('mycanvas');        \r",
+                    "var context = canvas.getContext(\"2d\");\r",
+                    "var cw = canvas.width;\r",
+                    "var ch = canvas.height;\r",
+                    "context.strokeStyle = 'black';\r",
+                    "context.moveTo(0,0);\r",
+                    "context.lineTo(cw,ch);\r",
+                    "context.stroke();\r",
+                    "context.fillRect(25,25,100,100);\r",
+                    "context.clearRect(45,45,60,60);\r",
+                    "context.strokeRect(50,50,50,50);"
+                ],
+                "name": "initialize"
+            },
+            "designerId": "3bb8ef31-0c5a-435c-9583-81c1ffb61cb4"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelPainted",
+                "implHandler": [
+                    "var canvas = document.getElementById('mycanvas');        \r",
+                    "var context = canvas.getContext(\"2d\");\r",
+                    "var cw = canvas.width;\r",
+                    "var ch = canvas.height;\r",
+                    "context.strokeStyle = 'black';\r",
+                    "context.moveTo(0,0);\r",
+                    "context.lineTo(cw,ch);\r",
+                    "context.stroke();\r",
+                    "context.fillRect(25,25,100,100);\r",
+                    "context.clearRect(45,45,60,60);\r",
+                    "context.strokeRect(50,50,50,50);"
+                ],
+                "single": true,
+                "name": "painted"
+            },
+            "designerId": "68742554-7eb4-40f2-81cb-c668928be042"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelActivate",
+                "implHandler": [
+                    "var canvas = document.getElementById('mycanvas');        \r",
+                    "var context = canvas.getContext(\"2d\");\r",
+                    "var cw = canvas.width;\r",
+                    "var ch = canvas.height;\r",
+                    "context.strokeStyle = 'black';\r",
+                    "context.moveTo(0,0);\r",
+                    "context.lineTo(cw,ch);\r",
+                    "context.stroke();\r",
+                    "context.fillRect(25,25,100,100);\r",
+                    "context.clearRect(45,45,60,60);\r",
+                    "context.strokeRect(50,50,50,50);"
+                ],
+                "name": "activate"
+            },
+            "designerId": "e9c8264c-ce30-4a53-86da-c0f129a47c9e"
+        }
+    ]
+}

@@ -36,13 +36,13 @@
                     "    y: 100\r",
                     "}).show(true);\r",
                     "\r",
-                    "myComponent.surface.add({\r",
+                    "Booking.view.drawComponent.surface.add({\r",
                     "    type: 'circle',\r",
-                    "    fill: '#ffc',\r",
+                    "    fill: '#000',\r",
                     "    radius: 100,\r",
                     "    x: 300,\r",
                     "    y: 300\r",
-                    "}).show(true);"
+                    "});"
                 ]
             },
             "designerId": "cc9adac2-5da8-4c10-8a68-96d7becf3b6d"

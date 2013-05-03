@@ -11,7 +11,6 @@
         "ui": "light",
         "designer|userClassName": "roomPanels",
         "designer|userAlias": "roomPanels",
-        "designer|initialView": true,
         "layout": "card",
         "scrollable": "horizontal"
     },
