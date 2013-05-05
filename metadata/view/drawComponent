@@ -53,11 +53,11 @@
                     "\r",
                     "this.getSurface('main').add({\r",
                     "    type: 'text',\r",
-                    "    text: 'With Ext JS 4.0 Drawing',\r",
+                    "    text: '10:33 or whatever time!',\r",
                     "    font: '20px Arial',\r",
                     "    fill: '#FFF',\r",
-                    "    x: 500,\r",
-                    "    y: 500\r",
+                    "    x: 200,\r",
+                    "    y: 470\r",
                     "}).show(true);"
                 ]
             },

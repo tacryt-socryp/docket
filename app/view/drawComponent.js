@@ -51,11 +51,11 @@ Ext.define('Booking.view.drawComponent', {
 
         this.getSurface('main').add({
             type: 'text',
-            text: 'With Ext JS 4.0 Drawing',
+            text: '10:33 or whatever time!',
             font: '20px Arial',
             fill: '#FFF',
-            x: 500,
-            y: 500
+            x: 200,
+            y: 470
         }).show(true);
     }
 
