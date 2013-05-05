@@ -19,8 +19,8 @@ Ext.define('Booking.view.mainCarousel', {
 
     requires: [
         'Booking.view.MyComponent1',
-        'Booking.view.MyComponent2',
-        'Booking.view.MyComponent3'
+        'Booking.view.MyComponent3',
+        'Booking.view.MyComponent2'
     ],
 
     config: {
@@ -31,10 +31,10 @@ Ext.define('Booking.view.mainCarousel', {
                 xtype: 'myComponent1'
             },
             {
-                xtype: 'myComponent3'
+                xtype: 'myComponent2'
             },
             {
-                xtype: 'myComponent2'
+                xtype: 'myComponent3'
             }
         ]
     }

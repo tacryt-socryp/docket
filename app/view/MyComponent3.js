@@ -163,7 +163,7 @@ Ext.define('Booking.view.MyComponent3', {
 
         this.getSurface('main').add({
             type: 'text',
-            text: 'Meetings in Room A',
+            text: 'Meetings in Room C',
             font: '32px Arial',
             fill: '#FFF',
             x: 70,

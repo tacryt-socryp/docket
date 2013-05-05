@@ -28,10 +28,10 @@ Ext.application({
     views: [
         'MyComponent1',
         'mainCarousel',
-        'MyContainer'
-    ],
-    controllers: [
-        'MyController'
+        'MyComponent2',
+        'MyContainer',
+        'MyComponent3',
+        'MyComponent'
     ],
     name: 'Booking',
 

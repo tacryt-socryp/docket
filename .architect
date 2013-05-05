@@ -3,7 +3,7 @@
         "data": true,
         "model": true,
         "component": true,
-        "controller": false,
+        "controller": true,
         "resource": true,
         "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d": {
             "id": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
@@ -12,10 +12,10 @@
                     "id": "d471ea87-fcdf-4bb2-90cc-389d3d046678"
                 },
                 {
-                    "id": "de6c5f9e-82a4-4f7a-a94c-d99b17620670"
+                    "id": "7506b58b-384e-4895-abd0-f8fbea015c37"
                 },
                 {
-                    "id": "7506b58b-384e-4895-abd0-f8fbea015c37"
+                    "id": "de6c5f9e-82a4-4f7a-a94c-d99b17620670"
                 }
             ]
         },
@@ -75,7 +75,6 @@
         },
         "f1eaeea6-2827-4d27-8efa-cc6c024dd251": {
             "id": "f1eaeea6-2827-4d27-8efa-cc6c024dd251",
-            "expanded": false,
             "cn": [
                 {
                     "id": "3db31424-a45a-4d25-ad2b-c38646448fec"
@@ -134,11 +133,7 @@
     "tabState": {
         "openTabs": [
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-            "application",
             "f1939c81-49e4-43e3-9cfd-efcce06a506a",
-            "ecb08921-839f-4590-8266-0cbdeabbea84",
-            "c1350ab6-16f1-45b6-9c81-39c28a0f753c",
-            "ccda1bba-13d1-4d81-93df-3918027b0dd7",
             "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
             "abbd7baa-64bf-45e6-9e6b-c8b20efb4df7",
             "f1eaeea6-2827-4d27-8efa-cc6c024dd251"
@@ -148,11 +143,11 @@
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-        "selectedInstance": "d471ea87-fcdf-4bb2-90cc-389d3d046678"
+        "topInstance": "f1eaeea6-2827-4d27-8efa-cc6c024dd251",
+        "selectedInstance": "3db31424-a45a-4d25-ad2b-c38646448fec"
     },
     "codeState": {
-        "topInstance": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
+        "topInstance": "f1eaeea6-2827-4d27-8efa-cc6c024dd251"
     },
     "editMode": "code"
 }
