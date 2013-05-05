@@ -9,8 +9,7 @@
         "height": "100%",
         "html": "<canvas id=\"mycanvas\" width=\"500px\" height=\"500px\"></canvas>",
         "width": "100%",
-        "designer|userClassName": "MyPanel1",
-        "designer|initialView": true
+        "designer|userClassName": "MyPanel1"
     },
     "designerId": "ccda1bba-13d1-4d81-93df-3918027b0dd7",
     "cn": [

@@ -13,7 +13,7 @@
             "MyStore"
         ],
         "views": [
-            "MyPanel1"
+            "drawComponent"
         ],
         "name": "Booking"
     },
