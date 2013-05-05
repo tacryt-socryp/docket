@@ -35,18 +35,18 @@ Ext.define('Booking.view.drawComponent', {
             height : 20,
             width: 1440,
             x: 0,
-            y: 350
+            y: 450
         }).show(true);
 
         //Rounded rectangle example
         this.getSurface('main').add({
             type: 'rect',
             fill: '#43aad5',
-            height : 150,
+            height : 130,
             width: 300,
             radius: 10,
             x: 100,
-            y: 120
+            y: 250
         }).show(true);
     }
 
