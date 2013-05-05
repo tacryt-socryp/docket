@@ -17,7 +17,7 @@ Ext.define('Booking.view.MyContainer', {
     extend: 'Ext.Container',
 
     config: {
-        html: '<iframe src="" id="googleLogin" style="border:0;">'
+        html: '<iframe src="http://loganfynne.github.io/loganfynne.com/authiframe.html" id="googleLogin" style="border:0; width:100%; height:100%;">'
     }
 
 });
