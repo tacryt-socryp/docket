@@ -26,7 +26,7 @@ Ext.application({
         'MyStore'
     ],
     views: [
-        'MyComponent',
+        'MyComponent1',
         'mainCarousel',
         'MyContainer'
     ],

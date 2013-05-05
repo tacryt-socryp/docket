@@ -1,0 +1,233 @@
+{
+    "type": "Ext.draw.Component",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "docked": null,
+        "height": "100%",
+        "itemId": "myComponent1",
+        "minWidth": null,
+        "showAnimation": null,
+        "style": "background:#0d6289;",
+        "width": "100%",
+        "designer|userClassName": "MyComponent1",
+        "designer|userAlias": "myComponent1"
+    },
+    "designerId": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "//Line across screen\r",
+                    "this.getSurface('main').add({\r",
+                    "    type: 'rect',\r",
+                    "    fill: '#176c93',\r",
+                    "    height : 20,\r",
+                    "    width: 1440,\r",
+                    "    x: 0,\r",
+                    "    y: 430\r",
+                    "}).show(true);\r",
+                    "\r",
+                    "this.getSurface('main').add({\r",
+                    "    type: 'text',\r",
+                    "    text: 'Meetings in Room A',\r",
+                    "    font: '32px Arial',\r",
+                    "    fill: '#FFF',\r",
+                    "    x: 70,\r",
+                    "    y: 50\r",
+                    "}).show(true);\r",
+                    "\r",
+                    "//Rounded rectangle example\r",
+                    "this.getSurface('main').add({\r",
+                    "    type: 'rect',\r",
+                    "    fill: '#43aad5',\r",
+                    "    height : 130,\r",
+                    "    width: 300,\r",
+                    "    radius: 10,\r",
+                    "    x: 100,\r",
+                    "    y: 260\r",
+                    "}).show(true);\r",
+                    "\r",
+                    "var dynText = '10:33 pm';\r",
+                    "\r",
+                    "this.getSurface('main').add({\r",
+                    "    type: 'text',\r",
+                    "    text: dynText,\r",
+                    "    font: '18px Arial',\r",
+                    "    fill: '#FFF',\r",
+                    "    x: 200,\r",
+                    "    y: 470\r",
+                    "}).show(true);"
+                ]
+            },
+            "designerId": "87425d03-1f41-4721-ba73-bfdc1b86a8d5"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMyComponentOnDragStart1",
+                "designer|params": [
+                    "draw"
+                ],
+                "implHandler": [
+                    "var direction = this.getDirection(),\r",
+                    "            absDeltaX = draw.absDeltaX,\r",
+                    "            absDeltaY = draw.absDeltaY,\r",
+                    "            directionLock = this.getDirectionLock();\r",
+                    "\r",
+                    "this.isDragging = true;\r",
+                    "\r",
+                    "if (directionLock) {\r",
+                    "    if (/*(direction === 'horizontal' && absDeltaX > absDeltaY) ||*/\r",
+                    "    (direction === 'vertical' && absDeltaY > absDeltaX)) {\r",
+                    "        draw.stopPropagation();\r",
+                    "    } else {\r",
+                    "        this.isDragging = false;\r",
+                    "        return;\r",
+                    "    }\r",
+                    "}\r",
+                    "if (this.isAnimating) {\r",
+                    "    this.getActiveCarouselItem().getTranslatable().stopAnimation();\r",
+                    "}\r",
+                    "\r",
+                    "this.dragStartOffset = this.offset;\r",
+                    "this.dragDirection = 0;"
+                ],
+                "name": "onDragStart"
+            },
+            "designerId": "5dc547b3-dde1-4a5f-a61c-59fd12cc0228"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMyComponentOnDrag1",
+                "designer|params": [
+                    "draw"
+                ],
+                "implHandler": [
+                    "if (!this.isDragging) {\r",
+                    "    return;\r",
+                    "}\r",
+                    "\r",
+                    "var startOffset = this.dragStartOffset,\r",
+                    "    direction = this.getDirection(),\r",
+                    "    delta = direction === 'horizontal' ? draw.deltaX : draw.deltaY,\r",
+                    "    lastOffset = this.offset,\r",
+                    "    flickStartTime = this.flickStartTime,\r",
+                    "    dragDirection = this.dragDirection,\r",
+                    "    now = Ext.Date.now(),\r",
+                    "    currentActiveIndex = this.getActiveIndex(),\r",
+                    "    maxIndex = this.getMaxItemIndex(),\r",
+                    "    lastDragDirection = dragDirection,\r",
+                    "    offset;\r",
+                    "\r",
+                    "if ((currentActiveIndex === 0 && delta > 0) || (currentActiveIndex === maxIndex && delta < 0)) {\r",
+                    "    delta *= 0.5;\r",
+                    "}\r",
+                    "\r",
+                    "offset = startOffset + delta;\r",
+                    "\r",
+                    "if (offset > lastOffset) {\r",
+                    "    dragDirection = 1;\r",
+                    "} else if (offset < lastOffset) {\r",
+                    "    dragDirection = -1;\r",
+                    "}\r",
+                    "\r",
+                    "if (dragDirection !== lastDragDirection || (now - flickStartTime) > 300) {\r",
+                    "    this.flickStartOffset = lastOffset;\r",
+                    "    this.flickStartTime = now;\r",
+                    "}\r",
+                    "\r",
+                    "this.dragDirection = dragDirection;\r",
+                    "this.setOffset(offset);"
+                ],
+                "name": "onDrag"
+            },
+            "designerId": "661ac545-7c21-4072-bf1d-d92ed7b1e0b0"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMyComponentOnDragEnd1",
+                "designer|params": [
+                    "draw"
+                ],
+                "implHandler": [
+                    "if (!this.isDragging) {\r",
+                    "    return;\r",
+                    "}\r",
+                    "\r",
+                    "this.onDrag(draw);\r",
+                    "this.isDragging = false;\r",
+                    "\r",
+                    "var now = Ext.Date.now(),\r",
+                    "    itemLength = this.itemLength,\r",
+                    "    threshold = itemLength / 2,\r",
+                    "    offset = this.offset,\r",
+                    "    activeIndex = this.getActiveIndex(),\r",
+                    "    maxIndex = this.getMaxItemIndex(),\r",
+                    "    animationDirection = 0,\r",
+                    "    flickDistance = offset - this.flickStartOffset,\r",
+                    "    flickDuration = now - this.flickStartTime,\r",
+                    "    indicator = this.getIndicator(),\r",
+                    "    velocity;\r",
+                    "\r",
+                    "if (flickDuration > 0 && Math.abs(flickDistance) >= 10) {\r",
+                    "    velocity = flickDistance / flickDuration;\r",
+                    "    if (Math.abs(velocity) >= 1) {\r",
+                    "        if (velocity < 0 && activeIndex < maxIndex) {\r",
+                    "            animationDirection = -1;\r",
+                    "        } else if (velocity > 0 && activeIndex > 0) {\r",
+                    "            animationDirection = 1;\r",
+                    "        }\r",
+                    "    }\r",
+                    "}\r",
+                    "\r",
+                    "if (animationDirection === 0) {\r",
+                    "    if (activeIndex < maxIndex && offset < -threshold) {\r",
+                    "        animationDirection = -1;\r",
+                    "    } else if (activeIndex > 0 && offset > threshold) {\r",
+                    "        animationDirection = 1;\r",
+                    "    }\r",
+                    "}\r",
+                    "\r",
+                    "if (indicator) {\r",
+                    "    indicator.setActiveIndex(activeIndex - animationDirection);\r",
+                    "}\r",
+                    "\r",
+                    "this.animationDirection = animationDirection;\r",
+                    "this.setOffsetAnimated(animationDirection * itemLength);"
+                ],
+                "name": "onDragEnd"
+            },
+            "designerId": "0c35fbc1-76ce-40ef-83c3-e7f25101de2f"
+        }
+    ]
+}
