@@ -18,9 +18,11 @@ Ext.define('Booking.view.drawComponent', {
     alias: 'widget.drawComponent',
 
     config: {
+        autoScroll: 'true',
         docked: 'left',
         height: '100%',
         itemId: 'myComponent',
+        showAnimation: 'flip',
         style: 'background:#0d6289;',
         width: '100%'
     },

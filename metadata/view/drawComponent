@@ -6,10 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoScroll": "true",
         "docked": "left",
         "height": "100%",
         "itemId": "myComponent",
         "minWidth": null,
+        "showAnimation": "flip",
         "style": "background:#0d6289;",
         "width": "100%",
         "designer|userClassName": "drawComponent",
@@ -17,6 +19,13 @@
         "designer|initialView": true
     },
     "designerId": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "autoScroll",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "fixedfunction",
