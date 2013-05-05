@@ -99,7 +99,7 @@ Ext.define('Booking.view.mainCarousel', {
                     //Rounded rectangle example
                     this.getSurface('main').add({
                         type: 'rect',
-                        fill: '#43aad5',
+                        fill: '#FF3333',
                         height : 130,
                         width: 300,
                         radius: 10,
@@ -120,7 +120,7 @@ Ext.define('Booking.view.mainCarousel', {
                 },
                 height: '100%',
                 itemId: 'myComponent2',
-                style: 'background:#0d6289;',
+                style: 'background:#CC3333;',
                 width: '100%'
             },
             {
@@ -150,7 +150,7 @@ Ext.define('Booking.view.mainCarousel', {
                     //Rounded rectangle example
                     this.getSurface('main').add({
                         type: 'rect',
-                        fill: '#43aad5',
+                        fill: '#33C066',
                         height : 130,
                         width: 300,
                         radius: 10,
@@ -171,7 +171,7 @@ Ext.define('Booking.view.mainCarousel', {
                 },
                 height: '100%',
                 itemId: 'myComponent3',
-                style: 'background:#0d6289;',
+                style: 'background:#009933;',
                 width: '100%'
             }
         ],
