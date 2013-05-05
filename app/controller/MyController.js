@@ -17,6 +17,9 @@ Ext.define('Booking.controller.MyController', {
     extend: 'Ext.app.Controller',
 
     config: {
+        views: [
+            'MyContainer'
+        ]
     },
 
     launch: function() {

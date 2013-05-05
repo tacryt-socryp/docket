@@ -6,6 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "views": [
+            "MyContainer"
+        ],
         "designer|userClassName": "MyController"
     },
     "designerId": "c1350ab6-16f1-45b6-9c81-39c28a0f753c",
