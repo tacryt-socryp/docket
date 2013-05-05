@@ -23,6 +23,7 @@ Ext.define('Booking.controller.MyController', {
     },
 
     launch: function() {
+        var scopes = 'https://www.googleapis.com/auth/calendar';
         var iframe =  Ext.get(Ext.query('#googleLogin'));
         iframe.set(
         {

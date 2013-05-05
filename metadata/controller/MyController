@@ -23,6 +23,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
+                    "var scopes = 'https://www.googleapis.com/auth/calendar';\r",
                     "var iframe =  Ext.get(Ext.query('#googleLogin'));\r",
                     "iframe.set(\r",
                     "{\r",
