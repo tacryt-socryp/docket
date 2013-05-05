@@ -27,6 +27,9 @@ Ext.define('Booking.view.mainCarousel', {
         items: [
             {
                 xtype: 'mycomponent'
+            },
+            {
+                xtype: 'mycomponent'
             }
         ]
     }

@@ -20,7 +20,7 @@ Ext.define('Booking.view.MyComponent', {
     config: {
         docked: 'left',
         height: '100%',
-        itemId: 'myComponent',
+        itemId: 'myComponent1',
         style: 'background:#0d6289;',
         width: '100%'
     },

@@ -8,7 +8,7 @@
     "userConfig": {
         "docked": "left",
         "height": "100%",
-        "itemId": "myComponent",
+        "itemId": "myComponent1",
         "minWidth": null,
         "showAnimation": null,
         "style": "background:#0d6289;",
