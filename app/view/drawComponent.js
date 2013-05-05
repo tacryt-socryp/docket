@@ -48,6 +48,15 @@ Ext.define('Booking.view.drawComponent', {
             x: 100,
             y: 250
         }).show(true);
+
+        this.getSurface('main').add({
+            type: 'text',
+            text: 'With Ext JS 4.0 Drawing',
+            font: '20px Arial',
+            fill: '#FFF',
+            x: 500,
+            y: 500
+        }).show(true);
     }
 
 });
