@@ -28,20 +28,12 @@ Ext.define('Booking.view.drawComponent', {
         this.callParent();
 
         this.getSurface('main').add({
-            type: 'circle',
-            fill: '#79BB3F',
-            radius: 100,
-            x: 100,
-            y: 100
-        }).show(true);
-
-        this.getSurface('main').add({
             type: 'rect',
             fill: '#79BB3F',
             height : 20,
-            width: 100,
+            width: 1440,
             x: 0,
-            y: 1440
+            y: 400
         }).show(true);
 
         this.getSurface('main').add({
