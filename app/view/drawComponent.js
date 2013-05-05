@@ -21,7 +21,8 @@ Ext.define('Booking.view.drawComponent', {
         docked: 'left',
         height: '100%',
         itemId: 'myComponent',
-        style: 'background:#000;'
+        style: 'background:#000;',
+        width: '100%'
     },
 
     initialize: function() {

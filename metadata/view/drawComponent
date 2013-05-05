@@ -11,7 +11,7 @@
         "itemId": "myComponent",
         "minWidth": null,
         "style": "background:#000;",
-        "width": null,
+        "width": "100%",
         "designer|userClassName": "drawComponent",
         "designer|userAlias": "drawComponent",
         "designer|initialView": true
