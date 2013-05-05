@@ -49,12 +49,14 @@ Ext.define('Booking.view.MyComponent', {
             y: 250
         }).show(true);
 
+        var dynText = '10:33 pm';
+
         this.getSurface('main').add({
             type: 'text',
-            text: '10:33pm',
+            text: dynText,
             font: '20px Arial',
             fill: '#FFF',
-            x: 195,
+            x: 200,
             y: 470
         }).show(true);
     }

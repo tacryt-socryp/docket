@@ -51,12 +51,14 @@
                     "    y: 250\r",
                     "}).show(true);\r",
                     "\r",
+                    "var dynText = '10:33 pm';\r",
+                    "\r",
                     "this.getSurface('main').add({\r",
                     "    type: 'text',\r",
-                    "    text: '10:33pm',\r",
+                    "    text: dynText,\r",
                     "    font: '20px Arial',\r",
                     "    fill: '#FFF',\r",
-                    "    x: 195,\r",
+                    "    x: 200,\r",
                     "    y: 470\r",
                     "}).show(true);"
                 ]
