@@ -44,11 +44,11 @@
                     "this.getSurface('main').add({\r",
                     "    type: 'rect',\r",
                     "    fill: '#43aad5',\r",
-                    "    height : 100,\r",
-                    "    width: 200,\r",
+                    "    height : 150,\r",
+                    "    width: 300,\r",
                     "    radius: 10,\r",
                     "    x: 100,\r",
-                    "    y: 100\r",
+                    "    y: 120\r",
                     "}).show(true);"
                 ]
             },
