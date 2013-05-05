@@ -22,7 +22,7 @@ Ext.define('Booking.view.MyComponent', {
         itemId: 'myComponent',
         showAnimation: 'flip',
         style: 'background:#0d6289; overflow:visible !important;',
-        width: '200%'
+        width: '100%'
     },
 
     initialize: function() {
@@ -33,7 +33,7 @@ Ext.define('Booking.view.MyComponent', {
             type: 'rect',
             fill: '#176c93',
             height : 20,
-            width: 2880,
+            width: 1440,
             x: 0,
             y: 430
         }).show(true);
@@ -60,12 +60,12 @@ Ext.define('Booking.view.MyComponent', {
     },
 
     resizeHandler: function() {
-        var width=Ext.getBody().getViewSize().width;
+        /*var width=Ext.getBody().getViewSize().width;
         var height = Ext.getBody().getViewSize().height - 200;
 
         width=width*2;
 
-        this.setSize(width, height);
+        this.setSize(width, height);*/
     }
 
 });

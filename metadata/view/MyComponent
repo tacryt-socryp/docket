@@ -12,7 +12,7 @@
         "minWidth": null,
         "showAnimation": "flip",
         "style": "background:#0d6289; overflow:visible !important;",
-        "width": "200%",
+        "width": "100%",
         "designer|userClassName": "MyComponent",
         "designer|initialView": true
     },
@@ -35,7 +35,7 @@
                     "    type: 'rect',\r",
                     "    fill: '#176c93',\r",
                     "    height : 20,\r",
-                    "    width: 2880,\r",
+                    "    width: 1440,\r",
                     "    x: 0,\r",
                     "    y: 430\r",
                     "}).show(true);\r",
@@ -73,12 +73,12 @@
             "userConfig": {
                 "fn": "resizeHandler",
                 "implHandler": [
-                    "var width=Ext.getBody().getViewSize().width;\r",
+                    "/*var width=Ext.getBody().getViewSize().width;\r",
                     "var height = Ext.getBody().getViewSize().height - 200;\r",
                     "\r",
                     "width=width*2;\r",
                     "\r",
-                    "this.setSize(width, height;"
+                    "this.setSize(width, height);*/"
                 ]
             },
             "designerId": "0fb506a1-8c00-4c83-8e77-436af4790bd7"
