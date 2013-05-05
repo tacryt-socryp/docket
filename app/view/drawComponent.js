@@ -34,6 +34,26 @@ Ext.define('Booking.view.drawComponent', {
             x: 100,
             y: 100
         }).show(true);
+
+        this.getSurface('main').add({
+            type: 'rect',
+            fill: '#79BB3F',
+            height : 20,
+            width: 100,
+
+            x: 0,
+            y: 500
+        }).show(true);
+
+        this.getSurface('main').add({
+            type: 'rect',
+            fill: '#79BB3F',
+            height : 20,
+            width: 100,
+            radius: 10,
+            x: 100,
+            y: 100
+        }).show(true);
     }
 
 });
