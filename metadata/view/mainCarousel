@@ -11,49 +11,5 @@
         "designer|userAlias": "mainCarousel",
         "direction": "vertical"
     },
-    "designerId": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-    "cn": [
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|displayName": "roomOne",
-                "designer|createAlias": "roomOne"
-            },
-            "designerId": "e0cb9ce9-5e06-4d13-a96c-b7f329cbe70b",
-            "masterInstanceId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|displayName": "roomTwo",
-                "designer|createAlias": "roomTwo"
-            },
-            "designerId": "4f39732d-bd85-449a-8d20-2e898e8e3098",
-            "masterInstanceId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|displayName": "roomThree",
-                "designer|createAlias": "roomThree"
-            },
-            "designerId": "d369c4a4-b66d-40fc-b70b-6dee3399bf4e",
-            "masterInstanceId": "aef2cb4a-a14c-4ab0-94d9-34679ccf6728"
-        }
-    ]
+    "designerId": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
 }

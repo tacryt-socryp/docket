@@ -17,24 +17,9 @@ Ext.define('Booking.view.mainCarousel', {
     extend: 'Ext.carousel.Carousel',
     alias: 'widget.mainCarousel',
 
-    requires: [
-        'Booking.view.roomPanels'
-    ],
-
     config: {
         ui: 'light',
-        direction: 'vertical',
-        items: [
-            {
-                xtype: 'roomOne'
-            },
-            {
-                xtype: 'roomTwo'
-            },
-            {
-                xtype: 'roomThree'
-            }
-        ]
+        direction: 'vertical'
     }
 
 });

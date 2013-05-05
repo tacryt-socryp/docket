@@ -45,22 +45,6 @@
             ],
             "className": "MyStore"
         },
-        "01539f98-9c71-422b-8ba8-6021b79148ac": {
-            "paths": [
-                "metadata/view/myCanvas",
-                "app/view/override/myCanvas.js",
-                "app/view/myCanvas.js"
-            ],
-            "className": "myCanvas"
-        },
-        "aef2cb4a-a14c-4ab0-94d9-34679ccf6728": {
-            "paths": [
-                "metadata/view/roomPanels",
-                "app/view/override/roomPanels.js",
-                "app/view/roomPanels.js"
-            ],
-            "className": "roomPanels"
-        },
         "769fcfe4-471a-4c19-9f11-9acdbb96b8a9": {
             "paths": [
                 "metadata/view/drawComponent",
@@ -80,9 +64,7 @@
     },
     "viewOrderMap": {
         "view": [
-            "aef2cb4a-a14c-4ab0-94d9-34679ccf6728",
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-            "01539f98-9c71-422b-8ba8-6021b79148ac",
             "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
             "ccda1bba-13d1-4d81-93df-3918027b0dd7"
         ],
