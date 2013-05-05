@@ -15,7 +15,8 @@
         "views": [
             "MyComponent",
             "mainCarousel",
-            "MyContainer"
+            "MyContainer",
+            "canvasing"
         ],
         "controllers": [
             "MyController"

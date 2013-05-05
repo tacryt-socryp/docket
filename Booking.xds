@@ -81,9 +81,9 @@
     "viewOrderMap": {
         "view": [
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-            "ccda1bba-13d1-4d81-93df-3918027b0dd7",
             "f1939c81-49e4-43e3-9cfd-efcce06a506a",
-            "ecb08921-839f-4590-8266-0cbdeabbea84"
+            "ecb08921-839f-4590-8266-0cbdeabbea84",
+            "ccda1bba-13d1-4d81-93df-3918027b0dd7"
         ],
         "store": [
             "8714683d-0a2e-4225-a248-8932813f1f38"

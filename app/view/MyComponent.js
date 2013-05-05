@@ -15,7 +15,7 @@
 
 Ext.define('Booking.view.MyComponent', {
     extend: 'Ext.draw.Component',
-    alias: 'widget.mycomponent',
+    alias: 'widget.MyComponent',
 
     config: {
         height: '100%',
