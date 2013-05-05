@@ -53,20 +53,20 @@
             ],
             "className": "canvasing"
         },
-        "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1": {
+        "f1939c81-49e4-43e3-9cfd-efcce06a506a": {
             "paths": [
-                "metadata/view/drawing",
-                "app/view/override/drawing.js",
-                "app/view/drawing.js"
+                "metadata/view/MyComponent",
+                "app/view/override/MyComponent.js",
+                "app/view/MyComponent.js"
             ],
-            "className": "drawing"
+            "className": "MyComponent"
         }
     },
     "viewOrderMap": {
         "view": [
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "ccda1bba-13d1-4d81-93df-3918027b0dd7",
-            "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1"
+            "f1939c81-49e4-43e3-9cfd-efcce06a506a"
         ],
         "store": [
             "8714683d-0a2e-4225-a248-8932813f1f38"
