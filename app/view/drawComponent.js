@@ -35,7 +35,7 @@ Ext.define('Booking.view.drawComponent', {
             height : 20,
             width: 1440,
             x: 0,
-            y: 450
+            y: 430
         }).show(true);
 
         //Rounded rectangle example
