@@ -40,9 +40,8 @@ Ext.define('Booking.view.drawComponent', {
             fill: '#79BB3F',
             height : 20,
             width: 100,
-
             x: 0,
-            y: 500
+            y: 1440
         }).show(true);
 
         this.getSurface('main').add({
