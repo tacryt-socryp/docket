@@ -18,7 +18,6 @@ Ext.define('Booking.view.drawComponent', {
     alias: 'widget.drawComponent',
 
     config: {
-        autoSize: 'true',
         docked: 'left',
         height: '100%',
         itemId: 'myComponent',

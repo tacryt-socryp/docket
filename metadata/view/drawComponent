@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoSize": "true",
         "docked": "left",
         "height": "100%",
         "itemId": "myComponent",
@@ -18,13 +17,6 @@
         "designer|initialView": true
     },
     "designerId": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
-    "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "autoSize",
-            "type": "string"
-        }
-    ],
     "cn": [
         {
             "type": "fixedfunction",
