@@ -9,7 +9,20 @@
         "ui": "light",
         "designer|userClassName": "mainCarousel",
         "designer|userAlias": "mainCarousel",
+        "designer|initialView": true,
         "direction": "vertical"
     },
-    "designerId": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
+    "designerId": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "074790f4-5bb1-4d6d-9965-3e508681b6f2",
+            "masterInstanceId": "f1939c81-49e4-43e3-9cfd-efcce06a506a"
+        }
+    ]
 }

@@ -10,10 +10,12 @@
             "roomList"
         ],
         "stores": [
-            "MyStore"
+            "MyStore",
+            "calJsonStore"
         ],
         "views": [
-            "MyComponent"
+            "MyComponent",
+            "mainCarousel"
         ],
         "name": "Booking"
     },

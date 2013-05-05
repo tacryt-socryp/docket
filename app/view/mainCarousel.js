@@ -17,9 +17,18 @@ Ext.define('Booking.view.mainCarousel', {
     extend: 'Ext.carousel.Carousel',
     alias: 'widget.mainCarousel',
 
+    requires: [
+        'Booking.view.MyComponent'
+    ],
+
     config: {
         ui: 'light',
-        direction: 'vertical'
+        direction: 'vertical',
+        items: [
+            {
+                xtype: 'mycomponent'
+            }
+        ]
     }
 
 });

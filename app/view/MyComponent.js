@@ -15,12 +15,12 @@
 
 Ext.define('Booking.view.MyComponent', {
     extend: 'Ext.draw.Component',
+    alias: 'widget.mycomponent',
 
     config: {
         docked: 'left',
         height: '100%',
         itemId: 'myComponent',
-        showAnimation: 'flip',
         style: 'background:#0d6289;',
         width: '100%'
     },
@@ -36,6 +36,15 @@ Ext.define('Booking.view.MyComponent', {
             width: 1440,
             x: 0,
             y: 430
+        }).show(true);
+
+        this.getSurface('main').add({
+            type: 'text',
+            text: 'Meetings in Room A',
+            font: '32px Arial',
+            fill: '#FFF',
+            x: 70,
+            y: 50
         }).show(true);
 
         //Rounded rectangle example
@@ -54,7 +63,7 @@ Ext.define('Booking.view.MyComponent', {
         this.getSurface('main').add({
             type: 'text',
             text: dynText,
-            font: '20px Arial',
+            font: '18px Arial',
             fill: '#FFF',
             x: 200,
             y: 470
