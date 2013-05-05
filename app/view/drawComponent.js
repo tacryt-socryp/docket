@@ -18,11 +18,11 @@ Ext.define('Booking.view.drawComponent', {
     alias: 'widget.drawComponent',
 
     config: {
+        autoSize: 'true',
         docked: 'left',
         height: '100%',
         itemId: 'myComponent',
-        style: 'background:#000;',
-        width: '100%'
+        style: 'background:#000;'
     },
 
     initialize: function() {
@@ -33,7 +33,7 @@ Ext.define('Booking.view.drawComponent', {
             type: 'rect',
             fill: '#79BB3F',
             height : 20,
-            width: 1440,
+            width: 1500,
             x: 0,
             y: 350
         }).show(true);
