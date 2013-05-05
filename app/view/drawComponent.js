@@ -21,7 +21,7 @@ Ext.define('Booking.view.drawComponent', {
         docked: 'left',
         height: '100%',
         itemId: 'myComponent',
-        style: 'background:#3D67E3;',
+        style: 'background:#0d6289;',
         width: '100%'
     },
 
@@ -31,7 +31,7 @@ Ext.define('Booking.view.drawComponent', {
         //Line across screen
         this.getSurface('main').add({
             type: 'rect',
-            fill: 'B2FFFF',
+            fill: '#43aad5',
             height : 20,
             width: 1440,
             x: 0,
@@ -41,7 +41,7 @@ Ext.define('Booking.view.drawComponent', {
         //Rounded rectangle example
         this.getSurface('main').add({
             type: 'rect',
-            fill: '#B2FFFF',
+            fill: '#43aad5',
             height : 100,
             width: 200,
             radius: 10,
