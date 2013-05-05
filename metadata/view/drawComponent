@@ -53,10 +53,10 @@
                     "\r",
                     "this.getSurface('main').add({\r",
                     "    type: 'text',\r",
-                    "    text: '10:33 or whatever time!',\r",
+                    "    text: '10:33pm',\r",
                     "    font: '20px Arial',\r",
                     "    fill: '#FFF',\r",
-                    "    x: 200,\r",
+                    "    x: 195,\r",
                     "    y: 470\r",
                     "}).show(true);"
                 ]

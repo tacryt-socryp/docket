@@ -51,10 +51,10 @@ Ext.define('Booking.view.drawComponent', {
 
         this.getSurface('main').add({
             type: 'text',
-            text: '10:33 or whatever time!',
+            text: '10:33pm',
             font: '20px Arial',
             fill: '#FFF',
-            x: 200,
+            x: 195,
             y: 470
         }).show(true);
     }
