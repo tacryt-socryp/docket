@@ -10,6 +10,7 @@
         "height": "100%",
         "itemId": "myComponent",
         "minWidth": null,
+        "style": "background:#000;",
         "width": "100%",
         "designer|userClassName": "drawComponent",
         "designer|userAlias": "drawComponent",
