@@ -27,20 +27,22 @@ Ext.define('Booking.view.drawComponent', {
     initialize: function() {
         this.callParent();
 
+        //Line across screen
         this.getSurface('main').add({
             type: 'rect',
             fill: '#79BB3F',
             height : 20,
             width: 1440,
             x: 0,
-            y: 400
+            y: 350
         }).show(true);
 
+        //Rounded rectangle example
         this.getSurface('main').add({
             type: 'rect',
             fill: '#79BB3F',
-            height : 20,
-            width: 100,
+            height : 100,
+            width: 200,
             radius: 10,
             x: 100,
             y: 100
