@@ -24,7 +24,7 @@ Ext.define('Booking.view.drawComponent', {
         itemId: 'myComponent',
         showAnimation: 'flip',
         style: 'background:#0d6289; overflow:visible;',
-        width: '100%'
+        width: '200%'
     },
 
     initialize: function() {
@@ -35,7 +35,7 @@ Ext.define('Booking.view.drawComponent', {
             type: 'rect',
             fill: '#176c93',
             height : 20,
-            width: 1440,
+            width: 2880,
             x: 0,
             y: 430
         }).show(true);

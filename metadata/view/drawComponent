@@ -13,7 +13,7 @@
         "minWidth": null,
         "showAnimation": "flip",
         "style": "background:#0d6289; overflow:visible;",
-        "width": "100%",
+        "width": "200%",
         "designer|userClassName": "drawComponent",
         "designer|userAlias": "drawComponent",
         "designer|initialView": true
@@ -44,7 +44,7 @@
                     "    type: 'rect',\r",
                     "    fill: '#176c93',\r",
                     "    height : 20,\r",
-                    "    width: 1440,\r",
+                    "    width: 2880,\r",
                     "    x: 0,\r",
                     "    y: 430\r",
                     "}).show(true);\r",
