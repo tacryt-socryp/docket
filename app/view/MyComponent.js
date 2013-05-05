@@ -18,11 +18,134 @@ Ext.define('Booking.view.MyComponent', {
     alias: 'widget.mycomponent',
 
     config: {
-        docked: 'left',
         height: '100%',
-        itemId: 'myComponent1',
+        itemId: 'MyComponent',
         style: 'background:#0d6289;',
-        width: '100%'
+        width: '100%',
+        listeners: [
+            {
+                fn: 'onMyComponentOnDragStart',
+                event: 'onDragStart'
+            },
+            {
+                fn: 'onMyComponentOnDrag',
+                event: 'onDrag'
+            },
+            {
+                fn: 'onMyComponentOnDragEnd',
+                event: 'onDragEnd'
+            }
+        ]
+    },
+
+    onMyComponentOnDragStart: function(draw) {
+        var direction = this.getDirection(),
+            absDeltaX = draw.absDeltaX,
+            absDeltaY = draw.absDeltaY,
+            directionLock = this.getDirectionLock();
+
+        this.isDragging = true;
+
+        if (directionLock) {
+            if (/*(direction === 'horizontal' && absDeltaX > absDeltaY) ||*/
+            (direction === 'vertical' && absDeltaY > absDeltaX)) {
+                draw.stopPropagation();
+            } else {
+                this.isDragging = false;
+                return;
+            }
+        }
+        if (this.isAnimating) {
+            this.getActiveCarouselItem().getTranslatable().stopAnimation();
+        }
+
+        this.dragStartOffset = this.offset;
+        this.dragDirection = 0;
+    },
+
+    onMyComponentOnDrag: function(draw) {
+        if (!this.isDragging) {
+            return;
+        }
+
+        var startOffset = this.dragStartOffset,
+            direction = this.getDirection(),
+            delta = direction === 'horizontal' ? draw.deltaX : draw.deltaY,
+            lastOffset = this.offset,
+            flickStartTime = this.flickStartTime,
+            dragDirection = this.dragDirection,
+            now = Ext.Date.now(),
+            currentActiveIndex = this.getActiveIndex(),
+            maxIndex = this.getMaxItemIndex(),
+            lastDragDirection = dragDirection,
+            offset;
+
+        if ((currentActiveIndex === 0 && delta > 0) || (currentActiveIndex === maxIndex && delta < 0)) {
+            delta *= 0.5;
+        }
+
+        offset = startOffset + delta;
+
+        if (offset > lastOffset) {
+            dragDirection = 1;
+        } else if (offset < lastOffset) {
+            dragDirection = -1;
+        }
+
+        if (dragDirection !== lastDragDirection || (now - flickStartTime) > 300) {
+            this.flickStartOffset = lastOffset;
+            this.flickStartTime = now;
+        }
+
+        this.dragDirection = dragDirection;
+        this.setOffset(offset);
+    },
+
+    onMyComponentOnDragEnd: function(draw) {
+        if (!this.isDragging) {
+            return;
+        }
+
+        this.onDrag(draw);
+        this.isDragging = false;
+
+        var now = Ext.Date.now(),
+            itemLength = this.itemLength,
+            threshold = itemLength / 2,
+            offset = this.offset,
+            activeIndex = this.getActiveIndex(),
+            maxIndex = this.getMaxItemIndex(),
+            animationDirection = 0,
+            flickDistance = offset - this.flickStartOffset,
+            flickDuration = now - this.flickStartTime,
+            indicator = this.getIndicator(),
+            velocity;
+
+        if (flickDuration > 0 && Math.abs(flickDistance) >= 10) {
+            velocity = flickDistance / flickDuration;
+            if (Math.abs(velocity) >= 1) {
+                if (velocity < 0 && activeIndex < maxIndex) {
+                    animationDirection = -1;
+                } else if (velocity > 0 && activeIndex > 0) {
+                    animationDirection = 1;
+                }
+            }
+        }
+
+        if (animationDirection === 0) {
+            if (activeIndex < maxIndex && offset < -threshold) {
+                animationDirection = -1;
+            } else if (activeIndex > 0 && offset > threshold) {
+                animationDirection = 1;
+            }
+        }
+
+        if (indicator) {
+            indicator.setActiveIndex(activeIndex - animationDirection);
+        }
+
+        this.animationDirection = animationDirection;
+        this.setOffsetAnimated(animationDirection * itemLength);
     },
 
     initialize: function() {
