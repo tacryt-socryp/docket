@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "html": "＜iframe src=\"\" id=\"googleLogin\" style=\"border:0;\">",
+        "html": "<iframe src=\"\" id=\"googleLogin\" style=\"border:0;\">",
         "designer|userClassName": "MyContainer",
         "designer|initialView": true
     },
