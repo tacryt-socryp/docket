@@ -45,28 +45,28 @@
             ],
             "className": "MyStore"
         },
-        "769fcfe4-471a-4c19-9f11-9acdbb96b8a9": {
-            "paths": [
-                "metadata/view/drawComponent",
-                "app/view/override/drawComponent.js",
-                "app/view/drawComponent.js"
-            ],
-            "className": "drawComponent"
-        },
         "ccda1bba-13d1-4d81-93df-3918027b0dd7": {
             "paths": [
-                "metadata/view/MyPanel1",
-                "app/view/override/MyPanel1.js",
-                "app/view/MyPanel1.js"
+                "metadata/view/canvasing",
+                "app/view/override/canvasing.js",
+                "app/view/canvasing.js"
             ],
-            "className": "MyPanel1"
+            "className": "canvasing"
+        },
+        "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1": {
+            "paths": [
+                "metadata/view/drawing",
+                "app/view/override/drawing.js",
+                "app/view/drawing.js"
+            ],
+            "className": "drawing"
         }
     },
     "viewOrderMap": {
         "view": [
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-            "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
-            "ccda1bba-13d1-4d81-93df-3918027b0dd7"
+            "ccda1bba-13d1-4d81-93df-3918027b0dd7",
+            "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1"
         ],
         "store": [
             "8714683d-0a2e-4225-a248-8932813f1f38"

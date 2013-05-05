@@ -1,0 +1,89 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "drawing",
+        "designer|initialView": true,
+        "scrollable": "horizontal"
+    },
+    "designerId": "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1",
+    "cn": [
+        {
+            "type": "Ext.draw.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoScroll": "true",
+                "docked": "left",
+                "height": "100%",
+                "itemId": "myComponent",
+                "minWidth": null,
+                "showAnimation": "flip",
+                "style": "background:#0d6289; overflow:visible !important;",
+                "width": "200%"
+            },
+            "designerId": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "autoScroll",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "initialize",
+                        "implHandler": [
+                            "this.callParent();\r",
+                            "\r",
+                            "//Line across screen\r",
+                            "this.getSurface('main').add({\r",
+                            "    type: 'rect',\r",
+                            "    fill: '#176c93',\r",
+                            "    height : 20,\r",
+                            "    width: 2880,\r",
+                            "    x: 0,\r",
+                            "    y: 430\r",
+                            "}).show(true);\r",
+                            "\r",
+                            "//Rounded rectangle example\r",
+                            "this.getSurface('main').add({\r",
+                            "    type: 'rect',\r",
+                            "    fill: '#43aad5',\r",
+                            "    height : 130,\r",
+                            "    width: 300,\r",
+                            "    radius: 10,\r",
+                            "    x: 100,\r",
+                            "    y: 250\r",
+                            "}).show(true);\r",
+                            "\r",
+                            "this.getSurface('main').add({\r",
+                            "    type: 'text',\r",
+                            "    text: '10:33pm',\r",
+                            "    font: '20px Arial',\r",
+                            "    fill: '#FFF',\r",
+                            "    x: 195,\r",
+                            "    y: 470\r",
+                            "}).show(true);"
+                        ]
+                    },
+                    "designerId": "cc9adac2-5da8-4c10-8a68-96d7becf3b6d"
+                }
+            ]
+        }
+    ]
+}

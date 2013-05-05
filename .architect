@@ -8,20 +8,26 @@
         "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d": {
             "id": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
         },
-        "769fcfe4-471a-4c19-9f11-9acdbb96b8a9": {
-            "id": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
-            "cn": [
-                {
-                    "id": "cc9adac2-5da8-4c10-8a68-96d7becf3b6d"
-                }
-            ]
-        },
         "ccda1bba-13d1-4d81-93df-3918027b0dd7": {
             "id": "ccda1bba-13d1-4d81-93df-3918027b0dd7",
             "expanded": false,
             "cn": [
                 {
                     "id": "3bb8ef31-0c5a-435c-9583-81c1ffb61cb4"
+                }
+            ]
+        },
+        "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1": {
+            "id": "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1",
+            "cn": [
+                {
+                    "id": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
+                    "expanded": false,
+                    "cn": [
+                        {
+                            "id": "cc9adac2-5da8-4c10-8a68-96d7becf3b6d"
+                        }
+                    ]
                 }
             ]
         },
@@ -49,19 +55,19 @@
         "openTabs": [
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "application",
-            "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
-            "ccda1bba-13d1-4d81-93df-3918027b0dd7"
+            "ccda1bba-13d1-4d81-93df-3918027b0dd7",
+            "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1"
         ]
     },
     "canvasState": {
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
-        "selectedInstance": "cc9adac2-5da8-4c10-8a68-96d7becf3b6d"
+        "topInstance": "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1",
+        "selectedInstance": "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1"
     },
     "codeState": {
-        "topInstance": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9"
+        "topInstance": "af2ceb4a-5ec9-446e-9d82-bb2d97f9aca1"
     },
     "editMode": "code"
 }
