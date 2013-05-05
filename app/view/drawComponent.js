@@ -31,7 +31,7 @@ Ext.define('Booking.view.drawComponent', {
         //Line across screen
         this.getSurface('main').add({
             type: 'rect',
-            fill: '#43aad5',
+            fill: '#176c93',
             height : 20,
             width: 1440,
             x: 0,
