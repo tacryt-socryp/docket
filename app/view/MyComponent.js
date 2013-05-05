@@ -55,7 +55,7 @@ Ext.define('Booking.view.MyComponent', {
             width: 300,
             radius: 10,
             x: 100,
-            y: 250
+            y: 260
         }).show(true);
 
         var dynText = '10:33 pm';

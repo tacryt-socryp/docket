@@ -1,0 +1,13 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "html": "＜iframe src=\"\" id=\"googleLogin\" style=\"border:0;\">",
+        "designer|userClassName": "MyContainer"
+    },
+    "designerId": "ecb08921-839f-4590-8266-0cbdeabbea84"
+}

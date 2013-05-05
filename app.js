@@ -23,12 +23,15 @@ Ext.application({
         'roomList'
     ],
     stores: [
-        'MyStore',
-        'calJsonStore'
+        'MyStore'
     ],
     views: [
         'MyComponent',
-        'mainCarousel'
+        'mainCarousel',
+        'MyContainer'
+    ],
+    controllers: [
+        'MyController'
     ],
     name: 'Booking',
 
