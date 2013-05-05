@@ -54,7 +54,6 @@ Ext.define('Booking.view.drawing', {
                         y: 470
                     }).show(true);
                 },
-                autoScroll: 'true',
                 docked: 'left',
                 height: '100%',
                 itemId: 'myComponent',

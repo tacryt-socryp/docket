@@ -20,7 +20,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "autoScroll": "true",
                 "docked": "left",
                 "height": "100%",
                 "itemId": "myComponent",
@@ -30,13 +29,6 @@
                 "width": "200%"
             },
             "designerId": "769fcfe4-471a-4c19-9f11-9acdbb96b8a9",
-            "customConfigs": [
-                {
-                    "group": "(Custom Properties)",
-                    "name": "autoScroll",
-                    "type": "string"
-                }
-            ],
             "cn": [
                 {
                     "type": "fixedfunction",
