@@ -28,8 +28,7 @@ Ext.application({
     views: [
         'MyComponent',
         'mainCarousel',
-        'MyContainer',
-        'canvasing'
+        'MyContainer'
     ],
     controllers: [
         'MyController'
