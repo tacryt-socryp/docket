@@ -21,7 +21,7 @@ Ext.define('Booking.view.MyComponent', {
         height: '100%',
         itemId: 'myComponent',
         showAnimation: 'flip',
-        style: 'background:#0d6289; overflow:visible !important;',
+        style: 'background:#0d6289;',
         width: '100%'
     },
 
@@ -57,15 +57,6 @@ Ext.define('Booking.view.MyComponent', {
             x: 195,
             y: 470
         }).show(true);
-    },
-
-    resizeHandler: function() {
-        /*var width=Ext.getBody().getViewSize().width;
-        var height = Ext.getBody().getViewSize().height - 200;
-
-        width=width*2;
-
-        this.setSize(width, height);*/
     }
 
 });

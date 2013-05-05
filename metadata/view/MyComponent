@@ -11,7 +11,7 @@
         "itemId": "myComponent",
         "minWidth": null,
         "showAnimation": "flip",
-        "style": "background:#0d6289; overflow:visible !important;",
+        "style": "background:#0d6289;",
         "width": "100%",
         "designer|userClassName": "MyComponent",
         "designer|initialView": true
@@ -62,26 +62,6 @@
                 ]
             },
             "designerId": "cc9adac2-5da8-4c10-8a68-96d7becf3b6d"
-        },
-        {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "resizeHandler",
-                "implHandler": [
-                    "/*var width=Ext.getBody().getViewSize().width;\r",
-                    "var height = Ext.getBody().getViewSize().height - 200;\r",
-                    "\r",
-                    "width=width*2;\r",
-                    "\r",
-                    "this.setSize(width, height);*/"
-                ]
-            },
-            "designerId": "0fb506a1-8c00-4c83-8e77-436af4790bd7"
         }
     ]
 }
