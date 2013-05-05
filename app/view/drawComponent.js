@@ -32,7 +32,7 @@ Ext.define('Booking.view.drawComponent', {
             type: 'rect',
             fill: '#79BB3F',
             height : 20,
-            width: 1500,
+            width: 1440,
             x: 0,
             y: 350
         }).show(true);

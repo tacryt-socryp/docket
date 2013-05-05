@@ -35,7 +35,7 @@
                     "    type: 'rect',\r",
                     "    fill: '#79BB3F',\r",
                     "    height : 20,\r",
-                    "    width: 1500,\r",
+                    "    width: 1440,\r",
                     "    x: 0,\r",
                     "    y: 350\r",
                     "}).show(true);\r",
