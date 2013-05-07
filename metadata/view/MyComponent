@@ -16,8 +16,7 @@
         "style": "background:#0d6289;",
         "width": "200%",
         "designer|userClassName": "MyComponent",
-        "designer|userAlias": "MyComponent",
-        "designer|initialView": true
+        "designer|userAlias": "MyComponent"
     },
     "configAlternates": {
         "scrollable": "boolean"

@@ -6,6 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "scrollable": [
+            "{\r",
+            "    direction: 'horizontal',\r",
+            "    directionLock: true\r",
+            "}"
+        ],
         "docked": null,
         "fullscreen": true,
         "height": null,
@@ -17,7 +23,17 @@
         "designer|userClassName": "MyComponent3",
         "designer|userAlias": "myComponent2"
     },
+    "configAlternates": {
+        "scrollable": "object"
+    },
     "designerId": "f1eaeea6-2827-4d27-8efa-cc6c024dd251",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "scrollable",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "fixedfunction",
