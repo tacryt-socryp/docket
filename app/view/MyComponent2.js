@@ -23,6 +23,10 @@ Ext.define('Booking.view.MyComponent2', {
         },
         itemId: 'myComponent3',
         style: 'background:#009933;',
+        scrollable: {
+            direction: 'horizontal',
+            directionLock: true
+        },
         listeners: [
             {
                 fn: 'onMyComponentOnDragStart3',

@@ -6,6 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "scrollable": [
+            "{\r",
+            "    direction: 'horizontal',\r",
+            "    directionLock: true\r",
+            "}"
+        ],
         "layout": "fit",
         "docked": null,
         "fullscreen": null,
@@ -26,6 +32,11 @@
         {
             "group": "(Custom Properties)",
             "name": "layout",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "scrollable",
             "type": "string"
         }
     ],
