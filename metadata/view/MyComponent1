@@ -42,6 +42,10 @@
                 "implHandler": [
                     "this.callParent();\r",
                     "\r",
+                    "var wide = 700 * Ext.getCmp('MyStore').getCount();\r",
+                    "\r",
+                    "Ext.getCmp('MyComponent1').setWidth(wide);\r",
+                    "\r",
                     "//Line across screen\r",
                     "this.getSurface('main').add({\r",
                     "    type: 'rect',\r",

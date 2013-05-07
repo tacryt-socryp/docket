@@ -152,6 +152,10 @@ Ext.define('Booking.view.MyComponent1', {
     initialize: function() {
         this.callParent();
 
+        var wide = 700 * Ext.getCmp('MyStore').getCount();
+
+        Ext.getCmp('MyComponent1').setWidth(wide);
+
         //Line across screen
         this.getSurface('main').add({
             type: 'rect',

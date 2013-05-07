@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "scrollable": "horizontal",
         "layout": "fit",
+        "scrollable": "horizontal",
         "docked": null,
         "fullscreen": null,
         "height": null,

@@ -18,10 +18,10 @@ Ext.define('Booking.view.MyComponent2', {
     alias: 'widget.myComponent3',
 
     config: {
-        scrollable: 'horizontal',
         layout: {
             type: 'fit'
         },
+        scrollable: 'horizontal',
         itemId: 'myComponent3',
         style: 'background:#009933;',
         width: '1600px',
