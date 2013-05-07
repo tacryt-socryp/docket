@@ -21,7 +21,6 @@ Ext.define('Booking.view.MyComponent3', {
         layout: {
             type: 'fit'
         },
-        fullscreen: true,
         itemId: 'myComponent2',
         style: 'background:#CC3333;',
         listeners: [

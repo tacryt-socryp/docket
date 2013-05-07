@@ -8,7 +8,7 @@
     "userConfig": {
         "layout": "fit",
         "docked": null,
-        "fullscreen": true,
+        "fullscreen": null,
         "height": null,
         "itemId": "myComponent3",
         "minWidth": null,
