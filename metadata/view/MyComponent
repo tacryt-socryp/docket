@@ -6,12 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "scrollable": [
-            "{\r",
-            "    direction: 'horizontal',\r",
-            "    directionLock: true\r",
-            "}"
-        ],
+        "scrollable": true,
         "docked": null,
         "fullscreen": true,
         "height": null,
@@ -25,7 +20,7 @@
         "designer|initialView": true
     },
     "configAlternates": {
-        "scrollable": "object"
+        "scrollable": "boolean"
     },
     "designerId": "f1939c81-49e4-43e3-9cfd-efcce06a506a",
     "customConfigs": [
