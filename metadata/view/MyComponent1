@@ -7,12 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "docked": null,
-        "height": "100%",
+        "fullscreen": true,
+        "height": null,
         "itemId": "myComponent1",
         "minWidth": null,
         "showAnimation": null,
         "style": "background:#0d6289;",
-        "width": "100%",
+        "width": null,
         "designer|userClassName": "MyComponent1",
         "designer|userAlias": "myComponent1"
     },
