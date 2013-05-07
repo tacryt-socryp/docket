@@ -18,15 +18,12 @@ Ext.define('Booking.view.MyComponent2', {
     alias: 'widget.myComponent3',
 
     config: {
+        scrollable: 'horizontal',
         layout: {
             type: 'fit'
         },
         itemId: 'myComponent3',
         style: 'background:#009933;',
-        scrollable: {
-            direction: 'horizontal',
-            directionLock: true
-        },
         listeners: [
             {
                 fn: 'onMyComponentOnDragStart3',

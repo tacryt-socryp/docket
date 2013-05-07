@@ -6,12 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "scrollable": [
-            "{\r",
-            "    direction: 'horizontal',\r",
-            "    directionLock: true\r",
-            "}"
-        ],
+        "scrollable": "horizontal",
         "layout": "fit",
         "docked": null,
         "fullscreen": null,
@@ -23,9 +18,6 @@
         "width": null,
         "designer|userClassName": "MyComponent2",
         "designer|userAlias": "myComponent3"
-    },
-    "configAlternates": {
-        "scrollable": "object"
     },
     "designerId": "abbd7baa-64bf-45e6-9e6b-c8b20efb4df7",
     "customConfigs": [
