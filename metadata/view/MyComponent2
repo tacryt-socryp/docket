@@ -19,7 +19,7 @@
         "minWidth": null,
         "showAnimation": null,
         "style": "background:#009933;",
-        "width": "200%",
+        "width": null,
         "designer|userClassName": "MyComponent2",
         "designer|userAlias": "myComponent3"
     },
