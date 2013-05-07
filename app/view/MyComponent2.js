@@ -21,6 +21,7 @@ Ext.define('Booking.view.MyComponent2', {
         fullscreen: true,
         itemId: 'myComponent3',
         style: 'background:#009933;',
+        width: '200%',
         scrollable: {
             direction: 'horizontal',
             directionLock: true
