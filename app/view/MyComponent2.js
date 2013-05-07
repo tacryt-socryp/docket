@@ -24,6 +24,7 @@ Ext.define('Booking.view.MyComponent2', {
         },
         itemId: 'myComponent3',
         style: 'background:#009933;',
+        width: '1600px',
         listeners: [
             {
                 fn: 'onMyComponentOnDragStart3',
