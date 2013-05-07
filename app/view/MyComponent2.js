@@ -18,6 +18,9 @@ Ext.define('Booking.view.MyComponent2', {
     alias: 'widget.myComponent3',
 
     config: {
+        layout: {
+            type: 'fit'
+        },
         fullscreen: true,
         itemId: 'myComponent3',
         style: 'background:#009933;',
