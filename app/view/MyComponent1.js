@@ -79,7 +79,7 @@ Ext.define('Booking.view.MyComponent1', {
                 width: 300,
                 radius: 10,
                 x: loc,
-                y: 180
+                y: 170
             }).show(true);
         }
 
@@ -93,7 +93,7 @@ Ext.define('Booking.view.MyComponent1', {
                 width: 300,
                 radius: 10,
                 x: loc,
-                y: 370
+                y: 380
             }).show(true);
         }
 
@@ -105,7 +105,7 @@ Ext.define('Booking.view.MyComponent1', {
             font: '18px Arial',
             fill: '#FFF',
             x: 200,
-            y: 470
+            y: 380
         }).show(true);
     }
 
