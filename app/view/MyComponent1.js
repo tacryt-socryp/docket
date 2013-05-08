@@ -56,15 +56,13 @@ Ext.define('Booking.view.MyComponent1', {
         this.isDragging = true;
 
         if (directionLock) {
-            if (direction === 'horizontal') {
-                this.isDragging = false;
-                return;
-            }
-        }
+            /*if (direction === 'horizontal' && absDeltaX > absDeltaY) {
+            this.isDragging = false;
+            return;
+            }*/
 
-        if (directionLock) {
             if (direction === 'vertical' && absDeltaY > absDeltaX) {
-                draw.stopPropagation();
+                //draw.stopPropagation();
             } else {
                 this.isDragging = false;
                 return;
