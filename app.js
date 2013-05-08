@@ -26,14 +26,13 @@ Ext.application({
         'MyStore'
     ],
     views: [
-        'mainCarousel',
-        'MyComponent'
+        'mainCarousel'
     ],
     name: 'Booking',
 
     launch: function() {
 
-        Ext.create('Booking.view.MyComponent', {fullscreen: true});
+        Ext.create('Booking.view.mainCarousel', {fullscreen: true});
     }
 
 });

@@ -13,8 +13,7 @@
             "MyStore"
         ],
         "views": [
-            "mainCarousel",
-            "MyComponent"
+            "mainCarousel"
         ],
         "name": "Booking"
     },
