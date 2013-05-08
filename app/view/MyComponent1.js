@@ -153,6 +153,7 @@ Ext.define('Booking.view.MyComponent1', {
             this.setOffsetAnimated(animationDirection * itemLength);
 
         } else {
+            console.log("Should scroll!");
             this.getScrollable().getScroller().scrollBy(offset, 0);
         }
     },
