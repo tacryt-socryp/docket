@@ -156,7 +156,7 @@ Ext.define('Booking.view.MyComponent1', {
         var tall = this.getHeight();
         //var wide = 700 * Ext.getCmp('MyStore').getCount();
 
-        Ext.getCmp('MyComponent1').setTargetSize(wide, tall);
+        this.setTargetSize(wide, tall);
 
         //Line across screen
         this.getSurface('main').add({

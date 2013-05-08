@@ -46,7 +46,7 @@
                     "var tall = this.getHeight();\r",
                     "//var wide = 700 * Ext.getCmp('MyStore').getCount();\r",
                     "\r",
-                    "Ext.getCmp('MyComponent1').setTargetSize(wide, tall);\r",
+                    "this.setTargetSize(wide, tall);\r",
                     "\r",
                     "//Line across screen\r",
                     "this.getSurface('main').add({\r",
