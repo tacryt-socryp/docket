@@ -31,8 +31,8 @@
                 "type": "array"
             },
             "codeClass": null,
-            "designerId": "de6c5f9e-82a4-4f7a-a94c-d99b17620670",
-            "masterInstanceId": "abbd7baa-64bf-45e6-9e6b-c8b20efb4df7"
+            "designerId": "942f68ab-e1da-4acf-afaa-d0c794a73262",
+            "masterInstanceId": "ed6567b9-4794-455a-9c21-11fef1e2a9f8"
         },
         {
             "type": "linkedinstance",
@@ -41,6 +41,9 @@
                 "type": "array"
             },
             "codeClass": null,
+            "userConfig": {
+                "itemId": null
+            },
             "designerId": "7506b58b-384e-4895-abd0-f8fbea015c37",
             "masterInstanceId": "f1eaeea6-2827-4d27-8efa-cc6c024dd251"
         }

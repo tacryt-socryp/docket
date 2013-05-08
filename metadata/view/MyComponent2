@@ -7,28 +7,25 @@
     "codeClass": null,
     "userConfig": {
         "layout": "fit",
-        "scrollable": "horizontal",
         "docked": null,
         "fullscreen": null,
         "height": null,
-        "itemId": "myComponent3",
+        "itemId": "myComponent2",
         "minWidth": null,
         "showAnimation": null,
-        "style": "background:#009933;",
-        "width": "1600px",
+        "style": "background:#0d6289;",
+        "width": null,
         "designer|userClassName": "MyComponent2",
-        "designer|userAlias": "myComponent2"
+        "designer|userAlias": "MyComponent2"
     },
-    "designerId": "abbd7baa-64bf-45e6-9e6b-c8b20efb4df7",
+    "configAlternates": {
+        "scrollable": "object"
+    },
+    "designerId": "ed6567b9-4794-455a-9c21-11fef1e2a9f8",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
             "name": "layout",
-            "type": "string"
-        },
-        {
-            "group": "(Custom Properties)",
-            "name": "scrollable",
             "type": "string"
         }
     ],
@@ -65,7 +62,7 @@
                     "\r",
                     "this.getSurface('main').add({\r",
                     "    type: 'text',\r",
-                    "    text: 'Meetings in Room B',\r",
+                    "    text: 'Meetings in Room A',\r",
                     "    font: '32px Arial',\r",
                     "    fill: '#FFF',\r",
                     "    x: 70,\r",
@@ -75,7 +72,7 @@
                     "//Rounded rectangle example\r",
                     "this.getSurface('main').add({\r",
                     "    type: 'rect',\r",
-                    "    fill: '#33C066',\r",
+                    "    fill: '#43aad5',\r",
                     "    height : 130,\r",
                     "    width: 300,\r",
                     "    radius: 10,\r",
@@ -95,7 +92,7 @@
                     "}).show(true);"
                 ]
             },
-            "designerId": "5126303a-0fee-498d-b7dc-993915f4a892"
+            "designerId": "c03b3748-9a68-44fc-a58d-8c8b1ee16de8"
         },
         {
             "type": "basiceventbinding",
@@ -105,15 +102,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onMyComponentOnDragStart3",
+                "fn": "onMyComponentOnDragStart1",
                 "designer|params": [
                     "draw"
                 ],
                 "implHandler": [
                     "var direction = this.getDirection(),\r",
-                    "            absDeltaX = draw.absDeltaX,\r",
-                    "            absDeltaY = draw.absDeltaY,\r",
-                    "            directionLock = this.getDirectionLock();\r",
+                    "    absDeltaX = draw.absDeltaX,\r",
+                    "    absDeltaY = draw.absDeltaY,\r",
+                    "    directionLock = this.getDirectionLock();\r",
                     "\r",
                     "this.isDragging = true;\r",
                     "\r",
@@ -135,7 +132,7 @@
                 ],
                 "name": "onDragStart"
             },
-            "designerId": "dc8b5c27-bea9-4c00-b36e-40c2d12071e5"
+            "designerId": "fde3c3e8-6600-40d0-aad7-a6195d62fba0"
         },
         {
             "type": "basiceventbinding",
@@ -145,7 +142,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onMyComponentOnDrag3",
+                "fn": "onMyComponentOnDrag1",
                 "designer|params": [
                     "draw"
                 ],
@@ -188,7 +185,7 @@
                 ],
                 "name": "onDrag"
             },
-            "designerId": "354c4189-5d28-4851-885b-263fdaafb096"
+            "designerId": "ebd19374-7578-43b6-a39f-171fddd6733f"
         },
         {
             "type": "basiceventbinding",
@@ -198,7 +195,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onMyComponentOnDragEnd3",
+                "fn": "onMyComponentOnDragEnd1",
                 "designer|params": [
                     "draw"
                 ],
@@ -250,7 +247,7 @@
                 ],
                 "name": "onDragEnd"
             },
-            "designerId": "1e046ee1-10b3-45a2-abf7-c5fa221c60ad"
+            "designerId": "721519dd-582f-4023-b3d9-d36bd5cf1820"
         }
     ]
 }

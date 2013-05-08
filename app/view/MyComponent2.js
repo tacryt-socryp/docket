@@ -15,33 +15,31 @@
 
 Ext.define('Booking.view.MyComponent2', {
     extend: 'Ext.draw.Component',
-    alias: 'widget.myComponent2',
+    alias: 'widget.MyComponent2',
 
     config: {
         layout: {
             type: 'fit'
         },
-        scrollable: 'horizontal',
-        itemId: 'myComponent3',
-        style: 'background:#009933;',
-        width: '1600px',
+        itemId: 'myComponent2',
+        style: 'background:#0d6289;',
         listeners: [
             {
-                fn: 'onMyComponentOnDragStart3',
+                fn: 'onMyComponentOnDragStart1',
                 event: 'onDragStart'
             },
             {
-                fn: 'onMyComponentOnDrag3',
+                fn: 'onMyComponentOnDrag1',
                 event: 'onDrag'
             },
             {
-                fn: 'onMyComponentOnDragEnd3',
+                fn: 'onMyComponentOnDragEnd1',
                 event: 'onDragEnd'
             }
         ]
     },
 
-    onMyComponentOnDragStart3: function(draw) {
+    onMyComponentOnDragStart1: function(draw) {
         var direction = this.getDirection(),
             absDeltaX = draw.absDeltaX,
             absDeltaY = draw.absDeltaY,
@@ -66,7 +64,7 @@ Ext.define('Booking.view.MyComponent2', {
         this.dragDirection = 0;
     },
 
-    onMyComponentOnDrag3: function(draw) {
+    onMyComponentOnDrag1: function(draw) {
         if (!this.isDragging) {
             return;
         }
@@ -104,7 +102,7 @@ Ext.define('Booking.view.MyComponent2', {
         this.setOffset(offset);
     },
 
-    onMyComponentOnDragEnd3: function(draw) {
+    onMyComponentOnDragEnd1: function(draw) {
         if (!this.isDragging) {
             return;
         }
@@ -174,7 +172,7 @@ Ext.define('Booking.view.MyComponent2', {
 
         this.getSurface('main').add({
             type: 'text',
-            text: 'Meetings in Room B',
+            text: 'Meetings in Room A',
             font: '32px Arial',
             fill: '#FFF',
             x: 70,
@@ -184,7 +182,7 @@ Ext.define('Booking.view.MyComponent2', {
         //Rounded rectangle example
         this.getSurface('main').add({
             type: 'rect',
-            fill: '#33C066',
+            fill: '#43aad5',
             height : 130,
             width: 300,
             radius: 10,

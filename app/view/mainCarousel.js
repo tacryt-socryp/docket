@@ -31,7 +31,7 @@ Ext.define('Booking.view.mainCarousel', {
                 xtype: 'myComponent1'
             },
             {
-                xtype: 'myComponent2'
+                xtype: 'MyComponent2'
             },
             {
                 xtype: 'myComponent3'
