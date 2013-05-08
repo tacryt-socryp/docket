@@ -15,7 +15,7 @@
         "style": "background:#0d6289;",
         "width": null,
         "designer|userClassName": "MyComponent1",
-        "designer|userAlias": "MyComponent1"
+        "designer|userAlias": "MyComponent"
     },
     "configAlternates": {
         "scrollable": "object"
@@ -47,8 +47,8 @@
             "userConfig": {
                 "fn": "onMyComponent1Painted",
                 "implHandler": [
-                    "var w       = 700 * Ext.getStore('MyStore').getCount(),\r",
-                    "    h       = this.getHeight(),\r",
+                    "var w = 700 * Ext.getStore('MyStore').getCount(),\r",
+                    "    h = this.getHeight(),\r",
                     "    dynText = '10:33 pm',\r",
                     "    surface = this.getSurface('main'),\r",
                     "    loc,\r",

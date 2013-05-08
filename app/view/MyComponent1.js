@@ -15,7 +15,7 @@
 
 Ext.define('Booking.view.MyComponent1', {
     extend: 'Ext.draw.Component',
-    alias: 'widget.MyComponent1',
+    alias: 'widget.MyComponent',
 
     config: {
         itemId: 'MyComponent1',
@@ -29,8 +29,8 @@ Ext.define('Booking.view.MyComponent1', {
     },
 
     onMyComponent1Painted: function(element, eOpts) {
-        var w       = 700 * Ext.getStore('MyStore').getCount(),
-            h       = this.getHeight(),
+        var w = 700 * Ext.getStore('MyStore').getCount(),
+            h = this.getHeight(),
             dynText = '10:33 pm',
             surface = this.getSurface('main'),
             loc,
