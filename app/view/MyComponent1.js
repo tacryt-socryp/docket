@@ -101,7 +101,7 @@ Ext.define('Booking.view.myComponent1', {
     },
 
     initialize: function() {
-        this.callParent();
+        //this.callParent();
     }
 
 });
