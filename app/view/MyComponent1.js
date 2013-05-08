@@ -161,6 +161,7 @@ Ext.define('Booking.view.MyComponent1', {
         console.log("w: " + w);
         console.log("h: " + h);
 
+        this.setSize(w,h);
         this.getSurface('main').setSize(w,h);
 
         //Line across screen
