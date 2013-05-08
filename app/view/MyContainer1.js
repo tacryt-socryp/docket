@@ -35,7 +35,7 @@ Ext.define('Booking.view.MyContainer1', {
                     {
                         fn: function(element, eOpts) {
                             var w = 700 * Ext.getStore('MyStore').getCount(),
-                                h = this.getHeight(),
+                                h = this.element.getHeight(),
                                 dynText = '10:33 pm',
                                 surface = this.getSurface('main'),
                                 loc,
