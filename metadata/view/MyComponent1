@@ -122,12 +122,10 @@
                     "    absDeltaX = draw.absDeltaX,\r",
                     "    absDeltaY = draw.absDeltaY,\r",
                     "    directionLock = this.getDirectionLock();\r",
-                    "\r",
                     "this.isDragging = true;\r",
                     "\r",
                     "if (directionLock) {\r",
-                    "    if (direction === 'vertical' && absDeltaY > absDeltaX)\r",
-                    "    || (direction === 'horizontal' && absDeltaX > absDeltaY) {\r",
+                    "    if (direction === 'vertical' && absDeltaY > absDeltaX) {\r",
                     "        draw.stopPropagation();\r",
                     "    } else {\r",
                     "        this.isDragging = false;\r",
@@ -159,9 +157,6 @@
                     "draw"
                 ],
                 "implHandler": [
-                    "if (direction === 'horizontal' && absDeltaX > absDeltaY) {\r",
-                    "    this.getSurface('main').getScrollable().getScroller().scrollBy(100, 0);\r",
-                    "}\r",
                     "if (!this.isDragging) {\r",
                     "    return;\r",
                     "}\r",
