@@ -12,7 +12,6 @@
             "    directionLock: true\r",
             "}"
         ],
-        "scroll": "horizontal",
         "docked": null,
         "fullscreen": null,
         "height": null,
@@ -29,11 +28,6 @@
     },
     "designerId": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
     "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "scroll",
-            "type": "string"
-        },
         {
             "group": "(Custom Properties)",
             "name": "scrollable",
