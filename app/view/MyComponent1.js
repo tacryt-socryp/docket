@@ -103,6 +103,7 @@ Ext.define('Booking.view.MyComponent1', {
         }
 
         else {
+            console.log("Should scroll!");
             this.getScrollable().getScroller().scrollBy(offset, 0);
         }
     },

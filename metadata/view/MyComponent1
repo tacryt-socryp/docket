@@ -196,7 +196,8 @@
                     "}\r",
                     "\r",
                     "else {\r",
-                    "this.getScrollable().getScroller().scrollBy(offset, 0);\r",
+                    "    console.log(\"Should scroll!\");\r",
+                    "    this.getScrollable().getScroller().scrollBy(offset, 0);\r",
                     "}"
                 ],
                 "name": "onDrag"
