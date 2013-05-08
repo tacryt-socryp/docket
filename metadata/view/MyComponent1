@@ -6,12 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "scrollable": [
-            "{\r",
-            "    direction: 'horizontal',\r",
-            "    directionLock: true\r",
-            "}"
-        ],
+        "scrollable": null,
         "docked": null,
         "fullscreen": null,
         "height": null,

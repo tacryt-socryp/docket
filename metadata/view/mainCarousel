@@ -21,6 +21,14 @@
                 "type": "array"
             },
             "codeClass": null,
+            "userConfig": {
+                "scrollable": [
+                    "{\r",
+                    "    direction: 'horizontal',\r",
+                    "    directionLock: true\r",
+                    "}"
+                ]
+            },
             "designerId": "d471ea87-fcdf-4bb2-90cc-389d3d046678",
             "masterInstanceId": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be"
         },
