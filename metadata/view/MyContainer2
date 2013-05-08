@@ -9,7 +9,6 @@
         "itemId": "MyContainer2",
         "designer|userClassName": "MyContainer2",
         "designer|userAlias": "MyContainer2",
-        "layout": "fit",
         "scrollable": [
             "{\r",
             "    direction: 'horizontal',\r",
@@ -20,17 +19,151 @@
     "configAlternates": {
         "scrollable": "object"
     },
-    "designerId": "b37e7f12-8ce9-4d9f-b7be-9ac8919307bb",
+    "designerId": "68d13d4d-945b-4546-a15a-71ac0804d593",
     "cn": [
         {
-            "type": "linkedinstance",
+            "type": "Ext.draw.Component",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
-            "designerId": "ab2fb700-8d5f-4fe6-b834-86c54a11994a",
-            "masterInstanceId": "7b8038e6-c1a9-4724-97dd-f80edf7ba5dd"
+            "userConfig": {
+                "docked": null,
+                "height": null,
+                "itemId": "inlineDraw2",
+                "minWidth": null,
+                "showAnimation": null,
+                "style": "background:#0d6289;",
+                "width": null
+            },
+            "configAlternates": {
+                "scrollable": "object"
+            },
+            "designerId": "b39ffcae-6344-4c13-862e-159a085fbe4f",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "initialize",
+                        "implHandler": [
+                            "this.callParent();"
+                        ]
+                    },
+                    "designerId": "192eb24f-acc5-412e-b453-7b6e7e9c2daa"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMyComponent1Painted1",
+                        "implHandler": [
+                            "var w = 700 * Ext.getStore('MyStore').getCount(),\r",
+                            "    h = Ext.getBody().getSize().height,\r",
+                            "    dynText = '10:33 pm',\r",
+                            "    surface = this.getSurface('main'),\r",
+                            "    loc,\r",
+                            "    iter;\r",
+                            "\r",
+                            "console.log(\"w: \" + w);\r",
+                            "console.log(\"h: \" + h);\r",
+                            "\r",
+                            "this.setSize(w,h);\r",
+                            "surface.setSize(w,h);\r",
+                            "\r",
+                            "//Line across screen\r",
+                            "surface.add({\r",
+                            "    type: 'rect',\r",
+                            "    fill: '#176c93',\r",
+                            "    height : 20,\r",
+                            "    width: w,\r",
+                            "    x: 0,\r",
+                            "    y: 330\r",
+                            "}).show(true);\r",
+                            "\r",
+                            "surface.add({\r",
+                            "    type: 'text',\r",
+                            "    text: 'Meetings in Room A',\r",
+                            "    font: '32px Arial',\r",
+                            "    fill: '#FFF',\r",
+                            "    x: 70,\r",
+                            "    y: 50\r",
+                            "}).show(true);\r",
+                            "\r",
+                            "for (iter=0; iter<5; iter++) {\r",
+                            "    loc = 100 + iter*500;\r",
+                            "    //Rounded rectangle example\r",
+                            "    surface.add({\r",
+                            "        type: 'rect',\r",
+                            "        fill: '#43aad5',\r",
+                            "        height : 130,\r",
+                            "        width: 300,\r",
+                            "        radius: 10,\r",
+                            "        x: loc,\r",
+                            "        y: 170\r",
+                            "    }).show(true);\r",
+                            "    console.log(\"Making rectangle\");\r",
+                            "}\r",
+                            "\r",
+                            "for (iter=0; iter<5; iter++) {\r",
+                            "    loc = 350 + iter*500;\r",
+                            "    //Rounded rectangle example\r",
+                            "    surface.add({\r",
+                            "        type: 'rect',\r",
+                            "        fill: '#43aad5',\r",
+                            "        height : 130,\r",
+                            "        width: 300,\r",
+                            "        radius: 10,\r",
+                            "        x: loc,\r",
+                            "        y: 380\r",
+                            "    }).show(true);\r",
+                            "}\r",
+                            "\r",
+                            "\r",
+                            "surface.add({\r",
+                            "    type: 'text',\r",
+                            "    text: dynText,\r",
+                            "    font: '18px Arial',\r",
+                            "    fill: '#FFF',\r",
+                            "    x: 200,\r",
+                            "    y: 380\r",
+                            "}).show(true);"
+                        ],
+                        "name": "painted"
+                    },
+                    "designerId": "3868063d-e15a-421d-9c3d-81de99a5d417"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onInlineDrawResize",
+                        "implHandler": [
+                            "var w = 700 * Ext.getStore('MyStore').getCount(),\r",
+                            "    h = Ext.getBody().getSize().height,\r",
+                            "    surface = this.getSurface('main');\r",
+                            "\r",
+                            "this.setSize(w,h);\r",
+                            "surface.setSize(w,h);"
+                        ],
+                        "name": "resize"
+                    },
+                    "designerId": "cf061e26-a482-4c4b-9112-a8e66dafe234"
+                }
+            ]
         }
     ]
 }
