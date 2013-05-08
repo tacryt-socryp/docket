@@ -19,8 +19,8 @@ Ext.define('Booking.view.mainCarousel', {
 
     requires: [
         'Booking.view.MyComponent1',
-        'Booking.view.MyComponent3',
-        'Booking.view.MyComponent2'
+        'Booking.view.MyComponent2',
+        'Booking.view.MyComponent3'
     ],
 
     config: {

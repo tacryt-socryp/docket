@@ -15,7 +15,7 @@
 
 Ext.define('Booking.view.MyComponent2', {
     extend: 'Ext.draw.Component',
-    alias: 'widget.myComponent3',
+    alias: 'widget.myComponent2',
 
     config: {
         layout: {

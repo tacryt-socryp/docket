@@ -16,7 +16,7 @@
         "style": "background:#CC3333;",
         "width": null,
         "designer|userClassName": "MyComponent3",
-        "designer|userAlias": "myComponent2"
+        "designer|userAlias": "myComponent3"
     },
     "configAlternates": {
         "scrollable": "object"
