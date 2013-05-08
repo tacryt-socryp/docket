@@ -17,11 +17,10 @@ Ext.define('Booking.view.MyComponent', {
     extend: 'Ext.draw.Component',
 
     config: {
-        layout: {
-            type: 'fit'
-        },
+        height: 740,
         itemId: 'myComponent',
         style: 'background:#0d6289;',
+        width: '100%',
         scrollable: {
             direction: 'horizontal',
             directionLock: true

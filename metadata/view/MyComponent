@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "layout": "fit",
+        "layout": null,
         "scrollable": [
             "{\r",
             "    direction: 'horizontal', \r",
@@ -15,12 +15,12 @@
         ],
         "docked": null,
         "fullscreen": null,
-        "height": null,
+        "height": 740,
         "itemId": "myComponent",
         "minWidth": null,
         "showAnimation": null,
         "style": "background:#0d6289;",
-        "width": null,
+        "width": "100%",
         "designer|userClassName": "MyComponent",
         "designer|initialView": true
     },
