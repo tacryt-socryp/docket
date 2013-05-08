@@ -41,6 +41,8 @@ Ext.define('Booking.view.MyComponent1', {
 
         var w = 700 * Ext.getStore('MyStore').getCount();
         var h = this.getHeight();
+        var loc;
+        var iter;
 
         console.log("w: " + w);
         console.log("h: " + h);
@@ -67,8 +69,8 @@ Ext.define('Booking.view.MyComponent1', {
             y: 50
         }).show(true);
 
-        for (var iter=0; iter<5; iter++) {
-            var loc = 100 + iter*500;
+        for (iter=0; iter<5; iter++) {
+            loc = 100 + iter*500;
             //Rounded rectangle example
             this.getSurface('main').add({
                 type: 'rect',
@@ -77,7 +79,21 @@ Ext.define('Booking.view.MyComponent1', {
                 width: 300,
                 radius: 10,
                 x: loc,
-                y: 260
+                y: 330
+            }).show(true);
+        }
+
+        for (iter=0; iter<5; iter++) {
+            loc = 350 + iter*500;
+            //Rounded rectangle example
+            this.getSurface('main').add({
+                type: 'rect',
+                fill: '#43aad5',
+                height : 130,
+                width: 300,
+                radius: 10,
+                x: loc,
+                y: 530
             }).show(true);
         }
 
