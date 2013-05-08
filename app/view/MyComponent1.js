@@ -64,7 +64,7 @@ Ext.define('Booking.view.MyComponent1', {
         this.dragStartOffset = this.offset;
         this.dragDirection = 0;
 
-        this.getScrollable().getScroller().scrollBy(offset, 0);
+        this.getScrollable().getScroller().scrollBy(this.offset, 0);
     },
 
     onMyComponentOnDrag1: function(draw) {
@@ -106,7 +106,7 @@ Ext.define('Booking.view.MyComponent1', {
 
         else {
             console.log("Should scroll!");
-            this.getScrollable().getScroller().scrollBy(offset, 0);
+            this.getScrollable().getScroller().scrollBy(this.offset, 0);
         }
     },
 
