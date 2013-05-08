@@ -32,15 +32,14 @@ Ext.define('Booking.view.MyComponent1', {
         var w       = 700 * Ext.getStore('MyStore').getCount(),
             h       = this.element.getHeight(),
             dynText = '10:33 pm',
-            child   = this.items.getAt(0),
-            surface = child.getSurface('main'),
+            surface = this.getSurface('main'),
             loc,
             iter;
 
         console.log("w: " + w);
         console.log("h: " + h);
 
-        child.setSize(w,h);
+        this.setSize(w,h);
         surface.setSize(w,h);
 
         //Line across screen
