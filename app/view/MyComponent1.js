@@ -165,7 +165,7 @@ Ext.define('Booking.view.MyComponent1', {
             type: 'rect',
             fill: '#176c93',
             height : 20,
-            width: 1440,
+            width: w,
             x: 0,
             y: 430
         }).show(true);
