@@ -101,6 +101,10 @@ Ext.define('Booking.view.MyComponent1', {
             this.setOffset(offset);
 
         }
+
+        else {
+            this.getScrollable().getScroller().scrollBy(offset, 0);
+        }
     },
 
     onMyComponentOnDragEnd1: function(draw) {

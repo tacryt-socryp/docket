@@ -193,6 +193,10 @@
                     "this.dragDirection = dragDirection;\r",
                     "this.setOffset(offset);\r",
                     "    \r",
+                    "}\r",
+                    "\r",
+                    "else {\r",
+                    "this.getScrollable().getScroller().scrollBy(offset, 0);\r",
                     "}"
                 ],
                 "name": "onDrag"
