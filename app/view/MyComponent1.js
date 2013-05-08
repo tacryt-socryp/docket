@@ -19,18 +19,16 @@ Ext.define('Booking.view.MyComponent1', {
 
     config: {
         itemId: 'myComponent1',
-        style: 'background:#0d6289;'
+        style: 'background:#0d6289;',
+        listeners: [
+            {
+                fn: 'onMyComponent1Painted',
+                event: 'painted'
+            }
+        ]
     },
 
-    initialize: function() {
-        this.callParent();
-        this.element.on({
-            scope : this,
-            painted : this.onElementPainted()
-        });
-    },
-
-    onElementPainted: function() {
+    onMyComponent1Painted: function(element, eOpts) {
         var w       = 700 * Ext.getStore('MyStore').getCount(),
             h       = this.element.getHeight(),
             dynText = '10:33 pm',
@@ -101,6 +99,10 @@ Ext.define('Booking.view.MyComponent1', {
             x: 200,
             y: 380
         }).show(true);
+    },
+
+    initialize: function() {
+        this.callParent();
     }
 
 });

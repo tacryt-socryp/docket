@@ -32,29 +32,25 @@
             "userConfig": {
                 "fn": "initialize",
                 "implHandler": [
-                    "this.callParent();\r",
-                    "this.element.on({\r",
-                    "    scope : this,\r",
-                    "    painted : this.onElementPainted\r",
-                    "});"
+                    "this.callParent();"
                 ]
             },
             "designerId": "87425d03-1f41-4721-ba73-bfdc1b86a8d5"
         },
         {
-            "type": "basicfunction",
+            "type": "basiceventbinding",
             "reference": {
-                "name": "items",
+                "name": "listeners",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onElementPainted",
+                "fn": "onMyComponent1Painted",
                 "implHandler": [
                     "var w       = 700 * Ext.getStore('MyStore').getCount(),\r",
-                    "    h       = me.element.getHeight(),\r",
+                    "    h       = this.element.getHeight(),\r",
                     "    dynText = '10:33 pm',\r",
-                    "    child   = me.items.getAt(0),\r",
+                    "    child   = this.items.getAt(0),\r",
                     "    surface = child.getSurface('main'),\r",
                     "    loc,\r",
                     "    iter;\r",
@@ -121,9 +117,10 @@
                     "    x: 200,\r",
                     "    y: 380\r",
                     "}).show(true);"
-                ]
+                ],
+                "name": "painted"
             },
-            "designerId": "dabd8531-3771-4630-bb44-e2365a2a0ca4"
+            "designerId": "ffeb5694-c302-4796-a3cb-2dd3f7070e3d"
         }
     ]
 }
