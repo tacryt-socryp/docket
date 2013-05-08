@@ -16,10 +16,7 @@
         "style": "background:#0d6289;",
         "width": null,
         "designer|userClassName": "MyComponent1",
-        "designer|userAlias": "myComponent1",
-        "requires": [
-            "Booking.store.MyStore"
-        ]
+        "designer|userAlias": "myComponent1"
     },
     "configAlternates": {
         "scrollable": "object"
@@ -45,7 +42,7 @@
                 "implHandler": [
                     "this.callParent();\r",
                     "\r",
-                    "var wide = 70 * Ext.getStore('MyStore').getCount();\r",
+                    "var wide = 700 * Ext.getStore('MyStore').getCount();\r",
                     "//var wide = 700 * Ext.getCmp('MyStore').getCount();\r",
                     "\r",
                     "Ext.getCmp('MyComponent1').setWidth(wide);\r",
