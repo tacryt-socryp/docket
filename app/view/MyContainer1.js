@@ -23,6 +23,9 @@ Ext.define('Booking.view.MyContainer1', {
 
     config: {
         itemId: 'MyContainer1',
+        layout: {
+            type: 'fit'
+        },
         scrollable: {
             direction: 'horizontal',
             directionLock: true

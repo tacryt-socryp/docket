@@ -9,7 +9,7 @@
         "itemId": "MyContainer1",
         "designer|userClassName": "MyContainer1",
         "designer|userAlias": "MyContainer1",
-        "layout": null,
+        "layout": "fit",
         "scrollable": [
             "{\r",
             "    direction: 'horizontal',\r",
