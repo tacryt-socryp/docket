@@ -22,7 +22,11 @@ Ext.define('Booking.view.MyComponent2', {
             type: 'fit'
         },
         itemId: 'myComponent2',
-        style: 'background:#0d6289;'
+        style: 'background:#0d6289;',
+        scrollable: {
+            direction: 'horizontal',
+            directionLock: true
+        }
     },
 
     initialize: function() {
