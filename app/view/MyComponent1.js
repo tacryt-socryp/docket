@@ -183,8 +183,8 @@ Ext.define('Booking.view.MyComponent1', {
             y: 50
         }).show(true);
 
-        for (var iter=0;iter<5;iter++) {
-            var loc = 100 + iter*600;
+        for (var iter=0; iter<5; iter++) {
+            var loc = 100 + iter*500;
             //Rounded rectangle example
             this.getSurface('main').add({
                 type: 'rect',
