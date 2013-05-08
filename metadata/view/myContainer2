@@ -10,6 +10,7 @@
         "itemId": "MyContainer2",
         "designer|userClassName": "MyContainer2",
         "designer|userAlias": "MyContainer2",
+        "designer|initialView": true,
         "layout": null,
         "scrollable": [
             "{\r",
