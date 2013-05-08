@@ -7,13 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "layout": "fit",
-        "scrollable": [
-            "{\r",
-            "    direction: 'horizontal', \r",
-            "    directionLock: true\r",
-            "}"
-        ],
-        "overflow-x": "scroll",
+        "scroll": "horizontal",
         "docked": null,
         "fullscreen": null,
         "height": null,
@@ -37,12 +31,7 @@
         },
         {
             "group": "(Custom Properties)",
-            "name": "scrollable",
-            "type": "string"
-        },
-        {
-            "group": "(Custom Properties)",
-            "name": "overflow-x",
+            "name": "scroll",
             "type": "string"
         }
     ],
