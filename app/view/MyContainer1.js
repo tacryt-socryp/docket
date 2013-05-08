@@ -41,7 +41,8 @@ Ext.define('Booking.view.MyContainer1', {
                                 loc,
                                 iter;
 
-                            h = 760;
+                            //h = 760;
+                            h = Ext.getBody().getSize();
 
                             console.log("w: " + w);
                             console.log("h: " + h);

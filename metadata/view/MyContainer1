@@ -76,6 +76,7 @@
                             "    iter;\r",
                             "\r",
                             "h = 760;\r",
+                            "h = Ext.getBody().getSize();\r",
                             "\r",
                             "console.log(\"w: \" + w);\r",
                             "console.log(\"h: \" + h);\r",
