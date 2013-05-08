@@ -191,7 +191,7 @@ Ext.define('Booking.view.MyComponent1', {
                 height : 130,
                 width: 300,
                 radius: 10,
-                x: 100 + (iter*300),
+                x: 100 + (iter*400),
                 y: 260
             }).show(true);
         }

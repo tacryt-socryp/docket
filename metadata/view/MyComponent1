@@ -89,7 +89,7 @@
                     "        height : 130,\r",
                     "        width: 300,\r",
                     "        radius: 10,\r",
-                    "        x: 100 + (iter*100),\r",
+                    "        x: 100 + (iter*400),\r",
                     "        y: 260\r",
                     "    }).show(true);\r",
                     "}\r",
