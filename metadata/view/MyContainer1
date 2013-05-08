@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userClassName": "MyContainer1",
         "designer|userAlias": "mycontainer1",
-        "layout": "fit",
+        "layout": "card",
         "scrollable": [
             "{\r",
             "    direction: 'horizontal',\r",
