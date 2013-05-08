@@ -15,7 +15,7 @@
 
 Ext.define('Booking.view.myContainer2', {
     extend: 'Ext.Container',
-    alias: 'widget.mycontainer2',
+    alias: 'widget.myContainer2',
 
     requires: [
         'Booking.view.myComponent2'
