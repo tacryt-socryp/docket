@@ -60,7 +60,7 @@ Ext.define('Booking.view.MyComponent1', {
         }
 
         if (this.isAnimating) {
-            this.getActiveCarouselItem().getTranslatable().stopAnimation();
+            //this.getActiveCarouselItem().getTranslatable().stopAnimation();
         }
 
         this.dragStartOffset = this.offset;
