@@ -64,6 +64,7 @@ Ext.define('Booking.view.MyComponent1', {
         this.dragStartOffset = this.offset;
         this.dragDirection = 0;
 
+        console.log("Should display.");
         this.getScrollable().getScroller().scrollBy(this.offset, 0);
     },
 
@@ -80,13 +81,13 @@ Ext.define('Booking.view.MyComponent1', {
             lastDragDirection = dragDirection,
             offset;
 
+        if ((currentActiveIndex === 0 && delta > 0) || (currentActiveIndex === maxIndex && delta < 0)) {
+            delta *= 0.5;
+        }
+
+        offset = startOffset + delta;
+
         if (direction === 'vertical') {
-
-            if ((currentActiveIndex === 0 && delta > 0) || (currentActiveIndex === maxIndex && delta < 0)) {
-                delta *= 0.5;
-            }
-
-            offset = startOffset + delta;
 
             if (offset > lastOffset) {
                 dragDirection = 1;
@@ -103,7 +104,6 @@ Ext.define('Booking.view.MyComponent1', {
             this.setOffset(offset);
 
         }
-
         else {
             console.log("Should scroll!");
             this.getScrollable().getScroller().scrollBy(this.offset, 0);

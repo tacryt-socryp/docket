@@ -142,7 +142,8 @@
                     "this.dragStartOffset = this.offset;\r",
                     "this.dragDirection = 0;\r",
                     "\r",
-                    "this.getScrollable().getScroller().scrollBy(offset, 0);"
+                    "console.log(\"Should display.\");\r",
+                    "this.getScrollable().getScroller().scrollBy(this.offset, 0);"
                 ],
                 "name": "onDragStart"
             },
@@ -173,13 +174,13 @@
                     "    lastDragDirection = dragDirection,\r",
                     "    offset;\r",
                     "\r",
-                    "if (direction === 'vertical') {\r",
-                    "\r",
                     "if ((currentActiveIndex === 0 && delta > 0) || (currentActiveIndex === maxIndex && delta < 0)) {\r",
                     "    delta *= 0.5;\r",
                     "}\r",
                     "\r",
                     "offset = startOffset + delta;\r",
+                    "\r",
+                    "if (direction === 'vertical') {\r",
                     "\r",
                     "if (offset > lastOffset) {\r",
                     "    dragDirection = 1;\r",
@@ -196,10 +197,9 @@
                     "this.setOffset(offset);\r",
                     "    \r",
                     "}\r",
-                    "\r",
                     "else {\r",
                     "    console.log(\"Should scroll!\");\r",
-                    "    this.getScrollable().getScroller().scrollBy(offset, 0);\r",
+                    "    this.getScrollable().getScroller().scrollBy(this.offset, 0);\r",
                     "}"
                 ],
                 "name": "onDrag"
