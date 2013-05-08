@@ -34,7 +34,7 @@ Ext.define('Booking.view.MyComponent2', {
     onMyComponent1Painted: function(element, eOpts) {
         var w       = 700 * Ext.getStore('MyStore').getCount(),
             h       = this.getHeight(),
-            dynText = '10:33 pm',
+            dynText = '11:42 pm',
             surface = this.getSurface('main'),
             loc,
             iter;
@@ -57,7 +57,7 @@ Ext.define('Booking.view.MyComponent2', {
 
         surface.add({
             type: 'text',
-            text: 'Meetings in Room A',
+            text: 'Meetings in Room B',
             font: '32px Arial',
             fill: '#FFF',
             x: 70,
