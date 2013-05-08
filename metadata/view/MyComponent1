@@ -91,6 +91,7 @@
                     "        x: loc,\r",
                     "        y: 170\r",
                     "    }).show(true);\r",
+                    "    console.log(\"Making rectangle\");\r",
                     "}\r",
                     "\r",
                     "for (iter=0; iter<5; iter++) {\r",

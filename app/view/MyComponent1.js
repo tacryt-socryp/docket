@@ -73,6 +73,7 @@ Ext.define('Booking.view.MyComponent1', {
                 x: loc,
                 y: 170
             }).show(true);
+            console.log("Making rectangle");
         }
 
         for (iter=0; iter<5; iter++) {
