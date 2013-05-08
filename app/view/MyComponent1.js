@@ -183,16 +183,18 @@ Ext.define('Booking.view.MyComponent1', {
             y: 50
         }).show(true);
 
-        //Rounded rectangle example
-        this.getSurface('main').add({
-            type: 'rect',
-            fill: '#43aad5',
-            height : 130,
-            width: 300,
-            radius: 10,
-            x: 100,
-            y: 260
-        }).show(true);
+        for (iter=0;iter<5;iter++) {
+            //Rounded rectangle example
+            this.getSurface('main').add({
+                type: 'rect',
+                fill: '#43aad5',
+                height : 130,
+                width: 300,
+                radius: 10,
+                x: 100 + (iter*300),
+                y: 260
+            }).show(true);
+        }
 
         var dynText = '10:33 pm';
 
