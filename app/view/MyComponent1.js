@@ -111,20 +111,20 @@ Ext.define('Booking.view.MyComponent1', {
         this.onDrag(draw);
         this.isDragging = false;
 
-        if (direction === 'vertical') {
+        var now = Ext.Date.now(),
+            itemLength = this.itemLength,
+            threshold = itemLength / 2,
+            offset = this.offset,
+            activeIndex = this.getActiveIndex(),
+            maxIndex = this.getMaxItemIndex(),
+            animationDirection = 0,
+            flickDistance = offset - this.flickStartOffset,
+            flickDuration = now - this.flickStartTime,
+            indicator = this.getIndicator(),
+            direction = this.getDirection(),
+            velocity;
 
-            var now = Ext.Date.now(),
-                itemLength = this.itemLength,
-                threshold = itemLength / 2,
-                offset = this.offset,
-                activeIndex = this.getActiveIndex(),
-                maxIndex = this.getMaxItemIndex(),
-                animationDirection = 0,
-                flickDistance = offset - this.flickStartOffset,
-                flickDuration = now - this.flickStartTime,
-                indicator = this.getIndicator(),
-                direction = this.getDirection(),
-                velocity;
+        if (direction === 'vertical') {
 
             if (flickDuration > 0 && Math.abs(flickDistance) >= 10) {
                 velocity = flickDistance / flickDuration;
@@ -152,6 +152,8 @@ Ext.define('Booking.view.MyComponent1', {
             this.animationDirection = animationDirection;
             this.setOffsetAnimated(animationDirection * itemLength);
 
+        } else {
+            this.getScrollable().getScroller().scrollBy(offset, 0);
         }
     },
 

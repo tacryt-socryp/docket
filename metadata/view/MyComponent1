@@ -219,8 +219,6 @@
                     "this.onDrag(draw);\r",
                     "this.isDragging = false;\r",
                     "\r",
-                    "if (direction === 'vertical') {\r",
-                    "\r",
                     "var now = Ext.Date.now(),\r",
                     "    itemLength = this.itemLength,\r",
                     "    threshold = itemLength / 2,\r",
@@ -233,6 +231,8 @@
                     "    indicator = this.getIndicator(),\r",
                     "    direction = this.getDirection(),\r",
                     "    velocity;\r",
+                    "\r",
+                    "if (direction === 'vertical') {\r",
                     "\r",
                     "if (flickDuration > 0 && Math.abs(flickDistance) >= 10) {\r",
                     "    velocity = flickDistance / flickDuration;\r",
@@ -260,6 +260,8 @@
                     "this.animationDirection = animationDirection;\r",
                     "this.setOffsetAnimated(animationDirection * itemLength);\r",
                     "    \r",
+                    "} else {\r",
+                    "this.getScrollable().getScroller().scrollBy(offset, 0);\r",
                     "}"
                 ],
                 "name": "onDragEnd"
