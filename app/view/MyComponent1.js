@@ -26,7 +26,7 @@ Ext.define('Booking.view.MyComponent1', {
         this.callParent();
         this.element.on({
             scope : this,
-            painted : this.onElementPainted
+            painted : this.onElementPainted()
         });
     },
 
