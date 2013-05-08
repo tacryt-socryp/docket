@@ -16,7 +16,10 @@
         "style": "background:#0d6289;",
         "width": null,
         "designer|userClassName": "MyComponent1",
-        "designer|userAlias": "myComponent1"
+        "designer|userAlias": "myComponent1",
+        "requires": [
+            "Booking.store.MyStore"
+        ]
     },
     "configAlternates": {
         "scrollable": "object"
@@ -43,7 +46,7 @@
                     "this.callParent();\r",
                     "\r",
                     "\r",
-                    "var wide = 700 * store.MyStore.getCount();\r",
+                    "var wide = 700 * Booking.store.MyStore.getCount();\r",
                     "//var wide = 700 * Ext.getCmp('MyStore').getCount();\r",
                     "\r",
                     "Ext.getCmp('MyComponent1').setWidth(wide);\r",
@@ -106,9 +109,9 @@
                 ],
                 "implHandler": [
                     "var direction = this.getDirection(),\r",
-                    "            absDeltaX = draw.absDeltaX,\r",
-                    "            absDeltaY = draw.absDeltaY,\r",
-                    "            directionLock = this.getDirectionLock();\r",
+                    "    absDeltaX = draw.absDeltaX,\r",
+                    "    absDeltaY = draw.absDeltaY,\r",
+                    "    directionLock = this.getDirectionLock();\r",
                     "\r",
                     "this.isDragging = true;\r",
                     "\r",

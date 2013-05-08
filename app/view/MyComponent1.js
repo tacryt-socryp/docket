@@ -17,6 +17,10 @@ Ext.define('Booking.view.MyComponent1', {
     extend: 'Ext.draw.Component',
     alias: 'widget.myComponent1',
 
+    requires: [
+        'Booking.store.MyStore'
+    ],
+
     config: {
         layout: {
             type: 'fit'
