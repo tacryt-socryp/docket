@@ -155,6 +155,9 @@ Ext.define('Booking.view.MyComponent1', {
         var w = 700 * Ext.getStore('MyStore').getCount();
         var h = this.getHeight();
 
+        console.log("w: " + w);
+        console.log("h: " + h);
+
         this.getSurface('main').setSize(w,h);
 
         //Line across screen
