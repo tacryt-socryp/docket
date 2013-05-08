@@ -20,7 +20,11 @@ Ext.define('Booking.view.MyComponent1', {
     config: {
         scroll: 'horizontal',
         itemId: 'myComponent1',
-        style: 'background:#0d6289;'
+        style: 'background:#0d6289;',
+        scrollable: {
+            direction: 'horizontal',
+            directionLock: true
+        }
     },
 
     initialize: function() {
