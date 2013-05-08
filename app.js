@@ -30,5 +30,11 @@ Ext.application({
         'MyComponent1',
         'MyContainer1'
     ],
-    name: 'Booking'
+    name: 'Booking',
+
+    launch: function() {
+
+        Ext.create('Booking.view.mainCarousel', {fullscreen: true});
+    }
+
 });
