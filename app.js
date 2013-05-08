@@ -27,7 +27,9 @@ Ext.application({
     ],
     views: [
         'mainCarousel',
-        'MyContainer1'
+        'myContainer1',
+        'myComponent2',
+        'myContainer2'
     ],
     name: 'Booking',
 

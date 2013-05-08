@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "itemId": "myContainer1",
-        "designer|userClassName": "myContainer1",
-        "designer|userAlias": "mycontainer1",
+        "itemId": "myContainer2",
+        "designer|userClassName": "myContainer2",
+        "designer|userAlias": "mycontainer2",
         "layout": "card",
         "scrollable": [
             "{\r",
@@ -20,7 +20,7 @@
     "configAlternates": {
         "scrollable": "object"
     },
-    "designerId": "9222a550-a924-416c-8431-7f97979090f6",
+    "designerId": "857a2d32-1f9f-470f-a75f-af423cd34d90",
     "cn": [
         {
             "type": "linkedinstance",
@@ -29,8 +29,8 @@
                 "type": "array"
             },
             "codeClass": null,
-            "designerId": "7788a8a8-8494-4db9-bfb2-ccc889b1112d",
-            "masterInstanceId": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be"
+            "designerId": "be450cb9-bce9-4a27-b4bc-641c74a3cab2",
+            "masterInstanceId": "2d6161f9-bf66-4840-852f-d095a57884dd"
         }
     ]
 }

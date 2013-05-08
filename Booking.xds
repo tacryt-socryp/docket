@@ -63,26 +63,44 @@
         },
         "651ff493-cbcb-4d3e-b279-7cbe4d73a3be": {
             "paths": [
-                "metadata/view/MyComponent1",
-                "app/view/override/MyComponent1.js",
-                "app/view/MyComponent1.js"
+                "metadata/view/myComponent1",
+                "app/view/override/myComponent1.js",
+                "app/view/myComponent1.js"
             ],
-            "className": "MyComponent1"
+            "className": "myComponent1"
         },
         "9222a550-a924-416c-8431-7f97979090f6": {
             "paths": [
-                "metadata/view/MyContainer1",
-                "app/view/override/MyContainer1.js",
-                "app/view/MyContainer1.js"
+                "metadata/view/myContainer1",
+                "app/view/override/myContainer1.js",
+                "app/view/myContainer1.js"
             ],
-            "className": "MyContainer1"
+            "className": "myContainer1"
+        },
+        "857a2d32-1f9f-470f-a75f-af423cd34d90": {
+            "paths": [
+                "metadata/view/myContainer2",
+                "app/view/override/myContainer2.js",
+                "app/view/myContainer2.js"
+            ],
+            "className": "myContainer2"
+        },
+        "2d6161f9-bf66-4840-852f-d095a57884dd": {
+            "paths": [
+                "metadata/view/myComponent2",
+                "app/view/override/myComponent2.js",
+                "app/view/myComponent2.js"
+            ],
+            "className": "myComponent2"
         }
     },
     "viewOrderMap": {
         "view": [
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "9222a550-a924-416c-8431-7f97979090f6",
+            "857a2d32-1f9f-470f-a75f-af423cd34d90",
             "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
+            "2d6161f9-bf66-4840-852f-d095a57884dd",
             "ecb08921-839f-4590-8266-0cbdeabbea84"
         ],
         "store": [

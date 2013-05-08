@@ -10,6 +10,9 @@
             "cn": [
                 {
                     "id": "31a8bc6b-1a6f-467f-a13a-4d205c547d72"
+                },
+                {
+                    "id": "46e4f7b4-dc2f-4883-bf7a-790acfb0b5c6"
                 }
             ]
         },
@@ -18,6 +21,14 @@
             "cn": [
                 {
                     "id": "7788a8a8-8494-4db9-bfb2-ccc889b1112d"
+                }
+            ]
+        },
+        "857a2d32-1f9f-470f-a75f-af423cd34d90": {
+            "id": "857a2d32-1f9f-470f-a75f-af423cd34d90",
+            "cn": [
+                {
+                    "id": "be450cb9-bce9-4a27-b4bc-641c74a3cab2"
                 }
             ]
         },
@@ -30,6 +41,18 @@
                 },
                 {
                     "id": "ffeb5694-c302-4796-a3cb-2dd3f7070e3d"
+                }
+            ]
+        },
+        "2d6161f9-bf66-4840-852f-d095a57884dd": {
+            "id": "2d6161f9-bf66-4840-852f-d095a57884dd",
+            "expanded": false,
+            "cn": [
+                {
+                    "id": "fbf41d8b-8ec2-41a4-9f04-0fb4e1f1078c"
+                },
+                {
+                    "id": "2b0a8ef1-66a6-4ae7-b846-355fbdfd8384"
                 }
             ]
         },
@@ -70,18 +93,20 @@
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
             "9222a550-a924-416c-8431-7f97979090f6",
-            "ecb08921-839f-4590-8266-0cbdeabbea84"
+            "ecb08921-839f-4590-8266-0cbdeabbea84",
+            "2d6161f9-bf66-4840-852f-d095a57884dd",
+            "857a2d32-1f9f-470f-a75f-af423cd34d90"
         ]
     },
     "canvasState": {
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
-        "selectedInstance": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be"
+        "topInstance": "857a2d32-1f9f-470f-a75f-af423cd34d90",
+        "selectedInstance": "857a2d32-1f9f-470f-a75f-af423cd34d90"
     },
     "codeState": {
-        "topInstance": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be"
+        "topInstance": "857a2d32-1f9f-470f-a75f-af423cd34d90"
     },
     "editMode": "code"
 }

@@ -9,18 +9,18 @@
         "docked": null,
         "fullscreen": null,
         "height": null,
-        "itemId": "myComponent1",
+        "itemId": "myComponent2",
         "minWidth": null,
         "showAnimation": null,
         "style": "background:#0d6289;",
         "width": null,
-        "designer|userClassName": "myComponent1",
-        "designer|userAlias": "myComponent1"
+        "designer|userClassName": "myComponent2",
+        "designer|userAlias": "myComponent2"
     },
     "configAlternates": {
         "scrollable": "object"
     },
-    "designerId": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
+    "designerId": "2d6161f9-bf66-4840-852f-d095a57884dd",
     "cn": [
         {
             "type": "fixedfunction",
@@ -35,7 +35,7 @@
                     "this.callParent();"
                 ]
             },
-            "designerId": "87425d03-1f41-4721-ba73-bfdc1b86a8d5"
+            "designerId": "fbf41d8b-8ec2-41a4-9f04-0fb4e1f1078c"
         },
         {
             "type": "basiceventbinding",
@@ -119,7 +119,7 @@
                 ],
                 "name": "painted"
             },
-            "designerId": "ffeb5694-c302-4796-a3cb-2dd3f7070e3d"
+            "designerId": "2b0a8ef1-66a6-4ae7-b846-355fbdfd8384"
         }
     ]
 }
