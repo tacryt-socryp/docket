@@ -24,6 +24,16 @@
             "codeClass": null,
             "designerId": "7b0513b2-4e2d-4477-9503-91022ad17b1a",
             "masterInstanceId": "a5f363fc-6ad5-44d1-847a-27915289d76d"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "84b5ffd7-80ae-4515-9eff-1d5e2d27bab3",
+            "masterInstanceId": "b37e7f12-8ce9-4d9f-b7be-9ac8919307bb"
         }
     ]
 }
