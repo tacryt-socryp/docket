@@ -154,12 +154,20 @@ Ext.define('Booking.view.MyComponent2', {
     initialize: function() {
         this.callParent();
 
+        var w = 700 * Ext.getStore('MyStore').getCount();
+        var h = this.getHeight();
+
+        console.log("w: " + w);
+        console.log("h: " + h);
+
+        this.getSurface('main').setSize(w,h);
+
         //Line across screen
         this.getSurface('main').add({
             type: 'rect',
             fill: '#176c93',
             height : 20,
-            width: 1440,
+            width: w,
             x: 0,
             y: 430
         }).show(true);
