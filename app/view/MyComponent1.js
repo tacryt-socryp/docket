@@ -79,7 +79,7 @@ Ext.define('Booking.view.MyComponent1', {
                 width: 300,
                 radius: 10,
                 x: loc,
-                y: 230
+                y: 180
             }).show(true);
         }
 
@@ -93,7 +93,7 @@ Ext.define('Booking.view.MyComponent1', {
                 width: 300,
                 radius: 10,
                 x: loc,
-                y: 430
+                y: 370
             }).show(true);
         }
 
