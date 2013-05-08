@@ -21,7 +21,7 @@
     "configAlternates": {
         "scrollable": "object"
     },
-    "designerId": "9222a550-a924-416c-8431-7f97979090f6",
+    "designerId": "a5f363fc-6ad5-44d1-847a-27915289d76d",
     "cn": [
         {
             "type": "linkedinstance",
@@ -30,8 +30,8 @@
                 "type": "array"
             },
             "codeClass": null,
-            "designerId": "b0fb21d7-896a-4bce-90d1-f77621d3f8ef",
-            "masterInstanceId": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be"
+            "designerId": "3dfc45b8-0125-41f6-9a90-ddc41ffb1441",
+            "masterInstanceId": "54ad6309-c344-4a63-886c-e6428e21f826"
         }
     ]
 }

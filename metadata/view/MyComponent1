@@ -20,7 +20,7 @@
     "configAlternates": {
         "scrollable": "object"
     },
-    "designerId": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
+    "designerId": "54ad6309-c344-4a63-886c-e6428e21f826",
     "cn": [
         {
             "type": "fixedfunction",
@@ -35,7 +35,7 @@
                     "this.callParent();"
                 ]
             },
-            "designerId": "87425d03-1f41-4721-ba73-bfdc1b86a8d5"
+            "designerId": "0ce44ed7-50f1-4201-8fb1-74bf7fe4bfa6"
         },
         {
             "type": "basiceventbinding",
@@ -119,7 +119,7 @@
                 ],
                 "name": "painted"
             },
-            "designerId": "ffeb5694-c302-4796-a3cb-2dd3f7070e3d"
+            "designerId": "dfa26f31-dad8-4b51-8224-28f4ca32a6c4"
         }
     ]
 }
