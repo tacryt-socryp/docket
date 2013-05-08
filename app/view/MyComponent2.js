@@ -22,7 +22,7 @@ Ext.define('Booking.view.MyComponent2', {
             type: 'fit'
         },
         itemId: 'MyComponent2',
-        style: 'background:#0d6289;',
+        style: 'background:#7dcb99;',
         listeners: [
             {
                 fn: 'onMyComponent1Painted',
@@ -48,7 +48,7 @@ Ext.define('Booking.view.MyComponent2', {
         //Line across screen
         surface.add({
             type: 'rect',
-            fill: '#176c93',
+            fill: '#5dad7a',
             height : 20,
             width: w,
             x: 0,
@@ -66,10 +66,10 @@ Ext.define('Booking.view.MyComponent2', {
 
         for (iter=0; iter<5; iter++) {
             loc = 100 + iter*500;
-            //Rounded rectangle example
+            //Rounded rectangle example TOP
             surface.add({
                 type: 'rect',
-                fill: '#43aad5',
+                fill: '#53ab73',
                 height : 130,
                 width: 300,
                 radius: 10,
@@ -81,10 +81,10 @@ Ext.define('Booking.view.MyComponent2', {
 
         for (iter=0; iter<5; iter++) {
             loc = 350 + iter*500;
-            //Rounded rectangle example
+            //Rounded rectangle example BOTTOM
             surface.add({
                 type: 'rect',
-                fill: '#43aad5',
+                fill: '#53ab73',
                 height : 130,
                 width: 300,
                 radius: 10,
