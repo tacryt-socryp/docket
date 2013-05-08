@@ -29,7 +29,7 @@ Ext.define('Booking.view.MyContainer1', {
                 initialize: function() {
                     this.callParent();
                 },
-                itemId: 'inlineDraw',
+                itemId: 'inlineDraw1',
                 style: 'background:#0d6289;',
                 listeners: [
                     {

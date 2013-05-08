@@ -9,7 +9,6 @@
         "itemId": "MyContainer1",
         "designer|userClassName": "MyContainer1",
         "designer|userAlias": "MyContainer1",
-        "designer|initialView": true,
         "scrollable": [
             "{\r",
             "    direction: 'horizontal',\r",
@@ -32,7 +31,7 @@
             "userConfig": {
                 "docked": null,
                 "height": null,
-                "itemId": "inlineDraw",
+                "itemId": "inlineDraw1",
                 "minWidth": null,
                 "showAnimation": null,
                 "style": "background:#0d6289;",
