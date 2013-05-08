@@ -6,7 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "scrollable": null,
+        "scrollable": [
+            "{\r",
+            "    direction: 'horizontal',\r",
+            "    directionLock: true\r",
+            "}"
+        ],
         "docked": null,
         "fullscreen": null,
         "height": null,
@@ -97,6 +102,25 @@
                 ]
             },
             "designerId": "87425d03-1f41-4721-ba73-bfdc1b86a8d5"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMyComponent1OnDrag",
+                "designer|params": [
+                    "draw, event, offset"
+                ],
+                "implHandler": [
+                    "draw.getScrollable().getScroller().scrollBy(100, 0);"
+                ],
+                "name": "onDrag"
+            },
+            "designerId": "eb5de23e-a947-4f88-8e6b-995ac1bf2061"
         }
     ]
 }

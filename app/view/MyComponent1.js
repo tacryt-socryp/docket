@@ -19,7 +19,21 @@ Ext.define('Booking.view.MyComponent1', {
 
     config: {
         itemId: 'myComponent1',
-        style: 'background:#0d6289;'
+        style: 'background:#0d6289;',
+        scrollable: {
+            direction: 'horizontal',
+            directionLock: true
+        },
+        listeners: [
+            {
+                fn: 'onMyComponent1OnDrag',
+                event: 'onDrag'
+            }
+        ]
+    },
+
+    onMyComponent1OnDrag: function(draw, event, offset) {
+        draw.getScrollable().getScroller().scrollBy(offset, 0);
     },
 
     initialize: function() {

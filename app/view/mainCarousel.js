@@ -28,11 +28,7 @@ Ext.define('Booking.view.mainCarousel', {
         direction: 'vertical',
         items: [
             {
-                xtype: 'myComponent1',
-                scrollable: {
-                    direction: 'horizontal',
-                    directionLock: true
-                }
+                xtype: 'myComponent1'
             },
             {
                 xtype: 'MyComponent2'
