@@ -6,23 +6,34 @@
     },
     "codeClass": null,
     "userConfig": {
-        "scrollable": true,
+        "layout": "fit",
+        "scrollable": [
+            "{\r",
+            "    direction: 'horizontal', \r",
+            "    directionLock: true\r",
+            "}"
+        ],
         "docked": null,
-        "fullscreen": true,
+        "fullscreen": null,
         "height": null,
-        "itemId": "MyComponent",
+        "itemId": "myComponent",
         "minWidth": null,
         "showAnimation": null,
         "style": "background:#0d6289;",
-        "width": "200%",
+        "width": null,
         "designer|userClassName": "MyComponent",
-        "designer|userAlias": "MyComponent"
+        "designer|initialView": true
     },
     "configAlternates": {
-        "scrollable": "boolean"
+        "scrollable": "object"
     },
-    "designerId": "f1939c81-49e4-43e3-9cfd-efcce06a506a",
+    "designerId": "9ba29273-8769-47b9-92bf-0bd8b8c89580",
     "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "layout",
+            "type": "string"
+        },
         {
             "group": "(Custom Properties)",
             "name": "scrollable",
@@ -42,12 +53,20 @@
                 "implHandler": [
                     "this.callParent();\r",
                     "\r",
+                    "var w = 700 * Ext.getStore('MyStore').getCount();\r",
+                    "var h = this.getHeight();\r",
+                    "\r",
+                    "console.log(\"w: \" + w);\r",
+                    "console.log(\"h: \" + h);\r",
+                    "\r",
+                    "this.getSurface('main').setSize(w,h);\r",
+                    "\r",
                     "//Line across screen\r",
                     "this.getSurface('main').add({\r",
                     "    type: 'rect',\r",
                     "    fill: '#176c93',\r",
                     "    height : 20,\r",
-                    "    width: 1440,\r",
+                    "    width: w,\r",
                     "    x: 0,\r",
                     "    y: 430\r",
                     "}).show(true);\r",
@@ -84,7 +103,7 @@
                     "}).show(true);"
                 ]
             },
-            "designerId": "cc9adac2-5da8-4c10-8a68-96d7becf3b6d"
+            "designerId": "6a1215c9-5d94-4630-b6ef-59b1719a78b4"
         },
         {
             "type": "basiceventbinding",
@@ -94,37 +113,37 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onMyComponentOnDragStart",
+                "fn": "onMyComponentOnDragStart1",
                 "designer|params": [
                     "draw"
                 ],
                 "implHandler": [
-                    "var direction = this.getDirection(),\r",
-                    "            absDeltaX = draw.absDeltaX,\r",
-                    "            absDeltaY = draw.absDeltaY,\r",
-                    "            directionLock = this.getDirectionLock();\r",
+                    "/*var direction = this.getDirection(),\r",
+                    "    absDeltaX = draw.absDeltaX,\r",
+                    "    absDeltaY = draw.absDeltaY,\r",
+                    "    directionLock = this.getDirectionLock();\r",
                     "\r",
                     "this.isDragging = true;\r",
                     "\r",
                     "if (directionLock) {\r",
-                    "    if (/*(direction === 'horizontal' && absDeltaX > absDeltaY) ||*/\r",
-                    "    (direction === 'vertical' && absDeltaY > absDeltaX)) {\r",
+                    "    if (direction === 'vertical' && absDeltaY > absDeltaX) {\r",
                     "        draw.stopPropagation();\r",
                     "    } else {\r",
                     "        this.isDragging = false;\r",
                     "        return;\r",
                     "    }\r",
                     "}\r",
+                    "\r",
                     "if (this.isAnimating) {\r",
                     "    this.getActiveCarouselItem().getTranslatable().stopAnimation();\r",
                     "}\r",
                     "\r",
                     "this.dragStartOffset = this.offset;\r",
-                    "this.dragDirection = 0;"
+                    "this.dragDirection = 0;*/"
                 ],
                 "name": "onDragStart"
             },
-            "designerId": "e21634e6-eef3-432f-b8c1-cab20d9d7c81"
+            "designerId": "8de6a935-219a-48ca-862f-279bd91fd486"
         },
         {
             "type": "basiceventbinding",
@@ -134,12 +153,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onMyComponentOnDrag",
+                "fn": "onMyComponentOnDrag1",
                 "designer|params": [
                     "draw"
                 ],
                 "implHandler": [
-                    "if (!this.isDragging) {\r",
+                    "/*if (!this.isDragging) {\r",
                     "    return;\r",
                     "}\r",
                     "\r",
@@ -173,11 +192,11 @@
                     "}\r",
                     "\r",
                     "this.dragDirection = dragDirection;\r",
-                    "this.setOffset(offset);"
+                    "this.setOffset(offset);*/"
                 ],
                 "name": "onDrag"
             },
-            "designerId": "57dc660d-a08c-4865-a8e8-9efdf5610c57"
+            "designerId": "f78da389-133b-403f-9c3e-97430e8a1cc8"
         },
         {
             "type": "basiceventbinding",
@@ -187,12 +206,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onMyComponentOnDragEnd",
+                "fn": "onMyComponentOnDragEnd1",
                 "designer|params": [
                     "draw"
                 ],
                 "implHandler": [
-                    "if (!this.isDragging) {\r",
+                    "/*if (!this.isDragging) {\r",
                     "    return;\r",
                     "}\r",
                     "\r",
@@ -231,7 +250,7 @@
                     "}\r",
                     "\r",
                     "if (indicator) {\r",
-                    "    indicator.setActiveIndex(activeIndex - animationDirection);\r",
+                    "    indicator.setActiveIndex(activeIndex - animationDirection);*/\r",
                     "}\r",
                     "\r",
                     "this.animationDirection = animationDirection;\r",
@@ -239,7 +258,7 @@
                 ],
                 "name": "onDragEnd"
             },
-            "designerId": "4c565cd8-ddd3-42df-bf98-ffe7d93a41ab"
+            "designerId": "532eed7f-1cc9-4a8a-aaae-7877d218880c"
         }
     ]
 }

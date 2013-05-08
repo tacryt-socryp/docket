@@ -15,149 +15,160 @@
 
 Ext.define('Booking.view.MyComponent', {
     extend: 'Ext.draw.Component',
-    alias: 'widget.MyComponent',
 
     config: {
-        scrollable: true,
-        fullscreen: true,
-        itemId: 'MyComponent',
+        layout: {
+            type: 'fit'
+        },
+        itemId: 'myComponent',
         style: 'background:#0d6289;',
-        width: '200%',
+        scrollable: {
+            direction: 'horizontal',
+            directionLock: true
+        },
         listeners: [
             {
-                fn: 'onMyComponentOnDragStart',
+                fn: 'onMyComponentOnDragStart1',
                 event: 'onDragStart'
             },
             {
-                fn: 'onMyComponentOnDrag',
+                fn: 'onMyComponentOnDrag1',
                 event: 'onDrag'
             },
             {
-                fn: 'onMyComponentOnDragEnd',
+                fn: 'onMyComponentOnDragEnd1',
                 event: 'onDragEnd'
             }
         ]
     },
 
-    onMyComponentOnDragStart: function(draw) {
-        var direction = this.getDirection(),
-            absDeltaX = draw.absDeltaX,
-            absDeltaY = draw.absDeltaY,
-            directionLock = this.getDirectionLock();
+    onMyComponentOnDragStart1: function(draw) {
+        /*var direction = this.getDirection(),
+        absDeltaX = draw.absDeltaX,
+        absDeltaY = draw.absDeltaY,
+        directionLock = this.getDirectionLock();
 
         this.isDragging = true;
 
         if (directionLock) {
-            if (/*(direction === 'horizontal' && absDeltaX > absDeltaY) ||*/
-            (direction === 'vertical' && absDeltaY > absDeltaX)) {
-                draw.stopPropagation();
-            } else {
-                this.isDragging = false;
-                return;
-            }
+        if (direction === 'vertical' && absDeltaY > absDeltaX) {
+        draw.stopPropagation();
+        } else {
+        this.isDragging = false;
+        return;
         }
+        }
+
         if (this.isAnimating) {
-            this.getActiveCarouselItem().getTranslatable().stopAnimation();
+        this.getActiveCarouselItem().getTranslatable().stopAnimation();
         }
 
         this.dragStartOffset = this.offset;
-        this.dragDirection = 0;
+        this.dragDirection = 0;*/
     },
 
-    onMyComponentOnDrag: function(draw) {
-        if (!this.isDragging) {
-            return;
+    onMyComponentOnDrag1: function(draw) {
+        /*if (!this.isDragging) {
+        return;
         }
 
         var startOffset = this.dragStartOffset,
-            direction = this.getDirection(),
-            delta = direction === 'horizontal' ? draw.deltaX : draw.deltaY,
-            lastOffset = this.offset,
-            flickStartTime = this.flickStartTime,
-            dragDirection = this.dragDirection,
-            now = Ext.Date.now(),
-            currentActiveIndex = this.getActiveIndex(),
-            maxIndex = this.getMaxItemIndex(),
-            lastDragDirection = dragDirection,
-            offset;
+        direction = this.getDirection(),
+        delta = direction === 'horizontal' ? draw.deltaX : draw.deltaY,
+        lastOffset = this.offset,
+        flickStartTime = this.flickStartTime,
+        dragDirection = this.dragDirection,
+        now = Ext.Date.now(),
+        currentActiveIndex = this.getActiveIndex(),
+        maxIndex = this.getMaxItemIndex(),
+        lastDragDirection = dragDirection,
+        offset;
 
         if ((currentActiveIndex === 0 && delta > 0) || (currentActiveIndex === maxIndex && delta < 0)) {
-            delta *= 0.5;
+        delta *= 0.5;
         }
 
         offset = startOffset + delta;
 
         if (offset > lastOffset) {
-            dragDirection = 1;
+        dragDirection = 1;
         } else if (offset < lastOffset) {
-            dragDirection = -1;
+        dragDirection = -1;
         }
 
         if (dragDirection !== lastDragDirection || (now - flickStartTime) > 300) {
-            this.flickStartOffset = lastOffset;
-            this.flickStartTime = now;
+        this.flickStartOffset = lastOffset;
+        this.flickStartTime = now;
         }
 
         this.dragDirection = dragDirection;
-        this.setOffset(offset);
+        this.setOffset(offset);*/
     },
 
-    onMyComponentOnDragEnd: function(draw) {
-        if (!this.isDragging) {
-            return;
+    onMyComponentOnDragEnd1: function(draw) {
+        /*if (!this.isDragging) {
+        return;
         }
 
         this.onDrag(draw);
         this.isDragging = false;
 
         var now = Ext.Date.now(),
-            itemLength = this.itemLength,
-            threshold = itemLength / 2,
-            offset = this.offset,
-            activeIndex = this.getActiveIndex(),
-            maxIndex = this.getMaxItemIndex(),
-            animationDirection = 0,
-            flickDistance = offset - this.flickStartOffset,
-            flickDuration = now - this.flickStartTime,
-            indicator = this.getIndicator(),
-            velocity;
+        itemLength = this.itemLength,
+        threshold = itemLength / 2,
+        offset = this.offset,
+        activeIndex = this.getActiveIndex(),
+        maxIndex = this.getMaxItemIndex(),
+        animationDirection = 0,
+        flickDistance = offset - this.flickStartOffset,
+        flickDuration = now - this.flickStartTime,
+        indicator = this.getIndicator(),
+        velocity;
 
         if (flickDuration > 0 && Math.abs(flickDistance) >= 10) {
-            velocity = flickDistance / flickDuration;
-            if (Math.abs(velocity) >= 1) {
-                if (velocity < 0 && activeIndex < maxIndex) {
-                    animationDirection = -1;
-                } else if (velocity > 0 && activeIndex > 0) {
-                    animationDirection = 1;
-                }
-            }
+        velocity = flickDistance / flickDuration;
+        if (Math.abs(velocity) >= 1) {
+        if (velocity < 0 && activeIndex < maxIndex) {
+        animationDirection = -1;
+        } else if (velocity > 0 && activeIndex > 0) {
+        animationDirection = 1;
+        }
+        }
         }
 
         if (animationDirection === 0) {
-            if (activeIndex < maxIndex && offset < -threshold) {
-                animationDirection = -1;
-            } else if (activeIndex > 0 && offset > threshold) {
-                animationDirection = 1;
-            }
+        if (activeIndex < maxIndex && offset < -threshold) {
+        animationDirection = -1;
+        } else if (activeIndex > 0 && offset > threshold) {
+        animationDirection = 1;
+        }
         }
 
         if (indicator) {
-            indicator.setActiveIndex(activeIndex - animationDirection);
-        }
+        indicator.setActiveIndex(activeIndex - animationDirection);*/
+    }
 
-        this.animationDirection = animationDirection;
-        this.setOffsetAnimated(animationDirection * itemLength);
+    this.animationDirection = animationDirection;
+    this.setOffsetAnimated(animationDirection * itemLength);
     },
 
     initialize: function() {
         this.callParent();
+
+        var w = 700 * Ext.getStore('MyStore').getCount();
+        var h = this.getHeight();
+
+        console.log("w: " + w);
+        console.log("h: " + h);
+
+        this.getSurface('main').setSize(w,h);
 
         //Line across screen
         this.getSurface('main').add({
             type: 'rect',
             fill: '#176c93',
             height : 20,
-            width: 1440,
+            width: w,
             x: 0,
             y: 430
         }).show(true);

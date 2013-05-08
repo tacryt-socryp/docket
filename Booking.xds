@@ -53,14 +53,6 @@
             ],
             "className": "canvasing"
         },
-        "f1939c81-49e4-43e3-9cfd-efcce06a506a": {
-            "paths": [
-                "metadata/view/MyComponent",
-                "app/view/override/MyComponent.js",
-                "app/view/MyComponent.js"
-            ],
-            "className": "MyComponent"
-        },
         "ecb08921-839f-4590-8266-0cbdeabbea84": {
             "paths": [
                 "metadata/view/MyContainer",
@@ -100,12 +92,20 @@
                 "app/view/MyComponent2.js"
             ],
             "className": "MyComponent2"
+        },
+        "9ba29273-8769-47b9-92bf-0bd8b8c89580": {
+            "paths": [
+                "metadata/view/MyComponent",
+                "app/view/override/MyComponent.js",
+                "app/view/MyComponent.js"
+            ],
+            "className": "MyComponent"
         }
     },
     "viewOrderMap": {
         "view": [
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-            "f1939c81-49e4-43e3-9cfd-efcce06a506a",
+            "9ba29273-8769-47b9-92bf-0bd8b8c89580",
             "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
             "ed6567b9-4794-455a-9c21-11fef1e2a9f8",
             "f1eaeea6-2827-4d27-8efa-cc6c024dd251",

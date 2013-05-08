@@ -14,7 +14,8 @@
         ],
         "views": [
             "mainCarousel",
-            "MyComponent2"
+            "MyComponent2",
+            "MyComponent"
         ],
         "name": "Booking"
     },
