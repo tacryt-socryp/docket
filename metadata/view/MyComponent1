@@ -13,6 +13,7 @@
             "    directionLock: true\r",
             "}"
         ],
+        "overflow-x": "scroll",
         "docked": null,
         "fullscreen": null,
         "height": null,
@@ -37,6 +38,11 @@
         {
             "group": "(Custom Properties)",
             "name": "scrollable",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "overflow-x",
             "type": "string"
         }
     ],
