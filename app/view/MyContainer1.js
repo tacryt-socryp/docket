@@ -35,11 +35,13 @@ Ext.define('Booking.view.MyContainer1', {
                     {
                         fn: function(element, eOpts) {
                             var w = 700 * Ext.getStore('MyStore').getCount(),
-                                h = this.element.getHeight(),
+                                h = this.getHeight(),
                                 dynText = '10:33 pm',
                                 surface = this.getSurface('main'),
                                 loc,
                                 iter;
+
+                            h = 760;
 
                             console.log("w: " + w);
                             console.log("h: " + h);

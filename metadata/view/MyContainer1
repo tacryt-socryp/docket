@@ -75,6 +75,8 @@
                             "    loc,\r",
                             "    iter;\r",
                             "\r",
+                            "h = 760;\r",
+                            "\r",
                             "console.log(\"w: \" + w);\r",
                             "console.log(\"h: \" + h);\r",
                             "\r",
