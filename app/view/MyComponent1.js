@@ -30,7 +30,7 @@ Ext.define('Booking.view.MyComponent1', {
 
     onMyComponent1Painted: function(element, eOpts) {
         var w       = 700 * Ext.getStore('MyStore').getCount(),
-            h       = this.element.getHeight(),
+            h       = this.getHeight(),
             dynText = '10:33 pm',
             surface = this.getSurface('main'),
             loc,
