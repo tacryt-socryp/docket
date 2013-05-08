@@ -42,7 +42,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 iter;
 
                             //h = 760;
-                            h = Ext.getBody().getSize();
+                            h = Ext.getBody().getViewSize().height;
 
                             console.log("w: " + w);
                             console.log("h: " + h);
