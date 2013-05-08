@@ -82,7 +82,7 @@
                     "}).show(true);\r",
                     "\r",
                     "for (var iter=0; iter<5; iter++) {\r",
-                    "    var loc = 100 + iter*600;\r",
+                    "    var loc = 100 + iter*500;\r",
                     "    //Rounded rectangle example\r",
                     "    this.getSurface('main').add({\r",
                     "        type: 'rect',\r",
@@ -126,13 +126,11 @@
                     "    absDeltaX = draw.absDeltaX,\r",
                     "    absDeltaY = draw.absDeltaY,\r",
                     "    directionLock = this.getDirectionLock();\r",
-                    "this.isDragging = true;\r",
                     "\r",
                     "if (directionLock) {\r",
                     "    if (direction === 'vertical' && absDeltaY > absDeltaX) {\r",
                     "        draw.stopPropagation();\r",
                     "    } else {\r",
-                    "        this.isDragging = false;\r",
                     "        return;\r",
                     "    }\r",
                     "}\r",
@@ -161,10 +159,6 @@
                     "draw"
                 ],
                 "implHandler": [
-                    "if (!this.isDragging) {\r",
-                    "    return;\r",
-                    "}\r",
-                    "\r",
                     "var startOffset = this.dragStartOffset,\r",
                     "    direction = this.getDirection(),\r",
                     "    delta = direction === 'horizontal' ? draw.deltaX : draw.deltaY,\r",
@@ -176,6 +170,8 @@
                     "    maxIndex = this.getMaxItemIndex(),\r",
                     "    lastDragDirection = dragDirection,\r",
                     "    offset;\r",
+                    "\r",
+                    "if (direction === 'vertical') {\r",
                     "\r",
                     "if ((currentActiveIndex === 0 && delta > 0) || (currentActiveIndex === maxIndex && delta < 0)) {\r",
                     "    delta *= 0.5;\r",
@@ -195,7 +191,9 @@
                     "}\r",
                     "\r",
                     "this.dragDirection = dragDirection;\r",
-                    "this.setOffset(offset);"
+                    "this.setOffset(offset);\r",
+                    "    \r",
+                    "}"
                 ],
                 "name": "onDrag"
             },
@@ -214,12 +212,10 @@
                     "draw"
                 ],
                 "implHandler": [
-                    "if (!this.isDragging) {\r",
-                    "    return;\r",
-                    "}\r",
-                    "\r",
                     "this.onDrag(draw);\r",
                     "this.isDragging = false;\r",
+                    "\r",
+                    "if (direction === 'vertical') {\r",
                     "\r",
                     "var now = Ext.Date.now(),\r",
                     "    itemLength = this.itemLength,\r",
@@ -231,6 +227,7 @@
                     "    flickDistance = offset - this.flickStartOffset,\r",
                     "    flickDuration = now - this.flickStartTime,\r",
                     "    indicator = this.getIndicator(),\r",
+                    "    direction = this.getDirection(),\r",
                     "    velocity;\r",
                     "\r",
                     "if (flickDuration > 0 && Math.abs(flickDistance) >= 10) {\r",
@@ -257,7 +254,9 @@
                     "}\r",
                     "\r",
                     "this.animationDirection = animationDirection;\r",
-                    "this.setOffsetAnimated(animationDirection * itemLength);"
+                    "this.setOffsetAnimated(animationDirection * itemLength);\r",
+                    "    \r",
+                    "}"
                 ],
                 "name": "onDragEnd"
             },
