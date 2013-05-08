@@ -12,7 +12,7 @@
             "    directionLock: true\r",
             "}"
         ],
-        "docked": "top",
+        "docked": null,
         "fullscreen": null,
         "height": null,
         "itemId": "myComponent1",
