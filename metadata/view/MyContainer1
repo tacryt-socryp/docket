@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userClassName": "MyContainer1",
         "designer|initialView": true,
-        "layout": "fit",
+        "layout": null,
         "scrollable": "horizontal"
     },
     "designerId": "9222a550-a924-416c-8431-7f97979090f6",
