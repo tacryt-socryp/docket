@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": "myContainer2",
-        "itemId": "myContainer2",
-        "designer|userClassName": "myContainer2",
-        "designer|userAlias": "myContainer2",
+        "id": null,
+        "itemId": "MyContainer2",
+        "designer|userClassName": "MyContainer2",
+        "designer|userAlias": "MyContainer2",
         "layout": null,
         "scrollable": [
             "{\r",

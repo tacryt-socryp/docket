@@ -9,13 +9,13 @@
         "docked": null,
         "fullscreen": null,
         "height": null,
-        "itemId": "myComponent1",
+        "itemId": "MyComponent1",
         "minWidth": null,
         "showAnimation": null,
         "style": "background:#0d6289;",
         "width": null,
-        "designer|userClassName": "myComponent1",
-        "designer|userAlias": "myComponent1"
+        "designer|userClassName": "MyComponent1",
+        "designer|userAlias": "MyComponent1"
     },
     "configAlternates": {
         "scrollable": "object"

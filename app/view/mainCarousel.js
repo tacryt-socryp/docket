@@ -18,8 +18,8 @@ Ext.define('Booking.view.mainCarousel', {
     alias: 'widget.mainCarousel',
 
     requires: [
-        'Booking.view.myContainer1',
-        'Booking.view.myContainer2'
+        'Booking.view.MyContainer1',
+        'Booking.view.MyContainer2'
     ],
 
     config: {
@@ -28,10 +28,10 @@ Ext.define('Booking.view.mainCarousel', {
         direction: 'vertical',
         items: [
             {
-                xtype: 'myContainer1'
+                xtype: 'MyContainer1'
             },
             {
-                xtype: 'myContainer2'
+                xtype: 'MyContainer2'
             }
         ]
     }
