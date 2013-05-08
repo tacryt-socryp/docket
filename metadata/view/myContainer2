@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "id": "myContainer2",
         "itemId": "myContainer2",
         "designer|userClassName": "myContainer2",
         "designer|userAlias": "mycontainer2",

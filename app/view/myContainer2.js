@@ -22,6 +22,7 @@ Ext.define('Booking.view.myContainer2', {
     ],
 
     config: {
+        id: 'myContainer2',
         itemId: 'myContainer2',
         layout: {
             type: 'card'

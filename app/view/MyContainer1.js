@@ -15,13 +15,14 @@
 
 Ext.define('Booking.view.myContainer1', {
     extend: 'Ext.Container',
-    alias: 'widget.mycontainer1',
+    alias: 'widget.myContainer1',
 
     requires: [
         'Booking.view.myComponent1'
     ],
 
     config: {
+        id: 'myContainer1',
         itemId: 'myContainer1',
         layout: {
             type: 'card'

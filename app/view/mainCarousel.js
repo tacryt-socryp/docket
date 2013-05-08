@@ -28,7 +28,7 @@ Ext.define('Booking.view.mainCarousel', {
         direction: 'vertical',
         items: [
             {
-                xtype: 'mycontainer1'
+                xtype: 'myContainer1'
             },
             {
                 xtype: 'mycontainer2'
