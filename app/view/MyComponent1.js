@@ -49,17 +49,21 @@ Ext.define('Booking.view.MyComponent1', {
             absDeltaY = draw.absDeltaY,
             directionLock = this.getDirectionLock();
 
+
+
         this.isDragging = true;
 
         if (directionLock) {
-            if (/*(direction === 'horizontal' && absDeltaX > absDeltaY) ||*/
-            (direction === 'vertical' && absDeltaY > absDeltaX)) {
+            if (direction === 'vertical' && absDeltaY > absDeltaX) {
                 draw.stopPropagation();
+            } else if (direction === 'horizontal' && absDeltaX > absDeltaY) {
+                this.getSurface('main').getScrollable().getScroller().scrollBy(1000, 0);
             } else {
                 this.isDragging = false;
                 return;
             }
         }
+
         if (this.isAnimating) {
             this.getActiveCarouselItem().getTranslatable().stopAnimation();
         }
@@ -75,7 +79,7 @@ Ext.define('Booking.view.MyComponent1', {
 
         var startOffset = this.dragStartOffset,
             direction = this.getDirection(),
-            delta = direction === 'horizontal' ? draw.deltaX : draw.deltaY,
+            //delta = direction === 'horizontal' ? draw.deltaX : draw.deltaY,
             lastOffset = this.offset,
             flickStartTime = this.flickStartTime,
             dragDirection = this.dragDirection,
