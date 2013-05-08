@@ -15,6 +15,7 @@
 
 Ext.define('Booking.store.MyStore', {
     extend: 'Ext.data.Store',
+    alias: 'store.MyStore',
 
     requires: [
         'Booking.model.roomList'

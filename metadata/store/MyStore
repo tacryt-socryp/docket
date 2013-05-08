@@ -18,7 +18,8 @@
         ],
         "model": "roomList",
         "storeId": "MyStore",
-        "designer|userClassName": "MyStore"
+        "designer|userClassName": "MyStore",
+        "designer|userAlias": "MyStore"
     },
     "designerId": "8714683d-0a2e-4225-a248-8932813f1f38"
 }

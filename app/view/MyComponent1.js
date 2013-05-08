@@ -153,7 +153,7 @@ Ext.define('Booking.view.MyComponent1', {
         this.callParent();
 
 
-        var wide = 700 * this.getComponent('MyStore').getCount();
+        var wide = 700 * this.getComponent('store.MyStore').getCount();
         //var wide = 700 * Ext.getCmp('MyStore').getCount();
 
         Ext.getCmp('MyComponent1').setWidth(wide);
