@@ -39,10 +39,6 @@ Ext.define('Booking.view.MyComponent1', {
             {
                 fn: 'onMyComponentOnDragEnd1',
                 event: 'onDragEnd'
-            },
-            {
-                fn: 'onMyComponent1Tap',
-                event: 'tap'
             }
         ]
     },
@@ -158,10 +154,6 @@ Ext.define('Booking.view.MyComponent1', {
 
         this.animationDirection = animationDirection;
         this.setOffsetAnimated(animationDirection * itemLength);
-    },
-
-    onMyComponent1Tap: function(draw) {
-
     },
 
     initialize: function() {

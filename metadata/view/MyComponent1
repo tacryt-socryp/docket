@@ -262,22 +262,6 @@
                 "name": "onDragEnd"
             },
             "designerId": "0c35fbc1-76ce-40ef-83c3-e7f25101de2f"
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onMyComponent1Tap",
-                "designer|params": [
-                    "draw"
-                ],
-                "name": "tap"
-            },
-            "designerId": "8aaa9d5e-f67f-469c-b9c3-ee009c5222c1"
         }
     ]
 }
