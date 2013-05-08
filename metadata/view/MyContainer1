@@ -9,6 +9,7 @@
         "itemId": "MyContainer1",
         "designer|userClassName": "MyContainer1",
         "designer|userAlias": "MyContainer1",
+        "designer|initialView": true,
         "layout": "fit",
         "scrollable": [
             "{\r",
