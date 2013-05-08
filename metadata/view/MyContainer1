@@ -69,14 +69,11 @@
                         "fn": "onMyComponent1Painted1",
                         "implHandler": [
                             "var w = 700 * Ext.getStore('MyStore').getCount(),\r",
-                            "    h = this.getHeight(),\r",
+                            "    h = Ext.getBody().getSize().height,\r",
                             "    dynText = '10:33 pm',\r",
                             "    surface = this.getSurface('main'),\r",
                             "    loc,\r",
                             "    iter;\r",
-                            "\r",
-                            "//h = 760;\r",
-                            "h = Ext.getBody().getSize().height;\r",
                             "\r",
                             "console.log(\"w: \" + w);\r",
                             "console.log(\"h: \" + h);\r",
@@ -145,6 +142,27 @@
                         "name": "painted"
                     },
                     "designerId": "2c1fca87-b05d-41f4-b903-21fbe2bc5439"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onInlineDrawResize",
+                        "implHandler": [
+                            "var w = 700 * Ext.getStore('MyStore').getCount(),\r",
+                            "    h = Ext.getBody().getSize().height,\r",
+                            "    surface = this.getSurface('main');\r",
+                            "\r",
+                            "this.setSize(w,h);\r",
+                            "surface.setSize(w,h);"
+                        ],
+                        "name": "resize"
+                    },
+                    "designerId": "0c11ff86-ccfe-4da7-858f-acae32cb0547"
                 }
             ]
         }

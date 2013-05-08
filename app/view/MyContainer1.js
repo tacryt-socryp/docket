@@ -35,14 +35,11 @@ Ext.define('Booking.view.MyContainer1', {
                     {
                         fn: function(element, eOpts) {
                             var w = 700 * Ext.getStore('MyStore').getCount(),
-                                h = this.getHeight(),
+                                h = Ext.getBody().getSize().height,
                                 dynText = '10:33 pm',
                                 surface = this.getSurface('main'),
                                 loc,
                                 iter;
-
-                            //h = 760;
-                            h = Ext.getBody().getSize().height;
 
                             console.log("w: " + w);
                             console.log("h: " + h);
@@ -109,6 +106,17 @@ Ext.define('Booking.view.MyContainer1', {
                             }).show(true);
                         },
                         event: 'painted'
+                    },
+                    {
+                        fn: function(element, eOpts) {
+                            var w = 700 * Ext.getStore('MyStore').getCount(),
+                                h = Ext.getBody().getSize().height,
+                                surface = this.getSurface('main');
+
+                            this.setSize(w,h);
+                            surface.setSize(w,h);
+                        },
+                        event: 'resize'
                     }
                 ]
             }
