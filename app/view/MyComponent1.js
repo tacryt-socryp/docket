@@ -57,7 +57,7 @@ Ext.define('Booking.view.MyComponent1', {
             height : 20,
             width: w,
             x: 0,
-            y: 430
+            y: 330
         }).show(true);
 
         this.getSurface('main').add({
@@ -79,7 +79,7 @@ Ext.define('Booking.view.MyComponent1', {
                 width: 300,
                 radius: 10,
                 x: loc,
-                y: 330
+                y: 230
             }).show(true);
         }
 
@@ -93,7 +93,7 @@ Ext.define('Booking.view.MyComponent1', {
                 width: 300,
                 radius: 10,
                 x: loc,
-                y: 530
+                y: 430
             }).show(true);
         }
 
