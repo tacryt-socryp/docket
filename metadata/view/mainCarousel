@@ -9,43 +9,7 @@
         "ui": "light",
         "designer|userClassName": "mainCarousel",
         "designer|userAlias": "mainCarousel",
-        "designer|initialView": true,
         "direction": "vertical"
     },
-    "designerId": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-    "cn": [
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "designerId": "d471ea87-fcdf-4bb2-90cc-389d3d046678",
-            "masterInstanceId": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "designerId": "942f68ab-e1da-4acf-afaa-d0c794a73262",
-            "masterInstanceId": "ed6567b9-4794-455a-9c21-11fef1e2a9f8"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "itemId": null
-            },
-            "designerId": "7506b58b-384e-4895-abd0-f8fbea015c37",
-            "masterInstanceId": "f1eaeea6-2827-4d27-8efa-cc6c024dd251"
-        }
-    ]
+    "designerId": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
 }

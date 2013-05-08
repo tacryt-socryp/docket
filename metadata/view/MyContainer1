@@ -1,0 +1,27 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyContainer1",
+        "designer|initialView": true,
+        "layout": "fit",
+        "scrollable": "horizontal"
+    },
+    "designerId": "9222a550-a924-416c-8431-7f97979090f6",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "7788a8a8-8494-4db9-bfb2-ccc889b1112d",
+            "masterInstanceId": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be"
+        }
+    ]
+}

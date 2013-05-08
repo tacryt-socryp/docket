@@ -9,7 +9,7 @@
         "height": "100%",
         "html": "<iframe src=\"authiframe.html\" id=\"googleLogin\" style=\"border:0; width:100%; height:100%;\">",
         "width": "100%",
-        "designer|userClassName": "MyContainer"
+        "designer|userClassName": "authContainer"
     },
     "designerId": "ecb08921-839f-4590-8266-0cbdeabbea84"
 }

@@ -6,12 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "scrollable": [
-            "{\r",
-            "    direction: 'horizontal',\r",
-            "    directionLock: true\r",
-            "}"
-        ],
         "docked": null,
         "fullscreen": null,
         "height": null,
@@ -27,13 +21,6 @@
         "scrollable": "object"
     },
     "designerId": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
-    "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "scrollable",
-            "type": "string"
-        }
-    ],
     "cn": [
         {
             "type": "fixedfunction",
@@ -120,23 +107,89 @@
             "designerId": "87425d03-1f41-4721-ba73-bfdc1b86a8d5"
         },
         {
-            "type": "basiceventbinding",
+            "type": "basicfunction",
             "reference": {
-                "name": "listeners",
+                "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onMyComponent1OnDrag",
-                "designer|params": [
-                    "draw, event, offset"
-                ],
+                "fn": "onElementPainted",
                 "implHandler": [
-                    "draw.getScrollable().getScroller().scrollBy(offset, 0);"
-                ],
-                "name": "onDrag"
+                    "var me = this,\r",
+                    "            w       = 700 * Ext.getStore('MyStore').getCount(),\r",
+                    "            h       = me.element.getHeight(),\r",
+                    "            dynText = '10:33 pm',\r",
+                    "            child   = me.items.getAt(0),\r",
+                    "            surface = child.getSurface('main'),\r",
+                    "            loc,\r",
+                    "            iter;\r",
+                    "\r",
+                    "console.log(\"w: \" + w);\r",
+                    "console.log(\"h: \" + h);\r",
+                    "\r",
+                    "child.setSize(w,h);\r",
+                    "surface.setSize(w,h);\r",
+                    "\r",
+                    "//Line across screen\r",
+                    "surface.add({\r",
+                    "   type: 'rect',\r",
+                    "   fill: '#176c93',\r",
+                    "   height : 20,\r",
+                    "   width: w,\r",
+                    "   x: 0,\r",
+                    "   y: 330\r",
+                    "}).show(true);\r",
+                    "\r",
+                    "surface.add({\r",
+                    "   type: 'text',\r",
+                    "   text: 'Meetings in Room A',\r",
+                    "   font: '32px Arial',\r",
+                    "   fill: '#FFF',\r",
+                    "   x: 70,\r",
+                    "   y: 50\r",
+                    "}).show(true);\r",
+                    "\r",
+                    "for (iter=0; iter<5; iter++) {\r",
+                    "   loc = 100 + iter*500;\r",
+                    "   //Rounded rectangle example\r",
+                    "   surface.add({\r",
+                    "      type: 'rect',\r",
+                    "      fill: '#43aad5',\r",
+                    "      height : 130,\r",
+                    "      width: 300,\r",
+                    "      radius: 10,\r",
+                    "      x: loc,\r",
+                    "      y: 170\r",
+                    "   }).show(true);\r",
+                    "}\r",
+                    "\r",
+                    "for (iter=0; iter<5; iter++) {\r",
+                    "   loc = 350 + iter*500;\r",
+                    "   //Rounded rectangle example\r",
+                    "   surface.add({\r",
+                    "      type: 'rect',\r",
+                    "      fill: '#43aad5',\r",
+                    "      height : 130,\r",
+                    "      width: 300,\r",
+                    "      radius: 10,\r",
+                    "      x: loc,\r",
+                    "      y: 380\r",
+                    "   }).show(true);\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "surface.add({\r",
+                    "   type: 'text',\r",
+                    "   text: dynText,\r",
+                    "   font: '18px Arial',\r",
+                    "   fill: '#FFF',\r",
+                    "   x: 200,\r",
+                    "   y: 380\r",
+                    "}).show(true);"
+                ]
             },
-            "designerId": "eb5de23e-a947-4f88-8e6b-995ac1bf2061"
+            "designerId": "dabd8531-3771-4630-bb44-e2365a2a0ca4"
         }
     ]
 }

@@ -13,7 +13,8 @@
             "MyStore"
         ],
         "views": [
-            "mainCarousel"
+            "mainCarousel",
+            "MyContainer1"
         ],
         "name": "Booking"
     },

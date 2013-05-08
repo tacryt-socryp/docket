@@ -19,21 +19,7 @@ Ext.define('Booking.view.MyComponent1', {
 
     config: {
         itemId: 'myComponent1',
-        style: 'background:#0d6289;',
-        scrollable: {
-            direction: 'horizontal',
-            directionLock: true
-        },
-        listeners: [
-            {
-                fn: 'onMyComponent1OnDrag',
-                event: 'onDrag'
-            }
-        ]
-    },
-
-    onMyComponent1OnDrag: function(draw, event, offset) {
-        draw.getScrollable().getScroller().scrollBy(offset, 0);
+        style: 'background:#0d6289;'
     },
 
     initialize: function() {
@@ -100,6 +86,80 @@ Ext.define('Booking.view.MyComponent1', {
         var dynText = '10:33 pm';
 
         this.getSurface('main').add({
+            type: 'text',
+            text: dynText,
+            font: '18px Arial',
+            fill: '#FFF',
+            x: 200,
+            y: 380
+        }).show(true);
+    },
+
+    onElementPainted: function() {
+        var me = this,
+            w       = 700 * Ext.getStore('MyStore').getCount(),
+            h       = me.element.getHeight(),
+            dynText = '10:33 pm',
+            child   = me.items.getAt(0),
+            surface = child.getSurface('main'),
+            loc,
+            iter;
+
+        console.log("w: " + w);
+        console.log("h: " + h);
+
+        child.setSize(w,h);
+        surface.setSize(w,h);
+
+        //Line across screen
+        surface.add({
+            type: 'rect',
+            fill: '#176c93',
+            height : 20,
+            width: w,
+            x: 0,
+            y: 330
+        }).show(true);
+
+        surface.add({
+            type: 'text',
+            text: 'Meetings in Room A',
+            font: '32px Arial',
+            fill: '#FFF',
+            x: 70,
+            y: 50
+        }).show(true);
+
+        for (iter=0; iter<5; iter++) {
+            loc = 100 + iter*500;
+            //Rounded rectangle example
+            surface.add({
+                type: 'rect',
+                fill: '#43aad5',
+                height : 130,
+                width: 300,
+                radius: 10,
+                x: loc,
+                y: 170
+            }).show(true);
+        }
+
+        for (iter=0; iter<5; iter++) {
+            loc = 350 + iter*500;
+            //Rounded rectangle example
+            surface.add({
+                type: 'rect',
+                fill: '#43aad5',
+                height : 130,
+                width: 300,
+                radius: 10,
+                x: loc,
+                y: 380
+            }).show(true);
+        }
+
+
+        surface.add({
             type: 'text',
             text: dynText,
             font: '18px Arial',
