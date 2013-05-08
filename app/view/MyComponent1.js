@@ -18,6 +18,7 @@ Ext.define('Booking.view.MyComponent1', {
     alias: 'widget.myComponent1',
 
     config: {
+        docked: 'top',
         itemId: 'myComponent1',
         style: 'background:#0d6289;',
         scrollable: {

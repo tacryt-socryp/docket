@@ -12,7 +12,7 @@
             "    directionLock: true\r",
             "}"
         ],
-        "docked": null,
+        "docked": "top",
         "fullscreen": null,
         "height": null,
         "itemId": "myComponent1",
@@ -116,7 +116,7 @@
                     "draw, event, offset"
                 ],
                 "implHandler": [
-                    "draw.getScrollable().getScroller().scrollBy(100, 0);"
+                    "draw.getScrollable().getScroller().scrollBy(offset, 0);"
                 ],
                 "name": "onDrag"
             },
