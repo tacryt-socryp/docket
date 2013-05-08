@@ -11,5 +11,17 @@
         "designer|userAlias": "mainCarousel",
         "direction": "vertical"
     },
-    "designerId": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
+    "designerId": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "31a8bc6b-1a6f-467f-a13a-4d205c547d72",
+            "masterInstanceId": "9222a550-a924-416c-8431-7f97979090f6"
+        }
+    ]
 }

@@ -6,7 +6,12 @@
         "controller": true,
         "resource": true,
         "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d": {
-            "id": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
+            "id": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
+            "cn": [
+                {
+                    "id": "31a8bc6b-1a6f-467f-a13a-4d205c547d72"
+                }
+            ]
         },
         "9222a550-a924-416c-8431-7f97979090f6": {
             "id": "9222a550-a924-416c-8431-7f97979090f6",
@@ -91,11 +96,11 @@
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "9222a550-a924-416c-8431-7f97979090f6",
-        "selectedInstance": "9222a550-a924-416c-8431-7f97979090f6"
+        "topInstance": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be",
+        "selectedInstance": "dabd8531-3771-4630-bb44-e2365a2a0ca4"
     },
     "codeState": {
-        "topInstance": "9222a550-a924-416c-8431-7f97979090f6"
+        "topInstance": "651ff493-cbcb-4d3e-b279-7cbe4d73a3be"
     },
     "editMode": "code"
 }
