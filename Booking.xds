@@ -61,22 +61,6 @@
             ],
             "className": "MyController"
         },
-        "857a2d32-1f9f-470f-a75f-af423cd34d90": {
-            "paths": [
-                "metadata/view/MyContainer2",
-                "app/view/override/MyContainer2.js",
-                "app/view/MyContainer2.js"
-            ],
-            "className": "MyContainer2"
-        },
-        "2d6161f9-bf66-4840-852f-d095a57884dd": {
-            "paths": [
-                "metadata/view/MyComponent2",
-                "app/view/override/MyComponent2.js",
-                "app/view/MyComponent2.js"
-            ],
-            "className": "MyComponent2"
-        },
         "a5f363fc-6ad5-44d1-847a-27915289d76d": {
             "paths": [
                 "metadata/view/MyContainer1",
@@ -98,8 +82,6 @@
         "view": [
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "a5f363fc-6ad5-44d1-847a-27915289d76d",
-            "857a2d32-1f9f-470f-a75f-af423cd34d90",
-            "2d6161f9-bf66-4840-852f-d095a57884dd",
             "54ad6309-c344-4a63-886c-e6428e21f826",
             "ecb08921-839f-4590-8266-0cbdeabbea84"
         ],

@@ -15,8 +15,7 @@
         "views": [
             "mainCarousel",
             "MyComponent1",
-            "MyContainer1",
-            "MyContainer2"
+            "MyContainer1"
         ],
         "name": "Booking"
     },
