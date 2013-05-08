@@ -52,10 +52,8 @@ Ext.define('Booking.view.MyComponent1', {
         this.isDragging = true;
 
         if (directionLock) {
-            if (direction === 'horizontal' && absDeltaX > absDeltaY) {
-                this.isDragging = false;
-                return;
-            } else if (direction === 'vertical' && absDeltaY > absDeltaX) {
+            if (direction === 'vertical' && absDeltaY > absDeltaX)
+            || (direction === 'horizontal' && absDeltaX > absDeltaY) {
                 draw.stopPropagation();
             } else {
                 this.isDragging = false;
@@ -72,6 +70,9 @@ Ext.define('Booking.view.MyComponent1', {
     },
 
     onMyComponentOnDrag1: function(draw) {
+        if (direction === 'horizontal' && absDeltaX > absDeltaY) {
+            this.getSurface('main').getScrollable().getScroller().scrollBy(1000, 0);
+        }
         if (!this.isDragging) {
             return;
         }
