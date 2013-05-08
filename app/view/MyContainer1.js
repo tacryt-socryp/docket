@@ -22,7 +22,7 @@ Ext.define('Booking.view.MyContainer1', {
 
     config: {
         layout: {
-            type: 'card'
+            type: 'fit'
         },
         scrollable: 'horizontal',
         items: [
