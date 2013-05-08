@@ -10,7 +10,7 @@
         "itemId": "myContainer2",
         "designer|userClassName": "myContainer2",
         "designer|userAlias": "mycontainer2",
-        "layout": "card",
+        "layout": null,
         "scrollable": [
             "{\r",
             "    direction: 'horizontal',\r",
