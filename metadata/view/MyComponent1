@@ -140,7 +140,9 @@
                     "}\r",
                     "\r",
                     "this.dragStartOffset = this.offset;\r",
-                    "this.dragDirection = 0;"
+                    "this.dragDirection = 0;\r",
+                    "\r",
+                    "this.getScrollable().getScroller().scrollBy(offset, 0);"
                 ],
                 "name": "onDragStart"
             },
