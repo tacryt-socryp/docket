@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userClassName": "MyContainer1",
         "designer|userAlias": "mycontainer1",
-        "designer|initialView": true,
+        "layout": "fit",
         "scrollable": [
             "{\r",
             "    direction: 'horizontal',\r",
