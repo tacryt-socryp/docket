@@ -43,7 +43,7 @@
                     "this.callParent();\r",
                     "\r",
                     "\r",
-                    "var wide = 700 * this.getComponent('MyStore').getCount();\r",
+                    "var wide = 700 * store.MyStore.getCount();\r",
                     "//var wide = 700 * Ext.getCmp('MyStore').getCount();\r",
                     "\r",
                     "Ext.getCmp('MyComponent1').setWidth(wide);\r",
