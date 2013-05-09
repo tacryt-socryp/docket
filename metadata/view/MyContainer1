@@ -83,7 +83,7 @@
                             "//Line across screen\r",
                             "surface.add({\r",
                             "    type: 'rect',\r",
-                            "    fill: '#176c93',\r",
+                            "    fill: '#87CEEB',\r",
                             "    height : 20,\r",
                             "    width: w,\r",
                             "    x: 0,\r",

@@ -50,7 +50,7 @@ Ext.define('Booking.view.MyContainer1', {
                             //Line across screen
                             surface.add({
                                 type: 'rect',
-                                fill: '#176c93',
+                                fill: '#87CEEB',
                                 height : 20,
                                 width: w,
                                 x: 0,
