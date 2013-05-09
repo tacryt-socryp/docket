@@ -41,9 +41,6 @@ Ext.define('Booking.view.MyContainer1', {
                                 loc,
                                 iter;
 
-                            console.log("w: " + w);
-                            console.log("h: " + h);
-
                             this.setSize(w,h);
                             surface.setSize(w,h);
 
@@ -78,7 +75,6 @@ Ext.define('Booking.view.MyContainer1', {
                                     x: loc,
                                     y: 170
                                 }).show(true);
-                                console.log("Making rectangle");
                             }
 
                             for (iter=0; iter<5; iter++) {
