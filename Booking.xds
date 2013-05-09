@@ -76,6 +76,14 @@
                 "app/view/MyContainer2.js"
             ],
             "className": "MyContainer2"
+        },
+        "5133ddc6-983b-440e-ba54-ce2fa457ad04": {
+            "paths": [
+                "metadata/view/MyFormPanel",
+                "app/view/override/MyFormPanel.js",
+                "app/view/MyFormPanel.js"
+            ],
+            "className": "MyFormPanel"
         }
     },
     "viewOrderMap": {
@@ -83,7 +91,8 @@
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "a5f363fc-6ad5-44d1-847a-27915289d76d",
             "68d13d4d-945b-4546-a15a-71ac0804d593",
-            "ecb08921-839f-4590-8266-0cbdeabbea84"
+            "ecb08921-839f-4590-8266-0cbdeabbea84",
+            "5133ddc6-983b-440e-ba54-ce2fa457ad04"
         ],
         "store": [
             "8714683d-0a2e-4225-a248-8932813f1f38"

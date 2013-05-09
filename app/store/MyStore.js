@@ -23,6 +23,7 @@ Ext.define('Booking.store.MyStore', {
 
     config: {
         autoLoad: true,
+        autoSync: true,
         data: [
             {
                 id: 1,

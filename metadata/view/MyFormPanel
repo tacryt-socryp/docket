@@ -1,0 +1,18 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "centered": true,
+        "height": 500,
+        "html": "<p>Is this a great overlay, or what?</p>",
+        "width": 500,
+        "designer|userClassName": "MyFormPanel",
+        "hideOnMaskTap": true,
+        "modal": true
+    },
+    "designerId": "5133ddc6-983b-440e-ba54-ce2fa457ad04"
+}

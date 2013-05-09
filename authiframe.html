@@ -48,6 +48,9 @@ function makeApiCall() {
           
     request.execute(function(resp) {
       for (var i = 0; i < resp.items.length; i++) {
+        if (i == 0) {
+          console.log(resp.items[i]);
+        }
         var li = document.createElement('li');
         li.appendChild(document.createTextNode(resp.items[i].summary));
         document.getElementById('events').appendChild(li);
