@@ -130,7 +130,7 @@
                             "        type: 'path',\r",
                             "        path: 'M ' + (12+iter) + ' ' + (12+iter) + ' ' +\r",
                             "              'l ' + 37 + ' ' + 12 + ' ' +\r",
-                            "              'l ' + 25 + ' ' + 22 + 'z',\r",
+                            "              'l ' + -12 + ' ' + 10 + 'z',\r",
                             "        fillStyle: '#43aad5'\r",
                             "    }).show(true);\r",
                             "    iter = iter/50;\r",
