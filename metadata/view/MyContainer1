@@ -140,7 +140,7 @@
                             "    text: dynText,\r",
                             "    font: '18px Arial',\r",
                             "    fill: '#FFF',\r",
-                            "    x: 150,\r",
+                            "    x: 170,\r",
                             "    y: 380\r",
                             "}).show(true);"
                         ],

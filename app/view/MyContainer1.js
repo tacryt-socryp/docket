@@ -107,7 +107,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 text: dynText,
                                 font: '18px Arial',
                                 fill: '#FFF',
-                                x: 150,
+                                x: 170,
                                 y: 380
                             }).show(true);
                         },
