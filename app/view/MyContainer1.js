@@ -91,13 +91,15 @@ Ext.define('Booking.view.MyContainer1', {
                                 }).show(true);
                             }
 
-                            //for (iter = 0; iter<5; iter++) {
-                            surface.add({
-                                type: 'path',
-                                path: 'M 12 12 L 37 12 L 25 22 z',
-                                fillStyle: '#43aad5' 
-                            }).show(true);
-                            //}
+                            for (iter = 0; iter<5; iter++) {
+                                iter = iter*100;
+                                surface.add({
+                                    type: 'path',
+                                    path: 'M'+(12+iter)+ ' ' + (12+iter)+' L ' + (37+iter) + ' ' + (12+iter) + ' L ' + (25+iter) + ' ' + (22+iter) + 'z',
+                                    fillStyle: '#43aad5'
+                                }).show(true);
+                                iter = iter/100;
+                            }
 
                             surface.add({
                                 type: 'text',
