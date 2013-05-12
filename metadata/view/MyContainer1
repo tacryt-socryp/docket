@@ -133,7 +133,7 @@
                             "              'L ' + (25+iter) + ' ' + (22+iter) + 'z',\r",
                             "        fillStyle: '#43aad5'\r",
                             "    }).show(true);\r",
-                            "    iter = iter/100;\r",
+                            "    iter = iter/50;\r",
                             "}\r",
                             "\r",
                             "surface.add({\r",

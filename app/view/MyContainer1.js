@@ -100,7 +100,7 @@ Ext.define('Booking.view.MyContainer1', {
                                     'L ' + (25+iter) + ' ' + (22+iter) + 'z',
                                     fillStyle: '#43aad5'
                                 }).show(true);
-                                iter = iter/500;
+                                iter = iter/50;
                             }
 
                             surface.add({
