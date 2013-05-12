@@ -159,7 +159,7 @@
                     "userConfig": {
                         "fn": "onInlineDrawResize",
                         "implHandler": [
-                            "var w = 700 * Ext.getStore('MyStore').getCount(),\r",
+                            "var w = 650 * Ext.getStore('MyStore').getCount(),\r",
                             "    h = Ext.getBody().getSize().height,\r",
                             "    surface = this.getSurface('main');\r",
                             "\r",
