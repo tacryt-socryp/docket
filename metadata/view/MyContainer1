@@ -127,7 +127,7 @@
                             "//for (iter = 0; iter<5; iter++) {\r",
                             "    surface.add({\r",
                             "        type: 'path',\r",
-                            "        path: 'M 150 350 L 37 12 L 25 22 z',\r",
+                            "        path: 'M 12 12 L 37 12 L 25 22 z',\r",
                             "        fillStyle: '#43aad5' \r",
                             "    }).show(true);\r",
                             "//}\r",
