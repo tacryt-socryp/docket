@@ -95,7 +95,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 iter = iter*50;
                                 surface.add({
                                     type: 'path',
-                                    path: 'M ' + (12+iter) + ' ' + (12+iter) + ' ' +
+                                    path: 'M ' + (iter) + ' ' + (iter) + ' ' +
                                     'l ' + 25 + ' ' + 0 + ' ' +
                                     'l ' + -12 + ' ' + 10 + 'z',
                                     fillStyle: '#43aad5'

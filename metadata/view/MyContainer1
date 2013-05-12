@@ -128,7 +128,7 @@
                             "    iter = iter*50;\r",
                             "    surface.add({\r",
                             "        type: 'path',\r",
-                            "        path: 'M ' + (12+iter) + ' ' + (12+iter) + ' ' +\r",
+                            "        path: 'M ' + (iter) + ' ' + (iter) + ' ' +\r",
                             "              'l ' + 25 + ' ' + 0 + ' ' +\r",
                             "              'l ' + -12 + ' ' + 10 + 'z',\r",
                             "        fillStyle: '#43aad5'\r",
