@@ -104,7 +104,7 @@ Ext.define('Booking.view.MyContainer1', {
                             }
 
                             for (iter = 0; iter<5; iter++) {
-                                loc = 465 + iter*450;
+                                loc = 415 + iter*450;
                                 //Triangles on bottom
                                 surface.add({
                                     type: 'path',
