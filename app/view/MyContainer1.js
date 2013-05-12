@@ -65,7 +65,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                             for (iter=0; iter<5; iter++) {
                                 loc = 50 + iter*450;
-                                //Rounded rectangle example
+                                //Rounded rectangles on top
                                 surface.add({
                                     type: 'rect',
                                     fill: '#43aad5',
@@ -79,7 +79,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                             for (iter=0; iter<5; iter++) {
                                 loc = 275 + iter*450;
-                                //Rounded rectangle example
+                                //Rounded rectangles on bottom
                                 surface.add({
                                     type: 'rect',
                                     fill: '#43aad5',
@@ -93,11 +93,24 @@ Ext.define('Booking.view.MyContainer1', {
 
                             for (iter = 0; iter<5; iter++) {
                                 loc = 190 + iter*450;
+                                //Triangles on top
                                 surface.add({
                                     type: 'path',
                                     path: 'M ' + loc + ' ' + 270 + ' ' +
                                     'l ' + 25 + ' ' + 0 + ' ' +
                                     'l ' + -12 + ' ' + 10 + 'z',
+                                    fillStyle: '#43aad5'
+                                }).show(true);
+                            }
+
+                            for (iter = 0; iter<5; iter++) {
+                                loc = 465 + iter*450;
+                                //Triangles on top
+                                surface.add({
+                                    type: 'path',
+                                    path: 'M ' + loc + ' ' + 410 + ' ' +
+                                    'l ' + -25 + ' ' + 0 + ' ' +
+                                    'l ' + 12 + ' ' + -10 + 'z',
                                     fillStyle: '#43aad5'
                                 }).show(true);
                             }
