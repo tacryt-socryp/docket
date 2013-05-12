@@ -67,7 +67,7 @@
                     "userConfig": {
                         "fn": "onMyComponent1Painted1",
                         "implHandler": [
-                            "var w = 700 * Ext.getStore('MyStore').getCount(),\r",
+                            "var w = 650 * Ext.getStore('MyStore').getCount(),\r",
                             "    h = Ext.getBody().getSize().height,\r",
                             "    dynText = '10:33 pm',\r",
                             "    surface = this.getSurface('main'),\r",
