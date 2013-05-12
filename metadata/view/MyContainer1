@@ -125,7 +125,7 @@
                             "}\r",
                             "\r",
                             "for (iter = 0; iter<5; iter++) {\r",
-                            "    loc = 275 + iter*450;\r",
+                            "    loc = 180 + iter*450;\r",
                             "    surface.add({\r",
                             "        type: 'path',\r",
                             "        path: 'M ' + loc + ' ' + 270 + ' ' +\r",
