@@ -111,7 +111,7 @@
                             "}\r",
                             "\r",
                             "for (iter=0; iter<5; iter++) {\r",
-                            "    loc = 350 + iter*450;\r",
+                            "    loc = 300 + iter*450;\r",
                             "    //Rounded rectangle example\r",
                             "    surface.add({\r",
                             "        type: 'rect',\r",
