@@ -64,7 +64,7 @@ Ext.define('Booking.view.MyContainer1', {
                             }).show(true);
 
                             for (iter=0; iter<5; iter++) {
-                                loc = 100 + iter*450;
+                                loc = 50 + iter*450;
                                 //Rounded rectangle example
                                 surface.add({
                                     type: 'rect',
@@ -78,7 +78,7 @@ Ext.define('Booking.view.MyContainer1', {
                             }
 
                             for (iter=0; iter<5; iter++) {
-                                loc = 300 + iter*450;
+                                loc = 275 + iter*450;
                                 //Rounded rectangle example
                                 surface.add({
                                     type: 'rect',
