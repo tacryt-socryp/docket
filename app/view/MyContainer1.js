@@ -94,7 +94,7 @@ Ext.define('Booking.view.MyContainer1', {
                             //for (iter = 0; iter<5; iter++) {
                             surface.add({
                                 type: 'path',
-                                path: 'M 12 12 L 37 12 L 25 37 z',
+                                path: 'M 12 12 L 37 12 L 25 18 z',
                                 fillStyle: '#43aad5' 
                             }).show(true);
                             //}
