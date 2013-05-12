@@ -137,7 +137,7 @@
                             "}\r",
                             "\r",
                             "for (iter = 0; iter<5; iter++) {\r",
-                            "\r",
+                            "    loc = 435 + iter*450;\r",
                             "    //Triangles on bottom\r",
                             "    surface.add({\r",
                             "        type: 'path',\r",
