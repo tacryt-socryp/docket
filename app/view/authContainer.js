@@ -41,7 +41,7 @@ Ext.define('Booking.view.authContainer', {
 
     checkAuth: function() {
         console.log('Inside checkAuth');
-        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, this.handleAuthResult);
+        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true}, this.handleAuthResult);
     },
 
     handleAuthResult: function() {
