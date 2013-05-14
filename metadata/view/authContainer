@@ -81,7 +81,11 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "handleAuthClick",
+                "designer|params": [
+                    "event"
+                ],
                 "implHandler": [
+                    "console.log(\"handleAuthClick\");\r",
                     "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false},\r",
                     "      this.handleAuthResult);\r",
                     "return false;"
@@ -127,9 +131,9 @@
                 "implHandler": [
                     "this.callParent();\r",
                     "\r",
-                    "var clientId = '464168127252.apps.googleusercontent.com';\r",
-                    "var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';\r",
-                    "var scopes = 'https://www.googleapis.com/auth/calendar';\r",
+                    "var clientId = '464168127252.apps.googleusercontent.com',\r",
+                    "    apiKey  =  'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
+                    "    scopes  = 'https://www.googleapis.com/auth/calendar';\r",
                     "\r",
                     "this.handleClientLoad();"
                 ]

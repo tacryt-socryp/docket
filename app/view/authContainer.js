@@ -54,7 +54,8 @@ Ext.define('Booking.view.authContainer', {
         }
     },
 
-    handleAuthClick: function() {
+    handleAuthClick: function(event) {
+        console.log("Inside handleAuthClick");
         gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false},
         this.handleAuthResult);
         return false;
@@ -78,9 +79,9 @@ Ext.define('Booking.view.authContainer', {
     initialize: function() {
         this.callParent();
 
-        var clientId = '464168127252.apps.googleusercontent.com';
-        var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
-        var scopes = 'https://www.googleapis.com/auth/calendar';
+        var clientId = '464168127252.apps.googleusercontent.com',
+            apiKey  =  'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
+            scopes  = 'https://www.googleapis.com/auth/calendar';
 
         this.handleClientLoad();
     }
