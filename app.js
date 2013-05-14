@@ -34,7 +34,7 @@ Ext.application({
 
     launch: function() {
 
-        Ext.create('Booking.view.mainCarousel', {fullscreen: true});
+        Ext.create('Booking.view.authContainer', {fullscreen: true});
     }
 
 });
