@@ -73,7 +73,7 @@ Ext.define('Booking.view.MyContainer1', {
                                     width: 300,
                                     radius: 10,
                                     x: loc,
-                                    y: 140
+                                    y: 130
                                 }).show(true);
                             }
 
