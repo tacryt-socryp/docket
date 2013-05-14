@@ -160,10 +160,10 @@
                             "\r",
                             "surface.add({\r",
                             "    type: 'circle',\r",
-                            "    cx: 100,\r",
-                            "    cy: 100,\r",
-                            "    r: 25,\r",
-                            "    fillStyle: 'blue'\r",
+                            "    cx: 170,\r",
+                            "    cy: 360,\r",
+                            "    r: 15,\r",
+                            "    fillStyle: '#43aad5'\r",
                             "}).show(true);"
                         ],
                         "name": "painted"

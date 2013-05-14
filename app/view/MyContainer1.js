@@ -127,9 +127,9 @@ Ext.define('Booking.view.MyContainer1', {
 
                             surface.add({
                                 type: 'circle',
-                                cx: 100,
-                                cy: 100,
-                                r: 25,
+                                cx: 170,
+                                cy: 360,
+                                r: 15,
                                 fillStyle: '#43aad5'
                             }).show(true);
                         },
