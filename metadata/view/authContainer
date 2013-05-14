@@ -43,7 +43,7 @@
                 "fn": "checkAuth",
                 "implHandler": [
                     "console.log('Inside checkAuth');\r",
-                    "  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},\r",
+                    "  gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true},\r",
                     "      this.handleAuthResult);"
                 ]
             },
@@ -68,6 +68,49 @@
                 ]
             },
             "designerId": "bc28f289-5358-4cb8-ab17-05d1daa8c563"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "handleAuthClick",
+                "implHandler": [
+                    "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false},\r",
+                    "      this.handleAuthResult);\r",
+                    "return false;"
+                ]
+            },
+            "designerId": "d64b703e-0dbb-4e1a-a363-6f5fef6c9b5d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "makeApiCall",
+                "implHandler": [
+                    "gapi.client.load('calendar', 'v3', function() {\r",
+                    "    var request = gapi.client.calendar.events.list({'calendarId': 'primary'});\r",
+                    "          \r",
+                    "    request.execute(function(resp) {\r",
+                    "        for (var i = 0; i < resp.items.length; i++) {\r",
+                    "            if (i === 0) {\r",
+                    "                console.log(resp.items[i]);\r",
+                    "            }\r",
+                    "            console.log(resp.items[i].summary);\r",
+                    "        }\r",
+                    "    });\r",
+                    "});"
+                ]
+            },
+            "designerId": "d994a09d-6568-4494-ba67-8cf524446771"
         },
         {
             "type": "fixedfunction",
@@ -118,55 +161,12 @@
                         "implHandler": [
                             "console.log('Inside buttonHandler');\r",
                             "var parent = button.up();\r",
-                            "parent.checkAuth();"
+                            "parent.handleAuthClick();"
                         ]
                     },
                     "designerId": "77044a84-f288-4260-b275-7f52950a882a"
                 }
             ]
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "handleAuthClick",
-                "implHandler": [
-                    "gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false},\r",
-                    "      this.handleAuthResult);\r",
-                    "return false;"
-                ]
-            },
-            "designerId": "d64b703e-0dbb-4e1a-a363-6f5fef6c9b5d"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "makeApiCall",
-                "implHandler": [
-                    "gapi.client.load('calendar', 'v3', function() {\r",
-                    "    var request = gapi.client.calendar.events.list({'calendarId': 'primary'});\r",
-                    "          \r",
-                    "    request.execute(function(resp) {\r",
-                    "        for (var i = 0; i < resp.items.length; i++) {\r",
-                    "            if (i == 0) {\r",
-                    "                console.log(resp.items[i]);\r",
-                    "            }\r",
-                    "            console.log(resp.items[i].summary);\r",
-                    "        }\r",
-                    "    });\r",
-                    "});"
-                ]
-            },
-            "designerId": "d994a09d-6568-4494-ba67-8cf524446771"
         }
     ]
 }

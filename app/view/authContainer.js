@@ -25,7 +25,7 @@ Ext.define('Booking.view.authContainer', {
                 handler: function(button, event) {
                     console.log('Inside buttonHandler');
                     var parent = button.up();
-                    parent.checkAuth();
+                    parent.handleAuthClick();
                 },
                 text: 'MyButton'
             }
@@ -41,7 +41,7 @@ Ext.define('Booking.view.authContainer', {
 
     checkAuth: function() {
         console.log('Inside checkAuth');
-        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
+        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true},
         this.handleAuthResult);
     },
 
@@ -54,18 +54,8 @@ Ext.define('Booking.view.authContainer', {
         }
     },
 
-    initialize: function() {
-        this.callParent();
-
-        var clientId = '464168127252.apps.googleusercontent.com';
-        var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
-        var scopes = 'https://www.googleapis.com/auth/calendar';
-
-        this.handleClientLoad();
-    },
-
     handleAuthClick: function() {
-        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false},
+        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false},
         this.handleAuthResult);
         return false;
     },
@@ -83,6 +73,16 @@ Ext.define('Booking.view.authContainer', {
                 }
             });
         });
+    },
+
+    initialize: function() {
+        this.callParent();
+
+        var clientId = '464168127252.apps.googleusercontent.com';
+        var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
+        var scopes = 'https://www.googleapis.com/auth/calendar';
+
+        this.handleClientLoad();
     }
 
 });
