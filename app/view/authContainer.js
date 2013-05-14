@@ -46,9 +46,7 @@ Ext.define('Booking.view.authContainer', {
 
     handleAuthResult: function(authResult) {
         console.log('Inside handleAuthResult');
-        if (authResult) {
-            this.makeApiCall();
-        }
+        this.makeApiCall();
     },
 
     makeApiCall: function() {

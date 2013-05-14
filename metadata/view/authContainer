@@ -62,9 +62,7 @@
                 ],
                 "implHandler": [
                     "console.log('Inside handleAuthResult');\r",
-                    "if (authResult) {\r",
-                    "    this.makeApiCall();\r",
-                    "}"
+                    "this.makeApiCall();"
                 ]
             },
             "designerId": "bc28f289-5358-4cb8-ab17-05d1daa8c563"
