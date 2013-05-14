@@ -158,7 +158,13 @@
                             "    }).show(true);\r",
                             "}\r",
                             "\r",
-                            ""
+                            "surface.add({\r",
+                            "    type: 'circle',\r",
+                            "    cx: 100,\r",
+                            "    cy: 100,\r",
+                            "    r: 25,\r",
+                            "    fillStyle: 'blue'\r",
+                            "}).show(true);"
                         ],
                         "name": "painted"
                     },
