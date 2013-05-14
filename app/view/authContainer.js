@@ -41,27 +41,17 @@ Ext.define('Booking.view.authContainer', {
 
     checkAuth: function() {
         console.log('Inside checkAuth');
-        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true}, this.handleAuthResult);
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
+        this.handleAuthResult);
     },
 
     handleAuthResult: function() {
         console.log('Inside handleAuthResult');
-        gapi.client.load('calendar', 'v3', function() {
-            //Loading inside gapi
-            var request = gapi.client.calendar.events.list({
-                'calendarId': 'primary'
-            });
+        console.log(authResult);
 
-            request.execute(function(resp) {
-                //Executing request
-                for (var i = 0; i < resp.items.length; i++) {
-                    if (i === 0) {
-                        console.log(resp.items[i]);
-                    }
-                    console.log('Response Item: ' + resp.items[i].summary);
-                }
-            });
-        });
+        if (authResult) {
+            this.makeApiCall();
+        }
     },
 
     initialize: function() {
@@ -72,6 +62,27 @@ Ext.define('Booking.view.authContainer', {
         var scopes = 'https://www.googleapis.com/auth/calendar';
 
         this.handleClientLoad();
+    },
+
+    handleAuthClick: function() {
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false},
+        this.handleAuthResult);
+        return false;
+    },
+
+    makeApiCall: function() {
+        gapi.client.load('calendar', 'v3', function() {
+            var request = gapi.client.calendar.events.list({'calendarId': 'primary'});
+
+            request.execute(function(resp) {
+                for (var i = 0; i < resp.items.length; i++) {
+                    if (i === 0) {
+                        console.log(resp.items[i]);
+                    }
+                    console.log(resp.items[i].summary);
+                }
+            });
+        });
     }
 
 });
