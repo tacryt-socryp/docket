@@ -37,12 +37,12 @@ Ext.define('Booking.view.authContainer', {
     },
 
     checkAuth: function() {
-        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, handleAuthResult);
+        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, this.handleAuthResult);
     },
 
     handleAuthResult: function(authResult) {
         if (authResult) {
-            makeApiCall();
+            this.makeApiCall();
         }
     },
 
