@@ -23,6 +23,7 @@ function checkAuth() {
 }
 
 function handleAuthResult(authResult) {
+  console.log(authResult);
   var authorizeButton = document.getElementById('authorize-button');
   if (authResult) {
     authorizeButton.style.visibility = 'hidden';
