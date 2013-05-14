@@ -32,8 +32,8 @@ Ext.define('Booking.view.authContainer', {
 
     handleClientLoad: function() {
         gapi.client.setApiKey(this.apiKey);
-        window.setTimeout(checkAuth,1);
-        checkAuth();
+        window.setTimeout(this.checkAuth(),1);
+        this.checkAuth();
     },
 
     checkAuth: function() {

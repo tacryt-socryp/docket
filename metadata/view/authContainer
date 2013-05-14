@@ -25,8 +25,8 @@
                 "fn": "handleClientLoad",
                 "implHandler": [
                     "gapi.client.setApiKey(this.apiKey);\r",
-                    "window.setTimeout(checkAuth,1);\r",
-                    "checkAuth();"
+                    "window.setTimeout(this.checkAuth(),1);\r",
+                    "this.checkAuth();"
                 ]
             },
             "designerId": "da9c53da-f5a1-42c4-9511-27012a99c3be"
@@ -145,7 +145,7 @@
                             "event"
                         ],
                         "implHandler": [
-                            "me.handleAuthResult;"
+                            "me.checkAuth();"
                         ]
                     },
                     "designerId": "77044a84-f288-4260-b275-7f52950a882a"
