@@ -1,0 +1,14 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js",
+        "url": "https://apis.google.com/js/client.js?onload=handleClientLoad",
+        "id": "gapi"
+    },
+    "designerId": "8a42d6e3-6787-404c-a166-e113ff2a918a"
+}

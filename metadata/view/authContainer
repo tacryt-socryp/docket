@@ -7,9 +7,150 @@
     "codeClass": null,
     "userConfig": {
         "height": "100%",
-        "html": "<iframe src=\"authiframe.html\" id=\"googleLogin\" style=\"border:0; width:100%; height:100%;\">",
+        "html": null,
         "width": "100%",
         "designer|userClassName": "authContainer"
     },
-    "designerId": "ecb08921-839f-4590-8266-0cbdeabbea84"
+    "designerId": "ecb08921-839f-4590-8266-0cbdeabbea84",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "handleClientLoad",
+                "implHandler": [
+                    "gapi.client.setApiKey(this.apiKey);\r",
+                    "window.setTimeout(checkAuth,1);\r",
+                    "checkAuth();"
+                ]
+            },
+            "designerId": "da9c53da-f5a1-42c4-9511-27012a99c3be"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "checkAuth",
+                "implHandler": [
+                    "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true}, handleAuthResult);"
+                ]
+            },
+            "designerId": "c581a3e2-7ba5-4ea0-8caa-6fbec83cb46b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "handleAuthResult",
+                "designer|params": [
+                    "authResult"
+                ],
+                "implHandler": [
+                    "var authorizeButton = document.getElementById('authorize-button');\r",
+                    "\r",
+                    "if (authResult) {\r",
+                    "    authorizeButton.style.visibility = 'hidden';\r",
+                    "    makeApiCall();\r",
+                    "} else {\r",
+                    "    authorizeButton.style.visibility = '';\r",
+                    "    authorizeButton.onclick = handleAuthClick;\r",
+                    "}"
+                ]
+            },
+            "designerId": "bc28f289-5358-4cb8-ab17-05d1daa8c563"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "handleAuthClick",
+                "designer|params": [
+                    "event"
+                ],
+                "implHandler": [
+                    "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, handleAuthResult);\r",
+                    "return false;"
+                ]
+            },
+            "designerId": "4ca7f5dd-8175-48e1-8d73-8c4c8bc4df55"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "makeApiCall",
+                "implHandler": [
+                    "gapi.client.load('calendar', 'v3', function() {\r",
+                    "    var request = gapi.client.calendar.events.list({\r",
+                    "        'calendarId': 'primary'\r",
+                    "    });\r",
+                    "          \r",
+                    "    request.execute(function(resp) {\r",
+                    "        for (var i = 0; i < resp.items.length; i++) {\r",
+                    "            if (i === 0) {\r",
+                    "              console.log(resp.items[i]);\r",
+                    "            }\r",
+                    "            \r",
+                    "            var li = document.createElement('li');\r",
+                    "            li.appendChild(document.createTextNode(resp.items[i].summary));\r",
+                    "            document.getElementById('events').appendChild(li);\r",
+                    "        }\r",
+                    "    });\r",
+                    "});"
+                ]
+            },
+            "designerId": "944f4ba2-a0aa-4e5c-b59d-793591095aa4"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "var clientId = '464168127252.apps.googleusercontent.com';\r",
+                    "var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';\r",
+                    "var scopes = 'https://www.googleapis.com/auth/calendar';\r",
+                    "var me = this;\r",
+                    "\r",
+                    "var butn = {\r",
+                    "    xtype: 'button',\r",
+                    "    ui: 'action',\r",
+                    "    text: 'Send',\r",
+                    "    listeners: {\r",
+                    "        tap: function(){\r",
+                    "            me.handleAuthClick();\r",
+                    "        }\r",
+                    "    }\r",
+                    "};"
+                ]
+            },
+            "designerId": "14cff21a-87f4-4fb0-a2d1-75314395a646"
+        }
+    ]
 }

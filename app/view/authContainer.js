@@ -18,8 +18,74 @@ Ext.define('Booking.view.authContainer', {
 
     config: {
         height: '100%',
-        html: '<iframe src="authiframe.html" id="googleLogin" style="border:0; width:100%; height:100%;">',
         width: '100%'
+    },
+
+    handleClientLoad: function() {
+        gapi.client.setApiKey(this.apiKey);
+        window.setTimeout(checkAuth,1);
+        checkAuth();
+    },
+
+    checkAuth: function() {
+        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true}, handleAuthResult);
+    },
+
+    handleAuthResult: function(authResult) {
+        var authorizeButton = document.getElementById('authorize-button');
+
+        if (authResult) {
+            authorizeButton.style.visibility = 'hidden';
+            makeApiCall();
+        } else {
+            authorizeButton.style.visibility = '';
+            authorizeButton.onclick = handleAuthClick;
+        }
+    },
+
+    handleAuthClick: function(event) {
+        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, handleAuthResult);
+        return false;
+    },
+
+    makeApiCall: function() {
+        gapi.client.load('calendar', 'v3', function() {
+            var request = gapi.client.calendar.events.list({
+                'calendarId': 'primary'
+            });
+
+            request.execute(function(resp) {
+                for (var i = 0; i < resp.items.length; i++) {
+                    if (i === 0) {
+                        console.log(resp.items[i]);
+                    }
+
+                    var li = document.createElement('li');
+                    li.appendChild(document.createTextNode(resp.items[i].summary));
+                    document.getElementById('events').appendChild(li);
+                }
+            });
+        });
+    },
+
+    initialize: function() {
+        this.callParent();
+
+        var clientId = '464168127252.apps.googleusercontent.com';
+        var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
+        var scopes = 'https://www.googleapis.com/auth/calendar';
+        var me = this;
+
+        var butn = {
+            xtype: 'button',
+            ui: 'action',
+            text: 'Send',
+            listeners: {
+                tap: function(){
+                    me.handleAuthClick();
+                }
+            }
+        };
     }
 
 });

@@ -84,6 +84,12 @@
                 "app/view/MyFormPanel.js"
             ],
             "className": "MyFormPanel"
+        },
+        "8a42d6e3-6787-404c-a166-e113ff2a918a": {
+            "paths": [
+                "metadata/resource/js"
+            ],
+            "className": "js"
         }
     },
     "viewOrderMap": {
@@ -104,7 +110,8 @@
             "373e9087-348b-419a-bbba-8ef612e06d57"
         ],
         "resource": [
-            "f89b6b25-6c19-4b94-86a9-fb489da7899b"
+            "f89b6b25-6c19-4b94-86a9-fb489da7899b",
+            "8a42d6e3-6787-404c-a166-e113ff2a918a"
         ],
         "app": [
             "application"
