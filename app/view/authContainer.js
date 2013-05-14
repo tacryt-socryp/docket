@@ -23,6 +23,7 @@ Ext.define('Booking.view.authContainer', {
             {
                 xtype: 'button',
                 handler: function(button, event) {
+                    console.log('Inside buttonHandler');
                     var parent = button.up();
                     parent.checkAuth();
                 },
@@ -32,22 +33,26 @@ Ext.define('Booking.view.authContainer', {
     },
 
     handleClientLoad: function() {
+        console.log('Inside handleClientLoad');
         gapi.client.setApiKey(this.apiKey);
-        window.setTimeout(this.checkAuth(),1);
+        window.setTimeout(this.checkAuth,1);
         this.checkAuth();
     },
 
     checkAuth: function() {
+        console.log('Inside checkAuth');
         gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, this.handleAuthResult);
     },
 
     handleAuthResult: function(authResult) {
+        console.log('Inside handleAuthResult');
         if (authResult) {
             this.makeApiCall();
         }
     },
 
     makeApiCall: function() {
+        console.log('Inside makeApiCall');
         gapi.client.load('calendar', 'v3', function() {
             var request = gapi.client.calendar.events.list({
                 'calendarId': 'primary'

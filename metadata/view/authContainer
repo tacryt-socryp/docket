@@ -24,8 +24,9 @@
             "userConfig": {
                 "fn": "handleClientLoad",
                 "implHandler": [
+                    "console.log('Inside handleClientLoad');\r",
                     "gapi.client.setApiKey(this.apiKey);\r",
-                    "window.setTimeout(this.checkAuth(),1);\r",
+                    "window.setTimeout(this.checkAuth,1);\r",
                     "this.checkAuth();"
                 ]
             },
@@ -41,6 +42,7 @@
             "userConfig": {
                 "fn": "checkAuth",
                 "implHandler": [
+                    "console.log('Inside checkAuth');\r",
                     "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, this.handleAuthResult);"
                 ]
             },
@@ -59,6 +61,7 @@
                     "authResult"
                 ],
                 "implHandler": [
+                    "console.log('Inside handleAuthResult');\r",
                     "if (authResult) {\r",
                     "    this.makeApiCall();\r",
                     "}"
@@ -76,6 +79,7 @@
             "userConfig": {
                 "fn": "makeApiCall",
                 "implHandler": [
+                    "console.log('Inside makeApiCall');\r",
                     "gapi.client.load('calendar', 'v3', function() {\r",
                     "    var request = gapi.client.calendar.events.list({\r",
                     "        'calendarId': 'primary'\r",
@@ -144,8 +148,9 @@
                             "event"
                         ],
                         "implHandler": [
+                            "console.log('Inside buttonHandler');\r",
                             "var parent = button.up();\r",
-                            ".checkAuth();"
+                            "parent.checkAuth();"
                         ]
                     },
                     "designerId": "77044a84-f288-4260-b275-7f52950a882a"
