@@ -77,6 +77,28 @@ Ext.define('Booking.view.MyContainer1', {
                                 }).show(true);
                             }
 
+                            for (iter = 0; iter<5; iter++) {
+                                loc = 180 + iter*450;
+                                //Triangles on top
+                                surface.add({
+                                    type: 'path',
+                                    path: 'M ' + loc + ' ' + 270 + ' ' +
+                                    'l ' + 25 + ' ' + 0 + ' ' +
+                                    'l ' + -12 + ' ' + 10 + 'z',
+                                    fillStyle: '#43aad5'
+                                }).show(true);
+                            }
+
+                            //Text for top
+                            surface.add({
+                                type: 'text',
+                                text: dynText,
+                                font: '14px Arial',
+                                fill: '#FFF',
+                                x: 170,
+                                y: 380
+                            }).show(true);
+
                             for (iter=0; iter<5; iter++) {
                                 loc = 275 + iter*450;
                                 //Rounded rectangles on bottom
@@ -92,18 +114,6 @@ Ext.define('Booking.view.MyContainer1', {
                             }
 
                             for (iter = 0; iter<5; iter++) {
-                                loc = 180 + iter*450;
-                                //Triangles on top
-                                surface.add({
-                                    type: 'path',
-                                    path: 'M ' + loc + ' ' + 270 + ' ' +
-                                    'l ' + 25 + ' ' + 0 + ' ' +
-                                    'l ' + -12 + ' ' + 10 + 'z',
-                                    fillStyle: '#43aad5'
-                                }).show(true);
-                            }
-
-                            for (iter = 0; iter<5; iter++) {
                                 loc = 435 + iter*450;
                                 //Triangles on bottom
                                 surface.add({
@@ -115,14 +125,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 }).show(true);
                             }
 
-                            surface.add({
-                                type: 'text',
-                                text: dynText,
-                                font: '18px Arial',
-                                fill: '#FFF',
-                                x: 170,
-                                y: 380
-                            }).show(true);
+
                         },
                         event: 'painted'
                     },
