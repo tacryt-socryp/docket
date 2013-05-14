@@ -47,11 +47,13 @@ Ext.define('Booking.view.authContainer', {
     handleAuthResult: function() {
         console.log('Inside handleAuthResult');
         gapi.client.load('calendar', 'v3', function() {
+            //Loading inside gapi
             var request = gapi.client.calendar.events.list({
                 'calendarId': 'primary'
             });
 
             request.execute(function(resp) {
+                //Executing request
                 for (var i = 0; i < resp.items.length; i++) {
                     if (i === 0) {
                         console.log(resp.items[i]);

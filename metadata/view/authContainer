@@ -43,7 +43,7 @@
                 "fn": "checkAuth",
                 "implHandler": [
                     "console.log('Inside checkAuth');\r",
-                    "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, this.handleAuthResult);"
+                    "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true}, this.handleAuthResult);"
                 ]
             },
             "designerId": "c581a3e2-7ba5-4ea0-8caa-6fbec83cb46b"
@@ -60,11 +60,13 @@
                 "implHandler": [
                     "console.log('Inside handleAuthResult');\r",
                     "gapi.client.load('calendar', 'v3', function() {\r",
+                    "    //Loading inside gapi\r",
                     "    var request = gapi.client.calendar.events.list({\r",
                     "        'calendarId': 'primary'\r",
                     "    });\r",
                     "          \r",
                     "    request.execute(function(resp) {\r",
+                    "        //Executing request\r",
                     "        for (var i = 0; i < resp.items.length; i++) {\r",
                     "            if (i === 0) {\r",
                     "              console.log(resp.items[i]);\r",
