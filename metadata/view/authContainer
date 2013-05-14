@@ -41,7 +41,7 @@
             "userConfig": {
                 "fn": "checkAuth",
                 "implHandler": [
-                    "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true}, handleAuthResult);"
+                    "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, handleAuthResult);"
                 ]
             },
             "designerId": "c581a3e2-7ba5-4ea0-8caa-6fbec83cb46b"
@@ -59,37 +59,12 @@
                     "authResult"
                 ],
                 "implHandler": [
-                    "var authorizeButton = document.getElementById('authorize-button');\r",
-                    "\r",
                     "if (authResult) {\r",
-                    "    authorizeButton.style.visibility = 'hidden';\r",
                     "    makeApiCall();\r",
-                    "} else {\r",
-                    "    authorizeButton.style.visibility = '';\r",
-                    "    authorizeButton.onclick = handleAuthClick;\r",
                     "}"
                 ]
             },
             "designerId": "bc28f289-5358-4cb8-ab17-05d1daa8c563"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "handleAuthClick",
-                "designer|params": [
-                    "event"
-                ],
-                "implHandler": [
-                    "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, handleAuthResult);\r",
-                    "return false;"
-                ]
-            },
-            "designerId": "4ca7f5dd-8175-48e1-8d73-8c4c8bc4df55"
         },
         {
             "type": "basicfunction",
@@ -139,19 +114,43 @@
                     "var scopes = 'https://www.googleapis.com/auth/calendar';\r",
                     "var me = this;\r",
                     "\r",
-                    "var butn = {\r",
-                    "    xtype: 'button',\r",
-                    "    ui: 'action',\r",
-                    "    text: 'Send',\r",
-                    "    listeners: {\r",
-                    "        tap: function(){\r",
-                    "            me.handleAuthClick();\r",
-                    "        }\r",
-                    "    }\r",
-                    "};"
+                    "this.handleClientLoad();"
                 ]
             },
             "designerId": "14cff21a-87f4-4fb0-a2d1-75314395a646"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "MyButton"
+            },
+            "designerId": "16337f56-e44d-4ec2-a7cf-0a47e71b0cd0",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "handler",
+                        "designer|params": [
+                            "button",
+                            "event"
+                        ],
+                        "implHandler": [
+                            "me.handleAuthResult;"
+                        ]
+                    },
+                    "designerId": "77044a84-f288-4260-b275-7f52950a882a"
+                }
+            ]
         }
     ]
 }

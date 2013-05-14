@@ -18,7 +18,16 @@ Ext.define('Booking.view.authContainer', {
 
     config: {
         height: '100%',
-        width: '100%'
+        width: '100%',
+        items: [
+            {
+                xtype: 'button',
+                handler: function(button, event) {
+                    me.checkAuth();
+                },
+                text: 'MyButton'
+            }
+        ]
     },
 
     handleClientLoad: function() {
@@ -28,24 +37,13 @@ Ext.define('Booking.view.authContainer', {
     },
 
     checkAuth: function() {
-        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true}, handleAuthResult);
+        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, handleAuthResult);
     },
 
     handleAuthResult: function(authResult) {
-        var authorizeButton = document.getElementById('authorize-button');
-
         if (authResult) {
-            authorizeButton.style.visibility = 'hidden';
             makeApiCall();
-        } else {
-            authorizeButton.style.visibility = '';
-            authorizeButton.onclick = handleAuthClick;
         }
-    },
-
-    handleAuthClick: function(event) {
-        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, handleAuthResult);
-        return false;
     },
 
     makeApiCall: function() {
@@ -76,16 +74,7 @@ Ext.define('Booking.view.authContainer', {
         var scopes = 'https://www.googleapis.com/auth/calendar';
         var me = this;
 
-        var butn = {
-            xtype: 'button',
-            ui: 'action',
-            text: 'Send',
-            listeners: {
-                tap: function(){
-                    me.handleAuthClick();
-                }
-            }
-        };
+        this.handleClientLoad();
     }
 
 });
