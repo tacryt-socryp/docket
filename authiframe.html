@@ -12,12 +12,14 @@ var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
 var scopes = 'https://www.googleapis.com/auth/calendar';
 
 function handleClientLoad() {
+  console.log("handleClientLoad");
   gapi.client.setApiKey(apiKey);
   window.setTimeout(checkAuth,1);
   checkAuth();
 }
 
 function checkAuth() {
+  console.log("checkAuth");
   gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
       handleAuthResult);
 }
@@ -35,6 +37,7 @@ function handleAuthResult(authResult) {
 }
 
 function handleAuthClick(event) {
+  console.log("handleAuthClick")
   gapi.auth.authorize(
       {client_id: clientId, scope: scopes, immediate: false},
       handleAuthResult);
@@ -42,6 +45,7 @@ function handleAuthClick(event) {
 }
 
 function makeApiCall() {
+  console.log("makeApiCall")
   gapi.client.load('calendar', 'v3', function() {
     var request = gapi.client.calendar.events.list({
       'calendarId': 'primary'
