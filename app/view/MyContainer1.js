@@ -69,7 +69,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 surface.add({
                                     type: 'rect',
                                     fill: '#43aad5',
-                                    height : 130,
+                                    height : 140,
                                     width: 300,
                                     radius: 10,
                                     x: loc,
@@ -105,7 +105,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 surface.add({
                                     type: 'rect',
                                     fill: '#43aad5',
-                                    height : 130,
+                                    height : 140,
                                     width: 300,
                                     radius: 10,
                                     x: loc,
