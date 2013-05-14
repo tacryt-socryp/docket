@@ -160,8 +160,8 @@
                             "\r",
                             "surface.add({\r",
                             "    type: 'circle',\r",
-                            "    cx: 190,\r",
-                            "    cy: 350,\r",
+                            "    cx: 195,\r",
+                            "    cy: 335,\r",
                             "    r: 20,\r",
                             "    fillStyle: '#43aad5'\r",
                             "}).show(true);"
