@@ -58,6 +58,9 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "handleAuthResult",
+                "designer|params": [
+                    "authResult"
+                ],
                 "implHandler": [
                     "console.log('Inside handleAuthResult');\r",
                     "console.log(authResult);\r",
