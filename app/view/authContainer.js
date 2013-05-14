@@ -44,13 +44,8 @@ Ext.define('Booking.view.authContainer', {
         gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false}, this.handleAuthResult);
     },
 
-    handleAuthResult: function(authResult) {
+    handleAuthResult: function() {
         console.log('Inside handleAuthResult');
-        this.makeApiCall();
-    },
-
-    makeApiCall: function() {
-        console.log('Inside makeApiCall');
         gapi.client.load('calendar', 'v3', function() {
             var request = gapi.client.calendar.events.list({
                 'calendarId': 'primary'

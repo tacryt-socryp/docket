@@ -57,27 +57,8 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "handleAuthResult",
-                "designer|params": [
-                    "authResult"
-                ],
                 "implHandler": [
                     "console.log('Inside handleAuthResult');\r",
-                    "this.makeApiCall();"
-                ]
-            },
-            "designerId": "bc28f289-5358-4cb8-ab17-05d1daa8c563"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "makeApiCall",
-                "implHandler": [
-                    "console.log('Inside makeApiCall');\r",
                     "gapi.client.load('calendar', 'v3', function() {\r",
                     "    var request = gapi.client.calendar.events.list({\r",
                     "        'calendarId': 'primary'\r",
@@ -94,7 +75,7 @@
                     "});"
                 ]
             },
-            "designerId": "944f4ba2-a0aa-4e5c-b59d-793591095aa4"
+            "designerId": "bc28f289-5358-4cb8-ab17-05d1daa8c563"
         },
         {
             "type": "fixedfunction",
