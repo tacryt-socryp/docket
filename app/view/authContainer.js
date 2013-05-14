@@ -23,7 +23,8 @@ Ext.define('Booking.view.authContainer', {
             {
                 xtype: 'button',
                 handler: function(button, event) {
-                    me.checkAuth();
+                    var parent = button.up();
+                    parent.checkAuth();
                 },
                 text: 'MyButton'
             }
@@ -72,7 +73,6 @@ Ext.define('Booking.view.authContainer', {
         var clientId = '464168127252.apps.googleusercontent.com';
         var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
         var scopes = 'https://www.googleapis.com/auth/calendar';
-        var me = this;
 
         this.handleClientLoad();
     }
