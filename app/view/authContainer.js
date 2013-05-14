@@ -63,10 +63,7 @@ Ext.define('Booking.view.authContainer', {
                     if (i === 0) {
                         console.log(resp.items[i]);
                     }
-
-                    var li = document.createElement('li');
-                    li.appendChild(document.createTextNode(resp.items[i].summary));
-                    document.getElementById('events').appendChild(li);
+                    console.log('Response Item: ' + resp.items[i].summary);
                 }
             });
         });

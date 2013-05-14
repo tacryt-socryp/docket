@@ -90,10 +90,7 @@
                     "            if (i === 0) {\r",
                     "              console.log(resp.items[i]);\r",
                     "            }\r",
-                    "            \r",
-                    "            var li = document.createElement('li');\r",
-                    "            li.appendChild(document.createTextNode(resp.items[i].summary));\r",
-                    "            document.getElementById('events').appendChild(li);\r",
+                    "            console.log('Response Item: ' + resp.items[i].summary);\r",
                     "        }\r",
                     "    });\r",
                     "});"
