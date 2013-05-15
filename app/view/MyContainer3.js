@@ -29,13 +29,14 @@ Ext.define('Booking.view.MyContainer3', {
     onContainerPainted: function(element, eOpts) {
         var frame = document.getElementById("authFrame");
 
-        if (frame === null) {
+        try {
+            frame.contentDocument.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+        } catch(e) {
             while (frame === null) {
                 frame = document.getElementById("authFrame");
+                frame.contentDocument.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
             }
         }
-
-        frame.contentDocument.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
     },
 
     hasLoaded: function() {
