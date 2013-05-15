@@ -42,8 +42,10 @@
                 "implHandler": [
                     "var frame = document.getElementById(\"authFrame\");\r",
                     "\r",
-                    "while (frame === null) {\r",
-                    "    frame = document.getElementById(\"authFrame\");\r",
+                    "if (frame === null) {\r",
+                    "    while (frame === null) {\r",
+                    "        frame = document.getElementById(\"authFrame\");\r",
+                    "    }\r",
                     "}\r",
                     "\r",
                     "frame.contentDocument.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);"
