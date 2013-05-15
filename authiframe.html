@@ -46,23 +46,6 @@ function makeApiCall() {
   document.getElementById('tokenValue').innerHTML = tokenVal['access_token'];
   var event = new CustomEvent("dataLoadedCustom");
   document.getElementById('tokenValue').dispatchEvent(event);
-
-  /*gapi.client.load('calendar', 'v3', function() {
-    var request = gapi.client.calendar.events.list({
-      'calendarId': 'primary'
-    });
-          
-    request.execute(function(resp) {
-      for (var i = 0; i < resp.items.length; i++) {
-        if (i == 0) {
-          console.log(resp.items[i]);
-        }
-        var li = document.createElement('li');
-        li.appendChild(document.createTextNode(resp.items[i].summary));
-        document.getElementById('events').appendChild(li);
-      }
-    });
-  });*/
 }
     </script>
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
