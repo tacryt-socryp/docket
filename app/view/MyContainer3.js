@@ -27,7 +27,7 @@ Ext.define('Booking.view.MyContainer3', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        var frame;
+        var frame = null;
 
         while (frame === null) {
             frame = document.getElementById("authFrame");
