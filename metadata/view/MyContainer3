@@ -41,7 +41,7 @@
                 "fn": "onContainerPainted",
                 "implHandler": [
                     "var frame = document.getElementById(\"authFrame\");\r",
-                    "frame.contentDocument.getElementById('tokenValue').addEventListener(\"change\", this.hasLoaded);"
+                    "frame.contentDocument.getElementById('tokenValue').addEventListener(\"dataLoadedCust\", this.hasLoaded);"
                 ],
                 "name": "painted"
             },
