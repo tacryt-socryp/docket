@@ -26,9 +26,7 @@ Ext.define('Booking.view.MyContainer3', {
         var frame = Ext.get('authFrame');
         console.log(frame);
 
-        if (frame.attachEvent) {
-            frame.attachEvent("onload", this.hasLoaded);
-        } else if (frame.addEventListener) {
+        if (frame.addEventListener) {
             frame.addEventListener("load", this.hasLoaded, false);
         }
     },

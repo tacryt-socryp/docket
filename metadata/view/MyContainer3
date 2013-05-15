@@ -27,9 +27,7 @@
                     "var frame = Ext.get('authFrame');\r",
                     "console.log(frame);\r",
                     "\r",
-                    "if (frame.attachEvent) {\r",
-                    "    frame.attachEvent(\"onload\", this.hasLoaded);\r",
-                    "} else if (frame.addEventListener) {\r",
+                    "if (frame.addEventListener) {\r",
                     "    frame.addEventListener(\"load\", this.hasLoaded, false);\r",
                     "}"
                 ]
