@@ -25,6 +25,7 @@
                     "this.callParent();\r",
                     "\r",
                     "var frame = Ext.get('authFrame');\r",
+                    "console.log(frame);\r",
                     "\r",
                     "if (frame.attachEvent) {\r",
                     "    frame.attachEvent(\"onload\", this.hasLoaded);\r",

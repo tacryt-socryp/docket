@@ -24,6 +24,7 @@ Ext.define('Booking.view.MyContainer3', {
         this.callParent();
 
         var frame = Ext.get('authFrame');
+        console.log(frame);
 
         if (frame.attachEvent) {
             frame.attachEvent("onload", this.hasLoaded);
