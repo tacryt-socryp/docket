@@ -13,27 +13,6 @@
     "designerId": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
     "cn": [
         {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "initialize",
-                "implHandler": [
-                    "this.callParent();\r",
-                    "\r",
-                    "//var frame = Ext.get(\"authFrame\");\r",
-                    "//var frame = document.getElementById(\"authFrame\");\r",
-                    "document.getElementById(\"authFrame\").addEventListener(\"load\", this.hasLoaded);\r",
-                    "//console.log(frame);\r",
-                    "//frame.addEventListener(\"load\", this.hasLoaded, false);"
-                ]
-            },
-            "designerId": "9b1ca13e-1a2b-4583-a05c-299835721b96"
-        },
-        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -50,6 +29,27 @@
                 ]
             },
             "designerId": "89c78b8f-8d9f-4bb9-803d-5a8fc996cd57"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onContainerPainted",
+                "implHandler": [
+                    "document.getElementById(\"authFrame\").addEventListener(\"load\", this.hasLoaded);\r",
+                    "\r",
+                    "//var frame = Ext.get(\"authFrame\");\r",
+                    "//var frame = document.getElementById(\"authFrame\");\r",
+                    "//console.log(frame);\r",
+                    "//frame.addEventListener(\"load\", this.hasLoaded, false);"
+                ],
+                "name": "painted"
+            },
+            "designerId": "9475af23-74c5-4b89-abc2-3a4e737c4a15"
         }
     ]
 }

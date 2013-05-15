@@ -17,15 +17,20 @@ Ext.define('Booking.view.MyContainer3', {
     extend: 'Ext.Container',
 
     config: {
-        html: '<iframe id="authFrame" src="http://loganfynne.github.io/loganfynne.com/authiframe.html" width="100%" height="100%"></iframe>'
+        html: '<iframe id="authFrame" src="http://loganfynne.github.io/loganfynne.com/authiframe.html" width="100%" height="100%"></iframe>',
+        listeners: [
+            {
+                fn: 'onContainerPainted',
+                event: 'painted'
+            }
+        ]
     },
 
-    initialize: function() {
-        this.callParent();
+    onContainerPainted: function(element, eOpts) {
+        document.getElementById("authFrame").addEventListener("load", this.hasLoaded);
 
         //var frame = Ext.get("authFrame");
         //var frame = document.getElementById("authFrame");
-        document.getElementById("authFrame").addEventListener("load", this.hasLoaded);
         //console.log(frame);
         //frame.addEventListener("load", this.hasLoaded, false);
     },
