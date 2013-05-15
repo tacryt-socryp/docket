@@ -23,12 +23,11 @@ Ext.define('Booking.view.MyContainer3', {
     initialize: function() {
         this.callParent();
 
-        var frame = Ext.get('authFrame');
+        //var frame = Ext.get("authFrame");
+        var frame = document.getElementById("authFrame");
         console.log(frame);
 
-        if (frame.addEventListener) {
-            frame.addEventListener("load", this.hasLoaded, false);
-        }
+        frame.addEventListener("load", this.hasLoaded, false);
     },
 
     hasLoaded: function() {

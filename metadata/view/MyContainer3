@@ -24,12 +24,11 @@
                 "implHandler": [
                     "this.callParent();\r",
                     "\r",
-                    "var frame = Ext.get('authFrame');\r",
+                    "//var frame = Ext.get(\"authFrame\");\r",
+                    "var frame = document.getElementById(\"authFrame\");\r",
                     "console.log(frame);\r",
                     "\r",
-                    "if (frame.addEventListener) {\r",
-                    "    frame.addEventListener(\"load\", this.hasLoaded, false);\r",
-                    "}"
+                    "frame.addEventListener(\"load\", this.hasLoaded, false);"
                 ]
             },
             "designerId": "9b1ca13e-1a2b-4583-a05c-299835721b96"
