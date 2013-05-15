@@ -27,7 +27,8 @@ Ext.define('Booking.view.MyContainer3', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        document.getElementById("authFrame").addEventListener("change", this.hasLoaded);
+        var frame = document.getElementById("authFrame");
+        frame.contentDocument.getElementById('tokenValue').addEventListener("change", this.hasLoaded);
     },
 
     hasLoaded: function() {

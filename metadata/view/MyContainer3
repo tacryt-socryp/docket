@@ -40,7 +40,8 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
-                    "document.getElementById(\"authFrame\").addEventListener(\"change\", this.hasLoaded);"
+                    "var frame = document.getElementById(\"authFrame\");\r",
+                    "frame.contentDocument.getElementById('tokenValue').addEventListener(\"change\", this.hasLoaded);"
                 ],
                 "name": "painted"
             },
