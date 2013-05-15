@@ -40,12 +40,7 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
-                    "document.getElementById(\"authFrame\").addEventListener(\"load\", this.hasLoaded);\r",
-                    "\r",
-                    "//var frame = Ext.get(\"authFrame\");\r",
-                    "//var frame = document.getElementById(\"authFrame\");\r",
-                    "//console.log(frame);\r",
-                    "//frame.addEventListener(\"load\", this.hasLoaded, false);"
+                    "document.getElementById(\"authFrame\").addEventListener(\"load\", this.hasLoaded);"
                 ],
                 "name": "painted"
             },

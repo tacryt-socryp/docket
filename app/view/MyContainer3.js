@@ -28,11 +28,6 @@ Ext.define('Booking.view.MyContainer3', {
 
     onContainerPainted: function(element, eOpts) {
         document.getElementById("authFrame").addEventListener("load", this.hasLoaded);
-
-        //var frame = Ext.get("authFrame");
-        //var frame = document.getElementById("authFrame");
-        //console.log(frame);
-        //frame.addEventListener("load", this.hasLoaded, false);
     },
 
     hasLoaded: function() {

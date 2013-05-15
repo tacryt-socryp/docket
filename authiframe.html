@@ -48,8 +48,9 @@ function handleAuthClick(event) {
 function makeApiCall() {
 
   console.log("passOauthToken")
-  var tokenVal = gapi.auth.getToken(apiKey).access_token;
-  document.getElementById('tokenValue').innerHTML = tokenVal;
+  var tokenVal = gapi.auth.getToken(apiKey);
+  console.log(tokenVal.access_token);
+  document.getElementById('tokenValue').innerHTML = tokenVal.access_token;
 
   /*gapi.client.load('calendar', 'v3', function() {
     var request = gapi.client.calendar.events.list({
