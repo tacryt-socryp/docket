@@ -24,7 +24,7 @@
                 "implHandler": [
                     "this.callParent();\r",
                     "\r",
-                    "var frame = document.getElementById('authFrame');\r",
+                    "var frame = Ext.get('authFrame');\r",
                     "\r",
                     "if (frame.attachEvent) {\r",
                     "    frame.attachEvent(\"onload\", this.hasLoaded);\r",
