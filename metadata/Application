@@ -16,7 +16,7 @@
             "mainCarousel",
             "MyContainer2",
             "MyFormPanel",
-            "MyContainer3"
+            "authContainer"
         ],
         "name": "Booking"
     },

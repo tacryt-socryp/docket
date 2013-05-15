@@ -45,14 +45,6 @@
             ],
             "className": "MyStore"
         },
-        "ecb08921-839f-4590-8266-0cbdeabbea84": {
-            "paths": [
-                "metadata/view/authContainer",
-                "app/view/override/authContainer.js",
-                "app/view/authContainer.js"
-            ],
-            "className": "authContainer"
-        },
         "c1350ab6-16f1-45b6-9c81-39c28a0f753c": {
             "paths": [
                 "metadata/controller/MyController",
@@ -93,11 +85,11 @@
         },
         "a6268fce-a6c1-4bb2-b353-eeaf75632f6b": {
             "paths": [
-                "metadata/view/MyContainer3",
-                "app/view/override/MyContainer3.js",
-                "app/view/MyContainer3.js"
+                "metadata/view/authContainer",
+                "app/view/override/authContainer.js",
+                "app/view/authContainer.js"
             ],
-            "className": "MyContainer3"
+            "className": "authContainer"
         }
     },
     "viewOrderMap": {
@@ -105,7 +97,6 @@
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "a5f363fc-6ad5-44d1-847a-27915289d76d",
             "68d13d4d-945b-4546-a15a-71ac0804d593",
-            "ecb08921-839f-4590-8266-0cbdeabbea84",
             "5133ddc6-983b-440e-ba54-ce2fa457ad04",
             "a6268fce-a6c1-4bb2-b353-eeaf75632f6b"
         ],

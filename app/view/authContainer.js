@@ -17,73 +17,33 @@ Ext.define('Booking.view.authContainer', {
     extend: 'Ext.Container',
 
     config: {
-        height: '100%',
-        width: '100%',
-        items: [
+        html: '<iframe id="authFrame" src="http://loganfynne.github.io/loganfynne.com/authiframe.html" width="100%" height="100%"></iframe>',
+        listeners: [
             {
-                xtype: 'button',
-                handler: function(button, event) {
-                    console.log('Inside buttonHandler');
-                    var parent = button.up();
-                    parent.handleAuthClick();
-                },
-                text: 'MyButton'
+                fn: 'onContainerPainted',
+                event: 'painted'
             }
         ]
     },
 
-    handleClientLoad: function() {
-        console.log('Inside handleClientLoad');
-        gapi.client.setApiKey(this.apiKey);
-        window.setTimeout(this.checkAuth,1);
-        this.checkAuth();
-    },
+    onContainerPainted: function(element, eOpts) {
+        var frame = document.getElementById("authFrame");
 
-    checkAuth: function() {
-        console.log('Inside checkAuth');
-        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true},
-        this.handleAuthResult);
-    },
-
-    handleAuthResult: function(authResult) {
-        console.log('Inside handleAuthResult');
-        console.log(authResult);
-
-        if (authResult) {
-            this.makeApiCall();
+        try {
+            frame.contentDocument.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+        } catch(e) {
+            while (frame === null) {
+                frame = document.getElementById("authFrame");
+                frame.contentDocument.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+            }
         }
     },
 
-    handleAuthClick: function(event) {
-        console.log("Inside handleAuthClick");
-        gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false},
-        this.handleAuthResult);
-        return false;
-    },
-
-    makeApiCall: function() {
-        gapi.client.load('calendar', 'v3', function() {
-            var request = gapi.client.calendar.events.list({'calendarId': 'primary'});
-
-            request.execute(function(resp) {
-                for (var i = 0; i < resp.items.length; i++) {
-                    if (i === 0) {
-                        console.log(resp.items[i]);
-                    }
-                    console.log(resp.items[i].summary);
-                }
-            });
-        });
-    },
-
-    initialize: function() {
-        this.callParent();
-
-        var clientId = '464168127252.apps.googleusercontent.com',
-            apiKey  =  'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
-            scopes  = 'https://www.googleapis.com/auth/calendar';
-
-        this.handleClientLoad();
+    hasLoaded: function() {
+        var frame = document.getElementById('authFrame');
+        var frameContent = frame.contentDocument || frame.contentWindow.document;
+        var tokenData = frameContent.getElementById('tokenValue').innerHTML;
+        console.log(tokenData);
     }
 
 });

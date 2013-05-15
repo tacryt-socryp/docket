@@ -6,12 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": "100%",
-        "html": null,
-        "width": "100%",
-        "designer|userClassName": "authContainer"
+        "html": "<iframe id=\"authFrame\" src=\"http://loganfynne.github.io/loganfynne.com/authiframe.html\" width=\"100%\" height=\"100%\"></iframe>",
+        "designer|userClassName": "authContainer",
+        "designer|initialView": true
     },
-    "designerId": "ecb08921-839f-4590-8266-0cbdeabbea84",
+    "designerId": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
     "cn": [
         {
             "type": "basicfunction",
@@ -21,158 +20,40 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "handleClientLoad",
+                "fn": "hasLoaded",
                 "implHandler": [
-                    "console.log('Inside handleClientLoad');\r",
-                    "gapi.client.setApiKey(this.apiKey);\r",
-                    "window.setTimeout(this.checkAuth,1);\r",
-                    "this.checkAuth();"
+                    "var frame = document.getElementById('authFrame');\r",
+                    "var frameContent = frame.contentDocument || frame.contentWindow.document;\r",
+                    "var tokenData = frameContent.getElementById('tokenValue').innerHTML;\r",
+                    "console.log(tokenData);"
                 ]
             },
-            "designerId": "da9c53da-f5a1-42c4-9511-27012a99c3be"
+            "designerId": "89c78b8f-8d9f-4bb9-803d-5a8fc996cd57"
         },
         {
-            "type": "basicfunction",
+            "type": "basiceventbinding",
             "reference": {
-                "name": "items",
+                "name": "listeners",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "checkAuth",
+                "fn": "onContainerPainted",
                 "implHandler": [
-                    "console.log('Inside checkAuth');\r",
-                    "  gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: true},\r",
-                    "      this.handleAuthResult);"
-                ]
-            },
-            "designerId": "c581a3e2-7ba5-4ea0-8caa-6fbec83cb46b"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "handleAuthResult",
-                "designer|params": [
-                    "authResult"
-                ],
-                "implHandler": [
-                    "console.log('Inside handleAuthResult');\r",
-                    "console.log(authResult);\r",
+                    "var frame = document.getElementById(\"authFrame\");\r",
                     "\r",
-                    "if (authResult) {\r",
-                    "    this.makeApiCall();\r",
+                    "try {\r",
+                    "    frame.contentDocument.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
+                    "} catch(e) {\r",
+                    "    while (frame === null) {\r",
+                    "        frame = document.getElementById(\"authFrame\");\r",
+                    "        frame.contentDocument.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
+                    "    }\r",
                     "}"
-                ]
-            },
-            "designerId": "bc28f289-5358-4cb8-ab17-05d1daa8c563"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "handleAuthClick",
-                "designer|params": [
-                    "event"
                 ],
-                "implHandler": [
-                    "console.log(\"Inside handleAuthClick\");\r",
-                    "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false},\r",
-                    "      this.handleAuthResult);\r",
-                    "return false;"
-                ]
+                "name": "painted"
             },
-            "designerId": "d64b703e-0dbb-4e1a-a363-6f5fef6c9b5d"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "makeApiCall",
-                "implHandler": [
-                    "gapi.client.load('calendar', 'v3', function() {\r",
-                    "    var request = gapi.client.calendar.events.list({'calendarId': 'primary'});\r",
-                    "          \r",
-                    "    request.execute(function(resp) {\r",
-                    "        for (var i = 0; i < resp.items.length; i++) {\r",
-                    "            if (i === 0) {\r",
-                    "                console.log(resp.items[i]);\r",
-                    "            }\r",
-                    "            console.log(resp.items[i].summary);\r",
-                    "        }\r",
-                    "    });\r",
-                    "});"
-                ]
-            },
-            "designerId": "d994a09d-6568-4494-ba67-8cf524446771"
-        },
-        {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "initialize",
-                "implHandler": [
-                    "this.callParent();\r",
-                    "\r",
-                    "var clientId = '464168127252.apps.googleusercontent.com',\r",
-                    "    apiKey  =  'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
-                    "    scopes  = 'https://www.googleapis.com/auth/calendar';\r",
-                    "\r",
-                    "this.handleClientLoad();"
-                ]
-            },
-            "designerId": "14cff21a-87f4-4fb0-a2d1-75314395a646"
-        },
-        {
-            "type": "Ext.Button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "text": "MyButton"
-            },
-            "designerId": "16337f56-e44d-4ec2-a7cf-0a47e71b0cd0",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "handler",
-                        "designer|params": [
-                            "button",
-                            "event"
-                        ],
-                        "implHandler": [
-                            "console.log('Inside buttonHandler');\r",
-                            "var parent = button.up();\r",
-                            "parent.handleAuthClick();"
-                        ]
-                    },
-                    "designerId": "77044a84-f288-4260-b275-7f52950a882a"
-                }
-            ]
+            "designerId": "9475af23-74c5-4b89-abc2-3a4e737c4a15"
         }
     ]
 }
