@@ -90,6 +90,14 @@
                 "metadata/resource/js"
             ],
             "className": "js"
+        },
+        "a6268fce-a6c1-4bb2-b353-eeaf75632f6b": {
+            "paths": [
+                "metadata/view/MyContainer3",
+                "app/view/override/MyContainer3.js",
+                "app/view/MyContainer3.js"
+            ],
+            "className": "MyContainer3"
         }
     },
     "viewOrderMap": {
@@ -98,7 +106,8 @@
             "a5f363fc-6ad5-44d1-847a-27915289d76d",
             "68d13d4d-945b-4546-a15a-71ac0804d593",
             "ecb08921-839f-4590-8266-0cbdeabbea84",
-            "5133ddc6-983b-440e-ba54-ce2fa457ad04"
+            "5133ddc6-983b-440e-ba54-ce2fa457ad04",
+            "a6268fce-a6c1-4bb2-b353-eeaf75632f6b"
         ],
         "store": [
             "8714683d-0a2e-4225-a248-8932813f1f38"

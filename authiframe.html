@@ -5,6 +5,7 @@
       <ul id='events'></ul>
     </div>
     <a href='#' id='authorize-button' onclick='handleAuthClick();'>Login</a>
+    <p style="visibility:hidden;" id="tokenValue"></p>
     
     <script>
 var clientId = '464168127252.apps.googleusercontent.com';
@@ -45,8 +46,12 @@ function handleAuthClick(event) {
 }
 
 function makeApiCall() {
-  console.log("makeApiCall")
-  gapi.client.load('calendar', 'v3', function() {
+
+  console.log("passOauthToken")
+  var tokenVal = gapi.auth.getToken(apiKey).access_token;
+  document.getElementById('tokenValue').innerHTML = tokenVal;
+
+  /*gapi.client.load('calendar', 'v3', function() {
     var request = gapi.client.calendar.events.list({
       'calendarId': 'primary'
     });
@@ -61,7 +66,7 @@ function makeApiCall() {
         document.getElementById('events').appendChild(li);
       }
     });
-  });
+  });*/
 }
     </script>
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>

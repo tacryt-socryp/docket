@@ -28,13 +28,14 @@ Ext.application({
     views: [
         'mainCarousel',
         'MyContainer2',
-        'MyFormPanel'
+        'MyFormPanel',
+        'MyContainer3'
     ],
     name: 'Booking',
 
     launch: function() {
 
-        Ext.create('Booking.view.authContainer', {fullscreen: true});
+        Ext.create('Booking.view.MyContainer3', {fullscreen: true});
     }
 
 });

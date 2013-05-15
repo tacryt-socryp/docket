@@ -9,8 +9,7 @@
         "height": "100%",
         "html": null,
         "width": "100%",
-        "designer|userClassName": "authContainer",
-        "designer|initialView": true
+        "designer|userClassName": "authContainer"
     },
     "designerId": "ecb08921-839f-4590-8266-0cbdeabbea84",
     "cn": [
@@ -85,7 +84,7 @@
                     "event"
                 ],
                 "implHandler": [
-                    "console.log(\"handleAuthClick\");\r",
+                    "console.log(\"Inside handleAuthClick\");\r",
                     "gapi.auth.authorize({client_id: this.clientId, scope: this.scopes, immediate: false},\r",
                     "      this.handleAuthResult);\r",
                     "return false;"
