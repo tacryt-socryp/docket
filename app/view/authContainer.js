@@ -44,7 +44,7 @@ Ext.define('Booking.view.authContainer', {
         var frameContent = frame.contentDocument || frame.contentWindow.document;
         var tokenData = frameContent.getElementById('tokenValue').innerHTML;
         console.log(tokenData);
-        setActiveItem('Booking.view.mainCarousel');
+        //setActiveItem('Booking.view.mainCarousel');
     }
 
 });
