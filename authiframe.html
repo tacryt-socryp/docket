@@ -44,6 +44,7 @@ function callForToken() {
   var event = new CustomEvent("dataLoadedCustom");
   if (checked == false) {
     checked = document.getElementById('tokenValue').dispatchEvent(event);
+    console.log(checked);
   }
 }
     </script>
