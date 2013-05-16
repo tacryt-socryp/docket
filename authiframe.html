@@ -42,7 +42,7 @@ function callForToken() {
   var tokenVal = gapi.auth.getToken();
   document.getElementById('tokenValue').innerHTML = tokenVal['access_token'];
   var event = new CustomEvent("dataLoadedCustom");
-  if ((document.getElementById('tokenValue').innerHTML.compareTo("") != 0) && (checked == false)) {
+  if ((tokenVal['access_token'].compareTo("") != 0) && (checked == false)) {
     checked = document.getElementById('tokenValue').dispatchEvent(event);
   } else {
     callForToken();
