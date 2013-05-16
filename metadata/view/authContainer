@@ -30,16 +30,10 @@
                     "try {\r",
                     "    var keys = Object.keys(tokenData);\r",
                     "    frameContent.location.reload(true);\r",
-                    "    this.onContainerPainted();\r",
+                    "    //this.onContainerPainted();\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
                     "    Ext.Viewport.setActiveItem('mainCarousel');\r",
-                    "}\r",
-                    "if (keys.length === 0) {\r",
-                    "\r",
-                    "}\r",
-                    "else {\r",
-                    "\r",
                     "}"
                 ]
             },
