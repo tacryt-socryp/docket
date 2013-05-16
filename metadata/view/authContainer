@@ -28,10 +28,12 @@
                     "console.log(\"OAuth: \" + tokenData);\r",
                     "\r",
                     "if (Object.keys(tokenData).length === 0) {\r",
+                    "    frameContent.location.reload(true);\r",
                     "    this.onContainerPainted();\r",
                     "}\r",
                     "else {\r",
                     "    Booking.app.authToken = tokenData;\r",
+                    "    Ext.Viewport.setActiveItem('mainCarousel');\r",
                     "}"
                 ]
             },
@@ -57,9 +59,7 @@
                     "        frame.contentDocument.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
                     "        console.log(\"Catching error\");\r",
                     "    }\r",
-                    "}\r",
-                    "\r",
-                    "Ext.Viewport.setActiveItem('mainCarousel');"
+                    "}"
                 ],
                 "name": "painted"
             },
