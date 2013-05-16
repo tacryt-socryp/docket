@@ -18,14 +18,10 @@
         },
         "a5f363fc-6ad5-44d1-847a-27915289d76d": {
             "id": "a5f363fc-6ad5-44d1-847a-27915289d76d",
-            "expanded": false,
             "cn": [
                 {
                     "id": "c40404da-fb78-43ed-bfa9-e007aeeca09f",
                     "cn": [
-                        {
-                            "id": "7cbf2341-527e-492a-b624-9e98c7dd21e0"
-                        },
                         {
                             "id": "2c1fca87-b05d-41f4-b903-21fbe2bc5439"
                         },

@@ -43,21 +43,6 @@
             "designerId": "c40404da-fb78-43ed-bfa9-e007aeeca09f",
             "cn": [
                 {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "initialize",
-                        "implHandler": [
-                            "this.callParent();"
-                        ]
-                    },
-                    "designerId": "7cbf2341-527e-492a-b624-9e98c7dd21e0"
-                },
-                {
                     "type": "basiceventbinding",
                     "reference": {
                         "name": "listeners",

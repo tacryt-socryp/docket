@@ -26,7 +26,7 @@
                     "var frameContent = frame.contentDocument || frame.contentWindow.document;\r",
                     "var tokenData = frameContent.getElementById('tokenValue').innerHTML;\r",
                     "console.log(tokenData);\r",
-                    "Ext.Viewport.setActiveItem('Booking.view.mainCarousel');"
+                    "Ext.Viewport.setActiveItem('widget.mainCarousel');"
                 ]
             },
             "designerId": "89c78b8f-8d9f-4bb9-803d-5a8fc996cd57"
