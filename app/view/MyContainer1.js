@@ -145,7 +145,44 @@ Ext.define('Booking.view.MyContainer1', {
                     }
                 ]
             }
+        ],
+        listeners: [
+            {
+                fn: 'onInlineDrawShow',
+                event: 'show',
+                delegate: '#inlineDraw1'
+            }
         ]
+    },
+
+    onInlineDrawShow: function(component, eOpts) {
+        var token = Booking.app.authToken,
+            clientId = '464168127252.apps.googleusercontent.com',
+            apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
+            scopes = 'https://www.googleapis.com/auth/calendar';
+
+        console.log(token);
+        gapi.client.setApiKey(apiKey);
+        gapi.auth.setToken(token);
+
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
+        function(authResult) {
+            if (authResult) {
+                gapi.client.load('calendar', 'v3', function() {
+                    var request = gapi.client.calendar.events.list({
+                        'calendarId': 'primary'
+                    });
+
+                    request.execute(function(resp) {
+                        for (var i = 0; i < resp.items.length; i++) {
+                            console.log(resp.items[i].summary);
+                        }
+                    });
+                });
+            }
+        });
+
+
     }
 
 });

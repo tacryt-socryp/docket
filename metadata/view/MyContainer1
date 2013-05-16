@@ -50,6 +50,48 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "fn": "onInlineDrawShow",
+                        "implHandler": [
+                            "var token = Booking.app.authToken,\r",
+                            "    clientId = '464168127252.apps.googleusercontent.com',\r",
+                            "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
+                            "    scopes = 'https://www.googleapis.com/auth/calendar';\r",
+                            "\r",
+                            "console.log(token);\r",
+                            "gapi.client.setApiKey(apiKey);\r",
+                            "gapi.auth.setToken(token);\r",
+                            "\r",
+                            "gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},\r",
+                            "function(authResult) {\r",
+                            "    if (authResult) {\r",
+                            "gapi.client.load('calendar', 'v3', function() {\r",
+                            "    var request = gapi.client.calendar.events.list({\r",
+                            "        'calendarId': 'primary'\r",
+                            "    });\r",
+                            "\r",
+                            "    request.execute(function(resp) {\r",
+                            "        for (var i = 0; i < resp.items.length; i++) {\r",
+                            "            console.log(resp.items[i].summary);\r",
+                            "        }\r",
+                            "    });\r",
+                            "});\r",
+                            "    }\r",
+                            "                     });\r",
+                            "\r",
+                            ""
+                        ],
+                        "name": "show"
+                    },
+                    "designerId": "dad54ff3-9592-46a2-a834-924853fea5c2"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "fn": "onMyComponent1Painted1",
                         "implHandler": [
                             "var w = 650 * Ext.getStore('MyStore').getCount(),\r",

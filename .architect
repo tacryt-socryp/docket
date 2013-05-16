@@ -13,19 +13,18 @@
                 },
                 {
                     "id": "aa99654e-6a61-43c5-a43f-5d5a8ab420d3"
-                },
-                {
-                    "id": "c82d81fe-b165-4ca3-ba4d-b5690284cf9d"
                 }
             ]
         },
         "a5f363fc-6ad5-44d1-847a-27915289d76d": {
             "id": "a5f363fc-6ad5-44d1-847a-27915289d76d",
-            "expanded": false,
             "cn": [
                 {
                     "id": "c40404da-fb78-43ed-bfa9-e007aeeca09f",
                     "cn": [
+                        {
+                            "id": "dad54ff3-9592-46a2-a834-924853fea5c2"
+                        },
                         {
                             "id": "2c1fca87-b05d-41f4-b903-21fbe2bc5439"
                         },
@@ -114,11 +113,11 @@
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-        "selectedInstance": "c82d81fe-b165-4ca3-ba4d-b5690284cf9d"
+        "topInstance": "a5f363fc-6ad5-44d1-847a-27915289d76d",
+        "selectedInstance": "dad54ff3-9592-46a2-a834-924853fea5c2"
     },
     "codeState": {
-        "topInstance": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
+        "topInstance": "a5f363fc-6ad5-44d1-847a-27915289d76d"
     },
     "editMode": "code"
 }

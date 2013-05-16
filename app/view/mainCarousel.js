@@ -33,29 +33,7 @@ Ext.define('Booking.view.mainCarousel', {
             {
                 xtype: 'MyContainer2'
             }
-        ],
-        listeners: [
-            {
-                fn: 'onCarouselShow',
-                event: 'show'
-            }
         ]
-    },
-
-    onCarouselShow: function(component, eOpts) {
-        var token = Booking.app.authToken;
-        gapi.auth.setToken(token);
-        gapi.client.load('calendar', 'v3', function() {
-            var request = gapi.client.calendar.events.list({
-                'calendarId': 'primary'
-            });
-
-            request.execute(function(resp) {
-                for (var i = 0; i < resp.items.length; i++) {
-                    console.log(resp.items[i].summary);
-                }
-            });
-        });
     }
 
 });

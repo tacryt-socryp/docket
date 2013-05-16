@@ -33,34 +33,6 @@
             "codeClass": null,
             "designerId": "aa99654e-6a61-43c5-a43f-5d5a8ab420d3",
             "masterInstanceId": "68d13d4d-945b-4546-a15a-71ac0804d593"
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onCarouselShow",
-                "implHandler": [
-                    "var token = Booking.app.authToken;\r",
-                    "gapi.auth.setToken(token);\r",
-                    "gapi.client.load('calendar', 'v3', function() {\r",
-                    "    var request = gapi.client.calendar.events.list({\r",
-                    "        'calendarId': 'primary'\r",
-                    "    });\r",
-                    "    \r",
-                    "    request.execute(function(resp) {\r",
-                    "        for (var i = 0; i < resp.items.length; i++) {\r",
-                    "            console.log(resp.items[i].summary);\r",
-                    "        }\r",
-                    "    });\r",
-                    "});"
-                ],
-                "name": "show"
-            },
-            "designerId": "c82d81fe-b165-4ca3-ba4d-b5690284cf9d"
         }
     ]
 }
