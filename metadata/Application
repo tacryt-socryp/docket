@@ -14,8 +14,6 @@
         ],
         "views": [
             "mainCarousel",
-            "MyContainer2",
-            "MyFormPanel",
             "authContainer"
         ],
         "name": "Booking"
