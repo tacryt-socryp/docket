@@ -24,7 +24,7 @@ function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('authorize-button');
   if (authResult) {
     authorizeButton.style.visibility = 'hidden';
-    setTimeout(callForToken(), 1000);
+    callForToken();
   } else {
     authorizeButton.style.visibility = '';
     authorizeButton.onclick = handleAuthClick;
@@ -42,9 +42,10 @@ function callForToken() {
   var tokenVal = gapi.auth.getToken();
   document.getElementById('tokenValue').innerHTML = tokenVal['access_token'];
   var event = new CustomEvent("dataLoadedCustom");
-  if (checked == false) {
+  if ((document.getElementById('tokenValue').innerHTML.compareTo("") != 0) && (checked == false)) {
     checked = document.getElementById('tokenValue').dispatchEvent(event);
-    console.log(checked);
+  } else {
+    callForToken();
   }
 }
     </script>
