@@ -43,7 +43,7 @@ function callForToken() {
   document.getElementById('tokenValue').innerHTML = tokenVal['access_token'];
   var event = new CustomEvent("dataLoadedCustom");
   if (tokenVal['access_token'] != null) {
-    if (checked == false)) {
+    if (checked == false) {
       checked = document.getElementById('tokenValue').dispatchEvent(event);
     }
   } else {
