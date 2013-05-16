@@ -38,6 +38,8 @@ Ext.define('Booking.view.authContainer', {
                 console.log("Catching error");
             }
         }
+
+        Ext.Viewport.setActiveItem('mainCarousel');
     },
 
     hasLoaded: function() {
@@ -47,7 +49,6 @@ Ext.define('Booking.view.authContainer', {
         console.log("OAuth: " + tokenData);
 
         Booking.app.authToken = tokenData;
-        Ext.Viewport.setActiveItem('mainCarousel');
     }
 
 });

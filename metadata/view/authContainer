@@ -27,8 +27,7 @@
                     "var tokenData = frameContent.getElementById('tokenValue').innerHTML;\r",
                     "console.log(\"OAuth: \" + tokenData);\r",
                     "\r",
-                    "Booking.app.authToken = tokenData;\r",
-                    "Ext.Viewport.setActiveItem('mainCarousel');"
+                    "Booking.app.authToken = tokenData;"
                 ]
             },
             "designerId": "89c78b8f-8d9f-4bb9-803d-5a8fc996cd57"
