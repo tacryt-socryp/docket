@@ -6,6 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "authToken": [
+            "{}"
+        ],
         "models": [
             "roomList"
         ],
@@ -18,5 +21,15 @@
         ],
         "name": "Booking"
     },
-    "designerId": "application"
+    "configAlternates": {
+        "authToken": "object"
+    },
+    "designerId": "application",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "authToken",
+            "type": "string"
+        }
+    ]
 }

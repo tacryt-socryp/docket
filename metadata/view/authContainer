@@ -25,8 +25,9 @@
                     "var frame = document.getElementById('authFrame');\r",
                     "var frameContent = frame.contentDocument || frame.contentWindow.document;\r",
                     "var tokenData = frameContent.getElementById('tokenValue').innerHTML;\r",
-                    "console.log(\"OAuth: \" +tokenData);\r",
+                    "console.log(\"OAuth: \" + tokenData);\r",
                     "\r",
+                    "Booking.app.authToken = tokenData;\r",
                     "Ext.Viewport.setActiveItem('mainCarousel');"
                 ]
             },

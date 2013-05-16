@@ -44,8 +44,9 @@ Ext.define('Booking.view.authContainer', {
         var frame = document.getElementById('authFrame');
         var frameContent = frame.contentDocument || frame.contentWindow.document;
         var tokenData = frameContent.getElementById('tokenValue').innerHTML;
-        console.log("OAuth: " +tokenData);
+        console.log("OAuth: " + tokenData);
 
+        Booking.app.authToken = tokenData;
         Ext.Viewport.setActiveItem('mainCarousel');
     }
 
