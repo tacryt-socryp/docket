@@ -46,7 +46,7 @@ Ext.define('Booking.view.authContainer', {
         var tokenData = frameContent.getElementById('tokenValue').innerHTML;
         console.log("OAuth: " + tokenData);
 
-        if (Object.keys(tokenData).length === 0) {
+        if (tokenData.Equals('') === 0) {
             frameContent.location.reload(true);
             this.onContainerPainted();
         }
