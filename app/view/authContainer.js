@@ -35,6 +35,7 @@ Ext.define('Booking.view.authContainer', {
             while (frame === null) {
                 frame = document.getElementById("authFrame");
                 frame.contentDocument.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+                console.log("Catching error");
             }
         }
     },
@@ -43,7 +44,7 @@ Ext.define('Booking.view.authContainer', {
         var frame = document.getElementById('authFrame');
         var frameContent = frame.contentDocument || frame.contentWindow.document;
         var tokenData = frameContent.getElementById('tokenValue').innerHTML;
-        console.log(tokenData);
+        console.log("OAuth: " +tokenData);
 
         Ext.Viewport.setActiveItem('mainCarousel');
     }
