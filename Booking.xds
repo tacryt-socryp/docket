@@ -45,14 +45,6 @@
             ],
             "className": "MyStore"
         },
-        "c1350ab6-16f1-45b6-9c81-39c28a0f753c": {
-            "paths": [
-                "metadata/controller/MyController",
-                "app/controller/override/MyController.js",
-                "app/controller/MyController.js"
-            ],
-            "className": "MyController"
-        },
         "a5f363fc-6ad5-44d1-847a-27915289d76d": {
             "paths": [
                 "metadata/view/MyContainer1",
@@ -94,18 +86,16 @@
     },
     "viewOrderMap": {
         "view": [
+            "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "a5f363fc-6ad5-44d1-847a-27915289d76d",
             "68d13d4d-945b-4546-a15a-71ac0804d593",
-            "5133ddc6-983b-440e-ba54-ce2fa457ad04",
-            "a6268fce-a6c1-4bb2-b353-eeaf75632f6b"
+            "5133ddc6-983b-440e-ba54-ce2fa457ad04"
         ],
         "store": [
             "8714683d-0a2e-4225-a248-8932813f1f38"
         ],
-        "controller": [
-            "c1350ab6-16f1-45b6-9c81-39c28a0f753c"
-        ],
+        "controller": [],
         "model": [
             "373e9087-348b-419a-bbba-8ef612e06d57"
         ],

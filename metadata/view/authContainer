@@ -27,7 +27,12 @@
                     "var tokenData = frameContent.getElementById('tokenValue').innerHTML;\r",
                     "console.log(\"OAuth: \" + tokenData);\r",
                     "\r",
-                    "Booking.app.authToken = tokenData;"
+                    "if (Object.keys(tokenData).length === 0) {\r",
+                    "    this.onContainerPainted();\r",
+                    "}\r",
+                    "else {\r",
+                    "    Booking.app.authToken = tokenData;\r",
+                    "}"
                 ]
             },
             "designerId": "89c78b8f-8d9f-4bb9-803d-5a8fc996cd57"
@@ -52,7 +57,9 @@
                     "        frame.contentDocument.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
                     "        console.log(\"Catching error\");\r",
                     "    }\r",
-                    "}"
+                    "}\r",
+                    "\r",
+                    "Ext.Viewport.setActiveItem('mainCarousel');"
                 ],
                 "name": "painted"
             },

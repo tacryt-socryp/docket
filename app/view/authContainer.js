@@ -48,7 +48,12 @@ Ext.define('Booking.view.authContainer', {
         var tokenData = frameContent.getElementById('tokenValue').innerHTML;
         console.log("OAuth: " + tokenData);
 
-        Booking.app.authToken = tokenData;
+        if (Object.keys(tokenData).length === 0) {
+            this.onContainerPainted();
+        }
+        else {
+            Booking.app.authToken = tokenData;
+        }
     }
 
 });
