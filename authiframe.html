@@ -45,7 +45,7 @@ function callForToken() {
   if ((tokenVal['access_token'] != null) && (checked == false)) {
     checked = document.getElementById('tokenValue').dispatchEvent(event);
   } else {
-    callForToken();
+    window.location.reload();
   }
 }
     </script>
