@@ -70,7 +70,7 @@
                     "\r",
                     "while (created === false) {\r",
                     "    if (frame !== undefined) {\r",
-                    "        frameContent.location.reload();\r",
+                    "        window.location.reload();\r",
                     "        console.log('Getting started');\r",
                     "    }\r",
                     "    frame = document.getElementById(\"authFrame\");\r",
