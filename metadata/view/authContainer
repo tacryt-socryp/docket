@@ -48,7 +48,18 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
-                    "this.dataLoadedListener();"
+                    "var frame,\r",
+                    "    frameContent;\r",
+                    "\r",
+                    "frame = document.getElementById(\"authFrame\");\r",
+                    "console.log(frame);\r",
+                    "frameContent = frame.contentDocument || frame.contentWindow.document;\r",
+                    "try {\r",
+                    "    console.log(\"try to create event\");\r",
+                    "    frameContent.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
+                    "} catch(e) {\r",
+                    "    window.location.reload();\r",
+                    "}"
                 ],
                 "name": "painted"
             },
@@ -64,26 +75,7 @@
             "userConfig": {
                 "fn": "dataLoadedListener",
                 "implHandler": [
-                    "var created = false,\r",
-                    "    frame,\r",
-                    "    frameContent;\r",
-                    "\r",
-                    "while (created === false) {\r",
-                    "    if (frame !== undefined) {\r",
-                    "        window.location.reload();\r",
-                    "        console.log('Getting started');\r",
-                    "    }\r",
-                    "    frame = document.getElementById(\"authFrame\");\r",
-                    "    console.log(frame);\r",
-                    "    frameContent = frame.contentDocument || frame.contentWindow.document;\r",
-                    "    try {\r",
-                    "        console.log(\"try to create event\");\r",
-                    "        frameContent.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
-                    "        created = true;\r",
-                    "    } catch(e) {\r",
-                    "        console.log(\"catch \" + e);\r",
-                    "    }\r",
-                    "}"
+                    ""
                 ]
             },
             "designerId": "2fa7f553-8737-46ec-87c7-1c82bcc737c7"

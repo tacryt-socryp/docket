@@ -27,7 +27,18 @@ Ext.define('Booking.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        this.dataLoadedListener();
+        var frame,
+            frameContent;
+
+        frame = document.getElementById("authFrame");
+        console.log(frame);
+        frameContent = frame.contentDocument || frame.contentWindow.document;
+        try {
+            console.log("try to create event");
+            frameContent.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+        } catch(e) {
+            window.location.reload();
+        }
     },
 
     hasLoaded: function() {
@@ -46,26 +57,7 @@ Ext.define('Booking.view.authContainer', {
     },
 
     dataLoadedListener: function() {
-        var created = false,
-            frame,
-            frameContent;
 
-        while (created === false) {
-            if (frame !== undefined) {
-                window.location.reload();
-                console.log('Getting started');
-            }
-            frame = document.getElementById("authFrame");
-            console.log(frame);
-            frameContent = frame.contentDocument || frame.contentWindow.document;
-            try {
-                console.log("try to create event");
-                frameContent.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
-                created = true;
-            } catch(e) {
-                console.log("catch " + e);
-            }
-        }
     }
 
 });
