@@ -44,6 +44,10 @@ Ext.define('Booking.view.MyContainer1', {
                                 apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
                                 scopes = 'https://www.googleapis.com/auth/calendar';
 
+                            var today = new Date();
+                            today = today.toISOString();
+                            console.log(today);
+
                             console.log(token);
                             gapi.client.setApiKey(apiKey);
                             gapi.auth.setToken(token);
