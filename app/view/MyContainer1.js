@@ -55,6 +55,7 @@ Ext.define('Booking.view.MyContainer1', {
                                     gapi.client.load('calendar', 'v3', function() {
                                         var request = gapi.client.calendar.events.list({
                                             'calendarId': 'primary',
+                                            'singleEvents': true,
                                             'orderBy': 'startTime',
                                             'timeMin': '2013-05-19T00:00:20-05:00',
                                             'timeMax': '2014-05-19T00:00:20-05:00'
