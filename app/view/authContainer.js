@@ -29,17 +29,15 @@ Ext.define('Booking.view.authContainer', {
     onContainerPainted: function(element, eOpts) {
         var frame = document.getElementById("authFrame");
         var frameContent = frame.contentDocument || frame.contentWindow.document;
+        var created = false;
 
-        try {
-            console.log("try to create event");
-            frameContent.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
-        } catch(e) {
-            console.log("catch " + e);
-            while (frame === null) {
-                frame = document.getElementById("authFrame");
-                frameContent = frame.contentDocument || frame.contentWindow.document;
+        while (created === false) {
+            try {
+                console.log("try to create event");
                 frameContent.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
-                console.log("Catching error");
+                created = true;
+            } catch(e) {
+                console.log("catch " + e);
             }
         }
     },
