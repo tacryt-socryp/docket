@@ -20,7 +20,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "setTimeout(this.updateData, 10000); //Final should be 900000"
+                    "setTimeout(this.updateData, 900000);"
                 ]
             },
             "designerId": "127c8684-82e6-482d-ac31-840d2db72bc0"
