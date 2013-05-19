@@ -27,11 +27,13 @@ Ext.define('Booking.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        var frame = document.getElementById("authFrame");
-        var frameContent = frame.contentDocument || frame.contentWindow.document;
-        var created = false;
+        var created = false,
+            frame,
+            frameContent;
 
         while (created === false) {
+            frame = document.getElementById("authFrame");
+            frameContent = frame.contentDocument || frame.contentWindow.document;
             try {
                 console.log("try to create event");
                 frameContent.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);

@@ -51,11 +51,13 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
-                    "var frame = document.getElementById(\"authFrame\");\r",
-                    "var frameContent = frame.contentDocument || frame.contentWindow.document;\r",
-                    "var created = false;\r",
+                    "var created = false,\r",
+                    "    frame,\r",
+                    "    frameContent;\r",
                     "\r",
                     "while (created === false) {\r",
+                    "    frame = document.getElementById(\"authFrame\");\r",
+                    "    frameContent = frame.contentDocument || frame.contentWindow.document;\r",
                     "    try {\r",
                     "        console.log(\"try to create event\");\r",
                     "        frameContent.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
