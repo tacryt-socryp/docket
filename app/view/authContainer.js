@@ -28,22 +28,23 @@ Ext.define('Booking.view.authContainer', {
 
     onContainerPainted: function(element, eOpts) {
         var frame = window.frames[0];
-        try {
-            console.log("try to create event");
-            frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+        this.hasLoaded();
+        /*try {
+        console.log("try to create event");
+        frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
-            this.hasLoaded();
-        }
+        this.hasLoaded();
+        }*/
     },
 
     hasLoaded: function() {
         var frame = window.frames[0],
-            tokenData;
-        console.log("inside hasLoaded, OAuth: " + tokenData);
+            tokenData,
+            keys;
 
         try {
             tokenData = frame.document.getElementById('tokenValue').innerHTML;
-            var keys = Object.keys(tokenData);
+            keys = Object.keys(tokenData);
             window.location.reload();
         } catch(e) {
             console.log("Catch" + e);
