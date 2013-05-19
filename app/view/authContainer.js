@@ -32,6 +32,8 @@ Ext.define('Booking.view.authContainer', {
             frameContent;
 
         while (created === false) {
+            frame.src = frame.src;
+            console.log('Reloading iframe');
             frame = document.getElementById("authFrame");
             frameContent = frame.contentDocument || frame.contentWindow.document;
             try {
@@ -52,9 +54,6 @@ Ext.define('Booking.view.authContainer', {
 
         try {
             var keys = Object.keys(tokenData);
-            frame.src = frame.src;
-            console.log('Reloading iframe');
-            this.onContainerPainted();
         } catch(e) {
             console.log("Catch" + e);
             Booking.app.authToken = tokenData;
