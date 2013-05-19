@@ -57,6 +57,9 @@ Ext.define('Booking.view.MyContainer1', {
 
                                         request.execute(function(resp) {
                                             w = 650 * resp.items.length;
+                                            this.setSize(w,h);
+                                            surface.setSize(w,h);
+
                                             for (iter = 0; iter < resp.items.length; iter++) {
                                                 console.log(resp.items[iter].summary);
                                                 xloc = iter*450;
@@ -113,10 +116,6 @@ Ext.define('Booking.view.MyContainer1', {
                                     });
                                 }
                             });
-
-
-                            this.setSize(w,h);
-                            surface.setSize(w,h);
 
                             //Line across screen
                             surface.add({
