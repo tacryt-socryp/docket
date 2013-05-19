@@ -63,7 +63,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                         request.execute(function(resp) {
                                             console.log(resp);
-                                            w = 250 * resp.items.length;
+                                            w = 225 * resp.items.length;
                                             me.setSize(w,h);
                                             surface.setSize(w,h);
 
@@ -143,7 +143,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         height : 140,
                                                         width: 300,
                                                         radius: 10,
-                                                        x: xloc+100,
+                                                        x: xloc+50,
                                                         y: 410
                                                     }).show(true);
 
