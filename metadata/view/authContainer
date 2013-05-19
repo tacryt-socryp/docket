@@ -29,8 +29,9 @@
                     "try {\r",
                     "    console.log(tokenData);\r",
                     "    tokenData = frame.document.getElementById('tokenValue').innerHTML;\r",
+                    "    console.log(keys);\r",
                     "    keys = Object.keys(tokenData);\r",
-                    "    window.location.reload();\r",
+                    "    //window.location.reload();\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
                     "    Ext.Viewport.setActiveItem('mainCarousel');\r",
@@ -51,6 +52,7 @@
                 "implHandler": [
                     "var frame = window.frames[0];\r",
                     "try {\r",
+                    "    console.log(frame);\r",
                     "    frame.document.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
                     "} catch(e) {\r",
                     "    this.hasLoaded();\r",

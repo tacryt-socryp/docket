@@ -27,7 +27,7 @@ Ext.application({
         'authContainer'
     ],
     controllers: [
-        'MyController'
+        'refreshEverything'
     ],
     name: 'Booking',
 

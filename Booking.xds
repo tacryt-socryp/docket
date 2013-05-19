@@ -61,11 +61,11 @@
         },
         "7d34efd8-d44c-4800-9529-c7e1d6e5cb04": {
             "paths": [
-                "metadata/controller/MyController",
-                "app/controller/override/MyController.js",
-                "app/controller/MyController.js"
+                "metadata/controller/refreshEverything",
+                "app/controller/override/refreshEverything.js",
+                "app/controller/refreshEverything.js"
             ],
-            "className": "MyController"
+            "className": "refreshEverything"
         }
     },
     "viewOrderMap": {
