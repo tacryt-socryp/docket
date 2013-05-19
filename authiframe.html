@@ -38,7 +38,7 @@ function callForToken() {
   var tokenVal = gapi.auth.getToken();
   document.getElementById('tokenValue').innerHTML = tokenVal['access_token'];
   var event = new CustomEvent("dataLoadedCustom");
-  document.getElementById('tokenValue').dispatchEvent(event);
+  setTimeout(function() {document.getElementById('tokenValue').dispatchEvent(event);}, 1000);
 }
     </script>
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
