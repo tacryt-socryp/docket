@@ -31,11 +31,12 @@ Ext.define('Booking.view.MyContainer1', {
                 listeners: [
                     {
                         fn: function(element, eOpts) {
-                            var w = 650 * Ext.getStore('MyStore').getCount(),
+                            var me = this,
                                 h = Ext.getBody().getSize().height,
                                 dynText = '10:33 pm',
                                 surface = this.getSurface('main'),
                                 xloc,
+                                w,
                                 iter;
 
                             var token = Booking.app.authToken,
@@ -57,7 +58,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                         request.execute(function(resp) {
                                             w = 650 * resp.items.length;
-                                            this.setSize(w,h);
+                                            me.setSize(w,h);
                                             surface.setSize(w,h);
 
                                             for (iter = 0; iter < resp.items.length; iter++) {
