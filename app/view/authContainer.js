@@ -28,13 +28,12 @@ Ext.define('Booking.view.authContainer', {
 
     onContainerPainted: function(element, eOpts) {
         var frame = window.frames[0];
-        this.hasLoaded();
-        /*try {
-        console.log("try to create event");
-        frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+        try {
+            console.log("try to create event");
+            frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
-        this.hasLoaded();
-        }*/
+            this.hasLoaded();
+        }
     },
 
     hasLoaded: function() {

@@ -50,13 +50,12 @@
                 "fn": "onContainerPainted",
                 "implHandler": [
                     "var frame = window.frames[0];\r",
-                    "this.hasLoaded();\r",
-                    "/*try {\r",
+                    "try {\r",
                     "    console.log(\"try to create event\");\r",
                     "    frame.document.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
                     "} catch(e) {\r",
                     "    this.hasLoaded();\r",
-                    "}*/"
+                    "}"
                 ],
                 "name": "painted"
             },
