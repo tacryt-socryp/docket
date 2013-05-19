@@ -58,10 +58,11 @@ Ext.define('Booking.view.MyContainer1', {
                                         request.execute(function(resp) {
                                             w = 650 * resp.items.length;
                                             for (iter = 0; iter < resp.items.length; iter++) {
+                                                console.log(resp.items[iter].summary);
                                                 loc = 45 + iter*450;
                                                 surface.add({
                                                     type: 'text',
-                                                    text: dynText,
+                                                    text: resp.items[iter].summary,
                                                     font: '14px Arial',
                                                     fill: '#FFF',
                                                     x: loc,
