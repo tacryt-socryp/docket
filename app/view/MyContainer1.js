@@ -156,17 +156,6 @@ Ext.define('Booking.view.MyContainer1', {
                             }).show(true);
                         },
                         event: 'painted'
-                    },
-                    {
-                        fn: function(element, eOpts) {
-                            var w = 650 * Ext.getStore('MyStore').getCount(),
-                                h = Ext.getBody().getSize().height,
-                                surface = this.getSurface('main');
-
-                            this.setSize(w,h);
-                            surface.setSize(w,h);
-                        },
-                        event: 'resize'
                     }
                 ]
             }
