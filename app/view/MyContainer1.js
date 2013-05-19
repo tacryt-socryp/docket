@@ -142,7 +142,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         height : 140,
                                                         width: 300,
                                                         radius: 10,
-                                                        x: xloc+30,
+                                                        x: xloc+35,
                                                         y: 410
                                                     }).show(true);
 
@@ -159,7 +159,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         text: resp.items[iter].summary,
                                                         font: '20px Arial',
                                                         fill: '#FFF',
-                                                        x: xloc+60,
+                                                        x: xloc+40,
                                                         y: 430
                                                     }).show(true);
                                                 }
