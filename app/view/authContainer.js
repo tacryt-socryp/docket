@@ -17,7 +17,7 @@ Ext.define('Booking.view.authContainer', {
     extend: 'Ext.Container',
 
     config: {
-        html: '<iframe id="authFrame" src="authiframe.html" width="100%" height="100%"></iframe>',
+        html: '<iframe id="authFrame" src="authiframe.html" width="100%" height="100%" frameborder="0"></iframe>',
         listeners: [
             {
                 fn: 'onContainerPainted',
