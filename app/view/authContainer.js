@@ -30,7 +30,7 @@ Ext.define('Booking.view.authContainer', {
         var frame = window.frames[0];
         try {
             console.log("try to create event");
-            frame.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+            frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
             this.hasLoaded();
         }
@@ -38,7 +38,7 @@ Ext.define('Booking.view.authContainer', {
 
     hasLoaded: function() {
         var frame = window.frames[0];
-        var tokenData = frame.getElementById('tokenValue').innerHTML;
+        var tokenData = frame.document.getElementById('tokenValue').innerHTML;
         console.log("inside hasLoaded, OAuth: " + tokenData);
 
         try {
