@@ -27,11 +27,29 @@ Ext.define('Booking.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
+        var returnValue = null;
+        returnValue = setTimeout(this.dataLoadedListener, 2000);
+    },
+
+    hasLoaded: function() {
+        var frame = document.getElementById('authFrame');
+        var frameContent = frame.contentDocument || frame.contentWindow.document;
+        var tokenData = frameContent.getElementById('tokenValue').innerHTML;
+        console.log("inside hasLoaded, OAuth: " + tokenData);
+
+        try {
+            var keys = Object.keys(tokenData);
+        } catch(e) {
+            console.log("Catch" + e);
+            Booking.app.authToken = tokenData;
+            Ext.Viewport.setActiveItem('mainCarousel');
+        }
+    },
+
+    dataLoadedListener: function() {
         var created = false,
             frame,
             frameContent;
-
-        setTimeout(function(){console.log('Getting started');}, 2000);
 
         while (created === false) {
             if (frame != undefined) {
@@ -48,21 +66,6 @@ Ext.define('Booking.view.authContainer', {
             } catch(e) {
                 console.log("catch " + e);
             }
-        }
-    },
-
-    hasLoaded: function() {
-        var frame = document.getElementById('authFrame');
-        var frameContent = frame.contentDocument || frame.contentWindow.document;
-        var tokenData = frameContent.getElementById('tokenValue').innerHTML;
-        console.log("inside hasLoaded, OAuth: " + tokenData);
-
-        try {
-            var keys = Object.keys(tokenData);
-        } catch(e) {
-            console.log("Catch" + e);
-            Booking.app.authToken = tokenData;
-            Ext.Viewport.setActiveItem('mainCarousel');
         }
     }
 

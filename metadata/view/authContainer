@@ -48,11 +48,26 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
+                    "var returnValue = null;\r",
+                    "returnValue = setTimeout(this.dataLoadedListener, 2000);"
+                ],
+                "name": "painted"
+            },
+            "designerId": "9475af23-74c5-4b89-abc2-3a4e737c4a15"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "dataLoadedListener",
+                "implHandler": [
                     "var created = false,\r",
                     "    frame,\r",
                     "    frameContent;\r",
-                    "\r",
-                    "setTimeout(function(){console.log('Getting started');}, 2000);\r",
                     "\r",
                     "while (created === false) {\r",
                     "    if (frame != undefined) {\r",
@@ -70,10 +85,9 @@
                     "        console.log(\"catch \" + e);\r",
                     "    }\r",
                     "}"
-                ],
-                "name": "painted"
+                ]
             },
-            "designerId": "9475af23-74c5-4b89-abc2-3a4e737c4a15"
+            "designerId": "2fa7f553-8737-46ec-87c7-1c82bcc737c7"
         }
     ]
 }
