@@ -15,6 +15,7 @@
 
 Ext.define('Booking.controller.refreshEverything', {
     extend: 'Ext.app.Controller',
+    alias: 'controller.refreshEveryhing',
 
     config: {
     },
