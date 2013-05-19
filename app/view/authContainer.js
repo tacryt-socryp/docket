@@ -27,8 +27,7 @@ Ext.define('Booking.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        var returnValue = null;
-        returnValue = setTimeout(this.dataLoadedListener, 2000);
+        this.dataLoadedListener();
     },
 
     hasLoaded: function() {
@@ -52,9 +51,9 @@ Ext.define('Booking.view.authContainer', {
             frameContent;
 
         while (created === false) {
-            if (frame != undefined) {
+            if (frame !== undefined) {
                 frameContent.location.reload();
-                setTimeout(function(){console.log('Getting started');}, 2000);
+                console.log('Getting started');
             }
             frame = document.getElementById("authFrame");
             console.log(frame);
