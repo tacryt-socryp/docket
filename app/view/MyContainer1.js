@@ -132,7 +132,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         font: '20px Arial',
                                                         fill: '#FFF',
                                                         x: xloc+50,
-                                                        y: 145
+                                                        y: 150
                                                     }).show(true);
 
                                                 } else {
@@ -148,7 +148,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                                     surface.add({
                                                         type: 'path',
-                                                        path: 'M ' + xloc+250 + ' ' + 410 + ' ' +
+                                                        path: 'M ' + (xloc+250) + ' ' + 410 + ' ' +
                                                         'l ' + -25 + ' ' + 0 + ' ' +
                                                         'l ' + 12 + ' ' + -10 + 'z',
                                                         fillStyle: boxColor
@@ -157,10 +157,10 @@ Ext.define('Booking.view.MyContainer1', {
                                                     surface.add({
                                                         type: 'text',
                                                         text: resp.items[iter].summary,
-                                                        font: '14px Arial',
+                                                        font: '20px Arial',
                                                         fill: '#FFF',
                                                         x: xloc+60,
-                                                        y: 425
+                                                        y: 430
                                                     }).show(true);
                                                 }
                                             }
