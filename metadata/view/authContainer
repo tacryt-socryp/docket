@@ -27,6 +27,7 @@
                     "    keys;\r",
                     "\r",
                     "try {\r",
+                    "    console.log(tokenData);\r",
                     "    tokenData = frame.document.getElementById('tokenValue').innerHTML;\r",
                     "    keys = Object.keys(tokenData);\r",
                     "    window.location.reload();\r",

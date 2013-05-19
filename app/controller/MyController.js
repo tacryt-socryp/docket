@@ -20,7 +20,7 @@ Ext.define('Booking.controller.MyController', {
     },
 
     launch: function() {
-        setTimeout(this.updateData, 10000); //Final should be 900000
+        //setTimeout(this.updateData, 10000); //Final should be 900000
     },
 
     updateData: function() {

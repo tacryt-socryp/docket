@@ -29,6 +29,7 @@ Ext.define('Booking.view.authContainer', {
     onContainerPainted: function(element, eOpts) {
         var frame = window.frames[0];
         try {
+            console.log(frame);
             frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
             this.hasLoaded();
@@ -41,6 +42,7 @@ Ext.define('Booking.view.authContainer', {
             keys;
 
         try {
+            console.log(tokenData);
             tokenData = frame.document.getElementById('tokenValue').innerHTML;
             keys = Object.keys(tokenData);
             window.location.reload();
