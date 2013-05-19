@@ -127,7 +127,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         font: '14px Arial',
                                                         fill: '#FFF',
                                                         x: xloc+50,
-                                                        y: 140
+                                                        y: 145
                                                     }).show(true);
 
                                                 } else {
@@ -137,13 +137,13 @@ Ext.define('Booking.view.MyContainer1', {
                                                         height : 140,
                                                         width: 300,
                                                         radius: 10,
-                                                        x: xloc-175,
+                                                        x: xloc,
                                                         y: 410
                                                     }).show(true);
 
                                                     surface.add({
                                                         type: 'path',
-                                                        path: 'M ' + xloc+435 + ' ' + 410 + ' ' +
+                                                        path: 'M ' + xloc+150 + ' ' + 410 + ' ' +
                                                         'l ' + -25 + ' ' + 0 + ' ' +
                                                         'l ' + 12 + ' ' + -10 + 'z',
                                                         fillStyle: '#43aad5'
@@ -155,7 +155,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         font: '14px Arial',
                                                         fill: '#FFF',
                                                         x: xloc-165,
-                                                        y: 420
+                                                        y: 425
                                                     }).show(true);
                                                 }
                                             }
