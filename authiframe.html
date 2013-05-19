@@ -16,8 +16,7 @@ function handleClientLoad() {
 }
 
 function checkAuth() {
-  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
-      handleAuthResult);
+  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
 }
 
 function handleAuthResult(authResult) {
@@ -33,8 +32,7 @@ function handleAuthResult(authResult) {
 
 function handleAuthClick(event) {
   gapi.auth.authorize(
-      {client_id: clientId, scope: scopes, immediate: false},
-      handleAuthResult);
+      {client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
   return false;
 }
 
@@ -42,13 +40,7 @@ function callForToken() {
   var tokenVal = gapi.auth.getToken();
   document.getElementById('tokenValue').innerHTML = tokenVal['access_token'];
   var event = new CustomEvent("dataLoadedCustom");
-  if (tokenVal['access_token'] != null) {
-    if (checked == false) {
-      checked = document.getElementById('tokenValue').dispatchEvent(event);
-    }
-  } else {
-    window.location.reload();
-  }
+  checked = document.getElementById('tokenValue').dispatchEvent(event);
 }
     </script>
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
