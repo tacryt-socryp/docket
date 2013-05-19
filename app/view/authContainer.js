@@ -37,11 +37,12 @@ Ext.define('Booking.view.authContainer', {
     },
 
     hasLoaded: function() {
-        var frame = window.frames[0];
-        var tokenData = frame.document.getElementById('tokenValue').innerHTML;
+        var frame = window.frames[0],
+            tokenData;
         console.log("inside hasLoaded, OAuth: " + tokenData);
 
         try {
+            tokenData = frame.document.getElementById('tokenValue').innerHTML;
             var keys = Object.keys(tokenData);
             window.location.reload();
         } catch(e) {

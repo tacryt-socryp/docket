@@ -22,11 +22,12 @@
             "userConfig": {
                 "fn": "hasLoaded",
                 "implHandler": [
-                    "var frame = window.frames[0];\r",
-                    "var tokenData = frame.getElementById('tokenValue').innerHTML;\r",
+                    "var frame = window.frames[0],\r",
+                    "    tokenData;\r",
                     "console.log(\"inside hasLoaded, OAuth: \" + tokenData);\r",
                     "\r",
                     "try {\r",
+                    "    tokenData = frame.document.getElementById('tokenValue').innerHTML;\r",
                     "    var keys = Object.keys(tokenData);\r",
                     "    window.location.reload();\r",
                     "} catch(e) {\r",
@@ -51,7 +52,7 @@
                     "var frame = window.frames[0];\r",
                     "try {\r",
                     "    console.log(\"try to create event\");\r",
-                    "    frame.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
+                    "    frame.document.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
                     "} catch(e) {\r",
                     "    this.hasLoaded();\r",
                     "}"
