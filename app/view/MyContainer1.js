@@ -35,9 +35,8 @@ Ext.define('Booking.view.MyContainer1', {
                                 h = Ext.getBody().getSize().height,
                                 dynText = '10:33 pm',
                                 surface = this.getSurface('main'),
-                                loc,
-                                iter,
-                                evenodd = 1;
+                                xloc,
+                                iter;
 
                             var token = Booking.app.authToken,
                                 clientId = '464168127252.apps.googleusercontent.com',
@@ -60,7 +59,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             w = 650 * resp.items.length;
                                             for (iter = 0; iter < resp.items.length; iter++) {
                                                 console.log(resp.items[iter].summary);
-                                                loc = iter*450;
+                                                xloc = iter*450;
 
                                                 if (iter % 2 === 0) {
                                                     surface.add({
@@ -69,13 +68,13 @@ Ext.define('Booking.view.MyContainer1', {
                                                         height : 140,
                                                         width: 300,
                                                         radius: 10,
-                                                        x: loc+40,
+                                                        x: xloc+40,
                                                         y: 130
                                                     }).show(true);
 
                                                     surface.add({
                                                         type: 'path',
-                                                        path: 'M ' + loc+180 + ' ' + 270 + ' ' +
+                                                        path: 'M ' + xloc+180 + ' ' + 270 + ' ' +
                                                         'l ' + 25 + ' ' + 0 + ' ' +
                                                         'l ' + -12 + ' ' + 10 + 'z',
                                                         fillStyle: '#43aad5'
@@ -88,13 +87,13 @@ Ext.define('Booking.view.MyContainer1', {
                                                         height : 140,
                                                         width: 300,
                                                         radius: 10,
-                                                        x: loc+275,
+                                                        x: xloc+275,
                                                         y: 410
                                                     }).show(true);
 
                                                     surface.add({
                                                         type: 'path',
-                                                        path: 'M ' + loc+435 + ' ' + 410 + ' ' +
+                                                        path: 'M ' + xloc+435 + ' ' + 410 + ' ' +
                                                         'l ' + -25 + ' ' + 0 + ' ' +
                                                         'l ' + 12 + ' ' + -10 + 'z',
                                                         fillStyle: '#43aad5'
@@ -106,7 +105,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                     text: resp.items[iter].summary,
                                                     font: '14px Arial',
                                                     fill: '#FFF',
-                                                    x: loc+45,
+                                                    x: xloc+45,
                                                     y: 135
                                                 }).show(true);
                                             }
