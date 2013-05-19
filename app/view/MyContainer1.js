@@ -33,8 +33,8 @@ Ext.define('Booking.view.MyContainer1', {
                         fn: function(element, eOpts) {
                             var me = this,
                                 h = Ext.getBody().getSize().height,
-                                dynText = '10:33 pm',
                                 surface = this.getSurface('main'),
+                                boxColor = '#43aad5',
                                 xloc,
                                 w,
                                 iter;
@@ -56,12 +56,13 @@ Ext.define('Booking.view.MyContainer1', {
                                         var request = gapi.client.calendar.events.list({
                                             'calendarId': 'primary',
                                             //'singleEvents': true,
+                                            'orderBy': 'startTime',
                                             'timeMin': '2013-05-19T00:00:20-05:00',
                                             'timeMax': '2014-05-19T00:00:20-05:00'
                                         });
 
                                         request.execute(function(resp) {
-                                            w = 650 * resp.items.length;
+                                            w = 500 * resp.items.length;
                                             me.setSize(w,h);
                                             surface.setSize(w,h);
 
@@ -87,7 +88,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             //Text for top
                                             surface.add({
                                                 type: 'text',
-                                                text: dynText,
+                                                text: '10:33 pm',
                                                 font: '14px Arial',
                                                 fill: '#FFF',
                                                 x: 170,
@@ -99,7 +100,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                 cx: 193,
                                                 cy: 338,
                                                 r: 20,
-                                                fillStyle: '#43aad5'
+                                                fillStyle: boxColor
                                             }).show(true);
 
                                             for (iter = 0; iter < resp.items.length; iter++) {
@@ -109,7 +110,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                 if (iter % 2 === 0) {
                                                     surface.add({
                                                         type: 'rect',
-                                                        fill: '#43aad5',
+                                                        fill: boxColor,
                                                         height : 140,
                                                         width: 300,
                                                         radius: 10,
@@ -122,7 +123,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         path: 'M ' + xloc+180 + ' ' + 270 + ' ' +
                                                         'l ' + 25 + ' ' + 0 + ' ' +
                                                         'l ' + -12 + ' ' + 10 + 'z',
-                                                        fillStyle: '#43aad5'
+                                                        fillStyle: boxColor
                                                     }).show(true);
 
                                                     surface.add({
@@ -137,7 +138,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                 } else {
                                                     surface.add({
                                                         type: 'rect',
-                                                        fill: '#43aad5',
+                                                        fill: boxColor,
                                                         height : 140,
                                                         width: 300,
                                                         radius: 10,
@@ -150,7 +151,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         path: 'M ' + xloc+250 + ' ' + 410 + ' ' +
                                                         'l ' + -25 + ' ' + 0 + ' ' +
                                                         'l ' + 12 + ' ' + -10 + 'z',
-                                                        fillStyle: '#43aad5'
+                                                        fillStyle: boxColor
                                                     }).show(true);
 
                                                     surface.add({
