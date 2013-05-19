@@ -148,7 +148,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                                     surface.add({
                                                         type: 'path',
-                                                        path: 'M ' + (xloc+250) + ' ' + 410 + ' ' +
+                                                        path: 'M ' + (xloc+200) + ' ' + 410 + ' ' +
                                                         'l ' + -25 + ' ' + 0 + ' ' +
                                                         'l ' + 12 + ' ' + -10 + 'z',
                                                         fillStyle: boxColor

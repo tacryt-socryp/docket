@@ -169,7 +169,7 @@
                             "                        \r",
                             "                        surface.add({\r",
                             "                            type: 'path',\r",
-                            "                            path: 'M ' + (xloc+250) + ' ' + 410 + ' ' +\r",
+                            "                            path: 'M ' + (xloc+200) + ' ' + 410 + ' ' +\r",
                             "                                  'l ' + -25 + ' ' + 0 + ' ' +\r",
                             "                                  'l ' + 12 + ' ' + -10 + 'z',\r",
                             "                            fillStyle: boxColor\r",
