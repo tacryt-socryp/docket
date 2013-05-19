@@ -30,6 +30,7 @@
                     "try {\r",
                     "    var keys = Object.keys(tokenData);\r",
                     "    frame.src = frame.src;\r",
+                    "    console.log('Reloading iframe');\r",
                     "    this.onContainerPainted();\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
