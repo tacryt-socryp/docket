@@ -91,7 +91,7 @@
                             "                //Line across screen\r",
                             "                surface.add({\r",
                             "                    type: 'rect',\r",
-                            "                    fill: '#87CEEB',\r",
+                            "                    fill: '#176c93',\r",
                             "                    height : 20,\r",
                             "                    width: w,\r",
                             "                    x: 0,\r",
