@@ -61,6 +61,43 @@ Ext.define('Booking.view.MyContainer1', {
                                             me.setSize(w,h);
                                             surface.setSize(w,h);
 
+                                            //Line across screen
+                                            surface.add({
+                                                type: 'rect',
+                                                fill: '#87CEEB',
+                                                height : 20,
+                                                width: w,
+                                                x: 0,
+                                                y: 330
+                                            }).show(true);
+
+                                            surface.add({
+                                                type: 'text',
+                                                text: 'Meetings in Room A',
+                                                font: '32px Arial',
+                                                fill: '#FFF',
+                                                x: 70,
+                                                y: 50
+                                            }).show(true);
+
+                                            //Text for top
+                                            surface.add({
+                                                type: 'text',
+                                                text: dynText,
+                                                font: '14px Arial',
+                                                fill: '#FFF',
+                                                x: 170,
+                                                y: 380
+                                            }).show(true);
+
+                                            surface.add({
+                                                type: 'circle',
+                                                cx: 193,
+                                                cy: 338,
+                                                r: 20,
+                                                fillStyle: '#43aad5'
+                                            }).show(true);
+
                                             for (iter = 0; iter < resp.items.length; iter++) {
                                                 console.log(resp.items[iter].summary);
                                                 xloc = iter*450;
@@ -117,43 +154,6 @@ Ext.define('Booking.view.MyContainer1', {
                                     });
                                 }
                             });
-
-                            //Line across screen
-                            surface.add({
-                                type: 'rect',
-                                fill: '#87CEEB',
-                                height : 20,
-                                width: w,
-                                x: 0,
-                                y: 330
-                            }).show(true);
-
-                            surface.add({
-                                type: 'text',
-                                text: 'Meetings in Room A',
-                                font: '32px Arial',
-                                fill: '#FFF',
-                                x: 70,
-                                y: 50
-                            }).show(true);
-
-                            //Text for top
-                            surface.add({
-                                type: 'text',
-                                text: dynText,
-                                font: '14px Arial',
-                                fill: '#FFF',
-                                x: 170,
-                                y: 380
-                            }).show(true);
-
-                            surface.add({
-                                type: 'circle',
-                                cx: 193,
-                                cy: 338,
-                                r: 20,
-                                fillStyle: '#43aad5'
-                            }).show(true);
                         },
                         event: 'painted'
                     }
