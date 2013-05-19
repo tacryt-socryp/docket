@@ -37,7 +37,7 @@ Ext.define('Booking.view.authContainer', {
             console.log("try to create event");
             frameContent.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
-            window.location.reload();
+            this.hasLoaded();
         }
     },
 
@@ -49,15 +49,12 @@ Ext.define('Booking.view.authContainer', {
 
         try {
             var keys = Object.keys(tokenData);
+            window.location.reload();
         } catch(e) {
             console.log("Catch" + e);
             Booking.app.authToken = tokenData;
             Ext.Viewport.setActiveItem('mainCarousel');
         }
-    },
-
-    dataLoadedListener: function() {
-
     }
 
 });

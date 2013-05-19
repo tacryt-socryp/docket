@@ -29,6 +29,7 @@
                     "\r",
                     "try {\r",
                     "    var keys = Object.keys(tokenData);\r",
+                    "    window.location.reload();\r",
                     "} catch(e) {\r",
                     "    console.log(\"Catch\" + e);\r",
                     "    Booking.app.authToken = tokenData;\r",
@@ -58,27 +59,12 @@
                     "    console.log(\"try to create event\");\r",
                     "    frameContent.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
                     "} catch(e) {\r",
-                    "    window.location.reload();\r",
+                    "    this.hasLoaded;\r",
                     "}"
                 ],
                 "name": "painted"
             },
             "designerId": "9475af23-74c5-4b89-abc2-3a4e737c4a15"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "dataLoadedListener",
-                "implHandler": [
-                    ""
-                ]
-            },
-            "designerId": "2fa7f553-8737-46ec-87c7-1c82bcc737c7"
         }
     ]
 }
