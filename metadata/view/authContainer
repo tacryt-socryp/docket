@@ -55,7 +55,7 @@
                     "while (created === false) {\r",
                     "    if (frame != undefined) {\r",
                     "        frameContent.location.reload();\r",
-                    "        console.log('Reloading iframe');\r",
+                    "        setTimeout(function(){console.log('Reloading iframe')}, 2000);\r",
                     "    }\r",
                     "    frame = document.getElementById(\"authFrame\");\r",
                     "    frameContent = frame.contentDocument || frame.contentWindow.document;\r",

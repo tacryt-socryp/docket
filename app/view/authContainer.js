@@ -34,7 +34,7 @@ Ext.define('Booking.view.authContainer', {
         while (created === false) {
             if (frame != undefined) {
                 frameContent.location.reload();
-                console.log('Reloading iframe');
+                setTimeout(function(){console.log('Reloading iframe')}, 2000);
             }
             frame = document.getElementById("authFrame");
             frameContent = frame.contentDocument || frame.contentWindow.document;
