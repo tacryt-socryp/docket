@@ -33,10 +33,10 @@ Ext.define('Booking.view.MyContainer1', {
                         fn: function(element, eOpts) {
                             var me = this,
                                 h = Ext.getBody().getSize().height,
-                                surface = this.getSurface('main'),
+                                w = Ext.getBody().getSize().width,
+                                surface = me.getSurface('main'),
                                 boxColor = '#43aad5',
                                 xloc,
-                                w,
                                 iter;
 
                             var token = Booking.app.authToken,
@@ -62,7 +62,7 @@ Ext.define('Booking.view.MyContainer1', {
                                         });
 
                                         request.execute(function(resp) {
-                                            w = 500 * resp.items.length;
+                                            w = 500 * resp.items.length/2;
                                             me.setSize(w,h);
                                             surface.setSize(w,h);
 
