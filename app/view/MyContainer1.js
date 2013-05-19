@@ -36,7 +36,8 @@ Ext.define('Booking.view.MyContainer1', {
                                 dynText = '10:33 pm',
                                 surface = this.getSurface('main'),
                                 loc,
-                                iter;
+                                iter,
+                                evenodd = 1;
 
                             var token = Booking.app.authToken,
                                 clientId = '464168127252.apps.googleusercontent.com',
@@ -59,13 +60,53 @@ Ext.define('Booking.view.MyContainer1', {
                                             w = 650 * resp.items.length;
                                             for (iter = 0; iter < resp.items.length; iter++) {
                                                 console.log(resp.items[iter].summary);
-                                                loc = 45 + iter*450;
+                                                loc = iter*450;
+
+                                                if (iter % 2 === 0) {
+                                                    surface.add({
+                                                        type: 'rect',
+                                                        fill: '#43aad5',
+                                                        height : 140,
+                                                        width: 300,
+                                                        radius: 10,
+                                                        x: loc+40,
+                                                        y: 130
+                                                    }).show(true);
+
+                                                    surface.add({
+                                                        type: 'path',
+                                                        path: 'M ' + loc+180 + ' ' + 270 + ' ' +
+                                                        'l ' + 25 + ' ' + 0 + ' ' +
+                                                        'l ' + -12 + ' ' + 10 + 'z',
+                                                        fillStyle: '#43aad5'
+                                                    }).show(true);
+
+                                                } else {
+                                                    surface.add({
+                                                        type: 'rect',
+                                                        fill: '#43aad5',
+                                                        height : 140,
+                                                        width: 300,
+                                                        radius: 10,
+                                                        x: loc+275,
+                                                        y: 410
+                                                    }).show(true);
+
+                                                    surface.add({
+                                                        type: 'path',
+                                                        path: 'M ' + loc+435 + ' ' + 410 + ' ' +
+                                                        'l ' + -25 + ' ' + 0 + ' ' +
+                                                        'l ' + 12 + ' ' + -10 + 'z',
+                                                        fillStyle: '#43aad5'
+                                                    }).show(true);
+                                                }
+
                                                 surface.add({
                                                     type: 'text',
                                                     text: resp.items[iter].summary,
                                                     font: '14px Arial',
                                                     fill: '#FFF',
-                                                    x: loc,
+                                                    x: loc+45,
                                                     y: 135
                                                 }).show(true);
                                             }
@@ -97,32 +138,6 @@ Ext.define('Booking.view.MyContainer1', {
                                 y: 50
                             }).show(true);
 
-                            for (iter=0; iter<5; iter++) {
-                                loc = 40 + iter*450;
-                                //Rounded rectangles on top
-                                surface.add({
-                                    type: 'rect',
-                                    fill: '#43aad5',
-                                    height : 140,
-                                    width: 300,
-                                    radius: 10,
-                                    x: loc,
-                                    y: 130
-                                }).show(true);
-                            }
-
-                            for (iter = 0; iter<5; iter++) {
-                                loc = 180 + iter*450;
-                                //Triangles on top
-                                surface.add({
-                                    type: 'path',
-                                    path: 'M ' + loc + ' ' + 270 + ' ' +
-                                    'l ' + 25 + ' ' + 0 + ' ' +
-                                    'l ' + -12 + ' ' + 10 + 'z',
-                                    fillStyle: '#43aad5'
-                                }).show(true);
-                            }
-
                             //Text for top
                             surface.add({
                                 type: 'text',
@@ -132,32 +147,6 @@ Ext.define('Booking.view.MyContainer1', {
                                 x: 170,
                                 y: 380
                             }).show(true);
-
-                            for (iter=0; iter<5; iter++) {
-                                loc = 275 + iter*450;
-                                //Rounded rectangles on bottom
-                                surface.add({
-                                    type: 'rect',
-                                    fill: '#43aad5',
-                                    height : 140,
-                                    width: 300,
-                                    radius: 10,
-                                    x: loc,
-                                    y: 410
-                                }).show(true);
-                            }
-
-                            for (iter = 0; iter<5; iter++) {
-                                loc = 435 + iter*450;
-                                //Triangles on bottom
-                                surface.add({
-                                    type: 'path',
-                                    path: 'M ' + loc + ' ' + 410 + ' ' +
-                                    'l ' + -25 + ' ' + 0 + ' ' +
-                                    'l ' + 12 + ' ' + -10 + 'z',
-                                    fillStyle: '#43aad5'
-                                }).show(true);
-                            }
 
                             surface.add({
                                 type: 'circle',
