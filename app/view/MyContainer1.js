@@ -56,8 +56,17 @@ Ext.define('Booking.view.MyContainer1', {
                                         });
 
                                         request.execute(function(resp) {
-                                            for (var i = 0; i < resp.items.length; i++) {
-                                                console.log(resp.items[i].summary);
+                                            w = 650 * resp.items.length;
+                                            for (iter = 0; iter < resp.items.length; iter++) {
+                                                loc = 45 + iter*450;
+                                                surface.add({
+                                                    type: 'text',
+                                                    text: dynText,
+                                                    font: '14px Arial',
+                                                    fill: '#FFF',
+                                                    x: loc,
+                                                    y: 135
+                                                }).show(true);
                                             }
                                         });
                                     });
