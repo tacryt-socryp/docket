@@ -58,6 +58,7 @@
                     "        setTimeout(function(){console.log('Reloading iframe')}, 2000);\r",
                     "    }\r",
                     "    frame = document.getElementById(\"authFrame\");\r",
+                    "    console.log(frame);\r",
                     "    frameContent = frame.contentDocument || frame.contentWindow.document;\r",
                     "    try {\r",
                     "        console.log(\"try to create event\");\r",
