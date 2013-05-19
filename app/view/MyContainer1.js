@@ -137,13 +137,13 @@ Ext.define('Booking.view.MyContainer1', {
                                                         height : 140,
                                                         width: 300,
                                                         radius: 10,
-                                                        x: xloc,
+                                                        x: xloc+100,
                                                         y: 410
                                                     }).show(true);
 
                                                     surface.add({
                                                         type: 'path',
-                                                        path: 'M ' + xloc+150 + ' ' + 410 + ' ' +
+                                                        path: 'M ' + xloc+250 + ' ' + 410 + ' ' +
                                                         'l ' + -25 + ' ' + 0 + ' ' +
                                                         'l ' + 12 + ' ' + -10 + 'z',
                                                         fillStyle: '#43aad5'
@@ -154,7 +154,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         text: resp.items[iter].summary,
                                                         font: '14px Arial',
                                                         fill: '#FFF',
-                                                        x: xloc-165,
+                                                        x: xloc+60,
                                                         y: 425
                                                     }).show(true);
                                                 }
