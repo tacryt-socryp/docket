@@ -33,7 +33,7 @@ Ext.define('Booking.view.authContainer', {
 
         while (created === false) {
             if (frame != undefined) {
-                frame.src = frame.src;
+                frameContent.location.reload();
                 console.log('Reloading iframe');
             }
             frame = document.getElementById("authFrame");

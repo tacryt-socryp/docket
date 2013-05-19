@@ -54,7 +54,7 @@
                     "\r",
                     "while (created === false) {\r",
                     "    if (frame != undefined) {\r",
-                    "        frame.src = frame.src;\r",
+                    "        frameContent.location.reload();\r",
                     "        console.log('Reloading iframe');\r",
                     "    }\r",
                     "    frame = document.getElementById(\"authFrame\");\r",
