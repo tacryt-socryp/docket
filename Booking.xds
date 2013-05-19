@@ -37,14 +37,6 @@
             ],
             "className": "MyContainer1"
         },
-        "68d13d4d-945b-4546-a15a-71ac0804d593": {
-            "paths": [
-                "metadata/view/MyContainer2",
-                "app/view/override/MyContainer2.js",
-                "app/view/MyContainer2.js"
-            ],
-            "className": "MyContainer2"
-        },
         "5133ddc6-983b-440e-ba54-ce2fa457ad04": {
             "paths": [
                 "metadata/view/MyFormPanel",
@@ -73,7 +65,6 @@
             "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
             "a5f363fc-6ad5-44d1-847a-27915289d76d",
-            "68d13d4d-945b-4546-a15a-71ac0804d593",
             "5133ddc6-983b-440e-ba54-ce2fa457ad04"
         ],
         "store": [],
