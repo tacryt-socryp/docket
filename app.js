@@ -22,12 +22,6 @@ Ext.application({
     authToken: {
         
     },
-    models: [
-        'roomList'
-    ],
-    stores: [
-        'MyStore'
-    ],
     views: [
         'mainCarousel',
         'authContainer'

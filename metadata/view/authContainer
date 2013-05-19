@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "html": "<iframe id=\"authFrame\" src=\"http://loganfynne.github.io/loganfynne.com/authiframe.html\" width=\"100%\" height=\"100%\"></iframe>",
+        "html": "<iframe id=\"authFrame\" src=\"authiframe.html\" width=\"100%\" height=\"100%\"></iframe>",
         "designer|userClassName": "authContainer",
         "designer|initialView": true
     },
@@ -22,9 +22,8 @@
             "userConfig": {
                 "fn": "hasLoaded",
                 "implHandler": [
-                    "var frame = document.getElementById('authFrame');\r",
-                    "var frameContent = frame.contentDocument || frame.contentWindow.document;\r",
-                    "var tokenData = frameContent.getElementById('tokenValue').innerHTML;\r",
+                    "var frame = window.frames[0];\r",
+                    "var tokenData = frame.getElementById('tokenValue').innerHTML;\r",
                     "console.log(\"inside hasLoaded, OAuth: \" + tokenData);\r",
                     "\r",
                     "try {\r",
@@ -49,17 +48,12 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
-                    "var frame,\r",
-                    "    frameContent;\r",
-                    "\r",
-                    "frame = document.getElementById(\"authFrame\");\r",
-                    "console.log(frame);\r",
-                    "frameContent = frame.contentDocument || frame.contentWindow.document;\r",
+                    "var frame = window.frames[0];\r",
                     "try {\r",
                     "    console.log(\"try to create event\");\r",
-                    "    frameContent.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
+                    "    frame.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
                     "} catch(e) {\r",
-                    "    this.hasLoaded;\r",
+                    "    this.hasLoaded();\r",
                     "}"
                 ],
                 "name": "painted"

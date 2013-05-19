@@ -17,7 +17,7 @@ Ext.define('Booking.view.authContainer', {
     extend: 'Ext.Container',
 
     config: {
-        html: '<iframe id="authFrame" src="http://loganfynne.github.io/loganfynne.com/authiframe.html" width="100%" height="100%"></iframe>',
+        html: '<iframe id="authFrame" src="authiframe.html" width="100%" height="100%"></iframe>',
         listeners: [
             {
                 fn: 'onContainerPainted',
@@ -27,24 +27,18 @@ Ext.define('Booking.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        var frame,
-            frameContent;
-
-        frame = document.getElementById("authFrame");
-        console.log(frame);
-        frameContent = frame.contentDocument || frame.contentWindow.document;
+        var frame = window.frames[0];
         try {
             console.log("try to create event");
-            frameContent.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+            frame.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
             this.hasLoaded();
         }
     },
 
     hasLoaded: function() {
-        var frame = document.getElementById('authFrame');
-        var frameContent = frame.contentDocument || frame.contentWindow.document;
-        var tokenData = frameContent.getElementById('tokenValue').innerHTML;
+        var frame = window.frames[0];
+        var tokenData = frame.getElementById('tokenValue').innerHTML;
         console.log("inside hasLoaded, OAuth: " + tokenData);
 
         try {
