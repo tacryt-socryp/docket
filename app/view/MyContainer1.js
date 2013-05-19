@@ -121,6 +121,15 @@ Ext.define('Booking.view.MyContainer1', {
                                                         fillStyle: '#43aad5'
                                                     }).show(true);
 
+                                                    surface.add({
+                                                        type: 'text',
+                                                        text: resp.items[iter].summary,
+                                                        font: '14px Arial',
+                                                        fill: '#FFF',
+                                                        x: xloc+45,
+                                                        y: 135
+                                                    }).show(true);
+
                                                 } else {
                                                     surface.add({
                                                         type: 'rect',
@@ -139,16 +148,16 @@ Ext.define('Booking.view.MyContainer1', {
                                                         'l ' + 12 + ' ' + -10 + 'z',
                                                         fillStyle: '#43aad5'
                                                     }).show(true);
-                                                }
 
-                                                surface.add({
-                                                    type: 'text',
-                                                    text: resp.items[iter].summary,
-                                                    font: '14px Arial',
-                                                    fill: '#FFF',
-                                                    x: xloc+45,
-                                                    y: 135
-                                                }).show(true);
+                                                    surface.add({
+                                                        type: 'text',
+                                                        text: resp.items[iter].summary,
+                                                        font: '14px Arial',
+                                                        fill: '#FFF',
+                                                        x: xloc+280,
+                                                        y: 415
+                                                    }).show(true);
+                                                }
                                             }
                                         });
                                     });
