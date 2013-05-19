@@ -28,13 +28,15 @@ Ext.define('Booking.view.authContainer', {
 
     onContainerPainted: function(element, eOpts) {
         var frame = document.getElementById("authFrame");
+        var frameContent = frame.contentDocument || frame.contentWindow.document;
 
         try {
-            frame.contentDocument.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+            frameContent.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
             while (frame === null) {
                 frame = document.getElementById("authFrame");
-                frame.contentDocument.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
+                frameContent = frame.contentDocument || frame.contentWindow.document;
+                frameContent.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
                 console.log("Catching error");
             }
         }
@@ -48,8 +50,8 @@ Ext.define('Booking.view.authContainer', {
 
         try {
             var keys = Object.keys(tokenData);
-            frameContent.location.reload(true);
-            //this.onContainerPainted();
+            frame.src = frame.src;
+            this.onContainerPainted();
         } catch(e) {
             Booking.app.authToken = tokenData;
             Ext.Viewport.setActiveItem('mainCarousel');
