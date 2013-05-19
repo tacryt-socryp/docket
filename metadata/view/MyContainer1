@@ -84,7 +84,7 @@
                             "\r",
                             "            request.execute(function(resp) {\r",
                             "                console.log(resp);\r",
-                            "                w = 215 * resp.items.length;\r",
+                            "                w = 210 * resp.items.length;\r",
                             "                me.setSize(w,h);\r",
                             "                surface.setSize(w,h);\r",
                             "                \r",
