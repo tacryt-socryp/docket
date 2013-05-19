@@ -100,7 +100,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                             for (iter = 0; iter < resp.items.length; iter++) {
                                                 console.log(resp.items[iter].summary);
-                                                xloc = iter*450;
+                                                xloc = iter*300;
 
                                                 if (iter % 2 === 0) {
                                                     surface.add({
