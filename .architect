@@ -36,6 +36,9 @@
                     "cn": [
                         {
                             "id": "2c1fca87-b05d-41f4-b903-21fbe2bc5439"
+                        },
+                        {
+                            "id": "65bdfb27-8c7a-47db-b665-451809a2d25c"
                         }
                     ]
                 }
@@ -98,7 +101,7 @@
     },
     "inspectorState": {
         "topInstance": "a5f363fc-6ad5-44d1-847a-27915289d76d",
-        "selectedInstance": "2c1fca87-b05d-41f4-b903-21fbe2bc5439"
+        "selectedInstance": "65bdfb27-8c7a-47db-b665-451809a2d25c"
     },
     "codeState": {
         "topInstance": "a5f363fc-6ad5-44d1-847a-27915289d76d"

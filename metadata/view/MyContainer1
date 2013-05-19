@@ -76,7 +76,7 @@
                             "        gapi.client.load('calendar', 'v3', function() {\r",
                             "            var request = gapi.client.calendar.events.list({\r",
                             "                'calendarId': 'primary',\r",
-                            "                'singleEvents': true,\r",
+                            "                //'singleEvents': true,\r",
                             "                'timeMin': '2013-05-19T00:00:20-05:00',\r",
                             "                'timeMax': '2014-05-19T00:00:20-05:00'\r",
                             "            });\r",
@@ -192,6 +192,23 @@
                         "name": "painted"
                     },
                     "designerId": "2c1fca87-b05d-41f4-b903-21fbe2bc5439"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onInlineDraw1Resize",
+                        "implHandler": [
+                            "this.setSize(null, Ext.getBody().getSize().height);\r",
+                            "this.getSurface('main').setSize(null, Ext.getBody().getSize().height);"
+                        ],
+                        "name": "resize"
+                    },
+                    "designerId": "65bdfb27-8c7a-47db-b665-451809a2d25c"
                 }
             ]
         }

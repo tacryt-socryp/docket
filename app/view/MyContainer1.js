@@ -169,6 +169,13 @@ Ext.define('Booking.view.MyContainer1', {
                             });
                         },
                         event: 'painted'
+                    },
+                    {
+                        fn: function(element, eOpts) {
+                            this.setSize(null, Ext.getBody().getSize().height);
+                            this.getSurface('main').setSize(null, Ext.getBody().getSize().height);
+                        },
+                        event: 'resize'
                     }
                 ]
             }
