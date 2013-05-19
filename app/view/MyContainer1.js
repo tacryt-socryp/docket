@@ -36,6 +36,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 w = Ext.getBody().getSize().width,
                                 surface = this.getSurface('main'),
                                 boxColor = '#43aad5',
+                                today = new Date(),
                                 xloc,
                                 iter;
 
@@ -44,10 +45,8 @@ Ext.define('Booking.view.MyContainer1', {
                                 apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
                                 scopes = 'https://www.googleapis.com/auth/calendar';
 
-                            var today = new Date();
                             today.setHours(0,0,0,0);
                             today = today.toISOString();
-                            console.log(today);
 
                             console.log(token);
                             gapi.client.setApiKey(apiKey);
@@ -63,7 +62,6 @@ Ext.define('Booking.view.MyContainer1', {
                                             'singleEvents': true,
                                             'orderBy': 'startTime',
                                             'timeMin': today
-                                            //'timeMax': '2014-05-19T00:00:20-05:00'
                                         });
 
                                         request.execute(function(resp) {
@@ -171,6 +169,8 @@ Ext.define('Booking.view.MyContainer1', {
                                             }
                                         });
                                     });
+                                } else {
+                                    window.location.reload();
                                 }
                             });
                         },

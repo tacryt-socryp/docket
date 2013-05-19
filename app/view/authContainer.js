@@ -29,7 +29,6 @@ Ext.define('Booking.view.authContainer', {
     onContainerPainted: function(element, eOpts) {
         var frame = window.frames[0];
         try {
-            console.log("try to create event");
             frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
             this.hasLoaded();
@@ -46,7 +45,6 @@ Ext.define('Booking.view.authContainer', {
             keys = Object.keys(tokenData);
             window.location.reload();
         } catch(e) {
-            console.log("Catch" + e);
             Booking.app.authToken = tokenData;
             Ext.Viewport.setActiveItem('mainCarousel');
         }

@@ -13,6 +13,9 @@
             "mainCarousel",
             "authContainer"
         ],
+        "controllers": [
+            "MyController"
+        ],
         "name": "Booking"
     },
     "configAlternates": {
