@@ -51,6 +51,7 @@ Ext.define('Booking.view.MyContainer1', {
                             gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
                             function(authResult) {
                                 if (authResult) {
+                                    console.log('About to request Calendar events');
                                     gapi.client.load('calendar', 'v3', function() {
                                         var request = gapi.client.calendar.events.list({
                                             'calendarId': 'primary',
