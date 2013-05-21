@@ -61,7 +61,8 @@ Ext.define('Booking.view.MyContainer1', {
                                             'calendarId': 'primary',
                                             'singleEvents': true,
                                             'orderBy': 'startTime',
-                                            'timeMin': today
+                                            'timeMin': today,
+                                            'maxResults': 75
                                         });
 
                                         request.execute(function(resp) {
