@@ -118,7 +118,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                     type: 'circle',
                                                     cx: xloc+192,
                                                     cy: 338,
-                                                    r: 17,
+                                                    r: 16,
                                                     fillStyle: boxColor
                                                 }).show(true);
 
