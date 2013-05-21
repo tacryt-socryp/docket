@@ -108,7 +108,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                                 surface.add({
                                                     type: 'circle',
-                                                    cx: xloc+190,
+                                                    cx: xloc+195,
                                                     cy: 338,
                                                     r: 17,
                                                     fillStyle: boxColor
@@ -149,13 +149,13 @@ Ext.define('Booking.view.MyContainer1', {
                                                         height : 140,
                                                         width: 300,
                                                         radius: 10,
-                                                        x: xloc+35,
+                                                        x: xloc+40,
                                                         y: 410
                                                     }).show(true);
 
                                                     surface.add({
                                                         type: 'path',
-                                                        path: 'M ' + (xloc+200) + ' ' + 410 + ' ' +
+                                                        path: 'M ' + (xloc+205) + ' ' + 410 + ' ' +
                                                         'l ' + -25 + ' ' + 0 + ' ' +
                                                         'l ' + 12 + ' ' + -10 + 'z',
                                                         fillStyle: boxColor
@@ -166,7 +166,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         text: resp.items[iter].summary,
                                                         font: '20px Arial',
                                                         fill: '#FFF',
-                                                        x: xloc+40,
+                                                        x: xloc+45,
                                                         y: 430
                                                     }).show(true);
                                                 }
