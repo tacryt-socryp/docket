@@ -128,7 +128,7 @@
                             "                    \r",
                             "                    surface.add({\r",
                             "                        type: 'circle',\r",
-                            "                        cx: xloc+200,\r",
+                            "                        cx: xloc+195,\r",
                             "                        cy: 338,\r",
                             "                        r: 17,\r",
                             "                        fillStyle: boxColor\r",
