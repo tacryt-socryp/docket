@@ -130,7 +130,7 @@
                             "                        type: 'circle',\r",
                             "                        cx: xloc+200,\r",
                             "                        cy: 338,\r",
-                            "                        r: 20,\r",
+                            "                        r: 17,\r",
                             "                        fillStyle: boxColor\r",
                             "                    }).show(true);\r",
                             "\r",
