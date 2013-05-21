@@ -80,6 +80,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                 y: 330
                                             }).show(true);
 
+                                            //Name of room
                                             surface.add({
                                                 type: 'text',
                                                 text: 'Meetings in Room A',
@@ -89,7 +90,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                 y: 50
                                             }).show(true);
 
-                                            //Text for top
+                                            //Time and date for top
                                             surface.add({
                                                 type: 'text',
                                                 text: '10:33 pm',
@@ -99,16 +100,18 @@ Ext.define('Booking.view.MyContainer1', {
                                                 y: 380
                                             }).show(true);
 
-                                            surface.add({
-                                                type: 'circle',
-                                                cx: 193,
-                                                cy: 338,
-                                                r: 20,
-                                                fillStyle: boxColor
-                                            }).show(true);
+                                            //Circle for top
 
                                             for (iter = 0; iter < resp.items.length; iter++) {
                                                 xloc = iter*200;
+
+                                                surface.add({
+                                                    type: 'circle',
+                                                    cx: xloc+200,
+                                                    cy: 338,
+                                                    r: 20,
+                                                    fillStyle: boxColor
+                                                }).show(true);
 
                                                 if (iter % 2 === 0) {
                                                     surface.add({
