@@ -22,8 +22,7 @@
             "userConfig": {
                 "fn": "hasLoaded",
                 "implHandler": [
-                    "var me = thisFunction,\r",
-                    "    frame = window.frames[0],\r",
+                    "var frame = window.frames[0],\r",
                     "    tokenData,\r",
                     "    keys;\r",
                     "\r",
