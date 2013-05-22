@@ -62,46 +62,8 @@ Ext.define('Booking.view.authContainer', {
             items = [],
             calendarId;
 
-        var addContainer_one = "Ext['define']('Booking.view.MyContainer1', {
-            extend: 'Ext.Container',
-            alias: 'widget.MyContainer1',
-            config: {
-                itemId: 'MyContainer1',
-                scrollable: {
-                    direction: 'horizontal',
-                    directionLock: true
-                },
-                items: [
-                {
-                    xtype: 'draw',
-                    itemId: 'inlineDraw1',
-                    style: 'background:#0d6289;',
-                    listeners: [
-                    {
-                        fn: function(element, eOpts) {
-                            var me = this,
-                                h = Ext.getBody().getSize().height,
-                                w = Ext.getBody().getSize().width,
-                                surface = this.getSurface('main'),
-                                boxColor = '#43aad5',
-                                today = new Date(),
-                                xloc,
-                                iter;
-                            var token = Booking.app.authToken,
-                                clientId = '464168127252.apps.googleusercontent.com',
-                                apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
-                                scopes = 'https://www.googleapis.com/auth/calendar';
-                            var calendarId;
-                            today.setHours(0,0,0,0);
-                            today = today.toISOString();
-                            gapi.client.setApiKey(apiKey);
-                            gapi.auth.setToken(token);
-                            gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
-                            function(authResult) {
-                                if (authResult) {
-                                    gapi.client.load('calendar', 'v3', function() {
-                                        var request = gapi.client.calendar.events.list({
-                                            'calendarId': '";
+        var encoded = Ext.encode(Ext.ComponentQuery.query('#MyContainer1')[0].painted());
+        console.log(encoded);
 
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
@@ -113,8 +75,6 @@ Ext.define('Booking.view.authContainer', {
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
                         calendarId = outer.items[i].id;
-                        addContainer = addContainer_one + outer.items[i].id + addContainer_two + outer.items[i].summary + addContainer_three;
-                        addContainer = JSON.parse(addContainer);
                         items.push(addContainer);
                         console.log(calendarId);
                     }
