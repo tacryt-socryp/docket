@@ -34,7 +34,7 @@
                     "    keys = Object.keys(tokenData);\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
-                    "    me.generateItems();\r",
+                    "    Booking.view.authContainer.generateItems();\r",
                     "}"
                 ]
             },

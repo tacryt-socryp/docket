@@ -49,7 +49,7 @@ Ext.define('Booking.view.authContainer', {
             keys = Object.keys(tokenData);
         } catch(e) {
             Booking.app.authToken = tokenData;
-            me.generateItems();
+            Booking.view.authContainer.generateItems();
         }
     },
 
