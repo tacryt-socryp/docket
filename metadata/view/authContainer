@@ -71,7 +71,7 @@
             "userConfig": {
                 "fn": "generateItems",
                 "implHandler": [
-                    "var mainCarousel = Ext.create('Booking.view.mainCarousel'),\r",
+                    "var myContainer = Ext.create('Booking.view.MyContainer1'),\r",
                     "    token = Booking.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
                     "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
@@ -80,7 +80,7 @@
                     "    items = [],\r",
                     "    calendarId;\r",
                     "\r",
-                    "var encoded = Ext.encode(Ext.ComponentQuery.query('#MyContainer1')[0].items[0].listeners[0].painted());\r",
+                    "var encoded = Ext.encode(myContainer.items[0].listeners[0].painted());\r",
                     "console.log(encoded);\r",
                     "\r",
                     "gapi.client.setApiKey(apiKey);\r",
