@@ -31,7 +31,8 @@
                     "    keys = Object.keys(tokenData);\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
-                    "    this.up('authContainer').generateItems();\r",
+                    "    console.log(Ext.getCmp('authContainer'));\r",
+                    "    Ext.getCmp('authContainer').generateItems();\r",
                     "}"
                 ]
             },
