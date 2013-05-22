@@ -28,6 +28,7 @@ Ext.define('Booking.view.authContainer', {
 
     onContainerPainted: function(element, eOpts) {
         var frame = window.frames[0];
+
         try {
             console.log(frame);
             frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
@@ -77,7 +78,7 @@ Ext.define('Booking.view.authContainer', {
                         }); 
                         console.log(calendarId);
                     }
-                    Booking.view.mainCarousel.setItems(items);
+                    Ext.getCmp('mainCarousel').setItems(items);
                     Ext.Viewport.setActiveItem('mainCarousel');
                 });
             });
