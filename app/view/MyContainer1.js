@@ -52,11 +52,11 @@ Ext.define('Booking.view.MyContainer1', {
                             gapi.client.setApiKey(apiKey);
                             gapi.auth.setToken(token);
 
-                            var xmlHttp = null;
+                            /*var xmlHttp = null;
                             xmlHttp = new XMLHttpRequest();
                             xmlHttp.open("GET", 'https://apps-apis.google.com/a/feeds/calendar/resource/2.0/bestfitmedia.com', false);
                             xmlHttp.send(null);
-                            console.log(xmlHttp.responseText);
+                            console.log(xmlHttp.responseText);*/
 
                             gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
                             function(authResult) {
