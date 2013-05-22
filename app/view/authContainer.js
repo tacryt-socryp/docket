@@ -27,17 +27,18 @@ Ext.define('Booking.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        var frame = window.frames[0];
+        var me = this,
+            frame = window.frames[0];
 
         try {
             frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
-            this.hasLoaded();
+            me.hasLoaded(me);
         }
     },
 
-    hasLoaded: function() {
-        var me = this,
+    hasLoaded: function(thisFunction) {
+        var me = thisFunction,
             frame = window.frames[0],
             tokenData,
             keys;
@@ -47,12 +48,13 @@ Ext.define('Booking.view.authContainer', {
             keys = Object.keys(tokenData);
         } catch(e) {
             Booking.app.authToken = tokenData;
-            Ext.getCmp('authContainer').generateItems();
+            me.generateItems(me);
         }
     },
 
-    generateItems: function() {
-        var token = Booking.app.authToken,
+    generateItems: function(thisFunction) {
+        var me = thisFunction,
+            token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',

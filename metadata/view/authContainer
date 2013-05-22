@@ -21,8 +21,11 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "hasLoaded",
+                "designer|params": [
+                    "thisFunction"
+                ],
                 "implHandler": [
-                    "var me = this,\r",
+                    "var me = thisFunction,\r",
                     "    frame = window.frames[0],\r",
                     "    tokenData,\r",
                     "    keys;\r",
@@ -32,7 +35,7 @@
                     "    keys = Object.keys(tokenData);\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
-                    "    Ext.getCmp('authContainer').generateItems();\r",
+                    "    me.generateItems(me);\r",
                     "}"
                 ]
             },
@@ -48,12 +51,13 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
-                    "var frame = window.frames[0];\r",
+                    "var me = this,\r",
+                    "    frame = window.frames[0];\r",
                     "\r",
                     "try {\r",
                     "    frame.document.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
                     "} catch(e) {\r",
-                    "    this.hasLoaded();\r",
+                    "    me.hasLoaded(me);\r",
                     "}"
                 ],
                 "name": "painted"
@@ -69,8 +73,12 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "generateItems",
+                "designer|params": [
+                    "thisFunction"
+                ],
                 "implHandler": [
-                    "var token = Booking.app.authToken,\r",
+                    "var me = thisFunction,\r",
+                    "    token = Booking.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
                     "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
                     "    scopes = 'https://www.googleapis.com/auth/calendar',\r",
@@ -81,23 +89,23 @@
                     "gapi.auth.setToken(token);\r",
                     "\r",
                     "gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {\r",
-                    "    if (authResult) {\r",
-                    "        gapi.client.load('calendar', 'v3', function() {\r",
-                    "            var request = gapi.client.calendar.calendarList.list();\r",
-                    "            request.execute(function(resp) {\r",
-                    "                console.log(resp);\r",
-                    "                for (var i = 0; i < resp.items.length; i++) {\r",
-                    "                    calendarId = resp.items[i].id;\r",
-                    "                    items.push({\r",
-                    "                        html: '<p>'+ calendarId +'</p>'\r",
-                    "                    });\r",
-                    "                    console.log(calendarId);\r",
-                    "                }\r",
-                    "                Ext.getCmp('mainCarousel').setItems(items);\r",
-                    "                Ext.Viewport.setActiveItem('mainCarousel');\r",
-                    "            });\r",
+                    "if (authResult) {\r",
+                    "    gapi.client.load('calendar', 'v3', function() {\r",
+                    "        var request = gapi.client.calendar.calendarList.list();\r",
+                    "        request.execute(function(resp) {\r",
+                    "            console.log(resp);\r",
+                    "            for (var i = 0; i < resp.items.length; i++) {\r",
+                    "                calendarId = resp.items[i].id;\r",
+                    "                items.push({\r",
+                    "                    html: '<p>'+ calendarId +'</p>'\r",
+                    "                });\r",
+                    "                console.log(calendarId);\r",
+                    "            }\r",
+                    "            Ext.getCmp('mainCarousel').setItems(items);\r",
+                    "            Ext.Viewport.setActiveItem('mainCarousel');\r",
                     "        });\r",
-                    "    }\r",
+                    "    });\r",
+                    "}\r",
                     "});\r",
                     "\r",
                     ""
