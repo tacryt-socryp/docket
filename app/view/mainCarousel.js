@@ -17,20 +17,11 @@ Ext.define('Booking.view.mainCarousel', {
     extend: 'Ext.carousel.Carousel',
     alias: 'widget.mainCarousel',
 
-    requires: [
-        'Booking.view.MyContainer1'
-    ],
-
     config: {
         fullscreen: true,
         itemId: 'mainCarousel',
         ui: 'light',
-        direction: 'vertical',
-        items: [
-            {
-                xtype: 'MyContainer1'
-            }
-        ]
+        direction: 'vertical'
     }
 
 });
