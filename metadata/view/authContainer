@@ -80,7 +80,7 @@
                     "    items = [],\r",
                     "    calendarId;\r",
                     "\r",
-                    "var encoded = Ext.encode(myContainer.items[0].listeners[0].painted());\r",
+                    "var encoded = Ext.encode(myContainer.items);\r",
                     "console.log(encoded);\r",
                     "\r",
                     "gapi.client.setApiKey(apiKey);\r",
