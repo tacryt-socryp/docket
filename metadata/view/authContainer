@@ -71,11 +71,7 @@
             "userConfig": {
                 "fn": "generateItems",
                 "implHandler": [
-                    "var carouselStuff = this.getView('mainCarousel').create();\r",
-                    "\r",
-                    "console.log(carouselStuff);\r",
-                    "\r",
-                    "var mainCarousel = Ext.ComponentQuery.query('mainCarousel')[0],\r",
+                    "var mainCarousel = Ext.create('Booking.view.mainCarousel'),\r",
                     "    token = Booking.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
                     "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
@@ -102,6 +98,7 @@
                     "                console.log(calendarId);\r",
                     "            }\r",
                     "            mainCarousel.setItems(items);\r",
+                    "            Ext.ComponentQuery.query('#authContainer')[0].destroy();\r",
                     "            Ext.Viewport.setActiveItem('mainCarousel');\r",
                     "        });\r",
                     "    });\r",

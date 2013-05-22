@@ -53,11 +53,7 @@ Ext.define('Booking.view.authContainer', {
     },
 
     generateItems: function() {
-        var carouselStuff = this.getView('mainCarousel').create();
-
-        console.log(carouselStuff);
-
-        var mainCarousel = Ext.ComponentQuery.query('mainCarousel')[0],
+        var mainCarousel = Ext.create('Booking.view.mainCarousel'),
             token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
@@ -84,6 +80,7 @@ Ext.define('Booking.view.authContainer', {
                         console.log(calendarId);
                     }
                     mainCarousel.setItems(items);
+                    Ext.ComponentQuery.query('#authContainer')[0].destroy();
                     Ext.Viewport.setActiveItem('mainCarousel');
                 });
             });
