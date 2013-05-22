@@ -54,6 +54,7 @@ Ext.define('Booking.view.authContainer', {
 
     generateItems: function() {
         var myContainer = Ext.create('Booking.view.MyContainer1'),
+            mainCarousel = Ext.create('Booking.view.mainCarousel'),
             token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
