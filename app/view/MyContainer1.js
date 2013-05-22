@@ -43,19 +43,24 @@ Ext.define('Booking.view.MyContainer1', {
                             var token = Booking.app.authToken,
                                 clientId = '464168127252.apps.googleusercontent.com',
                                 apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
-                                scopes = 'https://www.googleapis.com/auth/calendar';
+                                scopes = 'https://apps-apis.google.com/a/feeds/calendar/resource/';
+                            //scopes = 'https://www.googleapis.com/auth/calendar';
 
                             today.setHours(0,0,0,0);
                             today = today.toISOString();
 
-                            console.log(token);
                             gapi.client.setApiKey(apiKey);
                             gapi.auth.setToken(token);
+
+                            var xmlHttp = null;
+                            xmlHttp = new XMLHttpRequest();
+                            xmlHttp.open("GET", 'https://apps-apis.google.com/a/feeds/calendar/resource/2.0/bestfitmedia.com', false);
+                            xmlHttp.send(null);
+                            console.log(xmlHttp.responseText);
 
                             gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
                             function(authResult) {
                                 if (authResult) {
-                                    console.log('About to request Calendar events');
                                     gapi.client.load('calendar', 'v3', function() {
                                         var request = gapi.client.calendar.events.list({
                                             'calendarId': 'primary',
@@ -67,7 +72,9 @@ Ext.define('Booking.view.MyContainer1', {
 
                                         request.execute(function(resp) {
                                             console.log(resp);
-                                            w = 203 * resp.items.length;
+                                            if (resp.items) {
+                                                w = 203 * resp.items.length;
+                                            }
                                             me.setSize(w,h);
                                             surface.setSize(w,h);
 
