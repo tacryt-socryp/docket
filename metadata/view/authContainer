@@ -34,7 +34,7 @@
                     "    keys = Object.keys(tokenData);\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
-                    "    this.generateItems();\r",
+                    "    me.generateItems();\r",
                     "}"
                 ]
             },
@@ -95,7 +95,7 @@
                     "                    }); \r",
                     "                    console.log(calendarId);\r",
                     "                }\r",
-                    "                widget.mainCarousel.setItems(items);\r",
+                    "                Booking.view.mainCarousel.setItems(items);\r",
                     "                Ext.Viewport.setActiveItem('mainCarousel');\r",
                     "            });\r",
                     "        });\r",

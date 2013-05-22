@@ -77,7 +77,7 @@ Ext.define('Booking.view.authContainer', {
                         }); 
                         console.log(calendarId);
                     }
-                    widget.mainCarousel.setItems(items);
+                    Booking.view.mainCarousel.setItems(items);
                     Ext.Viewport.setActiveItem('mainCarousel');
                 });
             });
