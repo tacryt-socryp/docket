@@ -43,8 +43,8 @@ Ext.define('Booking.view.MyContainer1', {
                             var token = Booking.app.authToken,
                                 clientId = '464168127252.apps.googleusercontent.com',
                                 apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
-                                scopes = 'https://apps-apis.google.com/a/feeds/calendar/resource/';
-                            //scopes = 'https://www.googleapis.com/auth/calendar';
+                                resources = 'https://apps-apis.google.com/a/feeds/calendar/resource/',
+                                scopes = 'https://www.googleapis.com/auth/calendar';
 
                             today.setHours(0,0,0,0);
                             today = today.toISOString();
@@ -58,141 +58,157 @@ Ext.define('Booking.view.MyContainer1', {
                             xmlHttp.send(null);
                             console.log(xmlHttp.responseText);*/
 
-                            gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
-                            function(authResult) {
-                                if (authResult) {
-                                    gapi.client.load('calendar', 'v3', function() {
-                                        var request = gapi.client.calendar.events.list({
-                                            'calendarId': 'primary',
-                                            'singleEvents': true,
-                                            'orderBy': 'startTime',
-                                            'timeMin': today,
-                                            'maxResults': 75
-                                        });
 
-                                        request.execute(function(resp) {
-                                            console.log(resp);
-                                            if (resp.items) {
-                                                w = 203 * resp.items.length;
-                                            }
-                                            me.setSize(w,h);
-                                            surface.setSize(w,h);
+                            gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
+                            if (authResult) {
+                                gapi.client.load('calendar', 'v3', function() {
+                                    var request = gapi.client.calendar.calendarList.list();
+                                    request.execute(function(resp) {
+                                        console.log(resp);
+                                        for (var i = 0; i < resp.items.length; i++) {
+                                            var calendarID = resp.items[i].id;
+                                            console.log(calendarID);
+                                        }
+                                    });
+                                });
+                            }
+                        });
 
-                                            //Line across screen
+                        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
+                        function(authResult) {
+                            if (authResult) {
+                                gapi.client.load('calendar', 'v3', function() {
+                                    var request = gapi.client.calendar.events.list({
+                                        'calendarId': 'primary',
+                                        'singleEvents': true,
+                                        'orderBy': 'startTime',
+                                        'timeMin': today,
+                                        'maxResults': 75
+                                    });
+
+                                    request.execute(function(resp) {
+                                        console.log(resp);
+                                        if (resp.items) {
+                                            w = 203 * resp.items.length;
+                                        }
+                                        me.setSize(w,h);
+                                        surface.setSize(w,h);
+
+                                        //Line across screen
+                                        surface.add({
+                                            type: 'rect',
+                                            fill: '#176c93',
+                                            height : 20,
+                                            width: w,
+                                            x: 0,
+                                            y: 330
+                                        }).show(true);
+
+                                        //Name of room
+                                        surface.add({
+                                            type: 'text',
+                                            text: 'Meetings in Room A',
+                                            font: '32px Arial',
+                                            fill: '#FFF',
+                                            x: 70,
+                                            y: 50
+                                        }).show(true);
+
+                                        //Circle for top
+
+                                        for (iter = 0; iter < resp.items.length; iter++) {
+                                            xloc = iter*200;
+
                                             surface.add({
-                                                type: 'rect',
-                                                fill: '#176c93',
-                                                height : 20,
-                                                width: w,
-                                                x: 0,
-                                                y: 330
+                                                type: 'circle',
+                                                cx: xloc+192,
+                                                cy: 338,
+                                                r: 22,
+                                                fillStyle: '#2b8bb5'
                                             }).show(true);
 
-                                            //Name of room
                                             surface.add({
-                                                type: 'text',
-                                                text: 'Meetings in Room A',
-                                                font: '32px Arial',
-                                                fill: '#FFF',
-                                                x: 70,
-                                                y: 50
+                                                type: 'circle',
+                                                cx: xloc+192,
+                                                cy: 338,
+                                                r: 16,
+                                                fillStyle: boxColor
                                             }).show(true);
 
-                                            //Circle for top
-
-                                            for (iter = 0; iter < resp.items.length; iter++) {
-                                                xloc = iter*200;
-
+                                            if (iter % 2 === 0) {
                                                 surface.add({
-                                                    type: 'circle',
-                                                    cx: xloc+192,
-                                                    cy: 338,
-                                                    r: 22,
-                                                    fillStyle: '#2b8bb5'
+                                                    type: 'rect',
+                                                    fill: boxColor,
+                                                    height : 140,
+                                                    width: 300,
+                                                    radius: 10,
+                                                    x: xloc+38,
+                                                    y: 130
                                                 }).show(true);
 
                                                 surface.add({
-                                                    type: 'circle',
-                                                    cx: xloc+192,
-                                                    cy: 338,
-                                                    r: 16,
+                                                    type: 'path',
+                                                    path: 'M ' + (xloc+178) + ' ' + 270 + ' ' +
+                                                    'l ' + 25 + ' ' + 0 + ' ' +
+                                                    'l ' + -12 + ' ' + 10 + 'z',
                                                     fillStyle: boxColor
                                                 }).show(true);
 
-                                                if (iter % 2 === 0) {
-                                                    surface.add({
-                                                        type: 'rect',
-                                                        fill: boxColor,
-                                                        height : 140,
-                                                        width: 300,
-                                                        radius: 10,
-                                                        x: xloc+38,
-                                                        y: 130
-                                                    }).show(true);
+                                                surface.add({
+                                                    type: 'text',
+                                                    text: resp.items[iter].summary,
+                                                    font: '20px Arial',
+                                                    fill: '#FFF',
+                                                    x: xloc+48,
+                                                    y: 150
+                                                }).show(true);
 
-                                                    surface.add({
-                                                        type: 'path',
-                                                        path: 'M ' + (xloc+178) + ' ' + 270 + ' ' +
-                                                        'l ' + 25 + ' ' + 0 + ' ' +
-                                                        'l ' + -12 + ' ' + 10 + 'z',
-                                                        fillStyle: boxColor
-                                                    }).show(true);
+                                                //Time and date for top
+                                                surface.add({
+                                                    type: 'text',
+                                                    text: resp.items[iter].start.datetime,
+                                                    font: '14px Arial',
+                                                    fill: '#FFF',
+                                                    x: 170,
+                                                    y: 380
+                                                }).show(true);
 
-                                                    surface.add({
-                                                        type: 'text',
-                                                        text: resp.items[iter].summary,
-                                                        font: '20px Arial',
-                                                        fill: '#FFF',
-                                                        x: xloc+48,
-                                                        y: 150
-                                                    }).show(true);
+                                            } else {
+                                                surface.add({
+                                                    type: 'rect',
+                                                    fill: boxColor,
+                                                    height : 140,
+                                                    width: 300,
+                                                    radius: 10,
+                                                    x: xloc+40,
+                                                    y: 410
+                                                }).show(true);
 
-                                                    //Time and date for top
-                                                    surface.add({
-                                                        type: 'text',
-                                                        text: resp.items[iter].start.datetime,
-                                                        font: '14px Arial',
-                                                        fill: '#FFF',
-                                                        x: 170,
-                                                        y: 380
-                                                    }).show(true);
+                                                surface.add({
+                                                    type: 'path',
+                                                    path: 'M ' + (xloc+205) + ' ' + 410 + ' ' +
+                                                    'l ' + -25 + ' ' + 0 + ' ' +
+                                                    'l ' + 12 + ' ' + -10 + 'z',
+                                                    fillStyle: boxColor
+                                                }).show(true);
 
-                                                } else {
-                                                    surface.add({
-                                                        type: 'rect',
-                                                        fill: boxColor,
-                                                        height : 140,
-                                                        width: 300,
-                                                        radius: 10,
-                                                        x: xloc+40,
-                                                        y: 410
-                                                    }).show(true);
-
-                                                    surface.add({
-                                                        type: 'path',
-                                                        path: 'M ' + (xloc+205) + ' ' + 410 + ' ' +
-                                                        'l ' + -25 + ' ' + 0 + ' ' +
-                                                        'l ' + 12 + ' ' + -10 + 'z',
-                                                        fillStyle: boxColor
-                                                    }).show(true);
-
-                                                    surface.add({
-                                                        type: 'text',
-                                                        text: resp.items[iter].summary,
-                                                        font: '20px Arial',
-                                                        fill: '#FFF',
-                                                        x: xloc+45,
-                                                        y: 430
-                                                    }).show(true);
-                                                }
+                                                surface.add({
+                                                    type: 'text',
+                                                    text: resp.items[iter].summary,
+                                                    font: '20px Arial',
+                                                    fill: '#FFF',
+                                                    x: xloc+45,
+                                                    y: 430
+                                                }).show(true);
                                             }
-                                        });
+                                        }
                                     });
-                                } else {
-                                    window.location.reload();
-                                }
-                            });
-                        },
+                                });
+                            } else {
+                                window.location.reload();
+                            }
+                        });
+                    },
                         event: 'painted'
                     },
                     {
