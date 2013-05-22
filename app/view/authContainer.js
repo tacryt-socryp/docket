@@ -70,7 +70,7 @@ Ext.define('Booking.view.authContainer', {
                     console.log(resp);
                     for (var i = 0; i < resp.items.length; i++) {
                         calendarId = resp.items[i].id;
-                        Booking.view.mainCarousel.add({html:'<p>'+ calendarId +'</p>'});
+                        widget.mainCarousel.add({html:'<p>'+ calendarId +'</p>'});
                         console.log(calendarId);
                     }
                     Ext.Viewport.setActiveItem('mainCarousel');
