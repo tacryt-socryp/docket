@@ -31,10 +31,9 @@
                     "    tokenData = frame.document.getElementById('tokenValue').innerHTML;\r",
                     "    console.log(keys);\r",
                     "    keys = Object.keys(tokenData);\r",
-                    "    //window.location.reload();\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
-                    "    Ext.Viewport.setActiveItem('mainCarousel');\r",
+                    "    this.generateItems();\r",
                     "}"
                 ]
             },
@@ -61,6 +60,47 @@
                 "name": "painted"
             },
             "designerId": "9475af23-74c5-4b89-abc2-3a4e737c4a15"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "generateItems",
+                "implHandler": [
+                    "var token = Booking.app.authToken,\r",
+                    "    clientId = '464168127252.apps.googleusercontent.com',\r",
+                    "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
+                    "    scopes = 'https://www.googleapis.com/auth/calendar',\r",
+                    "    calendarId;\r",
+                    "\r",
+                    "gapi.client.setApiKey(apiKey);\r",
+                    "gapi.auth.setToken(token);\r",
+                    "\r",
+                    "gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {\r",
+                    "    if (authResult) {\r",
+                    "        gapi.client.load('calendar', 'v3', function() {\r",
+                    "            var request = gapi.client.calendar.calendarList.list();\r",
+                    "            request.execute(function(resp) {\r",
+                    "                console.log(resp);\r",
+                    "                for (var i = 0; i < resp.items.length; i++) {\r",
+                    "                    calendarId = resp.items[i].id;\r",
+                    "                    Booking.view.mainCarousel.add({html:'<p>'+ calendarId +'</p>'});\r",
+                    "                    console.log(calendarId);\r",
+                    "                }\r",
+                    "                    Ext.Viewport.setActiveItem('mainCarousel');\r",
+                    "            });\r",
+                    "        });\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "093dc116-4b5f-4b53-a977-c70d52913034"
         }
     ]
 }

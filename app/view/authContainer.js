@@ -46,11 +46,40 @@ Ext.define('Booking.view.authContainer', {
             tokenData = frame.document.getElementById('tokenValue').innerHTML;
             console.log(keys);
             keys = Object.keys(tokenData);
-            //window.location.reload();
         } catch(e) {
             Booking.app.authToken = tokenData;
-            Ext.Viewport.setActiveItem('mainCarousel');
+            this.generateItems();
         }
+    },
+
+    generateItems: function() {
+        var token = Booking.app.authToken,
+            clientId = '464168127252.apps.googleusercontent.com',
+            apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
+            scopes = 'https://www.googleapis.com/auth/calendar',
+            calendarId;
+
+        gapi.client.setApiKey(apiKey);
+        gapi.auth.setToken(token);
+
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
+        if (authResult) {
+            gapi.client.load('calendar', 'v3', function() {
+                var request = gapi.client.calendar.calendarList.list();
+                request.execute(function(resp) {
+                    console.log(resp);
+                    for (var i = 0; i < resp.items.length; i++) {
+                        calendarId = resp.items[i].id;
+                        Booking.view.mainCarousel.add({html:'<p>'+ calendarId +'</p>'});
+                        console.log(calendarId);
+                    }
+                    Ext.Viewport.setActiveItem('mainCarousel');
+                });
+            });
+        }
+    });
+
+
     }
 
 });
