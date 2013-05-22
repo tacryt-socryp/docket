@@ -38,12 +38,10 @@ Ext.define('Booking.view.authContainer', {
     },
 
     hasLoaded: function() {
-        var frame = window.frames[0],
+        var authContainer = Ext.ComponentQuery.query('#authContainer')[0],
+            frame = window.frames[0],
             tokenData,
             keys;
-
-        var authContainer = Ext.ComponentQuery.query('#authContainer')[0];
-        console.log(authContainer);
 
         try {
             tokenData = frame.document.getElementById('tokenValue').innerHTML;
@@ -55,14 +53,13 @@ Ext.define('Booking.view.authContainer', {
     },
 
     generateItems: function() {
-        var token = Booking.app.authToken,
+        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+            token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
             items = [],
             calendarId;
-
-        console.log(me);
 
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
@@ -80,7 +77,7 @@ Ext.define('Booking.view.authContainer', {
                         });
                         console.log(calendarId);
                     }
-                    Ext.getCmp('mainCarousel').setItems(items);
+                    mainCarousel.setItems(items);
                     Ext.Viewport.setActiveItem('mainCarousel');
                 });
             });

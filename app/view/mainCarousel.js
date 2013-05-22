@@ -23,6 +23,7 @@ Ext.define('Booking.view.mainCarousel', {
 
     config: {
         fullscreen: true,
+        itemId: 'mainCarousel',
         ui: 'light',
         direction: 'vertical',
         items: [
