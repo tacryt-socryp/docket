@@ -21,9 +21,6 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "hasLoaded",
-                "designer|params": [
-                    "thisFunction"
-                ],
                 "implHandler": [
                     "var me = thisFunction,\r",
                     "    frame = window.frames[0],\r",
@@ -35,7 +32,7 @@
                     "    keys = Object.keys(tokenData);\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
-                    "    me.generateItems(me);\r",
+                    "    this.up('authContainer').generateItems();\r",
                     "}"
                 ]
             },
@@ -51,13 +48,12 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
-                    "var me = this,\r",
-                    "    frame = window.frames[0];\r",
+                    "var frame = window.frames[0];\r",
                     "\r",
                     "try {\r",
                     "    frame.document.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
                     "} catch(e) {\r",
-                    "    me.hasLoaded(me);\r",
+                    "    this.hasLoaded();\r",
                     "}"
                 ],
                 "name": "painted"
@@ -73,17 +69,15 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "generateItems",
-                "designer|params": [
-                    "thisFunction"
-                ],
                 "implHandler": [
-                    "var me = thisFunction,\r",
-                    "    token = Booking.app.authToken,\r",
+                    "var token = Booking.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
                     "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
                     "    scopes = 'https://www.googleapis.com/auth/calendar',\r",
                     "    items = [],\r",
                     "    calendarId;\r",
+                    "\r",
+                    "console.log(me);\r",
                     "\r",
                     "gapi.client.setApiKey(apiKey);\r",
                     "gapi.auth.setToken(token);\r",
