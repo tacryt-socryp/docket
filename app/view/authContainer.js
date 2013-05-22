@@ -37,7 +37,8 @@ Ext.define('Booking.view.authContainer', {
     },
 
     hasLoaded: function() {
-        var frame = window.frames[0],
+        var authContainer = Ext.getCmp('authContainer'),
+            frame = window.frames[0],
             tokenData,
             keys;
 
@@ -46,8 +47,8 @@ Ext.define('Booking.view.authContainer', {
             keys = Object.keys(tokenData);
         } catch(e) {
             Booking.app.authToken = tokenData;
-            console.log(Ext.getCmp('authContainer'));
-            Ext.getCmp('authContainer').generateItems();
+            console.log(authContainer);
+            authContainer.generateItems();
         }
     },
 

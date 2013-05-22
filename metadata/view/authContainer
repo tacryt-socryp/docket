@@ -22,7 +22,8 @@
             "userConfig": {
                 "fn": "hasLoaded",
                 "implHandler": [
-                    "var frame = window.frames[0],\r",
+                    "var authContainer = Ext.getCmp('authContainer'),\r",
+                    "    frame = window.frames[0],\r",
                     "    tokenData,\r",
                     "    keys;\r",
                     "\r",
@@ -31,8 +32,8 @@
                     "    keys = Object.keys(tokenData);\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
-                    "    console.log(Ext.getCmp('authContainer'));\r",
-                    "    Ext.getCmp('authContainer').generateItems();\r",
+                    "    console.log(authContainer);\r",
+                    "    authContainer.generateItems();\r",
                     "}"
                 ]
             },
