@@ -71,6 +71,10 @@
             "userConfig": {
                 "fn": "generateItems",
                 "implHandler": [
+                    "var carouselStuff = this.getView('mainCarousel').create();\r",
+                    "\r",
+                    "console.log(carouselStuff);\r",
+                    "\r",
                     "var mainCarousel = Ext.ComponentQuery.query('mainCarousel')[0],\r",
                     "    token = Booking.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",

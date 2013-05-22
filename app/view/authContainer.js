@@ -53,6 +53,10 @@ Ext.define('Booking.view.authContainer', {
     },
 
     generateItems: function() {
+        var carouselStuff = this.getView('mainCarousel').create();
+
+        console.log(carouselStuff);
+
         var mainCarousel = Ext.ComponentQuery.query('mainCarousel')[0],
             token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
