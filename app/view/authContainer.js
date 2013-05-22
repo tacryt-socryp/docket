@@ -18,6 +18,7 @@ Ext.define('Booking.view.authContainer', {
 
     config: {
         html: '<iframe id="authFrame" src="authiframe.html" width="100%" height="100%" frameborder="0"></iframe>',
+        itemId: 'authContainer',
         listeners: [
             {
                 fn: 'onContainerPainted',
@@ -37,10 +38,11 @@ Ext.define('Booking.view.authContainer', {
     },
 
     hasLoaded: function() {
-        var authContainer = this.callParent(),
-            frame = window.frames[0],
+        var frame = window.frames[0],
             tokenData,
             keys;
+
+        var authContainer = Ext.ComponentQuery.query('authContainer');
 
         try {
             tokenData = frame.document.getElementById('tokenValue').innerHTML;
