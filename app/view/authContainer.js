@@ -42,7 +42,7 @@ Ext.define('Booking.view.authContainer', {
             tokenData,
             keys;
 
-        var authContainer = Ext.ComponentQuery.query('#authContainer');
+        var authContainer = Ext.ComponentQuery.query('#authContainer')[0];
         console.log(authContainer);
 
         try {

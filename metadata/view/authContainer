@@ -27,7 +27,7 @@
                     "    tokenData,\r",
                     "    keys;\r",
                     "\r",
-                    "var authContainer = Ext.ComponentQuery.query('#authContainer');\r",
+                    "var authContainer = Ext.ComponentQuery.query('#authContainer')[0];\r",
                     "console.log(authContainer);\r",
                     "\r",
                     "try {\r",
