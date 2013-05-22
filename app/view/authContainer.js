@@ -30,6 +30,8 @@ Ext.define('Booking.view.authContainer', {
         var me = this,
             frame = window.frames[0];
 
+        console.log(me);
+
         try {
             frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
@@ -42,6 +44,8 @@ Ext.define('Booking.view.authContainer', {
             frame = window.frames[0],
             tokenData,
             keys;
+
+        console.log(me);
 
         try {
             tokenData = frame.document.getElementById('tokenValue').innerHTML;
@@ -60,6 +64,8 @@ Ext.define('Booking.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar',
             items = [],
             calendarId;
+
+        console.log(me);
 
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
