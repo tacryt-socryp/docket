@@ -91,16 +91,6 @@ Ext.define('Booking.view.MyContainer1', {
                                                 y: 50
                                             }).show(true);
 
-                                            //Time and date for top
-                                            surface.add({
-                                                type: 'text',
-                                                text: '10:33 pm',
-                                                font: '14px Arial',
-                                                fill: '#FFF',
-                                                x: 170,
-                                                y: 380
-                                            }).show(true);
-
                                             //Circle for top
 
                                             for (iter = 0; iter < resp.items.length; iter++) {
@@ -148,6 +138,16 @@ Ext.define('Booking.view.MyContainer1', {
                                                         fill: '#FFF',
                                                         x: xloc+48,
                                                         y: 150
+                                                    }).show(true);
+
+                                                    //Time and date for top
+                                                    surface.add({
+                                                        type: 'text',
+                                                        text: resp.items[iter].start.datetime,
+                                                        font: '14px Arial',
+                                                        fill: '#FFF',
+                                                        x: 170,
+                                                        y: 380
                                                     }).show(true);
 
                                                 } else {
