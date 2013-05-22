@@ -57,6 +57,7 @@ Ext.define('Booking.view.authContainer', {
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
+            items = [],
             calendarId;
 
         gapi.client.setApiKey(apiKey);
@@ -70,9 +71,12 @@ Ext.define('Booking.view.authContainer', {
                     console.log(resp);
                     for (var i = 0; i < resp.items.length; i++) {
                         calendarId = resp.items[i].id;
-                        widget.mainCarousel.add({html:'<p>'+ calendarId +'</p>'});
+                        items.push({
+                            html: '<p>'+ calendarId +'</p>'
+                        }); 
                         console.log(calendarId);
                     }
+                    widget.mainCarousel.setItems(items);
                     Ext.Viewport.setActiveItem('mainCarousel');
                 });
             });
