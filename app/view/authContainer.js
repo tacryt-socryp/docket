@@ -53,13 +53,15 @@ Ext.define('Booking.view.authContainer', {
     },
 
     generateItems: function() {
-        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel'),
             token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
             items = [],
             calendarId;
+
+        console.log(mainCarousel);
 
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
