@@ -37,7 +37,7 @@ Ext.define('Booking.view.authContainer', {
     },
 
     hasLoaded: function() {
-        var authContainer = Ext.getCmp('authContainer'),
+        var authContainer = this.callParent(),
             frame = window.frames[0],
             tokenData,
             keys;

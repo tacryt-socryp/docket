@@ -22,7 +22,7 @@
             "userConfig": {
                 "fn": "hasLoaded",
                 "implHandler": [
-                    "var authContainer = Ext.getCmp('authContainer'),\r",
+                    "var authContainer = this.callParent(),\r",
                     "    frame = window.frames[0],\r",
                     "    tokenData,\r",
                     "    keys;\r",
