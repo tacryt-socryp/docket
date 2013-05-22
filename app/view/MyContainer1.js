@@ -43,21 +43,15 @@ Ext.define('Booking.view.MyContainer1', {
                             var token = Booking.app.authToken,
                                 clientId = '464168127252.apps.googleusercontent.com',
                                 apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
-                                resources = 'https://apps-apis.google.com/a/feeds/calendar/resource/',
                                 scopes = 'https://www.googleapis.com/auth/calendar';
+
+                            var calendarId;
 
                             today.setHours(0,0,0,0);
                             today = today.toISOString();
 
                             gapi.client.setApiKey(apiKey);
                             gapi.auth.setToken(token);
-
-                            /*var xmlHttp = null;
-                            xmlHttp = new XMLHttpRequest();
-                            xmlHttp.open("GET", 'https://apps-apis.google.com/a/feeds/calendar/resource/2.0/bestfitmedia.com', false);
-                            xmlHttp.send(null);
-                            console.log(xmlHttp.responseText);*/
-
 
                             gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
                             if (authResult) {
@@ -66,20 +60,21 @@ Ext.define('Booking.view.MyContainer1', {
                                     request.execute(function(resp) {
                                         console.log(resp);
                                         for (var i = 0; i < resp.items.length; i++) {
-                                            var calendarID = resp.items[i].id;
-                                            console.log(calendarID);
+                                            calendarId = resp.items[i].id;
+                                            console.log(calendarId);
                                         }
                                     });
                                 });
                             }
                         });
 
+
                         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
                         function(authResult) {
                             if (authResult) {
                                 gapi.client.load('calendar', 'v3', function() {
                                     var request = gapi.client.calendar.events.list({
-                                        'calendarId': 'primary',
+                                        'calendarId': calendarId,
                                         'singleEvents': true,
                                         'orderBy': 'startTime',
                                         'timeMin': today,
