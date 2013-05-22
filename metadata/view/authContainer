@@ -27,14 +27,14 @@
                     "    tokenData,\r",
                     "    keys;\r",
                     "\r",
-                    "var authContainer = Ext.ComponentQuery.query('authContainer');\r",
+                    "var authContainer = Ext.ComponentQuery.query('#authContainer');\r",
+                    "console.log(authContainer);\r",
                     "\r",
                     "try {\r",
                     "    tokenData = frame.document.getElementById('tokenValue').innerHTML;\r",
                     "    keys = Object.keys(tokenData);\r",
                     "} catch(e) {\r",
                     "    Booking.app.authToken = tokenData;\r",
-                    "    console.log(authContainer);\r",
                     "    authContainer.generateItems();\r",
                     "}"
                 ]

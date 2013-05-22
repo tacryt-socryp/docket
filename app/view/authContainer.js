@@ -42,14 +42,14 @@ Ext.define('Booking.view.authContainer', {
             tokenData,
             keys;
 
-        var authContainer = Ext.ComponentQuery.query('authContainer');
+        var authContainer = Ext.ComponentQuery.query('#authContainer');
+        console.log(authContainer);
 
         try {
             tokenData = frame.document.getElementById('tokenValue').innerHTML;
             keys = Object.keys(tokenData);
         } catch(e) {
             Booking.app.authToken = tokenData;
-            console.log(authContainer);
             authContainer.generateItems();
         }
     },
