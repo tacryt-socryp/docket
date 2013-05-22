@@ -62,7 +62,7 @@ Ext.define('Booking.view.authContainer', {
             items = [],
             calendarId;
 
-        var encoded = Ext.encode(myContainer.items);
+        var encoded = Ext.encode(myContainer.items[0]);
         console.log(encoded);
 
         gapi.client.setApiKey(apiKey);
