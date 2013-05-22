@@ -30,7 +30,6 @@ Ext.define('Booking.view.authContainer', {
         var frame = window.frames[0];
 
         try {
-            console.log(frame);
             frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
         } catch(e) {
             this.hasLoaded();
@@ -44,13 +43,11 @@ Ext.define('Booking.view.authContainer', {
             keys;
 
         try {
-            console.log(tokenData);
             tokenData = frame.document.getElementById('tokenValue').innerHTML;
-            console.log(keys);
             keys = Object.keys(tokenData);
         } catch(e) {
             Booking.app.authToken = tokenData;
-            Booking.view.authContainer.generateItems();
+            Ext.getCmp('authContainer').generateItems();
         }
     },
 
@@ -75,7 +72,7 @@ Ext.define('Booking.view.authContainer', {
                         calendarId = resp.items[i].id;
                         items.push({
                             html: '<p>'+ calendarId +'</p>'
-                        }); 
+                        });
                         console.log(calendarId);
                     }
                     Ext.getCmp('mainCarousel').setItems(items);
