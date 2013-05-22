@@ -109,92 +109,92 @@ Ext.define('Booking.view.MyContainer1', {
                                             y: 50
                                         }).show(true);
 
-                                        //Circle for top
+                                        if (resp.items) {
+                                            for (iter = 0; iter < resp.items.length; iter++) {
+                                                xloc = iter*200;
 
-                                        for (iter = 0; iter < resp.items.length; iter++) {
-                                            xloc = iter*200;
-
-                                            surface.add({
-                                                type: 'circle',
-                                                cx: xloc+192,
-                                                cy: 338,
-                                                r: 22,
-                                                fillStyle: '#2b8bb5'
-                                            }).show(true);
-
-                                            surface.add({
-                                                type: 'circle',
-                                                cx: xloc+192,
-                                                cy: 338,
-                                                r: 16,
-                                                fillStyle: boxColor
-                                            }).show(true);
-
-                                            if (iter % 2 === 0) {
                                                 surface.add({
-                                                    type: 'rect',
-                                                    fill: boxColor,
-                                                    height : 140,
-                                                    width: 300,
-                                                    radius: 10,
-                                                    x: xloc+38,
-                                                    y: 130
+                                                    type: 'circle',
+                                                    cx: xloc+192,
+                                                    cy: 338,
+                                                    r: 22,
+                                                    fillStyle: '#2b8bb5'
                                                 }).show(true);
 
                                                 surface.add({
-                                                    type: 'path',
-                                                    path: 'M ' + (xloc+178) + ' ' + 270 + ' ' +
-                                                    'l ' + 25 + ' ' + 0 + ' ' +
-                                                    'l ' + -12 + ' ' + 10 + 'z',
+                                                    type: 'circle',
+                                                    cx: xloc+192,
+                                                    cy: 338,
+                                                    r: 16,
                                                     fillStyle: boxColor
                                                 }).show(true);
 
-                                                surface.add({
-                                                    type: 'text',
-                                                    text: resp.items[iter].summary,
-                                                    font: '20px Arial',
-                                                    fill: '#FFF',
-                                                    x: xloc+48,
-                                                    y: 150
-                                                }).show(true);
+                                                if (iter % 2 === 0) {
+                                                    surface.add({
+                                                        type: 'rect',
+                                                        fill: boxColor,
+                                                        height : 140,
+                                                        width: 300,
+                                                        radius: 10,
+                                                        x: xloc+38,
+                                                        y: 130
+                                                    }).show(true);
 
-                                                //Time and date for top
-                                                surface.add({
-                                                    type: 'text',
-                                                    text: resp.items[iter].start.datetime,
-                                                    font: '14px Arial',
-                                                    fill: '#FFF',
-                                                    x: 170,
-                                                    y: 380
-                                                }).show(true);
+                                                    surface.add({
+                                                        type: 'path',
+                                                        path: 'M ' + (xloc+178) + ' ' + 270 + ' ' +
+                                                        'l ' + 25 + ' ' + 0 + ' ' +
+                                                        'l ' + -12 + ' ' + 10 + 'z',
+                                                        fillStyle: boxColor
+                                                    }).show(true);
 
-                                            } else {
-                                                surface.add({
-                                                    type: 'rect',
-                                                    fill: boxColor,
-                                                    height : 140,
-                                                    width: 300,
-                                                    radius: 10,
-                                                    x: xloc+40,
-                                                    y: 410
-                                                }).show(true);
+                                                    surface.add({
+                                                        type: 'text',
+                                                        text: resp.items[iter].summary,
+                                                        font: '20px Arial',
+                                                        fill: '#FFF',
+                                                        x: xloc+48,
+                                                        y: 150
+                                                    }).show(true);
 
-                                                surface.add({
-                                                    type: 'path',
-                                                    path: 'M ' + (xloc+205) + ' ' + 410 + ' ' +
-                                                    'l ' + -25 + ' ' + 0 + ' ' +
-                                                    'l ' + 12 + ' ' + -10 + 'z',
-                                                    fillStyle: boxColor
-                                                }).show(true);
+                                                    //Time and date for top
+                                                    surface.add({
+                                                        type: 'text',
+                                                        text: resp.items[iter].start.datetime,
+                                                        font: '14px Arial',
+                                                        fill: '#FFF',
+                                                        x: 170,
+                                                        y: 380
+                                                    }).show(true);
 
-                                                surface.add({
-                                                    type: 'text',
-                                                    text: resp.items[iter].summary,
-                                                    font: '20px Arial',
-                                                    fill: '#FFF',
-                                                    x: xloc+45,
-                                                    y: 430
-                                                }).show(true);
+                                                } else {
+                                                    surface.add({
+                                                        type: 'rect',
+                                                        fill: boxColor,
+                                                        height : 140,
+                                                        width: 300,
+                                                        radius: 10,
+                                                        x: xloc+40,
+                                                        y: 410
+                                                    }).show(true);
+
+                                                    surface.add({
+                                                        type: 'path',
+                                                        path: 'M ' + (xloc+205) + ' ' + 410 + ' ' +
+                                                        'l ' + -25 + ' ' + 0 + ' ' +
+                                                        'l ' + 12 + ' ' + -10 + 'z',
+                                                        fillStyle: boxColor
+                                                    }).show(true);
+
+                                                    surface.add({
+                                                        type: 'text',
+                                                        text: resp.items[iter].summary,
+                                                        font: '20px Arial',
+                                                        fill: '#FFF',
+                                                        x: xloc+45,
+                                                        y: 430
+                                                    }).show(true);
+                                                }
                                             }
                                         }
                                     });
