@@ -68,9 +68,7 @@ function handleAuthClick(event) {
 
 function callForToken() {
   var tokenVal = gapi.auth.getToken();
-  document.getElementById('tokenValue').innerHTML = tokenVal['access_token'];
-  var event = new CustomEvent("dataLoadedCustom");
-  document.getElementById('tokenValue').dispatchEvent(event);
+  window.location.href = "app.html&" + tokenVal['access_token'];
 }
     </script>
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>

@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "html": "<iframe id=\"authFrame\" src=\"authiframe.html\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>",
+        "html": null,
         "itemId": "authContainer",
         "style": "#authFrame {height:100%; width:100%; overflow:hidden;}",
         "designer|userClassName": "authContainer",
@@ -14,32 +14,6 @@
     },
     "designerId": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
     "cn": [
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "hasLoaded",
-                "implHandler": [
-                    "var authContainer = Ext.ComponentQuery.query('#authContainer')[0],\r",
-                    "    frame = window.frames[0],\r",
-                    "    tokenData,\r",
-                    "    keys;\r",
-                    "\r",
-                    "try {\r",
-                    "    tokenData = frame.document.getElementById('tokenValue').innerHTML;\r",
-                    "    keys = Object.keys(tokenData);\r",
-                    "} catch(e) {\r",
-                    "    Booking.app.authToken = tokenData;\r",
-                    "    authContainer.generateItems();\r",
-                    "}"
-                ]
-            },
-            "designerId": "89c78b8f-8d9f-4bb9-803d-5a8fc996cd57"
-        },
         {
             "type": "basiceventbinding",
             "reference": {
@@ -50,12 +24,23 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
-                    "var frame = window.frames[0];\r",
+                    "var parameters = {};\r",
+                    "var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {\r",
+                    "    parameters[key] = value;\r",
+                    "});\r",
                     "\r",
-                    "try {\r",
-                    "    frame.document.getElementById('tokenValue').addEventListener(\"dataLoadedCustom\", this.hasLoaded);\r",
-                    "} catch(e) {\r",
-                    "    this.hasLoaded();\r",
+                    "function isEmpty(ob) {\r",
+                    "    for(var i in ob){\r",
+                    "        return false;\r",
+                    "    }\r",
+                    "    return true;\r",
+                    "}\r",
+                    "\r",
+                    "if (isEmpty(parameters)) {\r",
+                    "    window.location.href = 'authiframe.html';\r",
+                    "} else {\r",
+                    "    Booking.app.authToken = parameters.token;\r",
+                    "    authContainer.generateItems();\r",
                     "}"
                 ],
                 "name": "painted"

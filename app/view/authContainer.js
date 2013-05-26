@@ -17,7 +17,6 @@ Ext.define('Booking.view.authContainer', {
     extend: 'Ext.Container',
 
     config: {
-        html: '<iframe id="authFrame" src="authiframe.html" width="100%" height="100%" frameborder="0"></iframe>',
         itemId: 'authContainer',
         style: '#authFrame {height:100%; width:100%; overflow:hidden;}',
         listeners: [
@@ -29,26 +28,22 @@ Ext.define('Booking.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        var frame = window.frames[0];
+        var parameters = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            parameters[key] = value;
+        });
 
-        try {
-            frame.document.getElementById('tokenValue').addEventListener("dataLoadedCustom", this.hasLoaded);
-        } catch(e) {
-            this.hasLoaded();
+        function isEmpty(ob) {
+            for(var i in ob){
+                return false;
+            }
+            return true;
         }
-    },
 
-    hasLoaded: function() {
-        var authContainer = Ext.ComponentQuery.query('#authContainer')[0],
-            frame = window.frames[0],
-            tokenData,
-            keys;
-
-        try {
-            tokenData = frame.document.getElementById('tokenValue').innerHTML;
-            keys = Object.keys(tokenData);
-        } catch(e) {
-            Booking.app.authToken = tokenData;
+        if (isEmpty(parameters)) {
+            window.location.href = 'authiframe.html';
+        } else {
+            Booking.app.authToken = parameters.token;
             authContainer.generateItems();
         }
     },
