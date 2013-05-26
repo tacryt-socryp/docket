@@ -19,6 +19,7 @@ Ext.define('Booking.view.authContainer', {
     config: {
         html: '<iframe id="authFrame" src="authiframe.html" width="100%" height="100%" frameborder="0"></iframe>',
         itemId: 'authContainer',
+        style: '#authFrame {height:100%; width:100%; overflow:hidden;}',
         listeners: [
             {
                 fn: 'onContainerPainted',
@@ -62,7 +63,7 @@ Ext.define('Booking.view.authContainer', {
             addContainer = "",
             items = [];
 
-        var obj = new Booking.view.MyContainer1();
+        var obj;
 
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
@@ -73,6 +74,7 @@ Ext.define('Booking.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
+                        obj = new Booking.view.MyContainer1();
                         console.log('items');
                         obj.items.indexOf(0).calendarId = outer.items[i].id;
                         obj.items.indexOf(0).boxColor = '#43aad5';

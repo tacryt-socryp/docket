@@ -8,6 +8,7 @@
     "userConfig": {
         "html": "<iframe id=\"authFrame\" src=\"authiframe.html\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>",
         "itemId": "authContainer",
+        "style": "#authFrame {height:100%; width:100%; overflow:hidden;}",
         "designer|userClassName": "authContainer",
         "designer|initialView": true
     },
@@ -80,7 +81,7 @@
                     "    addContainer = \"\",\r",
                     "    items = [];\r",
                     "\r",
-                    "var obj = new Booking.view.MyContainer1();\r",
+                    "var obj;\r",
                     "\r",
                     "gapi.client.setApiKey(apiKey);\r",
                     "gapi.auth.setToken(token);\r",
@@ -91,6 +92,7 @@
                     "        var request = gapi.client.calendar.calendarList.list();\r",
                     "        request.execute(function(outer) {\r",
                     "            for (var i = 0; i < outer.items.length; i++) {\r",
+                    "                obj = new Booking.view.MyContainer1();\r",
                     "                console.log('items');\r",
                     "                obj.items.indexOf(0).calendarId = outer.items[i].id;\r",
                     "                obj.items.indexOf(0).boxColor = '#43aad5';\r",
