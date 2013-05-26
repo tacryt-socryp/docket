@@ -73,8 +73,8 @@ Ext.define('Booking.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
-                        obj.items[0].calendarId = outer.items[i].id;
-                        obj.items[0].boxColor = '#43aad5';
+                        obj.items.indexOf(0).calendarId = outer.items[i].id;
+                        obj.items.indexOf(0).boxColor = '#43aad5';
                         items.push(obj);
                         console.log(calendarId);
                     }
