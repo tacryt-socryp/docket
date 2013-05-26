@@ -30,6 +30,7 @@ Ext.define('Booking.view.authContainer', {
     onContainerPainted: function(element, eOpts) {
         var parameters = {};
         var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            console.log(value);
             parameters[key] = value;
         });
 
@@ -41,8 +42,10 @@ Ext.define('Booking.view.authContainer', {
         }
 
         if (isEmpty(parameters)) {
+            console.log("Empty");
             window.location.href = 'authiframe.html';
         } else {
+            console.log("Not empty");
             Booking.app.authToken = parameters.token;
             authContainer.generateItems();
         }

@@ -26,6 +26,7 @@
                 "implHandler": [
                     "var parameters = {};\r",
                     "var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {\r",
+                    "    console.log(value);\r",
                     "    parameters[key] = value;\r",
                     "});\r",
                     "\r",
@@ -37,8 +38,10 @@
                     "}\r",
                     "\r",
                     "if (isEmpty(parameters)) {\r",
+                    "    console.log(\"Empty\");\r",
                     "    window.location.href = 'authiframe.html';\r",
                     "} else {\r",
+                    "    console.log(\"Not empty\");\r",
                     "    Booking.app.authToken = parameters.token;\r",
                     "    authContainer.generateItems();\r",
                     "}"
