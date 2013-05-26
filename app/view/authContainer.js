@@ -60,25 +60,9 @@ Ext.define('Booking.view.authContainer', {
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
             addContainer = "",
-            items = [],
-            calendarId;
+            items = [];
 
-        var seen = [];
-
-        var getReturn = JSON.stringify(myContainer, function(key, val) {
-            if (typeof val == "object") {
-                if (seen.indexOf(val) >= 0)
-                return;
-                seen.push(val);
-            }
-            console.log(val);
-            return(val);
-        });
-
-        console.log(getReturn);
-
-        //var encoded = Ext.encode(myContainer);
-        //console.log(encoded);
+        var obj = new Booking.view.MyContainer1();
 
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
@@ -89,8 +73,9 @@ Ext.define('Booking.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
-                        calendarId = outer.items[i].id;
-                        items.push(addContainer);
+                        obj.items[0].calendarId = outer.items[i].id;
+                        obj.items[0].boxColor = '#43aad5';
+                        items.push(obj);
                         console.log(calendarId);
                     }
                     mainCarousel.setItems(items);

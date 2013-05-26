@@ -35,7 +35,8 @@ Ext.define('Booking.view.MyContainer1', {
                                 h = Ext.getBody().getSize().height,
                                 w = Ext.getBody().getSize().width,
                                 surface = this.getSurface('main'),
-                                boxColor = '#43aad5',
+                                calendarId = me.calendarId,
+                                boxColor = me.boxColor,
                                 today = new Date(),
                                 xloc,
                                 iter;
@@ -44,8 +45,6 @@ Ext.define('Booking.view.MyContainer1', {
                                 clientId = '464168127252.apps.googleusercontent.com',
                                 apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
                                 scopes = 'https://www.googleapis.com/auth/calendar';
-
-                            var calendarId;
 
                             today.setHours(0,0,0,0);
                             today = today.toISOString();

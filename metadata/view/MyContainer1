@@ -41,6 +41,18 @@
                 "scrollable": "object"
             },
             "designerId": "c40404da-fb78-43ed-bfa9-e007aeeca09f",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "boxColor",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "calendarId",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "basiceventbinding",
@@ -56,7 +68,8 @@
                             "    h = Ext.getBody().getSize().height,\r",
                             "    w = Ext.getBody().getSize().width,\r",
                             "    surface = this.getSurface('main'),\r",
-                            "    boxColor = '#43aad5',\r",
+                            "    calendarId = me.calendarId,\r",
+                            "    boxColor = me.boxColor,\r",
                             "    today = new Date(),\r",
                             "    xloc,\r",
                             "    iter;\r",
@@ -65,8 +78,6 @@
                             "    clientId = '464168127252.apps.googleusercontent.com',\r",
                             "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
                             "    scopes = 'https://www.googleapis.com/auth/calendar';\r",
-                            "\r",
-                            "var calendarId;\r",
                             "\r",
                             "today.setHours(0,0,0,0);\r",
                             "today = today.toISOString();\r",
