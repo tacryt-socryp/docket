@@ -100,7 +100,7 @@
                     "                    obj.items.indexOf(0).style = 'background:' + backgroundColors[i] + '#0d6289;';\r",
                     "                    obj.items.indexOf(0).boxColor = '#43aad5';\r",
                     "                    items.push(obj);\r",
-                    "                    console.log(calendarId);\r",
+                    "                    console.log('Inside authContainer' + obj.items.indexOf(0).calendarId);\r",
                     "                } else {\r",
                     "                    console.log(\"Not a resource\");\r",
                     "                }\r",
