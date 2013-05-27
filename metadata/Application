@@ -13,9 +13,6 @@
             "mainCarousel",
             "authContainer"
         ],
-        "controllers": [
-            "refreshEverything"
-        ],
         "name": "Booking"
     },
     "configAlternates": {

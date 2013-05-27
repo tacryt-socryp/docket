@@ -26,9 +26,6 @@ Ext.application({
         'mainCarousel',
         'authContainer'
     ],
-    controllers: [
-        'refreshEverything'
-    ],
     name: 'Booking',
 
     launch: function() {

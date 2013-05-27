@@ -40,6 +40,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 calendarId = me.calendarId,
                                 roomText = me.roomText,
                                 boxColor = me.boxColor,
+                                result = me.result,
                                 today = new Date(),
                                 xloc,
                                 iter;

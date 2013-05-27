@@ -39,7 +39,8 @@
                 "autoDestroy": false
             },
             "configAlternates": {
-                "scrollable": "object"
+                "scrollable": "object",
+                "result": "object"
             },
             "designerId": "c40404da-fb78-43ed-bfa9-e007aeeca09f",
             "customConfigs": [
@@ -62,6 +63,11 @@
                     "group": "(Custom Properties)",
                     "name": "roomText",
                     "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "result",
+                    "type": "string"
                 }
             ],
             "cn": [
@@ -83,6 +89,7 @@
                             "    calendarId = me.calendarId,\r",
                             "    roomText = me.roomText,\r",
                             "    boxColor = me.boxColor,\r",
+                            "    result = me.result,\r",
                             "    today = new Date(),\r",
                             "    xloc,\r",
                             "    iter;\r",
@@ -111,7 +118,6 @@
                             "            });\r",
                             "\r",
                             "            request.execute(function(resp) {\r",
-                            "                console.log(resp);\r",
                             "                if (resp.items) {\r",
                             "                    w = 203 * resp.items.length;\r",
                             "                }\r",
