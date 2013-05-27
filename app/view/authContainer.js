@@ -89,7 +89,7 @@ Ext.define('Booking.view.authContainer', {
                             obj = new Booking.view.MyContainer1();
                             console.log('items');
                             obj.items.indexOf(0).calendarId = outer.items[i].id;
-                            obj.items.indexOf(0).style = 'background:' + backgroundColors[i] + '#0d6289;';
+                            obj.items.indexOf(0).style = 'background:' + backgroundColors[i] + ';';
                             obj.items.indexOf(0).boxColor = '#43aad5';
                             items.push(obj);
                             console.log('Inside authContainer' + obj.items.indexOf(0).calendarId);
