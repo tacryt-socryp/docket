@@ -140,6 +140,8 @@ Ext.define('Booking.view.MyContainer1', {
                                                             type: 'text',
                                                             text: resp.items[iter].summary,
                                                             font: '20px Proxima Nova',
+                                                            width: 290,
+                                                            height: 130,
                                                             fill: '#FFF',
                                                             x: xloc+48,
                                                             y: 150
@@ -177,6 +179,8 @@ Ext.define('Booking.view.MyContainer1', {
                                                         surface.add({
                                                             type: 'text',
                                                             text: resp.items[iter].summary,
+                                                            width: 290,
+                                                            height: 130,
                                                             font: '20px Proxima Nova',
                                                             fill: '#FFF',
                                                             x: xloc+45,
