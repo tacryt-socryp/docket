@@ -85,7 +85,7 @@ Ext.define('Booking.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
-                        if (outer.items[i].id.substring(16).equals('bestfitmedia.com')) {
+                        if (outer.items[i].id.substring(0,16).equals('bestfitmedia.com')) {
                             obj = new Booking.view.MyContainer1();
                             console.log('items');
                             obj.items.indexOf(0).calendarId = outer.items[i].id;
