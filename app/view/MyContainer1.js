@@ -27,7 +27,7 @@ Ext.define('Booking.view.MyContainer1', {
             {
                 xtype: 'draw',
                 itemId: 'inlineDraw1',
-                style: 'background:#FFF;',
+                style: '@font-face {\r\n    font-family: "Proxima Nova";\r\n    src: url(\'/proxima-nova.ttf\');\r\n}',
                 autoDestroy: false,
                 listeners: [
                     {
@@ -92,7 +92,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             surface.add({
                                                 type: 'text',
                                                 text: roomText,
-                                                font: '32px Arial',
+                                                font: '32px Proxima Nova',
                                                 fill: '#FFF',
                                                 x: 70,
                                                 y: 50
@@ -140,7 +140,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         surface.add({
                                                             type: 'text',
                                                             text: resp.items[iter].summary,
-                                                            font: '20px Arial',
+                                                            font: '20px Proxima Nova',
                                                             fill: '#FFF',
                                                             x: xloc+48,
                                                             y: 150
@@ -150,7 +150,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         surface.add({
                                                             type: 'text',
                                                             text: resp.items[iter].start.datetime,
-                                                            font: '14px Arial',
+                                                            font: '14px Proxima Nova',
                                                             fill: '#FFF',
                                                             x: 170,
                                                             y: 380
@@ -178,7 +178,7 @@ Ext.define('Booking.view.MyContainer1', {
                                                         surface.add({
                                                             type: 'text',
                                                             text: resp.items[iter].summary,
-                                                            font: '20px Arial',
+                                                            font: '20px Proxima Nova',
                                                             fill: '#FFF',
                                                             x: xloc+45,
                                                             y: 430

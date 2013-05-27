@@ -34,13 +34,19 @@
                 "itemId": "inlineDraw1",
                 "minWidth": null,
                 "showAnimation": null,
-                "style": "background:#FFF;",
+                "style": [
+                    "@font-face {\r",
+                    "    font-family: \"Proxima Nova\";\r",
+                    "    src: url('/proxima-nova.ttf');\r",
+                    "}"
+                ],
                 "width": null,
                 "autoDestroy": false
             },
             "configAlternates": {
                 "scrollable": "object",
-                "result": "object"
+                "result": "object",
+                "style": "object"
             },
             "designerId": "c40404da-fb78-43ed-bfa9-e007aeeca09f",
             "customConfigs": [
@@ -146,7 +152,7 @@
                             "                surface.add({\r",
                             "                    type: 'text',\r",
                             "                    text: roomText,\r",
-                            "                    font: '32px Arial',\r",
+                            "                    font: '32px Proxima Nova',\r",
                             "                    fill: '#FFF',\r",
                             "                    x: 70,\r",
                             "                    y: 50\r",
@@ -194,7 +200,7 @@
                             "                            surface.add({\r",
                             "                                type: 'text',\r",
                             "                                text: resp.items[iter].summary,\r",
-                            "                                font: '20px Arial',\r",
+                            "                                font: '20px Proxima Nova',\r",
                             "                                fill: '#FFF',\r",
                             "                                x: xloc+48,\r",
                             "                                y: 150\r",
