@@ -30,7 +30,6 @@ Ext.define('Booking.view.authContainer', {
     onContainerPainted: function(element, eOpts) {
         var parameters = {};
         var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-            console.log(value);
             parameters[key] = value;
         });
 
@@ -42,11 +41,10 @@ Ext.define('Booking.view.authContainer', {
         }
 
         if (isEmpty(parameters)) {
-            console.log("Empty");
             window.location.href = 'authiframe.html';
         } else {
-            console.log("Not empty");
             Booking.app.authToken = decodeURI(parameters.auth);
+            console.log(Booking.app.authToken);
             this.generateItems();
         }
     },
@@ -78,6 +76,20 @@ Ext.define('Booking.view.authContainer', {
         '#FFF'
         ];
 
+        var boxColors = [
+        '#43aad5', //Blue
+        '#F99665', //Orange
+        '#436085', //Purple
+        '#FF837E', //Red
+        '7DCB99', //Green
+        'B9C18A',  //Beige
+        '#FFF',
+        '#FFF',
+        '#FFF',
+        '#FFF',
+        '#FFF'
+        ];
+
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
 
@@ -87,15 +99,15 @@ Ext.define('Booking.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
-                        console.log(outer.items[i].id);
                         if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {
-                            if (outer.items[i].summary.indexOf("Room") != -1) {
+                            if (outer.items[i].summary.indexOf("Room") >= 0) {
+                                console.log(outer.items[i].id);
                                 obj = new Booking.view.MyContainer1();
                                 child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
                                 child.calendarId = outer.items[i].id;
                                 child.roomText = outer.items[i].summary;
                                 child.backgroundColor = backgroundColors[array_i];
-                                child.boxColor = '#43aad5';
+                                child.boxColor = boxColors[array_i];
                                 items.push(obj);
                                 array_i++;
                             }
