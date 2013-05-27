@@ -96,6 +96,7 @@
                     "            for (var i = 0; i < outer.items.length; i++) {\r",
                     "                if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {\r",
                     "                    obj = new Booking.view.MyContainer1();\r",
+                    "                    console.log(outer.items[i]);\r",
                     "                    child = Ext.ComponentQuery.query('#inlineDraw1')[i];\r",
                     "                    child.calendarId = outer.items[i].id;\r",
                     "                    child.style = 'background:' + backgroundColors[i] + ';';\r",

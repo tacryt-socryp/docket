@@ -88,6 +88,7 @@ Ext.define('Booking.view.authContainer', {
                     for (var i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {
                             obj = new Booking.view.MyContainer1();
+                            console.log(outer.items[i]);
                             child = Ext.ComponentQuery.query('#inlineDraw1')[i];
                             child.calendarId = outer.items[i].id;
                             child.style = 'background:' + backgroundColors[i] + ';';
