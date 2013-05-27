@@ -101,7 +101,7 @@ Ext.define('Booking.view.authContainer', {
                     for (var i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {
                             if (outer.items[i].summary.indexOf("Room") >= 0) {
-                                console.log(outer.items[i].id);
+                                console.log(outer.items[i].summary);
                                 obj = new Booking.view.MyContainer1();
                                 child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
                                 child.calendarId = outer.items[i].id;
