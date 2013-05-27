@@ -72,12 +72,16 @@ Ext.define('Booking.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
-                        obj = new Booking.view.MyContainer1();
-                        console.log('items');
-                        obj.items.indexOf(0).calendarId = outer.items[i].id;
-                        obj.items.indexOf(0).boxColor = '#43aad5';
-                        items.push(obj);
-                        console.log(calendarId);
+                        if (outer.items[i].substring(16).equals('bestfitmedia.com')) {
+                            obj = new Booking.view.MyContainer1();
+                            console.log('items');
+                            obj.items.indexOf(0).calendarId = outer.items[i].id;
+                            obj.items.indexOf(0).boxColor = '#43aad5';
+                            items.push(obj);
+                            console.log(calendarId);
+                        } else {
+                            console.log("Not a resource");
+                        }
                     }
                     mainCarousel.setItems(items);
                     Ext.ComponentQuery.query('#authContainer')[0].destroy();
