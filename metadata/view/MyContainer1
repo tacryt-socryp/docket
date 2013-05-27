@@ -270,6 +270,21 @@
                     "designerId": "65bdfb27-8c7a-47db-b665-451809a2d25c"
                 }
             ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadData",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "ae2cf237-b242-4780-aff4-d22ef9d9aae7"
         }
     ]
 }

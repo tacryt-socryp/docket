@@ -206,6 +206,10 @@ Ext.define('Booking.view.MyContainer1', {
                 ]
             }
         ]
+    },
+
+    loadData: function() {
+
     }
 
 });
