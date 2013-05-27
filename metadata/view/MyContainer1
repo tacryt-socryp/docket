@@ -34,7 +34,7 @@
                 "itemId": "inlineDraw1",
                 "minWidth": null,
                 "showAnimation": null,
-                "style": "background:#0d6289;",
+                "style": null,
                 "width": null
             },
             "configAlternates": {

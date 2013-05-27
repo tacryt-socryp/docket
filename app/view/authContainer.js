@@ -63,17 +63,17 @@ Ext.define('Booking.view.authContainer', {
             obj;
 
         var backgroundColors = [
-        '', //Blue
+        '#0d6289', //Blue
         '#d27f56', //Orange
         '#4E2B52', //Purple
         '#FF4242', //Red
         '#53ab73', //Green
         '#D9D1A9', //Beige
-        '',
-        '',
-        '',
-        '',
-        ''
+        '#FFF',
+        '#FFF',
+        '#FFF',
+        '#FFF',
+        '#FFF'
         ];
 
         gapi.client.setApiKey(apiKey);
@@ -87,12 +87,12 @@ Ext.define('Booking.view.authContainer', {
                     for (var i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {
                             obj = new Booking.view.MyContainer1();
-                            console.log('items');
+                            console.log(obj.items.indexOf(0));
                             obj.items.indexOf(0).calendarId = outer.items[i].id;
                             obj.items.indexOf(0).style = 'background:' + backgroundColors[i] + ';';
                             obj.items.indexOf(0).boxColor = '#43aad5';
                             items.push(obj);
-                            console.log('Inside authContainer' + obj.items.indexOf(0).calendarId);
+                            console.log('Inside authContainer' + outer.items[i].id);
                         } else {
                             console.log("Not a resource");
                         }
