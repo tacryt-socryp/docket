@@ -87,14 +87,16 @@ Ext.define('Booking.view.authContainer', {
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {
-                            obj = new Booking.view.MyContainer1();
-                            console.log(outer.items[i]);
-                            child = Ext.ComponentQuery.query('#inlineDraw1')[i];
-                            child.calendarId = outer.items[i].id;
-                            child.roomText = outer.items[i].summary;
-                            child.backgroundColor = backgroundColors[i];
-                            child.boxColor = '#43aad5';
-                            items.push(obj);
+                            if (outer.items[i].summary.indexOf("Room") != -1) {
+                                obj = new Booking.view.MyContainer1();
+                                console.log(outer.items[i]);
+                                child = Ext.ComponentQuery.query('#inlineDraw1')[i];
+                                child.calendarId = outer.items[i].id;
+                                child.roomText = outer.items[i].summary;
+                                child.backgroundColor = backgroundColors[i];
+                                child.boxColor = '#43aad5';
+                                items.push(obj);
+                            }
                         } else {
                             console.log("Not a resource");
                         }
