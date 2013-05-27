@@ -87,7 +87,7 @@ Ext.define('Booking.view.authContainer', {
                     for (var i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {
                             obj = new Booking.view.MyContainer1();
-                            console.log(obj.items.indexOf(0));
+                            console.log(obj.getItems());
                             obj.items.indexOf(0).calendarId = outer.items[i].id;
                             obj.items.indexOf(0).style = 'background:' + backgroundColors[i] + ';';
                             obj.items.indexOf(0).boxColor = '#43aad5';
