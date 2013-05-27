@@ -60,7 +60,8 @@ Ext.define('Booking.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar',
             addContainer = "",
             items = [],
-            obj;
+            obj,
+            child;
 
         var backgroundColors = [
         '#0d6289', //Blue
@@ -87,12 +88,12 @@ Ext.define('Booking.view.authContainer', {
                     for (var i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {
                             obj = new Booking.view.MyContainer1();
-                            console.log(obj.getItems());
-                            obj.items.indexOf(0).calendarId = outer.items[i].id;
-                            obj.items.indexOf(0).style = 'background:' + backgroundColors[i] + ';';
-                            obj.items.indexOf(0).boxColor = '#43aad5';
+                            child = obj.getItems()[0];
+                            child.calendarId = outer.items[i].id;
+                            child.items.indexOf(0).style = 'background:' + backgroundColors[i] + ';';
+                            child.items.indexOf(0).boxColor = '#43aad5';
                             items.push(obj);
-                            console.log('Inside authContainer' + outer.items[i].id);
+                            console.log('Inside authContainer: ' + outer.items[i].id);
                         } else {
                             console.log("Not a resource");
                         }
