@@ -35,7 +35,8 @@
                 "minWidth": null,
                 "showAnimation": null,
                 "style": null,
-                "width": null
+                "width": null,
+                "autoDestroy": false
             },
             "configAlternates": {
                 "scrollable": "object"
