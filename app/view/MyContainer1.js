@@ -27,6 +27,7 @@ Ext.define('Booking.view.MyContainer1', {
             {
                 xtype: 'draw',
                 itemId: 'inlineDraw1',
+                style: 'background:#FFF;',
                 autoDestroy: false,
                 listeners: [
                     {

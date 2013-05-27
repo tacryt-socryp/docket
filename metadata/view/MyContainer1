@@ -34,7 +34,7 @@
                 "itemId": "inlineDraw1",
                 "minWidth": null,
                 "showAnimation": null,
-                "style": null,
+                "style": "background:#FFF;",
                 "width": null,
                 "autoDestroy": false
             },
