@@ -73,6 +73,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             if (resp.items) {
                                                 w = 203 * resp.items.length;
                                             }
+
                                             me.setSize(w,h);
                                             surface.setSize(w,h);
                                             surface.setBackground(backgroundColor);
