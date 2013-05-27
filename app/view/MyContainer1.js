@@ -37,6 +37,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 w = Ext.getBody().getSize().width,
                                 surface = this.getSurface('main'),
                                 backgroundColor = me.backgroundColor,
+                                timelineColor = me.timelineColor,
                                 calendarId = me.calendarId,
                                 roomText = me.roomText,
                                 boxColor = me.boxColor,
@@ -79,7 +80,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             //Line across screen
                                             surface.add({
                                                 type: 'rect',
-                                                fill: '#176c93',
+                                                fill: timelineColor,
                                                 height : 20,
                                                 width: w,
                                                 x: 0,

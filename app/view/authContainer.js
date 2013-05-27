@@ -81,8 +81,22 @@ Ext.define('Booking.view.authContainer', {
         '#F99665', //Orange
         '#436085', //Purple
         '#FF837E', //Red
-        '7DCB99', //Green
-        'B9C18A',  //Beige
+        '#7DCB99', //Green
+        '#B9C18A',  //Beige
+        '#FFF',
+        '#FFF',
+        '#FFF',
+        '#FFF',
+        '#FFF'
+        ];
+
+        var timelineColors = [
+        '#176c93', //Blue
+        '#DA8359', //Orange
+        '#5A325F', //Purple
+        '#EC6B51', //Red
+        '#53AB73', //Green
+        '#A4AE6A',  //Beige
         '#FFF',
         '#FFF',
         '#FFF',
@@ -108,6 +122,7 @@ Ext.define('Booking.view.authContainer', {
                                 child.roomText = outer.items[i].summary;
                                 child.backgroundColor = backgroundColors[array_i];
                                 child.boxColor = boxColors[array_i];
+                                child.timelineColor = boxColors[array_i];
                                 items.push(obj);
                                 array_i++;
                             }

@@ -68,6 +68,11 @@
                     "group": "(Custom Properties)",
                     "name": "result",
                     "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "timelineColor",
+                    "type": "string"
                 }
             ],
             "cn": [
@@ -86,6 +91,7 @@
                             "    w = Ext.getBody().getSize().width,\r",
                             "    surface = this.getSurface('main'),\r",
                             "    backgroundColor = me.backgroundColor,\r",
+                            "    timelineColor = me.timelineColor,\r",
                             "    calendarId = me.calendarId,\r",
                             "    roomText = me.roomText,\r",
                             "    boxColor = me.boxColor,\r",
@@ -128,7 +134,7 @@
                             "                //Line across screen\r",
                             "                surface.add({\r",
                             "                    type: 'rect',\r",
-                            "                    fill: '#176c93',\r",
+                            "                    fill: '',\r",
                             "                    height : 20,\r",
                             "                    width: w,\r",
                             "                    x: 0,\r",
