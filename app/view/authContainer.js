@@ -87,10 +87,10 @@ Ext.define('Booking.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
+                        console.log(outer.items[i].id);
                         if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {
                             if (outer.items[i].summary.indexOf("Room") != -1) {
                                 obj = new Booking.view.MyContainer1();
-                                console.log(outer.items[i]);
                                 child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
                                 child.calendarId = outer.items[i].id;
                                 child.roomText = outer.items[i].summary;
