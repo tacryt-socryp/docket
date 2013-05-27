@@ -107,7 +107,7 @@
                             "                'singleEvents': true,\r",
                             "                'orderBy': 'startTime',\r",
                             "                'timeMin': today,\r",
-                            "                'maxResults': 75\r",
+                            "                'maxResults': 50\r",
                             "            });\r",
                             "\r",
                             "            request.execute(function(resp) {\r",

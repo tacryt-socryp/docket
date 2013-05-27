@@ -64,7 +64,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             'singleEvents': true,
                                             'orderBy': 'startTime',
                                             'timeMin': today,
-                                            'maxResults': 75
+                                            'maxResults': 50
                                         });
 
                                         request.execute(function(resp) {

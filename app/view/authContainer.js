@@ -59,9 +59,10 @@ Ext.define('Booking.view.authContainer', {
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
             addContainer = "",
+            array_i = 0,
             items = [],
-            obj,
-            child;
+            child,
+            obj;
 
         var backgroundColors = [
         '#0d6289', //Blue
@@ -93,12 +94,11 @@ Ext.define('Booking.view.authContainer', {
                                 child = Ext.ComponentQuery.query('#inlineDraw1')[i];
                                 child.calendarId = outer.items[i].id;
                                 child.roomText = outer.items[i].summary;
-                                child.backgroundColor = backgroundColors[i];
+                                child.backgroundColor = backgroundColors[array_i];
                                 child.boxColor = '#43aad5';
                                 items.push(obj);
+                                array_i++;
                             }
-                        } else {
-                            console.log("Not a resource");
                         }
                     }
                     mainCarousel.setItems(items);
