@@ -18,7 +18,6 @@ Ext.define('Booking.view.authContainer', {
 
     config: {
         itemId: 'authContainer',
-        style: '#authFrame {height:100%; width:100%; overflow:hidden;}',
         listeners: [
             {
                 fn: 'onContainerPainted',

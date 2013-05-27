@@ -127,7 +127,7 @@
                             "                if (resp.items) {\r",
                             "                    w = 203 * resp.items.length;\r",
                             "                }\r",
-                            "                \r",
+                            "\r",
                             "                me.setSize(w,h);\r",
                             "                surface.setSize(w,h);\r",
                             "                surface.setBackground(backgroundColor);\r",
