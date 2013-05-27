@@ -91,7 +91,8 @@ Ext.define('Booking.view.MyContainer1', {
                                             surface.add({
                                                 type: 'text',
                                                 text: roomText,
-                                                font: '32px Proxima Nova',
+                                                "font-size": "32px",
+                                                "font-family": 'Proxima Nova',
                                                 fill: '#FFF',
                                                 x: 70,
                                                 y: 50
