@@ -92,7 +92,6 @@ Ext.define('Booking.view.authContainer', {
                             obj.items.indexOf(0).style = 'background:' + backgroundColors[i] + '#0d6289;';
                             obj.items.indexOf(0).boxColor = '#43aad5';
                             items.push(obj);
-                            console.log(calendarId);
                         } else {
                             console.log("Not a resource");
                         }
