@@ -47,7 +47,7 @@ Ext.define('Booking.view.authContainer', {
         } else {
             console.log("Not empty");
 
-            Booking.app.authToken = decodeURI(parameters.auth);
+            Booking.app.authToken = decodeURIComponent(parameters.auth);
             authContainer.generateItems();
         }
     },
@@ -63,6 +63,15 @@ Ext.define('Booking.view.authContainer', {
             items = [],
             obj;
 
+        var backgroundColors = [
+        '', //Blue
+        '#d27f56', //Orange
+        '#4E2B52', //Purple
+        '#FF4242', //Red
+        '#53ab73', //Green
+        '#D9D1A9' //Beige
+        ];
+
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
 
@@ -76,6 +85,7 @@ Ext.define('Booking.view.authContainer', {
                             obj = new Booking.view.MyContainer1();
                             console.log('items');
                             obj.items.indexOf(0).calendarId = outer.items[i].id;
+                            obj.items.indexOf(0).style = 'background:' + backgroundColors[i] + ';';
                             obj.items.indexOf(0).boxColor = '#43aad5';
                             items.push(obj);
                             console.log(calendarId);
