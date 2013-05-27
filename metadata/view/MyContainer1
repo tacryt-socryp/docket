@@ -34,19 +34,12 @@
                 "itemId": "inlineDraw1",
                 "minWidth": null,
                 "showAnimation": null,
-                "style": [
-                    "@font-face {\r",
-                    "    font-family: \"Proxima Nova\";\r",
-                    "    src: url('/proxima-nova.ttf');\r",
-                    "}"
-                ],
                 "width": null,
                 "autoDestroy": false
             },
             "configAlternates": {
                 "scrollable": "object",
-                "result": "object",
-                "style": "object"
+                "result": "object"
             },
             "designerId": "c40404da-fb78-43ed-bfa9-e007aeeca09f",
             "customConfigs": [
@@ -210,7 +203,7 @@
                             "                            surface.add({\r",
                             "                                type: 'text',\r",
                             "                                text: resp.items[iter].start.datetime,\r",
-                            "                                font: '14px Arial',\r",
+                            "                                font: '14px Proxima Nova',\r",
                             "                                fill: '#FFF',\r",
                             "                                x: 170,\r",
                             "                                y: 380\r",
@@ -238,7 +231,7 @@
                             "                            surface.add({\r",
                             "                                type: 'text',\r",
                             "                                text: resp.items[iter].summary,\r",
-                            "                                font: '20px Arial',\r",
+                            "                                font: '20px Proxima Nova',\r",
                             "                                fill: '#FFF',\r",
                             "                                x: xloc+45,\r",
                             "                                y: 430\r",

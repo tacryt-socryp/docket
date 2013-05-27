@@ -27,7 +27,6 @@ Ext.define('Booking.view.MyContainer1', {
             {
                 xtype: 'draw',
                 itemId: 'inlineDraw1',
-                style: '@font-face {\r\n    font-family: "Proxima Nova";\r\n    src: url(\'/proxima-nova.ttf\');\r\n}',
                 autoDestroy: false,
                 listeners: [
                     {
