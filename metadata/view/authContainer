@@ -42,7 +42,8 @@
                     "    window.location.href = 'authiframe.html';\r",
                     "} else {\r",
                     "    console.log(\"Not empty\");\r",
-                    "    Booking.app.authToken = parameters.token;\r",
+                    "    \r",
+                    "    Booking.app.authToken = decodeURI(parameters.auth);\r",
                     "    authContainer.generateItems();\r",
                     "}"
                 ],
@@ -69,8 +70,6 @@
                     "    addContainer = \"\",\r",
                     "    items = [],\r",
                     "    obj;\r",
-                    "\r",
-                    "var ;\r",
                     "\r",
                     "gapi.client.setApiKey(apiKey);\r",
                     "gapi.auth.setToken(token);\r",

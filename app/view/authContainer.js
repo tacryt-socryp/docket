@@ -46,7 +46,8 @@ Ext.define('Booking.view.authContainer', {
             window.location.href = 'authiframe.html';
         } else {
             console.log("Not empty");
-            Booking.app.authToken = parameters.auth;
+
+            Booking.app.authToken = decodeURI(parameters.auth);
             authContainer.generateItems();
         }
     },
