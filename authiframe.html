@@ -14,7 +14,20 @@
       color:#FFF;
     }
 
+    #title {
+        float:left;
+        margin-right:35%;
+        margin-top:10%;
+    }
+
+    #logo {
+        float:right;
+        margin-left:35%;
+        margin-top:10%;
+    }
+
     #div-button {
+        clear:both;
         margin: 0 auto 0 auto;
         width: 40%;
         font: bold 16px Helvetica, Arial, sans-serif;
@@ -33,6 +46,8 @@
     </style>
   </head>
   <body>
+    <div id="title"><h1>Room Booking App</h1></div>
+    <div id="logo"><img src="icon.png" alt="Calendar Icon" /></div>
     <div id="div-button" onclick='handleAuthClick();'>
         <a href='#' id='authorize-button'>Login</a>
     </div>
