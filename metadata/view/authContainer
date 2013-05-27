@@ -99,6 +99,7 @@
                     "                    console.log(outer.items[i]);\r",
                     "                    child = Ext.ComponentQuery.query('#inlineDraw1')[i];\r",
                     "                    child.calendarId = outer.items[i].id;\r",
+                    "                    child.roomText = outer.items[i].summary;\r",
                     "                    child.backgroundColor = backgroundColors[i];\r",
                     "                    child.boxColor = '#43aad5';\r",
                     "                    items.push(obj);\r",

@@ -38,6 +38,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 surface = this.getSurface('main'),
                                 backgroundColor = me.backgroundColor,
                                 calendarId = me.calendarId,
+                                roomText = me.roomText,
                                 boxColor = me.boxColor,
                                 today = new Date(),
                                 xloc,
@@ -88,7 +89,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             //Name of room
                                             surface.add({
                                                 type: 'text',
-                                                text: 'Meetings in Room A',
+                                                text: roomText,
                                                 font: '32px Arial',
                                                 fill: '#FFF',
                                                 x: 70,

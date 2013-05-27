@@ -57,6 +57,11 @@
                     "group": "(Custom Properties)",
                     "name": "backgroundColor",
                     "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "roomText",
+                    "type": "string"
                 }
             ],
             "cn": [
@@ -76,6 +81,7 @@
                             "    surface = this.getSurface('main'),\r",
                             "    backgroundColor = me.backgroundColor,\r",
                             "    calendarId = me.calendarId,\r",
+                            "    roomText = me.roomText,\r",
                             "    boxColor = me.boxColor,\r",
                             "    today = new Date(),\r",
                             "    xloc,\r",
@@ -111,7 +117,7 @@
                             "                }\r",
                             "                me.setSize(w,h);\r",
                             "                surface.setSize(w,h);\r",
-                            "                surface.setBackground();\r",
+                            "                surface.setBackground(backgroundColor);\r",
                             "\r",
                             "                //Line across screen\r",
                             "                surface.add({\r",
@@ -126,7 +132,7 @@
                             "                //Name of room\r",
                             "                surface.add({\r",
                             "                    type: 'text',\r",
-                            "                    text: 'Meetings in Room A',\r",
+                            "                    text: roomText,\r",
                             "                    font: '32px Arial',\r",
                             "                    fill: '#FFF',\r",
                             "                    x: 70,\r",
