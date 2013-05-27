@@ -68,7 +68,6 @@ Ext.define('Booking.view.MyContainer1', {
                                         });
 
                                         request.execute(function(resp) {
-                                            console.log(resp);
                                             if (resp.items) {
                                                 w = 203 * resp.items.length;
                                             }
