@@ -36,6 +36,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 h = Ext.getBody().getSize().height,
                                 w = Ext.getBody().getSize().width,
                                 surface = this.getSurface('main'),
+                                backgroundColor = me.backgroundColor,
                                 calendarId = me.calendarId,
                                 boxColor = me.boxColor,
                                 today = new Date(),
@@ -72,6 +73,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             }
                                             me.setSize(w,h);
                                             surface.setSize(w,h);
+                                            surface.setBackground(backgroundColor);
 
                                             //Line across screen
                                             surface.add({

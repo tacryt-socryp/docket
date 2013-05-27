@@ -91,7 +91,7 @@ Ext.define('Booking.view.authContainer', {
                             console.log(outer.items[i]);
                             child = Ext.ComponentQuery.query('#inlineDraw1')[i];
                             child.calendarId = outer.items[i].id;
-                            child.style = 'background:' + backgroundColors[i] + ';';
+                            child.backgroundColor = backgroundColors[i];
                             child.boxColor = '#43aad5';
                             items.push(obj);
                         } else {
