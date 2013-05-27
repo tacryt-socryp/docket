@@ -42,8 +42,6 @@ Ext.define('Booking.view.MyContainer1', {
                                 xloc,
                                 iter;
 
-                            console.log('Inside MyContainer' + calendarId);
-
                             var token = Booking.app.authToken,
                                 clientId = '464168127252.apps.googleusercontent.com',
                                 apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',

@@ -89,12 +89,10 @@ Ext.define('Booking.view.authContainer', {
                         if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {
                             obj = new Booking.view.MyContainer1();
                             child = Ext.ComponentQuery.query('#inlineDraw1')[i];
-                            console.log(child);
                             child.calendarId = outer.items[i].id;
                             child.style = 'background:' + backgroundColors[i] + ';';
                             child.boxColor = '#43aad5';
                             items.push(obj);
-                            console.log('Inside authContainer: ' + outer.items[i].id);
                         } else {
                             console.log("Not a resource");
                         }
