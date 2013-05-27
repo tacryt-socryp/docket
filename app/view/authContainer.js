@@ -46,9 +46,8 @@ Ext.define('Booking.view.authContainer', {
             window.location.href = 'authiframe.html';
         } else {
             console.log("Not empty");
-
-            Booking.app.authToken = decodeURIComponent(parameters.auth);
-            authContainer.generateItems();
+            Booking.app.authToken = decodeURI(parameters.auth);
+            this.generateItems();
         }
     },
 
@@ -85,7 +84,7 @@ Ext.define('Booking.view.authContainer', {
                             obj = new Booking.view.MyContainer1();
                             console.log('items');
                             obj.items.indexOf(0).calendarId = outer.items[i].id;
-                            obj.items.indexOf(0).style = 'background:' + backgroundColors[i] + ';';
+                            obj.items.indexOf(0).style = 'background:' + backgroundColors[i]';' '#0d6289;';
                             obj.items.indexOf(0).boxColor = '#43aad5';
                             items.push(obj);
                             console.log(calendarId);
