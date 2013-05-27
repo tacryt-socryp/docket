@@ -88,11 +88,11 @@ Ext.define('Booking.view.authContainer', {
                     for (var i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,16) === 'bestfitmedia.com') {
                             obj = new Booking.view.MyContainer1();
-                            child = Ext.ComponentQuery.query('#inlineDraw1');
+                            child = Ext.ComponentQuery.query('#inlineDraw1')[i];
                             console.log(child);
                             child.calendarId = outer.items[i].id;
-                            child.items.indexOf(0).style = 'background:' + backgroundColors[i] + ';';
-                            child.items.indexOf(0).boxColor = '#43aad5';
+                            child.style = 'background:' + backgroundColors[i] + ';';
+                            child.boxColor = '#43aad5';
                             items.push(obj);
                             console.log('Inside authContainer: ' + outer.items[i].id);
                         } else {
