@@ -99,7 +99,7 @@
                     "                    if (outer.items[i].summary.indexOf(\"Room\") != -1) {\r",
                     "                        obj = new Booking.view.MyContainer1();\r",
                     "                        console.log(outer.items[i]);\r",
-                    "                        child = Ext.ComponentQuery.query('#inlineDraw1')[i];\r",
+                    "                        child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];\r",
                     "                        child.calendarId = outer.items[i].id;\r",
                     "                        child.roomText = outer.items[i].summary;\r",
                     "                        child.backgroundColor = backgroundColors[array_i];\r",

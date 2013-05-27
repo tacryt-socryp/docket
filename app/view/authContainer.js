@@ -91,7 +91,7 @@ Ext.define('Booking.view.authContainer', {
                             if (outer.items[i].summary.indexOf("Room") != -1) {
                                 obj = new Booking.view.MyContainer1();
                                 console.log(outer.items[i]);
-                                child = Ext.ComponentQuery.query('#inlineDraw1')[i];
+                                child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
                                 child.calendarId = outer.items[i].id;
                                 child.roomText = outer.items[i].summary;
                                 child.backgroundColor = backgroundColors[array_i];
