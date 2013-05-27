@@ -37,7 +37,7 @@
                     "}\r",
                     "\r",
                     "if (isEmpty(parameters)) {\r",
-                    "    window.location.href = 'authiframe.html';\r",
+                    "    window.location.href = 'login.html';\r",
                     "} else {\r",
                     "    Booking.app.authToken = decodeURI(parameters.auth);\r",
                     "    console.log(Booking.app.authToken);\r",

@@ -40,7 +40,7 @@ Ext.define('Booking.view.authContainer', {
         }
 
         if (isEmpty(parameters)) {
-            window.location.href = 'authiframe.html';
+            window.location.href = 'login.html';
         } else {
             Booking.app.authToken = decodeURI(parameters.auth);
             console.log(Booking.app.authToken);
