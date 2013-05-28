@@ -53,8 +53,9 @@ Ext.define('Booking.view.MyContainer1', {
                             } catch(e) {
                                 console.log(me.roomText);
                                 mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
-                                mainCarousel.removeAt(mainCarousel.getActiveIndex()+1);
-                                w = Ext.getBody().getSize().width;
+                                var active = mainCarousel.getActiveIndex()+1;
+                                console.log(active);
+                                mainCarousel.removeAt(active);
                             }
 
                             console.log("Painted! Width: " + w + " Height: " + h);
