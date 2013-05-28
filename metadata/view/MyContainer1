@@ -29,6 +29,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "events": [
+                    "[]"
+                ],
                 "docked": null,
                 "height": null,
                 "itemId": "inlineDraw1",

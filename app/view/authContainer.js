@@ -55,7 +55,6 @@ Ext.define('Booking.view.authContainer', {
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
-            waitBegin = true,
             array_i = 0,
             items = [],
             events,
@@ -120,15 +119,16 @@ Ext.define('Booking.view.authContainer', {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
 
                             events = me.loadData(outer.items[i].id);
+
                             if (events !== null) {
                                 obj = new Booking.view.MyContainer1();
                                 child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
 
-                                child.events = events;
                                 child.roomText = outer.items[i].summary;
                                 child.backgroundColor = backgroundColors[array_i];
                                 child.boxColor = boxColors[array_i];
                                 child.timelineColor = boxColors[array_i];
+                                child.events = events;
 
                                 items.push(obj);
                                 array_i++;
@@ -173,7 +173,7 @@ Ext.define('Booking.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        if ((resp.items !== undefined) && (resp.items[0].summary !== undefined)) {
+                        if (resp.items !== undefined) {
                             return(resp.items);
                         } else {
                             return null;
