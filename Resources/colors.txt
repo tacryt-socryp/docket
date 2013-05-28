@@ -1,0 +1,24 @@
+Orange:
+    Background: d27f56
+    Timeline: da8359
+    Rectangles +add Dots: f99665
+
+Orange/Beige/Light Pink:
+    Background: d9d1a9
+    Timeline: a4ae6a
+    Rectangles +add Dots: b9c18a
+
+Red:
+    Background: ff4242 
+    Timeline: ec6b51
+    Rectangles +add Dots: ff837e
+
+Green:
+    Background: 53ab73
+    Timeline: 80E287
+    Rectangles +add Dots: 7dcb99
+
+Purple:
+    Background: 4E2B52
+    Timeline: 5A325F
+    Rectangles +add Dots: 436085
