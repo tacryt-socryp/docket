@@ -91,7 +91,7 @@
                     "            }\r",
                     "            for (i = 0; i < outer.items.length; i++) {\r",
                     "                    if (outer.items[i].id.substring(0,8) === 'bestfitm') {\r",
-                    "                        events = me.loadData(outer.items[i].id, outer.items[i].summary, array_i, final_i);\r",
+                    "                        events = me.loadData(outer.items[i].id, outer.items[i].summary, array_i, final_i, items);\r",
                     "                    }\r",
                     "                }\r",
                     "            });\r",
@@ -115,7 +115,8 @@
                     "calendarId",
                     "summary",
                     "array_i",
-                    "final_i"
+                    "final_i",
+                    "items"
                 ],
                 "implHandler": [
                     "var me = this,\r",
