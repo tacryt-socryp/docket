@@ -46,7 +46,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 mainCarousel,
                                 description,
                                 summary,
-                                yloc = h/8,
+                                yloc = h/10,
                                 xloc,
                                 iter;
 
@@ -135,7 +135,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                     surface.add({
                                         type: 'path',
-                                        path: 'M ' + (xloc+178) + ' ' + 270 + ' ' +
+                                        path: 'M ' + (xloc+178) + ' ' + (yloc+270) + ' ' +
                                         'l ' + 25 + ' ' + 0 + ' ' +
                                         'l ' + -12 + ' ' + 10 + 'z',
                                         fillStyle: boxColor
