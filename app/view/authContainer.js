@@ -163,7 +163,9 @@ Ext.define('Booking.view.authContainer', {
                         if (resp.items !== undefined) {
                             obj = new Booking.view.MyContainer1();
                             console.log(Ext.ComponentQuery.query('#inlineDraw1'));
-                            child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
+                            while(child === undefined) {
+                                child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
+                            }
 
                             child.roomText = summary;
                             child.backgroundColor = backgroundColors[array_i];
