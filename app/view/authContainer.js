@@ -164,6 +164,7 @@ Ext.define('Booking.view.authContainer', {
                     request.execute(function(resp) {
                         if (resp.items !== undefined) {
                             obj = new Booking.view.MyContainer1();
+                            console.log(Ext.ComponentQuery.query('#inlineDraw1'));
                             child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
 
                             child.roomText = summary;
@@ -171,8 +172,6 @@ Ext.define('Booking.view.authContainer', {
                             child.boxColor = boxColors[array_i];
                             child.timelineColor = boxColors[array_i];
                             child.events = resp.items;
-
-                            console.log("child.events: " + child.events);
 
                             items.push(obj);
                             array_i++;
@@ -183,6 +182,9 @@ Ext.define('Booking.view.authContainer', {
                 window.location.reload();
             }
         });
+
+        console.log('final_i: ' + final_i);
+        console.log('array_i: ' + array_i);
 
         if (final_i == array_i) {
             mainCarousel.removeAll(true);
