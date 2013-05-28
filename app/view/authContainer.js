@@ -83,7 +83,7 @@ Ext.define('Booking.view.authContainer', {
                     for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
                             events = me.loadData(outer.items[i].id, outer.items[i].summary, array_i, final_i, items);
-                            array++;
+                            array_i++;
                         }
                     }
                 });
