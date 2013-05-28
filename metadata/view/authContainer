@@ -208,7 +208,7 @@
                     "                    \r",
                     "                    items.push(obj);\r",
                     "                    \r",
-                    "                    if (items.length == array_i) {\r",
+                    "                    if (items.length == 5) {\r",
                     "                        mainCarousel.removeAll(true);\r",
                     "                        mainCarousel.setItems(items);\r",
                     "                        Ext.ComponentQuery.query('#authContainer')[0].destroy();\r",
