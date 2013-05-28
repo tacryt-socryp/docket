@@ -146,7 +146,7 @@
                     "                if (outer.items[i].id.substring(0,8) === 'bestfitm') {\r",
                     "                    \r",
                     "                    events = me.loadData(outer.items[i].id);\r",
-                    "                    setTimeout(makeNewItem(events,outer.items[i].summary), 3000);\r",
+                    "                    setTimeout(makeNewItem(events,outer.items[i].summary), 5000);\r",
                     "                }\r",
                     "            }\r",
                     "            mainCarousel.removeAll(true);\r",

@@ -137,7 +137,7 @@ Ext.define('Booking.view.authContainer', {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
 
                             events = me.loadData(outer.items[i].id);
-                            setTimeout(makeNewItem(events,outer.items[i].summary), 3000);
+                            setTimeout(makeNewItem(events,outer.items[i].summary), 5000);
                         }
                     }
                     mainCarousel.removeAll(true);
