@@ -84,6 +84,10 @@ Ext.define('Booking.view.MyContainer1', {
                                     if (summary.length > 27) {
                                         summary = summary.substring(0,27) + '...';
                                     }
+                                    var description = (description = events[iter].description);
+                                    if (description !== false) {
+                                        console.log(description);
+                                    }
                                     //    if (typeof events[iter].description !== null) {
                                     //    description = events[iter].description;
                                     //    if (description.length > 27) {
