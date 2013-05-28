@@ -80,7 +80,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 font: "42px Arial",
                                 fill: '#FFF',
                                 x: 70,
-                                y: 50
+                                y: 70
                             }).show(true);
 
                             for (iter = 0; iter < events.length; iter++) {
@@ -101,9 +101,7 @@ Ext.define('Booking.view.MyContainer1', {
                                     }
                                 } catch(e) {
                                     description = false;
-                                }
-
-
+                                }   
 
                                 //Larger Point on timeline
                                 surface.add({
@@ -166,10 +164,10 @@ Ext.define('Booking.view.MyContainer1', {
                                     }
 
                                     //Time and date for top
-                                    console.log(events[iter].start.datetime);
+                                    console.log(events[iter].start.dateTime);
                                     surface.add({
                                         type: 'text',
-                                        text: events[iter].start.datetime,
+                                        text: events[iter].start.dateTime,
                                         font: '14px Arial',
                                         fill: '#FFF',
                                         x: xloc+170,
@@ -221,10 +219,10 @@ Ext.define('Booking.view.MyContainer1', {
                                     }
 
                                     //Time and date for top
-                                    console.log(events[iter].start.datetime);
+                                    console.log(events[iter].start.dateTime);
                                     surface.add({
                                         type: 'text',
-                                        text: events[iter].start.datetime,
+                                        text: events[iter].start.dateTime,
                                         font: '14px Arial',
                                         fill: '#FFF',
                                         x: xloc+170,
