@@ -46,7 +46,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 mainCarousel,
                                 description,
                                 summary,
-                                yloc = h/6,
+                                yloc = h/8,
                                 xloc,
                                 iter;
 
