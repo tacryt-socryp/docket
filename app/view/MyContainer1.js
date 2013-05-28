@@ -88,9 +88,9 @@ Ext.define('Booking.view.MyContainer1', {
                                 if (summary.length > 27) {
                                     summary = summary.substring(0,27) + '...';
                                 }
-                                description = (description = events[iter].description);
+                                description = events[iter].description;
                                 console.log(description);
-                                if (description !== false) {
+                                try {
                                     if (description.length > 27) {
                                         if (description.length > 54) {
                                             description = description.substring(0,27) + '\n' + description.substring(27,54) + '...';
@@ -98,6 +98,8 @@ Ext.define('Booking.view.MyContainer1', {
                                             description = description.substring(0,27) + '\n' + description.substring(27);
                                         }
                                     }
+                                } catch(e) {
+                                    description = false;
                                 }
 
                                 //Larger Point on timeline
