@@ -84,117 +84,117 @@ Ext.define('Booking.view.MyContainer1', {
                                     if (summary.length > 27) {
                                         summary = summary.substring(0,27) + '...';
                                     }
-                                    if (typeof events[iter].description !== null) {
-                                        //    description = events[iter].description;
-                                        //    if (description.length > 27) {
-                                        //        description = description.substring(0,27);
-                                        //   }
-                                        // } else {
-                                        //   description = '';
-                                        //}
+                                    //    if (typeof events[iter].description !== null) {
+                                    //    description = events[iter].description;
+                                    //    if (description.length > 27) {
+                                    //        description = description.substring(0,27);
+                                    //   }
+                                    // } else {
+                                    //   description = '';
+                                    //}
 
 
-                                        //Larger Point on timeline
+                                    //Larger Point on timeline
+                                    surface.add({
+                                        type: 'circle',
+                                        cx: xloc+192,
+                                        cy: 338,
+                                        r: 22,
+                                        fillStyle: '#2b8bb5'
+                                    }).show(true);
+
+                                    surface.add({
+                                        type: 'circle',
+                                        cx: xloc+192,
+                                        cy: 338,
+                                        r: 16,
+                                        fillStyle: boxColor
+                                    }).show(true);
+
+                                    if (iter % 2 === 0) {
                                         surface.add({
-                                            type: 'circle',
-                                            cx: xloc+192,
-                                            cy: 338,
-                                            r: 22,
-                                            fillStyle: '#2b8bb5'
+                                            type: 'rect',
+                                            fill: boxColor,
+                                            height: 140,
+                                            width: 300,
+                                            radius: 10,
+                                            x: xloc+38,
+                                            y: 130
                                         }).show(true);
 
                                         surface.add({
-                                            type: 'circle',
-                                            cx: xloc+192,
-                                            cy: 338,
-                                            r: 16,
+                                            type: 'path',
+                                            path: 'M ' + (xloc+178) + ' ' + 270 + ' ' +
+                                            'l ' + 25 + ' ' + 0 + ' ' +
+                                            'l ' + -12 + ' ' + 10 + 'z',
                                             fillStyle: boxColor
                                         }).show(true);
 
-                                        if (iter % 2 === 0) {
-                                            surface.add({
-                                                type: 'rect',
-                                                fill: boxColor,
-                                                height: 140,
-                                                width: 300,
-                                                radius: 10,
-                                                x: xloc+38,
-                                                y: 130
-                                            }).show(true);
-
-                                            surface.add({
-                                                type: 'path',
-                                                path: 'M ' + (xloc+178) + ' ' + 270 + ' ' +
-                                                'l ' + 25 + ' ' + 0 + ' ' +
-                                                'l ' + -12 + ' ' + 10 + 'z',
-                                                fillStyle: boxColor
-                                            }).show(true);
-
-                                            surface.add({
-                                                type: 'text',
-                                                text: summary,
-                                                font: '20px Proxima Nova',
-                                                width: 290,
-                                                height: 130,
-                                                fill: '#FFF',
-                                                x: xloc+48,
-                                                y: 150
-                                            }).show(true);
-
-                                            /* if (description !== '') {
-                                            surface.add({
+                                        surface.add({
                                             type: 'text',
-                                            text: description,
-                                            font: '16px Proxima Nova',
+                                            text: summary,
+                                            font: '20px Proxima Nova',
+                                            width: 290,
+                                            height: 130,
                                             fill: '#FFF',
                                             x: xloc+48,
-                                            y: 17
-                                            }).show(true);
-                                            }*/
+                                            y: 150
+                                        }).show(true);
 
-                                            //Time and date for top
-                                            surface.add({
-                                                type: 'text',
-                                                text: events[iter].start.datetime,
-                                                font: '14px Proxima Nova',
-                                                fill: '#FFF',
-                                                x: xloc+170,
-                                                y: 380
-                                            }).show(true);
+                                        /* if (description !== '') {
+                                        surface.add({
+                                        type: 'text',
+                                        text: description,
+                                        font: '16px Proxima Nova',
+                                        fill: '#FFF',
+                                        x: xloc+48,
+                                        y: 17
+                                        }).show(true);
+                                        }*/
 
-                                        } else {
+                                        //Time and date for top
+                                        surface.add({
+                                            type: 'text',
+                                            text: events[iter].start.datetime,
+                                            font: '14px Proxima Nova',
+                                            fill: '#FFF',
+                                            x: xloc+170,
+                                            y: 380
+                                        }).show(true);
 
-                                            surface.add({
-                                                type: 'rect',
-                                                fill: boxColor,
-                                                height : 140,
-                                                width: 300,
-                                                radius: 10,
-                                                x: xloc+40,
-                                                y: 410
-                                            }).show(true);
+                                    } else {
 
-                                            surface.add({
-                                                type: 'path',
-                                                path: 'M ' + (xloc+205) + ' ' + 410 + ' ' +
-                                                'l ' + -25 + ' ' + 0 + ' ' +
-                                                'l ' + 12 + ' ' + -10 + 'z',
-                                                fillStyle: boxColor
-                                            }).show(true);
+                                        surface.add({
+                                            type: 'rect',
+                                            fill: boxColor,
+                                            height : 140,
+                                            width: 300,
+                                            radius: 10,
+                                            x: xloc+40,
+                                            y: 410
+                                        }).show(true);
 
-                                            surface.add({
-                                                type: 'text',
-                                                text: summary,
-                                                width: 290,
-                                                height: 130,
-                                                font: '20px Proxima Nova',
-                                                fill: '#FFF',
-                                                x: xloc+45,
-                                                y: 430
-                                            }).show(true);
-                                        }
+                                        surface.add({
+                                            type: 'path',
+                                            path: 'M ' + (xloc+205) + ' ' + 410 + ' ' +
+                                            'l ' + -25 + ' ' + 0 + ' ' +
+                                            'l ' + 12 + ' ' + -10 + 'z',
+                                            fillStyle: boxColor
+                                        }).show(true);
+
+                                        surface.add({
+                                            type: 'text',
+                                            text: summary,
+                                            width: 290,
+                                            height: 130,
+                                            font: '20px Proxima Nova',
+                                            fill: '#FFF',
+                                            x: xloc+45,
+                                            y: 430
+                                        }).show(true);
                                     }
-                                },
+                                }
+                            },
                         single: true,
                         event: 'painted'
                     },
