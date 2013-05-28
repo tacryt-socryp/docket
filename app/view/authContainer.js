@@ -55,6 +55,7 @@ Ext.define('Booking.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar',
             final_i = 0,
             items = [],
+            summary,
             child,
             obj;
 
@@ -84,7 +85,12 @@ Ext.define('Booking.view.authContainer', {
                     }
                     for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            events = me.loadData(outer.items[i].id, outer.items[i].summary, final_i, items);
+                            try {
+                                summary = outer.items[i].summary;
+                                events = me.loadData(outer.items[i].id, summary, final_i, items);
+                            } catch(e) {
+                                console.log("Summary does not exist.");
+                            }
                         }
                     }
                 });
@@ -126,7 +132,7 @@ Ext.define('Booking.view.authContainer', {
         '#DA8359', //Orange
         '#5A325F', //Purple
         '#EC6B51', //Red
-        '#53AB73', //Green
+        '#80E2BF', //Green
         '#A4AE6A'  //Beige
         ];
 
