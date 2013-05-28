@@ -150,17 +150,20 @@ Ext.define('Booking.view.MyContainer1', {
                                             type: 'text',
                                             text: description,
                                             font: '16px Proxima Nova',
+                                            width: 280,
+                                            height: 100,
                                             fill: '#FFF',
                                             x: xloc+48,
-                                            y: 17
+                                            y: 170
                                         }).show(true);
                                     }
 
                                     //Time and date for top
+                                    console.log(events[iter].start.datetime);
                                     surface.add({
                                         type: 'text',
                                         text: events[iter].start.datetime,
-                                        font: '14px Proxima Nova',
+                                        font: '14px Arial',
                                         fill: '#FFF',
                                         x: xloc+170,
                                         y: 380
