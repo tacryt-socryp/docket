@@ -138,6 +138,7 @@
                             "        summary = summary.substring(0,27) + '...';\r",
                             "    }\r",
                             "    var description = (description = events[iter].description);\r",
+                            "    console.log(description);\r",
                             "    if (description !== false) {\r",
                             "        if (description.length > 27) {\r",
                             "            if (description.length > 54) {\r",
