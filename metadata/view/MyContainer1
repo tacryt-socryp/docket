@@ -100,6 +100,7 @@
                             "try {\r",
                             "    w = 203 * events.length;\r",
                             "} catch(e) {\r",
+                            "    console.log(me.roomText);\r",
                             "    w = Ext.getBody().getSize().width;\r",
                             "}\r",
                             "\r",

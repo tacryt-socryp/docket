@@ -50,6 +50,7 @@ Ext.define('Booking.view.MyContainer1', {
                             try {
                                 w = 203 * events.length;
                             } catch(e) {
+                                console.log(me.roomText);
                                 w = Ext.getBody().getSize().width;
                             }
 
