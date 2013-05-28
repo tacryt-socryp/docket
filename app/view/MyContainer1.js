@@ -47,9 +47,9 @@ Ext.define('Booking.view.MyContainer1', {
                                 xloc,
                                 iter;
 
-                            if (events.length !== undefined) {
+                            try {
                                 w = 203 * events.length;
-                            } else {
+                            } catch(e) {
                                 w = Ext.getBody().getSize().width;
                             }
 
