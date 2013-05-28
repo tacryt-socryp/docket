@@ -186,8 +186,8 @@ Ext.define('Booking.view.authContainer', {
                             if (items.length == 5) {
                                 mainCarousel.removeAll(true);
                                 mainCarousel.setItems(items);
-                                Ext.ComponentQuery.query('#authContainer')[0].destroy();
                                 Ext.Viewport.setActiveItem('mainCarousel');
+                                //Ext.ComponentQuery.query('#authContainer')[0].destroy();
                             }
                         }
                     });
