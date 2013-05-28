@@ -76,7 +76,7 @@ Ext.define('Booking.view.MyContainer1', {
                             surface.add({
                                 type: 'text',
                                 text: roomText,
-                                font: "32px Proxima Nova",
+                                font: "42px Arial",
                                 fill: '#FFF',
                                 x: 70,
                                 y: 50
@@ -85,17 +85,17 @@ Ext.define('Booking.view.MyContainer1', {
                             for (iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
                                 summary = events[iter].summary;
-                                if (summary.length > 27) {
-                                    summary = summary.substring(0,27) + '...';
+                                if (summary.length > 26) {
+                                    summary = summary.substring(0,24) + '...';
                                 }
                                 description = events[iter].description;
                                 console.log(description);
                                 try {
-                                    if (description.length > 27) {
-                                        if (description.length > 54) {
-                                            description = description.substring(0,27) + '\n' + description.substring(27,54) + '...';
+                                    if (description.length > 35) {
+                                        if (description.length > 70) {
+                                            description = description.substring(0,35) + '\n' + description.substring(35,70) + '...';
                                         } else {
-                                            description = description.substring(0,27) + '\n' + description.substring(27);
+                                            description = description.substring(0,35) + '\n' + description.substring(35);
                                         }
                                     }
                                 } catch(e) {
@@ -141,7 +141,7 @@ Ext.define('Booking.view.MyContainer1', {
                                     surface.add({
                                         type: 'text',
                                         text: summary,
-                                        font: '20px Proxima Nova',
+                                        font: '22px Arial',
                                         width: 290,
                                         height: 130,
                                         fill: '#FFF',
@@ -153,7 +153,7 @@ Ext.define('Booking.view.MyContainer1', {
                                         surface.add({
                                             type: 'text',
                                             text: description,
-                                            font: '16px Proxima Nova',
+                                            font: '16px Times New Roman',
                                             width: 280,
                                             height: 100,
                                             fill: '#FFF',
