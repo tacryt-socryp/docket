@@ -42,11 +42,16 @@ Ext.define('Booking.view.MyContainer1', {
                                 events = me.events;
 
                             var h = Ext.getBody().getSize().height,
-                                w = 203 * events.length,
                                 surface = this.getSurface('main'),
                                 summary,
                                 xloc,
                                 iter;
+
+                            if (events.length !== undefined) {
+                                w = 203 * events.length;
+                            } else {
+                                w = Ext.getBody().getSize().width;
+                            }
 
                             console.log("Painted! Width: " + w + " Height: " + h);
 
