@@ -142,7 +142,7 @@
                             "    }\r",
                             "    description = events[iter].description;\r",
                             "    if (description.length > 27) {\r",
-                            "        description = description.substring(0,27) + '\\n' + description.substring(27);\r",
+                            "        description = description.substring(0,27);\r",
                             "    }\r",
                             "\r",
                             "\r",
