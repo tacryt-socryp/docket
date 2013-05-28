@@ -70,10 +70,6 @@ Ext.define('Booking.view.authContainer', {
             window.location.reload();
         }
 
-        function addRoom(summary, events) {
-
-        }
-
         gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
         if (authResult) {
             gapi.client.load('calendar', 'v3', function() {
@@ -88,6 +84,7 @@ Ext.define('Booking.view.authContainer', {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
                             calendarId = outer.items[i].id;
                             summary = outer.items[i].summary;
+                            console.log("ID: " + calendarId + " Summary: " + summary);
                             if (calendarId !== null && summary !== null) {
                                 events = me.loadData(calendarId, summary, final_i, items);
                             }
@@ -168,7 +165,6 @@ Ext.define('Booking.view.authContainer', {
                             child.events = resp.items;
 
                             console.log(child.roomText);
-                            console.log(child.events);
 
                             items.push(obj);
 
