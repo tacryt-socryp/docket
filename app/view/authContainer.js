@@ -112,10 +112,7 @@ Ext.define('Booking.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
-                        console.log(outer.items);
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            console.log(outer.items[i].summary);
-                            console.log(outer.items[i]);
 
                             events = me.loadData(outer.items[i].id);
                             if (events !== null) {

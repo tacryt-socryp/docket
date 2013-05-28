@@ -38,6 +38,8 @@ Ext.define('Booking.view.MyContainer1', {
                                 boxColor = me.boxColor,
                                 data = me.data;
 
+                            console.log(data);
+
                             var h = Ext.getBody().getSize().height,
                                 w = 203 * data.length,
                                 surface = this.getSurface('main'),
