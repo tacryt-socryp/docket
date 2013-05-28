@@ -48,7 +48,8 @@ Ext.define('Booking.view.authContainer', {
     },
 
     generateItems: function() {
-        var myContainer = Ext.create('Booking.view.MyContainer1'),
+        var me = this,
+            myContainer = Ext.create('Booking.view.MyContainer1'),
             mainCarousel = Ext.create('Booking.view.mainCarousel'),
             token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
@@ -116,7 +117,7 @@ Ext.define('Booking.view.authContainer', {
                             console.log(outer.items[i].summary);
                             console.log(outer.items[i]);
 
-                            events = this.loadData(outer.items[i].id);
+                            events = me.loadData(outer.items[i].id);
                             if (events !== null) {
                                 obj = new Booking.view.MyContainer1();
                                 child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];

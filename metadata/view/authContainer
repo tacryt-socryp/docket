@@ -57,7 +57,8 @@
             "userConfig": {
                 "fn": "generateItems",
                 "implHandler": [
-                    "var myContainer = Ext.create('Booking.view.MyContainer1'),\r",
+                    "var me = this,\r",
+                    "    myContainer = Ext.create('Booking.view.MyContainer1'),\r",
                     "    mainCarousel = Ext.create('Booking.view.mainCarousel'),\r",
                     "    token = Booking.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
