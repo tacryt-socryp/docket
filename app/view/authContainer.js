@@ -53,8 +53,8 @@ Ext.define('Booking.view.authContainer', {
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
+            last = false,
             final_i = 0,
-            array_i = 0,
             items = [],
             child,
             obj;
@@ -82,8 +82,10 @@ Ext.define('Booking.view.authContainer', {
                     }
                     for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            events = me.loadData(outer.items[i].id, outer.items[i].summary, final_i, items);
-                            array_i++;
+                            if (i == final_i) {
+                                last = true;
+                            }
+                            events = me.loadData(outer.items[i].id, outer.items[i].summary, final_i, last, items);
                         }
                     }
                 });
@@ -92,7 +94,7 @@ Ext.define('Booking.view.authContainer', {
     });
     },
 
-    loadData: function(calendarId, summary, final_i, items) {
+    loadData: function(calendarId, summary, final_i, last, items) {
         var me = this,
             today = new Date(),
             mainCarousel = Ext.create('Booking.view.mainCarousel'),
@@ -182,7 +184,7 @@ Ext.define('Booking.view.authContainer', {
 
                             items.push(obj);
 
-                            if (final_i == array_i+1) {
+                            if (last === true) {
                                 mainCarousel.removeAll(true);
                                 mainCarousel.setItems(items);
                                 Ext.ComponentQuery.query('#authContainer')[0].destroy();
