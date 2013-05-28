@@ -90,6 +90,10 @@ Ext.define('Booking.view.MyContainer1', {
                                 if (summary.length > 27) {
                                     summary = summary.substring(0,27) + '...';
                                 }
+                                description = events[iter].description;
+                                if (description.length > 27) {
+                                    description = description.substring(0,27) + '\n' + description.substring(27);
+                                }
 
 
                                 //Larger Point on timeline
@@ -139,13 +143,22 @@ Ext.define('Booking.view.MyContainer1', {
                                         y: 150
                                     }).show(true);
 
+                                    surface.add({
+                                        type: 'text',
+                                        text: description,
+                                        font: '16px Proxima Nova',
+                                        fill: '#FFF',
+                                        x: xloc+48,
+                                        y: 165
+                                    }).show(true);
+
                                     //Time and date for top
                                     surface.add({
                                         type: 'text',
                                         text: events[iter].start.datetime,
                                         font: '14px Proxima Nova',
                                         fill: '#FFF',
-                                        x: 170,
+                                        x: xloc+170,
                                         y: 380
                                     }).show(true);
 
