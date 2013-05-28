@@ -168,8 +168,7 @@
                 ],
                 "implHandler": [
                     "var me = this,\r",
-                    "    today = new Date(),\r",
-                    "    iter;\r",
+                    "    today = new Date();\r",
                     "\r",
                     "var token = Booking.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",

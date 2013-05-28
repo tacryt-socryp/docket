@@ -145,8 +145,7 @@ Ext.define('Booking.view.authContainer', {
 
     loadData: function(calendarId) {
         var me = this,
-            today = new Date(),
-            iter;
+            today = new Date();
 
         var token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
