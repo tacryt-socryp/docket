@@ -166,7 +166,6 @@ Ext.define('Booking.view.authContainer', {
                     request.execute(function(resp) {
                         if (resp.items !== undefined) {
                             array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;
-                            console.log('items.length: ' + items.length);
                             console.log('array_i: ' + array_i);
                             console.log(Ext.ComponentQuery.query('#inlineDraw1')[array_i]);
                             console.log(Ext.ComponentQuery.query('#inlineDraw1'));
@@ -181,6 +180,8 @@ Ext.define('Booking.view.authContainer', {
                             child.events = resp.items;
 
                             items.push(obj);
+
+                            console.log('items.length: ' + items.length);
 
                             if (items.length == 5) {
                                 mainCarousel.removeAll(true);
