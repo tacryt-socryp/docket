@@ -177,7 +177,7 @@ Ext.define('Booking.view.authContainer', {
 
                     request.execute(function(resp) {
                         console.log(resp.items);
-                        if (resp.items) {
+                        if ((resp.items !== undefined) && (resp.items[0].summary !== undefined)) {
                             return(resp.items);
                         } else {
                             return null;

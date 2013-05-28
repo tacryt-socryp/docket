@@ -200,7 +200,7 @@
                     "\r",
                     "            request.execute(function(resp) {\r",
                     "                console.log(resp.items);\r",
-                    "                if (resp.items) {\r",
+                    "                if ((resp.items !== undefined) && (resp.items[0].summary !== undefined)) {\r",
                     "                    return(resp.items);\r",
                     "                } else {\r",
                     "                    return null;\r",
