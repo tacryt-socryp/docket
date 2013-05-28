@@ -43,6 +43,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                             var h = Ext.getBody().getSize().height,
                                 surface = this.getSurface('main'),
+                                today = Date.now(),
                                 mainCarousel,
                                 description,
                                 dateTime,
@@ -106,6 +107,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                 dateTime = events[iter].start.dateTime;
                                 dateTime = Date.parse(dateTime);
+                                dateTime = dateTime.toDateString();
 
                                 //Larger Point on timeline
                                 surface.add({
