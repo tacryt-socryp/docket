@@ -78,8 +78,11 @@ Ext.define('Booking.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (i = 0; i < outer.items.length; i++) {
+                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {final_i++;}
+                    }
+                    for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            events = me.loadData(outer.items[i].id, outer.items[i].summary, array_i, items);
+                            events = me.loadData(outer.items[i].id, outer.items[i].summary, array_i, final_i, items);
                             array_i++;
                         }
                     }
@@ -89,7 +92,7 @@ Ext.define('Booking.view.authContainer', {
     });
     },
 
-    loadData: function(calendarId, summary, array_i, items) {
+    loadData: function(calendarId, summary, array_i, final_i, items) {
         var me = this,
             today = new Date(),
             mainCarousel = Ext.create('Booking.view.mainCarousel'),
@@ -162,9 +165,10 @@ Ext.define('Booking.view.authContainer', {
 
                     request.execute(function(resp) {
                         if (resp.items !== undefined) {
+                            console.log('final_i: ' + final_i);
+                            console.log('array_i: ' + array_i);
                             obj = new Booking.view.MyContainer1();
-                            console.log("ComponentQuery: " + Ext.ComponentQuery.query('#inlineDraw1'));
-                            console.log("Query for array_i-1" + Ext.ComponentQuery.query('#inlineDraw1')[array_i-1]);
+                            console.log(Ext.ComponentQuery.query('#inlineDraw1'));
                             child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
 
                             child.roomText = summary;
@@ -172,13 +176,10 @@ Ext.define('Booking.view.authContainer', {
                             child.boxColor = boxColors[array_i];
                             child.timelineColor = boxColors[array_i];
                             child.events = resp.items;
-
                             items.push(obj);
                             array_i++;
-                            console.log('items.length: ' + items.length);
-                            console.log('array_i: ' + array_i);
 
-                            if (items.length == array_i-1) {
+                            if (final_i == array_i+1) {
                                 mainCarousel.removeAll(true);
                                 mainCarousel.setItems(items);
                                 Ext.ComponentQuery.query('#authContainer')[0].destroy();
