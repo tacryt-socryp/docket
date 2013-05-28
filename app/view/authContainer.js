@@ -55,6 +55,7 @@ Ext.define('Booking.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar',
             final_i = 0,
             items = [],
+            calendarId,
             summary,
             child,
             obj;
@@ -85,9 +86,10 @@ Ext.define('Booking.view.authContainer', {
                     }
                     for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
+                            calendarId = outer.items[i].id;
                             summary = outer.items[i].summary;
-                            if (outer.items[i].summary !== undefined) {
-                                events = me.loadData(outer.items[i].id, summary, final_i, items);
+                            if (calendarId !== null && summary !== null) {
+                                events = me.loadData(calendarId, summary, final_i, items);
                             }
                         }
                     }
