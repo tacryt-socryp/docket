@@ -59,6 +59,7 @@ Ext.define('Booking.view.authContainer', {
             obj;
 
         Ext.create('Booking.view.MyContainer1');
+        Ext.create('Booking.view.mainCarousel');
 
         try {
             gapi.client.setApiKey(apiKey);
@@ -95,7 +96,6 @@ Ext.define('Booking.view.authContainer', {
     loadData: function(calendarId, summary, final_i, items) {
         var me = this,
             today = new Date(),
-            mainCarousel = Ext.create('Booking.view.mainCarousel'),
             child;
 
         var token = Booking.app.authToken,
@@ -184,6 +184,7 @@ Ext.define('Booking.view.authContainer', {
                             console.log('items.length: ' + items.length);
 
                             if (items.length == 5) {
+                                var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                                 mainCarousel.removeAll(true);
                                 mainCarousel.setItems(items);
                                 Ext.Viewport.setActiveItem('mainCarousel');
