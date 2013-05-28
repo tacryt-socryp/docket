@@ -108,29 +108,32 @@ Ext.define('Booking.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar';
 
         var backgroundColors = [
+        '#000',
         '#0d6289', //Blue
-        '#d27f56', //Orange
         '#4E2B52', //Purple
         '#FF4242', //Red
         '#53ab73', //Green
+        '#d27f56', //Orange
         '#D9D1A9' //Beige
         ];
 
         var boxColors = [
+        '#000',
         '#43aad5', //Blue
-        '#F99665', //Orange
         '#436085', //Purple
         '#FF837E', //Red
         '#7DCB99', //Green
+        '#F99665', //Orange
         '#B9C18A'  //Beige
         ];
 
         var timelineColors = [
+        '#000',
         '#176c93', //Blue
-        '#DA8359', //Orange
         '#5A325F', //Purple
         '#EC6B51', //Red
         '#80E2BF', //Green
+        '#DA8359', //Orange
         '#A4AE6A'  //Beige
         ];
 
@@ -166,7 +169,7 @@ Ext.define('Booking.view.authContainer', {
                             child.timelineColor = timelineColors[array_i];
                             child.events = resp.items;
 
-                            console.log(child.roomText);
+                            console.log(child.roomText + ' ' + child.events);
 
                             items.push(obj);
 
