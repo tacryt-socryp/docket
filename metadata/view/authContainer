@@ -194,8 +194,6 @@
                     "                    child.boxColor = boxColors[array_i];\r",
                     "                    child.timelineColor = timelineColors[array_i];\r",
                     "                    child.events = resp.items;\r",
-                    "                    \r",
-                    "                    console.log(child.roomText + ' ' + child.events);\r",
                     "\r",
                     "                    items.push(obj);\r",
                     "\r",
