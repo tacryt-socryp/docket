@@ -88,8 +88,8 @@ Ext.define('Booking.view.MyContainer1', {
                                 if (summary.length > 26) {
                                     summary = summary.substring(0,24) + '...';
                                 }
+
                                 description = events[iter].description;
-                                console.log(description);
                                 try {
                                     if (description.length > 35) {
                                         if (description.length > 70) {
@@ -101,6 +101,8 @@ Ext.define('Booking.view.MyContainer1', {
                                 } catch(e) {
                                     description = false;
                                 }
+
+
 
                                 //Larger Point on timeline
                                 surface.add({
@@ -123,11 +125,11 @@ Ext.define('Booking.view.MyContainer1', {
                                     surface.add({
                                         type: 'rect',
                                         fill: boxColor,
-                                        height: 140,
+                                        height: 160,
                                         width: 300,
                                         radius: 10,
                                         x: xloc+38,
-                                        y: 130
+                                        y: 110
                                     }).show(true);
 
                                     surface.add({
@@ -178,7 +180,7 @@ Ext.define('Booking.view.MyContainer1', {
                                     surface.add({
                                         type: 'rect',
                                         fill: boxColor,
-                                        height : 140,
+                                        height : 160,
                                         width: 300,
                                         radius: 10,
                                         x: xloc+40,
@@ -198,10 +200,34 @@ Ext.define('Booking.view.MyContainer1', {
                                         text: summary,
                                         width: 290,
                                         height: 130,
-                                        font: '20px Proxima Nova',
+                                        font: '22px Arial',
                                         fill: '#FFF',
                                         x: xloc+45,
                                         y: 430
+                                    }).show(true);
+
+                                    if (description !== false) {
+                                        surface.add({
+                                            type: 'text',
+                                            text: description,
+                                            font: '16px Times New Roman',
+                                            width: 280,
+                                            height: 100,
+                                            fill: '#FFF',
+                                            x: xloc+45,
+                                            y: 420
+                                        }).show(true);
+                                    }
+
+                                    //Time and date for top
+                                    console.log(events[iter].start.datetime);
+                                    surface.add({
+                                        type: 'text',
+                                        text: events[iter].start.datetime,
+                                        font: '14px Arial',
+                                        fill: '#FFF',
+                                        x: xloc+170,
+                                        y: 340
                                     }).show(true);
                                 }
                             }
