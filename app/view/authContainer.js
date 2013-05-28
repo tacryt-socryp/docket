@@ -92,7 +92,8 @@ Ext.define('Booking.view.authContainer', {
     loadData: function(calendarId, summary, array_i, items) {
         var me = this,
             today = new Date(),
-            mainCarousel = Ext.create('Booking.view.mainCarousel');
+            mainCarousel = Ext.create('Booking.view.mainCarousel'),
+            child;
 
         var token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
@@ -163,9 +164,9 @@ Ext.define('Booking.view.authContainer', {
                         if (resp.items !== undefined) {
                             obj = new Booking.view.MyContainer1();
                             console.log(Ext.ComponentQuery.query('#inlineDraw1'));
-                            while(child === undefined) {
-                                child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
-                            }
+                            //while(child === undefined) {
+                            child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
+                            //}
 
                             child.roomText = summary;
                             child.backgroundColor = backgroundColors[array_i];
