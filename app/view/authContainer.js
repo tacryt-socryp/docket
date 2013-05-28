@@ -49,8 +49,6 @@ Ext.define('Booking.view.authContainer', {
 
     generateItems: function() {
         var me = this,
-            myContainer = Ext.create('Booking.view.MyContainer1'),
-            mainCarousel = Ext.create('Booking.view.mainCarousel'),
             token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
@@ -60,6 +58,8 @@ Ext.define('Booking.view.authContainer', {
             items = [],
             child,
             obj;
+
+        Ext.create('Booking.view.MyContainer1');
 
         try {
             gapi.client.setApiKey(apiKey);
@@ -77,12 +77,9 @@ Ext.define('Booking.view.authContainer', {
             gapi.client.load('calendar', 'v3', function() {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
-                    for (var i = 0; i < outer.items.length; i++) {
-                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {final_i++;}
-                    }
                     for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            events = me.loadData(outer.items[i].id, outer.items[i].summary, array_i, final_i, items);
+                            events = me.loadData(outer.items[i].id, outer.items[i].summary, array_i, items);
                             array_i++;
                         }
                     }
@@ -92,9 +89,10 @@ Ext.define('Booking.view.authContainer', {
     });
     },
 
-    loadData: function(calendarId, summary, array_i, final_i, items) {
+    loadData: function(calendarId, summary, array_i, items) {
         var me = this,
-            today = new Date();
+            today = new Date(),
+            mainCarousel = Ext.create('Booking.view.mainCarousel');
 
         var token = Booking.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
@@ -183,10 +181,10 @@ Ext.define('Booking.view.authContainer', {
             }
         });
 
-        console.log('final_i: ' + final_i);
+        console.log('items.length: ' + items.length);
         console.log('array_i: ' + array_i);
 
-        if (final_i == array_i) {
+        if (items.length == array_i+1) {
             mainCarousel.removeAll(true);
             mainCarousel.setItems(items);
             Ext.ComponentQuery.query('#authContainer')[0].destroy();
