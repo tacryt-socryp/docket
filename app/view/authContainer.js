@@ -53,7 +53,6 @@ Ext.define('Booking.view.authContainer', {
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
-            last = false,
             final_i = 0,
             items = [],
             child,
@@ -78,14 +77,13 @@ Ext.define('Booking.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (i = 0; i < outer.items.length; i++) {
-                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {final_i++;}
+                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {
+                            final_i++;
+                        }
                     }
                     for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            if (i == final_i) {
-                                last = true;
-                            }
-                            events = me.loadData(outer.items[i].id, outer.items[i].summary, final_i, last, items);
+                            events = me.loadData(outer.items[i].id, outer.items[i].summary, final_i, items);
                         }
                     }
                 });
@@ -94,7 +92,7 @@ Ext.define('Booking.view.authContainer', {
     });
     },
 
-    loadData: function(calendarId, summary, final_i, last, items) {
+    loadData: function(calendarId, summary, final_i, items) {
         var me = this,
             today = new Date(),
             mainCarousel = Ext.create('Booking.view.mainCarousel'),
@@ -168,7 +166,7 @@ Ext.define('Booking.view.authContainer', {
                     request.execute(function(resp) {
                         if (resp.items !== undefined) {
                             array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;
-                            console.log('final_i: ' + final_i);
+                            console.log('items.length: ' + items.length);
                             console.log('array_i: ' + array_i);
                             console.log(Ext.ComponentQuery.query('#inlineDraw1')[array_i]);
                             console.log(Ext.ComponentQuery.query('#inlineDraw1'));
@@ -184,7 +182,7 @@ Ext.define('Booking.view.authContainer', {
 
                             items.push(obj);
 
-                            if (last === true) {
+                            if (items.length == array_i) {
                                 mainCarousel.removeAll(true);
                                 mainCarousel.setItems(items);
                                 Ext.ComponentQuery.query('#authContainer')[0].destroy();
@@ -197,10 +195,6 @@ Ext.define('Booking.view.authContainer', {
                 window.location.reload();
             }
         });
-    },
-
-    switchViews: function() {
-
     }
 
 });

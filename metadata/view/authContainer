@@ -62,7 +62,6 @@
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
                     "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
                     "    scopes = 'https://www.googleapis.com/auth/calendar',\r",
-                    "    last = false,\r",
                     "    final_i = 0,\r",
                     "    items = [],\r",
                     "    child,\r",
@@ -87,14 +86,13 @@
                     "        var request = gapi.client.calendar.calendarList.list();\r",
                     "        request.execute(function(outer) {\r",
                     "            for (i = 0; i < outer.items.length; i++) {\r",
-                    "                if (outer.items[i].id.substring(0,8) === 'bestfitm') {final_i++;}\r",
+                    "                if (outer.items[i].id.substring(0,8) === 'bestfitm') {\r",
+                    "                    final_i++;\r",
+                    "                }\r",
                     "            }\r",
                     "            for (i = 0; i < outer.items.length; i++) {\r",
                     "                    if (outer.items[i].id.substring(0,8) === 'bestfitm') {\r",
-                    "                        if (i == final_i) {\r",
-                    "                            last = true;\r",
-                    "                        }\r",
-                    "                        events = me.loadData(outer.items[i].id, outer.items[i].summary, final_i, last, items);\r",
+                    "                        events = me.loadData(outer.items[i].id, outer.items[i].summary, final_i, items);\r",
                     "                    }\r",
                     "                }\r",
                     "            });\r",
@@ -118,7 +116,6 @@
                     "calendarId",
                     "summary",
                     "final_i",
-                    "last",
                     "items"
                 ],
                 "implHandler": [
@@ -195,7 +192,7 @@
                     "            request.execute(function(resp) {\r",
                     "                if (resp.items !== undefined) {\r",
                     "                    array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;\r",
-                    "                    console.log('final_i: ' + final_i);\r",
+                    "                    console.log('items.length: ' + items.length);\r",
                     "                    console.log('array_i: ' + array_i);\r",
                     "                    console.log(Ext.ComponentQuery.query('#inlineDraw1')[array_i]);\r",
                     "                    console.log(Ext.ComponentQuery.query('#inlineDraw1'));\r",
@@ -211,7 +208,7 @@
                     "                    \r",
                     "                    items.push(obj);\r",
                     "                    \r",
-                    "                    if (last === true) {\r",
+                    "                    if (items.length == array_i) {\r",
                     "                        mainCarousel.removeAll(true);\r",
                     "                        mainCarousel.setItems(items);\r",
                     "                        Ext.ComponentQuery.query('#authContainer')[0].destroy();\r",
@@ -227,21 +224,6 @@
                 ]
             },
             "designerId": "8094e688-d3c3-418f-b035-39c0a801914e"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "switchViews",
-                "implHandler": [
-                    ""
-                ]
-            },
-            "designerId": "4ba223d3-0f2a-4191-88f6-fc0c2fd148ef"
         }
     ]
 }
