@@ -44,6 +44,7 @@ Ext.define('Booking.view.MyContainer1', {
                             var h = Ext.getBody().getSize().height,
                                 w = 203 * events.length,
                                 surface = this.getSurface('main'),
+                                summary,
                                 xloc,
                                 iter;
 
@@ -75,6 +76,11 @@ Ext.define('Booking.view.MyContainer1', {
 
                             for (iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
+                                summary = events[iter].summary;
+                                if (summary.length > 20) {
+                                    summary = summary.substring(0,20);
+                                }
+
 
                                 //Larger Point on timeline
                                 surface.add({
@@ -114,7 +120,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                     surface.add({
                                         type: 'text',
-                                        text: events[iter].summary.substring(0,20),
+                                        text: summary,
                                         font: '20px Proxima Nova',
                                         width: 290,
                                         height: 130,
