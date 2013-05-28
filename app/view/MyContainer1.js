@@ -82,8 +82,8 @@ Ext.define('Booking.view.MyContainer1', {
                             for (iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
                                 summary = events[iter].summary;
-                                if (summary.length > 25) {
-                                    summary = summary.substring(0,25) + '...';
+                                if (summary.length > 27) {
+                                    summary = summary.substring(0,27) + '...';
                                 }
 
 
