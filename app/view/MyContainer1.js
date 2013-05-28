@@ -46,6 +46,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 mainCarousel,
                                 description,
                                 summary,
+                                yloc = h/6,
                                 xloc,
                                 iter;
 
@@ -69,7 +70,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 height : 20,
                                 width: w,
                                 x: 0,
-                                y: 330
+                                y: yloc+330
                             }).show(true);
 
                             //Name of room
@@ -108,7 +109,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 surface.add({
                                     type: 'circle',
                                     cx: xloc+192,
-                                    cy: 338,
+                                    cy: yloc+338,
                                     r: 22,
                                     fillStyle: '#2b8bb5'
                                 }).show(true);
@@ -116,7 +117,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 surface.add({
                                     type: 'circle',
                                     cx: xloc+192,
-                                    cy: 338,
+                                    cy: yloc+338,
                                     r: 16,
                                     fillStyle: boxColor
                                 }).show(true);
@@ -129,7 +130,7 @@ Ext.define('Booking.view.MyContainer1', {
                                         width: 300,
                                         radius: 10,
                                         x: xloc+38,
-                                        y: 110
+                                        y: yloc+110
                                     }).show(true);
 
                                     surface.add({
@@ -148,7 +149,7 @@ Ext.define('Booking.view.MyContainer1', {
                                         height: 130,
                                         fill: '#FFF',
                                         x: xloc+48,
-                                        y: 150
+                                        y: yloc+150
                                     }).show(true);
 
                                     if (description !== false) {
@@ -160,7 +161,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             height: 100,
                                             fill: '#FFF',
                                             x: xloc+48,
-                                            y: 190
+                                            y: yloc+190
                                         }).show(true);
                                     }
 
@@ -172,7 +173,7 @@ Ext.define('Booking.view.MyContainer1', {
                                         font: '14px Arial',
                                         fill: '#FFF',
                                         x: xloc+170,
-                                        y: 380
+                                        y: yloc+380
                                     }).show(true);
 
                                 } else {
@@ -184,12 +185,12 @@ Ext.define('Booking.view.MyContainer1', {
                                         width: 300,
                                         radius: 10,
                                         x: xloc+40,
-                                        y: 410
+                                        y: yloc+410
                                     }).show(true);
 
                                     surface.add({
                                         type: 'path',
-                                        path: 'M ' + (xloc+205) + ' ' + 410 + ' ' +
+                                        path: 'M ' + (xloc+205) + ' ' + (yloc+410) + ' ' +
                                         'l ' + -25 + ' ' + 0 + ' ' +
                                         'l ' + 12 + ' ' + -10 + 'z',
                                         fillStyle: boxColor
@@ -203,7 +204,7 @@ Ext.define('Booking.view.MyContainer1', {
                                         font: '22px Arial',
                                         fill: '#FFF',
                                         x: xloc+45,
-                                        y: 430
+                                        y: yloc+430
                                     }).show(true);
 
                                     if (description !== false) {
@@ -215,7 +216,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             height: 100,
                                             fill: '#FFF',
                                             x: xloc+45,
-                                            y: 420
+                                            y: yloc+420
                                         }).show(true);
                                     }
 
@@ -227,7 +228,7 @@ Ext.define('Booking.view.MyContainer1', {
                                         font: '14px Arial',
                                         fill: '#FFF',
                                         x: xloc+170,
-                                        y: 340
+                                        y: yloc+340
                                     }).show(true);
                                 }
                             }
