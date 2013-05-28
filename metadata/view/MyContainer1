@@ -157,7 +157,7 @@
                             "    \r",
                             "    dateTime = events[iter].start.dateTime;\r",
                             "    dateTime = Date.parse(dateTime);\r",
-                            "    dateTime = dateTime.toDateString;\r",
+                            "    dateTime = new Date(dateTime).toDateString();\r",
                             "\r",
                             "    //Larger Point on timeline\r",
                             "    surface.add({\r",

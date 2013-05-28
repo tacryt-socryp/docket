@@ -107,7 +107,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                 dateTime = events[iter].start.dateTime;
                                 dateTime = Date.parse(dateTime);
-                                dateTime = dateTime.toDateString();
+                                dateTime = new Date(dateTime).toDateString();
 
                                 //Larger Point on timeline
                                 surface.add({
