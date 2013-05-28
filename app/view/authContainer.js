@@ -104,47 +104,45 @@ Ext.define('Booking.view.authContainer', {
         '#FFF'
         ];
 
-        while(waitBegin === true) {
-            try {
-                gapi.client.setApiKey(apiKey);
-                waitBegin = false;
-            } catch(e) {}
-            }
-
+        try {
+            gapi.client.setApiKey(apiKey);
             gapi.auth.setToken(token);
+        } catch(e) {
+            window.location.reload();
+        }
 
-            gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
-            if (authResult) {
-                gapi.client.load('calendar', 'v3', function() {
-                    var request = gapi.client.calendar.calendarList.list();
-                    request.execute(function(outer) {
-                        for (var i = 0; i < outer.items.length; i++) {
-                            if (outer.items[i].id.substring(0,8) === 'bestfitm') {
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
+        if (authResult) {
+            gapi.client.load('calendar', 'v3', function() {
+                var request = gapi.client.calendar.calendarList.list();
+                request.execute(function(outer) {
+                    for (var i = 0; i < outer.items.length; i++) {
+                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {
 
-                                events = me.loadData(outer.items[i].id);
-                                if (events !== null) {
-                                    obj = new Booking.view.MyContainer1();
-                                    child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
+                            events = me.loadData(outer.items[i].id);
+                            if (events !== null) {
+                                obj = new Booking.view.MyContainer1();
+                                child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
 
-                                    child.events = events;
-                                    child.roomText = outer.items[i].summary;
-                                    child.backgroundColor = backgroundColors[array_i];
-                                    child.boxColor = boxColors[array_i];
-                                    child.timelineColor = boxColors[array_i];
+                                child.events = events;
+                                child.roomText = outer.items[i].summary;
+                                child.backgroundColor = backgroundColors[array_i];
+                                child.boxColor = boxColors[array_i];
+                                child.timelineColor = boxColors[array_i];
 
-                                    items.push(obj);
-                                    array_i++;
-                                }
+                                items.push(obj);
+                                array_i++;
                             }
                         }
-                        mainCarousel.removeAll(true);
-                        mainCarousel.setItems(items);
-                        Ext.ComponentQuery.query('#authContainer')[0].destroy();
-                        Ext.Viewport.setActiveItem('mainCarousel');
-                    });
+                    }
+                    mainCarousel.removeAll(true);
+                    mainCarousel.setItems(items);
+                    Ext.ComponentQuery.query('#authContainer')[0].destroy();
+                    Ext.Viewport.setActiveItem('mainCarousel');
                 });
-            }
-        });
+            });
+        }
+    });
     },
 
     loadData: function(calendarId) {
