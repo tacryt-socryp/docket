@@ -82,7 +82,7 @@ Ext.define('Booking.view.authContainer', {
                     }
                     for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            events = me.loadData(outer.items[i].id, outer.items[i].summary, array_i, final_i, items);
+                            events = me.loadData(outer.items[i].id, outer.items[i].summary, final_i, items);
                             array_i++;
                         }
                     }
@@ -92,7 +92,7 @@ Ext.define('Booking.view.authContainer', {
     });
     },
 
-    loadData: function(calendarId, summary, array_i, final_i, items) {
+    loadData: function(calendarId, summary, final_i, items) {
         var me = this,
             today = new Date(),
             mainCarousel = Ext.create('Booking.view.mainCarousel'),
@@ -165,6 +165,7 @@ Ext.define('Booking.view.authContainer', {
 
                     request.execute(function(resp) {
                         if (resp.items !== undefined) {
+                            array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;
                             console.log('final_i: ' + final_i);
                             console.log('array_i: ' + array_i);
                             console.log(Ext.ComponentQuery.query('#inlineDraw1')[array_i]);
