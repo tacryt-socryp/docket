@@ -55,6 +55,7 @@ Ext.define('Booking.view.authContainer', {
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
+            waitBegin = true,
             array_i = 0,
             items = [],
             events,
@@ -103,42 +104,48 @@ Ext.define('Booking.view.authContainer', {
         '#FFF'
         ];
 
-        gapi.client.setApiKey(apiKey);
-        gapi.auth.setToken(token);
+        while(waitBegin === true) {
+            try {
+                gapi.client.setApiKey(apiKey);
+                waitBegin = false;
+            } catch(e) {}
+            }
 
-        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
-        if (authResult) {
-            gapi.client.load('calendar', 'v3', function() {
-                var request = gapi.client.calendar.calendarList.list();
-                request.execute(function(outer) {
-                    for (var i = 0; i < outer.items.length; i++) {
-                        console.log(outer.items);
-                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {
+            gapi.auth.setToken(token);
 
-                            events = me.loadData(outer.items[i].id);
-                            if (events !== null) {
-                                obj = new Booking.view.MyContainer1();
-                                child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
+            gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
+            if (authResult) {
+                gapi.client.load('calendar', 'v3', function() {
+                    var request = gapi.client.calendar.calendarList.list();
+                    request.execute(function(outer) {
+                        for (var i = 0; i < outer.items.length; i++) {
+                            console.log(outer.items);
+                            if (outer.items[i].id.substring(0,8) === 'bestfitm') {
 
-                                child.events = events;
-                                child.roomText = outer.items[i].summary;
-                                child.backgroundColor = backgroundColors[array_i];
-                                child.boxColor = boxColors[array_i];
-                                child.timelineColor = boxColors[array_i];
+                                events = me.loadData(outer.items[i].id);
+                                if (events !== null) {
+                                    obj = new Booking.view.MyContainer1();
+                                    child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
 
-                                items.push(obj);
-                                array_i++;
+                                    child.events = events;
+                                    child.roomText = outer.items[i].summary;
+                                    child.backgroundColor = backgroundColors[array_i];
+                                    child.boxColor = boxColors[array_i];
+                                    child.timelineColor = boxColors[array_i];
+
+                                    items.push(obj);
+                                    array_i++;
+                                }
                             }
                         }
-                    }
-                    mainCarousel.removeAll(true);
-                    mainCarousel.setItems(items);
-                    Ext.ComponentQuery.query('#authContainer')[0].destroy();
-                    Ext.Viewport.setActiveItem('mainCarousel');
+                        mainCarousel.removeAll(true);
+                        mainCarousel.setItems(items);
+                        Ext.ComponentQuery.query('#authContainer')[0].destroy();
+                        Ext.Viewport.setActiveItem('mainCarousel');
+                    });
                 });
-            });
-        }
-    });
+            }
+        });
     },
 
     loadData: function(calendarId) {
