@@ -97,6 +97,8 @@
                             "    xloc,\r",
                             "    iter;\r",
                             "\r",
+                            "console.log(\"Painted!\");\r",
+                            "\r",
                             "me.setSize(w,h);\r",
                             "surface.setSize(w,h);\r",
                             "surface.setBackground(backgroundColor);\r",

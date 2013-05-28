@@ -47,6 +47,8 @@ Ext.define('Booking.view.MyContainer1', {
                                 xloc,
                                 iter;
 
+                            console.log("Painted!");
+
                             me.setSize(w,h);
                             surface.setSize(w,h);
                             surface.setBackground(backgroundColor);
