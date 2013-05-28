@@ -103,12 +103,12 @@ Ext.define('Booking.view.authContainer', {
         '#FFF'
         ];
 
-        function makeNewItem(events) {
+        function makeNewItem(events,summary) {
             if (events !== null) {
                 obj = new Booking.view.MyContainer1();
                 child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
 
-                child.roomText = outer.items[i].summary;
+                child.roomText = summary;
                 child.backgroundColor = backgroundColors[array_i];
                 child.boxColor = boxColors[array_i];
                 child.timelineColor = boxColors[array_i];
@@ -137,8 +137,7 @@ Ext.define('Booking.view.authContainer', {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
 
                             events = me.loadData(outer.items[i].id);
-                            setTimeout(makeNewItem(events), 3000);
-
+                            setTimeout(makeNewItem(events,outer.items[i].summary), 3000);
                         }
                     }
                     mainCarousel.removeAll(true);
