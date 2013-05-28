@@ -105,7 +105,6 @@ Ext.define('Booking.view.authContainer', {
 
         var backgroundColors = [
         '#000',
-        '#000',
         '#0d6289', //Blue
         '#d27f56', //Orange
         '#4E2B52', //Purple
@@ -116,7 +115,6 @@ Ext.define('Booking.view.authContainer', {
 
         var boxColors = [
         '#000',
-        '#000',
         '#43aad5', //Blue
         '#F99665', //Orange
         '#436085', //Purple
@@ -126,7 +124,6 @@ Ext.define('Booking.view.authContainer', {
         ];
 
         var timelineColors = [
-        '#000',
         '#000',
         '#176c93', //Blue
         '#DA8359', //Orange
