@@ -110,12 +110,12 @@ Ext.define('Booking.view.authContainer', {
             window.location.reload();
         }
 
-        function addRoom(events) {
+        function addRoom(summary,events) {
             if (events !== null) {
                 obj = new Booking.view.MyContainer1();
                 child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
 
-                child.roomText = outer.items[i].summary;
+                child.roomText = summary;
                 child.backgroundColor = backgroundColors[array_i];
                 child.boxColor = boxColors[array_i];
                 child.timelineColor = boxColors[array_i];
@@ -135,7 +135,7 @@ Ext.define('Booking.view.authContainer', {
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            addRoom(me.loadData(outer.items[i].id));
+                            addRoom(outer.items[i].summary, me.loadData(outer.items[i].id));
                         }
                     }
                     mainCarousel.removeAll(true);
