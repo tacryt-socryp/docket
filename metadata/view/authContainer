@@ -202,15 +202,7 @@
                     "\r",
                     "        items.push(obj);\r",
                     "        array_i++;\r",
-                    "                }\r",
-                    "            });\r",
-                    "        });\r",
-                    "    } else {\r",
-                    "        window.location.reload();\r",
-                    "    }\r",
-                    "});\r",
-                    "\r",
-                    "console.log('items.length: ' + items.length);\r",
+                    "                    console.log('items.length: ' + items.length);\r",
                     "console.log('array_i: ' + array_i);\r",
                     "\r",
                     "if (items.length == array_i+1) {\r",
@@ -218,7 +210,14 @@
                     "    mainCarousel.setItems(items);\r",
                     "    Ext.ComponentQuery.query('#authContainer')[0].destroy();\r",
                     "    Ext.Viewport.setActiveItem('mainCarousel');\r",
-                    "}"
+                    "}\r",
+                    "                }\r",
+                    "            });\r",
+                    "        });\r",
+                    "    } else {\r",
+                    "        window.location.reload();\r",
+                    "    }\r",
+                    "});"
                 ]
             },
             "designerId": "8094e688-d3c3-418f-b035-39c0a801914e"

@@ -176,6 +176,15 @@ Ext.define('Booking.view.authContainer', {
 
                             items.push(obj);
                             array_i++;
+                            console.log('items.length: ' + items.length);
+                            console.log('array_i: ' + array_i);
+
+                            if (items.length == array_i+1) {
+                                mainCarousel.removeAll(true);
+                                mainCarousel.setItems(items);
+                                Ext.ComponentQuery.query('#authContainer')[0].destroy();
+                                Ext.Viewport.setActiveItem('mainCarousel');
+                            }
                         }
                     });
                 });
@@ -183,16 +192,6 @@ Ext.define('Booking.view.authContainer', {
                 window.location.reload();
             }
         });
-
-        console.log('items.length: ' + items.length);
-        console.log('array_i: ' + array_i);
-
-        if (items.length == array_i+1) {
-            mainCarousel.removeAll(true);
-            mainCarousel.setItems(items);
-            Ext.ComponentQuery.query('#authContainer')[0].destroy();
-            Ext.Viewport.setActiveItem('mainCarousel');
-        }
     },
 
     switchViews: function() {
