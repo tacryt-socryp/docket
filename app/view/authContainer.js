@@ -103,6 +103,24 @@ Ext.define('Booking.view.authContainer', {
         '#FFF'
         ];
 
+        function makeNewItem(events) {
+            if (events !== null) {
+                obj = new Booking.view.MyContainer1();
+                child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
+
+                child.roomText = outer.items[i].summary;
+                child.backgroundColor = backgroundColors[array_i];
+                child.boxColor = boxColors[array_i];
+                child.timelineColor = boxColors[array_i];
+                child.events = events;
+
+                console.log("child.events: " + child.events);
+
+                items.push(obj);
+                array_i++;
+            }
+        }
+
         try {
             gapi.client.setApiKey(apiKey);
             gapi.auth.setToken(token);
@@ -119,25 +137,8 @@ Ext.define('Booking.view.authContainer', {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
 
                             events = me.loadData(outer.items[i].id);
-                            while(events === undefined) {
-                                obj=null;
-                            }
+                            setTimeout(makeNewItem(events), 3000);
 
-                            if (events !== null) {
-                                obj = new Booking.view.MyContainer1();
-                                child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
-
-                                child.roomText = outer.items[i].summary;
-                                child.backgroundColor = backgroundColors[array_i];
-                                child.boxColor = boxColors[array_i];
-                                child.timelineColor = boxColors[array_i];
-                                child.events = events;
-
-                                console.log("child.events: " + child.events);
-
-                                items.push(obj);
-                                array_i++;
-                            }
                         }
                     }
                     mainCarousel.removeAll(true);
