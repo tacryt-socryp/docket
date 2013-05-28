@@ -43,7 +43,6 @@ Ext.define('Booking.view.authContainer', {
             window.location.href = 'login.html';
         } else {
             Booking.app.authToken = decodeURI(parameters.auth);
-            console.log(Booking.app.authToken);
             this.generateItems();
         }
     },
@@ -55,7 +54,6 @@ Ext.define('Booking.view.authContainer', {
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
-            addContainer = "",
             array_i = 0,
             items = [],
             events,
@@ -114,7 +112,7 @@ Ext.define('Booking.view.authContainer', {
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
                         console.log(outer.items);
-                        if (outer.items[i].id.substring(0,7) === 'bestfitm') {
+                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {
                             console.log(outer.items[i].summary);
                             console.log(outer.items[i]);
 
