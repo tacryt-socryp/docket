@@ -77,8 +77,8 @@ Ext.define('Booking.view.MyContainer1', {
                             for (iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
                                 summary = events[iter].summary;
-                                if (summary.length > 20) {
-                                    summary = summary.substring(0,20);
+                                if (summary.length > 25) {
+                                    summary = summary.substring(0,25);
                                 }
 
 
@@ -161,7 +161,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                     surface.add({
                                         type: 'text',
-                                        text: events[iter].summary,
+                                        text: summary,
                                         width: 290,
                                         height: 130,
                                         font: '20px Proxima Nova',
