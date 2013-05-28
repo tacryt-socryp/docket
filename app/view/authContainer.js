@@ -85,11 +85,9 @@ Ext.define('Booking.view.authContainer', {
                     }
                     for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            try {
-                                summary = outer.items[i].summary;
+                            summary = outer.items[i].summary;
+                            if (outer.items[i].summary !== undefined) {
                                 events = me.loadData(outer.items[i].id, summary, final_i, items);
-                            } catch(e) {
-                                console.log("Summary does not exist.");
                             }
                         }
                     }
