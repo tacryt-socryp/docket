@@ -43,6 +43,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                             var h = Ext.getBody().getSize().height,
                                 surface = this.getSurface('main'),
+                                mainCarousel,
                                 summary,
                                 xloc,
                                 iter;
@@ -51,6 +52,8 @@ Ext.define('Booking.view.MyContainer1', {
                                 w = 203 * events.length;
                             } catch(e) {
                                 console.log(me.roomText);
+                                mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
+                                mainCarousel.removeAt(mainCarousel.getActiveIndex()+1);
                                 w = Ext.getBody().getSize().width;
                             }
 
