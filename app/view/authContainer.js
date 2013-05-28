@@ -119,6 +119,7 @@ Ext.define('Booking.view.authContainer', {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
 
                             events = me.loadData(outer.items[i].id);
+                            console.log(events);
 
                             if (events !== null) {
                                 obj = new Booking.view.MyContainer1();

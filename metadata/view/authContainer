@@ -128,6 +128,7 @@
                     "                if (outer.items[i].id.substring(0,8) === 'bestfitm') {\r",
                     "                    \r",
                     "                    events = me.loadData(outer.items[i].id);\r",
+                    "                    console.log(events);\r",
                     "                    \r",
                     "                    if (events !== null) {\r",
                     "                        obj = new Booking.view.MyContainer1();\r",
