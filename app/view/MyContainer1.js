@@ -36,12 +36,10 @@ Ext.define('Booking.view.MyContainer1', {
                                 timelineColor = me.timelineColor,
                                 roomText = me.roomText,
                                 boxColor = me.boxColor,
-                                data = me.data;
-
-                            console.log(data);
+                                events = me.events;
 
                             var h = Ext.getBody().getSize().height,
-                                w = 203 * data.length,
+                                w = 203 * events.length,
                                 surface = this.getSurface('main'),
                                 xloc,
                                 iter;
@@ -70,7 +68,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 y: 50
                             }).show(true);
 
-                            for (iter = 0; iter < data.length; iter++) {
+                            for (iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
 
                                 //Larger Point on timeline
@@ -111,7 +109,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                     surface.add({
                                         type: 'text',
-                                        text: data[iter].summary,
+                                        text: events[iter].summary,
                                         font: '20px Proxima Nova',
                                         width: 290,
                                         height: 130,
@@ -123,7 +121,7 @@ Ext.define('Booking.view.MyContainer1', {
                                     //Time and date for top
                                     surface.add({
                                         type: 'text',
-                                        text: data[iter].start.datetime,
+                                        text: events[iter].start.datetime,
                                         font: '14px Proxima Nova',
                                         fill: '#FFF',
                                         x: 170,
@@ -152,7 +150,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                     surface.add({
                                         type: 'text',
-                                        text: data[iter].summary,
+                                        text: events[iter].summary,
                                         width: 290,
                                         height: 130,
                                         font: '20px Proxima Nova',
