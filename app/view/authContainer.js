@@ -57,7 +57,8 @@ Ext.define('Booking.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar',
             array_i = 0,
             items = [],
-            events,
+            events = [],
+            summary = [],
             child,
             obj;
 
@@ -110,7 +111,7 @@ Ext.define('Booking.view.authContainer', {
             window.location.reload();
         }
 
-        function addRoom(summary,events) {
+        function addRoom(summary, events) {
             if (events !== null) {
                 obj = new Booking.view.MyContainer1();
                 child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
@@ -135,17 +136,23 @@ Ext.define('Booking.view.authContainer', {
                 request.execute(function(outer) {
                     for (var i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            addRoom(outer.items[i].summary, me.loadData(outer.items[i].id));
+                            events.push(me.loadData(outer.items[i].id));
+                            summary.push(outer.items[i].summary);
                         }
                     }
-                    mainCarousel.removeAll(true);
-                    mainCarousel.setItems(items);
-                    Ext.ComponentQuery.query('#authContainer')[0].destroy();
-                    Ext.Viewport.setActiveItem('mainCarousel');
                 });
             });
         }
     });
+
+    for (var i=0; i<events.length;events++) {
+        addRoom(summary[i],events[i]);
+    }
+
+    mainCarousel.removeAll(true);
+    mainCarousel.setItems(items);
+    Ext.ComponentQuery.query('#authContainer')[0].destroy();
+    Ext.Viewport.setActiveItem('mainCarousel');
     },
 
     loadData: function(calendarId) {
