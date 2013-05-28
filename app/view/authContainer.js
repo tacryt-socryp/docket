@@ -130,6 +130,8 @@ Ext.define('Booking.view.authContainer', {
                                 child.timelineColor = boxColors[array_i];
                                 child.events = events;
 
+                                console.log("child.events: " + child.events);
+
                                 items.push(obj);
                                 array_i++;
                             }
@@ -174,6 +176,7 @@ Ext.define('Booking.view.authContainer', {
 
                     request.execute(function(resp) {
                         if (resp.items !== undefined) {
+                            console.log("resp.items is not undefined");
                             return(resp.items);
                         } else {
                             return null;
