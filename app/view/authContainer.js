@@ -157,7 +157,7 @@ Ext.define('Booking.view.authContainer', {
                             child.roomText = summary;
                             child.backgroundColor = backgroundColors[array_i];
                             child.boxColor = boxColors[array_i];
-                            child.timelineColor = boxColors[array_i];
+                            child.timelineColor = timelineColors[array_i];
                             child.events = resp.items;
 
                             items.push(obj);
