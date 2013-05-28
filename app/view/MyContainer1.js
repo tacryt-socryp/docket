@@ -44,6 +44,7 @@ Ext.define('Booking.view.MyContainer1', {
                             var h = Ext.getBody().getSize().height,
                                 surface = this.getSurface('main'),
                                 mainCarousel,
+                                description,
                                 summary,
                                 xloc,
                                 iter;
@@ -87,7 +88,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 if (summary.length > 27) {
                                     summary = summary.substring(0,27) + '...';
                                 }
-                                var description = (description = events[iter].description);
+                                description = (description = events[iter].description);
                                 console.log(description);
                                 if (description !== false) {
                                     if (description.length > 27) {
@@ -155,7 +156,7 @@ Ext.define('Booking.view.MyContainer1', {
                                             height: 100,
                                             fill: '#FFF',
                                             x: xloc+48,
-                                            y: 170
+                                            y: 190
                                         }).show(true);
                                     }
 
