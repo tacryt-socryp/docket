@@ -90,9 +90,13 @@ Ext.define('Booking.view.MyContainer1', {
                                 if (summary.length > 27) {
                                     summary = summary.substring(0,27) + '...';
                                 }
-                                description = events[iter].description;
-                                if (description.length > 27) {
-                                    description = description.substring(0,27);
+                                if (typeof events[iter].description !== null) {
+                                    description = events[iter].description;
+                                    if (description.length > 27) {
+                                        description = description.substring(0,27);
+                                    }
+                                } else {
+                                    description = '';
                                 }
 
 
@@ -143,14 +147,16 @@ Ext.define('Booking.view.MyContainer1', {
                                         y: 150
                                     }).show(true);
 
-                                    surface.add({
-                                        type: 'text',
-                                        text: description,
-                                        font: '16px Proxima Nova',
-                                        fill: '#FFF',
-                                        x: xloc+48,
-                                        y: 165
-                                    }).show(true);
+                                    if (description !== '') {
+                                        surface.add({
+                                            type: 'text',
+                                            text: description,
+                                            font: '16px Proxima Nova',
+                                            fill: '#FFF',
+                                            x: xloc+48,
+                                            y: 17
+                                        }).show(true);
+                                    }
 
                                     //Time and date for top
                                     surface.add({
