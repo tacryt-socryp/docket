@@ -55,12 +55,50 @@ Ext.define('Booking.view.authContainer', {
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
+            final_i = 0,
             array_i = 0,
             items = [],
-            events = [],
-            summary = [],
             child,
             obj;
+
+        try {
+            gapi.client.setApiKey(apiKey);
+            gapi.auth.setToken(token);
+        } catch(e) {
+            window.location.reload();
+        }
+
+        function addRoom(summary, events) {
+
+        }
+
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
+        if (authResult) {
+            gapi.client.load('calendar', 'v3', function() {
+                var request = gapi.client.calendar.calendarList.list();
+                request.execute(function(outer) {
+                    for (var i = 0; i < outer.items.length; i++) {
+                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {final_i++;}
+                    }
+                    for (i = 0; i < outer.items.length; i++) {
+                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {
+                            events = me.loadData(outer.items[i].id, outer.items[i].summary, array_i, final_i);
+                        }
+                    }
+                });
+            });
+        }
+    });
+    },
+
+    loadData: function(calendarId, summary, array_i, final_i) {
+        var me = this,
+            today = new Date();
+
+        var token = Booking.app.authToken,
+            clientId = '464168127252.apps.googleusercontent.com',
+            apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
+            scopes = 'https://www.googleapis.com/auth/calendar';
 
         var backgroundColors = [
         '#0d6289', //Blue
@@ -104,66 +142,6 @@ Ext.define('Booking.view.authContainer', {
         '#FFF'
         ];
 
-        try {
-            gapi.client.setApiKey(apiKey);
-            gapi.auth.setToken(token);
-        } catch(e) {
-            window.location.reload();
-        }
-
-        function addRoom(summary, events) {
-            if (events !== null) {
-                obj = new Booking.view.MyContainer1();
-                child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
-
-                child.roomText = summary;
-                child.backgroundColor = backgroundColors[array_i];
-                child.boxColor = boxColors[array_i];
-                child.timelineColor = boxColors[array_i];
-                child.events = events;
-
-                console.log("child.events: " + child.events);
-
-                items.push(obj);
-                array_i++;
-            }
-        }
-
-        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
-        if (authResult) {
-            gapi.client.load('calendar', 'v3', function() {
-                var request = gapi.client.calendar.calendarList.list();
-                request.execute(function(outer) {
-                    for (var i = 0; i < outer.items.length; i++) {
-                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            events.push(me.loadData(outer.items[i].id));
-                            summary.push(outer.items[i].summary);
-                        }
-                    }
-                });
-            });
-        }
-    });
-
-    for (var i=0; i<events.length;events++) {
-        addRoom(summary[i],events[i]);
-    }
-
-    mainCarousel.removeAll(true);
-    mainCarousel.setItems(items);
-    Ext.ComponentQuery.query('#authContainer')[0].destroy();
-    Ext.Viewport.setActiveItem('mainCarousel');
-    },
-
-    loadData: function(calendarId) {
-        var me = this,
-            today = new Date();
-
-        var token = Booking.app.authToken,
-            clientId = '464168127252.apps.googleusercontent.com',
-            apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
-            scopes = 'https://www.googleapis.com/auth/calendar';
-
         today.setHours(0,0,0,0);
         today = today.toISOString();
 
@@ -184,10 +162,19 @@ Ext.define('Booking.view.authContainer', {
 
                     request.execute(function(resp) {
                         if (resp.items !== undefined) {
-                            console.log("resp.items is not undefined");
-                            return(resp.items);
-                        } else {
-                            return null;
+                            obj = new Booking.view.MyContainer1();
+                            child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
+
+                            child.roomText = summary;
+                            child.backgroundColor = backgroundColors[array_i];
+                            child.boxColor = boxColors[array_i];
+                            child.timelineColor = boxColors[array_i];
+                            child.events = resp.items;
+
+                            console.log("child.events: " + child.events);
+
+                            items.push(obj);
+                            array_i++;
                         }
                     });
                 });
@@ -195,6 +182,17 @@ Ext.define('Booking.view.authContainer', {
                 window.location.reload();
             }
         });
+
+        if (final_i == array_i) {
+            mainCarousel.removeAll(true);
+            mainCarousel.setItems(items);
+            Ext.ComponentQuery.query('#authContainer')[0].destroy();
+            Ext.Viewport.setActiveItem('mainCarousel');
+        }
+    },
+
+    switchViews: function() {
+
     }
 
 });
