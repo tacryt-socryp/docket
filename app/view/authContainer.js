@@ -149,6 +149,7 @@ Ext.define('Booking.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
+                        console.log(resp.items);
                         if (resp.items !== undefined) {
                             array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;
                             obj = new Booking.view.MyContainer1();
@@ -159,6 +160,9 @@ Ext.define('Booking.view.authContainer', {
                             child.boxColor = boxColors[array_i];
                             child.timelineColor = timelineColors[array_i];
                             child.events = resp.items;
+
+                            console.log(child.roomText);
+                            console.log(child.events);
 
                             items.push(obj);
 
