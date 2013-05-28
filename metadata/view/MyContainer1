@@ -98,7 +98,7 @@
                             "    xloc,\r",
                             "    iter;\r",
                             "\r",
-                            "console.log(\"Painted!\");\r",
+                            "console.log(\"Painted! Width: \" + w + \" Height: \" + h);\r",
                             "\r",
                             "me.setSize(w,h);\r",
                             "surface.setSize(w,h);\r",
