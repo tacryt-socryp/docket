@@ -166,10 +166,6 @@ Ext.define('Booking.view.authContainer', {
                     request.execute(function(resp) {
                         if (resp.items !== undefined) {
                             array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;
-                            console.log('array_i: ' + array_i);
-                            console.log(Ext.ComponentQuery.query('#inlineDraw1')[array_i]);
-                            console.log(Ext.ComponentQuery.query('#inlineDraw1'));
-
                             obj = new Booking.view.MyContainer1();
                             child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
 
@@ -181,14 +177,11 @@ Ext.define('Booking.view.authContainer', {
 
                             items.push(obj);
 
-                            console.log('items.length: ' + items.length);
-
                             if (items.length == 5) {
                                 var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                                 mainCarousel.removeAll(true);
                                 mainCarousel.setItems(items);
                                 Ext.Viewport.setActiveItem('mainCarousel');
-                                //Ext.ComponentQuery.query('#authContainer')[0].destroy();
                             }
                         }
                     });

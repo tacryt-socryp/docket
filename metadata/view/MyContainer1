@@ -164,7 +164,7 @@
                             "\r",
                             "        surface.add({\r",
                             "            type: 'text',\r",
-                            "            text: events[iter].summary,\r",
+                            "            text: events[iter].summary.substring(0,20),\r",
                             "            font: '20px Proxima Nova',\r",
                             "            width: 290,\r",
                             "            height: 130,\r",

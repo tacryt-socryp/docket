@@ -114,7 +114,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                                     surface.add({
                                         type: 'text',
-                                        text: events[iter].summary,
+                                        text: events[iter].summary.substring(0,20),
                                         font: '20px Proxima Nova',
                                         width: 290,
                                         height: 130,
