@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Booking.view.mainCarousel', {
+Ext.define('Conflux.view.mainCarousel', {
     extend: 'Ext.carousel.Carousel',
     alias: 'widget.mainCarousel',
 

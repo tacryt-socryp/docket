@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Booking.view.MyFormPanel', {
+Ext.define('Conflux.view.MyFormPanel', {
     extend: 'Ext.form.Panel',
 
     config: {
