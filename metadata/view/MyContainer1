@@ -160,7 +160,7 @@
                             "    dateTime = new Date(dateTime);\r",
                             "    \r",
                             "    if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {\r",
-                            "        dateTime = dateTime.toTimeString().substring(0,6);\r",
+                            "        dateTime = dateTime.toTimeString().substring(0,5);\r",
                             "        if (parseInt(dateTime.substring(0,2),10) >= 12) {\r",
                             "            dateTime = (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';\r",
                             "        } else if (parseInt(dateTime.substring(0,2),10) === 0) {\r",
