@@ -109,32 +109,30 @@ Ext.define('Booking.view.authContainer', {
 
         var backgroundColors = [
         '#000',
-        '#0d6289', //Blue
+        '#53ab73', //Green
         '#4E2B52', //Purple
         '#d27f56', //Orange
-        '#53ab73', //Green
+        '#0d6289', //Blue
         '#FF4242', //Red
-        '#D9D1A9' //Beige
+        '#D9D1A9'  //Beige
         ];
 
         var boxColors = [
         '#000',
-        '#43aad5', //Blue
+        '#7DCB99', //Green
         '#436085', //Purple
         '#F99665', //Orange
-        '#7DCB99', //Green
+        '#43aad5', //Blue
         '#FF837E', //Red
-        '#7DCB99', //Green
-        '#F99665', //Orange
         '#B9C18A'  //Beige
         ];
 
         var timelineColors = [
         '#000',
-        '#176c93', //Blue
+        '#80E2BF', //Green
         '#5A325F', //Purple
         '#DA8359', //Orange
-        '#80E2BF', //Green
+        '#176c93', //Blue
         '#EC6B51', //Red
         '#A4AE6A'  //Beige
         ];
