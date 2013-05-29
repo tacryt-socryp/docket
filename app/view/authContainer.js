@@ -158,7 +158,7 @@ Ext.define('Conflux.view.authContainer', {
 
                     request.execute(function(resp) {
                         try {
-                            console.log(resp.items[0].summary);
+                            var makeError = resp.items[0].summary;
                             array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;
                             obj = new Conflux.view.MyContainer1();
                             child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
