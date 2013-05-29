@@ -109,9 +109,11 @@ Ext.define('Booking.view.MyContainer1', {
                                 dateTime = Date.parse(dateTime);
                                 dateTime = new Date(dateTime);
                                 console.log(dateTime.getDate());
-                                if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
+                                var date = dateTime.getDate();
+                                var month = dateTime.getMonth();
+                                if ((date == today.getDate()) && (month == today.getMonth())) {
                                     dateTime = dateTime.toTimeString();
-                                } else if (dateTime.getMonth() == today.getMonth()) {
+                                } else if (month == today.getMonth()) {
                                     dateTime = dateTime.toDateString().substring(0,10) + ' ' + dateTime.toTimeString();
                                 } else {
                                     dateTime = dateTime.toDateString().substring(0,10);
