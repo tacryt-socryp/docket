@@ -55,8 +55,8 @@ Ext.define('Conflux.view.MyContainer1', {
                             try {
                                 w = 203 * events.length;
                             } catch(e) {
-                                var parent = me.up('MyContainer1');
-                                parent.destroy();
+                                mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
+                                mainCarousel.remove(me, true);
                             }
 
                             console.log("Painted! Width: " + w + " Height: " + h);
