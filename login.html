@@ -19,23 +19,19 @@
         color:#333;
     }
 
-    #title {
-        float:left;
-        margin-left:20%;
-        margin-top:10%;
-        width:25%;
-    }
-
     #logo {
-        float:right;
-        margin-right:20%;
-        margin-top:10%;
-        width:25%;
+        position:absolute;
+        top:50%;
+        left:50%;
+        height:240px;
+        width:240px;
+        margin-top:-120px;
+        margin-left:-120px;
     }
 
     #div-button {
-        clear:both;
-        margin: 0 auto 0 auto;
+        position:absolute;
+        top:75%;
         width: 40%;
         font: bold 16px Helvetica, Arial, sans-serif;
         padding: 8px 8px 8px 8px;
@@ -53,7 +49,6 @@
     </style>
   </head>
   <body>
-    <div id="title"><h1>Booking</h1></div>
     <div id="logo"><img src="icon.png" alt="Calendar Icon" /></div>
     <div id="div-button" onclick='handleAuthClick();'>
         <a href='#' id='authorize-button'>Login</a>
