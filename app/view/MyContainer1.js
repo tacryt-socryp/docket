@@ -43,7 +43,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                             var h = Ext.getBody().getSize().height,
                                 surface = this.getSurface('main'),
-                                today = Date.now(),
+                                today = Date.now().toDateString(),
                                 mainCarousel,
                                 description,
                                 dateTime,
@@ -108,9 +108,9 @@ Ext.define('Booking.view.MyContainer1', {
                                 dateTime = events[iter].start.dateTime;
                                 dateTime = Date.parse(dateTime);
                                 var temp = new Date(dateTime).toDateString();
-                                if (temp == today.toDateString()) {
+                                if (temp == today) {
                                     dateTime = new Date(dateTime).toTimeString();
-                                } else if (temp.substring(4,7) == today.toDateString().substring(4,7)) {
+                                } else if (temp.substring(4,7) == today.substring(4,7)) {
                                     dateTime = new Date(dateTime).toDateString().substring(0,10) + ' ' + new Date(dateTime).toTimeString();
                                 } else {
                                     dateTime = new Date(dateTime).toDateString().substring(0,10);
