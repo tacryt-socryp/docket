@@ -27,7 +27,7 @@ Ext.define('Conflux.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        console.log("Inside painted");
+        console.log("Inside painted!");
         var parameters = {};
         var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
             parameters[key] = value;
