@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Booking.view.authContainer', {
+Ext.define('Conflux.view.authContainer', {
     extend: 'Ext.Container',
 
     config: {

@@ -13,7 +13,7 @@
             "mainCarousel",
             "authContainer"
         ],
-        "name": "Booking"
+        "name": "Conflux"
     },
     "configAlternates": {
         "authToken": "object"

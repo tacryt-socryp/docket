@@ -26,11 +26,11 @@ Ext.application({
         'mainCarousel',
         'authContainer'
     ],
-    name: 'Booking',
+    name: 'Conflux',
 
     launch: function() {
 
-        Ext.create('Booking.view.authContainer', {fullscreen: true});
+        Ext.create('Conflux.view.authContainer', {fullscreen: true});
     }
 
 });

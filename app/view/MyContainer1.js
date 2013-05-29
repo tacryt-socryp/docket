@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Booking.view.MyContainer1', {
+Ext.define('Conflux.view.MyContainer1', {
     extend: 'Ext.Container',
     alias: 'widget.MyContainer1',
 
