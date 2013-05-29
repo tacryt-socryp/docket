@@ -112,7 +112,11 @@ Ext.define('Booking.view.MyContainer1', {
                                 if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
                                     dateTime = dateTime.toTimeString().substring(0,5);
                                     if (parseInt(dateTime.substring(0,2),10) >= 12) {
-                                        dateTime = (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
+                                        if (dateTime.substring(0,2) == '12') {
+                                            dateTime = dateTime + ' pm';
+                                        } else {
+                                            dateTime = (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
+                                        }
                                     } else if (dateTime.substring(0,1) == '0') {
                                         dateTime = '12' + dateTime.substring(2) + ' am';
                                     } else if (parseInt(dateTime.substring(0,2),10) < 10) {
