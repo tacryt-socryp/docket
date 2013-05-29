@@ -43,7 +43,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                             var h = Ext.getBody().getSize().height,
                                 surface = this.getSurface('main'),
-                                today = Date.now().toDateString(),
+                                today = Date.now(),
                                 mainCarousel,
                                 description,
                                 dateTime,
@@ -107,13 +107,13 @@ Ext.define('Booking.view.MyContainer1', {
 
                                 dateTime = events[iter].start.dateTime;
                                 dateTime = Date.parse(dateTime);
-                                var temp = new Date(dateTime).toDateString();
-                                if (temp == today) {
-                                    dateTime = new Date(dateTime).toTimeString();
-                                } else if (temp.substring(4,7) == today.substring(4,7)) {
-                                    dateTime = new Date(dateTime).toDateString().substring(0,10) + ' ' + new Date(dateTime).toTimeString();
+                                dateTime = new Date(dateTime);
+                                if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
+                                    dateTime = dateTime.toTimeString();
+                                } else if (dateTime.getMonth() == today.getMonth()) {
+                                    dateTime = dateTime.toDateString().substring(0,10) + ' ' + dateTime.toTimeString();
                                 } else {
-                                    dateTime = new Date(dateTime).toDateString().substring(0,10);
+                                    dateTime = dateTime.toDateString().substring(0,10);
                                 }
 
                                 //Larger Point on timeline
