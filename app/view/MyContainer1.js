@@ -113,8 +113,10 @@ Ext.define('Booking.view.MyContainer1', {
                                     dateTime = dateTime.toTimeString().substring(0,5);
                                     if (parseInt(dateTime.substring(0,2),10) >= 12) {
                                         dateTime = (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
-                                    } else if (parseInt(dateTime.substring(0,2),10) === 0) {
+                                    } else if (dateTime.substring(0,1) == '0') {
                                         dateTime = '12' + dateTime.substring(2) + ' am';
+                                    } else if (parseInt(dateTime.substring(0,2),10) < 10) {
+                                        dateTime = '0' + dateTime + ' am';
                                     } else {
                                         dateTime = dateTime + ' am';
                                     }
