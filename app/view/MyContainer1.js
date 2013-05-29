@@ -184,7 +184,7 @@ Ext.define('Booking.view.MyContainer1', {
                                         font: '14px Arial',
                                         fill: '#FFF',
                                         x: xloc+170,
-                                        y: yloc+380
+                                        y: yloc+365
                                     }).show(true);
 
                                 } else {
