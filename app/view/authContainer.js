@@ -158,7 +158,7 @@ Ext.define('Conflux.view.authContainer', {
 
                     request.execute(function(resp) {
                         console.log(resp.items);
-                        if (typeof resp.items !== "undefined") {
+                        if (resp.items !== undefined) {
 
                             array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;
                             obj = new Conflux.view.MyContainer1();
@@ -172,7 +172,7 @@ Ext.define('Conflux.view.authContainer', {
 
                             items.push(obj);
 
-                            if (items.length == 6) {
+                            if (items.length == 5) {
                                 mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                                 mainCarousel.removeAll(true);
                                 mainCarousel.setItems(items);
