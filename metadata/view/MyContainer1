@@ -234,7 +234,7 @@
                             "            font: '14px Arial',\r",
                             "            fill: '#FFF',\r",
                             "            x: xloc+170,\r",
-                            "            y: yloc+365\r",
+                            "            y: yloc+380\r",
                             "        }).show(true);\r",
                             "\r",
                             "    } else {\r",
@@ -288,7 +288,7 @@
                             "            font: '14px Arial',\r",
                             "            fill: '#FFF',\r",
                             "            x: xloc+170,\r",
-                            "            y: yloc+340\r",
+                            "            y: yloc+325\r",
                             "        }).show(true);\r",
                             "    }\r",
                             "}"
