@@ -157,9 +157,6 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        //try {
-                        console.log(resp.items.length);
-
                         array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;
                         obj = new Conflux.view.MyContainer1();
                         child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
@@ -175,10 +172,8 @@ Ext.define('Conflux.view.authContainer', {
                             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                             mainCarousel.removeAll(true);
                             mainCarousel.setItems(items);
-                            mainCarousel.removeAt(3, true);
                             Ext.Viewport.setActiveItem('mainCarousel');
                         }
-                        //} catch(e) {}
                     });
                 });
             } else {
