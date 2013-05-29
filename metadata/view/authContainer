@@ -24,6 +24,7 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
+                    "console.log(\"Inside painted\");\r",
                     "var parameters = {};\r",
                     "var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {\r",
                     "    parameters[key] = value;\r",
@@ -128,7 +129,7 @@
                     "    mainCarousel,\r",
                     "    child;\r",
                     "\r",
-                    "var token = Booking.app.authToken,\r",
+                    "var token = Conflux.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
                     "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
                     "    scopes = 'https://www.googleapis.com/auth/calendar';\r",
