@@ -43,7 +43,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                             var h = Ext.getBody().getSize().height,
                                 surface = this.getSurface('main'),
-                                today = Date.now(),
+                                today,
                                 mainCarousel,
                                 description,
                                 dateTime,
@@ -108,6 +108,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 dateTime = events[iter].start.dateTime;
                                 dateTime = Date.parse(dateTime);
                                 dateTime = new Date(dateTime);
+                                today = new Date(Date.now());
                                 console.log(dateTime.getDate());
                                 var date = dateTime.getDate();
                                 var month = dateTime.getMonth();
