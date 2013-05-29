@@ -109,9 +109,9 @@ Ext.define('Booking.view.MyContainer1', {
                                 dateTime = Date.parse(dateTime);
                                 dateTime = new Date(dateTime);
 
-                                if ((dateTime.getDate() == today.getDate()) && (dateTime.getDate() == today.getMonth())) {
+                                if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
                                     dateTime = dateTime.toLocaleTimeString("en-US");
-                                } else if (dateTime.getDate() == today.getMonth()) {
+                                } else if (dateTime.getMonth() == today.getMonth()) {
                                     dateTime = dateTime.toDateString().substring(0,10) + ' ' + dateTime.toTimeString();
                                 } else {
                                     dateTime = dateTime.toDateString().substring(0,10);
