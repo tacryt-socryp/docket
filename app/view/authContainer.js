@@ -161,7 +161,7 @@ Ext.define('Conflux.view.authContainer', {
                         if (typeof resp.items !== "undefined") {
 
                             array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;
-                            obj = new Booking.view.MyContainer1();
+                            obj = new Conflux.view.MyContainer1();
                             child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
 
                             child.roomText = summary;
