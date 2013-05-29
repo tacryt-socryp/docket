@@ -43,7 +43,7 @@ Ext.define('Booking.view.MyContainer1', {
 
                             var h = Ext.getBody().getSize().height,
                                 surface = this.getSurface('main'),
-                                today,
+                                today = new Date(Date.now()),
                                 mainCarousel,
                                 description,
                                 dateTime,
@@ -108,15 +108,10 @@ Ext.define('Booking.view.MyContainer1', {
                                 dateTime = events[iter].start.dateTime;
                                 dateTime = Date.parse(dateTime);
                                 dateTime = new Date(dateTime);
-                                today = new Date(Date.now());
-                                var date = dateTime.getDate();
-                                var month = dateTime.getMonth();
-                                var tdate = today.getDate();
-                                var tmonth = today.getMonth();
-                                console.log(Date.now());
-                                if ((dateTime.getDate() == today.getDate()) && (month == tmonth)) {
+
+                                if ((dateTime.getDate() == today.getDate()) && (dateTime.getDate() == today.getMonth())) {
                                     dateTime = dateTime.toLocaleTimeString("en-US");
-                                } else if (month == tmonth) {
+                                } else if (dateTime.getDate() == today.getMonth()) {
                                     dateTime = dateTime.toDateString().substring(0,10) + ' ' + dateTime.toTimeString();
                                 } else {
                                     dateTime = dateTime.toDateString().substring(0,10);
