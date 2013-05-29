@@ -52,217 +52,212 @@ Ext.define('Conflux.view.MyContainer1', {
                                 xloc,
                                 iter;
 
-                            try {
-                                w = 203 * events.length;
-                                mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
-                                var active = mainCarousel.getActiveIndex() + 1;
-                                var item1 = mainCarousel.getAt(3);
-                                mainCarousel.remove(item1, true);
-                            } catch(e) {}
 
-                                console.log("Painted! Width: " + w + " Height: " + h);
+                            w = 203 * events.length;
 
-                                me.setSize(w,h);
-                                surface.setSize(w,h);
-                                surface.setBackground(backgroundColor);
+                            console.log("Painted! Width: " + w + " Height: " + h);
 
-                                //Line across screen
-                                surface.add({
-                                    type: 'rect',
-                                    fill: timelineColor,
-                                    height : 20,
-                                    width: w,
-                                    x: 0,
-                                    y: yloc+330
-                                }).show(true);
+                            me.setSize(w,h);
+                            surface.setSize(w,h);
+                            surface.setBackground(backgroundColor);
 
-                                //Name of room
-                                surface.add({
-                                    type: 'text',
-                                    text: roomText,
-                                    font: "42px Arial",
-                                    fill: '#FFF',
-                                    x: 70,
-                                    y: 70
-                                }).show(true);
+                            //Line across screen
+                            surface.add({
+                                type: 'rect',
+                                fill: timelineColor,
+                                height : 20,
+                                width: w,
+                                x: 0,
+                                y: yloc+330
+                            }).show(true);
 
-                                for (iter = 0; iter < events.length; iter++) {
-                                    xloc = iter*200;
-                                    summary = events[iter].summary;
-                                    if (summary.length > 26) {
-                                        summary = summary.substring(0,24) + '...';
-                                    }
+                            //Name of room
+                            surface.add({
+                                type: 'text',
+                                text: roomText,
+                                font: "42px Arial",
+                                fill: '#FFF',
+                                x: 70,
+                                y: 70
+                            }).show(true);
 
-                                    description = events[iter].description;
-                                    try {
-                                        description = description.replace(/\n/g, ' ');
-                                        if (description.length > 35) {
-                                            if (description.length > 70) {
-                                                description = description.substring(0,35) + '\n' + description.substring(35,70) + '...';
-                                            } else {
-                                                description = description.substring(0,35) + '\n' + description.substring(35);
-                                            }
-                                        }
-                                    } catch(e) {
-                                        description = false;
-                                    }
+                            for (iter = 0; iter < events.length; iter++) {
+                                xloc = iter*200;
+                                summary = events[iter].summary;
+                                if (summary.length > 26) {
+                                    summary = summary.substring(0,24) + '...';
+                                }
 
-                                    dateTime = events[iter].start.dateTime;
-                                    dateTime = Date.parse(dateTime);
-                                    dateTime = new Date(dateTime);
-
-                                    if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
-                                        dateTime = dateTime.toTimeString().substring(0,5);
-                                        if (parseInt(dateTime.substring(0,2),10) >= 12) {
-                                            if (dateTime.substring(0,2) == '12') {
-                                                dateTime = dateTime + ' pm';
-                                            } else if ((parseInt(dateTime.substring(0,2),10)-12) < 10) {
-                                                dateTime = '0' + (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
-                                            } else {
-                                                dateTime = (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
-                                            }
+                                description = events[iter].description;
+                                try {
+                                    description = description.replace(/\n/g, ' ');
+                                    if (description.length > 35) {
+                                        if (description.length > 70) {
+                                            description = description.substring(0,35) + '\n' + description.substring(35,70) + '...';
                                         } else {
-                                            if (dateTime.substring(0,1) == '0') {
-                                                dateTime = '12' + dateTime.substring(2) + ' am';
-                                            } else if (parseInt(dateTime.substring(0,2),10) < 10) {
-                                                dateTime = '0' + dateTime + ' am';
-                                            } else {
-                                                dateTime = dateTime + ' am';
-                                            }
+                                            description = description.substring(0,35) + '\n' + description.substring(35);
                                         }
+                                    }
+                                } catch(e) {
+                                    description = false;
+                                }
 
-                                    } else if (dateTime.getMonth() == today.getMonth()) {
-                                        dateTime = dateTime.toDateString().substring(0,10);
+                                dateTime = events[iter].start.dateTime;
+                                dateTime = Date.parse(dateTime);
+                                dateTime = new Date(dateTime);
+
+                                if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
+                                    dateTime = dateTime.toTimeString().substring(0,5);
+                                    if (parseInt(dateTime.substring(0,2),10) >= 12) {
+                                        if (dateTime.substring(0,2) == '12') {
+                                            dateTime = dateTime + ' pm';
+                                        } else if ((parseInt(dateTime.substring(0,2),10)-12) < 10) {
+                                            dateTime = '0' + (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
+                                        } else {
+                                            dateTime = (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
+                                        }
                                     } else {
-                                        dateTime = dateTime.toDateString().substring(0,10);
+                                        if (dateTime.substring(0,1) == '0') {
+                                            dateTime = '12' + dateTime.substring(2) + ' am';
+                                        } else if (parseInt(dateTime.substring(0,2),10) < 10) {
+                                            dateTime = '0' + dateTime + ' am';
+                                        } else {
+                                            dateTime = dateTime + ' am';
+                                        }
                                     }
 
-                                    //Larger Point on timeline
+                                } else if (dateTime.getMonth() == today.getMonth()) {
+                                    dateTime = dateTime.toDateString().substring(0,10);
+                                } else {
+                                    dateTime = dateTime.toDateString().substring(0,10);
+                                }
+
+                                //Larger Point on timeline
+                                surface.add({
+                                    type: 'circle',
+                                    cx: xloc+192,
+                                    cy: yloc+338,
+                                    r: 22,
+                                    fillStyle: '#2b8bb5'
+                                }).show(true);
+
+                                surface.add({
+                                    type: 'circle',
+                                    cx: xloc+192,
+                                    cy: yloc+338,
+                                    r: 16,
+                                    fillStyle: boxColor
+                                }).show(true);
+
+                                if (iter % 2 === 0) {
                                     surface.add({
-                                        type: 'circle',
-                                        cx: xloc+192,
-                                        cy: yloc+338,
-                                        r: 22,
-                                        fillStyle: '#2b8bb5'
+                                        type: 'rect',
+                                        fill: boxColor,
+                                        height: 160,
+                                        width: 300,
+                                        radius: 10,
+                                        x: xloc+38,
+                                        y: yloc+110
                                     }).show(true);
 
                                     surface.add({
-                                        type: 'circle',
-                                        cx: xloc+192,
-                                        cy: yloc+338,
-                                        r: 16,
+                                        type: 'path',
+                                        path: 'M ' + (xloc+178) + ' ' + (yloc+270) + ' ' +
+                                        'l ' + 25 + ' ' + 0 + ' ' +
+                                        'l ' + -12 + ' ' + 10 + 'z',
                                         fillStyle: boxColor
                                     }).show(true);
 
-                                    if (iter % 2 === 0) {
-                                        surface.add({
-                                            type: 'rect',
-                                            fill: boxColor,
-                                            height: 160,
-                                            width: 300,
-                                            radius: 10,
-                                            x: xloc+38,
-                                            y: yloc+110
-                                        }).show(true);
+                                    surface.add({
+                                        type: 'text',
+                                        text: summary,
+                                        font: '22px Arial',
+                                        width: 290,
+                                        height: 130,
+                                        fill: '#FFF',
+                                        x: xloc+48,
+                                        y: yloc+135
+                                    }).show(true);
 
-                                        surface.add({
-                                            type: 'path',
-                                            path: 'M ' + (xloc+178) + ' ' + (yloc+270) + ' ' +
-                                            'l ' + 25 + ' ' + 0 + ' ' +
-                                            'l ' + -12 + ' ' + 10 + 'z',
-                                            fillStyle: boxColor
-                                        }).show(true);
-
+                                    if (description !== false) {
                                         surface.add({
                                             type: 'text',
-                                            text: summary,
-                                            font: '22px Arial',
-                                            width: 290,
-                                            height: 130,
+                                            text: description,
+                                            font: '16px Times New Roman',
+                                            width: 280,
+                                            height: 100,
                                             fill: '#FFF',
                                             x: xloc+48,
-                                            y: yloc+135
-                                        }).show(true);
-
-                                        if (description !== false) {
-                                            surface.add({
-                                                type: 'text',
-                                                text: description,
-                                                font: '16px Times New Roman',
-                                                width: 280,
-                                                height: 100,
-                                                fill: '#FFF',
-                                                x: xloc+48,
-                                                y: yloc+190
-                                            }).show(true);
-                                        }
-
-                                        //Time and date for top
-                                        surface.add({
-                                            type: 'text',
-                                            text: dateTime,
-                                            font: '14px Arial',
-                                            fill: '#FFF',
-                                            x: xloc+170,
-                                            y: yloc+380
-                                        }).show(true);
-
-                                    } else {
-
-                                        surface.add({
-                                            type: 'rect',
-                                            fill: boxColor,
-                                            height : 160,
-                                            width: 300,
-                                            radius: 10,
-                                            x: xloc+40,
-                                            y: yloc+410
-                                        }).show(true);
-
-                                        surface.add({
-                                            type: 'path',
-                                            path: 'M ' + (xloc+205) + ' ' + (yloc+410) + ' ' +
-                                            'l ' + -25 + ' ' + 0 + ' ' +
-                                            'l ' + 12 + ' ' + -10 + 'z',
-                                            fillStyle: boxColor
-                                        }).show(true);
-
-                                        surface.add({
-                                            type: 'text',
-                                            text: summary,
-                                            width: 290,
-                                            height: 130,
-                                            font: '22px Arial',
-                                            fill: '#FFF',
-                                            x: xloc+45,
-                                            y: yloc+435
-                                        }).show(true);
-
-                                        if (description !== false) {
-                                            surface.add({
-                                                type: 'text',
-                                                text: description,
-                                                font: '16px Times New Roman',
-                                                width: 280,
-                                                height: 100,
-                                                fill: '#FFF',
-                                                x: xloc+45,
-                                                y: yloc+450
-                                            }).show(true);
-                                        }
-
-                                        //Time and date for bottom
-                                        surface.add({
-                                            type: 'text',
-                                            text: dateTime,
-                                            font: '14px Arial',
-                                            fill: '#FFF',
-                                            x: xloc+170,
-                                            y: yloc+308
+                                            y: yloc+190
                                         }).show(true);
                                     }
+
+                                    //Time and date for top
+                                    surface.add({
+                                        type: 'text',
+                                        text: dateTime,
+                                        font: '14px Arial',
+                                        fill: '#FFF',
+                                        x: xloc+170,
+                                        y: yloc+380
+                                    }).show(true);
+
+                                } else {
+
+                                    surface.add({
+                                        type: 'rect',
+                                        fill: boxColor,
+                                        height : 160,
+                                        width: 300,
+                                        radius: 10,
+                                        x: xloc+40,
+                                        y: yloc+410
+                                    }).show(true);
+
+                                    surface.add({
+                                        type: 'path',
+                                        path: 'M ' + (xloc+205) + ' ' + (yloc+410) + ' ' +
+                                        'l ' + -25 + ' ' + 0 + ' ' +
+                                        'l ' + 12 + ' ' + -10 + 'z',
+                                        fillStyle: boxColor
+                                    }).show(true);
+
+                                    surface.add({
+                                        type: 'text',
+                                        text: summary,
+                                        width: 290,
+                                        height: 130,
+                                        font: '22px Arial',
+                                        fill: '#FFF',
+                                        x: xloc+45,
+                                        y: yloc+435
+                                    }).show(true);
+
+                                    if (description !== false) {
+                                        surface.add({
+                                            type: 'text',
+                                            text: description,
+                                            font: '16px Times New Roman',
+                                            width: 280,
+                                            height: 100,
+                                            fill: '#FFF',
+                                            x: xloc+45,
+                                            y: yloc+450
+                                        }).show(true);
+                                    }
+
+                                    //Time and date for bottom
+                                    surface.add({
+                                        type: 'text',
+                                        text: dateTime,
+                                        font: '14px Arial',
+                                        fill: '#FFF',
+                                        x: xloc+170,
+                                        y: yloc+308
+                                    }).show(true);
                                 }
-                            },
+                            }
+                        },
                         single: true,
                         event: 'painted'
                     },
