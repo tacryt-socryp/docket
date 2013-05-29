@@ -113,7 +113,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 var month = dateTime.getMonth();
                                 var tdate = today.getDate();
                                 var tmonth = today.getMonth();
-                                console.log(Date.now);
+                                console.log(Date.now());
                                 if ((dateTime.getDate() == today.getDate()) && (month == tmonth)) {
                                     dateTime = dateTime.toLocaleTimeString("en-US");
                                 } else if (month == tmonth) {
