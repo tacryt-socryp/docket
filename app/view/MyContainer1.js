@@ -110,18 +110,17 @@ Ext.define('Booking.view.MyContainer1', {
                                 dateTime = new Date(dateTime);
 
                                 if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
-                                    if (dateTime.getHours() === 0) {
-                                        dateTime = (dateTime.getHours()+12) + ':' + dateTime.getMinutes() + ' am';
-                                    } else if (dateTime.getHours() == 12) {
-                                        dateTime = dateTime.getHours() + ':' + dateTime.getMinutes() + ' pm';
-                                    } else if (dateTime.getHours() > 12) {
-                                        dateTime = (dateTime.getHours()-12) + ':' + dateTime.getMinutes() + ' pm';
+                                    dateTime = dateTime.toTimeString().substring(0,8);
+                                    if (parseInt(dateTime.substring(0,2),10) >= 12) {
+                                        dateTime = (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
+                                    } else if (parseInt(dateTime.substring(0,2),10) === 0) {
+                                        dateTime = '12' + dateTime.substring(2) + ' am';
                                     } else {
-                                        dateTime = dateTime.getHours() + ':' + dateTime.getMinutes() + ' am';
+                                        dateTime = dateTime + ' am';
                                     }
 
                                 } else if (dateTime.getMonth() == today.getMonth()) {
-                                    dateTime = dateTime.toDateString().substring(0,10) + ' ' + dateTime.toTimeString();
+                                    dateTime = dateTime.toDateString().substring(0,10);
                                 } else {
                                     dateTime = dateTime.toDateString().substring(0,10);
                                 }
