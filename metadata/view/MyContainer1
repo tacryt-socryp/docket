@@ -144,6 +144,7 @@
                             "    \r",
                             "    description = events[iter].description;\r",
                             "    try {\r",
+                            "        description = description.replace(/\\n/g, ' ');\r",
                             "        if (description.length > 35) {\r",
                             "            if (description.length > 70) {\r",
                             "                description = description.substring(0,35) + '\\n' + description.substring(35,70) + '...';\r",

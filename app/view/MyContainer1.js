@@ -94,6 +94,7 @@ Ext.define('Conflux.view.MyContainer1', {
 
                                 description = events[iter].description;
                                 try {
+                                    description = description.replace(/\n/g, ' ');
                                     if (description.length > 35) {
                                         if (description.length > 70) {
                                             description = description.substring(0,35) + '\n' + description.substring(35,70) + '...';
