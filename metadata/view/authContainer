@@ -185,7 +185,7 @@
                     "            request.execute(function(resp) {\r",
                     "                console.log(resp.items);\r",
                     "                if (typeof resp.items !== \"undefined\") {\r",
-                    "                    \r",
+                    "\r",
                     "                    array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;\r",
                     "                    obj = new Booking.view.MyContainer1();\r",
                     "                    child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];\r",
