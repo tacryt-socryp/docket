@@ -108,6 +108,7 @@ Ext.define('Booking.view.MyContainer1', {
                                 dateTime = events[iter].start.dateTime;
                                 dateTime = Date.parse(dateTime);
                                 dateTime = new Date(dateTime);
+                                console.log(dateTime.getDate());
                                 if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
                                     dateTime = dateTime.toTimeString();
                                 } else if (dateTime.getMonth() == today.getMonth()) {

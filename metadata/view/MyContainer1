@@ -158,6 +158,7 @@
                             "    dateTime = events[iter].start.dateTime;\r",
                             "    dateTime = Date.parse(dateTime);\r",
                             "    dateTime = new Date(dateTime);\r",
+                            "    console.log(dateTime.getDate());\r",
                             "    if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {\r",
                             "        dateTime = dateTime.toTimeString();\r",
                             "    } else if (dateTime.getMonth() == today.getMonth()) {\r",
