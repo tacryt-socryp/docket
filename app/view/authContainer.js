@@ -86,7 +86,7 @@ Ext.define('Conflux.view.authContainer', {
                             calendarId = outer.items[i].id;
                             summary = outer.items[i].summary;
                             console.log("ID: " + calendarId + " Summary: " + summary);
-                            me.loadData(calendarId, summary, final_i, items);
+                            me.loadData(calendarId, summary, items);
                             iter++;
                         }
                     }
