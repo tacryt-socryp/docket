@@ -107,10 +107,10 @@ Ext.define('Booking.view.MyContainer1', {
 
                                 dateTime = events[iter].start.dateTime;
                                 dateTime = Date.parse(dateTime);
-                                var temp = new Date(dateTime);
-                                if (temp.toDateString() == today.toDateString()) {
+                                var temp = new Date(dateTime).toDateString();
+                                if (temp == today.toDateString()) {
                                     dateTime = new Date(dateTime).toTimeString();
-                                } else if (temp.toDateString().substring(4,7) == today.toDateString().substring(4,7)) {
+                                } else if (temp.substring(4,7) == today.toDateString().substring(4,7)) {
                                     dateTime = new Date(dateTime).toDateString().substring(0,10) + ' ' + new Date(dateTime).toTimeString();
                                 } else {
                                     dateTime = new Date(dateTime).toDateString().substring(0,10);
