@@ -111,9 +111,9 @@ Ext.define('Booking.view.authContainer', {
         '#000',
         '#0d6289', //Blue
         '#4E2B52', //Purple
-        '#FF4242', //Red
-        '#53ab73', //Green
         '#d27f56', //Orange
+        '#53ab73', //Green
+        '#FF4242', //Red
         '#D9D1A9' //Beige
         ];
 
@@ -121,6 +121,8 @@ Ext.define('Booking.view.authContainer', {
         '#000',
         '#43aad5', //Blue
         '#436085', //Purple
+        '#F99665', //Orange
+        '#7DCB99', //Green
         '#FF837E', //Red
         '#7DCB99', //Green
         '#F99665', //Orange
@@ -131,9 +133,9 @@ Ext.define('Booking.view.authContainer', {
         '#000',
         '#176c93', //Blue
         '#5A325F', //Purple
-        '#EC6B51', //Red
-        '#80E2BF', //Green
         '#DA8359', //Orange
+        '#80E2BF', //Green
+        '#EC6B51', //Red
         '#A4AE6A'  //Beige
         ];
 
