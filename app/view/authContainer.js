@@ -42,7 +42,7 @@ Ext.define('Conflux.view.authContainer', {
         if (isEmpty(parameters)) {
             window.location.href = 'login.html';
         } else {
-            Booking.app.authToken = decodeURI(parameters.auth);
+            Conflux.app.authToken = decodeURI(parameters.auth);
             this.generateItems();
         }
     },
@@ -60,8 +60,8 @@ Ext.define('Conflux.view.authContainer', {
             child,
             obj;
 
-        Ext.create('Booking.view.MyContainer1');
-        Ext.create('Booking.view.mainCarousel');
+        Ext.create('Conflux.view.MyContainer1');
+        Ext.create('Conflux.view.mainCarousel');
 
         try {
             gapi.client.setApiKey(apiKey);
@@ -102,7 +102,7 @@ Ext.define('Conflux.view.authContainer', {
             mainCarousel,
             child;
 
-        var token = Booking.app.authToken,
+        var token = Conflux.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar';
