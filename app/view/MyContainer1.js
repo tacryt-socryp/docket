@@ -110,7 +110,16 @@ Ext.define('Booking.view.MyContainer1', {
                                 dateTime = new Date(dateTime);
 
                                 if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
-                                    dateTime = dateTime.toLocaleTimeString("en-US");
+                                    if (dateTime.getHours() === 0) {
+                                        dateTime = (dateTime.getHours()+12) + ':' + dateTime.getMinutes() + ' am';
+                                    } else if (dateTime.getHours() == 12) {
+                                        dateTime = dateTime.getHours() + ':' + dateTime.getMinutes() + ' pm';
+                                    } else if (dateTime.getHours() > 12) {
+                                        dateTime = (dateTime.getHours()-12) + ':' + dateTime.getMinutes() + ' pm';
+                                    } else {
+                                        dateTime = dateTime.getHours() + ':' + dateTime.getMinutes() + ' am';
+                                    }
+
                                 } else if (dateTime.getMonth() == today.getMonth()) {
                                     dateTime = dateTime.toDateString().substring(0,10) + ' ' + dateTime.toTimeString();
                                 } else {
@@ -238,7 +247,7 @@ Ext.define('Booking.view.MyContainer1', {
                                         font: '14px Arial',
                                         fill: '#FFF',
                                         x: xloc+170,
-                                        y: yloc+310
+                                        y: yloc+308
                                     }).show(true);
                                 }
                             }
