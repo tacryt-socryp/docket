@@ -50,7 +50,7 @@ Ext.define('Conflux.view.authContainer', {
 
     generateItems: function() {
         var me = this,
-            token = Booking.app.authToken,
+            token = Conflux.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
