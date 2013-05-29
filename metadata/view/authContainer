@@ -202,6 +202,7 @@
                     "                        mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
                     "                        mainCarousel.removeAll(true);\r",
                     "                        mainCarousel.setItems(items);\r",
+                    "                        mainCarousel.removeAt(3);\r",
                     "                        Ext.Viewport.setActiveItem('mainCarousel');\r",
                     "                    }\r",
                     "                }\r",
