@@ -116,7 +116,7 @@ Ext.define('Conflux.view.MyContainer1', {
                                         if (dateTime.substring(0,2) == '12') {
                                             dateTime = dateTime + ' pm';
                                         } else if ((parseInt(dateTime.substring(0,2),10)-12) < 10) {
-                                            dateTime = '0' + dateTime + ' pm';
+                                            dateTime = '0' + (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
                                         } else {
                                             dateTime = (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
                                         }

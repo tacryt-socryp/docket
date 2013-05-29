@@ -166,7 +166,7 @@
                             "            if (dateTime.substring(0,2) == '12') {\r",
                             "                dateTime = dateTime + ' pm';\r",
                             "            } else if ((parseInt(dateTime.substring(0,2),10)-12) < 10) {\r",
-                            "                dateTime = '0' + dateTime + ' pm';\r",
+                            "                dateTime = '0' + (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';\r",
                             "            } else {\r",
                             "                dateTime = (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';\r",
                             "            }\r",
