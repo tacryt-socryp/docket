@@ -56,7 +56,6 @@ Ext.define('Conflux.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar',
             final_i = 0,
             calendarIds = ['bestfitmedia.com_37353438383431323932@resource.calendar.google.com',
-            'bestfitmedia.com_2d3439373239333732333934@resource.calendar.google.com',
             'bestfitmedia.com_2d3135393231303233373935@resource.calendar.google.com',
             'bestfitmedia.com_2d39383936323436392d393431@resource.calendar.google.com'],
             items = [],
@@ -167,9 +166,8 @@ Ext.define('Conflux.view.authContainer', {
                         child.events = resp.items;
                         items.push(obj);
 
-                        if (items.length == 4) {
+                        if (items.length == 3) {
                             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
-                            mainCarousel.removeAll(true);
                             mainCarousel.setItems(items);
                             Ext.Viewport.setActiveItem('mainCarousel');
                         }
