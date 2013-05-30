@@ -93,7 +93,12 @@ Ext.define('Conflux.view.myContainer', {
                                 font: "36px Arial",
                                 fill: '#FFF',
                                 x: displace,
-                                y: 70
+                                y: 70,
+                                listeners: {
+                                    click: function() {
+                                        console.log('click click click');
+                                    }
+                                }
                             }).show(true);
 
                             for (var iter = 0; iter < events.length; iter++) {
