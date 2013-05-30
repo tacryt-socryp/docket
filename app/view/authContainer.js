@@ -146,26 +146,27 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        if (typeof resp.items !== undefined) {
-                            if (typeof resp.items[0].summary !== undefined) {
-                                obj = new Conflux.view.myContainer();
-                                array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
-                                child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
+                        try {
+                            child = resp.items[0].summary; //Throws an error if the item doesn't have a summary
 
-                                child.roomText = summary;
-                                child.backgroundColor = backgroundColors[array_i];
-                                child.boxColor = boxColors[array_i];
-                                child.timelineColor = timelineColors[array_i];
-                                child.events = resp.items;
-                                items.push(obj);
+                            obj = new Conflux.view.myContainer();
+                            array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
+                            child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
-                                console.log("array_i: " + array_i + " items.length: " + items.length);
-                                if (items.length == 3) {
-                                    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
-                                    mainCarousel.setItems(items);
-                                    Ext.Viewport.setActiveItem('mainCarousel');
-                                }
-                            }}
+                            child.roomText = summary;
+                            child.backgroundColor = backgroundColors[array_i];
+                            child.boxColor = boxColors[array_i];
+                            child.timelineColor = timelineColors[array_i];
+                            child.events = resp.items;
+                            items.push(obj);
+
+                            console.log("array_i: " + array_i + " items.length: " + items.length);
+                            if (items.length == 3) {
+                                mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
+                                mainCarousel.setItems(items);
+                                Ext.Viewport.setActiveItem('mainCarousel');
+                            }
+                        } catch (e) {}
                         });
                     });
                 } else {
