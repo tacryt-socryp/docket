@@ -46,7 +46,7 @@ Ext.define('Conflux.view.myContainer', {
                             var h = Ext.getBody().getSize().height,
                                 surface = this.getSurface('main'),
                                 today = new Date(Date.now()),
-                                mainCarousel,
+                                mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
                                 description,
                                 dateTime,
                                 summary,
@@ -58,6 +58,8 @@ Ext.define('Conflux.view.myContainer', {
                             me.setSize(w,h);
                             surface.setSize(w,h);
                             surface.setBackground(backgroundColor);
+
+                            surface.on('tap', mainCarousel.addTap);
 
                             //Line across screen
                             surface.add({
@@ -79,7 +81,7 @@ Ext.define('Conflux.view.myContainer', {
                                 y: 70
                             }).show(true);
 
-                            var addbutton = surface.add({
+                            surface.add({
                                 type: 'text',
                                 text: '+add',
                                 font: "36px Arial",
@@ -87,10 +89,6 @@ Ext.define('Conflux.view.myContainer', {
                                 x: displace,
                                 y: 70
                             }).show(true);
-
-                            addbutton.on('click', function() {
-                                console.log('CLICK EVENT!');
-                            });
 
                             for (var iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
@@ -285,6 +283,10 @@ Ext.define('Conflux.view.myContainer', {
                 ]
             }
         ]
+    },
+
+    addTap: function() {
+
     }
 
 });

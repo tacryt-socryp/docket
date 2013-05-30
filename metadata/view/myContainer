@@ -100,7 +100,7 @@
                             "var h = Ext.getBody().getSize().height,\r",
                             "    surface = this.getSurface('main'),\r",
                             "    today = new Date(Date.now()),\r",
-                            "    mainCarousel,\r",
+                            "    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];,\r",
                             "    description,\r",
                             "    dateTime,\r",
                             "    summary,\r",
@@ -109,11 +109,11 @@
                             "    displace = Ext.getBody().getSize().width - 200,\r",
                             "    w = 203 * events.length;\r",
                             "\r",
-                            "console.log(\"Painted! Width: \" + w + \" Height: \" + h);\r",
-                            "\r",
                             "me.setSize(w,h);\r",
                             "surface.setSize(w,h);\r",
                             "surface.setBackground(backgroundColor);\r",
+                            "\r",
+                            "surface.on('tap', mainCarousel.onTap, this, {element: 'body'});\r",
                             "\r",
                             "//Line across screen\r",
                             "surface.add({\r",
@@ -135,7 +135,7 @@
                             "    y: 70\r",
                             "}).show(true);\r",
                             "\r",
-                            "var addbutton = surface.add({\r",
+                            "surface.add({\r",
                             "    type: 'text',\r",
                             "    text: '+add',\r",
                             "    font: \"36px Arial\",\r",
@@ -143,10 +143,6 @@
                             "    x: displace,\r",
                             "    y: 70\r",
                             "}).show(true);\r",
-                            "\r",
-                            "addbutton.on('click', function() {\r",
-                            "    console.log('CLICK EVENT!');\r",
-                            "});\r",
                             "\r",
                             "for (var iter = 0; iter < events.length; iter++) {\r",
                             "    xloc = iter*200;\r",
@@ -351,6 +347,21 @@
                     "designerId": "2c8e79f0-064e-46cb-bd80-e0bea27bfa38"
                 }
             ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "addTap",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "9a829c51-ae43-4802-9f17-738f3ea9a865"
         }
     ]
 }
