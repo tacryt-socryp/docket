@@ -54,13 +54,8 @@ Ext.define('Conflux.view.authContainer', {
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
-            final_i = 0,
-            calendarIds = ['bestfitmedia.com_37353438383431323932@resource.calendar.google.com',
-            'bestfitmedia.com_2d3135393231303233373935@resource.calendar.google.com',
-            'bestfitmedia.com_2d39383936323436392d393431@resource.calendar.google.com'],
             items = [],
             calendarId,
-            iter = 0,
             summary,
             child,
             obj;
@@ -81,12 +76,11 @@ Ext.define('Conflux.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (i = 0; i < outer.items.length; i++) {
-                        if (outer.items[i].id === calendarIds[iter]) {
+                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {
                             calendarId = outer.items[i].id;
                             summary = outer.items[i].summary;
                             console.log("ID: " + calendarId + " Summary: " + summary);
                             me.loadData(calendarId, summary, items);
-                            iter++;
                         }
                     }
                 });
@@ -155,8 +149,8 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
                         obj = new Conflux.view.MyContainer();
+                        array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
                         child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
                         child.roomText = summary;
