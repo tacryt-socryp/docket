@@ -31,7 +31,6 @@ Ext.application({
 
     launch: function() {
         console.log('launch: app.js');
-        Ext.create('Conflux.view.mainCarousel');
         Ext.create('Conflux.view.authContainer', {fullscreen: true});
     }
 

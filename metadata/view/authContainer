@@ -30,6 +30,8 @@
                     "    parameters[key] = value;\r",
                     "});\r",
                     "\r",
+                    "Ext.create('Conflux.view.mainCarousel');\r",
+                    "\r",
                     "function isEmpty(ob) {\r",
                     "    for(var i in ob){\r",
                     "        return false;\r",

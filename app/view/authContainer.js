@@ -33,6 +33,8 @@ Ext.define('Conflux.view.authContainer', {
             parameters[key] = value;
         });
 
+        Ext.create('Conflux.view.mainCarousel');
+
         function isEmpty(ob) {
             for(var i in ob){
                 return false;

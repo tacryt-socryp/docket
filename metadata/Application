@@ -38,8 +38,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "console.log('launch: app.js');\r",
-                    "Ext.create('Conflux.view.mainCarousel');"
+                    "console.log('launch: app.js');"
                 ]
             },
             "designerId": "67be6550-a2b7-41e5-b547-bf9e1dc1c9ef"
