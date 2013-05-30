@@ -13,7 +13,7 @@
         "designer|userClassName": "mainCarousel",
         "designer|userAlias": "mainCarousel",
         "requires": [
-            "myContainer"
+            "Conflux.view.myContainer"
         ],
         "direction": "vertical"
     },

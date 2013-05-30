@@ -18,7 +18,7 @@ Ext.define('Conflux.view.mainCarousel', {
     alias: 'widget.mainCarousel',
 
     requires: [
-        'myContainer'
+        'Conflux.view.myContainer'
     ],
 
     config: {
