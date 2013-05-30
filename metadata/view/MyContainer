@@ -6,8 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
+        "height": null,
         "id": "MyContainer",
         "itemId": "MyContainer",
+        "width": null,
         "designer|userClassName": "MyContainer",
         "designer|userAlias": "MyContainer",
         "autoDestroy": false,
