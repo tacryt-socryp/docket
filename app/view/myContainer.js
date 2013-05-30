@@ -75,11 +75,24 @@ Ext.define('Conflux.view.myContainer', {
                             surface.add({
                                 type: 'text',
                                 text: roomText,
-                                font: "42px Arial",
+                                font: "40px Arial",
                                 fill: '#FFF',
                                 x: 70,
                                 y: 70
                             }).show(true);
+
+                            var addbutton = surface.add({
+                                type: 'text',
+                                text: '+add',
+                                font: "36px Arial",
+                                fill: '#FFF',
+                                x: 70,
+                                y: 70
+                            }).show(true);
+
+                            addbutton.on('click', function() {
+                                alert('hello');
+                            });
 
                             for (var iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
