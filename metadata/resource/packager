@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userClassName": "packager",
         "applicationName": "Conflux",
-        "applicationId": "com.mycompany.myAppID",
+        "applicationId": "com.loganfynne.conflux",
         "versionString": "1.0",
         "versionCode": "1",
         "icon": [
@@ -16,7 +16,7 @@
         ],
         "inputPath": "./",
         "outputPath": "../build/",
-        "configuration": "Debug",
+        "configuration": "Release",
         "platform": "Android",
         "deviceType": "Universal",
         "androidAPILevel": "8",
