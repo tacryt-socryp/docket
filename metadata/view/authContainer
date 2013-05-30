@@ -9,7 +9,8 @@
         "html": null,
         "itemId": "authContainer",
         "style": null,
-        "designer|userClassName": "authContainer"
+        "designer|userClassName": "authContainer",
+        "designer|initialView": true
     },
     "designerId": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
     "cn": [
@@ -173,7 +174,7 @@
                     "            });\r",
                     "\r",
                     "            request.execute(function(resp) {\r",
-                    "                obj = new Conflux.view.MyContainer();\r",
+                    "                obj = new Conflux.view.myContainer();\r",
                     "                array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;\r",
                     "                child = Ext.ComponentQuery.query('#inlineDraw')[array_i];\r",
                     "\r",

@@ -27,5 +27,11 @@ Ext.application({
         'authContainer',
         'myContainer'
     ],
-    name: 'Conflux'
+    name: 'Conflux',
+
+    launch: function() {
+
+        Ext.create('Conflux.view.authContainer', {fullscreen: true});
+    }
+
 });
