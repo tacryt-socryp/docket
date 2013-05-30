@@ -151,23 +151,29 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        if (Ext.isDefined(resp.items[0].summary.length)) {
-                            obj = new Conflux.view.myContainer();
-                            array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
-                            child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
+                        if (Ext.isDefined(resp.items)) {
+                            if (Ext.isDefined(resp.items[0])) {
+                                if (Ext.isDefined(resp.items[0].summary)) {
+                                    if (Ext.isDefined(resp.items[0].summary.length)) {
+                                        obj = new Conflux.view.myContainer();
+                                        array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
+                                        child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
-                            child.roomText = summary;
-                            child.backgroundColor = backgroundColors[array_i];
-                            child.boxColor = boxColors[array_i];
-                            child.timelineColor = timelineColors[array_i];
-                            child.events = resp.items;
-                            items.push(obj);
+                                        child.roomText = summary;
+                                        child.backgroundColor = backgroundColors[array_i];
+                                        child.boxColor = boxColors[array_i];
+                                        child.timelineColor = timelineColors[array_i];
+                                        child.events = resp.items;
+                                        items.push(obj);
 
-                            console.log("array_i: " + array_i + " items.length: " + items.length);
-                            if (items.length == 5) {
-                                mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
-                                mainCarousel.setItems(items);
-                                Ext.Viewport.setActiveItem('mainCarousel');
+                                        console.log("array_i: " + array_i + " items.length: " + items.length);
+                                        if (items.length == 5) {
+                                            mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
+                                            mainCarousel.setItems(items);
+                                            Ext.Viewport.setActiveItem('mainCarousel');
+                                        }
+                                    }
+                                }
                             }
                         }
                     });
