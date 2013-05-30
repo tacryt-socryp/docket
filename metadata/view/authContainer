@@ -174,7 +174,7 @@
                     "            request.execute(function(resp) {\r",
                     "                try {\r",
                     "                    child = resp.items[0].summary; //Throws an error if the item doesn't have a summary\r",
-                    "                    \r",
+                    "\r",
                     "                    obj = new Conflux.view.myContainer();\r",
                     "                    array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;\r",
                     "                    child = Ext.ComponentQuery.query('#inlineDraw')[array_i];\r",
@@ -185,7 +185,7 @@
                     "                    child.timelineColor = timelineColors[array_i];\r",
                     "                    child.events = resp.items;\r",
                     "                    items.push(obj);\r",
-                    "                    \r",
+                    "\r",
                     "                    console.log(\"array_i: \" + array_i + \" items.length: \" + items.length);\r",
                     "                    if (items.length == 3) {\r",
                     "                        mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
@@ -193,12 +193,12 @@
                     "                        Ext.Viewport.setActiveItem('mainCarousel');\r",
                     "                    }\r",
                     "                } catch (e) {}\r",
+                    "                });\r",
                     "            });\r",
-                    "        });\r",
-                    "    } else {\r",
-                    "        window.location.reload();\r",
-                    "    }\r",
-                    "});"
+                    "        } else {\r",
+                    "            window.location.reload();\r",
+                    "        }\r",
+                    "    });"
                 ]
             },
             "designerId": "8094e688-d3c3-418f-b035-39c0a801914e"
