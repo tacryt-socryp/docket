@@ -151,8 +151,8 @@ Ext.define('Conflux.view.authContainer', {
 
                     request.execute(function(resp) {
                         try {
-                            console.log(resp.items[0].summary);
-                            child = resp.items[0].summary; //Throws an error if the item doesn't have a summary
+                            console.log(resp.items[0].summary.length);
+                            child = resp.items[0].summary.length; //Throws an error if the item doesn't have a summary
 
                             obj = new Conflux.view.myContainer();
                             array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
