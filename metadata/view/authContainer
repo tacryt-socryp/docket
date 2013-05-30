@@ -67,7 +67,7 @@
                     "    summary;\r",
                     "\r",
                     "Ext.create('widget.mainCarousel');\r",
-                    "Ext.create('widget.MyContainer');\r",
+                    "Ext.create('widget.myContainer');\r",
                     "\r",
                     "try {\r",
                     "    gapi.client.setApiKey(apiKey);\r",

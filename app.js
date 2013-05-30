@@ -25,13 +25,7 @@ Ext.application({
     views: [
         'mainCarousel',
         'authContainer',
-        'MyContainer'
+        'myContainer'
     ],
-    name: 'Conflux',
-
-    launch: function() {
-
-        Ext.create('Conflux.view.MyContainer', {fullscreen: true});
-    }
-
+    name: 'Conflux'
 });

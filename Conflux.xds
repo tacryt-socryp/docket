@@ -59,11 +59,11 @@
         },
         "9bc94066-7690-4c68-8866-c110d3b1b5d4": {
             "paths": [
-                "metadata/view/MyContainer",
-                "app/view/override/MyContainer.js",
-                "app/view/MyContainer.js"
+                "metadata/view/myContainer",
+                "app/view/override/myContainer.js",
+                "app/view/myContainer.js"
             ],
-            "className": "MyContainer"
+            "className": "myContainer"
         }
     },
     "viewOrderMap": {

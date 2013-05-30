@@ -59,7 +59,7 @@ Ext.define('Conflux.view.authContainer', {
             summary;
 
         Ext.create('widget.mainCarousel');
-        Ext.create('widget.MyContainer');
+        Ext.create('widget.myContainer');
 
         try {
             gapi.client.setApiKey(apiKey);
@@ -149,7 +149,7 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        obj = new Conflux.view.MyContainer();
+                        obj = new Conflux.view.myContainer();
                         array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
                         child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
