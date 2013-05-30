@@ -6,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "id": "MyContainer",
+        "itemId": "MyContainer",
         "designer|userClassName": "MyContainer",
         "designer|userAlias": "MyContainer",
         "scrollable": "horizontal"

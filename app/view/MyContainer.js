@@ -18,6 +18,8 @@ Ext.define('Conflux.view.MyContainer', {
     alias: 'widget.MyContainer',
 
     config: {
+        id: 'MyContainer',
+        itemId: 'MyContainer',
         scrollable: 'horizontal',
         items: [
             {
