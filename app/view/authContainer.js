@@ -59,7 +59,6 @@ Ext.define('Conflux.view.authContainer', {
             summary;
 
         Ext.create('widget.mainCarousel');
-        Ext.create('widget.myContainer');
 
         try {
             gapi.client.setApiKey(apiKey);
