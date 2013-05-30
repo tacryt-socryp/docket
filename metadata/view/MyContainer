@@ -20,13 +20,46 @@
             },
             "codeClass": null,
             "userConfig": {
+                "events": [
+                    "[]"
+                ],
                 "id": "inlineDraw",
                 "itemId": "inlineDraw",
                 "designer|displayName": "inlineDraw",
                 "designer|createAlias": "inlineDraw",
                 "autoDestroy": false
             },
+            "configAlternates": {
+                "events": "array"
+            },
             "designerId": "8d99f194-3342-4a69-8f14-e28452945f67",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "backgroundColor",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "timelineColor",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "roomText",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "boxColor",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "events",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "basiceventbinding",

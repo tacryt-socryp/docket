@@ -22,6 +22,9 @@ Ext.define('Conflux.view.MyContainer', {
         items: [
             {
                 xtype: 'inlineDraw',
+                events: [
+                    
+                ],
                 id: 'inlineDraw',
                 itemId: 'inlineDraw',
                 autoDestroy: false,
