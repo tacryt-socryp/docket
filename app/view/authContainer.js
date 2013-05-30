@@ -147,10 +147,9 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        if (summary == "Luckenbach Room") {
-                            console.log(resp);
-                        }
+                        console.log(resp.hasOwnProperty(items));
                         if (resp.hasOwnProperty(items)) {
+                            console.log(resp.items[0].hasOwnProperty(summary));
                             if (resp.items[0].hasOwnProperty(summary)) {
                                 obj = new Conflux.view.myContainer();
                                 array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
