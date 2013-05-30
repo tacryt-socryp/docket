@@ -58,11 +58,9 @@ Ext.define('Conflux.view.authContainer', {
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
-            active = [],
             items = [],
             calendarId,
-            summary,
-            last;
+            summary;
 
         try {
             gapi.client.setApiKey(apiKey);
@@ -78,23 +76,13 @@ Ext.define('Conflux.view.authContainer', {
                 request.execute(function(outer) {
                     for (var a = 0; a < outer.items.length; a++) {
                         if (outer.items[a].id.substring(0,8) === 'bestfitm') {
-                            if (outer.items[a].id !== null && outer.items[a].summary !== null) {
-                                active.push(a);
+                            calendarId = outer.items[a].id;
+                            summary = outer.items[a].summary;
+                            if (calendarId !== null && summary !== null) {
+                                console.log('calendarId: ' + calendarId + ' summary: ' + summary);
+                                me.loadData(calendarId, summary, items);
                             }
                         }
-                    }
-
-                    for (var b = 0; b < active.length; b++) {
-                        if (b == (active.length-1)) {
-                            last = true;
-                            console.log("true");
-                        } else {
-                            last = false;
-                        }
-                        calendarId = outer.items[active[b]].id;
-                        summary = outer.items[active[b]].summary;
-                        console.log('calendarId: ' + calendarId + ' summary: ' + summary);
-                        me.loadData(calendarId, summary, items, last);
                     }
                 });
             });
@@ -102,7 +90,7 @@ Ext.define('Conflux.view.authContainer', {
     });
     },
 
-    loadData: function(calendarId, summary, items, last) {
+    loadData: function(calendarId, summary, items) {
         console.log('loadData: authContainer');
         console.log("last is equal to " + last);
         var me = this,
@@ -161,28 +149,29 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        if (Ext.isDefined(resp.items)) {
-                            if (Ext.isDefined(resp.items[0])) {
-                                if (Ext.isDefined(resp.items[0].summary)) {
-                                    if (Ext.isDefined(resp.items[0].summary.length)) {
-                                        obj = new Conflux.view.myContainer();
-                                        array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
-                                        child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
+                        if (Ext.isDefined(resp)) {
+                            if (Ext.isDefined(resp.items)) {
+                                if (Ext.isDefined(resp.items[0])) {
+                                    if (Ext.isDefined(resp.items[0].summary)) {
+                                        if (Ext.isDefined(resp.items[0].summary.length)) {
+                                            obj = new Conflux.view.myContainer();
+                                            array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
+                                            child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
-                                        child.roomText = summary;
-                                        child.backgroundColor = backgroundColors[array_i];
-                                        child.boxColor = boxColors[array_i];
-                                        child.timelineColor = timelineColors[array_i];
-                                        child.events = resp.items;
-                                        items.push(obj);
+                                            child.roomText = summary;
+                                            child.backgroundColor = backgroundColors[array_i];
+                                            child.boxColor = boxColors[array_i];
+                                            child.timelineColor = timelineColors[array_i];
+                                            child.events = resp.items;
+                                            items.push(obj);
 
-                                        console.log("array_i: " + array_i + " items.length: " + items.length);
+                                            console.log("array_i: " + array_i + " items.length: " + items.length);
+                                        }
                                     }
                                 }
                             }
                         }
-                        if (last === true) {
-                            console.log("Should be switching to mainCarousel");
+                        if (items.length == 4) {
                             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                             mainCarousel.setItems(items);
                             Ext.Viewport.setActiveItem('mainCarousel');
