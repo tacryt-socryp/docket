@@ -77,6 +77,7 @@ Ext.define('Conflux.view.authContainer', {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
                             calendarId = outer.items[i].id;
                             summary = outer.items[i].summary;
+                            console.log('calendarId: ' + calendarId + ' summary: ' + summary);
                             if (calendarId !== null && summary !== null) {
                                 me.loadData(calendarId, summary, items);
                             }
@@ -150,6 +151,7 @@ Ext.define('Conflux.view.authContainer', {
 
                     request.execute(function(resp) {
                         try {
+                            console.log(resp.items[0].summary);
                             child = resp.items[0].summary; //Throws an error if the item doesn't have a summary
 
                             obj = new Conflux.view.myContainer();
