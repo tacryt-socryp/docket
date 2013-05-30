@@ -74,6 +74,7 @@ Ext.define('Conflux.view.authContainer', {
                 request.execute(function(outer) {
                     for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
+                            console.log(outer.items[i]);
                             calendarId = outer.items[i].id;
                             summary = outer.items[i].summary;
                             console.log("ID: " + calendarId + " Summary: " + summary);
@@ -151,7 +152,7 @@ Ext.define('Conflux.view.authContainer', {
                         if (summary == "Luckenbach Room") {
                             console.log(resp);
                         }
-                        if (resp.items.length !== undefined) {
+                        if (resp.items[0].summary !== undefined) {
                             obj = new Conflux.view.myContainer();
                             array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
                             child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
@@ -163,6 +164,7 @@ Ext.define('Conflux.view.authContainer', {
                             child.events = resp.items;
                             items.push(obj);
 
+                            console.log("array_i: " + array_i + " items.length: " + items.length);
                             if (items.length == 5) {
                                 mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                                 mainCarousel.setItems(items);
