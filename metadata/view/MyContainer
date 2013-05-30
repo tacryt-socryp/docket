@@ -326,6 +326,21 @@
                     "designerId": "2c8e79f0-064e-46cb-bd80-e0bea27bfa38"
                 }
             ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "6c769d93-326d-421c-adb4-001de34dde13"
         }
     ]
 }

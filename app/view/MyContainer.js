@@ -276,6 +276,10 @@ Ext.define('Conflux.view.MyContainer', {
                 ]
             }
         ]
+    },
+
+    initialize: function() {
+        this.callParent();
     }
 
 });
