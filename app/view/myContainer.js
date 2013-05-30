@@ -234,7 +234,7 @@ Ext.define('Conflux.view.myContainer', {
                                         font: '22px Arial',
                                         fill: '#FFF',
                                         x: xloc+45,
-                                        y: yloc+450
+                                        y: yloc+435
                                     }).show(true);
 
                                     if (description !== false) {
@@ -246,7 +246,7 @@ Ext.define('Conflux.view.myContainer', {
                                             height: 100,
                                             fill: '#FFF',
                                             x: xloc+45,
-                                            y: yloc+450
+                                            y: yloc+465
                                         }).show(true);
                                     }
 

@@ -295,7 +295,7 @@
                             "                height: 100,\r",
                             "                fill: '#FFF',\r",
                             "                x: xloc+45,\r",
-                            "                y: yloc+450\r",
+                            "                y: yloc+465\r",
                             "            }).show(true);\r",
                             "        }\r",
                             "\r",
