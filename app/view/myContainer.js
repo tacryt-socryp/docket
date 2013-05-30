@@ -19,7 +19,6 @@ Ext.define('Conflux.view.myContainer', {
 
     config: {
         itemId: 'myContainer',
-        autoDestroy: false,
         scrollable: {
             direction: 'horizontal',
             directionLock: true

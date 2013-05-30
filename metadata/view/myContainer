@@ -12,7 +12,7 @@
         "width": null,
         "designer|userClassName": "myContainer",
         "designer|userAlias": "myContainer",
-        "autoDestroy": false,
+        "autoDestroy": null,
         "scrollable": [
             "{\r",
             "    direction: 'horizontal',\r",
