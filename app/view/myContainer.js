@@ -88,6 +88,23 @@ Ext.define('Conflux.view.myContainer', {
                             }).show(true);
 
                             surface.add({
+                                type: 'rect',
+                                fill: backgroundColor,
+                                height : 100,
+                                width: 200,
+                                x: displace,
+                                y: 70,
+                                listeners: {
+                                    tap : function() {
+                                        console.log('tap tap tap');
+                                    },
+                                    click: function() {
+                                        console.log('click click click');
+                                    }
+                                }
+                            }).show(true);
+
+                            surface.add({
                                 type: 'text',
                                 text: '+add',
                                 font: "36px Arial",
@@ -95,6 +112,9 @@ Ext.define('Conflux.view.myContainer', {
                                 x: displace,
                                 y: 70,
                                 listeners: {
+                                    tap : function() {
+                                        console.log('tap tap tap');
+                                    },
                                     click: function() {
                                         console.log('click click click');
                                     }
