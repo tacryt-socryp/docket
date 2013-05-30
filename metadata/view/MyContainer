@@ -12,6 +12,7 @@
         "width": null,
         "designer|userClassName": "MyContainer",
         "designer|userAlias": "MyContainer",
+        "designer|initialView": true,
         "autoDestroy": false,
         "scrollable": "horizontal"
     },

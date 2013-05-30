@@ -9,8 +9,7 @@
         "html": null,
         "itemId": "authContainer",
         "style": null,
-        "designer|userClassName": "authContainer",
-        "designer|initialView": true
+        "designer|userClassName": "authContainer"
     },
     "designerId": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
     "cn": [

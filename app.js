@@ -31,7 +31,7 @@ Ext.application({
 
     launch: function() {
 
-        Ext.create('Conflux.view.authContainer', {fullscreen: true});
+        Ext.create('Conflux.view.MyContainer', {fullscreen: true});
     }
 
 });
