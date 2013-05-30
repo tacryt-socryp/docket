@@ -62,9 +62,10 @@ Ext.define('Conflux.view.myContainer', {
                             surface.setSize(w,h);
                             surface.setBackground(backgroundColor);
 
-                            this.element.on({
-                                tap: 'onTap',
-                                scope: me
+                            surface.on({
+                                'mousemove': function() {
+                                    console.log('moving the mouse over the surface');   
+                                }
                             });
 
                             //Line across screen
@@ -110,15 +111,7 @@ Ext.define('Conflux.view.myContainer', {
                                 font: "36px Arial",
                                 fill: '#FFF',
                                 x: displace,
-                                y: 70,
-                                listeners: {
-                                    tap : function() {
-                                        console.log('tap tap tap');
-                                    },
-                                    click: function() {
-                                        console.log('click click click');
-                                    }
-                                }
+                                y: 70
                             }).show(true);
 
                             for (var iter = 0; iter < events.length; iter++) {
