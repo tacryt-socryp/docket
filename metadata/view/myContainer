@@ -7,13 +7,21 @@
     "codeClass": null,
     "userConfig": {
         "height": null,
-        "id": "myContainer",
+        "id": null,
         "itemId": "myContainer",
         "width": null,
         "designer|userClassName": "myContainer",
         "designer|userAlias": "myContainer",
         "autoDestroy": false,
-        "scrollable": "horizontal"
+        "scrollable": [
+            "{\r",
+            "    direction: 'horizontal',\r",
+            "    directionLock: true\r",
+            "}"
+        ]
+    },
+    "configAlternates": {
+        "scrollable": "object"
     },
     "designerId": "9bc94066-7690-4c68-8866-c110d3b1b5d4",
     "cn": [
@@ -28,10 +36,10 @@
                 "events": [
                     "[]"
                 ],
-                "id": "inlineDraw",
+                "id": null,
                 "itemId": "inlineDraw",
                 "designer|displayName": "inlineDraw",
-                "designer|createAlias": "inlineDraw",
+                "designer|createAlias": null,
                 "autoDestroy": false
             },
             "configAlternates": {

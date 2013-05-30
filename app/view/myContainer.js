@@ -18,17 +18,18 @@ Ext.define('Conflux.view.myContainer', {
     alias: 'widget.myContainer',
 
     config: {
-        id: 'myContainer',
         itemId: 'myContainer',
         autoDestroy: false,
-        scrollable: 'horizontal',
+        scrollable: {
+            direction: 'horizontal',
+            directionLock: true
+        },
         items: [
             {
-                xtype: 'inlineDraw',
+                xtype: 'draw',
                 events: [
                     
                 ],
-                id: 'inlineDraw',
                 itemId: 'inlineDraw',
                 autoDestroy: false,
                 listeners: [
