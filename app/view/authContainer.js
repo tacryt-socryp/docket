@@ -22,6 +22,10 @@ Ext.define('Conflux.view.authContainer', {
             {
                 fn: 'onContainerPainted',
                 event: 'painted'
+            },
+            {
+                fn: 'onAuthContainerDeactivate',
+                event: 'deactivate'
             }
         ]
     },
@@ -48,6 +52,10 @@ Ext.define('Conflux.view.authContainer', {
             Conflux.app.authToken = decodeURI(parameters.auth);
             this.generateItems();
         }
+    },
+
+    onAuthContainerDeactivate: function(oldActiveItem, container, newActiveItem, eOpts) {
+        oldActiveItem.destroy();
     },
 
     generateItems: function() {
@@ -150,10 +158,7 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        try {
-                            console.log(resp.items[0].summary.length);
-                            child = resp.items[0].summary.length; //Throws an error if the item doesn't have a summary
-
+                        if (Ext.isDefined(resp.items[0].summary.length)) {
                             obj = new Conflux.view.myContainer();
                             array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
                             child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
@@ -171,13 +176,13 @@ Ext.define('Conflux.view.authContainer', {
                                 mainCarousel.setItems(items);
                                 Ext.Viewport.setActiveItem('mainCarousel');
                             }
-                        } catch (e) {}
-                        });
+                        }
                     });
-                } else {
-                    window.location.reload();
-                }
-            });
+                });
+            } else {
+                window.location.reload();
+            }
+        });
     }
 
 });

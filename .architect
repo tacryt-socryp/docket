@@ -16,6 +16,9 @@
                 },
                 {
                     "id": "8094e688-d3c3-418f-b035-39c0a801914e"
+                },
+                {
+                    "id": "943315fa-87d7-4b75-a301-d941db29965b"
                 }
             ]
         },
@@ -70,11 +73,11 @@
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "4c487781-374e-46c2-af47-df32fef4e610",
-        "selectedInstance": "4c487781-374e-46c2-af47-df32fef4e610"
+        "topInstance": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
+        "selectedInstance": "8094e688-d3c3-418f-b035-39c0a801914e"
     },
     "codeState": {
-        "topInstance": "4c487781-374e-46c2-af47-df32fef4e610"
+        "topInstance": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b"
     },
     "editMode": "code"
 }

@@ -175,10 +175,7 @@
                     "            });\r",
                     "\r",
                     "            request.execute(function(resp) {\r",
-                    "                try {\r",
-                    "                    console.log(resp.items[0].summary.length);\r",
-                    "                    child = resp.items[0].summary.length; //Throws an error if the item doesn't have a summary\r",
-                    "\r",
+                    "                if (Ext.isDefined(resp.items[0].summary.length)) {\r",
                     "                    obj = new Conflux.view.myContainer();\r",
                     "                    array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;\r",
                     "                    child = Ext.ComponentQuery.query('#inlineDraw')[array_i];\r",
@@ -196,16 +193,32 @@
                     "                        mainCarousel.setItems(items);\r",
                     "                        Ext.Viewport.setActiveItem('mainCarousel');\r",
                     "                    }\r",
-                    "                } catch (e) {}\r",
-                    "                });\r",
+                    "                }\r",
                     "            });\r",
-                    "        } else {\r",
-                    "            window.location.reload();\r",
-                    "        }\r",
-                    "    });"
+                    "        });\r",
+                    "    } else {\r",
+                    "        window.location.reload();\r",
+                    "    }\r",
+                    "});"
                 ]
             },
             "designerId": "8094e688-d3c3-418f-b035-39c0a801914e"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAuthContainerDeactivate",
+                "implHandler": [
+                    "oldActiveItem.destroy();"
+                ],
+                "name": "deactivate"
+            },
+            "designerId": "943315fa-87d7-4b75-a301-d941db29965b"
         }
     ]
 }
