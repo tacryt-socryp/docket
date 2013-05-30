@@ -174,7 +174,7 @@
                     "                console.log(typeof resp.items !== undefined);\r",
                     "                if (typeof resp.items !== undefined) {\r",
                     "                    console.log(resp.items[0].hasOwnProperty(summary));\r",
-                    "                    if (resp.items[0].hasOwnProperty(summary)) {\r",
+                    "                    if (typeof resp.items[0].summary !== undefined) {\r",
                     "                obj = new Conflux.view.myContainer();\r",
                     "                array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;\r",
                     "                child = Ext.ComponentQuery.query('#inlineDraw')[array_i];\r",
