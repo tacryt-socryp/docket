@@ -195,6 +195,7 @@
                     "\r",
                     "                    console.log(\"array_i: \" + array_i + \" items.length: \" + items.length);\r",
                     "                    if (last === true) {\r",
+                    "                        console.log(\"Should be switching to mainCarousel\");\r",
                     "                        mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
                     "                        mainCarousel.setItems(items);\r",
                     "                        Ext.Viewport.setActiveItem('mainCarousel');\r",
