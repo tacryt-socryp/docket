@@ -71,6 +71,11 @@
                     "group": "(Custom Properties)",
                     "name": "events",
                     "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "dotColor",
+                    "type": "string"
                 }
             ],
             "cn": [
@@ -100,7 +105,7 @@
                             "    summary,\r",
                             "    yloc = h/10,\r",
                             "    xloc,\r",
-                            "    text_displace = Ext.getBody().getSize().width - 200,\r",
+                            "    displace = Ext.getBody().getSize().width - 200,\r",
                             "    w;\r",
                             "\r",
                             "w = 203 * events.length;\r",
@@ -136,12 +141,12 @@
                             "    text: '+add',\r",
                             "    font: \"36px Arial\",\r",
                             "    fill: '#FFF',\r",
-                            "    x: text_displace,\r",
+                            "    x: displace,\r",
                             "    y: 70\r",
                             "}).show(true);\r",
                             "\r",
                             "addbutton.on('click', function() {\r",
-                            "    alert('hello');\r",
+                            "    console.log('CLICK EVENT!');\r",
                             "});\r",
                             "\r",
                             "for (var iter = 0; iter < events.length; iter++) {\r",
@@ -205,7 +210,7 @@
                             "        cx: xloc+192,\r",
                             "        cy: yloc+338,\r",
                             "        r: 22,\r",
-                            "        fillStyle: '#2b8bb5'\r",
+                            "        fillStyle: dotColor\r",
                             "    }).show(true);\r",
                             "\r",
                             "    surface.add({\r",

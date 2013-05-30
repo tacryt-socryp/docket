@@ -40,6 +40,7 @@ Ext.define('Conflux.view.myContainer', {
                                 timelineColor = me.timelineColor,
                                 roomText = me.roomText,
                                 boxColor = me.boxColor,
+                                dotColor = me.dotColor,
                                 events = me.events;
 
                             var h = Ext.getBody().getSize().height,
@@ -92,7 +93,7 @@ Ext.define('Conflux.view.myContainer', {
                             }).show(true);
 
                             addbutton.on('click', function() {
-                                alert('hello');
+                                console.log('CLICK EVENT!');
                             });
 
                             for (var iter = 0; iter < events.length; iter++) {
@@ -156,7 +157,7 @@ Ext.define('Conflux.view.myContainer', {
                                     cx: xloc+192,
                                     cy: yloc+338,
                                     r: 22,
-                                    fillStyle: '#2b8bb5'
+                                    fillStyle: dotColor
                                 }).show(true);
 
                                 surface.add({

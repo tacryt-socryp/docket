@@ -79,7 +79,6 @@ Ext.define('Conflux.view.authContainer', {
                             calendarId = outer.items[a].id;
                             summary = outer.items[a].summary;
                             if (calendarId !== null && summary !== null) {
-                                console.log('calendarId: ' + calendarId + ' summary: ' + summary);
                                 me.loadData(calendarId, summary, items);
                             }
                         }
@@ -129,6 +128,15 @@ Ext.define('Conflux.view.authContainer', {
         '#A4AE6A'  //Beige
         ];
 
+        var dotColors = [
+        '#C4D7A4', //Green
+        '#8497BF', //Purple
+        '#EC8E60', //Orange
+        '#176c93', //Blue
+        '#FFBFB4', //Red
+        '#97A97F'  //Beige
+        ];
+
         today.setHours(0,0,0,0);
         today = today.toISOString();
 
@@ -161,10 +169,9 @@ Ext.define('Conflux.view.authContainer', {
                                             child.backgroundColor = backgroundColors[array_i];
                                             child.boxColor = boxColors[array_i];
                                             child.timelineColor = timelineColors[array_i];
+                                            child.dotColor = dotColors[array_i];
                                             child.events = resp.items;
                                             items.push(obj);
-
-                                            console.log("array_i: " + array_i + " items.length: " + items.length);
                                         }
                                     }
                                 }
