@@ -160,7 +160,7 @@ Ext.define('Conflux.view.authContainer', {
                             child.events = resp.items;
                             items.push(obj);
 
-                            if (items.length == 3) {
+                            if (items.length == 5) {
                                 mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                                 mainCarousel.setItems(items);
                                 Ext.Viewport.setActiveItem('mainCarousel');
