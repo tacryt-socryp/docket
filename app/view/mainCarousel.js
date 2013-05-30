@@ -17,6 +17,10 @@ Ext.define('Conflux.view.mainCarousel', {
     extend: 'Ext.carousel.Carousel',
     alias: 'widget.mainCarousel',
 
+    requires: [
+        'myContainer'
+    ],
+
     config: {
         fullscreen: true,
         itemId: 'mainCarousel',

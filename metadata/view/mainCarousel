@@ -12,6 +12,9 @@
         "ui": "light",
         "designer|userClassName": "mainCarousel",
         "designer|userAlias": "mainCarousel",
+        "requires": [
+            "myContainer"
+        ],
         "direction": "vertical"
     },
     "designerId": "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
