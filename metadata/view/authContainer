@@ -24,6 +24,7 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
+                    "console.log('painted: authContainer');\r",
                     "var parameters = {};\r",
                     "var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {\r",
                     "    parameters[key] = value;\r",
@@ -57,6 +58,7 @@
             "userConfig": {
                 "fn": "generateItems",
                 "implHandler": [
+                    "console.log('generateItems: authContainer');\r",
                     "var me = this,\r",
                     "    token = Conflux.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
@@ -82,7 +84,6 @@
                     "                if (outer.items[i].id.substring(0,8) === 'bestfitm') {\r",
                     "                    calendarId = outer.items[i].id;\r",
                     "                    summary = outer.items[i].summary;\r",
-                    "                    console.log(\"ID: \" + calendarId + \" Summary: \" + summary);\r",
                     "                    if (calendarId !== null && summary !== null) {\r",
                     "                        me.loadData(calendarId, summary, items);\r",
                     "                    }\r",
@@ -111,6 +112,7 @@
                     "items"
                 ],
                 "implHandler": [
+                    "console.log('loadData: authContainer');\r",
                     "var me = this,\r",
                     "    today = new Date(),\r",
                     "    mainCarousel,\r",

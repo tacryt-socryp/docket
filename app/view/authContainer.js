@@ -27,6 +27,7 @@ Ext.define('Conflux.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
+        console.log('painted: authContainer');
         var parameters = {};
         var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
             parameters[key] = value;
@@ -48,6 +49,7 @@ Ext.define('Conflux.view.authContainer', {
     },
 
     generateItems: function() {
+        console.log('generateItems: authContainer');
         var me = this,
             token = Conflux.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
@@ -85,6 +87,7 @@ Ext.define('Conflux.view.authContainer', {
     },
 
     loadData: function(calendarId, summary, items) {
+        console.log('loadData: authContainer');
         var me = this,
             today = new Date(),
             mainCarousel,
