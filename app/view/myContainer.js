@@ -53,11 +53,7 @@ Ext.define('Conflux.view.myContainer', {
                                 yloc = h/10,
                                 xloc,
                                 displace = Ext.getBody().getSize().width - 200,
-                                w;
-
-                            w = 203 * events.length;
-
-                            console.log("Painted! Width: " + w + " Height: " + h);
+                                w = 203 * events.length;
 
                             me.setSize(w,h);
                             surface.setSize(w,h);

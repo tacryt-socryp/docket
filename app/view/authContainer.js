@@ -132,7 +132,7 @@ Ext.define('Conflux.view.authContainer', {
         '#C4D7A4', //Green
         '#8497BF', //Purple
         '#EC8E60', //Orange
-        '#176c93', //Blue
+        '#2b8bb5', //Blue
         '#FFBFB4', //Red
         '#97A97F'  //Beige
         ];
