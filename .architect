@@ -62,7 +62,8 @@
             "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
             "9bc94066-7690-4c68-8866-c110d3b1b5d4",
             "application",
-            "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
+            "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
+            "ac8fccac-f054-4d5b-b855-41390c27b65a"
         ]
     },
     "canvasState": {
@@ -70,7 +71,7 @@
     },
     "inspectorState": {
         "topInstance": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
-        "selectedInstance": "8094e688-d3c3-418f-b035-39c0a801914e"
+        "selectedInstance": "9475af23-74c5-4b89-abc2-3a4e737c4a15"
     },
     "codeState": {
         "topInstance": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b"
