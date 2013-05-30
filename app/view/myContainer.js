@@ -51,7 +51,7 @@ Ext.define('Conflux.view.myContainer', {
                                 summary,
                                 yloc = h/10,
                                 xloc,
-                                iter;
+                                w;
 
                             try {
                                 w = 203 * events.length;
@@ -88,7 +88,7 @@ Ext.define('Conflux.view.myContainer', {
                                 y: 70
                             }).show(true);
 
-                            for (iter = 0; iter < events.length; iter++) {
+                            for (var iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
                                 summary = events[iter].summary;
                                 if (summary.length > 26) {
