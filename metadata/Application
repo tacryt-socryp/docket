@@ -38,7 +38,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "Ext.create('Conflux.view.myContainer');"
+                    "console.log(Ext.create('Conflux.view.myContainer');"
                 ]
             },
             "designerId": "5f34a2e1-5657-4792-8cf8-d1b7c825bdd5"

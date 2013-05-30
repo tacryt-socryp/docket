@@ -30,7 +30,7 @@ Ext.application({
     name: 'Conflux',
 
     launch: function() {
-        Ext.create('Conflux.view.myContainer');
+        console.log(Ext.create('Conflux.view.myContainer'));
         Ext.create('Conflux.view.authContainer', {fullscreen: true});
     }
 
