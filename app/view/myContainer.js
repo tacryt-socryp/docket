@@ -214,13 +214,13 @@ Ext.define('Conflux.view.myContainer', {
                                         height : 160,
                                         width: 300,
                                         radius: 10,
-                                        x: xloc+40,
+                                        x: xloc+38,
                                         y: yloc+410
                                     }).show(true);
 
                                     surface.add({
                                         type: 'path',
-                                        path: 'M ' + (xloc+205) + ' ' + (yloc+410) + ' ' +
+                                        path: 'M ' + (xloc+203) + ' ' + (yloc+410) + ' ' +
                                         'l ' + -25 + ' ' + 0 + ' ' +
                                         'l ' + 12 + ' ' + -10 + 'z',
                                         fillStyle: boxColor
@@ -233,7 +233,7 @@ Ext.define('Conflux.view.myContainer', {
                                         height: 130,
                                         font: '22px Arial',
                                         fill: '#FFF',
-                                        x: xloc+45,
+                                        x: xloc+48,
                                         y: yloc+435
                                     }).show(true);
 
@@ -245,7 +245,7 @@ Ext.define('Conflux.view.myContainer', {
                                             width: 280,
                                             height: 100,
                                             fill: '#FFF',
-                                            x: xloc+45,
+                                            x: xloc+48,
                                             y: yloc+485
                                         }).show(true);
                                     }
