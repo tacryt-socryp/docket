@@ -135,7 +135,7 @@
                             "    text: '+add',\r",
                             "    font: \"36px Arial\",\r",
                             "    fill: '#FFF',\r",
-                            "    x: 70,\r",
+                            "    x: 1000,\r",
                             "    y: 70\r",
                             "}).show(true);\r",
                             "\r",

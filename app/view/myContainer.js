@@ -86,7 +86,7 @@ Ext.define('Conflux.view.myContainer', {
                                 text: '+add',
                                 font: "36px Arial",
                                 fill: '#FFF',
-                                x: 70,
+                                x: 1000,
                                 y: 70
                             }).show(true);
 
