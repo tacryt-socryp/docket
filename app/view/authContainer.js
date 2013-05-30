@@ -148,21 +148,23 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        obj = new Conflux.view.myContainer();
-                        array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
-                        child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
+                        if (resp.items.length !== undefined) {
+                            obj = new Conflux.view.myContainer();
+                            array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
+                            child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
-                        child.roomText = summary;
-                        child.backgroundColor = backgroundColors[array_i];
-                        child.boxColor = boxColors[array_i];
-                        child.timelineColor = timelineColors[array_i];
-                        child.events = resp.items;
-                        items.push(obj);
+                            child.roomText = summary;
+                            child.backgroundColor = backgroundColors[array_i];
+                            child.boxColor = boxColors[array_i];
+                            child.timelineColor = timelineColors[array_i];
+                            child.events = resp.items;
+                            items.push(obj);
 
-                        if (items.length == 3) {
-                            mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
-                            mainCarousel.setItems(items);
-                            Ext.Viewport.setActiveItem('mainCarousel');
+                            if (items.length == 3) {
+                                mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
+                                mainCarousel.setItems(items);
+                                Ext.Viewport.setActiveItem('mainCarousel');
+                            }
                         }
                     });
                 });
