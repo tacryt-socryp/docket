@@ -191,7 +191,7 @@
                     "                    items.push(obj);\r",
                     "\r",
                     "                    console.log(\"array_i: \" + array_i + \" items.length: \" + items.length);\r",
-                    "                    if (items.length == 3) {\r",
+                    "                    if (items.length == 5) {\r",
                     "                        mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
                     "                        mainCarousel.setItems(items);\r",
                     "                        Ext.Viewport.setActiveItem('mainCarousel');\r",
