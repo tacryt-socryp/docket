@@ -72,7 +72,6 @@ Ext.define('Conflux.view.authContainer', {
                 request.execute(function(outer) {
                     for (i = 0; i < outer.items.length; i++) {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            console.log(outer.items[i]);
                             calendarId = outer.items[i].id;
                             summary = outer.items[i].summary;
                             console.log("ID: " + calendarId + " Summary: " + summary);
@@ -147,8 +146,8 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        console.log(resp.hasOwnProperty(items));
-                        if (resp.hasOwnProperty(items)) {
+                        console.log(typeof resp.items !== undefined);
+                        if (typeof resp.items !== undefined) {
                             console.log(resp.items[0].hasOwnProperty(summary));
                             if (resp.items[0].hasOwnProperty(summary)) {
                                 obj = new Conflux.view.myContainer();
