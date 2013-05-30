@@ -150,8 +150,8 @@ Ext.define('Conflux.view.authContainer', {
                         if (summary == "Luckenbach Room") {
                             console.log(resp);
                         }
-                        if (items in resp) {
-                            if (summary in items[0]) {
+                        if (resp.hasOwnProperty(items)) {
+                            if (resp.items[0].hasOwnProperty(summary)) {
                                 obj = new Conflux.view.myContainer();
                                 array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
                                 child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
@@ -164,7 +164,7 @@ Ext.define('Conflux.view.authContainer', {
                                 items.push(obj);
 
                                 console.log("array_i: " + array_i + " items.length: " + items.length);
-                                if (items.length == 5) {
+                                if (items.length == 3) {
                                     mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                                     mainCarousel.setItems(items);
                                     Ext.Viewport.setActiveItem('mainCarousel');
