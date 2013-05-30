@@ -51,7 +51,7 @@ Ext.define('Conflux.view.myContainer', {
                                 summary,
                                 yloc = h/10,
                                 xloc,
-                                text_displace = Ext.getBody().getSize().width - 200,
+                                displace = Ext.getBody().getSize().width - 200,
                                 w;
 
                             w = 203 * events.length;
@@ -87,7 +87,7 @@ Ext.define('Conflux.view.myContainer', {
                                 text: '+add',
                                 font: "36px Arial",
                                 fill: '#FFF',
-                                x: 1000,
+                                x: displace,
                                 y: 70
                             }).show(true);
 

@@ -136,7 +136,7 @@
                             "    text: '+add',\r",
                             "    font: \"36px Arial\",\r",
                             "    fill: '#FFF',\r",
-                            "    x: 1000,\r",
+                            "    x: text_displace,\r",
                             "    y: 70\r",
                             "}).show(true);\r",
                             "\r",
