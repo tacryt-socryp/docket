@@ -61,7 +61,7 @@ Ext.define('Conflux.view.authContainer', {
             active = [],
             items = [],
             calendarId,
-            summary
+            summary,
             last;
 
         try {
