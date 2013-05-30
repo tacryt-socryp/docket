@@ -92,7 +92,6 @@ Ext.define('Conflux.view.authContainer', {
 
     loadData: function(calendarId, summary, items) {
         console.log('loadData: authContainer');
-        console.log("last is equal to " + last);
         var me = this,
             today = new Date(),
             mainCarousel,
