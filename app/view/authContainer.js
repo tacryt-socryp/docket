@@ -76,24 +76,25 @@ Ext.define('Conflux.view.authContainer', {
             gapi.client.load('calendar', 'v3', function() {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
-                    for (var i = 0; i < outer.items.length; i++) {
-                        if (outer.items[i].id.substring(0,8) === 'bestfitm') {
-                            calendarId = outer.items[i].id;
-                            summary = outer.items[i].summary;
-                            if (calendarId !== null && summary !== null) {
-                                active.push(i);
+                    for (var a = 0; a < outer.items.length; a++) {
+                        if (outer.items[a].id.substring(0,8) === 'bestfitm') {
+                            if (outer.items[a].id !== null && outer.items[a].summary !== null) {
+                                active.push(a);
                             }
                         }
                     }
 
-                    for (i = 0; i < active.length; i++) {
-                        if (i == (active.length-1)) {last = true;} else {last = false;}
-                        calendarId = outer.items[active[i]].id;
-                        summary = outer.items[active[i]].summary;
-                        console.log('calendarId: ' + calendarId + ' summary: ' + summary);
-                        if (calendarId !== null && summary !== null) {
-                            me.loadData(calendarId, summary, items, last);
+                    for (var b = 0; b < active.length; b++) {
+                        if (b == (active.length-1)) {
+                            last = true;
+                            console.log("true");
+                        } else {
+                            last = false;
                         }
+                        calendarId = outer.items[active[b]].id;
+                        summary = outer.items[active[b]].summary;
+                        console.log('calendarId: ' + calendarId + ' summary: ' + summary);
+                        me.loadData(calendarId, summary, items, last);
                     }
                 });
             });
