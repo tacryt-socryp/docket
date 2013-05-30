@@ -286,7 +286,7 @@ Ext.define('Conflux.view.myContainer', {
     },
 
     addTap: function() {
-
+        console.log("tap tap tap");
     }
 
 });

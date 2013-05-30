@@ -100,7 +100,7 @@
                             "var h = Ext.getBody().getSize().height,\r",
                             "    surface = this.getSurface('main'),\r",
                             "    today = new Date(Date.now()),\r",
-                            "    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];,\r",
+                            "    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
                             "    description,\r",
                             "    dateTime,\r",
                             "    summary,\r",
@@ -113,7 +113,7 @@
                             "surface.setSize(w,h);\r",
                             "surface.setBackground(backgroundColor);\r",
                             "\r",
-                            "surface.on('tap', mainCarousel.onTap, this, {element: 'body'});\r",
+                            "surface.on('tap', mainCarousel.addTap);\r",
                             "\r",
                             "//Line across screen\r",
                             "surface.add({\r",
@@ -358,7 +358,7 @@
             "userConfig": {
                 "fn": "addTap",
                 "implHandler": [
-                    ""
+                    "console.log(\"tap\");"
                 ]
             },
             "designerId": "9a829c51-ae43-4802-9f17-738f3ea9a865"
