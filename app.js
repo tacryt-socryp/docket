@@ -30,7 +30,7 @@ Ext.application({
     name: 'Conflux',
 
     launch: function() {
-
+        Ext.create('widget.mainCarousel');
         Ext.create('Conflux.view.authContainer', {fullscreen: true});
     }
 

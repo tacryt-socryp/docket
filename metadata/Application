@@ -26,5 +26,22 @@
             "name": "authToken",
             "type": "string"
         }
+    ],
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.create('widget.mainCarousel');"
+                ]
+            },
+            "designerId": "67be6550-a2b7-41e5-b547-bf9e1dc1c9ef"
+        }
     ]
 }
