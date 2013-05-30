@@ -10,6 +10,7 @@
         "itemId": "MyContainer",
         "designer|userClassName": "MyContainer",
         "designer|userAlias": "MyContainer",
+        "autoDestroy": false,
         "scrollable": "horizontal"
     },
     "designerId": "9bc94066-7690-4c68-8866-c110d3b1b5d4",

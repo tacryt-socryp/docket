@@ -20,6 +20,7 @@ Ext.define('Conflux.view.MyContainer', {
     config: {
         id: 'MyContainer',
         itemId: 'MyContainer',
+        autoDestroy: false,
         scrollable: 'horizontal',
         items: [
             {

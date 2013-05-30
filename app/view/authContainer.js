@@ -58,7 +58,7 @@ Ext.define('Conflux.view.authContainer', {
             calendarId,
             summary;
 
-        Ext.create('Conflux.view.mainCarousel');
+        Ext.create('widget.mainCarousel');
 
         try {
             gapi.client.setApiKey(apiKey);
@@ -148,7 +148,7 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        obj = new Conflux.view.MyContainer();
+                        obj = new widget.MyContainer();
                         array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
                         child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
