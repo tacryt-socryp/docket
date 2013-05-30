@@ -35,9 +35,6 @@
                             "id": "2c8e79f0-064e-46cb-bd80-e0bea27bfa38"
                         }
                     ]
-                },
-                {
-                    "id": "9a829c51-ae43-4802-9f17-738f3ea9a865"
                 }
             ]
         },
@@ -74,7 +71,7 @@
     },
     "inspectorState": {
         "topInstance": "9bc94066-7690-4c68-8866-c110d3b1b5d4",
-        "selectedInstance": "9a829c51-ae43-4802-9f17-738f3ea9a865"
+        "selectedInstance": "8d99f194-3342-4a69-8f14-e28452945f67"
     },
     "codeState": {
         "topInstance": "9bc94066-7690-4c68-8866-c110d3b1b5d4"

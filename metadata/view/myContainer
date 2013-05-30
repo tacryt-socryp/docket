@@ -36,6 +36,11 @@
                 "events": [
                     "[]"
                 ],
+                "onTap": [
+                    "function(element, eOpts) {\r",
+                    "    console.log(\"tap tap tap\");\r",
+                    "}"
+                ],
                 "id": null,
                 "itemId": "inlineDraw",
                 "designer|displayName": "inlineDraw",
@@ -43,7 +48,8 @@
                 "autoDestroy": false
             },
             "configAlternates": {
-                "events": "array"
+                "events": "array",
+                "onTap": "object"
             },
             "designerId": "8d99f194-3342-4a69-8f14-e28452945f67",
             "customConfigs": [
@@ -75,6 +81,11 @@
                 {
                     "group": "(Custom Properties)",
                     "name": "dotColor",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "onTap",
                     "type": "string"
                 }
             ],
@@ -113,7 +124,10 @@
                             "surface.setSize(w,h);\r",
                             "surface.setBackground(backgroundColor);\r",
                             "\r",
-                            "surface.on('tap', mainCarousel.addTap);\r",
+                            "this.element.on({\r",
+                            "    tap: 'onTap',\r",
+                            "    scope: me\r",
+                            "});\r",
                             "\r",
                             "//Line across screen\r",
                             "surface.add({\r",
@@ -347,21 +361,6 @@
                     "designerId": "2c8e79f0-064e-46cb-bd80-e0bea27bfa38"
                 }
             ]
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "addTap",
-                "implHandler": [
-                    "console.log(\"tap\");"
-                ]
-            },
-            "designerId": "9a829c51-ae43-4802-9f17-738f3ea9a865"
         }
     ]
 }

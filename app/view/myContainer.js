@@ -30,6 +30,9 @@ Ext.define('Conflux.view.myContainer', {
                 events: [
                     
                 ],
+                onTap: function(element, eOpts) {
+                    console.log("tap tap tap");
+                },
                 itemId: 'inlineDraw',
                 autoDestroy: false,
                 listeners: [
@@ -59,7 +62,10 @@ Ext.define('Conflux.view.myContainer', {
                             surface.setSize(w,h);
                             surface.setBackground(backgroundColor);
 
-                            surface.on('tap', mainCarousel.addTap);
+                            this.element.on({
+                                tap: 'onTap',
+                                scope: me
+                            });
 
                             //Line across screen
                             surface.add({
@@ -283,10 +289,6 @@ Ext.define('Conflux.view.myContainer', {
                 ]
             }
         ]
-    },
-
-    addTap: function() {
-        console.log("tap tap tap");
     }
 
 });
