@@ -55,9 +55,6 @@
         },
         "44d888b0-df21-47d2-8948-27c49c5757bf": {
             "id": "44d888b0-df21-47d2-8948-27c49c5757bf"
-        },
-        "4c487781-374e-46c2-af47-df32fef4e610": {
-            "id": "4c487781-374e-46c2-af47-df32fef4e610"
         }
     },
     "tabState": {
@@ -65,8 +62,7 @@
             "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
             "9bc94066-7690-4c68-8866-c110d3b1b5d4",
             "application",
-            "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-            "4c487781-374e-46c2-af47-df32fef4e610"
+            "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d"
         ]
     },
     "canvasState": {
