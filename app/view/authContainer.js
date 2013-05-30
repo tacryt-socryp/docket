@@ -27,7 +27,6 @@ Ext.define('Conflux.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        console.log("Inside painted!");
         var parameters = {};
         var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
             parameters[key] = value;
@@ -74,7 +73,6 @@ Ext.define('Conflux.view.authContainer', {
                         if (outer.items[i].id.substring(0,8) === 'bestfitm') {
                             calendarId = outer.items[i].id;
                             summary = outer.items[i].summary;
-                            console.log("ID: " + calendarId + " Summary: " + summary);
                             if (calendarId !== null && summary !== null) {
                                 me.loadData(calendarId, summary, items);
                             }

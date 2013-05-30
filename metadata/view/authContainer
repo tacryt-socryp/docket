@@ -24,7 +24,6 @@
             "userConfig": {
                 "fn": "onContainerPainted",
                 "implHandler": [
-                    "console.log(\"Inside painted!\");\r",
                     "var parameters = {};\r",
                     "var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {\r",
                     "    parameters[key] = value;\r",
