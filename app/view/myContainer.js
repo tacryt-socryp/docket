@@ -90,8 +90,12 @@ Ext.define('Conflux.view.myContainer', {
                             for (var iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
                                 summary = events[iter].summary;
-                                if (summary.length > 26) {
-                                    summary = summary.substring(0,24) + '...';
+                                try {
+                                    if (summary.length > 26) {
+                                        summary = summary.substring(0,24) + '...';
+                                    }
+                                } catch(e) {
+                                    console.log(summary);
                                 }
 
                                 description = events[iter].description;
