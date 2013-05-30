@@ -103,7 +103,6 @@ Ext.define('Conflux.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar';
 
         var backgroundColors = [
-        '#000',
         '#53ab73', //Green
         '#4E2B52', //Purple
         '#d27f56', //Orange
@@ -113,7 +112,6 @@ Ext.define('Conflux.view.authContainer', {
         ];
 
         var boxColors = [
-        '#000',
         '#7DCB99', //Green
         '#436085', //Purple
         '#F99665', //Orange
@@ -123,7 +121,6 @@ Ext.define('Conflux.view.authContainer', {
         ];
 
         var timelineColors = [
-        '#000',
         '#80E2BF', //Green
         '#5A325F', //Purple
         '#DA8359', //Orange
