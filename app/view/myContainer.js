@@ -246,7 +246,7 @@ Ext.define('Conflux.view.myContainer', {
                                             height: 100,
                                             fill: '#FFF',
                                             x: xloc+45,
-                                            y: yloc+480
+                                            y: yloc+485
                                         }).show(true);
                                     }
 
