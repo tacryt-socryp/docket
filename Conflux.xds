@@ -29,14 +29,6 @@
             ],
             "className": "mainCarousel"
         },
-        "a5f363fc-6ad5-44d1-847a-27915289d76d": {
-            "paths": [
-                "metadata/view/MyContainer1",
-                "app/view/override/MyContainer1.js",
-                "app/view/MyContainer1.js"
-            ],
-            "className": "MyContainer1"
-        },
         "5133ddc6-983b-440e-ba54-ce2fa457ad04": {
             "paths": [
                 "metadata/view/MyFormPanel",
@@ -64,13 +56,21 @@
                 "metadata/resource/css"
             ],
             "className": "css"
+        },
+        "9bc94066-7690-4c68-8866-c110d3b1b5d4": {
+            "paths": [
+                "metadata/view/MyContainer",
+                "app/view/override/MyContainer.js",
+                "app/view/MyContainer.js"
+            ],
+            "className": "MyContainer"
         }
     },
     "viewOrderMap": {
         "view": [
             "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-            "a5f363fc-6ad5-44d1-847a-27915289d76d",
+            "9bc94066-7690-4c68-8866-c110d3b1b5d4",
             "5133ddc6-983b-440e-ba54-ce2fa457ad04"
         ],
         "store": [],

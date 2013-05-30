@@ -65,7 +65,7 @@ Ext.define('Conflux.view.authContainer', {
             child,
             obj;
 
-        Ext.create('Conflux.view.MyContainer1');
+        Ext.create('Conflux.view.MyContainer');
         Ext.create('Conflux.view.mainCarousel');
 
         try {
@@ -155,9 +155,9 @@ Ext.define('Conflux.view.authContainer', {
                     });
 
                     request.execute(function(resp) {
-                        array_i = Ext.ComponentQuery.query('#inlineDraw1').length - 1;
-                        obj = new Conflux.view.MyContainer1();
-                        child = Ext.ComponentQuery.query('#inlineDraw1')[array_i];
+                        array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
+                        obj = new Conflux.view.MyContainer();
+                        child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
                         child.roomText = summary;
                         child.backgroundColor = backgroundColors[array_i];

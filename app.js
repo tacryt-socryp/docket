@@ -24,7 +24,8 @@ Ext.application({
     },
     views: [
         'mainCarousel',
-        'authContainer'
+        'authContainer',
+        'MyContainer'
     ],
     name: 'Conflux',
 

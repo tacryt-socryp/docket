@@ -11,7 +11,8 @@
         ],
         "views": [
             "mainCarousel",
-            "authContainer"
+            "authContainer",
+            "MyContainer"
         ],
         "name": "Conflux"
     },
