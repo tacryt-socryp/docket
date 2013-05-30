@@ -49,34 +49,6 @@ Ext.define('Conflux.view.MyContainer', {
                                 xloc,
                                 iter;
 
-                            w = 203 * events.length;
-
-                            console.log("Painted! Width: " + w + " Height: " + h);
-
-                            me.setSize(w,h);
-                            surface.setSize(w,h);
-                            surface.setBackground(backgroundColor);
-
-                            //Line across screen
-                            surface.add({
-                                type: 'rect',
-                                fill: timelineColor,
-                                height : 20,
-                                width: w,
-                                x: 0,
-                                y: yloc+330
-                            }).show(true);
-
-                            //Name of room
-                            surface.add({
-                                type: 'text',
-                                text: roomText,
-                                font: "42px Arial",
-                                fill: '#FFF',
-                                x: 70,
-                                y: 70
-                            }).show(true);
-
                             try {
                                 w = 203 * events.length;
                             } catch(e) {
