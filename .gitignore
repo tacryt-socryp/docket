@@ -2,6 +2,8 @@
 ## Eclipse
 #################
 
+.sencha/
+touch/
 *.pydevproject
 .project
 .metadata
