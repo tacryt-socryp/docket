@@ -56,11 +56,8 @@ Ext.define('Conflux.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar',
             items = [],
             calendarId,
-            summary,
-            child,
-            obj;
+            summary;
 
-        Ext.create('Conflux.view.MyContainer');
         Ext.create('Conflux.view.mainCarousel');
 
         try {
@@ -80,7 +77,9 @@ Ext.define('Conflux.view.authContainer', {
                             calendarId = outer.items[i].id;
                             summary = outer.items[i].summary;
                             console.log("ID: " + calendarId + " Summary: " + summary);
-                            me.loadData(calendarId, summary, items);
+                            if (calendarId !== null && summary !== null) {
+                                me.loadData(calendarId, summary, items);
+                            }
                         }
                     }
                 });
