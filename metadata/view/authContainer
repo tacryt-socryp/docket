@@ -122,6 +122,7 @@
                 ],
                 "implHandler": [
                     "console.log('loadData: authContainer');\r",
+                    "console.log(\"last is equal to \" + last);\r",
                     "var me = this,\r",
                     "    today = new Date(),\r",
                     "    mainCarousel,\r",
