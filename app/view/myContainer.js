@@ -19,6 +19,7 @@ Ext.define('Conflux.view.myContainer', {
 
     config: {
         itemId: 'myContainer',
+        autoDestroy: false,
         scrollable: {
             direction: 'horizontal',
             directionLock: true
@@ -52,14 +53,7 @@ Ext.define('Conflux.view.myContainer', {
                                 xloc,
                                 w;
 
-                            try {
-                                w = 203 * events.length;
-                            } catch(e) {
-                                mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
-                                var active = mainCarousel.getActiveIndex() + 1;
-                                var item1 = mainCarousel.getAt(active);
-                                mainCarousel.remove(item1, true);
-                            }
+                            w = 203 * events.length;
 
                             console.log("Painted! Width: " + w + " Height: " + h);
 
