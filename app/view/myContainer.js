@@ -30,9 +30,6 @@ Ext.define('Conflux.view.myContainer', {
                 events: [
                     
                 ],
-                onTap: function(element, eOpts) {
-                    console.log("tap tap tap");
-                },
                 itemId: 'inlineDraw',
                 autoDestroy: false,
                 listeners: [
@@ -61,12 +58,6 @@ Ext.define('Conflux.view.myContainer', {
                             me.setSize(w,h);
                             surface.setSize(w,h);
                             surface.setBackground(backgroundColor);
-
-                            surface.on({
-                                'mousemove': function() {
-                                    console.log('moving the mouse over the surface');   
-                                }
-                            });
 
                             //Line across screen
                             surface.add({
@@ -307,6 +298,29 @@ Ext.define('Conflux.view.myContainer', {
                 ]
             }
         ]
+    },
+
+    initialize: function() {
+        this.callParent();
+
+        this.element.on({
+            tap: this.onTap,
+            touchstart: this.onTouchStart,
+            touchend: this.onTouchEnd
+            //  delegate: '.sf-button'
+        });
+    },
+
+    onTap: function(e) {
+        console.log('tap tap tap');
+    },
+
+    onTouchStart: function(e) {
+        console.log('touchstart fired ' + e.getTime());
+    },
+
+    onTouchEnd: function(e) {
+        console.log('touchend fired ' + e.getTime());
     }
 
 });

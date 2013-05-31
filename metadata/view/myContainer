@@ -36,11 +36,6 @@
                 "events": [
                     "[]"
                 ],
-                "onTap": [
-                    "function(element, eOpts) {\r",
-                    "    console.log(\"tap tap tap\");\r",
-                    "}"
-                ],
                 "id": null,
                 "itemId": "inlineDraw",
                 "designer|displayName": "inlineDraw",
@@ -82,11 +77,6 @@
                     "group": "(Custom Properties)",
                     "name": "dotColor",
                     "type": "string"
-                },
-                {
-                    "group": "(Custom Properties)",
-                    "name": "onTap",
-                    "type": "string"
                 }
             ],
             "cn": [
@@ -123,12 +113,6 @@
                             "me.setSize(w,h);\r",
                             "surface.setSize(w,h);\r",
                             "surface.setBackground(backgroundColor);\r",
-                            "\r",
-                            "surface.on({\r",
-                            "    'mousemove': function() {\r",
-                            "        console.log('moving the mouse over the surface');   \r",
-                            "    }\r",
-                            "});\r",
                             "\r",
                             "//Line across screen\r",
                             "surface.add({\r",
@@ -379,6 +363,82 @@
                     "designerId": "2c8e79f0-064e-46cb-bd80-e0bea27bfa38"
                 }
             ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "this.element.on({\r",
+                    "    tap: this.onTap,\r",
+                    "    touchstart: this.onTouchStart,\r",
+                    "    touchend: this.onTouchEnd\r",
+                    "//  delegate: '.sf-button'\r",
+                    "});"
+                ]
+            },
+            "designerId": "0795efd8-674a-4ad3-bdcc-1c6dd1a236bf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTap",
+                "designer|params": [
+                    "e"
+                ],
+                "implHandler": [
+                    "console.log('tap tap tap');"
+                ]
+            },
+            "designerId": "9b5a0bad-2f07-4c81-aec3-703d381170f2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTouchStart",
+                "designer|params": [
+                    "e"
+                ],
+                "implHandler": [
+                    "console.log('touchstart fired ' + e.getTime());"
+                ]
+            },
+            "designerId": "8da36d19-9e95-4f02-95a1-4d97abfb657b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTouchEnd",
+                "designer|params": [
+                    "e"
+                ],
+                "implHandler": [
+                    "console.log('touchend fired ' + e.getTime());"
+                ]
+            },
+            "designerId": "538d8abd-d37d-4a15-af35-119c057e7735"
         }
     ]
 }
