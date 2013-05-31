@@ -35,9 +35,9 @@ Ext.define('Conflux.view.MyFormPanel', {
             },
             {
                 xtype: 'datepickerfield',
+                itemId: 'datepicker',
                 label: 'Date: ',
-                required: true,
-                placeHolder: 'mm/dd/yyyy'
+                required: true
             },
             {
                 xtype: 'sliderfield',
@@ -103,7 +103,7 @@ Ext.define('Conflux.view.MyFormPanel', {
     initialize: function() {
         this.callParent();
 
-        this.down('#datepickerfield').setValue(new Date());
+        this.down('#datepicker').setValue(new Date());
     }
 
 });

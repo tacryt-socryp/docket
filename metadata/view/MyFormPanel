@@ -102,9 +102,10 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "datepicker",
                 "label": "Date: ",
                 "required": true,
-                "placeHolder": "mm/dd/yyyy"
+                "placeHolder": null
             },
             "designerId": "d99a31ca-441e-4e48-b4c1-907f9938fb63",
             "cn": [
@@ -242,7 +243,7 @@
                 "implHandler": [
                     "this.callParent();\r",
                     "\r",
-                    "this.down('#datepickerfield').setValue(new Date());"
+                    "this.down('#datepicker').setValue(new Date());"
                 ]
             },
             "designerId": "929379d5-95eb-4fd1-86db-dcaf78e2daeb"
