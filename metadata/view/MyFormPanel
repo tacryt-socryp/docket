@@ -167,6 +167,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "width": 390,
                         "label": "Start:",
                         "listeners": [
                             "{\r",
@@ -189,7 +190,7 @@
                             "\r",
                             "}"
                         ],
-                        "layout|flex": 1
+                        "layout|flex": null
                     },
                     "configAlternates": {
                         "listeners": "object"
@@ -242,6 +243,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "width": 390,
                         "designer|displayName": "eventEnd",
                         "label": "End: ",
                         "listeners": [
@@ -265,7 +267,7 @@
                             "\r",
                             "}"
                         ],
-                        "layout|flex": 1
+                        "layout|flex": null
                     },
                     "configAlternates": {
                         "listeners": "object"

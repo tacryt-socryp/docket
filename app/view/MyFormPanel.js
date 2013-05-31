@@ -51,6 +51,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                 items: [
                     {
                         xtype: 'timeSlider',
+                        width: 390,
                         label: 'Start:',
                         listeners: {
                             change: function(f) {
@@ -68,8 +69,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 this.up.query('#startLabel').setHtml(hours + ':' + minutes + ampm);
                                 
                             }
-                        },
-                        flex: 1
+                        }
                     },
                     {
                         xtype: 'label',
@@ -87,6 +87,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                 items: [
                     {
                         xtype: 'timeSlider',
+                        width: 390,
                         label: 'End: ',
                         listeners: {
                             change: function(f) {
@@ -104,8 +105,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 this.up.query('#endLabel').setHtml(hours + ':' + minutes + ampm);
                                 
                             }
-                        },
-                        flex: 1
+                        }
                     },
                     {
                         xtype: 'label',
