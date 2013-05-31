@@ -399,7 +399,8 @@
                     "e"
                 ],
                 "implHandler": [
-                    "console.log('tap tap tap');"
+                    "console.log('tap tap tap');\r",
+                    "console.log(e);"
                 ]
             },
             "designerId": "9b5a0bad-2f07-4c81-aec3-703d381170f2"

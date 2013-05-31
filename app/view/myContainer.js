@@ -313,6 +313,7 @@ Ext.define('Conflux.view.myContainer', {
 
     onTap: function(e) {
         console.log('tap tap tap');
+        console.log(e);
     },
 
     onTouchStart: function(e) {
