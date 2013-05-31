@@ -395,7 +395,7 @@
                     "if (e.pageY <= 70) {\r",
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
                     "        var form = new Conflux.view.MyFormPanel();\r",
-                    "        \r",
+                    "\r",
                     "        Ext.Viewport.add(form);\r",
                     "    }\r",
                     "}"

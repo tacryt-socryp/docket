@@ -147,52 +147,151 @@
             ]
         },
         {
-            "type": "linkedinstance",
+            "type": "Ext.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "label": "Start:",
-                "listeners": [
-                    "{\r",
-                    "\r",
-                    "    change: function(f) {\r",
-                    "        console.log('Slider changed: ' + f.getValue());\r",
-                    "    }\r",
-                    "\r",
-                    "}"
-                ]
+                "designer|displayName": "startContainer",
+                "layout": "hbox"
             },
-            "configAlternates": {
-                "listeners": "object"
-            },
-            "designerId": "80284c4d-8d0c-4ade-9c36-dec4581ee0f0",
-            "customConfigs": [
+            "designerId": "7a5282b2-c484-4cf9-a14d-9a1e1fd7ece3",
+            "cn": [
                 {
-                    "group": "(Custom Properties)",
-                    "name": "listeners",
-                    "type": "string"
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Start:",
+                        "listeners": [
+                            "{\r",
+                            "\r",
+                            "    change: function(f) {\r",
+                            "        var hours = f.getValue() / 2;\r",
+                            "        var minutes = (hours - parseInt(hours, 10)) * 60;\r",
+                            "        var ampm = ' am';\r",
+                            "        hours = parseInt(hours, 10);\r",
+                            "        if (hours > 12) {\r",
+                            "            hours = hours - 12;\r",
+                            "            ampm = ' pm';\r",
+                            "        } else if (hours == 12) {\r",
+                            "            ampm = ' pm';\r",
+                            "        }\r",
+                            "        \r",
+                            "        this.up.query('#startLabel').setHtml(hours + ':' + minutes + ampm);\r",
+                            "        \r",
+                            "    }\r",
+                            "\r",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "listeners": "object"
+                    },
+                    "designerId": "80284c4d-8d0c-4ade-9c36-dec4581ee0f0",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "listeners",
+                            "type": "string"
+                        }
+                    ],
+                    "masterInstanceId": "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee"
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "12:00 am",
+                        "itemId": "startLabel",
+                        "designer|displayName": "startLabel"
+                    },
+                    "designerId": "4e503488-4915-4777-a57e-a83f828b9acc"
                 }
-            ],
-            "masterInstanceId": "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee"
+            ]
         },
         {
-            "type": "Ext.field.Slider",
+            "type": "Ext.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|displayName": "eventEnd",
-                "label": "End: ",
-                "required": true,
-                "maxValue": 48,
-                "minValue": null
+                "designer|displayName": "endContainer",
+                "layout": "hbox"
             },
-            "designerId": "64c9caee-1974-40db-a26c-e14f3a88808b"
+            "designerId": "b8dca183-5825-49ce-829d-7bc0f94bd8c7",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "eventEnd",
+                        "label": "End: ",
+                        "listeners": [
+                            "{\r",
+                            "\r",
+                            "    change: function(f) {\r",
+                            "        var hours = f.getValue() / 2;\r",
+                            "        var minutes = (hours - parseInt(hours, 10)) * 60;\r",
+                            "        var ampm = ' am';\r",
+                            "        hours = parseInt(hours, 10);\r",
+                            "        if (hours > 12) {\r",
+                            "            hours = hours - 12;\r",
+                            "            ampm = ' pm';\r",
+                            "        } else if (hours == 12) {\r",
+                            "            ampm = ' pm';\r",
+                            "        }\r",
+                            "        \r",
+                            "        this.up.query('#endLabel').setHtml(hours + ':' + minutes + ampm);\r",
+                            "        \r",
+                            "    }\r",
+                            "\r",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "listeners": "object"
+                    },
+                    "designerId": "47f27caf-d9a2-49d6-81b7-d3ec6c420f8c",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "listeners",
+                            "type": "string"
+                        }
+                    ],
+                    "masterInstanceId": "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee"
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "12:00 am",
+                        "itemId": "endLabel",
+                        "designer|displayName": "endLabel"
+                    },
+                    "designerId": "c0f58ee6-b074-4f1e-9397-dd1f6cb45da3"
+                }
+            ]
         },
         {
             "type": "Ext.Toolbar",

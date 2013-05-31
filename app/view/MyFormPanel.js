@@ -44,19 +44,72 @@ Ext.define('Conflux.view.MyFormPanel', {
                 required: true
             },
             {
-                xtype: 'timeSlider',
-                label: 'Start:',
-                listeners: {
-                    change: function(f) {
-                        console.log('Slider changed: ' + f.getValue());
+                xtype: 'container',
+                layout: {
+                    type: 'hbox'
+                },
+                items: [
+                    {
+                        xtype: 'timeSlider',
+                        label: 'Start:',
+                        listeners: {
+                            change: function(f) {
+                                var hours = f.getValue() / 2;
+                                var minutes = (hours - parseInt(hours, 10)) * 60;
+                                var ampm = ' am';
+                                hours = parseInt(hours, 10);
+                                if (hours > 12) {
+                                    hours = hours - 12;
+                                    ampm = ' pm';
+                                } else if (hours == 12) {
+                                    ampm = ' pm';
+                                }
+                                
+                                this.up.query('#startLabel').setHtml(hours + ':' + minutes + ampm);
+                                
+                            }
+                        }
+                    },
+                    {
+                        xtype: 'label',
+                        html: '12:00 am',
+                        itemId: 'startLabel'
                     }
-                }
+                ]
             },
             {
-                xtype: 'sliderfield',
-                label: 'End: ',
-                required: true,
-                maxValue: 48
+                xtype: 'container',
+                layout: {
+                    type: 'hbox'
+                },
+                items: [
+                    {
+                        xtype: 'timeSlider',
+                        label: 'End: ',
+                        listeners: {
+                            change: function(f) {
+                                var hours = f.getValue() / 2;
+                                var minutes = (hours - parseInt(hours, 10)) * 60;
+                                var ampm = ' am';
+                                hours = parseInt(hours, 10);
+                                if (hours > 12) {
+                                    hours = hours - 12;
+                                    ampm = ' pm';
+                                } else if (hours == 12) {
+                                    ampm = ' pm';
+                                }
+                                
+                                this.up.query('#endLabel').setHtml(hours + ':' + minutes + ampm);
+                                
+                            }
+                        }
+                    },
+                    {
+                        xtype: 'label',
+                        html: '12:00 am',
+                        itemId: 'endLabel'
+                    }
+                ]
             },
             {
                 xtype: 'toolbar',
