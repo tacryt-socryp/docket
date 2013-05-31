@@ -98,6 +98,12 @@ Ext.define('Conflux.view.MyFormPanel', {
         request.execute(function(resp) {
             console.log(resp);
         });
+    },
+
+    initialize: function() {
+        this.callParent();
+
+        this.down('#datepickerfield').setValue(new Date());
     }
 
 });

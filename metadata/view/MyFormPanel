@@ -15,6 +15,18 @@
         "modal": true
     },
     "designerId": "5133ddc6-983b-440e-ba54-ce2fa457ad04",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "calendarId",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "roomText",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "basicfunction",
@@ -217,6 +229,23 @@
                     "designerId": "6d623f87-6f7a-4a6a-a7e9-d09869b2040c"
                 }
             ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "this.down('#datepickerfield').setValue(new Date());"
+                ]
+            },
+            "designerId": "929379d5-95eb-4fd1-86db-dcaf78e2daeb"
         }
     ]
 }
