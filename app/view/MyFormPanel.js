@@ -86,25 +86,31 @@ Ext.define('Conflux.view.MyFormPanel', {
                 },
                 items: [
                     {
-                        xtype: 'timeSlider',
-                        label: 'End: ',
-                        listeners: {
-                            change: function(f) {
-                                var hours = f.getValue() / 2;
-                                var minutes = (hours - parseInt(hours, 10)) * 60;
-                                var ampm = ' am';
-                                hours = parseInt(hours, 10);
-                                if (hours > 12) {
-                                    hours = hours - 12;
-                                    ampm = ' pm';
-                                } else if (hours == 12) {
-                                    ampm = ' pm';
+                        xtype: 'container',
+                        width: 200,
+                        items: [
+                            {
+                                xtype: 'timeSlider',
+                                label: 'End: ',
+                                listeners: {
+                                    change: function(f) {
+                                        var hours = f.getValue() / 2;
+                                        var minutes = (hours - parseInt(hours, 10)) * 60;
+                                        var ampm = ' am';
+                                        hours = parseInt(hours, 10);
+                                        if (hours > 12) {
+                                            hours = hours - 12;
+                                            ampm = ' pm';
+                                        } else if (hours == 12) {
+                                            ampm = ' pm';
+                                        }
+                                        
+                                        this.up.query('#endLabel').setHtml(hours + ':' + minutes + ampm);
+                                        
+                                    }
                                 }
-                                
-                                this.up.query('#endLabel').setHtml(hours + ':' + minutes + ampm);
-                                
                             }
-                        }
+                        ]
                     },
                     {
                         xtype: 'label',
