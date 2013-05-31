@@ -140,15 +140,7 @@
                             "    height : 100,\r",
                             "    width: 200,\r",
                             "    x: displace,\r",
-                            "    y: 70,\r",
-                            "    listeners: {\r",
-                            "        tap : function() {\r",
-                            "            console.log('tap tap tap');\r",
-                            "        },\r",
-                            "        click: function() {\r",
-                            "            console.log('click click click');\r",
-                            "        }\r",
-                            "    }\r",
+                            "    y: 70\r",
                             "}).show(true);\r",
                             "\r",
                             "surface.add({\r",
@@ -378,6 +370,10 @@
                     "\r",
                     "this.element.on({\r",
                     "    tap: this.onTap\r",
+                    "});\r",
+                    "\r",
+                    "this.getScrollable().getScroller().on('scroll', function(scroll, x, y) {\r",
+                    "\tconsole.log(scroll, x, y);\r",
                     "});"
                 ]
             },
@@ -396,7 +392,6 @@
                     "e"
                 ],
                 "implHandler": [
-                    "console.log('tap tap tap');\r",
                     "if (e.pageY <= 70) {\r",
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
                     "        console.log('Within bounds');\r",
@@ -405,6 +400,24 @@
                 ]
             },
             "designerId": "9b5a0bad-2f07-4c81-aec3-703d381170f2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "addEvent",
+                "designer|params": [
+                    "calendarId"
+                ],
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "971aaa5c-117f-4d68-8bbc-233aa31aba67"
         }
     ]
 }

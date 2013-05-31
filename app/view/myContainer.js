@@ -85,15 +85,7 @@ Ext.define('Conflux.view.myContainer', {
                                 height : 100,
                                 width: 200,
                                 x: displace,
-                                y: 70,
-                                listeners: {
-                                    tap : function() {
-                                        console.log('tap tap tap');
-                                    },
-                                    click: function() {
-                                        console.log('click click click');
-                                    }
-                                }
+                                y: 70
                             }).show(true);
 
                             surface.add({
@@ -306,15 +298,22 @@ Ext.define('Conflux.view.myContainer', {
         this.element.on({
             tap: this.onTap
         });
+
+        this.getScrollable().getScroller().on('scroll', function(scroll, x, y) {
+            console.log(scroll, x, y);
+        });
     },
 
     onTap: function(e) {
-        console.log('tap tap tap');
         if (e.pageY <= 70) {
             if (e.pageX >= Ext.getBody().getSize().width-200) {
                 console.log('Within bounds');
             }
         }
+    },
+
+    addEvent: function(calendarId) {
+
     }
 
 });
