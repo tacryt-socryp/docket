@@ -304,24 +304,17 @@ Ext.define('Conflux.view.myContainer', {
         this.callParent();
 
         this.element.on({
-            tap: this.onTap,
-            touchstart: this.onTouchStart,
-            touchend: this.onTouchEnd
-            //  delegate: '.sf-button'
+            tap: this.onTap
         });
     },
 
     onTap: function(e) {
         console.log('tap tap tap');
-        console.log(e);
-    },
-
-    onTouchStart: function(e) {
-        console.log('touchstart fired ' + e.getTime());
-    },
-
-    onTouchEnd: function(e) {
-        console.log('touchend fired ' + e.getTime());
+        if (e.pageY <= 70) {
+            if (e.pageX >= Ext.getBody().getSize().width-200) {
+                console.log('Within bounds');
+            }
+        }
     }
 
 });

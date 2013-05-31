@@ -41,12 +41,6 @@
                 },
                 {
                     "id": "9b5a0bad-2f07-4c81-aec3-703d381170f2"
-                },
-                {
-                    "id": "8da36d19-9e95-4f02-95a1-4d97abfb657b"
-                },
-                {
-                    "id": "538d8abd-d37d-4a15-af35-119c057e7735"
                 }
             ]
         },
@@ -83,7 +77,7 @@
     },
     "inspectorState": {
         "topInstance": "9bc94066-7690-4c68-8866-c110d3b1b5d4",
-        "selectedInstance": "9b5a0bad-2f07-4c81-aec3-703d381170f2"
+        "selectedInstance": "0795efd8-674a-4ad3-bdcc-1c6dd1a236bf"
     },
     "codeState": {
         "topInstance": "9bc94066-7690-4c68-8866-c110d3b1b5d4"

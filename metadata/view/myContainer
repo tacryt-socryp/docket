@@ -377,10 +377,7 @@
                     "this.callParent();\r",
                     "\r",
                     "this.element.on({\r",
-                    "    tap: this.onTap,\r",
-                    "    touchstart: this.onTouchStart,\r",
-                    "    touchend: this.onTouchEnd\r",
-                    "//  delegate: '.sf-button'\r",
+                    "    tap: this.onTap\r",
                     "});"
                 ]
             },
@@ -400,46 +397,14 @@
                 ],
                 "implHandler": [
                     "console.log('tap tap tap');\r",
-                    "console.log(e);"
+                    "if (e.pageY <= 70) {\r",
+                    "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
+                    "        console.log('Within bounds');\r",
+                    "    }\r",
+                    "}"
                 ]
             },
             "designerId": "9b5a0bad-2f07-4c81-aec3-703d381170f2"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onTouchStart",
-                "designer|params": [
-                    "e"
-                ],
-                "implHandler": [
-                    "console.log('touchstart fired ' + e.getTime());"
-                ]
-            },
-            "designerId": "8da36d19-9e95-4f02-95a1-4d97abfb657b"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onTouchEnd",
-                "designer|params": [
-                    "e"
-                ],
-                "implHandler": [
-                    "console.log('touchend fired ' + e.getTime());"
-                ]
-            },
-            "designerId": "538d8abd-d37d-4a15-af35-119c057e7735"
         }
     ]
 }
