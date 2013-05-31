@@ -51,7 +51,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                 items: [
                     {
                         xtype: 'timeSlider',
-                        width: 390,
+                        width: 350,
                         label: 'Start:',
                         listeners: {
                             change: function(f) {

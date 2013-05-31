@@ -167,7 +167,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 390,
+                        "width": 350,
                         "label": "Start:",
                         "labelWidth": null,
                         "listeners": [
