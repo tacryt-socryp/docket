@@ -169,6 +169,7 @@
                     "userConfig": {
                         "width": 390,
                         "label": "Start:",
+                        "labelWidth": null,
                         "listeners": [
                             "{\r",
                             "\r",
