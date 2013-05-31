@@ -9,7 +9,7 @@
         "designer|userClassName": "timeSlider",
         "designer|userAlias": "timeSlider",
         "label": null,
-        "labelWidth": 180,
+        "labelWidth": 177,
         "required": true,
         "maxValue": 48
     },

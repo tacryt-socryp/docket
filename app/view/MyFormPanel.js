@@ -75,6 +75,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                         xtype: 'label',
                         html: '12:00 am',
                         itemId: 'startLabel',
+                        style: 'background:#FFF;',
                         width: 70
                     }
                 ]
@@ -87,7 +88,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                 items: [
                     {
                         xtype: 'timeSlider',
-                        width: 390,
+                        width: 350,
                         label: 'End: ',
                         listeners: {
                             change: function(f) {
@@ -111,6 +112,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                         xtype: 'label',
                         html: '12:00 am',
                         itemId: 'endLabel',
+                        style: 'background:#FFF;',
                         width: 70
                     }
                 ]

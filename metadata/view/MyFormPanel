@@ -216,6 +216,7 @@
                     "userConfig": {
                         "html": "12:00 am",
                         "itemId": "startLabel",
+                        "style": "background:#FFF;",
                         "width": 70,
                         "designer|displayName": "startLabel"
                     },
@@ -244,7 +245,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 390,
+                        "width": 350,
                         "designer|displayName": "eventEnd",
                         "label": "End: ",
                         "listeners": [
@@ -293,6 +294,7 @@
                     "userConfig": {
                         "html": "12:00 am",
                         "itemId": "endLabel",
+                        "style": "background:#FFF;",
                         "width": 70,
                         "designer|displayName": "endLabel"
                     },
