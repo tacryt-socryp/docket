@@ -167,7 +167,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 350,
+                        "width": null,
                         "label": "Start:",
                         "labelWidth": null,
                         "listeners": [
@@ -245,7 +245,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 350,
+                        "width": null,
                         "designer|displayName": "eventEnd",
                         "label": "End: ",
                         "listeners": [

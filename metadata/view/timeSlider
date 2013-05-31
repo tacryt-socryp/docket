@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "width": 200,
         "designer|userClassName": "timeSlider",
         "designer|userAlias": "timeSlider",
         "label": null,

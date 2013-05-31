@@ -18,6 +18,7 @@ Ext.define('Conflux.view.timeSlider', {
     alias: 'widget.timeSlider',
 
     config: {
+        width: 200,
         labelWidth: 177,
         required: true,
         maxValue: 48
