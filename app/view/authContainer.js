@@ -31,7 +31,6 @@ Ext.define('Conflux.view.authContainer', {
     },
 
     onContainerPainted: function(element, eOpts) {
-        console.log('painted: authContainer');
         var parameters = {};
         var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
             parameters[key] = value;
@@ -123,7 +122,7 @@ Ext.define('Conflux.view.authContainer', {
         '#80E2BF', //Green
         '#5A325F', //Purple
         '#DA8359', //Orange
-        '#176c93', //Blue
+        '#2b8bb5', //Blue
         '#EC6B51', //Red
         '#A4AE6A'  //Beige
         ];
@@ -132,7 +131,7 @@ Ext.define('Conflux.view.authContainer', {
         '#C4D7A4', //Green
         '#8497BF', //Purple
         '#EC8E60', //Orange
-        '#2b8bb5', //Blue
+        '#176c93', //Blue
         '#FFBFB4', //Red
         '#97A97F'  //Beige
         ];

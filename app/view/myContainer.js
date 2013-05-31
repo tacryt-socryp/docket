@@ -43,17 +43,17 @@ Ext.define('Conflux.view.myContainer', {
                                 dotColor = me.dotColor,
                                 events = me.events;
 
-                            var h = Ext.getBody().getSize().height,
+                            var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+                                displace = Ext.getBody().getSize().width - 200,
+                                h = Ext.getBody().getSize().height,
                                 surface = this.getSurface('main'),
                                 today = new Date(Date.now()),
-                                mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+                                w = 203 * events.length,
                                 description,
                                 dateTime,
                                 summary,
                                 yloc = h/10,
-                                xloc,
-                                displace = Ext.getBody().getSize().width - 200,
-                                w = 203 * events.length;
+                                xloc;
 
                             me.setSize(w,h);
                             surface.setSize(w,h);
@@ -307,13 +307,10 @@ Ext.define('Conflux.view.myContainer', {
     onTap: function(e) {
         if (e.pageY <= 70) {
             if (e.pageX >= Ext.getBody().getSize().width-200) {
-                console.log('Within bounds');
+                var form = new Conflux.view.MyFormPanel();
+                Ext.Viewport.add(form);
             }
         }
-    },
-
-    addEvent: function(calendarId) {
-
     }
 
 });

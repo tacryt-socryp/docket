@@ -7,12 +7,216 @@
     "codeClass": null,
     "userConfig": {
         "centered": true,
-        "height": 500,
-        "html": "<p>Is this a great overlay, or what?</p>",
+        "height": 387,
+        "html": null,
         "width": 500,
         "designer|userClassName": "MyFormPanel",
         "hideOnMaskTap": true,
         "modal": true
     },
-    "designerId": "5133ddc6-983b-440e-ba54-ce2fa457ad04"
+    "designerId": "5133ddc6-983b-440e-ba54-ce2fa457ad04",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "addEvent",
+                "designer|params": [
+                    "calendarId",
+                    "roomText"
+                ],
+                "implHandler": [
+                    "var resource = {\r",
+                    "    \"summary\": \"Appointment\",\r",
+                    "    \"location\": \"Somewhere\",\r",
+                    "    \"start\": {\r",
+                    "        \"dateTime\": \"2011-12-16T10:00:00.000-07:00\"\r",
+                    "    },\r",
+                    "    \"end\": {\r",
+                    "        \"dateTime\": \"2011-12-16T10:25:00.000-07:00\"\r",
+                    "    }\r",
+                    "};\r",
+                    "\r",
+                    "var request = gapi.client.calendar.events.insert({\r",
+                    "    'calendarId': 'primary',\r",
+                    "    'resource': resource\r",
+                    "});\r",
+                    "\r",
+                    "request.execute(function(resp) {\r",
+                    "    console.log(resp);\r",
+                    "});"
+                ]
+            },
+            "designerId": "53392766-3868-42cd-bd93-061e56c8418a"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "eventTitle",
+                "label": "Summary: ",
+                "required": true
+            },
+            "designerId": "84889c28-5dc7-401b-9436-501f72728b47"
+        },
+        {
+            "type": "Ext.field.TextArea",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "eventDescription",
+                "label": "Description: ",
+                "autoCapitalize": true,
+                "maxRows": null
+            },
+            "designerId": "350f642e-349e-42f7-a90d-665ab9a7d4cc"
+        },
+        {
+            "type": "Ext.field.DatePicker",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "label": "Date: ",
+                "required": true,
+                "placeHolder": "mm/dd/yyyy"
+            },
+            "designerId": "d99a31ca-441e-4e48-b4c1-907f9938fb63",
+            "cn": [
+                {
+                    "type": "Ext.picker.Date",
+                    "reference": {
+                        "name": "picker",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "8417f64f-7a11-422c-a60f-c2dd9b149ebf",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "doneButton",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Done"
+                            },
+                            "designerId": "2fcfa2a6-328e-4514-9579-35ca6ce64df3"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "cancelButton",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Cancel"
+                            },
+                            "designerId": "e913b8dc-6625-4c38-8ee2-a9c8100187d3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.Slider",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "eventStart",
+                "label": "Start: ",
+                "required": true,
+                "maxValue": 96
+            },
+            "designerId": "16847b24-8d54-4871-b80e-622e77813b81"
+        },
+        {
+            "type": "Ext.field.Slider",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "eventEnd",
+                "label": "End: ",
+                "required": true,
+                "maxValue": 96,
+                "minValue": null
+            },
+            "designerId": "64c9caee-1974-40db-a26c-e14f3a88808b"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "border": null,
+                "docked": "bottom",
+                "style": null,
+                "scrollable": null
+            },
+            "configAlternates": {
+                "style": "object"
+            },
+            "designerId": "2e9bc086-2716-44d4-b605-4c9827210eaa",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "margin": "0 20 0 20",
+                        "padding": null,
+                        "ui": "confirm",
+                        "width": "120px",
+                        "designer|displayName": "submitEvent",
+                        "text": "Submit"
+                    },
+                    "designerId": "0c975e14-b70d-42e6-a206-55ed5ee68e55"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "margin": "0 20 0 20",
+                        "ui": "decline",
+                        "width": "120px",
+                        "designer|displayName": "cancelEvent",
+                        "text": "Discard"
+                    },
+                    "designerId": "6d623f87-6f7a-4a6a-a7e9-d09869b2040c"
+                }
+            ]
+        }
+    ]
 }

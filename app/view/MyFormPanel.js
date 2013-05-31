@@ -18,11 +18,86 @@ Ext.define('Conflux.view.MyFormPanel', {
 
     config: {
         centered: true,
-        height: 500,
-        html: '<p>Is this a great overlay, or what?</p>',
+        height: 387,
         width: 500,
         hideOnMaskTap: true,
-        modal: true
+        modal: true,
+        items: [
+            {
+                xtype: 'textfield',
+                label: 'Summary: ',
+                required: true
+            },
+            {
+                xtype: 'textareafield',
+                label: 'Description: ',
+                autoCapitalize: true
+            },
+            {
+                xtype: 'datepickerfield',
+                label: 'Date: ',
+                required: true,
+                placeHolder: 'mm/dd/yyyy'
+            },
+            {
+                xtype: 'sliderfield',
+                label: 'Start: ',
+                required: true,
+                maxValue: 96
+            },
+            {
+                xtype: 'sliderfield',
+                label: 'End: ',
+                required: true,
+                maxValue: 96
+            },
+            {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                layout: {
+                    pack: 'center',
+                    type: 'hbox'
+                },
+                items: [
+                    {
+                        xtype: 'button',
+                        margin: '0 20 0 20',
+                        ui: 'confirm',
+                        width: '120px',
+                        text: 'Submit'
+                    },
+                    {
+                        xtype: 'button',
+                        margin: '0 20 0 20',
+                        ui: 'decline',
+                        width: '120px',
+                        text: 'Discard'
+                    }
+                ]
+            }
+        ]
+    },
+
+    addEvent: function(calendarId, roomText) {
+        var resource = {
+            "summary": "Appointment",
+            "location": "Somewhere",
+            "start": {
+                "dateTime": "2011-12-16T10:00:00.000-07:00"
+            },
+            "end": {
+                "dateTime": "2011-12-16T10:25:00.000-07:00"
+            }
+        };
+
+        var request = gapi.client.calendar.events.insert({
+            'calendarId': 'primary',
+            'resource': resource
+        });
+
+        request.execute(function(resp) {
+            console.log(resp);
+        });
     }
 
 });

@@ -98,17 +98,17 @@
                             "    dotColor = me.dotColor,\r",
                             "    events = me.events;\r",
                             "\r",
-                            "var h = Ext.getBody().getSize().height,\r",
+                            "var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
+                            "    displace = Ext.getBody().getSize().width - 200,\r",
+                            "    h = Ext.getBody().getSize().height,\r",
                             "    surface = this.getSurface('main'),\r",
                             "    today = new Date(Date.now()),\r",
-                            "    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
+                            "    w = 203 * events.length,\r",
                             "    description,\r",
                             "    dateTime,\r",
                             "    summary,\r",
                             "    yloc = h/10,\r",
-                            "    xloc,\r",
-                            "    displace = Ext.getBody().getSize().width - 200,\r",
-                            "    w = 203 * events.length;\r",
+                            "    xloc;\r",
                             "\r",
                             "me.setSize(w,h);\r",
                             "surface.setSize(w,h);\r",
@@ -394,30 +394,13 @@
                 "implHandler": [
                     "if (e.pageY <= 70) {\r",
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
-                    "        console.log('Within bounds');\r",
+                    "        var form = new Conflux.view.MyFormPanel();\r",
+                    "        Ext.Viewport.add(form);\r",
                     "    }\r",
                     "}"
                 ]
             },
             "designerId": "9b5a0bad-2f07-4c81-aec3-703d381170f2"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "addEvent",
-                "designer|params": [
-                    "calendarId"
-                ],
-                "implHandler": [
-                    ""
-                ]
-            },
-            "designerId": "971aaa5c-117f-4d68-8bbc-233aa31aba67"
         }
     ]
 }
