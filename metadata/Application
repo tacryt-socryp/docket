@@ -12,7 +12,8 @@
         "views": [
             "myContainer",
             "authContainer",
-            "mainCarousel"
+            "mainCarousel",
+            "timeSlider"
         ],
         "name": "Conflux"
     },

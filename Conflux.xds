@@ -73,6 +73,14 @@
                 "packager.json"
             ],
             "className": "packager"
+        },
+        "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee": {
+            "paths": [
+                "metadata/view/timeSlider",
+                "app/view/override/timeSlider.js",
+                "app/view/timeSlider.js"
+            ],
+            "className": "timeSlider"
         }
     },
     "viewOrderMap": {
@@ -80,7 +88,8 @@
             "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
             "9bc94066-7690-4c68-8866-c110d3b1b5d4",
             "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d",
-            "5133ddc6-983b-440e-ba54-ce2fa457ad04"
+            "5133ddc6-983b-440e-ba54-ce2fa457ad04",
+            "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee"
         ],
         "store": [],
         "controller": [],

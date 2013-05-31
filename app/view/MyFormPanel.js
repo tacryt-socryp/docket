@@ -16,10 +16,14 @@
 Ext.define('Conflux.view.MyFormPanel', {
     extend: 'Ext.form.Panel',
 
+    requires: [
+        'Conflux.view.timeSlider'
+    ],
+
     config: {
         centered: true,
         height: 387,
-        width: 500,
+        width: 600,
         hideOnMaskTap: true,
         modal: true,
         items: [
@@ -40,16 +44,19 @@ Ext.define('Conflux.view.MyFormPanel', {
                 required: true
             },
             {
-                xtype: 'sliderfield',
-                label: 'Start: ',
-                required: true,
-                maxValue: 96
+                xtype: 'timeSlider',
+                label: 'Start:',
+                listeners: {
+                    change: function(f) {
+                        console.log('Slider changed: ' + f.getValue());
+                    }
+                }
             },
             {
                 xtype: 'sliderfield',
                 label: 'End: ',
                 required: true,
-                maxValue: 96
+                maxValue: 48
             },
             {
                 xtype: 'toolbar',

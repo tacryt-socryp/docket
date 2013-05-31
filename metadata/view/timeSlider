@@ -1,0 +1,38 @@
+{
+    "type": "Ext.field.Slider",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "timeSlider",
+        "designer|userAlias": "timeSlider",
+        "label": null,
+        "required": true,
+        "maxValue": 48
+    },
+    "designerId": "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "this.getComponent().on({\r",
+                    "    scope: this,\r",
+                    "    change: 'onSliderChange',\r",
+                    "    drag: 'onSliderChange'\r",
+                    "});"
+                ]
+            },
+            "designerId": "40329ee0-2555-478c-ba76-420465184bef"
+        }
+    ]
+}

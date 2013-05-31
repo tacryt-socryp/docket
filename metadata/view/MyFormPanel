@@ -9,7 +9,7 @@
         "centered": true,
         "height": 387,
         "html": null,
-        "width": 500,
+        "width": 600,
         "designer|userClassName": "MyFormPanel",
         "hideOnMaskTap": true,
         "modal": true
@@ -147,19 +147,36 @@
             ]
         },
         {
-            "type": "Ext.field.Slider",
+            "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|displayName": "eventStart",
-                "label": "Start: ",
-                "required": true,
-                "maxValue": 96
+                "label": "Start:",
+                "listeners": [
+                    "{\r",
+                    "\r",
+                    "    change: function(f) {\r",
+                    "        console.log('Slider changed: ' + f.getValue());\r",
+                    "    }\r",
+                    "\r",
+                    "}"
+                ]
             },
-            "designerId": "16847b24-8d54-4871-b80e-622e77813b81"
+            "configAlternates": {
+                "listeners": "object"
+            },
+            "designerId": "80284c4d-8d0c-4ade-9c36-dec4581ee0f0",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "listeners",
+                    "type": "string"
+                }
+            ],
+            "masterInstanceId": "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee"
         },
         {
             "type": "Ext.field.Slider",
@@ -172,7 +189,7 @@
                 "designer|displayName": "eventEnd",
                 "label": "End: ",
                 "required": true,
-                "maxValue": 96,
+                "maxValue": 48,
                 "minValue": null
             },
             "designerId": "64c9caee-1974-40db-a26c-e14f3a88808b"
