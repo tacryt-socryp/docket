@@ -213,6 +213,7 @@
                     "userConfig": {
                         "html": "12:00 am",
                         "itemId": "startLabel",
+                        "width": 70,
                         "designer|displayName": "startLabel"
                     },
                     "designerId": "4e503488-4915-4777-a57e-a83f828b9acc"
@@ -287,6 +288,7 @@
                     "userConfig": {
                         "html": "12:00 am",
                         "itemId": "endLabel",
+                        "width": 70,
                         "designer|displayName": "endLabel"
                     },
                     "designerId": "c0f58ee6-b074-4f1e-9397-dd1f6cb45da3"

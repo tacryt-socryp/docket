@@ -73,7 +73,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                     {
                         xtype: 'label',
                         html: '12:00 am',
-                        itemId: 'startLabel'
+                        itemId: 'startLabel',
+                        width: 70
                     }
                 ]
             },
@@ -107,7 +108,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                     {
                         xtype: 'label',
                         html: '12:00 am',
-                        itemId: 'endLabel'
+                        itemId: 'endLabel',
+                        width: 70
                     }
                 ]
             },
