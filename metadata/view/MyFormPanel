@@ -188,7 +188,8 @@
                             "    }\r",
                             "\r",
                             "}"
-                        ]
+                        ],
+                        "layout|flex": 1
                     },
                     "configAlternates": {
                         "listeners": "object"
@@ -263,7 +264,8 @@
                             "    }\r",
                             "\r",
                             "}"
-                        ]
+                        ],
+                        "layout|flex": 1
                     },
                     "configAlternates": {
                         "listeners": "object"

@@ -68,7 +68,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 this.up.query('#startLabel').setHtml(hours + ':' + minutes + ampm);
                                 
                             }
-                        }
+                        },
+                        flex: 1
                     },
                     {
                         xtype: 'label',
@@ -103,7 +104,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 this.up.query('#endLabel').setHtml(hours + ':' + minutes + ampm);
                                 
                             }
-                        }
+                        },
+                        flex: 1
                     },
                     {
                         xtype: 'label',
