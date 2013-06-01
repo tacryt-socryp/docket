@@ -160,52 +160,65 @@
             "designerId": "7a5282b2-c484-4cf9-a14d-9a1e1fd7ece3",
             "cn": [
                 {
-                    "type": "linkedinstance",
+                    "type": "Ext.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": null,
-                        "label": "Start:",
-                        "labelAlign": null,
-                        "labelWidth": null,
-                        "listeners": [
-                            "{\r",
-                            "\r",
-                            "    change: function(f) {\r",
-                            "        var hours = f.getValue() / 2;\r",
-                            "        var minutes = (hours - parseInt(hours, 10)) * 60;\r",
-                            "        var ampm = ' am';\r",
-                            "        hours = parseInt(hours, 10);\r",
-                            "        if (hours > 12) {\r",
-                            "            hours = hours - 12;\r",
-                            "            ampm = ' pm';\r",
-                            "        } else if (hours == 12) {\r",
-                            "            ampm = ' pm';\r",
-                            "        }\r",
-                            "        \r",
-                            "        this.up.query('#startLabel').setHtml(hours + ':' + minutes + ampm);\r",
-                            "        \r",
-                            "    }\r",
-                            "\r",
-                            "}"
-                        ],
-                        "layout|flex": null
+                        "width": 500
                     },
-                    "configAlternates": {
-                        "listeners": "object"
-                    },
-                    "designerId": "80284c4d-8d0c-4ade-9c36-dec4581ee0f0",
-                    "customConfigs": [
+                    "designerId": "b263f82b-84c8-422a-a0cb-c9bee586f4e4",
+                    "cn": [
                         {
-                            "group": "(Custom Properties)",
-                            "name": "listeners",
-                            "type": "string"
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": null,
+                                "label": "Start:",
+                                "labelAlign": null,
+                                "labelWidth": null,
+                                "listeners": [
+                                    "{\r",
+                                    "\r",
+                                    "    change: function(f) {\r",
+                                    "        var hours = f.getValue() / 2;\r",
+                                    "        var minutes = (hours - parseInt(hours, 10)) * 60;\r",
+                                    "        var ampm = ' am';\r",
+                                    "        hours = parseInt(hours, 10);\r",
+                                    "        if (hours > 12) {\r",
+                                    "            hours = hours - 12;\r",
+                                    "            ampm = ' pm';\r",
+                                    "        } else if (hours == 12) {\r",
+                                    "            ampm = ' pm';\r",
+                                    "        }\r",
+                                    "        \r",
+                                    "        this.up.query('#startLabel').setHtml(hours + ':' + minutes + ampm);\r",
+                                    "        \r",
+                                    "    }\r",
+                                    "\r",
+                                    "}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "listeners": "object"
+                            },
+                            "designerId": "80284c4d-8d0c-4ade-9c36-dec4581ee0f0",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "listeners",
+                                    "type": "string"
+                                }
+                            ],
+                            "masterInstanceId": "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee"
                         }
-                    ],
-                    "masterInstanceId": "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee"
+                    ]
                 },
                 {
                     "type": "Ext.Label",
@@ -246,7 +259,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 200
+                        "width": 500
                     },
                     "designerId": "87c8d13b-615e-4897-ba61-cdd51d8f362c",
                     "cn": [

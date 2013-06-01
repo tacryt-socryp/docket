@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "width": 200,
+        "width": 450,
         "designer|userClassName": "timeSlider",
         "designer|userAlias": "timeSlider",
         "label": null,
-        "labelWidth": 177,
+        "labelWidth": 175,
         "required": true,
         "maxValue": 48
     },
