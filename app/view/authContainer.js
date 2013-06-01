@@ -85,7 +85,7 @@ Ext.define('Conflux.view.authContainer', {
                         if (outer.items[a].id.substring(0,8) === 'bestfitm') {
                             calendarId = outer.items[a].id;
                             summary = outer.items[a].summary;
-                            if (calendarId !== null && summary !== null) {
+                            if ((calendarId !== null) && (summary !== null)) {
                                 me.loadData(calendarId, summary, items);
                             }
                         }

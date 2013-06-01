@@ -393,7 +393,7 @@
                                     "var hours = parseInt(start.substring(0,2),10);\r",
                                     "var minutes;\r",
                                     "\r",
-                                    "if (start.substring(5,7) == 'pm') && (hours != 12)) {\r",
+                                    "if ((start.substring(5,7) == 'pm') && (hours != 12)) {\r",
                                     "    hours = hours + 12;\r",
                                     "}\r",
                                     "\r",

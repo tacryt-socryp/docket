@@ -180,7 +180,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                             var hours = parseInt(start.substring(0,2),10);
                             var minutes;
 
-                            if (start.substring(5,7) == 'pm') && (hours != 12)) {
+                            if ((start.substring(5,7) == 'pm') && (hours != 12)) {
                                 hours = hours + 12;
                             }
 
