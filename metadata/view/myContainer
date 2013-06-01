@@ -372,8 +372,8 @@
                     "    tap: this.onTap\r",
                     "});\r",
                     "\r",
-                    "this.getScrollable().getScroller().on('scroll', function(scroll, x, y) {\r",
-                    "\tconsole.log(scroll, x, y);\r",
+                    "this.getScrollable().getScroller().on('scrollEnd', function(scroll, x, y) {\r",
+                    "    console.log(scroll, x, y);\r",
                     "});"
                 ]
             },
