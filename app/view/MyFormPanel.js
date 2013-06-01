@@ -30,11 +30,13 @@ Ext.define('Conflux.view.MyFormPanel', {
         items: [
             {
                 xtype: 'textfield',
+                itemId: 'eventTitle',
                 label: 'Summary: ',
                 required: true
             },
             {
                 xtype: 'textareafield',
+                itemId: 'eventDescription',
                 label: 'Description: ',
                 autoCapitalize: true
             },
@@ -153,10 +155,39 @@ Ext.define('Conflux.view.MyFormPanel', {
                     {
                         xtype: 'button',
                         handler: function(button, event) {
-                            var formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0];
-                            console.log(formPanel.getForm().items);
-                            var values = formPanel.getForm().getValues();
-                            console.log(values);
+                            var summary = Ext.ComponentQuery.query('#eventTitle')[0].getValue();
+                            var description = Ext.ComponentQuery.query('#eventDescription')[0].getValue();
+                            var date = Ext.ComponentQuery.query('#datepicker')[0].getValue();
+                            var start = Ext.ComponentQuery.query('#startLabel')[0].getValue();
+                            var end = Ext.ComponentQuery.query('#endLabel')[0].getValue();
+
+                            var resource = {
+                                'summary': summary,
+                                'description': description,
+                                'location': 'Somewhere',
+                                'start': {
+                                    'dateTime': '2011-12-16T10:00:00.000-07:00'
+                                },
+                                'end': {
+                                    'dateTime': '2011-12-16T10:25:00.000-07:00'
+                                }
+                            };
+
+                            console.log(resource);
+                            console.log('date: ' + date);
+                            console.log('start: ' + start);
+                            console.log("end: " + end);
+
+                            /*
+                            var request = gapi.client.calendar.events.insert({
+                            'calendarId': 'primary',
+                            'resource': resource
+                            });
+
+                            request.execute(function(resp) {
+                            console.log(resp);
+                            });
+                            */
                         },
                         ui: 'confirm',
                         width: '120px',

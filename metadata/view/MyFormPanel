@@ -74,6 +74,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "eventTitle",
                 "designer|displayName": "eventTitle",
                 "label": "Summary: ",
                 "required": true
@@ -88,6 +89,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "eventDescription",
                 "designer|displayName": "eventDescription",
                 "label": "Description: ",
                 "autoCapitalize": true,
@@ -399,10 +401,39 @@
                                     "event"
                                 ],
                                 "implHandler": [
-                                    "var formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0];\r",
-                                    "console.log(formPanel.getForm().items);\r",
-                                    "var values = formPanel.getForm().getValues();\r",
-                                    "console.log(values);"
+                                    "var summary = Ext.ComponentQuery.query('#eventTitle')[0].getValue();\r",
+                                    "var description = Ext.ComponentQuery.query('#eventDescription')[0].getValue();\r",
+                                    "var date = Ext.ComponentQuery.query('#datepicker')[0].getValue();\r",
+                                    "var start = Ext.ComponentQuery.query('#startLabel')[0].getValue();\r",
+                                    "var end = Ext.ComponentQuery.query('#endLabel')[0].getValue();\r",
+                                    "\r",
+                                    "var resource = {\r",
+                                    "    'summary': summary,\r",
+                                    "    'description': description,\r",
+                                    "    'location': 'Somewhere',\r",
+                                    "    'start': {\r",
+                                    "        'dateTime': '2011-12-16T10:00:00.000-07:00'\r",
+                                    "    },\r",
+                                    "    'end': {\r",
+                                    "        'dateTime': '2011-12-16T10:25:00.000-07:00'\r",
+                                    "    }\r",
+                                    "};\r",
+                                    "\r",
+                                    "console.log(resource);\r",
+                                    "console.log('date: ' + date);\r",
+                                    "console.log('start: ' + start);\r",
+                                    "console.log(\"end: \" + end);\r",
+                                    "\r",
+                                    "/*\r",
+                                    "var request = gapi.client.calendar.events.insert({\r",
+                                    "    'calendarId': 'primary',\r",
+                                    "    'resource': resource\r",
+                                    "});\r",
+                                    "\r",
+                                    "request.execute(function(resp) {\r",
+                                    "    console.log(resp);\r",
+                                    "});\r",
+                                    "*/"
                                 ]
                             },
                             "designerId": "a829cdbe-4ba6-4095-b612-73830c08395a"
