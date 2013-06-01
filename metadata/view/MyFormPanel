@@ -400,7 +400,8 @@
                                 ],
                                 "implHandler": [
                                     "var formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0];\r",
-                                    "var values = formPanel.getValues();\r",
+                                    "console.log(formPanel.getForm().items);\r",
+                                    "var values = formPanel.getForm().getValues();\r",
                                     "console.log(values);"
                                 ]
                             },

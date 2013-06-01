@@ -154,7 +154,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                         xtype: 'button',
                         handler: function(button, event) {
                             var formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0];
-                            var values = formPanel.getValues();
+                            console.log(formPanel.getForm().items);
+                            var values = formPanel.getForm().getValues();
                             console.log(values);
                         },
                         ui: 'confirm',
