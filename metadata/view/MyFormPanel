@@ -37,6 +37,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "cls": [
+                    "eventTitle"
+                ],
                 "itemId": "eventTitle",
                 "designer|displayName": "eventTitle",
                 "label": "Summary: ",
@@ -52,6 +55,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "cls": [
+                    "eventDescription"
+                ],
                 "itemId": "eventDescription",
                 "designer|displayName": "eventDescription",
                 "label": "Description: ",
@@ -161,6 +167,10 @@
                                     "            ampm = ' pm';\r",
                                     "        } else if (hours == 12) {\r",
                                     "            ampm = ' pm';\r",
+                                    "        }\r",
+                                    "        \r",
+                                    "        if (hours < 10) {\r",
+                                    "            hours = '0' + hours.toString();\r",
                                     "        }\r",
                                     "        \r",
                                     "        if (minutes === 0) {\r",
@@ -367,8 +377,8 @@
                                     "event"
                                 ],
                                 "implHandler": [
-                                    "var summary = Ext.ComponentQuery.query('#eventTitle')[0].getValue();\r",
-                                    "var description = Ext.ComponentQuery.query('#eventDescription')[0].getValue();\r",
+                                    "var summary = document.getElementsByClassName('eventTitle')[0].value;\r",
+                                    "var description = document.getElementsByClassName('eventDescription')[0].value;\r",
                                     "var date;\r",
                                     "try {\r",
                                     "    date = Ext.ComponentQuery.query('#picker')[0].getValue();\r",
@@ -379,10 +389,20 @@
                                     "var start = document.getElementsByClassName('startLabel')[0].innerHTML;\r",
                                     "var end = document.getElementsByClassName('endLabel')[0].innerHTML;\r",
                                     "\r",
-                                    "var dateStart = new Date(date);\r",
+                                    "var dateStart = date;\r",
+                                    "var hours = parseInt(start.substring(0,2),10);\r",
+                                    "var minutes;\r",
+                                    "\r",
+                                    "if (start.substring(5,7) == 'pm') && (hours != 12)) {\r",
+                                    "    hours = hours + 12;\r",
+                                    "}\r",
+                                    "\r",
+                                    "dateStart.setHours(hours);\r",
+                                    "\r",
+                                    "dateStart.setHours();\r",
                                     "console.log('dateStart: ' + dateStart);\r",
                                     "\r",
-                                    "var dateEnd = new Date(date);\r",
+                                    "var dateEnd = date;\r",
                                     "console.log('dateEnd: ' + dateEnd);\r",
                                     "\r",
                                     "\r",
@@ -405,12 +425,12 @@
                                     "\r",
                                     "/*\r",
                                     "var request = gapi.client.calendar.events.insert({\r",
-                                    "    'calendarId': 'primary',\r",
-                                    "    'resource': resource\r",
+                                    "'calendarId': 'primary',\r",
+                                    "'resource': resource\r",
                                     "});\r",
                                     "\r",
                                     "request.execute(function(resp) {\r",
-                                    "    console.log(resp);\r",
+                                    "console.log(resp);\r",
                                     "});\r",
                                     "*/"
                                 ]

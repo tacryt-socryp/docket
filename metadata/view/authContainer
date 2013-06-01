@@ -32,6 +32,8 @@
                     "Ext.create('Conflux.view.mainCarousel');\r",
                     "Ext.create('Conflux.view.MyFormPanel');\r",
                     "\r",
+                    "console.log(parameters);\r",
+                    "\r",
                     "if (Ext.isEmpty(parameters)) {\r",
                     "    window.location.href = 'login.html';\r",
                     "} else {\r",

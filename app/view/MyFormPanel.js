@@ -30,12 +30,14 @@ Ext.define('Conflux.view.MyFormPanel', {
         items: [
             {
                 xtype: 'textfield',
+                cls: 'eventTitle',
                 itemId: 'eventTitle',
                 label: 'Summary: ',
                 required: true
             },
             {
                 xtype: 'textareafield',
+                cls: 'eventDescription',
                 itemId: 'eventDescription',
                 label: 'Description: ',
                 autoCapitalize: true
@@ -72,6 +74,10 @@ Ext.define('Conflux.view.MyFormPanel', {
                                             ampm = ' pm';
                                         } else if (hours == 12) {
                                             ampm = ' pm';
+                                        }
+                                        
+                                        if (hours < 10) {
+                                            hours = '0' + hours.toString();
                                         }
                                         
                                         if (minutes === 0) {
@@ -158,8 +164,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                     {
                         xtype: 'button',
                         handler: function(button, event) {
-                            var summary = Ext.ComponentQuery.query('#eventTitle')[0].getValue();
-                            var description = Ext.ComponentQuery.query('#eventDescription')[0].getValue();
+                            var summary = document.getElementsByClassName('eventTitle')[0].value;
+                            var description = document.getElementsByClassName('eventDescription')[0].value;
                             var date;
                             try {
                                 date = Ext.ComponentQuery.query('#picker')[0].getValue();
@@ -171,6 +177,16 @@ Ext.define('Conflux.view.MyFormPanel', {
                             var end = document.getElementsByClassName('endLabel')[0].innerHTML;
 
                             var dateStart = date;
+                            var hours = parseInt(start.substring(0,2),10);
+                            var minutes;
+
+                            if (start.substring(5,7) == 'pm') && (hours != 12)) {
+                                hours = hours + 12;
+                            }
+
+                            dateStart.setHours(hours);
+
+                            dateStart.setHours();
                             console.log('dateStart: ' + dateStart);
 
                             var dateEnd = date;
