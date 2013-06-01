@@ -23,6 +23,7 @@ Ext.define('Conflux.view.MyFormPanel', {
     config: {
         centered: true,
         height: 387,
+        itemId: 'MyFormPanel',
         width: 600,
         hideOnMaskTap: true,
         modal: true,

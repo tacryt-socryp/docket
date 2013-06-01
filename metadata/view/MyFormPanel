@@ -9,6 +9,7 @@
         "centered": true,
         "height": 387,
         "html": null,
+        "itemId": "MyFormPanel",
         "width": 600,
         "designer|userClassName": "MyFormPanel",
         "hideOnMaskTap": true,
@@ -399,7 +400,8 @@
                                 ],
                                 "implHandler": [
                                     "var formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0];\r",
-                                    "var values = formPanel.getValues();"
+                                    "var values = formPanel.getValues();\r",
+                                    "console.log(values);"
                                 ]
                             },
                             "designerId": "a829cdbe-4ba6-4095-b612-73830c08395a"
