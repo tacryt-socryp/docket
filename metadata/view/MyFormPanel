@@ -167,7 +167,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 520
+                        "width": 515
                     },
                     "designerId": "b263f82b-84c8-422a-a0cb-c9bee586f4e4",
                     "cn": [
@@ -231,7 +231,7 @@
                         "html": "12:00 am",
                         "itemId": "startLabel",
                         "style": "background:#FFF;",
-                        "width": 70,
+                        "width": 80,
                         "designer|displayName": "startLabel"
                     },
                     "designerId": "4e503488-4915-4777-a57e-a83f828b9acc"
@@ -259,7 +259,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 520
+                        "width": 515
                     },
                     "designerId": "87c8d13b-615e-4897-ba61-cdd51d8f362c",
                     "cn": [
