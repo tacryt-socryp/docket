@@ -143,7 +143,7 @@
                             "    y: 70\r",
                             "}).show(true);\r",
                             "\r",
-                            "surface.add({\r",
+                            "var addText = surface.add({\r",
                             "    type: 'text',\r",
                             "    text: '+add',\r",
                             "    font: \"36px Arial\",\r",
@@ -151,6 +151,15 @@
                             "    x: displace,\r",
                             "    y: 70\r",
                             "}).show(true);\r",
+                            "\r",
+                            "this.up('myContainer').getScrollable().getScroller().on('scrollend', function(scroll, x, y) {\r",
+                            "    sprite.setAttributes({\r",
+                            "        translate: {\r",
+                            "            x: scroll.position.x,\r",
+                            "            y: 70\r",
+                            "        }\r",
+                            "    }, true);\r",
+                            "});\r",
                             "\r",
                             "for (var iter = 0; iter < events.length; iter++) {\r",
                             "    xloc = iter*200;\r",
@@ -372,9 +381,10 @@
                     "    tap: this.onTap\r",
                     "});\r",
                     "\r",
-                    "this.getScrollable().getScroller().on('scrollEnd', function(scroll, x, y) {\r",
+                    "/*this.getScrollable().getScroller().on('scrollend', function(scroll, x, y) {\r",
                     "    console.log(scroll, x, y);\r",
-                    "});"
+                    "    scroll.position.x\r",
+                    "});*/"
                 ]
             },
             "designerId": "0795efd8-674a-4ad3-bdcc-1c6dd1a236bf"
