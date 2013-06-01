@@ -112,9 +112,6 @@
                     "cn": [
                         {
                             "id": "0c975e14-b70d-42e6-a206-55ed5ee68e55"
-                        },
-                        {
-                            "id": "6d623f87-6f7a-4a6a-a7e9-d09869b2040c"
                         }
                     ]
                 },
@@ -159,7 +156,7 @@
     },
     "inspectorState": {
         "topInstance": "5133ddc6-983b-440e-ba54-ce2fa457ad04",
-        "selectedInstance": "c0f58ee6-b074-4f1e-9397-dd1f6cb45da3"
+        "selectedInstance": "0c975e14-b70d-42e6-a206-55ed5ee68e55"
     },
     "codeState": {
         "topInstance": "5133ddc6-983b-440e-ba54-ce2fa457ad04"

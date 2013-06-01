@@ -375,7 +375,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "margin": "0 20 0 20",
+                        "margin": null,
                         "padding": null,
                         "ui": "confirm",
                         "width": "120px",
@@ -383,22 +383,6 @@
                         "text": "Submit"
                     },
                     "designerId": "0c975e14-b70d-42e6-a206-55ed5ee68e55"
-                },
-                {
-                    "type": "Ext.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "margin": "0 20 0 20",
-                        "ui": "decline",
-                        "width": "120px",
-                        "designer|displayName": "cancelEvent",
-                        "text": "Discard"
-                    },
-                    "designerId": "6d623f87-6f7a-4a6a-a7e9-d09869b2040c"
                 }
             ]
         },

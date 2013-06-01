@@ -151,17 +151,9 @@ Ext.define('Conflux.view.MyFormPanel', {
                 items: [
                     {
                         xtype: 'button',
-                        margin: '0 20 0 20',
                         ui: 'confirm',
                         width: '120px',
                         text: 'Submit'
-                    },
-                    {
-                        xtype: 'button',
-                        margin: '0 20 0 20',
-                        ui: 'decline',
-                        width: '120px',
-                        text: 'Discard'
                     }
                 ]
             }
