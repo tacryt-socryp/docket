@@ -299,7 +299,7 @@ Ext.define('Conflux.view.myContainer', {
             tap: this.onTap
         });
 
-        this.getScrollable().getScroller().on('scrollEnd', function(scroll, x, y) {
+        this.getScrollable().getScroller().on('scrollend', function(scroll, x, y) {
             console.log(scroll, x, y);
         });
     },
