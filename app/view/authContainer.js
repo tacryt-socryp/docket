@@ -39,9 +39,12 @@ Ext.define('Conflux.view.authContainer', {
         Ext.create('Conflux.view.mainCarousel');
         Ext.create('Conflux.view.MyFormPanel');
 
-        console.log(parameters);
+        function isEmpty(ob){
+            for(var i in ob){ return false; }
+            return true;
+        }
 
-        if (Ext.isEmpty(parameters)) {
+        if (isEmpty(parameters)) {
             window.location.href = 'login.html';
         } else {
             Conflux.app.authToken = decodeURI(parameters.auth);
