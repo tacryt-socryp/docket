@@ -39,8 +39,10 @@ Ext.define('Conflux.view.authContainer', {
         Ext.create('Conflux.view.mainCarousel');
         Ext.create('Conflux.view.MyFormPanel');
 
-        function isEmpty(ob){
-            for(var i in ob){ return false; }
+        function isEmpty(ob) {
+            for (var i in ob) {
+                return false;
+            }
             return true;
         }
 
