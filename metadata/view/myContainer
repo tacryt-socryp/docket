@@ -153,9 +153,9 @@
                             "}).show(true);\r",
                             "\r",
                             "this.up('myContainer').getScrollable().getScroller().on('scrollend', function(scroll, x, y) {\r",
-                            "    sprite.setAttributes({\r",
+                            "    addText.setAttributes({\r",
                             "        translate: {\r",
-                            "            x: scroll.position.x,\r",
+                            "            x: (scroll.position.x + displace),\r",
                             "            y: 70\r",
                             "        }\r",
                             "    }, true);\r",
@@ -383,7 +383,6 @@
                     "\r",
                     "/*this.getScrollable().getScroller().on('scrollend', function(scroll, x, y) {\r",
                     "    console.log(scroll, x, y);\r",
-                    "    scroll.position.x\r",
                     "});*/"
                 ]
             },

@@ -98,9 +98,9 @@ Ext.define('Conflux.view.myContainer', {
                             }).show(true);
 
                             this.up('myContainer').getScrollable().getScroller().on('scrollend', function(scroll, x, y) {
-                                sprite.setAttributes({
+                                addText.setAttributes({
                                     translate: {
-                                        x: scroll.position.x,
+                                        x: (scroll.position.x + displace),
                                         y: 70
                                     }
                                 }, true);
