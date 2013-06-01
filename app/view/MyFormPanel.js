@@ -86,6 +86,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                         cls: 'startLabel',
                         html: '12:00 am',
                         itemId: 'startLabel',
+                        padding: '20 0 0 0',
                         style: 'background:#FFF;font-size:90%;',
                         width: 80
                     }
@@ -134,6 +135,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                         cls: 'endLabel',
                         html: '12:00 am',
                         itemId: 'endLabel',
+                        padding: '20 0 0 0',
                         style: 'background:#FFF; font-size:90%;',
                         width: 80
                     }
