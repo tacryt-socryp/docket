@@ -288,7 +288,8 @@
                                     "        \r",
                                     "        var endLabel = Ext.ComponentQuery.query('#endLabel')[0];\r",
                                     "        console.log(endLabel);\r",
-                                    "        endLabel.update(hours + ':' + minutes + ampm);\r",
+                                    "        endLabel.getEl().dom.innerText = hours + ':' + minutes + ampm;\r",
+                                    "        //endLabel.update(hours + ':' + minutes + ampm);\r",
                                     "        //endLabel.setHtml();\r",
                                     "        \r",
                                     "    }\r",
@@ -324,7 +325,7 @@
                     "userConfig": {
                         "html": "12:00 am",
                         "itemId": "endLabel",
-                        "style": "background:#FFF;",
+                        "style": "background:#FFF; font-size:90%;",
                         "width": 80,
                         "designer|displayName": "endLabel"
                     },
