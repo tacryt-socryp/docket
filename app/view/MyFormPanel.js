@@ -158,8 +158,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                             var summary = Ext.ComponentQuery.query('#eventTitle')[0].getValue();
                             var description = Ext.ComponentQuery.query('#eventDescription')[0].getValue();
                             var date = Ext.ComponentQuery.query('#datepicker')[0].getValue();
-                            var start = Ext.ComponentQuery.query('#startLabel')[0].getValue();
-                            var end = Ext.ComponentQuery.query('#endLabel')[0].getValue();
+                            var start = document.getElementsByClassName('startLabel')[0];
+                            var end = document.getElementsByClassName('endLabel')[0];
 
                             var resource = {
                                 'summary': summary,
