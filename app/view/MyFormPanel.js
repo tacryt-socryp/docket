@@ -44,7 +44,10 @@ Ext.define('Conflux.view.MyFormPanel', {
                 xtype: 'datepickerfield',
                 itemId: 'datepicker',
                 label: 'Date: ',
-                required: true
+                required: true,
+                picker: {
+                    itemId: 'picker'
+                }
             },
             {
                 xtype: 'container',
@@ -158,8 +161,9 @@ Ext.define('Conflux.view.MyFormPanel', {
                             var summary = Ext.ComponentQuery.query('#eventTitle')[0].getValue();
                             var description = Ext.ComponentQuery.query('#eventDescription')[0].getValue();
                             var date = Ext.ComponentQuery.query('#datepicker')[0].getValue();
-                            var start = document.getElementsByClassName('startLabel')[0];
-                            var end = document.getElementsByClassName('endLabel')[0];
+                            var picker = Ext.ComponentQuery.query('#picker')[0].getValue();
+                            var start = document.getElementsByClassName('startLabel')[0].innerHTML;
+                            var end = document.getElementsByClassName('endLabel')[0].innerHTML;
 
                             var resource = {
                                 'summary': summary,
@@ -175,6 +179,7 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             console.log(resource);
                             console.log('date: ' + date);
+                            console.log('picker: ' + picker);
                             console.log('start: ' + start);
                             console.log("end: " + end);
 
@@ -198,6 +203,12 @@ Ext.define('Conflux.view.MyFormPanel', {
         ]
     },
 
+    initialize: function() {
+        this.callParent();
+
+        this.down('#datepicker').setValue(new Date());
+    },
+
     addEvent: function(calendarId, roomText) {
         var resource = {
             "summary": "Appointment",
@@ -218,12 +229,6 @@ Ext.define('Conflux.view.MyFormPanel', {
         request.execute(function(resp) {
             console.log(resp);
         });
-    },
-
-    initialize: function() {
-        this.callParent();
-
-        this.down('#datepicker').setValue(new Date());
     }
 
 });

@@ -30,43 +30,6 @@
     ],
     "cn": [
         {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "addEvent",
-                "designer|params": [
-                    "calendarId",
-                    "roomText"
-                ],
-                "implHandler": [
-                    "var resource = {\r",
-                    "    \"summary\": \"Appointment\",\r",
-                    "    \"location\": \"Somewhere\",\r",
-                    "    \"start\": {\r",
-                    "        \"dateTime\": \"2011-12-16T10:00:00.000-07:00\"\r",
-                    "    },\r",
-                    "    \"end\": {\r",
-                    "        \"dateTime\": \"2011-12-16T10:25:00.000-07:00\"\r",
-                    "    }\r",
-                    "};\r",
-                    "\r",
-                    "var request = gapi.client.calendar.events.insert({\r",
-                    "    'calendarId': 'primary',\r",
-                    "    'resource': resource\r",
-                    "});\r",
-                    "\r",
-                    "request.execute(function(resp) {\r",
-                    "    console.log(resp);\r",
-                    "});"
-                ]
-            },
-            "designerId": "53392766-3868-42cd-bd93-061e56c8418a"
-        },
-        {
             "type": "Ext.field.Text",
             "reference": {
                 "name": "items",
@@ -119,6 +82,9 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "itemId": "picker"
+                    },
                     "designerId": "8417f64f-7a11-422c-a60f-c2dd9b149ebf",
                     "cn": [
                         {
@@ -404,8 +370,9 @@
                                     "var summary = Ext.ComponentQuery.query('#eventTitle')[0].getValue();\r",
                                     "var description = Ext.ComponentQuery.query('#eventDescription')[0].getValue();\r",
                                     "var date = Ext.ComponentQuery.query('#datepicker')[0].getValue();\r",
-                                    "var start = document.getElementsByClassName('startLabel')[0];\r",
-                                    "var end = document.getElementsByClassName('endLabel')[0];\r",
+                                    "var picker = Ext.ComponentQuery.query('#picker')[0].getValue();\r",
+                                    "var start = document.getElementsByClassName('startLabel')[0].innerHTML;\r",
+                                    "var end = document.getElementsByClassName('endLabel')[0].innerHTML;\r",
                                     "\r",
                                     "var resource = {\r",
                                     "    'summary': summary,\r",
@@ -421,6 +388,7 @@
                                     "\r",
                                     "console.log(resource);\r",
                                     "console.log('date: ' + date);\r",
+                                    "console.log('picker: ' + picker);\r",
                                     "console.log('start: ' + start);\r",
                                     "console.log(\"end: \" + end);\r",
                                     "\r",
@@ -458,6 +426,43 @@
                 ]
             },
             "designerId": "929379d5-95eb-4fd1-86db-dcaf78e2daeb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "addEvent",
+                "designer|params": [
+                    "calendarId",
+                    "roomText"
+                ],
+                "implHandler": [
+                    "var resource = {\r",
+                    "    \"summary\": \"Appointment\",\r",
+                    "    \"location\": \"Somewhere\",\r",
+                    "    \"start\": {\r",
+                    "        \"dateTime\": \"2011-12-16T10:00:00.000-07:00\"\r",
+                    "    },\r",
+                    "    \"end\": {\r",
+                    "        \"dateTime\": \"2011-12-16T10:25:00.000-07:00\"\r",
+                    "    }\r",
+                    "};\r",
+                    "\r",
+                    "var request = gapi.client.calendar.events.insert({\r",
+                    "    'calendarId': 'primary',\r",
+                    "    'resource': resource\r",
+                    "});\r",
+                    "\r",
+                    "request.execute(function(resp) {\r",
+                    "    console.log(resp);\r",
+                    "});"
+                ]
+            },
+            "designerId": "53392766-3868-42cd-bd93-061e56c8418a"
         }
     ]
 }
