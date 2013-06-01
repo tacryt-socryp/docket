@@ -167,7 +167,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 500
+                        "width": 520
                     },
                     "designerId": "b263f82b-84c8-422a-a0cb-c9bee586f4e4",
                     "cn": [
@@ -179,10 +179,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "width": null,
-                                "label": "Start:",
-                                "labelAlign": null,
-                                "labelWidth": null,
                                 "listeners": [
                                     "{\r",
                                     "\r",
@@ -198,12 +194,16 @@
                                     "            ampm = ' pm';\r",
                                     "        }\r",
                                     "        \r",
-                                    "        this.up.query('#startLabel').setHtml(hours + ':' + minutes + ampm);\r",
+                                    "        Ext.ComponentQuery.query('#startLabel')[0].setHtml(hours + ':' + minutes + ampm);\r",
                                     "        \r",
                                     "    }\r",
                                     "\r",
                                     "}"
-                                ]
+                                ],
+                                "width": null,
+                                "label": "Start:",
+                                "labelAlign": null,
+                                "labelWidth": null
                             },
                             "configAlternates": {
                                 "listeners": "object"
@@ -259,7 +259,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 500
+                        "width": 520
                     },
                     "designerId": "87c8d13b-615e-4897-ba61-cdd51d8f362c",
                     "cn": [
@@ -271,9 +271,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "width": null,
-                                "designer|displayName": "eventEnd",
-                                "label": "End: ",
                                 "listeners": [
                                     "{\r",
                                     "\r",
@@ -289,12 +286,15 @@
                                     "            ampm = ' pm';\r",
                                     "        }\r",
                                     "        \r",
-                                    "        this.up.query('#endLabel').setHtml(hours + ':' + minutes + ampm);\r",
+                                    "        Ext.ComponentQuery.query('#endLabel')[0].setHtml(hours + ':' + minutes + ampm);\r",
                                     "        \r",
                                     "    }\r",
                                     "\r",
                                     "}"
-                                ]
+                                ],
+                                "width": null,
+                                "designer|displayName": "eventEnd",
+                                "label": "End: "
                             },
                             "configAlternates": {
                                 "listeners": "object"
@@ -322,7 +322,7 @@
                         "html": "12:00 am",
                         "itemId": "endLabel",
                         "style": "background:#FFF;",
-                        "width": 70,
+                        "width": 80,
                         "designer|displayName": "endLabel"
                     },
                     "designerId": "c0f58ee6-b074-4f1e-9397-dd1f6cb45da3"
