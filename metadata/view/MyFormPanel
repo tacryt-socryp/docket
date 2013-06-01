@@ -286,9 +286,8 @@
                                     "            ampm = ' pm';\r",
                                     "        }\r",
                                     "        \r",
-                                    "        var endLabel = Ext.ComponentQuery.query('#endLabel')[0];\r",
-                                    "        console.log(endLabel);\r",
-                                    "        endLabel.getEl().dom.innerText = hours + ':' + minutes + ampm;\r",
+                                    "        var endLabel = document.getElementsByClassName('endLabel')[0];\r",
+                                    "        endLabel.innerText = hours + ':' + minutes + ampm;\r",
                                     "        //endLabel.update(hours + ':' + minutes + ampm);\r",
                                     "        //endLabel.setHtml();\r",
                                     "        \r",
@@ -323,6 +322,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "cls": [
+                            "endLabel"
+                        ],
                         "html": "12:00 am",
                         "itemId": "endLabel",
                         "style": "background:#FFF; font-size:90%;",

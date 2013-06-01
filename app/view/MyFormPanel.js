@@ -110,11 +110,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                                             ampm = ' pm';
                                         }
                                         
-                                        var endLabel = Ext.ComponentQuery.query('#endLabel')[0];
-                                        console.log(endLabel);
-                                        endLabel.getEl().dom.innerText = hours + ':' + minutes + ampm;
-                                        //endLabel.update(hours + ':' + minutes + ampm);
-                                        //endLabel.setHtml();
+                                        var endLabel = document.getElementsByClassName('endLabel')[0];
+                                        endLabel.innerText = hours + ':' + minutes + ampm;
                                         
                                     }
                                 },
@@ -124,6 +121,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                     },
                     {
                         xtype: 'label',
+                        cls: 'endLabel',
                         html: '12:00 am',
                         itemId: 'endLabel',
                         style: 'background:#FFF; font-size:90%;',
