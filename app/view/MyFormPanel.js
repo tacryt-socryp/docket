@@ -175,12 +175,15 @@ Ext.define('Conflux.view.MyFormPanel', {
                             var start = document.getElementsByClassName('startLabel')[0].innerHTML;
                             var end = document.getElementsByClassName('endLabel')[0].innerHTML;
 
-                            var dateStart;
-                            var dateEnd;
-                            for (var prop in date) {
-                                dateStart[prop] = date[prop];
-                                dateEnd[prop] = date[prop];
-                            }
+                            var dateStart = new Date();
+                            dateStart.setDate(date.getDate());
+                            dateStart.setMonth(date.getMonth());
+                            dateStart.setFullYear(date.getFullYear());
+
+                            var dateEnd = new Date();
+                            dateEnd.setDate(date.getDate());
+                            dateEnd.setMonth(date.getMonth());
+                            dateEnd.setFullYear(date.getFullYear());
 
                             var hours = parseInt(start.substring(0,2),10);
                             var minutes = parseInt(start.substring(3,5),10);
@@ -193,6 +196,17 @@ Ext.define('Conflux.view.MyFormPanel', {
                             dateStart.setMinutes(minutes);
 
                             console.log('dateStart: ' + dateStart);
+
+                            hours = parseInt(end.substring(0,2),10);
+                            minutes = parseInt(end.substring(3,5),10);
+
+                            if ((end.substring(5,7) == 'pm') && (hours != 12)) {
+                                hours = hours + 12;
+                            }
+
+                            dateEnd.setHours(hours);
+                            dateEnd.setMinutes(minutes);
+
                             console.log('dateEnd: ' + dateEnd);
 
 
