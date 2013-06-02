@@ -302,8 +302,7 @@ Ext.define('Conflux.view.myContainer', {
 
     onInlineDrawReloadPainted: function(draw) {
         console.log('reloadPainted');
-        console.log(this);
-        var me = draw,
+        var me = this.query('#inlineDraw')[0],
             backgroundColor = me.backgroundColor,
             timelineColor = me.timelineColor,
             roomText = me.roomText,
