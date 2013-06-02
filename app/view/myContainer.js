@@ -306,6 +306,7 @@ Ext.define('Conflux.view.myContainer', {
             if (e.pageX >= Ext.getBody().getSize().width-200) {
                 var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                 var myContainer = mainCarousel.getActiveItem();
+                console.log(myContainer);
                 var form = new Conflux.view.MyFormPanel();
                 form.roomText = myContainer.roomText;
                 form.calendarId = myContainer.calendarId;

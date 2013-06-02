@@ -405,9 +405,10 @@
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
                     "        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
                     "        var myContainer = mainCarousel.getActiveItem();\r",
+                    "        console.log(myContainer);\r",
                     "        var form = new Conflux.view.MyFormPanel();\r",
-                    "        form.roomText = this.roomText;\r",
-                    "        form.calendarId = this.calendarId;\r",
+                    "        form.roomText = myContainer.roomText;\r",
+                    "        form.calendarId = myContainer.calendarId;\r",
                     "        Ext.Viewport.add(form);\r",
                     "    }\r",
                     "}"
