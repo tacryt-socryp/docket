@@ -88,28 +88,14 @@ Ext.define('Conflux.view.myContainer', {
                                 y: 70
                             }).show(true);
 
-                            var addText = Ext.create('Ext.draw.sprite.Sprite', {
+                            var addText = surface.add({
                                 type: 'text',
                                 text: '+add',
                                 font: "36px Arial",
                                 fill: '#FFF',
                                 x: displace,
                                 y: 70
-                            });
-
-                            surface.add(addText).show(true);
-
-                            this.up('myContainer').getScrollable().getScroller().on('scrollend', function(scroll, x, y) {
-                                addText.setAttributes({
-                                    translate: {
-                                        x: 10,
-                                        y: 10
-                                    }
-                                }, true);
-                                /*addText.setAttributes({
-                                translationX: scroll.position.x
-                                });*/
-                            });
+                            }).show(true);
 
                             for (var iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
@@ -312,10 +298,6 @@ Ext.define('Conflux.view.myContainer', {
         this.element.on({
             tap: this.onTap
         });
-
-        /*this.getScrollable().getScroller().on('scrollend', function(scroll, x, y) {
-        console.log(scroll, x, y);
-        });*/
     },
 
     onTap: function(e) {
