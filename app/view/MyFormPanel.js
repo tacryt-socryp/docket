@@ -179,7 +179,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                             function returnTimestamp(date) {
                                 var hours = date.getHours(),
                                     minutes = date.getMinutes(),
-                                    months = date.getMonth(),
+                                    months = date.getMonth() + 1,
                                     days = date.getDate(),
                                     timezone = ((date.getTimezoneOffset()/60)*-1);
 

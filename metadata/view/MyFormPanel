@@ -393,6 +393,7 @@
                                     "    }\r",
                                     "\r",
                                     "    if (months < 10) {\r",
+                                    "        months++;\r",
                                     "        months = '0' + months;\r",
                                     "    }\r",
                                     "\r",
