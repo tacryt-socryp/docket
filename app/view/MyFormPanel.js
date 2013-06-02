@@ -274,7 +274,8 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             request.execute(function(resp) {
                                 console.log(resp);
-                                Ext.Viewport.setActiveItem('mainCarousel');
+                                var formPanel = this.findParentByType(Ext.form.FormPanel);
+                                formPanel.hide();
                             });
                         },
                         ui: 'confirm',

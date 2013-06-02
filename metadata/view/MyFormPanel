@@ -475,7 +475,8 @@
                                     "\r",
                                     "request.execute(function(resp) {\r",
                                     "    console.log(resp);\r",
-                                    "    Ext.Viewport.setActiveItem('mainCarousel');\r",
+                                    "    var formPanel = this.findParentByType(Ext.form.FormPanel);\r",
+                                    "    formPanel.hide();\r",
                                     "});"
                                 ]
                             },
