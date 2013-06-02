@@ -175,6 +175,9 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 dateEnd = new Date(),
                                 date;
 
+                            console.log(formPanel);
+                            console.log(roomText);
+
                             function returnTimestamp(date) {
                                 var hours = date.getHours(),
                                     minutes = date.getMinutes(),

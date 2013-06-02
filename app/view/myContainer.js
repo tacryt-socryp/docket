@@ -301,15 +301,15 @@ Ext.define('Conflux.view.myContainer', {
     },
 
     onTap: function(e) {
-        console.log(this);
         if (e.pageY <= 70) {
             if (e.pageX >= Ext.getBody().getSize().width-200) {
                 var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                 var myContainer = mainCarousel.getActiveItem();
-                console.log(myContainer);
                 var form = new Conflux.view.MyFormPanel();
                 form.roomText = myContainer.roomText;
                 form.calendarId = myContainer.calendarId;
+                console.log(form.roomText);
+                console.log(form.calendarId);
                 Ext.Viewport.add(form);
             }
         }
