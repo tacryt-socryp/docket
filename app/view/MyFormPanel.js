@@ -28,6 +28,14 @@ Ext.define('Conflux.view.MyFormPanel', {
         width: 600,
         hideOnMaskTap: true,
         modal: true,
+        hideAnimation: {
+            type: 'fadeOut',
+            duration: 750
+        },
+        showAnimation: {
+            type: 'fadeIn',
+            duration: 750
+        },
         items: [
             {
                 xtype: 'textfield',

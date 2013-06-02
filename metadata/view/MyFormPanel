@@ -8,13 +8,29 @@
     "userConfig": {
         "centered": true,
         "height": 387,
+        "hideAnimation": [
+            "{\r",
+            "    type: 'fadeOut',\r",
+            "    duration: 750\r",
+            "}"
+        ],
         "html": null,
         "id": "MyFormPanel",
         "itemId": "MyFormPanel",
+        "showAnimation": [
+            "{\r",
+            "    type: 'fadeIn',\r",
+            "    duration: 750\r",
+            "}"
+        ],
         "width": 600,
         "designer|userClassName": "MyFormPanel",
         "hideOnMaskTap": true,
         "modal": true
+    },
+    "configAlternates": {
+        "hideAnimation": "object",
+        "showAnimation": "object"
     },
     "designerId": "5133ddc6-983b-440e-ba54-ce2fa457ad04",
     "cn": [

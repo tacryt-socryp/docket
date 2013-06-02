@@ -25,7 +25,11 @@ Ext.define('Conflux.view.mainCarousel', {
         fullscreen: true,
         itemId: 'mainCarousel',
         ui: 'light',
-        direction: 'vertical'
+        direction: 'vertical',
+        showAnimation: {
+            type: 'fadeIn',
+            duration: 750
+        }
     }
 
 });
