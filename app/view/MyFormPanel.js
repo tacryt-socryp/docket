@@ -161,7 +161,6 @@ Ext.define('Conflux.view.MyFormPanel', {
             {
                 xtype: 'toolbar',
                 docked: 'bottom',
-                id: 'MyToolbar',
                 layout: {
                     pack: 'center',
                     type: 'hbox'
@@ -280,7 +279,7 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             request.execute(function(resp) {
                                 console.log(resp);
-                                var formPanel = me.up('MyToolbar').up('MyFormPanel');
+                                var formPanel = me.getParent().getParent();
                                 formPanel.hide();
                             });
                         },

@@ -332,7 +332,7 @@
                 "container|pack": "center",
                 "border": null,
                 "docked": "bottom",
-                "id": "MyToolbar",
+                "id": null,
                 "style": null,
                 "scrollable": null
             },
@@ -482,7 +482,7 @@
                                     "\r",
                                     "request.execute(function(resp) {\r",
                                     "    console.log(resp);\r",
-                                    "    var formPanel = me.up('MyToolbar').up('MyFormPanel');\r",
+                                    "    var formPanel = me.getParent().getParent();\r",
                                     "    formPanel.hide();\r",
                                     "});"
                                 ]
