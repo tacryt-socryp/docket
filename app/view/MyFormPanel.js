@@ -161,6 +161,7 @@ Ext.define('Conflux.view.MyFormPanel', {
             {
                 xtype: 'toolbar',
                 docked: 'bottom',
+                id: 'MyToolbar',
                 layout: {
                     pack: 'center',
                     type: 'hbox'
@@ -222,8 +223,6 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 date = new Date();
                             }
 
-                            console.log(start);
-
                             dateStart.setDate(date.getDate());
                             dateStart.setMonth(date.getMonth());
                             dateStart.setFullYear(date.getFullYear());
@@ -280,7 +279,7 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             request.execute(function(resp) {
                                 console.log(resp);
-                                var formPanel = this.findParentByType(Ext.form.FormPanel);
+                                var formPanel = this.up('MyToolbar').up('MyFormPanel');
                                 formPanel.hide();
                             });
                         },

@@ -332,6 +332,7 @@
                 "container|pack": "center",
                 "border": null,
                 "docked": "bottom",
+                "id": "MyToolbar",
                 "style": null,
                 "scrollable": null
             },
@@ -424,8 +425,6 @@
                                     "    date = new Date();\r",
                                     "}\r",
                                     "\r",
-                                    "console.log(start);\r",
-                                    "\r",
                                     "dateStart.setDate(date.getDate());\r",
                                     "dateStart.setMonth(date.getMonth());\r",
                                     "dateStart.setFullYear(date.getFullYear());\r",
@@ -482,7 +481,7 @@
                                     "\r",
                                     "request.execute(function(resp) {\r",
                                     "    console.log(resp);\r",
-                                    "    var formPanel = this.findParentByType(Ext.form.FormPanel);\r",
+                                    "    var formPanel = this.up('MyToolbar').up('MyFormPanel');\r",
                                     "    formPanel.hide();\r",
                                     "});"
                                 ]
