@@ -364,7 +364,7 @@ Ext.define('Conflux.view.myContainer', {
 
         var addText = surface.add({
             type: 'text',
-            text: '+addaewgiiwaeiogoigwa',
+            text: '+add',
             font: "36px Arial",
             fill: '#FFF',
             x: displace,

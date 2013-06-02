@@ -444,7 +444,7 @@
                             "\r",
                             "var addText = surface.add({\r",
                             "    type: 'text',\r",
-                            "    text: '+addaewgiiwaeiogoigwa',\r",
+                            "    text: '+add',\r",
                             "    font: \"36px Arial\",\r",
                             "    fill: '#FFF',\r",
                             "    x: displace,\r",
