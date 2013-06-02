@@ -465,15 +465,17 @@
                                     "};\r",
                                     "\r",
                                     "console.log(resource);\r",
-                                    "/*\r",
+                                    "console.log(calendarId);\r",
+                                    "\r",
                                     "var request = gapi.client.calendar.events.insert({\r",
                                     "    'calendarId': 'primary',\r",
                                     "    'resource': resource\r",
                                     "});\r",
+                                    "\r",
                                     "request.execute(function(resp) {\r",
                                     "    console.log(resp);\r",
                                     "});\r",
-                                    "*/"
+                                    ""
                                 ]
                             },
                             "designerId": "a829cdbe-4ba6-4095-b612-73830c08395a"
