@@ -322,6 +322,8 @@ Ext.define('Conflux.view.myContainer', {
             yloc = h/10,
             xloc;
 
+        console.log('variables declared');
+
         me.setSize(w,h);
         surface.setSize(w,h);
         surface.setBackground(backgroundColor);
@@ -335,6 +337,8 @@ Ext.define('Conflux.view.myContainer', {
             x: 0,
             y: yloc+330
         }).show(true);
+
+        console.log('draw first line');
 
         //Name of room
         surface.add({
