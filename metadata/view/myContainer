@@ -24,6 +24,18 @@
         "scrollable": "object"
     },
     "designerId": "9bc94066-7690-4c68-8866-c110d3b1b5d4",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "roomText",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "calendarId",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.draw.Component",
@@ -391,10 +403,9 @@
                     "if (e.pageY <= 70) {\r",
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
                     "        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
-                    "        var inlineDraw = Ext.ComponentQuery.query('#inlineDraw')[mainCarousel.getActiveIndex()];\r",
                     "        var form = new Conflux.view.MyFormPanel();\r",
-                    "        form.roomText = inlineDraw.roomText;\r",
-                    "        form.calendarId = inlineDraw.calendarId;\r",
+                    "        form.roomText = this.roomText;\r",
+                    "        form.calendarId = this.calendarId;\r",
                     "        Ext.Viewport.add(form);\r",
                     "    }\r",
                     "}"

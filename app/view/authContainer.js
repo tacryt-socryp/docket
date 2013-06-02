@@ -172,6 +172,9 @@ Ext.define('Conflux.view.authContainer', {
                                             array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
                                             child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
+                                            obj.roomText = summary;
+                                            obj.calendarId = calendarId;
+
                                             child.roomText = summary;
                                             child.backgroundColor = backgroundColors[array_i];
                                             child.boxColor = boxColors[array_i];

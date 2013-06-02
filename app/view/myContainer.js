@@ -303,11 +303,9 @@ Ext.define('Conflux.view.myContainer', {
     onTap: function(e) {
         if (e.pageY <= 70) {
             if (e.pageX >= Ext.getBody().getSize().width-200) {
-                var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
-                var inlineDraw = Ext.ComponentQuery.query('#inlineDraw')[mainCarousel.getActiveIndex()];
                 var form = new Conflux.view.MyFormPanel();
-                form.roomText = inlineDraw.roomText;
-                form.calendarId = inlineDraw.calendarId;
+                form.roomText = this.roomText;
+                form.calendarId = this.calendarId;
                 Ext.Viewport.add(form);
             }
         }
