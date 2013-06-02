@@ -305,6 +305,7 @@ Ext.define('Conflux.view.MyFormPanel', {
     onMyFormPanelHide: function(component, eOpts) {
         var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
             myContainer = mainCarousel.getActiveItem();
+        myContainer.reloadData();
         component.destroy();
     },
 
