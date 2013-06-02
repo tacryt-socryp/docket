@@ -169,25 +169,30 @@ Ext.define('Conflux.view.MyFormPanel', {
                             var date;
                             try {
                                 date = Ext.ComponentQuery.query('#picker')[0].getValue();
-                                console.log(date);
                             } catch(e) {
                                 date = new Date();
                             }
                             var start = document.getElementsByClassName('startLabel')[0].innerHTML;
                             var end = document.getElementsByClassName('endLabel')[0].innerHTML;
 
-                            var dateStart = date;
+                            var dateStart;
+                            var dateEnd;
+                            for (var prop in date) {
+                                dateStart[prop] = date[prop];
+                                dateEnd[prop] = date[prop];
+                            }
+
                             var hours = parseInt(start.substring(0,2),10);
-                            var minutes;
+                            var minutes = parseInt(start.substring(3,5),10);
 
                             if ((start.substring(5,7) == 'pm') && (hours != 12)) {
                                 hours = hours + 12;
                             }
 
                             dateStart.setHours(hours);
-                            console.log('dateStart: ' + dateStart);
+                            dateStart.setMinutes(minutes);
 
-                            var dateEnd = date;
+                            console.log('dateStart: ' + dateStart);
                             console.log('dateEnd: ' + dateEnd);
 
 
