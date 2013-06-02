@@ -324,6 +324,9 @@ Ext.define('Conflux.view.myContainer', {
 
         console.log('variables declared');
 
+        surface.clear();
+        console.log(surface.getDirty());
+
         me.setSize(w,h);
         surface.setSize(w,h);
         surface.setBackground(backgroundColor);
