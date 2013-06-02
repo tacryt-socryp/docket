@@ -170,7 +170,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                     {
                         xtype: 'button',
                         handler: function(button, event) {
-                            var summary = document.getElementsByClassName('x-form-field')[0].value,
+                            var me = this,
+                                summary = document.getElementsByClassName('x-form-field')[0].value,
                                 description = document.getElementsByClassName('x-form-field')[1].value,
                                 start = document.getElementsByClassName('startLabel')[0].innerHTML,
                                 end = document.getElementsByClassName('endLabel')[0].innerHTML,
@@ -279,7 +280,7 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             request.execute(function(resp) {
                                 console.log(resp);
-                                var formPanel = this.up('MyToolbar').up('MyFormPanel');
+                                var formPanel = me.up('MyToolbar').up('MyFormPanel');
                                 formPanel.hide();
                             });
                         },
