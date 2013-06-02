@@ -78,7 +78,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                                         }
                                         
                                         if (hours < 10) {
-                                            hours = '0' + hours.toString();
+                                            hours = '0' + hours;
                                         }
                                         
                                         if (minutes === 0) {
@@ -128,6 +128,10 @@ Ext.define('Conflux.view.MyFormPanel', {
                                             ampm = ' pm';
                                         } else if (hours == 12) {
                                             ampm = ' pm';
+                                        }
+                                        
+                                        if (hours < 10) {
+                                            hours = '0' + hours;
                                         }
                                         
                                         if (minutes === 0) {
@@ -218,19 +222,16 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 date = new Date();
                             }
 
+                            console.log(start);
 
                             dateStart.setDate(date.getDate());
                             dateStart.setMonth(date.getMonth());
                             dateStart.setFullYear(date.getFullYear());
 
-                            dateEnd.setDate(date.getDate());
-                            dateEnd.setMonth(date.getMonth());
-                            dateEnd.setFullYear(date.getFullYear());
-
                             hours = parseInt(start.substring(0,2),10);
                             minutes = parseInt(start.substring(3,5),10);
 
-                            if ((start.substring(5,7) == 'pm') && (hours != 12)) {
+                            if ((start.substring(6,8) == 'pm') && (hours != 12)) {
                                 hours = hours + 12;
                             }
 
@@ -238,10 +239,15 @@ Ext.define('Conflux.view.MyFormPanel', {
                             dateStart.setMinutes(minutes);
                             dateStart.setSeconds(0);
 
+
+                            dateEnd.setDate(date.getDate());
+                            dateEnd.setMonth(date.getMonth());
+                            dateEnd.setFullYear(date.getFullYear());
+
                             hours = parseInt(end.substring(0,2),10);
                             minutes = parseInt(end.substring(3,5),10);
 
-                            if ((end.substring(5,7) == 'pm') && (hours != 12)) {
+                            if ((end.substring(6,8) == 'pm') && (hours != 12)) {
                                 hours = hours + 12;
                             }
 
