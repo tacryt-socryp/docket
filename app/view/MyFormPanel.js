@@ -194,8 +194,7 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             dateStart.setHours(hours);
                             dateStart.setMinutes(minutes);
-
-                            console.log('dateStart: ' + dateStart);
+                            dateStart.setSeconds(0);
 
                             hours = parseInt(end.substring(0,2),10);
                             minutes = parseInt(end.substring(3,5),10);
@@ -206,8 +205,14 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             dateEnd.setHours(hours);
                             dateEnd.setMinutes(minutes);
+                            dateEnd.setSeconds(0);
+
+                            start = dateStart.getFullYear() + '-' + dateStart.getMonth() + '-' + dateStart.getDate() +
+                            'T' + dateStart.getHours() + ':' + dateStart.getMinutes() + ':00.000' +
+                            (dateStart.getTimezoneOffset()/60) + ':00';
 
                             console.log('dateEnd: ' + dateEnd);
+                            console.log('dateStart: ' + dateStart);
 
 
                             var resource = {
