@@ -301,11 +301,12 @@ Ext.define('Conflux.view.myContainer', {
     },
 
     onTap: function(e) {
+        console.log(this);
         if (e.pageY <= 70) {
             if (e.pageX >= Ext.getBody().getSize().width-200) {
                 var form = new Conflux.view.MyFormPanel();
                 form.roomText = this.down('#inlineDraw').roomText;
-                form.calendarId = '';
+                form.calendarId = this.down('#inlineDraw').calendarId;
                 Ext.Viewport.add(form);
             }
         }
