@@ -171,8 +171,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 start = document.getElementsByClassName('startLabel')[0].innerHTML,
                                 end = document.getElementsByClassName('endLabel')[0].innerHTML,
                                 formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0],
-                                calendarId = formPanel.calendarId,
-                                roomText = formPanel.roomText,
+                                calendarId = formPanel.getCalendarId(),
+                                roomText = formPanel.getRoomText(),
                                 dateStart = new Date(),
                                 dateEnd = new Date(),
                                 date;
