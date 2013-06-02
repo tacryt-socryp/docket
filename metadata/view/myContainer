@@ -391,8 +391,8 @@
                     "if (e.pageY <= 70) {\r",
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
                     "        var form = new Conflux.view.MyFormPanel();\r",
-                    "        form.roomText = this.child('#inlineDraw').roomText;\r",
-                    "        form.calendarId = this.child('#inlineDraw').calendarId;\r",
+                    "        form.roomText = this.getItems().items(0).roomText;\r",
+                    "        form.calendarId = this.getItems().items(0).calendarId;\r",
                     "        Ext.Viewport.add(form);\r",
                     "    }\r",
                     "}"
