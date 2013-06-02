@@ -170,12 +170,42 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 end = document.getElementsByClassName('endLabel')[0].innerHTML,
                                 dateStart = new Date(),
                                 dateEnd = new Date(),
-                                timezone,
-                                hours,
-                                minutes,
-                                months,
-                                days,
                                 date;
+
+                            function returnTimestamp(date) {
+                                var hours = date.getHours(),
+                                    minutes = date.getMinutes(),
+                                    months = date.getMonth(),
+                                    days = date.getDate(),
+                                    timezone = ((date.getTimezoneOffset()/60)*-1);
+
+                                if (hours < 10) {
+                                    hours = '0' + hours;
+                                }
+
+                                if (minutes < 10) {
+                                    minutes = '0' + minutes;
+                                }
+
+                                if (months < 10) {
+                                    months = '0' + months;
+                                }
+
+                                if (days < 10) {
+                                    days = '0' + days;
+                                }
+
+                                if (timezone > 0) {
+                                    timezone = '+' + timezone;
+                                }
+
+                                if ((timezone < 10) || (timezone > -10)) {
+                                    timezone = timezone.toString();
+                                    timezone = timezone.substring(0,1) + '0' + timezone.substring(1);
+                                }
+
+                                return(date.getFullYear() + '-' + months + '-' + days + 'T' + hours + ':' + minutes + ':00.000' + timezone + ':00');
+                            }
 
                             try {
                                 date = Ext.ComponentQuery.query('#picker')[0].getValue();
@@ -214,53 +244,18 @@ Ext.define('Conflux.view.MyFormPanel', {
                             dateEnd.setMinutes(minutes);
                             dateEnd.setSeconds(0);
 
-                            hours = dateStart.getHours();
-                            minutes = dateStart.getMinutes();
-                            months = dateStart.getMonth();
-                            days = dateStart.getDate();
-                            timezone = ((dateStart.getTimezoneOffset()/60)*-1);
-
-                            if (hours < 10) {
-                                hours = '0' + hours;
-                            }
-
-                            if (minutes < 10) {
-                                minutes = '0' + minutes;
-                            }
-
-                            if (months < 10) {
-                                months = '0' + months;
-                            }
-
-                            if (days < 10) {
-                                days = '0' + days;
-                            }
-
-                            if (timezone > 0) {
-                                timezone = '+' + timezone;
-                            }
-
-                            if ((timezone < 10) || (timezone > -10)) {
-                                timezone = timezone.toString();
-                                timezone = timezone.substring(0,1) + '0' + timezone.substring(1);
-                            }
-
-                            start = dateStart.getFullYear() + '-' + months + '-' + days + 'T' + hours + ':' + minutes + ':00.000' + timezone + ':00';
-                            console.log(dateStart.toISOString());
-
-                            console.log('dateEnd: ' + dateEnd);
-                            console.log('dateStart: ' + dateStart);
-
+                            start = returnTimestamp(dateStart);
+                            end = returnTimestamp(dateEnd);
 
                             var resource = {
                                 'summary': summary,
                                 'description': description,
                                 'location': 'Somewhere',
                                 'start': {
-                                    'dateTime': '2011-12-16T10:00:00.000-07:00'
+                                    'dateTime': start
                                 },
                                 'end': {
-                                    'dateTime': '2011-12-16T10:25:00.000-07:00'
+                                    'dateTime': end
                                 }
                             };
 
