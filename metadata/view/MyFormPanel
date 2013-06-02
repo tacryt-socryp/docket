@@ -475,7 +475,7 @@
                                     "\r",
                                     "request.execute(function(resp) {\r",
                                     "    console.log(resp);\r",
-                                    "    Ext.Viewport.remove('MyFormPanel');\r",
+                                    "    Ext.Viewport.setActiveItem('mainCarousel');\r",
                                     "});"
                                 ]
                             },
