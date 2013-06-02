@@ -454,6 +454,7 @@
                                     "}\r",
                                     "\r",
                                     "if ((timezone < 10) || (timezone > -10)) {\r",
+                                    "    timezone = timezone.toString();\r",
                                     "    timezone = timezone.substring(0,1) + '0' + timezone.substring(1);\r",
                                     "}\r",
                                     "\r",

@@ -241,6 +241,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                             }
 
                             if ((timezone < 10) || (timezone > -10)) {
+                                timezone = timezone.toString();
                                 timezone = timezone.substring(0,1) + '0' + timezone.substring(1);
                             }
 
