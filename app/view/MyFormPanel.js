@@ -273,8 +273,7 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             request.execute(function(resp) {
                                 console.log(resp);
-                                var pnl = Ext.Container.getComponent('MyFormPanel');
-                                pnl.hide();
+                                Ext.Viewport.remove('MyFormPanel');
                             });
                         },
                         ui: 'confirm',

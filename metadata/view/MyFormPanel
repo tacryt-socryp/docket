@@ -474,9 +474,7 @@
                                     "\r",
                                     "request.execute(function(resp) {\r",
                                     "    console.log(resp);\r",
-                                    "    var pnl = Ext.Container.getComponent('MyFormPanel');\r",
-                                    "    pnl.hide();\r",
-                                    "    Ext.Viewport.remove();\r",
+                                    "    Ext.Viewport.remove('MyFormPanel');\r",
                                     "});"
                                 ]
                             },
