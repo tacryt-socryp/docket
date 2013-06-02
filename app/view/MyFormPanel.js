@@ -169,7 +169,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                             var date;
                             try {
                                 date = Ext.ComponentQuery.query('#picker')[0].getValue();
-                                date = new Date(date);
+                                console.log(date);
                             } catch(e) {
                                 date = new Date();
                             }
@@ -185,8 +185,6 @@ Ext.define('Conflux.view.MyFormPanel', {
                             }
 
                             dateStart.setHours(hours);
-
-                            dateStart.setHours();
                             console.log('dateStart: ' + dateStart);
 
                             var dateEnd = date;
