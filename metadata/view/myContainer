@@ -382,11 +382,7 @@
                         ],
                         "implHandler": [
                             "console.log('reloadPainted');\r",
-                            "var me = this.query('#inlineDraw')[0];\r",
-                            "\r",
-                            "me.hide();\r",
-                            "me.show();\r",
-                            "/*,\r",
+                            "var me = this.query('#inlineDraw')[0],\r",
                             "    backgroundColor = me.backgroundColor,\r",
                             "    timelineColor = me.timelineColor,\r",
                             "    roomText = me.roomText,\r",
@@ -634,7 +630,9 @@
                             "            y: yloc+308\r",
                             "        }).show(true);\r",
                             "    }\r",
-                            "}*/"
+                            "}\r",
+                            "\r",
+                            "me.renderFrame();"
                         ],
                         "name": "reloadPainted"
                     },
