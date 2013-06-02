@@ -370,11 +370,7 @@
                     "\r",
                     "this.element.on({\r",
                     "    tap: this.onTap\r",
-                    "});\r",
-                    "\r",
-                    "/*this.getScrollable().getScroller().on('scrollend', function(scroll, x, y) {\r",
-                    "    console.log(scroll, x, y);\r",
-                    "});*/"
+                    "});"
                 ]
             },
             "designerId": "0795efd8-674a-4ad3-bdcc-1c6dd1a236bf"
@@ -394,7 +390,10 @@
                 "implHandler": [
                     "if (e.pageY <= 70) {\r",
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
+                    "        var roomText = ;\r",
                     "        var form = new Conflux.view.MyFormPanel();\r",
+                    "        form.roomText = this.down('#inlineDraw').roomText;\r",
+                    "        form.calendarId = '';\r",
                     "        Ext.Viewport.add(form);\r",
                     "    }\r",
                     "}"

@@ -304,6 +304,8 @@ Ext.define('Conflux.view.myContainer', {
         if (e.pageY <= 70) {
             if (e.pageX >= Ext.getBody().getSize().width-200) {
                 var form = new Conflux.view.MyFormPanel();
+                form.roomText = this.down('#inlineDraw').roomText;
+                form.calendarId = '';
                 Ext.Viewport.add(form);
             }
         }

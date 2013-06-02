@@ -168,6 +168,9 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 description = document.getElementsByClassName('x-form-field')[1].value,
                                 start = document.getElementsByClassName('startLabel')[0].innerHTML,
                                 end = document.getElementsByClassName('endLabel')[0].innerHTML,
+                                formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0],
+                                calendarId = formPanel.calendarId,
+                                roomText = formPanel.roomText,
                                 dateStart = new Date(),
                                 dateEnd = new Date(),
                                 date;
@@ -250,7 +253,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                             var resource = {
                                 'summary': summary,
                                 'description': description,
-                                'location': 'Somewhere',
+                                'location': roomText,
                                 'start': {
                                     'dateTime': start
                                 },
@@ -260,9 +263,6 @@ Ext.define('Conflux.view.MyFormPanel', {
                             };
 
                             console.log(resource);
-                            console.log('date: ' + date);
-                            console.log('start: ' + start);
-                            console.log("end: " + end);
 
                             /*
                             var request = gapi.client.calendar.events.insert({
