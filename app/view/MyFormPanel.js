@@ -297,7 +297,17 @@ Ext.define('Conflux.view.MyFormPanel', {
                     }
                 ]
             }
+        ],
+        listeners: [
+            {
+                fn: 'onMyFormPanelHide',
+                event: 'hide'
+            }
         ]
+    },
+
+    onMyFormPanelHide: function(component, eOpts) {
+        component.destroy();
     },
 
     initialize: function() {
