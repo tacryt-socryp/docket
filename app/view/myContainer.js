@@ -301,6 +301,7 @@ Ext.define('Conflux.view.myContainer', {
     },
 
     onTap: function(e) {
+        console.log(this);
         if (e.pageY <= 70) {
             if (e.pageX >= Ext.getBody().getSize().width-200) {
                 var form = new Conflux.view.MyFormPanel();
