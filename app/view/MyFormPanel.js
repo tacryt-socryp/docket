@@ -21,6 +21,8 @@ Ext.define('Conflux.view.MyFormPanel', {
     ],
 
     config: {
+        calendarId: 'calendar',
+        roomText: 'room',
         centered: true,
         height: 387,
         itemId: 'MyFormPanel',

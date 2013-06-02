@@ -6,6 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "calendarId": "calendar",
+        "roomText": "room",
         "centered": true,
         "height": 387,
         "html": null,
