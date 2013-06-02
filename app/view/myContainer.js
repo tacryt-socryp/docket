@@ -302,6 +302,7 @@ Ext.define('Conflux.view.myContainer', {
 
     onInlineDrawReloadPainted: function(draw) {
         console.log('reloadPainted');
+        console.log(this);
         var me = this,
             backgroundColor = me.backgroundColor,
             timelineColor = me.timelineColor,
@@ -594,7 +595,7 @@ Ext.define('Conflux.view.myContainer', {
                         child = me.query('#inlineDraw')[0];
                         child.events = resp.items;
                         console.log(child);
-                        child.fireEvent('reloadPainted');
+                        child.fireEvent('reloadPainted',child);
                     });
                 });
             } else {

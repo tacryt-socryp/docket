@@ -382,6 +382,7 @@
                         ],
                         "implHandler": [
                             "console.log('reloadPainted');\r",
+                            "console.log(this);\r",
                             "var me = this,\r",
                             "    backgroundColor = me.backgroundColor,\r",
                             "    timelineColor = me.timelineColor,\r",
