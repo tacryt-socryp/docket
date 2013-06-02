@@ -377,8 +377,8 @@
                                     "event"
                                 ],
                                 "implHandler": [
-                                    "var summary = document.getElementsByClassName('eventTitle')[0].value;\r",
-                                    "var description = document.getElementsByClassName('eventDescription')[0].value;\r",
+                                    "var summary = document.getElementsByClassName('x-form-field')[0].value;\r",
+                                    "var description = document.getElementsByClassName('x-form-field')[1].value;\r",
                                     "var date;\r",
                                     "try {\r",
                                     "    date = Ext.ComponentQuery.query('#picker')[0].getValue();\r",

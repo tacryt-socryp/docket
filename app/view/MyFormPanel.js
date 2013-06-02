@@ -164,8 +164,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                     {
                         xtype: 'button',
                         handler: function(button, event) {
-                            var summary = document.getElementsByClassName('eventTitle')[0].value;
-                            var description = document.getElementsByClassName('eventDescription')[0].value;
+                            var summary = document.getElementsByClassName('x-form-field')[0].value;
+                            var description = document.getElementsByClassName('x-form-field')[1].value;
                             var date;
                             try {
                                 date = Ext.ComponentQuery.query('#picker')[0].getValue();
