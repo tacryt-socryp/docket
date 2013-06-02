@@ -341,7 +341,7 @@ Ext.define('Conflux.view.myContainer', {
                         child = me.query('#inlineDraw')[0];
                         child.events = resp.items;
                         console.log(child);
-                        this.fireEvent('painted', this);
+                        me.fireEvent('painted', me);
                     });
                 });
             } else {
