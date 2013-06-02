@@ -21,8 +21,6 @@ Ext.define('Conflux.view.MyFormPanel', {
     ],
 
     config: {
-        calendarId: 'calendar',
-        roomText: 'room',
         centered: true,
         height: 387,
         itemId: 'MyFormPanel',
@@ -170,15 +168,13 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 description = document.getElementsByClassName('x-form-field')[1].value,
                                 start = document.getElementsByClassName('startLabel')[0].innerHTML,
                                 end = document.getElementsByClassName('endLabel')[0].innerHTML,
-                                formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0],
-                                calendarId = formPanel.getCalendarId(),
-                                roomText = formPanel.getRoomText(),
+                                mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+                                myContainer = mainCarousel.getActiveItem(),
+                                calendarId = myContainer.calendarId,
+                                roomText = myContainer.roomText,
                                 dateStart = new Date(),
                                 dateEnd = new Date(),
                                 date;
-
-                            console.log(formPanel);
-                            console.log(roomText);
 
                             function returnTimestamp(date) {
                                 var hours = date.getHours(),
@@ -268,13 +264,11 @@ Ext.define('Conflux.view.MyFormPanel', {
                             };
 
                             console.log(resource);
-
                             /*
                             var request = gapi.client.calendar.events.insert({
                             'calendarId': 'primary',
                             'resource': resource
                             });
-
                             request.execute(function(resp) {
                             console.log(resp);
                             });
@@ -293,28 +287,6 @@ Ext.define('Conflux.view.MyFormPanel', {
         this.callParent();
 
         this.down('#datepicker').setValue(new Date());
-    },
-
-    addEvent: function(calendarId, roomText) {
-        var resource = {
-            "summary": "Appointment",
-            "location": "Somewhere",
-            "start": {
-                "dateTime": "2011-12-16T10:00:00.000-07:00"
-            },
-            "end": {
-                "dateTime": "2011-12-16T10:25:00.000-07:00"
-            }
-        };
-
-        var request = gapi.client.calendar.events.insert({
-            'calendarId': 'primary',
-            'resource': resource
-        });
-
-        request.execute(function(resp) {
-            console.log(resp);
-        });
     }
 
 });

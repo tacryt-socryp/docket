@@ -6,8 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "calendarId": "calendar",
-        "roomText": "room",
         "centered": true,
         "height": 387,
         "html": null,
@@ -18,18 +16,6 @@
         "modal": true
     },
     "designerId": "5133ddc6-983b-440e-ba54-ce2fa457ad04",
-    "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "calendarId",
-            "type": "string"
-        },
-        {
-            "group": "(Custom Properties)",
-            "name": "roomText",
-            "type": "string"
-        }
-    ],
     "cn": [
         {
             "type": "Ext.field.Text",
@@ -383,15 +369,13 @@
                                     "    description = document.getElementsByClassName('x-form-field')[1].value,\r",
                                     "    start = document.getElementsByClassName('startLabel')[0].innerHTML,\r",
                                     "    end = document.getElementsByClassName('endLabel')[0].innerHTML,\r",
-                                    "    formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0],\r",
-                                    "    calendarId = formPanel.getCalendarId(),\r",
-                                    "    roomText = formPanel.getRoomText(),\r",
+                                    "    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
+                                    "    myContainer = mainCarousel.getActiveItem(),\r",
+                                    "    calendarId = myContainer.calendarId,\r",
+                                    "    roomText = myContainer.roomText,\r",
                                     "    dateStart = new Date(),\r",
                                     "    dateEnd = new Date(),\r",
                                     "    date;\r",
-                                    "\r",
-                                    "console.log(formPanel);\r",
-                                    "console.log(roomText);\r",
                                     "\r",
                                     "function returnTimestamp(date) {\r",
                                     "    var hours = date.getHours(),\r",
@@ -481,15 +465,13 @@
                                     "};\r",
                                     "\r",
                                     "console.log(resource);\r",
-                                    "\r",
                                     "/*\r",
                                     "var request = gapi.client.calendar.events.insert({\r",
-                                    "'calendarId': 'primary',\r",
-                                    "'resource': resource\r",
+                                    "    'calendarId': 'primary',\r",
+                                    "    'resource': resource\r",
                                     "});\r",
-                                    "\r",
                                     "request.execute(function(resp) {\r",
-                                    "console.log(resp);\r",
+                                    "    console.log(resp);\r",
                                     "});\r",
                                     "*/"
                                 ]
@@ -516,43 +498,6 @@
                 ]
             },
             "designerId": "929379d5-95eb-4fd1-86db-dcaf78e2daeb"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "addEvent",
-                "designer|params": [
-                    "calendarId",
-                    "roomText"
-                ],
-                "implHandler": [
-                    "var resource = {\r",
-                    "    \"summary\": \"Appointment\",\r",
-                    "    \"location\": \"Somewhere\",\r",
-                    "    \"start\": {\r",
-                    "        \"dateTime\": \"2011-12-16T10:00:00.000-07:00\"\r",
-                    "    },\r",
-                    "    \"end\": {\r",
-                    "        \"dateTime\": \"2011-12-16T10:25:00.000-07:00\"\r",
-                    "    }\r",
-                    "};\r",
-                    "\r",
-                    "var request = gapi.client.calendar.events.insert({\r",
-                    "    'calendarId': 'primary',\r",
-                    "    'resource': resource\r",
-                    "});\r",
-                    "\r",
-                    "request.execute(function(resp) {\r",
-                    "    console.log(resp);\r",
-                    "});"
-                ]
-            },
-            "designerId": "53392766-3868-42cd-bd93-061e56c8418a"
         }
     ]
 }

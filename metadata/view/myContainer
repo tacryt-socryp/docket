@@ -402,13 +402,7 @@
                 "implHandler": [
                     "if (e.pageY <= 70) {\r",
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
-                    "        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
-                    "        var myContainer = mainCarousel.getActiveItem();\r",
                     "        var form = new Conflux.view.MyFormPanel();\r",
-                    "        form.roomText = myContainer.roomText;\r",
-                    "        form.calendarId = myContainer.calendarId;\r",
-                    "        console.log(form.roomText);\r",
-                    "        console.log(form.calendarId);\r",
                     "        Ext.Viewport.add(form);\r",
                     "    }\r",
                     "}"
