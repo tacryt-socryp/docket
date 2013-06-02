@@ -365,7 +365,8 @@
                                     "event"
                                 ],
                                 "implHandler": [
-                                    "var summary = document.getElementsByClassName('x-form-field')[0].value,\r",
+                                    "var me = this,\r",
+                                    "    summary = document.getElementsByClassName('x-form-field')[0].value,\r",
                                     "    description = document.getElementsByClassName('x-form-field')[1].value,\r",
                                     "    start = document.getElementsByClassName('startLabel')[0].innerHTML,\r",
                                     "    end = document.getElementsByClassName('endLabel')[0].innerHTML,\r",
@@ -380,7 +381,7 @@
                                     "function returnTimestamp(date) {\r",
                                     "    var hours = date.getHours(),\r",
                                     "        minutes = date.getMinutes(),\r",
-                                    "        months = date.getMonth(),\r",
+                                    "        months = date.getMonth() + 1,\r",
                                     "        days = date.getDate(),\r",
                                     "        timezone = ((date.getTimezoneOffset()/60)*-1);\r",
                                     "\r",
@@ -393,7 +394,6 @@
                                     "    }\r",
                                     "\r",
                                     "    if (months < 10) {\r",
-                                    "        months++;\r",
                                     "        months = '0' + months;\r",
                                     "    }\r",
                                     "\r",
@@ -475,8 +475,8 @@
                                     "\r",
                                     "request.execute(function(resp) {\r",
                                     "    console.log(resp);\r",
-                                    "});\r",
-                                    ""
+                                    "    this.hide();\r",
+                                    "});"
                                 ]
                             },
                             "designerId": "a829cdbe-4ba6-4095-b612-73830c08395a"
