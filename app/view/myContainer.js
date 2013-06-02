@@ -94,22 +94,13 @@ Ext.define('Conflux.view.myContainer', {
                                 font: "36px Arial",
                                 fill: '#FFF',
                                 x: displace,
-                                y: 70,
-                                group: 'toptext'
+                                y: 70
                             }).show(true);
 
-                            var toptext = surface.getGroup('toptext');
-
                             this.up('myContainer').getScrollable().getScroller().on('scrollend', function(scroll, x, y) {
-                                toptext.animate({
-                                    duration: 1000,
-                                    to: {
-                                        translate: {
-                                            x: (scroll.position.x + displace)
-                                        }
-                                    }
+                                addText.setAttributes({
+                                    translationX: scroll.position.x
                                 });
-                                console.log(scroll.position.x + displace);
                             });
 
                             for (var iter = 0; iter < events.length; iter++) {
