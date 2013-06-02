@@ -365,12 +365,12 @@
                                     "event"
                                 ],
                                 "implHandler": [
-                                    "var me = this,\r",
-                                    "    summary = document.getElementsByClassName('x-form-field')[0].value,\r",
+                                    "var summary = document.getElementsByClassName('x-form-field')[0].value,\r",
                                     "    description = document.getElementsByClassName('x-form-field')[1].value,\r",
                                     "    start = document.getElementsByClassName('startLabel')[0].innerHTML,\r",
                                     "    end = document.getElementsByClassName('endLabel')[0].innerHTML,\r",
                                     "    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
+                                    "    formPanel = Ext.ComponentQuery.query('#formPane')[0],\r",
                                     "    myContainer = mainCarousel.getActiveItem(),\r",
                                     "    calendarId = myContainer.calendarId,\r",
                                     "    roomText = myContainer.roomText,\r",
@@ -475,7 +475,7 @@
                                     "\r",
                                     "request.execute(function(resp) {\r",
                                     "    console.log(resp);\r",
-                                    "    this.hide();\r",
+                                    "    me.hide();\r",
                                     "});"
                                 ]
                             },

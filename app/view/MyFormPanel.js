@@ -164,12 +164,12 @@ Ext.define('Conflux.view.MyFormPanel', {
                     {
                         xtype: 'button',
                         handler: function(button, event) {
-                            var me = this,
-                                summary = document.getElementsByClassName('x-form-field')[0].value,
+                            var summary = document.getElementsByClassName('x-form-field')[0].value,
                                 description = document.getElementsByClassName('x-form-field')[1].value,
                                 start = document.getElementsByClassName('startLabel')[0].innerHTML,
                                 end = document.getElementsByClassName('endLabel')[0].innerHTML,
                                 mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+                                formPanel = Ext.ComponentQuery.query('#formPane')[0],
                                 myContainer = mainCarousel.getActiveItem(),
                                 calendarId = myContainer.calendarId,
                                 roomText = myContainer.roomText,
@@ -274,7 +274,7 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             request.execute(function(resp) {
                                 console.log(resp);
-                                me.hide();
+                                formPanel.hide();
                             });
                         },
                         ui: 'confirm',
