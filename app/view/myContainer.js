@@ -307,6 +307,45 @@ Ext.define('Conflux.view.myContainer', {
                 Ext.Viewport.add(form);
             }
         }
+    },
+
+    reloadData: function() {
+        var me = this,
+            today = new Date(),
+            mainCarousel,
+            calendarId = me.calendarId,
+            child;
+
+        var token = Conflux.app.authToken,
+            clientId = '464168127252.apps.googleusercontent.com',
+            apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
+            scopes = 'https://www.googleapis.com/auth/calendar';
+
+        gapi.client.setApiKey(apiKey);
+        gapi.auth.setToken(token);
+
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
+        function(authResult) {
+            if (authResult) {
+                gapi.client.load('calendar', 'v3', function() {
+                    var request = gapi.client.calendar.events.list({
+                        'calendarId': calendarId,
+                        'singleEvents': true,
+                        'orderBy': 'startTime',
+                        'timeMin': today,
+                        'maxResults': 50
+                    });
+
+                    request.execute(function(resp) {
+                        child = me.query('#inlineDraw');
+                        child.events = resp.items;
+                        child.onContainerPainted();
+                    });
+                });
+            } else {
+                window.location.reload();
+            }
+        });
     }
 
 });

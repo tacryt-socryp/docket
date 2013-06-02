@@ -277,16 +277,12 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 }
                             };
 
-                            console.log(resource);
-                            console.log(calendarId);
-
                             var request = gapi.client.calendar.events.insert({
                                 'calendarId': 'primary',
                                 'resource': resource
                             });
 
                             request.execute(function(resp) {
-                                console.log(resp);
                                 var formPanel = me.getParent().getParent();
                                 formPanel.hide();
                             });
@@ -307,6 +303,8 @@ Ext.define('Conflux.view.MyFormPanel', {
     },
 
     onMyFormPanelHide: function(component, eOpts) {
+        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+            myContainer = mainCarousel.getActiveItem();
         component.destroy();
     },
 

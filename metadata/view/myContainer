@@ -409,6 +409,56 @@
                 ]
             },
             "designerId": "9b5a0bad-2f07-4c81-aec3-703d381170f2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "reloadData",
+                "implHandler": [
+                    "var me = this,\r",
+                    "    today = new Date(),\r",
+                    "    mainCarousel,\r",
+                    "    calendarId = me.calendarId,\r",
+                    "    child;\r",
+                    "\r",
+                    "var token = Conflux.app.authToken,\r",
+                    "    clientId = '464168127252.apps.googleusercontent.com',\r",
+                    "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
+                    "    scopes = 'https://www.googleapis.com/auth/calendar';\r",
+                    "\r",
+                    "gapi.client.setApiKey(apiKey);\r",
+                    "gapi.auth.setToken(token);\r",
+                    "\r",
+                    "gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},\r",
+                    "function(authResult) {\r",
+                    "    if (authResult) {\r",
+                    "        gapi.client.load('calendar', 'v3', function() {\r",
+                    "            var request = gapi.client.calendar.events.list({\r",
+                    "                'calendarId': calendarId,\r",
+                    "                'singleEvents': true,\r",
+                    "                'orderBy': 'startTime',\r",
+                    "                'timeMin': today,\r",
+                    "                'maxResults': 50\r",
+                    "            });\r",
+                    "\r",
+                    "            request.execute(function(resp) {\r",
+                    "                child = me.query('#inlineDraw');\r",
+                    "                child.events = resp.items;\r",
+                    "                child.onContainerPainted();\r",
+                    "            });\r",
+                    "        });\r",
+                    "    } else {\r",
+                    "        window.location.reload();\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "d52b5bd1-8e4a-4312-a144-55a440c6cb12"
         }
     ]
 }
