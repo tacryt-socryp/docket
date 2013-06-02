@@ -594,12 +594,7 @@ Ext.define('Conflux.view.myContainer', {
                         child = me.query('#inlineDraw')[0];
                         child.events = resp.items;
                         console.log(child);
-                        me.enableBubble('painted');
-                        child.enableBubble('painted');
-                        child.fireEvent('painted');
-                        me.fireEvent('painted');
                         child.fireEvent('reloadPainted');
-                        me.fireEvent('reloadPainted');
                     });
                 });
             } else {

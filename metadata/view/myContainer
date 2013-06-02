@@ -381,7 +381,7 @@
                             "draw"
                         ],
                         "implHandler": [
-                            "console.log('painted');\r",
+                            "console.log('reloadPainted');\r",
                             "var me = this,\r",
                             "    backgroundColor = me.backgroundColor,\r",
                             "    timelineColor = me.timelineColor,\r",
@@ -713,12 +713,7 @@
                     "                child = me.query('#inlineDraw')[0];\r",
                     "                child.events = resp.items;\r",
                     "                console.log(child);\r",
-                    "                me.enableBubble('painted');\r",
-                    "                child.enableBubble('painted');\r",
-                    "                child.fireEvent('painted');\r",
-                    "                me.fireEvent('painted');\r",
                     "                child.fireEvent('reloadPainted');\r",
-                    "                me.fireEvent('reloadPainted');\r",
                     "            });\r",
                     "        });\r",
                     "    } else {\r",
