@@ -388,13 +388,11 @@
                     "e"
                 ],
                 "implHandler": [
-                    "console.log(this);\r",
                     "if (e.pageY <= 70) {\r",
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
                     "        var form = new Conflux.view.MyFormPanel();\r",
-                    "        form.roomText = this.getFirstChild().roomText;\r",
-                    "        //form.roomText = this.down('#inlineDraw').roomText;\r",
-                    "        //form.calendarId = this.down('#inlineDraw').calendarId;\r",
+                    "        form.roomText = this.getComponent(0).roomText;\r",
+                    "        form.calendarId = this.getComponent(0).calendarId;\r",
                     "        Ext.Viewport.add(form);\r",
                     "    }\r",
                     "}"
