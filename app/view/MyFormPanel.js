@@ -210,6 +210,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                             start = dateStart.getFullYear() + '-' + dateStart.getMonth() + '-' + dateStart.getDate() +
                             'T' + dateStart.getHours() + ':' + dateStart.getMinutes() + ':00.000' +
                             (dateStart.getTimezoneOffset()/60) + ':00';
+                            console.log(dateStart.toISOString());
 
                             console.log('dateEnd: ' + dateEnd);
                             console.log('dateStart: ' + dateStart);

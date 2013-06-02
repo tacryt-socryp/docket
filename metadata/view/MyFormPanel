@@ -423,6 +423,7 @@
                                     "start = dateStart.getFullYear() + '-' + dateStart.getMonth() + '-' + dateStart.getDate() +\r",
                                     "        'T' + dateStart.getHours() + ':' + dateStart.getMinutes() + ':00.000' +\r",
                                     "        (dateStart.getTimezoneOffset()/60) + ':00';\r",
+                                    "console.log(dateStart.toISOString());\r",
                                     "\r",
                                     "console.log('dateEnd: ' + dateEnd);\r",
                                     "console.log('dateStart: ' + dateStart);\r",
