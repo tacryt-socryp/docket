@@ -370,7 +370,6 @@
                                     "    start = document.getElementsByClassName('startLabel')[0].innerHTML,\r",
                                     "    end = document.getElementsByClassName('endLabel')[0].innerHTML,\r",
                                     "    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
-                                    "    formPanel = Ext.ComponentQuery.query('#formPane')[0],\r",
                                     "    myContainer = mainCarousel.getActiveItem(),\r",
                                     "    calendarId = myContainer.calendarId,\r",
                                     "    roomText = myContainer.roomText,\r",
@@ -475,7 +474,9 @@
                                     "\r",
                                     "request.execute(function(resp) {\r",
                                     "    console.log(resp);\r",
-                                    "    me.hide();\r",
+                                    "    var pnl = Ext.Container.getComponent('MyFormPanel');\r",
+                                    "    pnl.hide();\r",
+                                    "    Ext.Viewport.remove();\r",
                                     "});"
                                 ]
                             },
