@@ -164,29 +164,36 @@ Ext.define('Conflux.view.MyFormPanel', {
                     {
                         xtype: 'button',
                         handler: function(button, event) {
-                            var summary = document.getElementsByClassName('x-form-field')[0].value;
-                            var description = document.getElementsByClassName('x-form-field')[1].value;
-                            var date;
+                            var summary = document.getElementsByClassName('x-form-field')[0].value,
+                                description = document.getElementsByClassName('x-form-field')[1].value,
+                                start = document.getElementsByClassName('startLabel')[0].innerHTML,
+                                end = document.getElementsByClassName('endLabel')[0].innerHTML,
+                                dateStart = new Date(),
+                                dateEnd = new Date(),
+                                timezone,
+                                hours,
+                                minutes,
+                                months,
+                                days,
+                                date;
+
                             try {
                                 date = Ext.ComponentQuery.query('#picker')[0].getValue();
                             } catch(e) {
                                 date = new Date();
                             }
-                            var start = document.getElementsByClassName('startLabel')[0].innerHTML;
-                            var end = document.getElementsByClassName('endLabel')[0].innerHTML;
 
-                            var dateStart = new Date();
+
                             dateStart.setDate(date.getDate());
                             dateStart.setMonth(date.getMonth());
                             dateStart.setFullYear(date.getFullYear());
 
-                            var dateEnd = new Date();
                             dateEnd.setDate(date.getDate());
                             dateEnd.setMonth(date.getMonth());
                             dateEnd.setFullYear(date.getFullYear());
 
-                            var hours = parseInt(start.substring(0,2),10);
-                            var minutes = parseInt(start.substring(3,5),10);
+                            hours = parseInt(start.substring(0,2),10);
+                            minutes = parseInt(start.substring(3,5),10);
 
                             if ((start.substring(5,7) == 'pm') && (hours != 12)) {
                                 hours = hours + 12;
@@ -207,9 +214,30 @@ Ext.define('Conflux.view.MyFormPanel', {
                             dateEnd.setMinutes(minutes);
                             dateEnd.setSeconds(0);
 
-                            start = dateStart.getFullYear() + '-' + dateStart.getMonth() + '-' + dateStart.getDate() +
-                            'T' + dateStart.getHours() + ':' + dateStart.getMinutes() + ':00.000' +
-                            (dateStart.getTimezoneOffset()/60) + ':00';
+                            hours = dateStart.getHours();
+                            months = dateStart.getMonth();
+                            days = dateStart.getDate();
+                            timezone = (dateStart.getTimezoneOffset()/60);
+
+                            if (hours < 10) {
+                                hours = '0' + hours;
+                            }
+
+                            if (months < 10) {
+                                months = '0' + months;
+                            }
+
+                            if (days < 10) {
+                                days = '0' + days;
+                            }
+
+                            if (timezone > 0) {
+                                timezone = '+' + timezone;
+                            }
+
+                            start = dateStart.getFullYear() + '-' + months + '-' + days +
+                            'T' + hours + ':' + minutes + ':00.000' +
+                            timezone + ':00';
                             console.log(dateStart.toISOString());
 
                             console.log('dateEnd: ' + dateEnd);
