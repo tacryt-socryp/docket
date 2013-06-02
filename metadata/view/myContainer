@@ -452,7 +452,7 @@
                     "                child = me.query('#inlineDraw')[0];\r",
                     "                child.events = resp.items;\r",
                     "                console.log(child);\r",
-                    "                console.log(child.fireEvent('painted',me));\r",
+                    "                child.fireAction('painted');\r",
                     "            });\r",
                     "        });\r",
                     "    } else {\r",
