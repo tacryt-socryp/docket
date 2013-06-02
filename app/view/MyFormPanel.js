@@ -215,12 +215,17 @@ Ext.define('Conflux.view.MyFormPanel', {
                             dateEnd.setSeconds(0);
 
                             hours = dateStart.getHours();
+                            minutes = dateStart.getMinutes();
                             months = dateStart.getMonth();
                             days = dateStart.getDate();
-                            timezone = (dateStart.getTimezoneOffset()/60);
+                            timezone = ((dateStart.getTimezoneOffset()/60)*-1);
 
                             if (hours < 10) {
                                 hours = '0' + hours;
+                            }
+
+                            if (minutes < 10) {
+                                minutes = '0' + minutes;
                             }
 
                             if (months < 10) {
@@ -235,9 +240,11 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 timezone = '+' + timezone;
                             }
 
-                            start = dateStart.getFullYear() + '-' + months + '-' + days +
-                            'T' + hours + ':' + minutes + ':00.000' +
-                            timezone + ':00';
+                            if ((timezone < 10) || (timezone > -10)) {
+                                timezone = timezone.substring(0,1) + '0' + timezone.substring(1);
+                            }
+
+                            start = dateStart.getFullYear() + '-' + months + '-' + days + 'T' + hours + ':' + minutes + ':00.000' + timezone + ':00';
                             console.log(dateStart.toISOString());
 
                             console.log('dateEnd: ' + dateEnd);
