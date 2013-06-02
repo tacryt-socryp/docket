@@ -391,7 +391,7 @@
                     "if (e.pageY <= 70) {\r",
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
                     "        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
-                    "        var inlineDraw = mainCarousel.getActiveItem().down('#inlineDraw');\r",
+                    "        var inlineDraw = this.down('#inlineDraw')[0];\r",
                     "        var form = new Conflux.view.MyFormPanel();\r",
                     "        form.roomText = inlineDraw.roomText;\r",
                     "        form.calendarId = inlineDraw.calendarId;\r",
