@@ -451,7 +451,7 @@
                     "                child = me.query('#inlineDraw')[0];\r",
                     "                child.events = resp.items;\r",
                     "                console.log(child);\r",
-                    "                child.fireEvent('painted', child);\r",
+                    "                this.fireEvent('painted', this);\r",
                     "            });\r",
                     "        });\r",
                     "    } else {\r",
