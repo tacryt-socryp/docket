@@ -302,25 +302,29 @@ Ext.define('Conflux.view.myContainer', {
 
     onInlineDrawReloadPainted: function(draw) {
         console.log('reloadPainted');
-        var me = this.query('#inlineDraw')[0],
-            backgroundColor = me.backgroundColor,
-            timelineColor = me.timelineColor,
-            roomText = me.roomText,
-            boxColor = me.boxColor,
-            dotColor = me.dotColor,
-            events = me.events;
+        var me = this.query('#inlineDraw')[0];
+
+        me.hide();
+        me.show();
+        /*,
+        backgroundColor = me.backgroundColor,
+        timelineColor = me.timelineColor,
+        roomText = me.roomText,
+        boxColor = me.boxColor,
+        dotColor = me.dotColor,
+        events = me.events;
 
         var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
-            displace = Ext.getBody().getSize().width - 200,
-            h = Ext.getBody().getSize().height,
-            surface = me.getSurface('main'),
-            today = new Date(Date.now()),
-            w = 203 * events.length,
-            description,
-            dateTime,
-            summary,
-            yloc = h/10,
-            xloc;
+        displace = Ext.getBody().getSize().width - 200,
+        h = Ext.getBody().getSize().height,
+        surface = me.getSurface('main'),
+        today = new Date(Date.now()),
+        w = 203 * events.length,
+        description,
+        dateTime,
+        summary,
+        yloc = h/10,
+        xloc;
 
         console.log('variables declared');
 
@@ -550,7 +554,7 @@ Ext.define('Conflux.view.myContainer', {
                     y: yloc+308
                 }).show(true);
             }
-        }
+        }*/
     },
 
     initialize: function() {
