@@ -102,8 +102,8 @@ Ext.define('Conflux.view.myContainer', {
                                 xloc = iter*200;
                                 summary = events[iter].summary;
                                 try {
-                                    if (summary.length > 26) {
-                                        summary = summary.substring(0,24) + '...';
+                                    if (summary.length > 25) {
+                                        summary = summary.substring(0,23) + '...';
                                     }
                                 } catch(e) {
                                     console.log(summary);
@@ -357,7 +357,7 @@ Ext.define('Conflux.view.myContainer', {
 
         var addText = surface.add({
             type: 'text',
-            text: '+add',
+            text: '+addaewgiiwaeiogoigwa',
             font: "36px Arial",
             fill: '#FFF',
             x: displace,
@@ -368,8 +368,8 @@ Ext.define('Conflux.view.myContainer', {
             xloc = iter*200;
             summary = events[iter].summary;
             try {
-                if (summary.length > 26) {
-                    summary = summary.substring(0,24) + '...';
+                if (summary.length > 25) {
+                    summary = summary.substring(0,23) + '...';
                 }
             } catch(e) {
                 console.log(summary);
