@@ -23,6 +23,7 @@ Ext.define('Conflux.view.MyFormPanel', {
     config: {
         centered: true,
         height: 387,
+        id: 'MyFormPanel',
         itemId: 'MyFormPanel',
         width: 600,
         hideOnMaskTap: true,
@@ -273,8 +274,7 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             request.execute(function(resp) {
                                 console.log(resp);
-                                var formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0];
-                                Ext.Viewport.remove(formPanel);
+                                Ext.Viewport.remove('MyFormPanel');
                             });
                         },
                         ui: 'confirm',

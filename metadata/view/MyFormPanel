@@ -9,6 +9,7 @@
         "centered": true,
         "height": 387,
         "html": null,
+        "id": "MyFormPanel",
         "itemId": "MyFormPanel",
         "width": 600,
         "designer|userClassName": "MyFormPanel",
@@ -474,8 +475,7 @@
                                     "\r",
                                     "request.execute(function(resp) {\r",
                                     "    console.log(resp);\r",
-                                    "    var formPanel = Ext.ComponentQuery.query('#MyFormPanel')[0];\r",
-                                    "    Ext.Viewport.remove(formPanel);\r",
+                                    "    Ext.Viewport.remove('MyFormPanel');\r",
                                     "});"
                                 ]
                             },
