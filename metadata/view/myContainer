@@ -103,7 +103,6 @@
                     "userConfig": {
                         "fn": "onContainerPainted",
                         "implHandler": [
-                            "console.log('painted');\r",
                             "var me = this,\r",
                             "    backgroundColor = me.backgroundColor,\r",
                             "    timelineColor = me.timelineColor,\r",
@@ -381,7 +380,6 @@
                             "draw"
                         ],
                         "implHandler": [
-                            "console.log('reloadPainted');\r",
                             "var me = this.query('#inlineDraw')[0],\r",
                             "    backgroundColor = me.backgroundColor,\r",
                             "    timelineColor = me.timelineColor,\r",
@@ -402,10 +400,7 @@
                             "    yloc = h/10,\r",
                             "    xloc;\r",
                             "\r",
-                            "console.log('variables declared');\r",
-                            "\r",
                             "surface.clear();\r",
-                            "console.log(surface.getDirty());\r",
                             "\r",
                             "me.setSize(w,h);\r",
                             "surface.setSize(w,h);\r",
@@ -420,8 +415,6 @@
                             "    x: 0,\r",
                             "    y: yloc+330\r",
                             "}).show(true);\r",
-                            "\r",
-                            "console.log('draw first line');\r",
                             "\r",
                             "//Name of room\r",
                             "surface.add({\r",
@@ -459,7 +452,7 @@
                             "            summary = summary.substring(0,23) + '...';\r",
                             "        }\r",
                             "    } catch(e) {\r",
-                            "        console.log(summary);\r",
+                            "        summary = '';\r",
                             "    }\r",
                             "\r",
                             "    description = events[iter].description;\r",
@@ -721,7 +714,6 @@
                     "            request.execute(function(resp) {\r",
                     "                child = me.query('#inlineDraw')[0];\r",
                     "                child.events = resp.items;\r",
-                    "                console.log(child);\r",
                     "                child.fireEvent('reloadPainted',child);\r",
                     "            });\r",
                     "        });\r",

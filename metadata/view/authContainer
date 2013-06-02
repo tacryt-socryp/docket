@@ -60,7 +60,6 @@
             "userConfig": {
                 "fn": "generateItems",
                 "implHandler": [
-                    "console.log('generateItems: authContainer');\r",
                     "var me = this,\r",
                     "    token = Conflux.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
@@ -114,7 +113,6 @@
                     "items"
                 ],
                 "implHandler": [
-                    "console.log('loadData: authContainer');\r",
                     "var me = this,\r",
                     "    today = new Date(),\r",
                     "    mainCarousel,\r",
@@ -191,6 +189,7 @@
                     "                                    \r",
                     "                                    obj.roomText = summary;\r",
                     "                                    obj.calendarId = calendarId;\r",
+                    "                                    \r",
                     "                                    child.roomText = summary;\r",
                     "                                    child.backgroundColor = backgroundColors[array_i];\r",
                     "                                    child.boxColor = boxColors[array_i];\r",

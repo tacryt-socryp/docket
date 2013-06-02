@@ -4,7 +4,7 @@
         "model": true,
         "component": true,
         "controller": true,
-        "resource": true,
+        "resource": false,
         "a6268fce-a6c1-4bb2-b353-eeaf75632f6b": {
             "id": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
             "cn": [
@@ -145,12 +145,6 @@
         },
         "8a42d6e3-6787-404c-a166-e113ff2a918a": {
             "id": "8a42d6e3-6787-404c-a166-e113ff2a918a"
-        },
-        "ac8fccac-f054-4d5b-b855-41390c27b65a": {
-            "id": "ac8fccac-f054-4d5b-b855-41390c27b65a"
-        },
-        "44d888b0-df21-47d2-8948-27c49c5757bf": {
-            "id": "44d888b0-df21-47d2-8948-27c49c5757bf"
         }
     },
     "tabState": {
@@ -166,7 +160,7 @@
     },
     "inspectorState": {
         "topInstance": "5133ddc6-983b-440e-ba54-ce2fa457ad04",
-        "selectedInstance": "a048e5ff-06f5-465b-8474-33262c8f74f0"
+        "selectedInstance": "a829cdbe-4ba6-4095-b612-73830c08395a"
     },
     "codeState": {
         "topInstance": "5133ddc6-983b-440e-ba54-ce2fa457ad04"

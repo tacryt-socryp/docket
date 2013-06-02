@@ -35,7 +35,6 @@ Ext.define('Conflux.view.myContainer', {
                 listeners: [
                     {
                         fn: function(element, eOpts) {
-                            console.log('painted');
                             var me = this,
                                 backgroundColor = me.backgroundColor,
                                 timelineColor = me.timelineColor,
@@ -301,7 +300,6 @@ Ext.define('Conflux.view.myContainer', {
     },
 
     onInlineDrawReloadPainted: function(draw) {
-        console.log('reloadPainted');
         var me = this.query('#inlineDraw')[0],
             backgroundColor = me.backgroundColor,
             timelineColor = me.timelineColor,
@@ -322,10 +320,7 @@ Ext.define('Conflux.view.myContainer', {
             yloc = h/10,
             xloc;
 
-        console.log('variables declared');
-
         surface.clear();
-        console.log(surface.getDirty());
 
         me.setSize(w,h);
         surface.setSize(w,h);
@@ -340,8 +335,6 @@ Ext.define('Conflux.view.myContainer', {
             x: 0,
             y: yloc+330
         }).show(true);
-
-        console.log('draw first line');
 
         //Name of room
         surface.add({
@@ -379,7 +372,7 @@ Ext.define('Conflux.view.myContainer', {
                     summary = summary.substring(0,23) + '...';
                 }
             } catch(e) {
-                console.log(summary);
+                summary = '';
             }
 
             description = events[iter].description;
@@ -602,7 +595,6 @@ Ext.define('Conflux.view.myContainer', {
                     request.execute(function(resp) {
                         child = me.query('#inlineDraw')[0];
                         child.events = resp.items;
-                        console.log(child);
                         child.fireEvent('reloadPainted',child);
                     });
                 });
