@@ -35,6 +35,7 @@ Ext.define('Conflux.view.myContainer', {
                 listeners: [
                     {
                         fn: function(element, eOpts) {
+                            console.log('painted');
                             var me = this,
                                 backgroundColor = me.backgroundColor,
                                 timelineColor = me.timelineColor,

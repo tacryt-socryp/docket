@@ -102,6 +102,7 @@
                     "userConfig": {
                         "fn": "onContainerPainted",
                         "implHandler": [
+                            "console.log('painted');\r",
                             "var me = this,\r",
                             "    backgroundColor = me.backgroundColor,\r",
                             "    timelineColor = me.timelineColor,\r",
@@ -449,7 +450,7 @@
                     "            request.execute(function(resp) {\r",
                     "                child = me.query('#inlineDraw')[0];\r",
                     "                child.events = resp.items;\r",
-                    "                child.fireEvent('painted', this);\r",
+                    "                child.fireEvent('painted', me);\r",
                     "            });\r",
                     "        });\r",
                     "    } else {\r",
