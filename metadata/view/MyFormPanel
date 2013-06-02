@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "submitted": false,
         "centered": true,
         "height": 387,
         "hideAnimation": [
@@ -30,9 +31,17 @@
     },
     "configAlternates": {
         "hideAnimation": "object",
-        "showAnimation": "object"
+        "showAnimation": "object",
+        "submitted": "boolean"
     },
     "designerId": "5133ddc6-983b-440e-ba54-ce2fa457ad04",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "submitted",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.field.Text",
@@ -495,6 +504,7 @@
                                     "\r",
                                     "request.execute(function(resp) {\r",
                                     "    var formPanel = me.getParent().getParent();\r",
+                                    "    formPanel.submitted = true;\r",
                                     "    formPanel.hide();\r",
                                     "});"
                                 ]
@@ -532,8 +542,11 @@
             "userConfig": {
                 "fn": "onMyFormPanelHide",
                 "implHandler": [
-                    "var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
-                    "    myContainer = mainCarousel.getActiveItem();\r",
+                    "if (component.submitted) {\r",
+                    "    var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
+                    "        myContainer = mainCarousel.getActiveItem();\r",
+                    "    myContainer.reloadData();\r",
+                    "}\r",
                     "component.destroy();"
                 ],
                 "name": "hide"

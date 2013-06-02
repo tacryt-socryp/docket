@@ -21,6 +21,7 @@ Ext.define('Conflux.view.MyFormPanel', {
     ],
 
     config: {
+        submitted: false,
         centered: true,
         height: 387,
         id: 'MyFormPanel',
@@ -284,6 +285,7 @@ Ext.define('Conflux.view.MyFormPanel', {
 
                             request.execute(function(resp) {
                                 var formPanel = me.getParent().getParent();
+                                formPanel.submitted = true;
                                 formPanel.hide();
                             });
                         },
@@ -303,9 +305,11 @@ Ext.define('Conflux.view.MyFormPanel', {
     },
 
     onMyFormPanelHide: function(component, eOpts) {
-        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
-            myContainer = mainCarousel.getActiveItem();
-        myContainer.reloadData();
+        if (component.submitted) {
+            var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+                myContainer = mainCarousel.getActiveItem();
+            myContainer.reloadData();
+        }
         component.destroy();
     },
 
