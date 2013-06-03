@@ -53,6 +53,8 @@ Ext.define('Conflux.view.myContainer', {
                                 vDisplaceDesc,
                                 description,
                                 dateTime,
+                                dateStart,
+                                dateEnd,
                                 summary,
                                 yloc = h/10,
                                 xloc;
@@ -182,6 +184,51 @@ Ext.define('Conflux.view.myContainer', {
                                     dateTime = dateTime.toDateString().substring(0,10);
                                 }
 
+                                dateStart = events[iter].start.dateTime;
+                                dateStart = Date.parse(dateStart);
+                                dateStart = new Date(dateStart);
+                                dateEnd = events[iter].end.dateTime;
+                                dateEnd = Date.parse(dateEnd);
+                                dateEnd = new Date(dateEnd);
+
+                                dateStart = dateStart.toTimeString().substring(0,5);
+                                if (parseInt(dateStart.substring(0,2),10) >= 12) {
+                                    if (dateStart.substring(0,2) == '12') {
+                                        dateStart = dateStart + ' pm';
+                                    } else if ((parseInt(dateStart.substring(0,2),10)-12) < 10) {
+                                        dateStart = '0' + (parseInt(dateStart.substring(0,2),10)-12) + dateStart.substring(2) + ' pm';
+                                    } else {
+                                        dateStart = (parseInt(dateStart.substring(0,2),10)-12) + dateStart.substring(2) + ' pm';
+                                    }
+                                } else {
+                                    if (dateStart.substring(0,1) == '0') {
+                                        dateStart = '12' + dateStart.substring(2) + ' am';
+                                    } else if (parseInt(dateStart.substring(0,2),10) < 10) {
+                                        dateStart = '0' + dateStart + ' am';
+                                    } else {
+                                        dateStart = dateStart + ' am';
+                                    }
+                                }
+
+                                dateEnd = dateEnd.toTimeString().substring(0,5);
+                                if (parseInt(dateEnd.substring(0,2),10) >= 12) {
+                                    if (dateEnd.substring(0,2) == '12') {
+                                        dateEnd = dateEnd + ' pm';
+                                    } else if ((parseInt(dateEnd.substring(0,2),10)-12) < 10) {
+                                        dateEnd = '0' + (parseInt(dateEnd.substring(0,2),10)-12) + dateEnd.substring(2) + ' pm';
+                                    } else {
+                                        dateEnd = (parseInt(dateEnd.substring(0,2),10)-12) + dateEnd.substring(2) + ' pm';
+                                    }
+                                } else {
+                                    if (dateEnd.substring(0,1) == '0') {
+                                        dateEnd = '12' + dateEnd.substring(2) + ' am';
+                                    } else if (parseInt(dateEnd.substring(0,2),10) < 10) {
+                                        dateEnd = '0' + dateEnd + ' am';
+                                    } else {
+                                        dateEnd = dateEnd + ' am';
+                                    }
+                                }
+
                                 //Larger Point on timeline
                                 surface.add({
                                     type: 'circle',
@@ -241,6 +288,15 @@ Ext.define('Conflux.view.myContainer', {
                                             y: yloc+190+vDisplaceSumm+vDisplaceDesc
                                         }).show(true);
                                     }
+
+                                    surface.add({
+                                        type: 'text',
+                                        text: dateStart + ' - ' + dateEnd,
+                                        font: '14px Arial',
+                                        fill: '#FFF',
+                                        x: xloc+140,
+                                        y: yloc+260
+                                    }).show(true);
 
                                     //Time and date for top
                                     surface.add({
