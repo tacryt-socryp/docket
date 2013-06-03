@@ -50,6 +50,7 @@
                 ],
                 "id": null,
                 "itemId": "inlineDraw",
+                "style": ".x-chart-watermark {display: none;}",
                 "designer|displayName": "inlineDraw",
                 "designer|createAlias": null,
                 "autoDestroy": false
@@ -185,7 +186,7 @@
                             "                }\r",
                             "            }\r",
                             "            if (summary.length > 50) {\r",
-                            "                summary = summary.substring(0,50) + '...'\r",
+                            "                summary = summary.substring(0,50) + '...';\r",
                             "            }\r",
                             "        }\r",
                             "    } catch(e) {\r",
