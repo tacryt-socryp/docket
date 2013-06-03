@@ -110,20 +110,20 @@ Ext.define('Conflux.view.myContainer', {
 
                                 try {
                                     summary = summary.replace(/\s+/g,' ');
-                                    if (summary.length > 25) {
-                                        for (var a = 25; a > 0; a--) {
+                                    if (summary.length > 24) {
+                                        for (var a = 24; a > 0; a--) {
                                             if (summary.substring(a, a+1) == ' ') {
                                                 summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
                                                 vDisplaceSumm = 20;
                                                 a = 0;
                                             }
                                         }
-                                        if (summary.length > 50) {
-                                            summary = summary.substring(0,50) + '...';
+                                        if (summary.length > 48) {
+                                            summary = summary.substring(0,48) + '...';
                                         }
                                     }
                                 } catch(e) {
-                                    console.log(summary);
+                                    summary = '';
                                 }
 
                                 try {
@@ -139,8 +139,8 @@ Ext.define('Conflux.view.myContainer', {
                                         if (description.length > 70) {
                                             for (var c = 70; c > 0; c--) {
                                                 if (description.substring(c, c+1) == ' ') {
-                                                    if (description.length > 105) {
-                                                        description = description.substring(0,c) + '\n' + description.substring(c+1,105) + '...';
+                                                    if (description.length > 103) {
+                                                        description = description.substring(0,c) + '\n' + description.substring(c+1,103) + '...';
                                                     } else {
                                                         description = description.substring(0,c) + '\n' + description.substring(c+1);
                                                     }
@@ -473,20 +473,20 @@ Ext.define('Conflux.view.myContainer', {
 
             try {
                 summary = summary.replace(/\s+/g,' ');
-                if (summary.length > 25) {
-                    for (var a = 25; a > 0; a--) {
+                if (summary.length > 24) {
+                    for (var a = 24; a > 0; a--) {
                         if (summary.substring(a, a+1) == ' ') {
                             summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
                             vDisplaceSumm = 20;
                             a = 0;
                         }
                     }
-                    if (summary.length > 50) {
-                        summary = summary.substring(0,50) + '...';
+                    if (summary.length > 48) {
+                        summary = summary.substring(0,48) + '...';
                     }
                 }
             } catch(e) {
-                console.log(summary);
+                summary = '';
             }
 
             try {
