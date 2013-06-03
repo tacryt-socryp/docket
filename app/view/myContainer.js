@@ -745,6 +745,8 @@ Ext.define('Conflux.view.myContainer', {
         this.element.on({
             tap: this.onTap
         });
+
+        window.setInterval(this.reloadData,900000);
     },
 
     onTap: function(e) {

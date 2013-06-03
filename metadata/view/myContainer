@@ -839,7 +839,9 @@
                     "\r",
                     "this.element.on({\r",
                     "    tap: this.onTap\r",
-                    "});"
+                    "});\r",
+                    "\r",
+                    "window.setInterval(this.reloadData,900000);"
                 ]
             },
             "designerId": "0795efd8-674a-4ad3-bdcc-1c6dd1a236bf"
