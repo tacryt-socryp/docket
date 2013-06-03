@@ -294,7 +294,7 @@ Ext.define('Conflux.view.myContainer', {
                                         text: dateStart + '  -  ' + dateEnd,
                                         font: '14px Arial',
                                         fill: '#FFF',
-                                        x: xloc+110,
+                                        x: xloc+120,
                                         y: yloc+260
                                     }).show(true);
 
