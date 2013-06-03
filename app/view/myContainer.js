@@ -106,7 +106,7 @@ Ext.define('Conflux.view.myContainer', {
                                 summary = events[iter].summary;
                                 description = events[iter].description;
                                 vDisplaceSumm = 0;
-
+                                vDisplaceDesc = 0;
 
                                 try {
                                     summary = summary.replace(/\s+/g,' ');
