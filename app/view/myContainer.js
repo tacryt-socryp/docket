@@ -107,6 +107,7 @@ Ext.define('Conflux.view.myContainer', {
 
 
                                 try {
+                                    summary = summary.replace(/\s+/g,' ');
                                     if (summary.length > 25) {
                                         for (var a = 25; a > 0; a--) {
                                             if (summary.substring(a, a+1) == ' ') {
@@ -121,7 +122,8 @@ Ext.define('Conflux.view.myContainer', {
                                 }
 
                                 try {
-                                    description = description.replace(/\n/g, ' ');
+                                    description = description.replace(/\s+/g,' ');
+                                    description = description.replace(/(\r\n|\n|\r)/gm,' ');
                                     if (description.length > 35) {
                                         for (var b = 35; b > 0; b--) {
                                             if (description.substring(b, b+1) == ' ') {
