@@ -49,7 +49,7 @@ Ext.define('Conflux.view.myContainer', {
                                 surface = me.getSurface('main'),
                                 today = new Date(Date.now()),
                                 w = 203 * events.length,
-                                vDisplaceText = 0,
+                                vDisplaceText,
                                 description,
                                 dateTime,
                                 summary,
@@ -101,13 +101,14 @@ Ext.define('Conflux.view.myContainer', {
                             for (var iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
                                 summary = events[iter].summary;
+                                vDisplaceText = 0;
                                 try {
                                     if (summary.length > 25) {
-                                        for (var i = 25; i > 0; i--) {
-                                            if (summary.substring(i, i+1) == ' ') {
-                                                summary = summary.substring(0,i) + '\n' + summary.substring(i+1);
+                                        for (var a = 25; a > 0; a--) {
+                                            if (summary.substring(a, a+1) == ' ') {
+                                                summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
                                                 vDisplaceText = 20;
-                                                i = 0;
+                                                a = 0;
                                             }
                                         }
                                     }
@@ -119,10 +120,19 @@ Ext.define('Conflux.view.myContainer', {
                                 try {
                                     description = description.replace(/\n/g, ' ');
                                     if (description.length > 35) {
+                                        for (var b = 35; b > 0; b--) {
+                                            if (description.substring(b, b+1) == ' ') {
+                                                description = description.substring(0,b) + '\n' + description.substring(b+1);
+                                                b = 0;
+                                            }
+                                        }
                                         if (description.length > 70) {
-                                            description = description.substring(0,35) + '\n' + description.substring(35,70) + '...';
-                                        } else {
-                                            description = description.substring(0,35) + '\n' + description.substring(35);
+                                            for (var c = 70; c > 0; c--) {
+                                                if (description.substring(c, c+1) == ' ') {
+                                                    description = description.substring(0,c) + '\n' + description.substring(c+1) + '...';
+                                                    c = 0;
+                                                }
+                                            }
                                         }
                                     }
                                 } catch(e) {
