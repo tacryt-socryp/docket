@@ -360,7 +360,7 @@
                             "        \r",
                             "        surface.add({\r",
                             "            type: 'text',\r",
-                            "            text: dateStart + ' - ' + dateEnd,\r",
+                            "            text: dateStart + '  -  ' + dateEnd,\r",
                             "            font: '14px Arial',\r",
                             "            fill: '#FFF',\r",
                             "            x: xloc+140,\r",

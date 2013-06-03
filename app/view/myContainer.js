@@ -291,10 +291,10 @@ Ext.define('Conflux.view.myContainer', {
 
                                     surface.add({
                                         type: 'text',
-                                        text: dateStart + ' - ' + dateEnd,
+                                        text: dateStart + '  -  ' + dateEnd,
                                         font: '14px Arial',
                                         fill: '#FFF',
-                                        x: xloc+140,
+                                        x: xloc+110,
                                         y: yloc+260
                                     }).show(true);
 
