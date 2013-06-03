@@ -279,7 +279,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                             };
 
                             var request = gapi.client.calendar.events.insert({
-                                'calendarId': calendarId,
+                                'calendarId': 'primary',
                                 'resource': resource
                             });
 

@@ -516,23 +516,6 @@
             ]
         },
         {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "initialize",
-                "implHandler": [
-                    "this.callParent();\r",
-                    "\r",
-                    "this.down('#datepicker').setValue(new Date());"
-                ]
-            },
-            "designerId": "929379d5-95eb-4fd1-86db-dcaf78e2daeb"
-        },
-        {
             "type": "basiceventbinding",
             "reference": {
                 "name": "listeners",
@@ -552,6 +535,23 @@
                 "name": "hide"
             },
             "designerId": "a048e5ff-06f5-465b-8474-33262c8f74f0"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "this.down('#datepicker').setValue(new Date());"
+                ]
+            },
+            "designerId": "929379d5-95eb-4fd1-86db-dcaf78e2daeb"
         }
     ]
 }
