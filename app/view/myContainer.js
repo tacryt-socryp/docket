@@ -49,6 +49,7 @@ Ext.define('Conflux.view.myContainer', {
                                 surface = me.getSurface('main'),
                                 today = new Date(Date.now()),
                                 w = 203 * events.length,
+                                vDisplaceSummary = 0,
                                 description,
                                 dateTime,
                                 summary,
@@ -102,7 +103,13 @@ Ext.define('Conflux.view.myContainer', {
                                 summary = events[iter].summary;
                                 try {
                                     if (summary.length > 25) {
-                                        summary = summary.substring(0,23) + '...';
+                                        for (var i = 25; i > 0; i--) {
+                                            if (summary.substring(i, i+1) == ' ') {
+                                                summary = summary.substring(0,i) + '\n' + summary.substring(i+1);
+                                                vDisplaceSummary = 20;
+                                                i = 0;
+                                            }
+                                        }        
                                     }
                                 } catch(e) {
                                     console.log(summary);
@@ -250,7 +257,7 @@ Ext.define('Conflux.view.myContainer', {
                                         font: '22px Arial',
                                         fill: '#FFF',
                                         x: xloc+48,
-                                        y: yloc+435
+                                        y: yloc+435+vDisplaceSummary
                                     }).show(true);
 
                                     if (description !== false) {
@@ -262,7 +269,7 @@ Ext.define('Conflux.view.myContainer', {
                                             height: 100,
                                             fill: '#FFF',
                                             x: xloc+48,
-                                            y: yloc+485
+                                            y: yloc+485+vDisplaceSummary
                                         }).show(true);
                                     }
 
