@@ -49,7 +49,8 @@ Ext.define('Conflux.view.myContainer', {
                                 surface = me.getSurface('main'),
                                 today = new Date(Date.now()),
                                 w = 203 * events.length,
-                                vDisplaceText,
+                                vDisplaceSumm,
+                                vDisplaceDesc,
                                 description,
                                 dateTime,
                                 summary,
@@ -101,13 +102,16 @@ Ext.define('Conflux.view.myContainer', {
                             for (var iter = 0; iter < events.length; iter++) {
                                 xloc = iter*200;
                                 summary = events[iter].summary;
-                                vDisplaceText = 0;
+                                description = events[iter].description;
+                                vDisplaceSumm = 0;
+
+
                                 try {
                                     if (summary.length > 25) {
                                         for (var a = 25; a > 0; a--) {
                                             if (summary.substring(a, a+1) == ' ') {
                                                 summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
-                                                vDisplaceText = 20;
+                                                vDisplaceSumm = 20;
                                                 a = 0;
                                             }
                                         }
@@ -116,7 +120,6 @@ Ext.define('Conflux.view.myContainer', {
                                     console.log(summary);
                                 }
 
-                                description = events[iter].description;
                                 try {
                                     description = description.replace(/\n/g, ' ');
                                     if (description.length > 35) {
@@ -129,7 +132,12 @@ Ext.define('Conflux.view.myContainer', {
                                         if (description.length > 70) {
                                             for (var c = 70; c > 0; c--) {
                                                 if (description.substring(c, c+1) == ' ') {
-                                                    description = description.substring(0,c) + '\n' + description.substring(c+1) + '...';
+                                                    if (description.length > 105) {
+                                                        description = description.substring(0,c) + '\n' + description.substring(c+1,105) + '...';
+                                                    } else {
+                                                        description = description.substring(0,c) + '\n' + description.substring(c+1);
+                                                    }
+                                                    vDisplaceDesc = 20;
                                                     c = 0;
                                                 }
                                             }
@@ -213,7 +221,7 @@ Ext.define('Conflux.view.myContainer', {
                                         height: 130,
                                         fill: '#FFF',
                                         x: xloc+48,
-                                        y: yloc+135+vDisplaceText
+                                        y: yloc+135+vDisplaceSumm
                                     }).show(true);
 
                                     if (description !== false) {
@@ -225,7 +233,7 @@ Ext.define('Conflux.view.myContainer', {
                                             height: 100,
                                             fill: '#FFF',
                                             x: xloc+48,
-                                            y: yloc+190+vDisplaceText
+                                            y: yloc+190+vDisplaceSumm+vDisplaceDesc
                                         }).show(true);
                                     }
 
@@ -267,7 +275,7 @@ Ext.define('Conflux.view.myContainer', {
                                         font: '22px Arial',
                                         fill: '#FFF',
                                         x: xloc+48,
-                                        y: yloc+435+vDisplaceText
+                                        y: yloc+435+vDisplaceSumm
                                     }).show(true);
 
                                     if (description !== false) {
@@ -279,7 +287,7 @@ Ext.define('Conflux.view.myContainer', {
                                             height: 100,
                                             fill: '#FFF',
                                             x: xloc+48,
-                                            y: yloc+485+vDisplaceText
+                                            y: yloc+485+vDisplaceSumm+vDisplaceDesc
                                         }).show(true);
                                     }
 
