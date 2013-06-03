@@ -409,13 +409,18 @@ Ext.define('Conflux.view.myContainer', {
             surface = me.getSurface('main'),
             today = new Date(Date.now()),
             w = 203 * events.length,
+            vDisplaceSumm,
+            vDisplaceDesc,
             description,
             dateTime,
+            dateStart,
+            dateEnd,
             summary,
             yloc = h/10,
             xloc;
 
         surface.clear();
+        surface.removeAll();
 
         me.setSize(w,h);
         surface.setSize(w,h);
@@ -462,22 +467,50 @@ Ext.define('Conflux.view.myContainer', {
         for (var iter = 0; iter < events.length; iter++) {
             xloc = iter*200;
             summary = events[iter].summary;
+            description = events[iter].description;
+            vDisplaceSumm = 0;
+            vDisplaceDesc = 0;
+
             try {
+                summary = summary.replace(/\s+/g,' ');
                 if (summary.length > 25) {
-                    summary = summary.substring(0,23) + '...';
+                    for (var a = 25; a > 0; a--) {
+                        if (summary.substring(a, a+1) == ' ') {
+                            summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
+                            vDisplaceSumm = 20;
+                            a = 0;
+                        }
+                    }
+                    if (summary.length > 50) {
+                        summary = summary.substring(0,50) + '...';
+                    }
                 }
             } catch(e) {
-                summary = '';
+                console.log(summary);
             }
 
-            description = events[iter].description;
             try {
-                description = description.replace(/\n/g, ' ');
+                description = description.replace(/\s+/g,' ');
+                description = description.replace(/(\r\n|\n|\r)/gm,' ');
                 if (description.length > 35) {
+                    for (var b = 35; b > 0; b--) {
+                        if (description.substring(b, b+1) == ' ') {
+                            description = description.substring(0,b) + '\n' + description.substring(b+1);
+                            b = 0;
+                        }
+                    }
                     if (description.length > 70) {
-                        description = description.substring(0,35) + '\n' + description.substring(35,70) + '...';
-                    } else {
-                        description = description.substring(0,35) + '\n' + description.substring(35);
+                        for (var c = 70; c > 0; c--) {
+                            if (description.substring(c, c+1) == ' ') {
+                                if (description.length > 105) {
+                                    description = description.substring(0,c) + '\n' + description.substring(c+1,105) + '...';
+                                } else {
+                                    description = description.substring(0,c) + '\n' + description.substring(c+1);
+                                }
+                                vDisplaceDesc = 20;
+                                c = 0;
+                            }
+                        }
                     }
                 }
             } catch(e) {
@@ -512,6 +545,51 @@ Ext.define('Conflux.view.myContainer', {
                 dateTime = dateTime.toDateString().substring(0,10);
             } else {
                 dateTime = dateTime.toDateString().substring(0,10);
+            }
+
+            dateStart = events[iter].start.dateTime;
+            dateStart = Date.parse(dateStart);
+            dateStart = new Date(dateStart);
+            dateEnd = events[iter].end.dateTime;
+            dateEnd = Date.parse(dateEnd);
+            dateEnd = new Date(dateEnd);
+
+            dateStart = dateStart.toTimeString().substring(0,5);
+            if (parseInt(dateStart.substring(0,2),10) >= 12) {
+                if (dateStart.substring(0,2) == '12') {
+                    dateStart = dateStart + ' pm';
+                } else if ((parseInt(dateStart.substring(0,2),10)-12) < 10) {
+                    dateStart = '0' + (parseInt(dateStart.substring(0,2),10)-12) + dateStart.substring(2) + ' pm';
+                } else {
+                    dateStart = (parseInt(dateStart.substring(0,2),10)-12) + dateStart.substring(2) + ' pm';
+                }
+            } else {
+                if (dateStart.substring(0,1) == '0') {
+                    dateStart = '12' + dateStart.substring(2) + ' am';
+                } else if (parseInt(dateStart.substring(0,2),10) < 10) {
+                    dateStart = '0' + dateStart + ' am';
+                } else {
+                    dateStart = dateStart + ' am';
+                }
+            }
+
+            dateEnd = dateEnd.toTimeString().substring(0,5);
+            if (parseInt(dateEnd.substring(0,2),10) >= 12) {
+                if (dateEnd.substring(0,2) == '12') {
+                    dateEnd = dateEnd + ' pm';
+                } else if ((parseInt(dateEnd.substring(0,2),10)-12) < 10) {
+                    dateEnd = '0' + (parseInt(dateEnd.substring(0,2),10)-12) + dateEnd.substring(2) + ' pm';
+                } else {
+                    dateEnd = (parseInt(dateEnd.substring(0,2),10)-12) + dateEnd.substring(2) + ' pm';
+                }
+            } else {
+                if (dateEnd.substring(0,1) == '0') {
+                    dateEnd = '12' + dateEnd.substring(2) + ' am';
+                } else if (parseInt(dateEnd.substring(0,2),10) < 10) {
+                    dateEnd = '0' + dateEnd + ' am';
+                } else {
+                    dateEnd = dateEnd + ' am';
+                }
             }
 
             //Larger Point on timeline
@@ -558,7 +636,7 @@ Ext.define('Conflux.view.myContainer', {
                     height: 130,
                     fill: '#FFF',
                     x: xloc+48,
-                    y: yloc+135
+                    y: yloc+135+vDisplaceSumm
                 }).show(true);
 
                 if (description !== false) {
@@ -570,9 +648,18 @@ Ext.define('Conflux.view.myContainer', {
                         height: 100,
                         fill: '#FFF',
                         x: xloc+48,
-                        y: yloc+190
+                        y: yloc+190+vDisplaceSumm+vDisplaceDesc
                     }).show(true);
                 }
+
+                surface.add({
+                    type: 'text',
+                    text: dateStart + '  -  ' + dateEnd,
+                    font: '14px Arial',
+                    fill: '#FFF',
+                    x: xloc+121,
+                    y: yloc+260
+                }).show(true);
 
                 //Time and date for top
                 surface.add({
@@ -612,7 +699,7 @@ Ext.define('Conflux.view.myContainer', {
                     font: '22px Arial',
                     fill: '#FFF',
                     x: xloc+48,
-                    y: yloc+435
+                    y: yloc+435+vDisplaceSumm
                 }).show(true);
 
                 if (description !== false) {
@@ -624,9 +711,18 @@ Ext.define('Conflux.view.myContainer', {
                         height: 100,
                         fill: '#FFF',
                         x: xloc+48,
-                        y: yloc+485
+                        y: yloc+485+vDisplaceSumm+vDisplaceDesc
                     }).show(true);
                 }
+
+                surface.add({
+                    type: 'text',
+                    text: dateStart + '  -  ' + dateEnd,
+                    font: '14px Arial',
+                    fill: '#FFF',
+                    x: xloc+121,
+                    y: yloc+560
+                }).show(true);
 
                 //Time and date for bottom
                 surface.add({
