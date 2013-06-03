@@ -50,7 +50,7 @@
                 ],
                 "id": null,
                 "itemId": "inlineDraw",
-                "style": ".x-chart-watermark {display: none;}",
+                "style": null,
                 "designer|displayName": "inlineDraw",
                 "designer|createAlias": null,
                 "autoDestroy": false

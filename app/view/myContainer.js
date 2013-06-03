@@ -31,7 +31,6 @@ Ext.define('Conflux.view.myContainer', {
                     
                 ],
                 itemId: 'inlineDraw',
-                style: '.x-chart-watermark {display: none;}',
                 autoDestroy: false,
                 listeners: [
                     {
