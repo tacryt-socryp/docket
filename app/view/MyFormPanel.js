@@ -191,6 +191,11 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 dateEnd = new Date(),
                                 date;
 
+                            var token = Conflux.app.authToken,
+                                clientId = '464168127252.apps.googleusercontent.com',
+                                apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
+                                scopes = 'https://www.googleapis.com/auth/calendar';
+
                             function returnTimestamp(date) {
                                 var hours = date.getHours(),
                                     minutes = date.getMinutes(),
@@ -281,22 +286,36 @@ Ext.define('Conflux.view.MyFormPanel', {
                             console.log(calendarId);
                             console.log(resource);
 
-                            var request = gapi.client.calendar.events.insert({
-                                'calendarId': calendarId,
-                                'resource': resource
-                            });
+                            try {
+                                gapi.client.setApiKey(apiKey);
+                                gapi.auth.setToken(token);
+                            } catch(e) {
+                                window.location.reload();
+                            }
 
-                            request.execute(function(resp) {
-                                console.log(resp);
-                                if (resp.id){
-                                    console.log("Event was successfully added to the calendar!");
-                                } else{
-                                    console.log("An error occurred. Please try again later.");
-                                }
-                                var formPanel = me.getParent().getParent();
-                                formPanel.submitted = true;
-                                formPanel.hide();  
-                            });
+                            gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
+                            if (authResult) {
+                                gapi.client.load('calendar', 'v3', function() {
+                                    var request = gapi.client.calendar.events.insert({
+                                        'calendarId': calendarId,
+                                        'resource': resource
+                                    });
+                                    request.execute(function(resp) {
+                                        console.log(resp);
+                                        if (resp.id){
+                                            console.log("Event was successfully added to the calendar!");
+                                        } else{
+                                            console.log("An error occurred. Please try again later.");
+                                        }
+                                        var formPanel = me.getParent().getParent();
+                                        formPanel.submitted = true;
+                                        formPanel.hide();
+                                    });
+                                });
+                            }
+                        });
+
+
                         },
                         ui: 'confirm',
                         width: '120px',
