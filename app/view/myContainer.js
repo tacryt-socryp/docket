@@ -116,6 +116,9 @@ Ext.define('Conflux.view.myContainer', {
                                                 a = 0;
                                             }
                                         }
+                                        if (summary.length > 50) {
+                                            summary = summary.substring(0,50) + '...';
+                                        }
                                     }
                                 } catch(e) {
                                     console.log(summary);
