@@ -742,17 +742,20 @@ Ext.define('Conflux.view.myContainer', {
     },
 
     initialize: function() {
-        this.callParent();
+        var me = this;
+        me.callParent();
 
-        this.element.on({
-            tap: this.onTap
+        me.element.on({
+            tap: me.onTap
         });
 
-        this.getScrollable().getScroller().on({
-            scrollend: this.onScrollEnd(scroll, x, y)
+        me.getScrollable().getScroller().on('scrollend', function(scroll, x, y) {
+            child = me.query('#inlineDraw')[0];
+            child.scrollDisplace = scroll.position.x;
+            child.fireEvent('reloadPainted', child);
         });
 
-        window.setInterval(this.reloadData,900000);
+        window.setInterval(me.reloadData,900000);
     },
 
     onTap: function(e) {

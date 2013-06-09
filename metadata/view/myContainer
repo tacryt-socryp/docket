@@ -843,17 +843,20 @@
             "userConfig": {
                 "fn": "initialize",
                 "implHandler": [
-                    "this.callParent();\r",
+                    "var me = this;\r",
+                    "me.callParent();\r",
                     "\r",
-                    "this.element.on({\r",
-                    "    tap: this.onTap\r",
+                    "me.element.on({\r",
+                    "    tap: me.onTap\r",
                     "});\r",
                     "\r",
-                    "this.getScrollable().getScroller().on({\r",
-                    "    scrollend: this.onScrollEnd(scroll, x, y)\r",
+                    "me.getScrollable().getScroller().on('scrollend', function(scroll, x, y) {\r",
+                    "    child = me.query('#inlineDraw')[0];\r",
+                    "    child.scrollDisplace = scroll.position.x;\r",
+                    "    child.fireEvent('reloadPainted', child);\r",
                     "});\r",
                     "\r",
-                    "window.setInterval(this.reloadData,900000);"
+                    "window.setInterval(me.reloadData,900000);"
                 ]
             },
             "designerId": "0795efd8-674a-4ad3-bdcc-1c6dd1a236bf"
