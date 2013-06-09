@@ -42,11 +42,10 @@ Ext.define('Conflux.view.myContainer', {
                                 roomText = me.roomText,
                                 boxColor = me.boxColor,
                                 dotColor = me.dotColor,
-                                scrollDisplace = me.scrollDisplace,
                                 events = me.events;
 
                             var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
-                                displace = Ext.getBody().getSize().width + scrollDisplace - 200,
+                                displace = Ext.getBody().getSize().width - 200,
                                 h = Ext.getBody().getSize().height,
                                 surface = me.getSurface('main'),
                                 today = new Date(Date.now()),
