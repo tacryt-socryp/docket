@@ -42,7 +42,7 @@ Ext.define('Conflux.view.myContainer', {
                                 roomText = me.roomText,
                                 boxColor = me.boxColor,
                                 dotColor = me.dotColor,
-                                scrollDisplace = me.scrollDiplsace,
+                                scrollDisplace = me.scrollDisplace,
                                 events = me.events;
 
                             var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
@@ -765,13 +765,6 @@ Ext.define('Conflux.view.myContainer', {
                 Ext.Viewport.add(form);
             }
         }
-    },
-
-    onScrollEnd: function(scroll, x, y) {
-        var me = this;
-        child = me.query('#inlineDraw')[0];
-        child.scrollDisplace = scroll.position.x;
-        child.fireEvent('reloadPainted',child);
     },
 
     reloadData: function() {

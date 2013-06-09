@@ -117,7 +117,7 @@
                             "    roomText = me.roomText,\r",
                             "    boxColor = me.boxColor,\r",
                             "    dotColor = me.dotColor,\r",
-                            "    scrollDisplace = me.scrollDiplsace,\r",
+                            "    scrollDisplace = me.scrollDisplace,\r",
                             "    events = me.events;\r",
                             "\r",
                             "var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
@@ -883,29 +883,6 @@
                 ]
             },
             "designerId": "9b5a0bad-2f07-4c81-aec3-703d381170f2"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onScrollEnd",
-                "designer|params": [
-                    "scroll",
-                    "x",
-                    "y"
-                ],
-                "implHandler": [
-                    "var me = this;\r",
-                    "child = me.query('#inlineDraw')[0];\r",
-                    "child.scrollDisplace = scroll.position.x;\r",
-                    "child.fireEvent('reloadPainted',child);"
-                ]
-            },
-            "designerId": "2860c94e-017a-450d-98ae-d9e98004e003"
         },
         {
             "type": "basicfunction",
