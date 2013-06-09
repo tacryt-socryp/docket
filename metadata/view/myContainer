@@ -891,14 +891,15 @@
             "userConfig": {
                 "fn": "onScrollEnd",
                 "designer|params": [
-                    "e"
+                    "scroll",
+                    "x",
+                    "y"
                 ],
                 "implHandler": [
                     "var me = this;\r",
                     "child = me.query('#inlineDraw')[0];\r",
                     "child.scrollDisplace = scroll.position.x;\r",
-                    "child.fireEvent('reloadPainted',child);\r",
-                    "console.log(scroll, x, y);"
+                    "child.fireEvent('reloadPainted',child);"
                 ]
             },
             "designerId": "2860c94e-017a-450d-98ae-d9e98004e003"

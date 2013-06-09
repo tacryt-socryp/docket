@@ -764,12 +764,11 @@ Ext.define('Conflux.view.myContainer', {
         }
     },
 
-    onScrollEnd: function(e) {
+    onScrollEnd: function(scroll, x, y) {
         var me = this;
         child = me.query('#inlineDraw')[0];
         child.scrollDisplace = scroll.position.x;
         child.fireEvent('reloadPainted',child);
-        console.log(scroll, x, y);
     },
 
     reloadData: function() {
