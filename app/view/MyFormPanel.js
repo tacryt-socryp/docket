@@ -283,7 +283,9 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 },
                                 'attendees': [
                                 {
-                                    'email': calendarId
+                                    'email': calendarId,
+                                    'displayName': "attendeeDisplayName",
+                                    'responseStatus': "needsAction"
                                 }
                                 ]
                             };

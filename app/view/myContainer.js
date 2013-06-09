@@ -30,6 +30,7 @@ Ext.define('Conflux.view.myContainer', {
                 events: [
                     
                 ],
+                scrollDisplace: 0,
                 itemId: 'inlineDraw',
                 autoDestroy: false,
                 listeners: [
@@ -41,10 +42,11 @@ Ext.define('Conflux.view.myContainer', {
                                 roomText = me.roomText,
                                 boxColor = me.boxColor,
                                 dotColor = me.dotColor,
+                                scrollDisplace = me.scrollDiplsace,
                                 events = me.events;
 
                             var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
-                                displace = Ext.getBody().getSize().width - 200,
+                                displace = Ext.getBody().getSize().width + scrollDisplace - 200,
                                 h = Ext.getBody().getSize().height,
                                 surface = me.getSurface('main'),
                                 today = new Date(Date.now()),
@@ -401,10 +403,11 @@ Ext.define('Conflux.view.myContainer', {
             roomText = me.roomText,
             boxColor = me.boxColor,
             dotColor = me.dotColor,
+            scrollDisplace = me.scrollDisplace,
             events = me.events;
 
         var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
-            displace = Ext.getBody().getSize().width - 200,
+            displace = Ext.getBody().getSize().width + scrollDisplace - 200,
             h = Ext.getBody().getSize().height,
             surface = me.getSurface('main'),
             today = new Date(Date.now()),
@@ -502,8 +505,8 @@ Ext.define('Conflux.view.myContainer', {
                     if (description.length > 70) {
                         for (var c = 70; c > 0; c--) {
                             if (description.substring(c, c+1) == ' ') {
-                                if (description.length > 105) {
-                                    description = description.substring(0,c) + '\n' + description.substring(c+1,105) + '...';
+                                if (description.length > 103) {
+                                    description = description.substring(0,c) + '\n' + description.substring(c+1,103) + '...';
                                 } else {
                                     description = description.substring(0,c) + '\n' + description.substring(c+1);
                                 }
@@ -735,7 +738,6 @@ Ext.define('Conflux.view.myContainer', {
                 }).show(true);
             }
         }
-
         me.renderFrame();
     },
 
@@ -744,6 +746,10 @@ Ext.define('Conflux.view.myContainer', {
 
         this.element.on({
             tap: this.onTap
+        });
+
+        this.getScrollable().getScroller().on({
+            scrollend: this.onScrollEnd(scroll, x, y)
         });
 
         window.setInterval(this.reloadData,900000);
@@ -756,6 +762,14 @@ Ext.define('Conflux.view.myContainer', {
                 Ext.Viewport.add(form);
             }
         }
+    },
+
+    onScrollEnd: function(e) {
+        var me = this;
+        child = me.query('#inlineDraw')[0];
+        child.scrollDisplace = scroll.position.x;
+        child.fireEvent('reloadPainted',child);
+        console.log(scroll, x, y);
     },
 
     reloadData: function() {
