@@ -159,7 +159,7 @@ Ext.define('Confluent.view.authContainer', {
                                 if (Ext.isDefined(resp.items[0])) {
                                     if (Ext.isDefined(resp.items[0].summary)) {
                                         if (Ext.isDefined(resp.items[0].summary.length)) {
-                                            obj = new Conflux.view.myContainer();
+                                            obj = new Confluent.view.myContainer();
                                             array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
                                             child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
