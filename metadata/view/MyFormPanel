@@ -205,7 +205,7 @@
                                 "designer|displayName": "eventStart",
                                 "label": "Start:",
                                 "labelAlign": null,
-                                "labelWidth": null,
+                                "labelWidth": 179,
                                 "required": false
                             },
                             "configAlternates": {
@@ -312,6 +312,7 @@
                                 "width": null,
                                 "designer|displayName": "eventEnd",
                                 "label": "End: ",
+                                "labelWidth": 179,
                                 "required": false
                             },
                             "configAlternates": {

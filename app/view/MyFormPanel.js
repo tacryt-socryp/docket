@@ -98,6 +98,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                                     }
                                 },
                                 label: 'Start:',
+                                labelWidth: 179,
                                 required: false
                             }
                         ]
@@ -152,6 +153,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                                     }
                                 },
                                 label: 'End: ',
+                                labelWidth: 179,
                                 required: false
                             }
                         ]
