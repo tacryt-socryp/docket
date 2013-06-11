@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "run": false,
         "html": null,
         "itemId": "authContainer",
         "style": null,
@@ -17,13 +16,6 @@
         "run": "boolean"
     },
     "designerId": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
-    "customConfigs": [
-        {
-            "group": "(Custom Properties)",
-            "name": "run",
-            "type": "string"
-        }
-    ],
     "cn": [
         {
             "type": "basiceventbinding",
@@ -213,12 +205,12 @@
                     "                        }\r",
                     "                    }\r",
                     "                }\r",
-                    "                if ((items.length == 3) && (me.run === false)) {\r",
+                    "                console.log(Ext.Viewport.getActiveItem());\r",
+                    "                if ((items.length == 3)) {\r",
                     "                    console.log(items);\r",
                     "                    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
                     "                    mainCarousel.setItems(items);\r",
                     "                    Ext.Viewport.setActiveItem('mainCarousel');\r",
-                    "                    me.run = true;\r",
                     "                }\r",
                     "            });\r",
                     "        });\r",

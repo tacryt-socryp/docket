@@ -17,7 +17,6 @@ Ext.define('Conflux.view.authContainer', {
     extend: 'Ext.Container',
 
     config: {
-        run: false,
         itemId: 'authContainer',
         listeners: [
             {
@@ -186,12 +185,12 @@ Ext.define('Conflux.view.authContainer', {
                                 }
                             }
                         }
-                        if ((items.length == 3) && (me.run === false)) {
+                        console.log(Ext.Viewport.getActiveItem());
+                        if ((items.length == 3)) {
                             console.log(items);
                             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                             mainCarousel.setItems(items);
                             Ext.Viewport.setActiveItem('mainCarousel');
-                            me.run = true;
                         }
                     });
                 });
