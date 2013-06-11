@@ -137,6 +137,7 @@
                             "\r",
                             "console.log(w);\r",
                             "console.log(h);\r",
+                            "console.log(backgroundColor);\r",
                             "\r",
                             "me.setSize(w,h);\r",
                             "surface.setSize(w,h);\r",
