@@ -85,15 +85,6 @@ Ext.define('Conflux.view.myContainer', {
                             }).show(true);
 
                             surface.add({
-                                type: 'rect',
-                                fill: backgroundColor,
-                                height : 100,
-                                width: 200,
-                                x: displace,
-                                y: 70
-                            }).show(true);
-
-                            var addText = surface.add({
                                 type: 'text',
                                 text: '+add',
                                 font: "36px Arial",
@@ -444,20 +435,11 @@ Ext.define('Conflux.view.myContainer', {
             text: roomText,
             font: "40px Arial",
             fill: '#FFF',
-            x: 35,
+            x: 35 + scrollDisplace,
             y: 70
         }).show(true);
 
         surface.add({
-            type: 'rect',
-            fill: backgroundColor,
-            height : 100,
-            width: 200,
-            x: displace,
-            y: 70
-        }).show(true);
-
-        var addText = surface.add({
             type: 'text',
             text: '+add',
             font: "36px Arial",
