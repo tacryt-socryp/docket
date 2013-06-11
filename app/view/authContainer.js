@@ -66,7 +66,8 @@ Ext.define('Conflux.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar',
             items = [],
             calendarId,
-            summary;
+            summary,
+            run = false;
 
         try {
             gapi.client.setApiKey(apiKey);
@@ -85,7 +86,7 @@ Ext.define('Conflux.view.authContainer', {
                             calendarId = outer.items[a].id;
                             summary = outer.items[a].summary;
                             if ((calendarId !== null) && (summary !== null)) {
-                                me.loadData(calendarId, summary, items);
+                                me.loadData(calendarId, summary, items, run);
                             }
                         }
                     }
@@ -95,7 +96,7 @@ Ext.define('Conflux.view.authContainer', {
     });
     },
 
-    loadData: function(calendarId, summary, items) {
+    loadData: function(calendarId, summary, items, run) {
         var me = this,
             today = new Date(),
             mainCarousel,
@@ -185,7 +186,8 @@ Ext.define('Conflux.view.authContainer', {
                                 }
                             }
                         }
-                        if (items.length == 3) {
+                        if ((items.length == 3) && (run === false)) {
+                            run = true;
                             console.log(items);
                             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                             mainCarousel.setItems(items);

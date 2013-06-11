@@ -67,7 +67,8 @@
                     "    scopes = 'https://www.googleapis.com/auth/calendar',\r",
                     "    items = [],\r",
                     "    calendarId,\r",
-                    "    summary;\r",
+                    "    summary\r",
+                    "    run = false;\r",
                     "\r",
                     "try {\r",
                     "    gapi.client.setApiKey(apiKey);\r",
@@ -86,7 +87,7 @@
                     "                    calendarId = outer.items[a].id;\r",
                     "                    summary = outer.items[a].summary;\r",
                     "                    if ((calendarId !== null) && (summary !== null)) {\r",
-                    "                        me.loadData(calendarId, summary, items);\r",
+                    "                        me.loadData(calendarId, summary, items, run);\r",
                     "                    }\r",
                     "                }\r",
                     "            }\r",
@@ -110,7 +111,8 @@
                 "designer|params": [
                     "calendarId",
                     "summary",
-                    "items"
+                    "items",
+                    "run"
                 ],
                 "implHandler": [
                     "var me = this,\r",
@@ -202,7 +204,8 @@
                     "                        }\r",
                     "                    }\r",
                     "                }\r",
-                    "                if (items.length == 3) {\r",
+                    "                if ((items.length == 3) && (run === false)) {\r",
+                    "                    run = true;\r",
                     "                    console.log(items);\r",
                     "                    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
                     "                    mainCarousel.setItems(items);\r",
