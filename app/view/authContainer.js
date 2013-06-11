@@ -98,7 +98,7 @@ Ext.define('Conflux.view.authContainer', {
     loadData: function(calendarId, summary, items) {
         var me = this,
             today = new Date(),
-            mainCarousel,
+            mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
             child;
 
         var token = Conflux.app.authToken,
@@ -179,18 +179,15 @@ Ext.define('Conflux.view.authContainer', {
                                             child.timelineColor = timelineColors[array_i];
                                             child.dotColor = dotColors[array_i];
                                             child.events = resp.items;
-                                            items.push(obj);
+                                            //items.push(obj);
+                                            mainCarousel.add(obj);
+                                            if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
+                                                Ext.Viewport.setActiveItem('mainCarousel');
+                                            }
                                         }
                                     }
                                 }
                             }
-                        }
-
-                        if ((items.length == 3) && (me.getItemId() == Ext.Viewport.getActiveItem().getItemId())) {
-                            console.log(items);
-                            mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
-                            mainCarousel.setItems(items);
-                            Ext.Viewport.setActiveItem('mainCarousel');
                         }
                     });
                 });
