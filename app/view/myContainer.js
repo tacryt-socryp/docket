@@ -396,6 +396,10 @@ Ext.define('Conflux.view.myContainer', {
             scrollDisplace = me.scrollDisplace,
             events = me.events;
 
+        if(typeof scrollDisplace === 'undefined'){
+            scrollDisplace = 0;
+        }
+
         var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
             displace = Ext.getBody().getSize().width + scrollDisplace - 200,
             h = Ext.getBody().getSize().height,
@@ -411,10 +415,6 @@ Ext.define('Conflux.view.myContainer', {
             summary,
             yloc = h/10,
             xloc;
-
-        if(typeof scrollDisplace === 'undefined'){
-            scrollDisplace = 0;
-        }
 
         console.log(scrollDisplace);
 
