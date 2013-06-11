@@ -563,9 +563,9 @@
                     "if (component.submitted) {\r",
                     "    var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
                     "        myContainer = mainCarousel.getActiveItem();\r",
-                    "    myContainer.reloadData();\r",
+                    "    window.setTimeout(myContainer.reloadData(), 500);\r",
                     "}\r",
-                    "component.destroy();"
+                    "window.setTimeout(function() {component.destroy()}, 500);"
                 ],
                 "name": "hide"
             },

@@ -343,9 +343,9 @@ Ext.define('Conflux.view.MyFormPanel', {
         if (component.submitted) {
             var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
                 myContainer = mainCarousel.getActiveItem();
-            myContainer.reloadData();
+            window.setTimeout(myContainer.reloadData(), 500);
         }
-        component.destroy();
+        window.setTimeout(function() {component.destroy();}, 500);
     },
 
     initialize: function() {
