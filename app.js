@@ -26,7 +26,8 @@ Ext.application({
         'myContainer',
         'authContainer',
         'mainCarousel',
-        'timeSlider'
+        'timeSlider',
+        'MyFormPanel'
     ],
     name: 'Confluent',
 
