@@ -412,6 +412,8 @@ Ext.define('Conflux.view.myContainer', {
             yloc = h/10,
             xloc;
 
+        console.log(scrollDisplace);
+
         surface.clear();
         surface.removeAll();
 
