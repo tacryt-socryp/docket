@@ -187,11 +187,11 @@ Ext.define('Conflux.view.authContainer', {
                             }
                         }
                         if ((items.length == 3) && (me.run === false)) {
-                            me.run = true;
                             console.log(items);
                             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                             mainCarousel.setItems(items);
                             Ext.Viewport.setActiveItem('mainCarousel');
+                            me.run = true;
                         }
                     });
                 });
