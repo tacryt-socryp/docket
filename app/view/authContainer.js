@@ -49,7 +49,7 @@ Ext.define('Confluent.view.authContainer', {
         if (isEmpty(parameters)) {
             window.location.href = 'login.html';
         } else {
-            Conflux.app.authToken = decodeURI(parameters.auth);
+            Confluent.app.authToken = decodeURI(parameters.auth);
             this.generateItems();
         }
     },
