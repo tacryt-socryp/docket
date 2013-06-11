@@ -195,6 +195,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 roomText = myContainer.roomText,
                                 dateStart = new Date(),
                                 dateEnd = new Date(),
+                                attendee,
                                 date;
 
                             var token = Conflux.app.authToken,
@@ -296,14 +297,20 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 ]
                             };
 
+                            guests = guests.replace(/(\r\n|\n|\r)/gm,'');
+                            guests = guests.replace(/\s+/g, '');
                             guests = guests.split(',');
                             for (var i=0; i<guests.length; i++) {
-                                if (guests[i].indexOf('@') == -1) {
+                                attendee = guests[i];
 
+                                if (guests[i].indexOf('@') == -1) {
+                                    attendee = attendee + '@bestfitmedia.com';
                                 }
+
+                                attendee = attendee.split('@');
                                 resource.attendees.push({
-                                    'email': guests[i],
-                                    'displayName': 'name',
+                                    'email': attendee[0] + '@' + attendee[1],
+                                    'displayName': attendee[0],
                                     'responseStatus': 'needsAction'
                                 });
                             }
@@ -327,11 +334,33 @@ Ext.define('Conflux.view.MyFormPanel', {
                                     });
                                     request.execute(function(resp) {
                                         console.log(resp);
-                                        if (resp.id){
-                                            console.log("Event was successfully added to the calendar!");
+                                        var Tooltip;
+                                        if (resp.id) {
+                                            Tooltip = new Ext.Panel({
+                                                autoDestroy: true,
+                                                floating: true,
+                                                width: 100,
+                                                height: 30,
+                                                styleHtmlContent: true,
+                                                style: "background-color: #FFC;",
+                                                html: 'Success!',
+                                                hideAnimation: 'fadeOut'
+                                            }).show(true);
+                                            console.log("Success!");
                                         } else{
-                                            console.log("An error occurred. Please try again later.");
+                                            Tooltip = new Ext.Panel({
+                                                autoDestroy: true,
+                                                floating: true,
+                                                width: 100,
+                                                height: 30,
+                                                styleHtmlContent: true,
+                                                style: "background-color: #FFC;",
+                                                html: ' Error! ',
+                                                hideAnimation: 'fadeOut'
+                                            }).show(true);
+                                            console.log(" Error! ");
                                         }
+                                        window.setTimeout(function() { Tooltip.hide(); }, 2000);
                                         var formPanel = me.getParent().getParent();
                                         formPanel.submitted = true;
                                         formPanel.hide();
@@ -339,8 +368,6 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 });
                             }
                         });
-
-
                         },
                         ui: 'confirm',
                         width: '120px',
