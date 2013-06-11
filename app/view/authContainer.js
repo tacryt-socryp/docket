@@ -63,9 +63,7 @@ Ext.define('Conflux.view.authContainer', {
             token = Conflux.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
-            scopes = 'https://www.googleapis.com/auth/calendar',
-            calendarId,
-            summary;
+            scopes = 'https://www.googleapis.com/auth/calendar';
 
         try {
             gapi.client.setApiKey(apiKey);
@@ -81,11 +79,7 @@ Ext.define('Conflux.view.authContainer', {
                 request.execute(function(outer) {
                     for (var a = 0; a < outer.items.length; a++) {
                         if (outer.items[a].id.substring(0,8) === 'bestfitm') {
-                            calendarId = outer.items[a].id;
-                            summary = outer.items[a].summary;
-                            //if ((calendarId !== null) && (summary !== null)) {
-                            me.loadData(calendarId, summary);
-                            //}
+                            me.loadData(outer.items[a].id, outer.items[a].summary);
                         }
                     }
                 });
