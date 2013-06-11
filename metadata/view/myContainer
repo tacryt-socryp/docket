@@ -843,7 +843,7 @@
                     "    child.fireEvent('reloadPainted', child);\r",
                     "});\r",
                     "\r",
-                    "window.setInterval(me.reloadData,900000);"
+                    "window.setInterval(function() {me.reloadData();},900000);"
                 ]
             },
             "designerId": "0795efd8-674a-4ad3-bdcc-1c6dd1a236bf"

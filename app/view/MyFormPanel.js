@@ -23,7 +23,7 @@ Ext.define('Conflux.view.MyFormPanel', {
     config: {
         submitted: false,
         centered: true,
-        height: 387,
+        height: 500,
         id: 'MyFormPanel',
         itemId: 'MyFormPanel',
         width: 600,
@@ -42,8 +42,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                 xtype: 'textfield',
                 cls: 'eventTitle',
                 itemId: 'eventTitle',
-                label: 'Summary: ',
-                required: true
+                label: 'Summary: '
             },
             {
                 xtype: 'textareafield',
@@ -56,7 +55,6 @@ Ext.define('Conflux.view.MyFormPanel', {
                 xtype: 'datepickerfield',
                 itemId: 'datepicker',
                 label: 'Date: ',
-                required: true,
                 picker: {
                     itemId: 'picker'
                 }
@@ -99,7 +97,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                                         
                                     }
                                 },
-                                label: 'Start:'
+                                label: 'Start:',
+                                required: false
                             }
                         ]
                     },
@@ -152,7 +151,8 @@ Ext.define('Conflux.view.MyFormPanel', {
                                         
                                     }
                                 },
-                                label: 'End: '
+                                label: 'End: ',
+                                required: false
                             }
                         ]
                     },
@@ -168,6 +168,11 @@ Ext.define('Conflux.view.MyFormPanel', {
                 ]
             },
             {
+                xtype: 'textfield',
+                cls: 'eventGuest',
+                label: 'Guests:'
+            },
+            {
                 xtype: 'toolbar',
                 docked: 'bottom',
                 layout: {
@@ -181,6 +186,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                             var me = this,
                                 summary = document.getElementsByClassName('x-form-field')[0].value,
                                 description = document.getElementsByClassName('x-form-field')[1].value,
+                                guests = document.getElementsByClassName('x-form-field')[2].value,
                                 start = document.getElementsByClassName('startLabel')[0].innerHTML,
                                 end = document.getElementsByClassName('endLabel')[0].innerHTML,
                                 mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
@@ -284,11 +290,23 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 'attendees': [
                                 {
                                     'email': calendarId,
-                                    'displayName': "attendeeDisplayName",
-                                    'responseStatus': "needsAction"
+                                    'displayName': roomText,
+                                    'responseStatus': 'needsAction'
                                 }
                                 ]
                             };
+
+                            guests = guests.split(',');
+                            for (var i=0; i<guests.length; i++) {
+                                if (guests[i].indexOf('@') == -1) {
+
+                                }
+                                resource.attendees.push({
+                                    'email': guests[i],
+                                    'displayName': 'name',
+                                    'responseStatus': 'needsAction'
+                                });
+                            }
 
                             console.log(calendarId);
                             console.log(resource);

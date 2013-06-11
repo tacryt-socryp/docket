@@ -742,7 +742,7 @@ Ext.define('Conflux.view.myContainer', {
             child.fireEvent('reloadPainted', child);
         });
 
-        window.setInterval(me.reloadData,900000);
+        window.setInterval(function() {me.reloadData();},900000);
     },
 
     onTap: function(e) {

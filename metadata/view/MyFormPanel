@@ -8,7 +8,7 @@
     "userConfig": {
         "submitted": false,
         "centered": true,
-        "height": 387,
+        "height": 500,
         "hideAnimation": [
             "{\r",
             "    type: 'fadeOut',\r",
@@ -57,7 +57,7 @@
                 "itemId": "eventTitle",
                 "designer|displayName": "eventTitle",
                 "label": "Summary: ",
-                "required": true
+                "required": null
             },
             "designerId": "84889c28-5dc7-401b-9436-501f72728b47"
         },
@@ -90,7 +90,6 @@
             "userConfig": {
                 "itemId": "datepicker",
                 "label": "Date: ",
-                "required": true,
                 "placeHolder": null
             },
             "designerId": "d99a31ca-441e-4e48-b4c1-907f9938fb63",
@@ -202,7 +201,8 @@
                                 "designer|displayName": "eventStart",
                                 "label": "Start:",
                                 "labelAlign": null,
-                                "labelWidth": null
+                                "labelWidth": null,
+                                "required": false
                             },
                             "configAlternates": {
                                 "listeners": "object"
@@ -307,7 +307,8 @@
                                 ],
                                 "width": null,
                                 "designer|displayName": "eventEnd",
-                                "label": "End: "
+                                "label": "End: ",
+                                "required": false
                             },
                             "configAlternates": {
                                 "listeners": "object"
@@ -345,6 +346,22 @@
                     "designerId": "c0f58ee6-b074-4f1e-9397-dd1f6cb45da3"
                 }
             ]
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "eventGuest"
+                ],
+                "designer|displayName": "eventGuest",
+                "label": "Guests:"
+            },
+            "designerId": "c627a80c-2584-4fac-8995-8f6028abf9a7"
         },
         {
             "type": "Ext.Toolbar",
@@ -400,6 +417,7 @@
                                     "var me = this,\r",
                                     "    summary = document.getElementsByClassName('x-form-field')[0].value,\r",
                                     "    description = document.getElementsByClassName('x-form-field')[1].value,\r",
+                                    "    guests = document.getElementsByClassName('x-form-field')[2].value,\r",
                                     "    start = document.getElementsByClassName('startLabel')[0].innerHTML,\r",
                                     "    end = document.getElementsByClassName('endLabel')[0].innerHTML,\r",
                                     "    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
@@ -502,12 +520,24 @@
                                     "    },\r",
                                     "    'attendees': [\r",
                                     "    {\r",
-                                    "      'email': calendarId,\r",
-                                    "      'displayName': \"attendeeDisplayName\",\r",
-                                    "      'responseStatus': \"needsAction\"\r",
+                                    "        'email': calendarId,\r",
+                                    "        'displayName': roomText,\r",
+                                    "        'responseStatus': 'needsAction'\r",
                                     "    }\r",
                                     "    ]\r",
                                     "};\r",
+                                    "\r",
+                                    "guests = guests.split(',');\r",
+                                    "for (var i=0; i<guests.length; i++) {\r",
+                                    "    if (guests[i].indexOf('@') == -1) {\r",
+                                    "    \r",
+                                    "    }\r",
+                                    "    resource.attendees.push({\r",
+                                    "        'email': guests[i],\r",
+                                    "        'displayName': 'name',\r",
+                                    "        'responseStatus': 'needsAction'\r",
+                                    "    });\r",
+                                    "}\r",
                                     "\r",
                                     "console.log(calendarId);\r",
                                     "console.log(resource);\r",
@@ -565,7 +595,7 @@
                     "        myContainer = mainCarousel.getActiveItem();\r",
                     "    window.setTimeout(myContainer.reloadData(), 500);\r",
                     "}\r",
-                    "window.setTimeout(function() {component.destroy()}, 500);"
+                    "window.setTimeout(function() {component.destroy();}, 500);"
                 ],
                 "name": "hide"
             },
