@@ -24,6 +24,7 @@
             "    duration: 750\r",
             "}"
         ],
+        "style": "background:#FFF;",
         "width": 600,
         "designer|userClassName": "MyFormPanel",
         "hideOnMaskTap": true,
@@ -55,6 +56,7 @@
                     "eventTitle"
                 ],
                 "itemId": "eventTitle",
+                "width": 598,
                 "designer|displayName": "eventTitle",
                 "label": "Summary: ",
                 "required": null
@@ -73,6 +75,7 @@
                     "eventDescription"
                 ],
                 "itemId": "eventDescription",
+                "width": 598,
                 "designer|displayName": "eventDescription",
                 "label": "Description: ",
                 "autoCapitalize": true,
@@ -89,6 +92,7 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "datepicker",
+                "width": 598,
                 "label": "Date: ",
                 "placeHolder": null
             },
@@ -358,6 +362,7 @@
                 "cls": [
                     "eventGuest"
                 ],
+                "width": 598,
                 "designer|displayName": "eventGuest",
                 "label": "Guests:"
             },
@@ -376,6 +381,7 @@
                 "docked": "bottom",
                 "id": null,
                 "style": null,
+                "width": "100%",
                 "scrollable": null
             },
             "configAlternates": {

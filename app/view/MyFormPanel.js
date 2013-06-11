@@ -26,6 +26,7 @@ Ext.define('Conflux.view.MyFormPanel', {
         height: 495,
         id: 'MyFormPanel',
         itemId: 'MyFormPanel',
+        style: 'background:#FFF;',
         width: 600,
         hideOnMaskTap: true,
         modal: true,
@@ -42,18 +43,21 @@ Ext.define('Conflux.view.MyFormPanel', {
                 xtype: 'textfield',
                 cls: 'eventTitle',
                 itemId: 'eventTitle',
+                width: 598,
                 label: 'Summary: '
             },
             {
                 xtype: 'textareafield',
                 cls: 'eventDescription',
                 itemId: 'eventDescription',
+                width: 598,
                 label: 'Description: ',
                 autoCapitalize: true
             },
             {
                 xtype: 'datepickerfield',
                 itemId: 'datepicker',
+                width: 598,
                 label: 'Date: ',
                 picker: {
                     itemId: 'picker'
@@ -170,11 +174,13 @@ Ext.define('Conflux.view.MyFormPanel', {
             {
                 xtype: 'textareafield',
                 cls: 'eventGuest',
+                width: 598,
                 label: 'Guests:'
             },
             {
                 xtype: 'toolbar',
                 docked: 'bottom',
+                width: '100%',
                 layout: {
                     pack: 'center',
                     type: 'hbox'
