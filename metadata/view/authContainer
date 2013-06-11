@@ -68,7 +68,6 @@
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
                     "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
                     "    scopes = 'https://www.googleapis.com/auth/calendar',\r",
-                    "    items = [],\r",
                     "    calendarId,\r",
                     "    summary;\r",
                     "\r",
@@ -88,9 +87,9 @@
                     "                if (outer.items[a].id.substring(0,8) === 'bestfitm') {\r",
                     "                    calendarId = outer.items[a].id;\r",
                     "                    summary = outer.items[a].summary;\r",
-                    "                    if ((calendarId !== null) && (summary !== null)) {\r",
-                    "                        me.loadData(calendarId, summary, items);\r",
-                    "                    }\r",
+                    "                    //if ((calendarId !== null) && (summary !== null)) {\r",
+                    "                        me.loadData(calendarId, summary);\r",
+                    "                    //}\r",
                     "                }\r",
                     "            }\r",
                     "        });\r",
@@ -112,8 +111,7 @@
                 "fn": "loadData",
                 "designer|params": [
                     "calendarId",
-                    "summary",
-                    "items"
+                    "summary"
                 ],
                 "implHandler": [
                     "var me = this,\r",
@@ -199,7 +197,6 @@
                     "                                    child.timelineColor = timelineColors[array_i];\r",
                     "                                    child.dotColor = dotColors[array_i];\r",
                     "                                    child.events = resp.items;\r",
-                    "                                    //items.push(obj);\r",
                     "                                    mainCarousel.add(obj);\r",
                     "                                    if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {\r",
                     "                                        Ext.Viewport.setActiveItem('mainCarousel');\r",

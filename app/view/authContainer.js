@@ -64,7 +64,6 @@ Ext.define('Conflux.view.authContainer', {
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar',
-            items = [],
             calendarId,
             summary;
 
@@ -84,9 +83,9 @@ Ext.define('Conflux.view.authContainer', {
                         if (outer.items[a].id.substring(0,8) === 'bestfitm') {
                             calendarId = outer.items[a].id;
                             summary = outer.items[a].summary;
-                            if ((calendarId !== null) && (summary !== null)) {
-                                me.loadData(calendarId, summary, items);
-                            }
+                            //if ((calendarId !== null) && (summary !== null)) {
+                            me.loadData(calendarId, summary);
+                            //}
                         }
                     }
                 });
@@ -95,7 +94,7 @@ Ext.define('Conflux.view.authContainer', {
     });
     },
 
-    loadData: function(calendarId, summary, items) {
+    loadData: function(calendarId, summary) {
         var me = this,
             today = new Date(),
             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
@@ -179,7 +178,6 @@ Ext.define('Conflux.view.authContainer', {
                                             child.timelineColor = timelineColors[array_i];
                                             child.dotColor = dotColors[array_i];
                                             child.events = resp.items;
-                                            //items.push(obj);
                                             mainCarousel.add(obj);
                                             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
                                                 Ext.Viewport.setActiveItem('mainCarousel');
