@@ -424,7 +424,7 @@
                                     "var me = this,\r",
                                     "    summary = document.getElementsByClassName('x-input-text')[0].value,\r",
                                     "    description = document.getElementsByClassName('x-input-text')[1].value,\r",
-                                    "    guests = document.getElementsByClassName('x-form-field')[2].value,\r",
+                                    "    guests = document.getElementsByClassName('x-input-text')[2].value,\r",
                                     "    start = document.getElementsByClassName('startLabel')[0].innerHTML,\r",
                                     "    end = document.getElementsByClassName('endLabel')[0].innerHTML,\r",
                                     "    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
@@ -627,9 +627,9 @@
                     "if (component.submitted) {\r",
                     "    var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],\r",
                     "        myContainer = mainCarousel.getActiveItem();\r",
-                    "    window.setTimeout(myContainer.reloadData(), 500);\r",
+                    "    window.setTimeout(myContainer.reloadData(), 2000);\r",
                     "}\r",
-                    "window.setTimeout(function() {component.destroy();}, 500);"
+                    "window.setTimeout(function() {component.destroy();}, 2500);"
                 ],
                 "name": "hide"
             },
