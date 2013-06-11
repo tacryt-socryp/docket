@@ -6,13 +6,24 @@
     },
     "codeClass": null,
     "userConfig": {
+        "run": false,
         "html": null,
         "itemId": "authContainer",
         "style": null,
         "designer|userClassName": "authContainer",
         "designer|initialView": true
     },
+    "configAlternates": {
+        "run": "boolean"
+    },
     "designerId": "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "run",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "basiceventbinding",
@@ -67,8 +78,7 @@
                     "    scopes = 'https://www.googleapis.com/auth/calendar',\r",
                     "    items = [],\r",
                     "    calendarId,\r",
-                    "    summary\r",
-                    "    run = false;\r",
+                    "    summary;\r",
                     "\r",
                     "try {\r",
                     "    gapi.client.setApiKey(apiKey);\r",
@@ -87,7 +97,7 @@
                     "                    calendarId = outer.items[a].id;\r",
                     "                    summary = outer.items[a].summary;\r",
                     "                    if ((calendarId !== null) && (summary !== null)) {\r",
-                    "                        me.loadData(calendarId, summary, items, run);\r",
+                    "                        me.loadData(calendarId, summary, items, me.run);\r",
                     "                    }\r",
                     "                }\r",
                     "            }\r",
@@ -111,8 +121,7 @@
                 "designer|params": [
                     "calendarId",
                     "summary",
-                    "items",
-                    "run"
+                    "items"
                 ],
                 "implHandler": [
                     "var me = this,\r",
@@ -204,8 +213,8 @@
                     "                        }\r",
                     "                    }\r",
                     "                }\r",
-                    "                if ((items.length == 3) && (run === false)) {\r",
-                    "                    run = true;\r",
+                    "                if ((items.length == 3) && (me.run === false)) {\r",
+                    "                    me.run = true;\r",
                     "                    console.log(items);\r",
                     "                    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
                     "                    mainCarousel.setItems(items);\r",
