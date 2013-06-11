@@ -422,8 +422,8 @@
                                 ],
                                 "implHandler": [
                                     "var me = this,\r",
-                                    "    summary = document.getElementsByClassName('x-form-field')[0].value,\r",
-                                    "    description = document.getElementsByClassName('x-form-field')[1].value,\r",
+                                    "    summary = document.getElementsByClassName('x-input-text')[0].value,\r",
+                                    "    description = document.getElementsByClassName('x-input-text')[1].value,\r",
                                     "    guests = document.getElementsByClassName('x-form-field')[2].value,\r",
                                     "    start = document.getElementsByClassName('startLabel')[0].innerHTML,\r",
                                     "    end = document.getElementsByClassName('endLabel')[0].innerHTML,\r",
