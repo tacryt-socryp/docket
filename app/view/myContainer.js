@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Conflux.view.myContainer', {
+Ext.define('Confluent.view.myContainer', {
     extend: 'Ext.Container',
     alias: 'widget.myContainer',
 
@@ -416,8 +416,6 @@ Ext.define('Conflux.view.myContainer', {
             yloc = h/10,
             xloc;
 
-        console.log(scrollDisplace);
-
         surface.clear();
         surface.removeAll();
 
@@ -725,6 +723,7 @@ Ext.define('Conflux.view.myContainer', {
                 }).show(true);
             }
         }
+
         me.renderFrame();
     },
 
@@ -761,7 +760,7 @@ Ext.define('Conflux.view.myContainer', {
             calendarId = me.calendarId,
             child;
 
-        var token = Conflux.app.authToken,
+        var token = Confluent.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar';

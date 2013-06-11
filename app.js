@@ -28,11 +28,11 @@ Ext.application({
         'mainCarousel',
         'timeSlider'
     ],
-    name: 'Conflux',
+    name: 'Confluent',
 
     launch: function() {
 
-        Ext.create('Conflux.view.authContainer', {fullscreen: true});
+        Ext.create('Confluent.view.authContainer', {fullscreen: true});
     }
 
 });

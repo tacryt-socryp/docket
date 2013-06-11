@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Conflux.view.timeSlider', {
+Ext.define('Confluent.view.timeSlider', {
     extend: 'Ext.field.Slider',
     alias: 'widget.timeSlider',
 

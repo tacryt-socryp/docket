@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Conflux.view.MyFormPanel', {
+Ext.define('Confluent.view.MyFormPanel', {
     extend: 'Ext.form.Panel',
 
     requires: [
-        'Conflux.view.timeSlider'
+        'Confluent.view.timeSlider'
     ],
 
     config: {
@@ -201,7 +201,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                                 attendee,
                                 date;
 
-                            var token = Conflux.app.authToken,
+                            var token = Confluent.app.authToken,
                                 clientId = '464168127252.apps.googleusercontent.com',
                                 apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
                                 scopes = 'https://www.googleapis.com/auth/calendar';

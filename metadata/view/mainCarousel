@@ -19,7 +19,7 @@
         "designer|userClassName": "mainCarousel",
         "designer|userAlias": "mainCarousel",
         "requires": [
-            "Conflux.view.myContainer"
+            "Confluent.view.myContainer"
         ],
         "direction": "vertical"
     },

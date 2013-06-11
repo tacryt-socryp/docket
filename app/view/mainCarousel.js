@@ -13,12 +13,12 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Conflux.view.mainCarousel', {
+Ext.define('Confluent.view.mainCarousel', {
     extend: 'Ext.carousel.Carousel',
     alias: 'widget.mainCarousel',
 
     requires: [
-        'Conflux.view.myContainer'
+        'Confluent.view.myContainer'
     ],
 
     config: {

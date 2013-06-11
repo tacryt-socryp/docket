@@ -15,7 +15,7 @@
             "mainCarousel",
             "timeSlider"
         ],
-        "name": "Conflux"
+        "name": "Confluent"
     },
     "configAlternates": {
         "authToken": "object"

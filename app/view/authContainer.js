@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Conflux.view.authContainer', {
+Ext.define('Confluent.view.authContainer', {
     extend: 'Ext.Container',
 
     config: {
@@ -36,8 +36,8 @@ Ext.define('Conflux.view.authContainer', {
             parameters[key] = value;
         });
 
-        Ext.create('Conflux.view.mainCarousel');
-        Ext.create('Conflux.view.MyFormPanel');
+        Ext.create('Confluent.view.mainCarousel');
+        Ext.create('Confluent.view.MyFormPanel');
 
         function isEmpty(ob) {
             for (var i in ob) {
@@ -60,7 +60,7 @@ Ext.define('Conflux.view.authContainer', {
 
     generateItems: function() {
         var me = this,
-            token = Conflux.app.authToken,
+            token = Confluent.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar';
@@ -94,7 +94,7 @@ Ext.define('Conflux.view.authContainer', {
             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
             child;
 
-        var token = Conflux.app.authToken,
+        var token = Confluent.app.authToken,
             clientId = '464168127252.apps.googleusercontent.com',
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar';
