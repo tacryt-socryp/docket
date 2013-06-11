@@ -60,6 +60,9 @@ Ext.define('Conflux.view.myContainer', {
                                 yloc = h/10,
                                 xloc;
 
+                            console.log(w);
+                            console.log(h);
+
                             me.setSize(w,h);
                             surface.setSize(w,h);
                             surface.setBackground(backgroundColor);
