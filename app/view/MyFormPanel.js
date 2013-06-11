@@ -305,21 +305,19 @@ Ext.define('Conflux.view.MyFormPanel', {
                             guests = guests.split(',');
                             for (var i=0; i<guests.length; i++) {
                                 attendee = guests[i];
+                                if (attendees !== '') {
+                                    if (guests[i].indexOf('@') == -1) {
+                                        attendee = attendee + '@bestfitmedia.com';
+                                    }
 
-                                if (guests[i].indexOf('@') == -1) {
-                                    attendee = attendee + '@bestfitmedia.com';
+                                    attendee = attendee.split('@');
+                                    resource.attendees.push({
+                                        'email': attendee[0] + '@' + attendee[1],
+                                        'displayName': attendee[0],
+                                        'responseStatus': 'needsAction'
+                                    });
                                 }
-
-                                attendee = attendee.split('@');
-                                resource.attendees.push({
-                                    'email': attendee[0] + '@' + attendee[1],
-                                    'displayName': attendee[0],
-                                    'responseStatus': 'needsAction'
-                                });
                             }
-
-                            console.log(calendarId);
-                            console.log(resource);
 
                             try {
                                 gapi.client.setApiKey(apiKey);
@@ -337,33 +335,11 @@ Ext.define('Conflux.view.MyFormPanel', {
                                     });
                                     request.execute(function(resp) {
                                         console.log(resp);
-                                        var Tooltip;
                                         if (resp.id) {
-                                            Tooltip = new Ext.Panel({
-                                                autoDestroy: true,
-                                                floating: true,
-                                                width: 100,
-                                                height: 30,
-                                                styleHtmlContent: true,
-                                                style: "background-color: #FFC;",
-                                                html: 'Success!',
-                                                hideAnimation: 'fadeOut'
-                                            }).show(true);
                                             console.log("Success!");
                                         } else{
-                                            Tooltip = new Ext.Panel({
-                                                autoDestroy: true,
-                                                floating: true,
-                                                width: 100,
-                                                height: 30,
-                                                styleHtmlContent: true,
-                                                style: "background-color: #FFC;",
-                                                html: ' Error! ',
-                                                hideAnimation: 'fadeOut'
-                                            }).show(true);
                                             console.log(" Error! ");
                                         }
-                                        window.setTimeout(function() { Tooltip.hide(); }, 2000);
                                         var formPanel = me.getParent().getParent();
                                         formPanel.submitted = true;
                                         formPanel.hide();
