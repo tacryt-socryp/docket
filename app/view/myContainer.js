@@ -766,6 +766,9 @@ Ext.define('Conflux.view.myContainer', {
             apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
             scopes = 'https://www.googleapis.com/auth/calendar';
 
+        today.setHours(0,0,0,0);
+        today = today.toISOString();
+
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
 
