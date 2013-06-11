@@ -8,7 +8,7 @@
     "userConfig": {
         "submitted": false,
         "centered": true,
-        "height": 500,
+        "height": 495,
         "hideAnimation": [
             "{\r",
             "    type: 'fadeOut',\r",
