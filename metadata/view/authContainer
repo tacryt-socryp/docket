@@ -203,6 +203,7 @@
                     "                    }\r",
                     "                }\r",
                     "                if (items.length == 3) {\r",
+                    "                    console.log(items);\r",
                     "                    mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];\r",
                     "                    mainCarousel.setItems(items);\r",
                     "                    Ext.Viewport.setActiveItem('mainCarousel');\r",

@@ -186,6 +186,7 @@ Ext.define('Conflux.view.authContainer', {
                             }
                         }
                         if (items.length == 3) {
+                            console.log(items);
                             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                             mainCarousel.setItems(items);
                             Ext.Viewport.setActiveItem('mainCarousel');
