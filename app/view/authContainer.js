@@ -107,37 +107,37 @@ Ext.define('Conflux.view.authContainer', {
             scopes = 'https://www.googleapis.com/auth/calendar';
 
         var backgroundColors = [
-        '#53ab73', //Green
+        '#0d6289', //Blue
         '#4E2B52', //Purple
         '#d27f56', //Orange
-        '#0d6289', //Blue
+        '#53ab73', //Green
         '#FF4242', //Red
         '#D9D1A9'  //Beige
         ];
 
         var boxColors = [
-        '#7DCB99', //Green
+        '#43aad5', //Blue
         '#436085', //Purple
         '#F99665', //Orange
-        '#43aad5', //Blue
+        '#7DCB99', //Green
         '#FF837E', //Red
         '#B9C18A'  //Beige
         ];
 
         var timelineColors = [
-        '#80E2BF', //Green
+        '#2b8bb5', //Blue
         '#5A325F', //Purple
         '#DA8359', //Orange
-        '#2b8bb5', //Blue
+        '#80E2BF', //Green
         '#EC6B51', //Red
         '#A4AE6A'  //Beige
         ];
 
         var dotColors = [
-        '#C4D7A4', //Green
+        '#176c93', //Blue
         '#8497BF', //Purple
         '#EC8E60', //Orange
-        '#176c93', //Blue
+        '#C4D7A4', //Green
         '#FFBFB4', //Red
         '#97A97F'  //Beige
         ];
@@ -185,7 +185,7 @@ Ext.define('Conflux.view.authContainer', {
                                 }
                             }
                         }
-                        if (items.length == 4) {
+                        if (items.length == 3) {
                             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
                             mainCarousel.setItems(items);
                             Ext.Viewport.setActiveItem('mainCarousel');
