@@ -189,7 +189,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                             var me = this,
                                 summary = document.getElementsByClassName('x-input-text')[0].value,
                                 description = document.getElementsByClassName('x-input-text')[1].value,
-                                guests = document.getElementsByClassName('x-input-text')[2].value,
+                                guests = document.getElementsByClassName('x-input-text')[3].value,
                                 start = document.getElementsByClassName('startLabel')[0].innerHTML,
                                 end = document.getElementsByClassName('endLabel')[0].innerHTML,
                                 mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
