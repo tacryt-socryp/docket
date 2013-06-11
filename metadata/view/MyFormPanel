@@ -348,7 +348,7 @@
             ]
         },
         {
-            "type": "Ext.field.Text",
+            "type": "Ext.field.TextArea",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -586,7 +586,8 @@
                                     "                    height: 30,\r",
                                     "                    styleHtmlContent: true,\r",
                                     "                    style: \"background-color: #FFC;\",\r",
-                                    "                    html: ' Error! '\r",
+                                    "                    html: ' Error! ',\r",
+                                    "                    hideAnimation: 'fadeOut'\r",
                                     "                }).show(true);\r",
                                     "                console.log(\" Error! \");\r",
                                     "            }\r",

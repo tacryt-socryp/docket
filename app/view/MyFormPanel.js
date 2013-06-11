@@ -168,7 +168,7 @@ Ext.define('Conflux.view.MyFormPanel', {
                 ]
             },
             {
-                xtype: 'textfield',
+                xtype: 'textareafield',
                 cls: 'eventGuest',
                 label: 'Guests:'
             },
