@@ -99,7 +99,6 @@ Ext.define('Conflux.view.myContainer', {
                                 description = events[iter].description;
                                 vDisplaceSumm = 0;
                                 vDisplaceDesc = 0;
-                                console.log(iter);
 
                                 try {
                                     summary = summary.replace(/\s+/g,' ');
@@ -779,6 +778,10 @@ Ext.define('Conflux.view.myContainer', {
                     request.execute(function(resp) {
                         child = me.query('#inlineDraw')[0];
                         child.events = resp.items;
+                        console.log(child.scrollDisplace);
+                        if (child.scrollDisplace === null) {
+                            child.scrollDisplace = 0;
+                        }
                         child.fireEvent('reloadPainted',child);
                     });
                 });
