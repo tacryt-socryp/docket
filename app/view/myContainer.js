@@ -38,7 +38,7 @@ Ext.define('Confluent.view.myContainer', {
                                 h = Ext.getBody().getSize().height,
                                 surface = me.getSurface('main'),
                                 today = new Date(Date.now()),
-                                w = 203 * events.length,
+                                w = 205 * events.length,
                                 vDisplaceSumm,
                                 vDisplaceDesc,
                                 description,
