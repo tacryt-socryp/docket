@@ -2,7 +2,6 @@
 ## Eclipse
 #################
 
-.sencha/
 touch/
 *.pydevproject
 .project
