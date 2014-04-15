@@ -292,10 +292,6 @@ Ext.define('Confluent.view.MyFormPanel', {
                             for (var i=0; i<guests.length; i++) {
                                 attendee = guests[i];
                                 if (attendees !== '') {
-                                    if (guests[i].indexOf('@') == -1) {
-                                        attendee = attendee + '@bestfitmedia.com';
-                                    }
-
                                     attendee = attendee.split('@');
                                     resource.attendees.push({
                                         'email': attendee[0] + '@' + attendee[1],

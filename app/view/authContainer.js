@@ -63,9 +63,7 @@ Ext.define('Confluent.view.authContainer', {
                 var request = gapi.client.calendar.calendarList.list();
                 request.execute(function(outer) {
                     for (var a = 0; a < outer.items.length; a++) {
-                        if (outer.items[a].id.substring(0,8) === 'bestfitm') {
-                            me.loadData(outer.items[a].id, outer.items[a].summary);
-                        }
+                        me.loadData(outer.items[a].id, outer.items[a].summary);
                     }
                 });
             });
