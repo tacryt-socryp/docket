@@ -34,7 +34,7 @@ Ext.define('Confluent.view.myContainer', {
                                 events = me.events;
 
                             var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
-                                displace = Ext.getBody().getSize().width - 200,
+                                displace = Ext.getBody().getSize().width - 300,
                                 h = Ext.getBody().getSize().height,
                                 surface = me.getSurface('main'),
                                 today = new Date(Date.now()),
