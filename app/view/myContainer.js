@@ -34,11 +34,11 @@ Ext.define('Confluent.view.myContainer', {
                                 events = me.events;
 
                             var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
-                                displace = Ext.getBody().getSize().width - 300,
+                                displace = Ext.getBody().getSize().width - 200,
                                 h = Ext.getBody().getSize().height,
                                 surface = me.getSurface('main'),
                                 today = new Date(Date.now()),
-                                w = 205 * events.length,
+                                w = 210 * events.length,
                                 vDisplaceSumm,
                                 vDisplaceDesc,
                                 description,
@@ -394,7 +394,7 @@ Ext.define('Confluent.view.myContainer', {
             h = Ext.getBody().getSize().height,
             surface = me.getSurface('main'),
             today = new Date(Date.now()),
-            w = 203 * events.length,
+            w = 210 * events.length,
             vDisplaceSumm,
             vDisplaceDesc,
             description,
