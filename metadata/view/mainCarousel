@@ -6,22 +6,22 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "mainCarousel",
+        "designer|userClassName": "mainCarousel",
+        "direction": "vertical",
         "fullscreen": true,
         "id": null,
         "itemId": "mainCarousel",
+        "requires": [
+            "Confluent.view.myContainer"
+        ],
         "showAnimation": [
             "{\r",
             "    type: 'fadeIn',\r",
             "    duration: 750\r",
             "}"
         ],
-        "ui": "light",
-        "designer|userClassName": "mainCarousel",
-        "designer|userAlias": "mainCarousel",
-        "requires": [
-            "Confluent.view.myContainer"
-        ],
-        "direction": "vertical"
+        "ui": "light"
     },
     "configAlternates": {
         "showAnimation": "object"

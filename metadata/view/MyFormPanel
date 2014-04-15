@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "submitted": false,
         "centered": true,
+        "designer|userClassName": "MyFormPanel",
         "height": 495,
         "hideAnimation": [
             "{\r",
@@ -15,9 +15,11 @@
             "    duration: 750\r",
             "}"
         ],
+        "hideOnMaskTap": true,
         "html": null,
         "id": "MyFormPanel",
         "itemId": "MyFormPanel",
+        "modal": true,
         "showAnimation": [
             "{\r",
             "    type: 'fadeIn',\r",
@@ -25,10 +27,8 @@
             "}"
         ],
         "style": null,
-        "width": 600,
-        "designer|userClassName": "MyFormPanel",
-        "hideOnMaskTap": true,
-        "modal": true
+        "submitted": false,
+        "width": 600
     },
     "configAlternates": {
         "hideAnimation": "object",
@@ -55,11 +55,11 @@
                 "cls": [
                     "eventTitle"
                 ],
-                "itemId": "eventTitle",
-                "width": null,
                 "designer|displayName": "eventTitle",
+                "itemId": "eventTitle",
                 "label": "Summary: ",
-                "required": null
+                "required": null,
+                "width": null
             },
             "designerId": "84889c28-5dc7-401b-9436-501f72728b47"
         },
@@ -71,15 +71,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "autoCapitalize": true,
                 "cls": [
                     "eventDescription"
                 ],
-                "itemId": "eventDescription",
-                "width": null,
                 "designer|displayName": "eventDescription",
+                "itemId": "eventDescription",
                 "label": "Description: ",
-                "autoCapitalize": true,
-                "maxRows": null
+                "maxRows": null,
+                "width": null
             },
             "designerId": "350f642e-349e-42f7-a90d-665ab9a7d4cc"
         },
@@ -92,9 +92,9 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "datepicker",
-                "width": null,
                 "label": "Date: ",
-                "placeHolder": null
+                "placeHolder": null,
+                "width": null
             },
             "designerId": "d99a31ca-441e-4e48-b4c1-907f9938fb63",
             "cn": [
@@ -171,6 +171,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "eventStart",
+                                "label": "Start:",
+                                "labelAlign": null,
+                                "labelWidth": 179,
                                 "listeners": [
                                     "{\r",
                                     "\r",
@@ -201,12 +205,7 @@
                                     "\r",
                                     "}"
                                 ],
-                                "width": null,
-                                "designer|displayName": "eventStart",
-                                "label": "Start:",
-                                "labelAlign": null,
-                                "labelWidth": 179,
-                                "required": false
+                                "width": null
                             },
                             "configAlternates": {
                                 "listeners": "object"
@@ -234,13 +233,13 @@
                         "cls": [
                             "startLabel"
                         ],
+                        "designer|displayName": "startLabel",
                         "html": "12:00 am",
                         "itemId": "startLabel",
                         "padding": "20 0 0 0",
                         "style": "background:#FFF;font-size:90%;",
                         "top": null,
-                        "width": 80,
-                        "designer|displayName": "startLabel"
+                        "width": 80
                     },
                     "designerId": "4e503488-4915-4777-a57e-a83f828b9acc"
                 }
@@ -279,6 +278,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "designer|displayName": "eventEnd",
+                                "label": "End: ",
+                                "labelWidth": 179,
                                 "listeners": [
                                     "{\r",
                                     "\r",
@@ -309,11 +311,7 @@
                                     "\r",
                                     "}"
                                 ],
-                                "width": null,
-                                "designer|displayName": "eventEnd",
-                                "label": "End: ",
-                                "labelWidth": 179,
-                                "required": false
+                                "width": null
                             },
                             "configAlternates": {
                                 "listeners": "object"
@@ -341,12 +339,12 @@
                         "cls": [
                             "endLabel"
                         ],
+                        "designer|displayName": "endLabel",
                         "html": "12:00 am",
                         "itemId": "endLabel",
                         "padding": "20 0 0 0",
                         "style": "background:#FFF; font-size:90%;",
-                        "width": 80,
-                        "designer|displayName": "endLabel"
+                        "width": 80
                     },
                     "designerId": "c0f58ee6-b074-4f1e-9397-dd1f6cb45da3"
                 }
@@ -363,9 +361,9 @@
                 "cls": [
                     "eventGuest"
                 ],
-                "width": null,
                 "designer|displayName": "eventGuest",
-                "label": "Guests:"
+                "label": "Guests:",
+                "width": null
             },
             "designerId": "c627a80c-2584-4fac-8995-8f6028abf9a7"
         },
@@ -377,13 +375,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "container|pack": "center",
                 "border": null,
+                "container|pack": "center",
                 "docked": "bottom",
                 "id": null,
+                "scrollable": null,
                 "style": null,
-                "width": "100%",
-                "scrollable": null
+                "width": "100%"
             },
             "configAlternates": {
                 "style": "object"
@@ -398,12 +396,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|displayName": "submitEvent",
                         "margin": null,
                         "padding": null,
+                        "text": "Submit",
                         "ui": "confirm",
-                        "width": "120px",
-                        "designer|displayName": "submitEvent",
-                        "text": "Submit"
+                        "width": "120px"
                     },
                     "designerId": "0c975e14-b70d-42e6-a206-55ed5ee68e55",
                     "cn": [
@@ -415,11 +413,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "var me = this,\r",
                                     "    summary = document.getElementsByClassName('x-input-text')[0].value,\r",

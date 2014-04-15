@@ -9,14 +9,14 @@
         "authToken": [
             "{}"
         ],
+        "name": "Confluent",
         "views": [
             "myContainer",
             "authContainer",
             "mainCarousel",
             "timeSlider",
             "MyFormPanel"
-        ],
-        "name": "Confluent"
+        ]
     },
     "configAlternates": {
         "authToken": "object"

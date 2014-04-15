@@ -1,6 +1,9 @@
 {
     "name": "Conflux",
     "settings": {
+        "cmd": {
+            "license": "commercial"
+        },
         "spacesToIndent": 4,
         "lineEnding": "CRLF",
         "genTimestamps": false,
@@ -8,73 +11,23 @@
         "urlPrefix": "http://loganfynne.com",
         "exportPath": "",
         "buildShouldOverwriteIndex": true,
-        "sdkPath": "C:/Users/Logan/Downloads/sencha-touch-2.2.1-gpl/touch-2.2.1"
+        "sdkPath": "C:/Users/Logan/Downloads/sencha-touch-2.2.1-gpl/touch-2.2.1",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone",
+                "builtIn": true,
+                "height": 480,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
+        },
+        "generateArchitectVersion": true
     },
-    "xdsVersion": "2.2.2",
-    "xdsBuild": 991,
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
     "schemaVersion": 1,
-    "upgradeVersion": 210000000503,
+    "upgradeVersion": 300000000004,
     "framework": "touch22",
-    "topInstanceFileMap": {
-        "f89b6b25-6c19-4b94-86a9-fb489da7899b": {
-            "paths": [
-                "metadata/resource/Library"
-            ],
-            "className": "Library"
-        },
-        "c181fb82-1cf4-40c3-bbba-b48fa1fceb9d": {
-            "paths": [
-                "metadata/view/mainCarousel",
-                "app/view/override/mainCarousel.js",
-                "app/view/mainCarousel.js"
-            ],
-            "className": "mainCarousel"
-        },
-        "5133ddc6-983b-440e-ba54-ce2fa457ad04": {
-            "paths": [
-                "metadata/view/MyFormPanel",
-                "app/view/override/MyFormPanel.js",
-                "app/view/MyFormPanel.js"
-            ],
-            "className": "MyFormPanel"
-        },
-        "8a42d6e3-6787-404c-a166-e113ff2a918a": {
-            "paths": [
-                "metadata/resource/js"
-            ],
-            "className": "js"
-        },
-        "a6268fce-a6c1-4bb2-b353-eeaf75632f6b": {
-            "paths": [
-                "metadata/view/authContainer",
-                "app/view/override/authContainer.js",
-                "app/view/authContainer.js"
-            ],
-            "className": "authContainer"
-        },
-        "9bc94066-7690-4c68-8866-c110d3b1b5d4": {
-            "paths": [
-                "metadata/view/myContainer",
-                "app/view/override/myContainer.js",
-                "app/view/myContainer.js"
-            ],
-            "className": "myContainer"
-        },
-        "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee": {
-            "paths": [
-                "metadata/view/timeSlider",
-                "app/view/override/timeSlider.js",
-                "app/view/timeSlider.js"
-            ],
-            "className": "timeSlider"
-        },
-        "8763a9ee-fc04-43f8-bc75-4fde273f69b2": {
-            "paths": [
-                "metadata/resource/css"
-            ],
-            "className": "css"
-        }
-    },
     "viewOrderMap": {
         "view": [
             "a6268fce-a6c1-4bb2-b353-eeaf75632f6b",

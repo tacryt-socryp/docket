@@ -6,11 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "authContainer",
         "html": null,
         "itemId": "authContainer",
-        "style": null,
-        "designer|userClassName": "authContainer",
-        "designer|initialView": true
+        "style": null
     },
     "configAlternates": {
         "run": "boolean"
@@ -102,11 +102,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "loadData",
                 "designer|params": [
                     "calendarId",
                     "summary"
                 ],
+                "fn": "loadData",
                 "implHandler": [
                     "var me = this,\r",
                     "    today = new Date(),\r",

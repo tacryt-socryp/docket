@@ -6,19 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoDestroy": false,
+        "designer|userAlias": "myContainer",
+        "designer|userClassName": "myContainer",
         "height": null,
         "id": null,
         "itemId": "myContainer",
-        "width": null,
-        "designer|userClassName": "myContainer",
-        "designer|userAlias": "myContainer",
-        "autoDestroy": false,
         "scrollable": [
             "{\r",
             "    direction: 'horizontal',\r",
             "    directionLock: true\r",
             "}"
-        ]
+        ],
+        "width": null
     },
     "configAlternates": {
         "scrollable": "object"
@@ -45,16 +45,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "autoDestroy": false,
+                "designer|createAlias": null,
+                "designer|displayName": "inlineDraw",
                 "events": [
                     "[]"
                 ],
-                "scrollDisplace": 0,
                 "id": null,
                 "itemId": "inlineDraw",
-                "style": null,
-                "designer|displayName": "inlineDraw",
-                "designer|createAlias": null,
-                "autoDestroy": false
+                "scrollDisplace": 0,
+                "style": null
             },
             "configAlternates": {
                 "events": "array",
@@ -469,10 +469,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "onInlineDrawReloadPainted",
                         "designer|params": [
                             "draw"
                         ],
+                        "fn": "onInlineDrawReloadPainted",
                         "implHandler": [
                             "var me = this.query('#inlineDraw')[0],\r",
                             "    backgroundColor = me.backgroundColor,\r",
@@ -855,10 +855,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onTap",
                 "designer|params": [
                     "e"
                 ],
+                "fn": "onTap",
                 "implHandler": [
                     "if (e.pageY <= 70) {\r",
                     "    if (e.pageX >= Ext.getBody().getSize().width-200) {\r",
@@ -886,7 +886,7 @@
                     "    calendarId = me.calendarId,\r",
                     "    child;\r",
                     "\r",
-                    "var token = Conflux.app.authToken,\r",
+                    "var token = Confluent.app.authToken,\r",
                     "    clientId = '464168127252.apps.googleusercontent.com',\r",
                     "    apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',\r",
                     "    scopes = 'https://www.googleapis.com/auth/calendar';\r",

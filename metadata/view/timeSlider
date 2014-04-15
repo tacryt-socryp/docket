@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "width": 515,
-        "designer|userClassName": "timeSlider",
         "designer|userAlias": "timeSlider",
+        "designer|userClassName": "timeSlider",
         "label": null,
         "labelWidth": 180,
+        "maxValue": 48,
         "required": true,
-        "maxValue": 48
+        "width": 515
     },
     "designerId": "db4bd1c7-cf2a-4add-9da2-ca81c949f9ee",
     "cn": [
