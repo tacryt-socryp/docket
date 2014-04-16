@@ -155,6 +155,7 @@ Ext.define('Confluent.view.authContainer', {
                                             child.timelineColor = timelineColors[array_i];
                                             child.dotColor = dotColors[array_i];
                                             child.events = resp.items;
+                                            child.scrollDisplace = 0;
                                             mainCarousel.add(obj);
                                             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
                                                 Ext.Viewport.setActiveItem('mainCarousel');

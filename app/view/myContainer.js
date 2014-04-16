@@ -16,7 +16,6 @@ Ext.define('Confluent.view.myContainer', {
         items: [{
             xtype: 'draw',
             events: [],
-            scrollDisplace: 0,
             itemId: 'inlineDraw',
             autoDestroy: false,
             listeners: [{
