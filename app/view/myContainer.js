@@ -29,8 +29,6 @@ fn: function(element, eOpts) {
         dotColor = me.dotColor,
         scrollDisplace = me.scrollDisplace,
         events = me.events;
-    
-    console.log(me);
 
     var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
         displace = Ext.getBody().getSize().width - 200,
@@ -72,7 +70,7 @@ fn: function(element, eOpts) {
         text: roomText,
         font: "40px Arial",
         fill: '#FFF',
-        x: 35,
+        x: scrollDisplace+35,
         y: 70
     }).show(true);
 
@@ -377,7 +375,10 @@ event: 'painted'},
         });
 
         me.getScrollable().getScroller().on('scrollend', function(scroll, x, y) {
+            console.log(me);
+            console.log(me.scrollDisplace);
             child = me.query('#inlineDraw')[0];
+            console.log(child.scrollDisplace);
             child.scrollDisplace = scroll.position.x;
             child.fireEvent('painted', child);
         });
