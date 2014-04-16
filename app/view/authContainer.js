@@ -136,26 +136,29 @@ gapi.client.load('calendar', 'v3', function() {
     });
 
     request.execute(function(resp) {
-        if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
-            obj = new Confluent.view.myContainer();
-            array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
-            child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
+if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
+    if(summary.indexOf("birthdays and events") == -1 && summary.indexOf("Holidays") == -1){
+        obj = new Confluent.view.myContainer();
+        array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
+        child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
-            obj.roomText = summary;
-            obj.calendarId = calendarId;
+        obj.roomText = summary;
+        obj.calendarId = calendarId;
 
-            child.roomText = summary;
-            child.backgroundColor = backgroundColors[array_i];
-            child.boxColor = boxColors[array_i];
-            child.timelineColor = timelineColors[array_i];
-            child.dotColor = dotColors[array_i];
-            child.events = resp.items;
-            mainCarousel.add(obj);
-            if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
-                Ext.Viewport.setActiveItem('mainCarousel');
-            }
-        }
-        });
+        child.roomText = summary;
+        child.backgroundColor = backgroundColors[array_i];
+        child.boxColor = boxColors[array_i];
+        child.timelineColor = timelineColors[array_i];
+        child.dotColor = dotColors[array_i];
+        child.events = resp.items;
+        mainCarousel.add(obj);
+        if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
+            Ext.Viewport.setActiveItem('mainCarousel');
+        }        
+    }
+}
+        
+});
 });
 } else {
     window.location.reload();
