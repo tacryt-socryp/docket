@@ -27,7 +27,6 @@ fn: function(element, eOpts) {
         roomText = me.roomText,
         boxColor = me.boxColor,
         dotColor = me.dotColor,
-        scrollDisplace = me.scrollDisplace,
         events = me.events;
 
     var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
@@ -70,7 +69,7 @@ fn: function(element, eOpts) {
         text: roomText,
         font: "40px Arial",
         fill: '#FFF',
-        x: scrollDisplace+35,
+        x: 35,
         y: 70
     }).show(true);
 
@@ -79,7 +78,7 @@ fn: function(element, eOpts) {
         text: '+add',
         font: "36px Arial",
         fill: '#FFF',
-        x: scrollDisplace+displace,
+        x: displace,
         y: 70
     }).show(true);
 
@@ -374,16 +373,6 @@ event: 'painted'},
             tap: me.onTap
         });
 
-        me.getScrollable().getScroller().on('scrollend', function(scroll, x, y) {
-            console.log(me);
-            console.log(me.scrollDisplace);
-            child = me.query('#inlineDraw')[0];
-            console.log(child.scrollDisplace);
-            child.items.items[0].scrollDisplace = scroll.position.x;
-            //child.scrollDisplace = scroll.position.x;
-            child.fireEvent('painted', child);
-        });
-
         window.setInterval(function() {me.reloadData();},900000);
     },
 
@@ -429,7 +418,6 @@ function(authResult) {
             request.execute(function(resp) {
                 child = me.query('#inlineDraw')[0];
                 child.events = resp.items;
-                console.log(child.scrollDisplace);
                 child.fireEvent('painted',child);
             });
         });
