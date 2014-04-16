@@ -30,6 +30,8 @@ fn: function(element, eOpts) {
         dotColor = me.dotColor,
         scrollDisplace = me.scrollDisplace,
         events = me.events;
+    
+    console.log(me);
 
     var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
         displace = Ext.getBody().getSize().width - 200,
