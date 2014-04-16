@@ -28,6 +28,7 @@ fn: function(element, eOpts) {
         roomText = me.roomText,
         boxColor = me.boxColor,
         dotColor = me.dotColor,
+        scrollDisplace = me.scrollDisplace,
         events = me.events;
 
     var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
@@ -79,7 +80,7 @@ fn: function(element, eOpts) {
         text: '+add',
         font: "36px Arial",
         fill: '#FFF',
-        x: displace,
+        x: scrollDisplace+displace,
         y: 70
     }).show(true);
 
