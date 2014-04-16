@@ -379,7 +379,8 @@ event: 'painted'},
             console.log(me.scrollDisplace);
             child = me.query('#inlineDraw')[0];
             console.log(child.scrollDisplace);
-            child.scrollDisplace = scroll.position.x;
+            child.items.items[0].scrollDisplace = scroll.position.x;
+            //child.scrollDisplace = scroll.position.x;
             child.fireEvent('painted', child);
         });
 
