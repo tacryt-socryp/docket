@@ -1,4 +1,4 @@
 confluent
 =========
 
-This only works on calendar resources. Regular calendar events will NOT be displayed.
+A calendar timeline utilizing canvas that integrates with Google Calendar.
