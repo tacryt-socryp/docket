@@ -166,6 +166,7 @@ function addTriangle(fillColor,x,y,orientation) {
         }
 
         dateTime = events[iter].start.dateTime;
+        console.log(dateTime);
         dateTime = Date.parse(dateTime);
         dateTime = new Date(dateTime);
 
