@@ -104,6 +104,32 @@ function addTriangle(fillColor,x,y,orientation) {
         }).show(true);
     }
 }
+    
+function processDate(dateDate) {
+    dateDate = Date.parse(dateDate);
+    dateDate = new Date(dateDate);
+
+    dateDate = dateDate.toTimeString().substring(0,5);
+    if (parseInt(dateDate.substring(0,2),10) >= 12) {
+        if (dateDate.substring(0,2) == '12') {
+            dateDate = dateDate + ' pm';
+        } else if ((parseInt(dateDate.substring(0,2),10)-12) < 10) {
+            dateDate = '0' + (parseInt(dateDate.substring(0,2),10)-12) + dateDate.substring(2) + ' pm';
+        } else {
+            dateDate = (parseInt(dateDate.substring(0,2),10)-12) + dateDate.substring(2) + ' pm';
+        }
+    } else {
+        if (dateDate.substring(0,1) == '0') {
+            dateDate = '12' + dateDate.substring(2) + ' am';
+        } else if (parseInt(dateDate.substring(0,2),10) < 10) {
+            dateDate = '0' + dateDate + ' am';
+        } else {
+            dateDate = dateDate + ' am';
+        }
+    }
+
+    return dateDate;
+}
 
 //Line across screen
 addRect(timelineColor, 20, w, 0, yloc+330);
@@ -166,14 +192,13 @@ for (var iter = 0; iter < events.length; iter++) {
     }
 
     dateTime = events[iter].start.dateTime;
-    console.log(dateTime);
+
     if (typeof dateTime === 'undefined') {
         dateTime = events[iter].start.date;
-        dateStart = "All";
-        dateEnd = "Day";
+        dateStart = "12:00am";
+        dateEnd = "11:59pm";
     } else {
-        dateTime = Date.parse(dateTime);
-        dateTime = new Date(dateTime);
+        dateTime = new Date(Date.parse(dateTime));
 
         if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
             dateTime = dateTime.toTimeString().substring(0,5);
@@ -194,57 +219,12 @@ for (var iter = 0; iter < events.length; iter++) {
                     dateTime = dateTime + ' am';
                 }
             }
-
-        } else if (dateTime.getMonth() == today.getMonth()) {
-            dateTime = dateTime.toDateString().substring(0,10);
         } else {
             dateTime = dateTime.toDateString().substring(0,10);
         }
 
-        dateStart = events[iter].start.dateTime;
-        dateStart = Date.parse(dateStart);
-        dateStart = new Date(dateStart);
-        dateEnd = events[iter].end.dateTime;
-        dateEnd = Date.parse(dateEnd);
-        dateEnd = new Date(dateEnd);
-
-        dateStart = dateStart.toTimeString().substring(0,5);
-        if (parseInt(dateStart.substring(0,2),10) >= 12) {
-            if (dateStart.substring(0,2) == '12') {
-                dateStart = dateStart + ' pm';
-            } else if ((parseInt(dateStart.substring(0,2),10)-12) < 10) {
-                dateStart = '0' + (parseInt(dateStart.substring(0,2),10)-12) + dateStart.substring(2) + ' pm';
-            } else {
-                dateStart = (parseInt(dateStart.substring(0,2),10)-12) + dateStart.substring(2) + ' pm';
-            }
-        } else {
-            if (dateStart.substring(0,1) == '0') {
-                dateStart = '12' + dateStart.substring(2) + ' am';
-            } else if (parseInt(dateStart.substring(0,2),10) < 10) {
-                dateStart = '0' + dateStart + ' am';
-            } else {
-                dateStart = dateStart + ' am';
-            }
-        }
-
-        dateEnd = dateEnd.toTimeString().substring(0,5);
-        if (parseInt(dateEnd.substring(0,2),10) >= 12) {
-            if (dateEnd.substring(0,2) == '12') {
-                dateEnd = dateEnd + ' pm';
-            } else if ((parseInt(dateEnd.substring(0,2),10)-12) < 10) {
-                dateEnd = '0' + (parseInt(dateEnd.substring(0,2),10)-12) + dateEnd.substring(2) + ' pm';
-            } else {
-                dateEnd = (parseInt(dateEnd.substring(0,2),10)-12) + dateEnd.substring(2) + ' pm';
-            }
-        } else {
-            if (dateEnd.substring(0,1) == '0') {
-                dateEnd = '12' + dateEnd.substring(2) + ' am';
-            } else if (parseInt(dateEnd.substring(0,2),10) < 10) {
-                dateEnd = '0' + dateEnd + ' am';
-            } else {
-                dateEnd = dateEnd + ' am';
-            }
-        }
+        dateStart = processDate(events[iter].start.dateTime);
+        dateEnd = processDate(events[iter].end.dateTime);
     }
 
     //Larger Point on timeline
