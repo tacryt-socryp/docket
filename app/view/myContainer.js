@@ -250,7 +250,7 @@ function addTriangle(fillColor,x,y,orientation) {
             addRect(boxColor,160,300,xloc+38,yloc+110);
             addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
-            addTriangle(boxColor, xloc+178, yloc+270, true);
+            addTriangle(boxColor, xloc+178, yloc+269, true);
 
             if (description !== false) {
                 addText("#fff", "16px Times New Roman", description, xloc+48,
