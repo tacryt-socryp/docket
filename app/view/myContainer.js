@@ -52,35 +52,55 @@ fn: function(element, eOpts) {
     me.setSize(w,h);
     surface.setSize(w,h);
     surface.setBackground(backgroundColor);
-
-    //Line across screen
+    
+function addRect(fillColor,h,w,x,y) {
     surface.add({
         type: 'rect',
-        fill: timelineColor,
-        height : 20,
+        fill: fillColor,
+        height : h,
         width: w,
-        x: 0,
-        y: yloc+330
+        x: x,
+        y: y
     }).show(true);
+}
+
+function addText(fillColor,font,text,x,y) {
+    surface.add({
+        type: 'text',
+        text: text,
+        font: font,
+        fill: fillColor,
+        x: x,
+        y: y
+    }).show(true);
+}
+    
+function addCircle(fillColor,r,x,y) {
+    surface.add({
+        type: 'circle',
+        cx: x,
+        cy: y,
+        r: r,
+        fillStyle: fillColor
+    }).show(true);
+}
+    
+function addTriangle(fillColor,x,y) {
+    surface.add({
+        type: 'path',
+        path: 'M ' + x + ' ' + y + ' ' +
+                'l ' + -25 + ' ' + 0 + ' ' +
+                'l ' + 12 + ' ' + -10 + 'z',
+        fillStyle: fillColor
+    }).show(true);
+}
+
+    //Line across screen
+    addRect(timelineColor, 20, w, 0, yloc+330);
 
     //Name of room
-    surface.add({
-        type: 'text',
-        text: roomText,
-        font: "40px Arial",
-        fill: '#FFF',
-        x: 35,
-        y: 70
-    }).show(true);
-
-    surface.add({
-        type: 'text',
-        text: '+add',
-        font: "36px Arial",
-        fill: '#FFF',
-        x: displace,
-        y: 70
-    }).show(true);
+    addText("#fff", "40px Arial", roomText, 35, 70);
+    addText("#fff", "36px Arial", "+add", displace, 70);
 
     for (var iter = 0; iter < events.length; iter++) {
         xloc = iter*200;
@@ -211,146 +231,46 @@ fn: function(element, eOpts) {
         }
 
         //Larger Point on timeline
-        surface.add({
-            type: 'circle',
-            cx: xloc+192,
-            cy: yloc+338,
-            r: 22,
-            fillStyle: dotColor
-        }).show(true);
-
-        surface.add({
-            type: 'circle',
-            cx: xloc+192,
-            cy: yloc+338,
-            r: 16,
-            fillStyle: boxColor
-        }).show(true);
+        addCircle(dotColor,22,xloc+192,yloc+338);
+        
+        //Smaller Point on timeline
+        addCircle(boxColor,16,xloc+192,yloc+338);
 
         if (iter % 2 === 0) {
-            surface.add({
-                type: 'rect',
-                fill: boxColor,
-                height: 160,
-                width: 300,
-                radius: 10,
-                x: xloc+38,
-                y: yloc+110
-            }).show(true);
+            addRect(boxColor,160,300,xloc+38,yloc+110);
+            addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
-            surface.add({
-                type: 'path',
-                path: 'M ' + (xloc+178) + ' ' + (yloc+270) + ' ' +
-                'l ' + 25 + ' ' + 0 + ' ' +
-                'l ' + -12 + ' ' + 10 + 'z',
-                fillStyle: boxColor
-            }).show(true);
-
-            surface.add({
-                type: 'text',
-                text: summary,
-                font: '22px Arial',
-                width: 290,
-                height: 130,
-                fill: '#FFF',
-                x: xloc+48,
-                y: yloc+135+vDisplaceSumm
-            }).show(true);
+            addTriangle(boxColor, xloc+178, yloc+270);
 
             if (description !== false) {
-                surface.add({
-                    type: 'text',
-                    text: description,
-                    font: '16px Times New Roman',
-                    width: 280,
-                    height: 100,
-                    fill: '#FFF',
-                    x: xloc+48,
-                    y: yloc+190+vDisplaceSumm+vDisplaceDesc
-                }).show(true);
+                addText("#fff", "16px Times New Roman", description, xloc+48,
+                    yloc+190+vDisplaceDesc+vDisplaceSumm);
             }
+            
+            //Time text
+            addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+121, yloc+260);
 
-            surface.add({
-                type: 'text',
-                text: dateStart + '  -  ' + dateEnd,
-                font: '14px Arial',
-                fill: '#FFF',
-                x: xloc+121,
-                y: yloc+260
-            }).show(true);
-
-            //Time and date for top
-            surface.add({
-                type: 'text',
-                text: dateTime,
-                font: '14px Arial',
-                fill: '#FFF',
-                x: xloc+165,
-                y: yloc+380
-            }).show(true);
-
+            //Date text
+            addText("#fff", "14px Arial", dateTime, xloc+165, yloc+380);
+            
         } else {
-
-            surface.add({
-                type: 'rect',
-                fill: boxColor,
-                height : 160,
-                width: 300,
-                radius: 10,
-                x: xloc+38,
-                y: yloc+410
-            }).show(true);
-
-            surface.add({
-                type: 'path',
-                path: 'M ' + (xloc+203) + ' ' + (yloc+410) + ' ' +
-                'l ' + -25 + ' ' + 0 + ' ' +
-                'l ' + 12 + ' ' + -10 + 'z',
-                fillStyle: boxColor
-            }).show(true);
-
-            surface.add({
-                type: 'text',
-                text: summary,
-                width: 290,
-                height: 130,
-                font: '22px Arial',
-                fill: '#FFF',
-                x: xloc+48,
-                y: yloc+435+vDisplaceSumm
-            }).show(true);
+            
+            addRect(boxColor, 160, 300, xloc+38, yloc+410);
+            
+            addTriangle(boxColor,xloc+203,yloc+410);
+            
+            addText("#fff", "22px Arial", summary, xloc+48, yloc+435+vDisplaceSumm);
 
             if (description !== false) {
-                surface.add({
-                    type: 'text',
-                    text: description,
-                    font: '16px Times New Roman',
-                    width: 280,
-                    height: 100,
-                    fill: '#FFF',
-                    x: xloc+48,
-                    y: yloc+485+vDisplaceSumm+vDisplaceDesc
-                }).show(true);
+                addText("#fff", "16px Times New Roman", description, xloc+48,
+                    yloc+485+vDisplaceSumm+vDisplaceDesc);
             }
+            
+            //Time text
+            addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+121, yloc+560);
 
-            surface.add({
-                type: 'text',
-                text: dateStart + '  -  ' + dateEnd,
-                font: '14px Arial',
-                fill: '#FFF',
-                x: xloc+121,
-                y: yloc+560
-            }).show(true);
-
-            //Time and date for bottom
-            surface.add({
-                type: 'text',
-                text: dateTime,
-                font: '14px Arial',
-                fill: '#FFF',
-                x: xloc+165,
-                y: yloc+308
-            }).show(true);
+            //Date text
+            addText("#fff", "14px Arial", dateTime, xloc+165, yloc+308);
         }
     }
 },
