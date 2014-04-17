@@ -105,68 +105,73 @@ function addTriangle(fillColor,x,y,orientation) {
     }
 }
 
-    //Line across screen
-    addRect(timelineColor, 20, w, 0, yloc+330);
+//Line across screen
+addRect(timelineColor, 20, w, 0, yloc+330);
 
-    //Name of room
-    addText("#fff", "40px Arial", roomText, 35, 70);
-    addText("#fff", "36px Arial", "+add", displace, 70);
+//Name of room
+addText("#fff", "40px Arial", roomText, 35, 70);
+addText("#fff", "36px Arial", "+add", displace, 70);
 
-    for (var iter = 0; iter < events.length; iter++) {
-        xloc = iter*200;
-        summary = events[iter].summary;
-        description = events[iter].description;
-        vDisplaceSumm = 0;
-        vDisplaceDesc = 0;
+for (var iter = 0; iter < events.length; iter++) {
+    xloc = iter*200;
+    summary = events[iter].summary;
+    description = events[iter].description;
+    vDisplaceSumm = 0;
+    vDisplaceDesc = 0;
 
-        try {
-            summary = summary.replace(/\s+/g,' ');
-            if (summary.length > 24) {
-                for (var a = 24; a > 0; a--) {
-                    if (summary.substring(a, a+1) == ' ') {
-                        summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
-                        vDisplaceSumm = 20;
-                        a = 0;
-                    }
-                }
-                if (summary.length > 48) {
-                    summary = summary.substring(0,48) + '...';
+    try {
+        summary = summary.replace(/\s+/g,' ');
+        if (summary.length > 24) {
+            for (var a = 24; a > 0; a--) {
+                if (summary.substring(a, a+1) == ' ') {
+                    summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
+                    vDisplaceSumm = 20;
+                    a = 0;
                 }
             }
-        } catch(e) {
-            summary = '';
+            if (summary.length > 48) {
+                summary = summary.substring(0,48) + '...';
+            }
         }
+    } catch(e) {
+        summary = '';
+    }
 
-        try {
-            description = description.replace(/\s+/g,' ');
-            description = description.replace(/(\r\n|\n|\r)/gm,' ');
-            if (description.length > 35) {
-                for (var b = 35; b > 0; b--) {
-                    if (description.substring(b, b+1) == ' ') {
-                        description = description.substring(0,b) + '\n' + description.substring(b+1);
-                        b = 0;
-                    }
+    try {
+        description = description.replace(/\s+/g,' ');
+        description = description.replace(/(\r\n|\n|\r)/gm,' ');
+        if (description.length > 35) {
+            for (var b = 35; b > 0; b--) {
+                if (description.substring(b, b+1) == ' ') {
+                    description = description.substring(0,b) + '\n' + description.substring(b+1);
+                    b = 0;
                 }
-                if (description.length > 70) {
-                    for (var c = 70; c > 0; c--) {
-                        if (description.substring(c, c+1) == ' ') {
-                            if (description.length > 103) {
-                                description = description.substring(0,c) + '\n' + description.substring(c+1,103) + '...';
-                            } else {
-                                description = description.substring(0,c) + '\n' + description.substring(c+1);
-                            }
-                            vDisplaceDesc = 20;
-                            c = 0;
+            }
+            if (description.length > 70) {
+                for (var c = 70; c > 0; c--) {
+                    if (description.substring(c, c+1) == ' ') {
+                        if (description.length > 103) {
+                            description = description.substring(0,c) + '\n' + description.substring(c+1,103) + '...';
+                        } else {
+                            description = description.substring(0,c) + '\n' + description.substring(c+1);
                         }
+                        vDisplaceDesc = 20;
+                        c = 0;
                     }
                 }
             }
-        } catch(e) {
-            description = false;
         }
+    } catch(e) {
+        description = false;
+    }
 
-        dateTime = events[iter].start.dateTime;
-        console.log(dateTime);
+    dateTime = events[iter].start.dateTime;
+    console.log(dateTime);
+    if (typeof dateTime === 'undefined') {
+        dateTime = events[iter].start.date;
+        dateStart = "All";
+        dateEnd = "Day";
+    } else {
         dateTime = Date.parse(dateTime);
         dateTime = new Date(dateTime);
 
@@ -240,50 +245,51 @@ function addTriangle(fillColor,x,y,orientation) {
                 dateEnd = dateEnd + ' am';
             }
         }
-
-        //Larger Point on timeline
-        addCircle(dotColor,22,xloc+192,yloc+338);
-        
-        //Smaller Point on timeline
-        addCircle(boxColor,16,xloc+192,yloc+338);
-
-        if (iter % 2 === 0) {
-            addRect(boxColor,160,300,xloc+38,yloc+110);
-            addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
-
-            addTriangle(boxColor, xloc+178, yloc+269, true);
-
-            if (description !== false) {
-                addText("#fff", "16px Arial", description, xloc+48,
-                    yloc+190+vDisplaceDesc+vDisplaceSumm);
-            }
-            
-            //Time text
-            addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+121, yloc+260);
-
-            //Date text
-            addText("#fff", "14px Arial", dateTime, xloc+165, yloc+380);
-            
-        } else {
-            
-            addRect(boxColor, 160, 300, xloc+38, yloc+410);
-            
-            addTriangle(boxColor,xloc+203,yloc+411, false);
-            
-            addText("#fff", "22px Arial", summary, xloc+48, yloc+435+vDisplaceSumm);
-
-            if (description !== false) {
-                addText("#fff", "16px Arial", description, xloc+48,
-                    yloc+485+vDisplaceSumm+vDisplaceDesc);
-            }
-            
-            //Time text
-            addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+121, yloc+560);
-
-            //Date text
-            addText("#fff", "14px Arial", dateTime, xloc+165, yloc+308);
-        }
     }
+
+    //Larger Point on timeline
+    addCircle(dotColor,22,xloc+192,yloc+338);
+
+    //Smaller Point on timeline
+    addCircle(boxColor,16,xloc+192,yloc+338);
+
+    if (iter % 2 === 0) {
+        addRect(boxColor,160,300,xloc+38,yloc+110);
+        addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
+
+        addTriangle(boxColor, xloc+178, yloc+269, true);
+
+        if (description !== false) {
+            addText("#fff", "16px Arial", description, xloc+48,
+                yloc+190+vDisplaceDesc+vDisplaceSumm);
+        }
+
+        //Time text
+        addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+121, yloc+260);
+
+        //Date text
+        addText("#fff", "14px Arial", dateTime, xloc+165, yloc+380);
+
+    } else {
+
+        addRect(boxColor, 160, 300, xloc+38, yloc+410);
+
+        addTriangle(boxColor,xloc+203,yloc+411, false);
+
+        addText("#fff", "22px Arial", summary, xloc+48, yloc+435+vDisplaceSumm);
+
+        if (description !== false) {
+            addText("#fff", "16px Arial", description, xloc+48,
+                yloc+485+vDisplaceSumm+vDisplaceDesc);
+        }
+
+        //Time text
+        addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+121, yloc+560);
+
+        //Date text
+        addText("#fff", "14px Arial", dateTime, xloc+165, yloc+308);
+    }
+}
 },
 event: 'painted'},
 {
