@@ -85,14 +85,24 @@ function addCircle(fillColor,r,x,y) {
     }).show(true);
 }
     
-function addTriangle(fillColor,x,y) {
-    surface.add({
-        type: 'path',
-        path: 'M ' + x + ' ' + y + ' ' +
+function addTriangle(fillColor,x,y,orientation) {
+    if (orientation) {
+        surface.add({
+            type: 'path',
+            path: 'M ' + x + ' ' + y + ' ' +
+                'l ' + 25 + ' ' + 0 + ' ' +
+                'l ' + -12 + ' ' + 10 + 'z',
+            fillStyle: fillColor
+        }).show(true);
+    } else {
+        surface.add({
+            type: 'path',
+            path: 'M ' + x + ' ' + y + ' ' +
                 'l ' + -25 + ' ' + 0 + ' ' +
                 'l ' + 12 + ' ' + -10 + 'z',
-        fillStyle: fillColor
-    }).show(true);
+            fillStyle: fillColor
+        }).show(true);
+    }
 }
 
     //Line across screen
@@ -240,7 +250,7 @@ function addTriangle(fillColor,x,y) {
             addRect(boxColor,160,300,xloc+38,yloc+110);
             addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
-            addTriangle(boxColor, xloc+178, yloc+270);
+            addTriangle(boxColor, xloc+178, yloc+270, true);
 
             if (description !== false) {
                 addText("#fff", "16px Times New Roman", description, xloc+48,
@@ -257,7 +267,7 @@ function addTriangle(fillColor,x,y) {
             
             addRect(boxColor, 160, 300, xloc+38, yloc+410);
             
-            addTriangle(boxColor,xloc+203,yloc+410);
+            addTriangle(boxColor,xloc+203,yloc+411, false);
             
             addText("#fff", "22px Arial", summary, xloc+48, yloc+435+vDisplaceSumm);
 
