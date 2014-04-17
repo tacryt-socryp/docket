@@ -253,7 +253,7 @@ function addTriangle(fillColor,x,y,orientation) {
             addTriangle(boxColor, xloc+178, yloc+269, true);
 
             if (description !== false) {
-                addText("#fff", "16px Times New Roman", description, xloc+48,
+                addText("#fff", "16px Arial", description, xloc+48,
                     yloc+190+vDisplaceDesc+vDisplaceSumm);
             }
             
@@ -272,7 +272,7 @@ function addTriangle(fillColor,x,y,orientation) {
             addText("#fff", "22px Arial", summary, xloc+48, yloc+435+vDisplaceSumm);
 
             if (description !== false) {
-                addText("#fff", "16px Times New Roman", description, xloc+48,
+                addText("#fff", "16px Arial", description, xloc+48,
                     yloc+485+vDisplaceSumm+vDisplaceDesc);
             }
             
