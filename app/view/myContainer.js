@@ -63,7 +63,7 @@ fn: function(element, eOpts) {
         addText("#fff", "36px Arial", "+add", displace, 70);
 
         //Line across screen
-        addRect(timelineColor, 20, w, 0, yloc+330, 0);
+        addRect(timelineColor, w, 20, 0, yloc+330, 0);
     } else {
         landscape = false;
         //Name of room
@@ -71,15 +71,15 @@ fn: function(element, eOpts) {
         addText("#fff", "20px Arial", "+", displace+170, 30);
         
         //Line across screen
-        addRect(timelineColor, 20, w, 0, yloc+330, 0);
+        addRect(timelineColor, 20, h, 0, yloc+330, 0);
     }
 
-function addRect(fillColor,h,w,x,y,r) {
+function addRect(fillColor,w,h,x,y,r) {
     surface.add({
         type: 'rect',
         fill: fillColor,
-        height : h,
         width: w,
+        height : h,
         x: x,
         y: y,
         radius: r
@@ -217,7 +217,7 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
     addCircle(boxColor,16,xloc+190,yloc+338);
 
     if (i % 2 === 0) {
-        addRect(boxColor,160,300,xloc+38,yloc+110,3);
+        addRect(boxColor,300,160,xloc+38,yloc+110,3);
         addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
         addTriangle(boxColor, xloc+178, yloc+269, true);
@@ -235,7 +235,7 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
 
     } else {
 
-        addRect(boxColor, 160, 300, xloc+38, yloc+410, 3);
+        addRect(boxColor, 300,160, xloc+38, yloc+410, 3);
 
         addTriangle(boxColor,xloc+203,yloc+411, false);
 
@@ -255,9 +255,6 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
 }
 
 function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
-    //Line across screen
-    addRect(timelineColor, 20, w, 0, yloc+330, 0);
-
     //Larger Point on timeline
     addCircle(dotColor,22,xloc+190,yloc+338);
 
