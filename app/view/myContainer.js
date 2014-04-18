@@ -160,12 +160,15 @@ function processSummary(summary) {
             for (var a = 24; a > 0; a--) {
                 if (summary.substring(a, a+1) == ' ') {
                     summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
+                    vDisplaceSumm = 20;
                     a = 0;
                 }
             }
             if (summary.length > 48) {
                 summary = summary.substring(0,48) + '...';
             }
+        } else {
+            vDisplaceSumm = 0;
         }
     } catch(e) {
         summary = '';
@@ -300,11 +303,9 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
 }
 
 
-
 for (var iter = 0; iter < events.length; iter++) {
     
     xloc = iter*200;
-    vDisplaceSumm = 0;
     vDisplaceDesc = 0;
     summary = processSummary(events[iter].summary);
     description = processDescription(events[iter].description);
