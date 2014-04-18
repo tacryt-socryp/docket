@@ -62,9 +62,10 @@ fn: function(element, eOpts) {
         //Line across screen
         addRect(timelineColor, w, 20, 0, yloc+330, 0);
     } else {
-        mainCarousel.direction = "horizontal";
         console.log(mainCarousel);
-        me.parent.scrollableBehavior.scrollView._scroller._direction = "vertical";
+        console.log(me);
+        //mainCarousel._scroller._direction = "horizontal";
+        //me.parent.scrollableBehavior.scrollView._scroller._direction = "vertical";
         console.log(me.parent.scrollableBehavior.scrollView);
         if (210 * events.length > h) {
             h = 210 * events.length;
