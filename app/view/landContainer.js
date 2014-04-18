@@ -63,6 +63,8 @@ fn: function(element, eOpts) {
     
     me.setSize(w,h);
     surface.setSize(w,h);
+    console.log(surface);
+    console.log(me);
     surface.setBackground(backgroundColor);
 
 function addRect(fillColor,w,h,x,y,r) {

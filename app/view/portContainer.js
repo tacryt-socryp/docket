@@ -9,10 +9,7 @@ Ext.define('Confluent.view.portContainer', {
     config: {
         itemId: 'portContainer',
         autoDestroy: false,
-        scrollable: {
-            direction: 'vertical',
-            directionLock: true
-        },
+        scroll:'vertical',
         items: [{
             xtype: 'draw',
             events: [],
@@ -48,7 +45,7 @@ fn: function(element, eOpts) {
         xloc;
     
     mainCarousel.element.dom.style.background = backgroundColor;
-    console.log(events.length);
+    console.log("Event length: " + events.length);
     
     if (210 * events.length > h) {
         h = 210 * events.length;
