@@ -167,27 +167,28 @@ for (var iter = 0; iter < events.length; iter++) {
     }
 
     try {
-        description = description.replace(/\s+/g,' ');
-        description = description.replace(/(\r\n|\n|\r)/gm,' ');
+        description = description.replace(/\s+/g,' ').description.replace(/(\r\n|\n|\r)/gm,' ');
+        var spaces = false;
         if (description.length > 35) {
-            for (var b = 35; b > 0; b--) {
-                if (description.substring(b, b+1) == ' ') {
-                    description = description.substring(0,b) + '\n' + description.substring(b+1);
-                    b = 0;
+            if (description.length > 103) {
+                description = description.substring(104) + '...';
+            }
+            
+            for (var a = description.length; a > 0; a--) {
+                if (description.substring(a, a+1) == ' ') {
+                    description = description.substring(0,a) + '\n' + description.substring(a+1);
+                    spaces = true;
+                    a = a-35;
+                    vDisplaceDesc = vDisplaceDesc + 10;
                 }
             }
-            if (description.length > 70) {
-                for (var c = 70; c > 0; c--) {
-                    if (description.substring(c, c+1) == ' ') {
-                        if (description.length > 103) {
-                            description = description.substring(0,c) + '\n' + description.substring(c+1,103) + '...';
-                        } else {
-                            description = description.substring(0,c) + '\n' + description.substring(c+1);
-                        }
-                        vDisplaceDesc = 20;
-                        c = 0;
-                    }
+            
+            if (!spaces) {
+                for (var a = description.length; a > 0; a=a-35) {
+                    description = description.substring(0,a) + '\n' + description.substring(a+1);
+                    vDisplaceDesc = vDisplaceDesc + 10;
                 }
+            }
             }
         }
     } catch(e) {
