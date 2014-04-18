@@ -156,7 +156,7 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         
         var h = Ext.getBody().getSize().height;
         var w = Ext.getBody().getSize().width;
-        if (w > h && h > yloc+560) {
+        if (w > h && h > (h/10)+560) {
             landCarousel.add(obj);
             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
                 Ext.Viewport.setActiveItem('landCarousel');
