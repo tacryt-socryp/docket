@@ -45,7 +45,7 @@ fn: function(element, eOpts) {
         yloc = h/10,
         xloc;
     
-    document.body.style.background = backgroundColor;
+    mainCarousel.element.dom.style.background = backgroundColor;
 
     if (w < Ext.getBody().getSize().width) {
         w = Ext.getBody().getSize().width;
