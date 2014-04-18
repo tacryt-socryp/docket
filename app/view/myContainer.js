@@ -31,7 +31,7 @@ fn: function(element, eOpts) {
     
     console.log(me);
 
-    var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+    var mainCarousel = me.parent.parent,
         displace = Ext.getBody().getSize().width - 200,
         h = Ext.getBody().getSize().height,
         w = Ext.getBody().getSize().width,
@@ -62,14 +62,6 @@ fn: function(element, eOpts) {
         //Line across screen
         addRect(timelineColor, w, 20, 0, yloc+330, 0);
     } else {
-        console.log(mainCarousel);
-        console.log(me);
-        console.log(me.parent.scrollableBehavior.scrollView._scroller);
-        mainCarousel._direction = "horizontal";
-        me.parent.scrollableBehavior.scrollView._scroller._direction = "vertical";
-        me.parent.scrollableBehavior.scrollView._scroller.givenDirection = "vertical";
-        me.parent.scrollableBehavior.scrollView._scroller.config.direction = "vertical";
-        
         if (210 * events.length > h) {
             h = 210 * events.length;
         }

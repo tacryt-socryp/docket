@@ -1,6 +1,6 @@
-Ext.define('Confluent.view.mainCarousel', {
+Ext.define('Confluent.view.landCarousel', {
     extend: 'Ext.carousel.Carousel',
-    alias: 'widget.mainCarousel',
+    alias: 'widget.landCarousel',
 
     requires: [
         'Confluent.view.myContainer'
@@ -8,7 +8,7 @@ Ext.define('Confluent.view.mainCarousel', {
 
     config: {
         fullscreen: true,
-        itemId: 'mainCarousel',
+        itemId: 'landCarousel',
         ui: 'light',
         direction: 'vertical',
         showAnimation: {

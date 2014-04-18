@@ -21,7 +21,8 @@ onContainerPainted: function(element, eOpts) {
         parameters[key] = value;
     });
 
-    Ext.create('Confluent.view.mainCarousel');
+    Ext.create('Confluent.view.landCarousel');
+    Ext.create('Confluent.view.portCarousel');
     Ext.create('Confluent.view.MyFormPanel');
 
     function isEmpty(ob) {
@@ -74,7 +75,8 @@ generateItems: function() {
 loadData: function(calendarId, summary) {
     var me = this,
         today = new Date(),
-        mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+        landCarousel = Ext.ComponentQuery.query('#landCarousel')[0],
+        portCarousel = Ext.ComponentQuery.query('#portCarousel')[0],
         child;
 
     var token = Confluent.app.authToken,
@@ -151,10 +153,20 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         child.timelineColor = timelineColors[array_i];
         child.dotColor = dotColors[array_i];
         child.events = resp.items;
-        mainCarousel.add(obj);
-        if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
-            Ext.Viewport.setActiveItem('mainCarousel');
-        }        
+        
+        var h = Ext.getBody().getSize().height;
+        var w = Ext.getBody().getSize().width;
+        if (w > h && h > yloc+560) {
+            landCarousel.add(obj);
+            if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
+                Ext.Viewport.setActiveItem('landCarousel');
+            }   
+        } else {
+            portCarousel.add(obj);
+            if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
+                Ext.Viewport.setActiveItem('portCarousel');
+            }
+        }
     }
 }
         
