@@ -140,7 +140,16 @@ gapi.client.load('calendar', 'v3', function() {
     request.execute(function(resp) {
 if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
     if(summary.indexOf("birthdays and events") == -1 && summary.indexOf("Holidays") == -1){
-        obj = new Confluent.view.myContainer();
+        var h = Ext.getBody().getSize().height;
+        var w = Ext.getBody().getSize().width;
+        
+        if (w > h && h > (h/10)+560) {
+            obj = new Confluent.view.landContainer();
+        } else {
+            obj = new Confluent.view.portContainer();
+        }
+        
+        
         array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
         child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
 
@@ -154,8 +163,6 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         child.dotColor = dotColors[array_i];
         child.events = resp.items;
         
-        var h = Ext.getBody().getSize().height;
-        var w = Ext.getBody().getSize().width;
         if (w > h && h > (h/10)+560) {
             landCarousel.add(obj);
             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
