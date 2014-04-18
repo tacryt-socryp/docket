@@ -64,9 +64,10 @@ fn: function(element, eOpts) {
     } else {
         console.log(mainCarousel);
         console.log(me);
+        console.log(me.parent.scrollableBehavior.scrollView._scroller);
         mainCarousel._direction = "horizontal";
         me.parent.scrollableBehavior.scrollView._scroller._direction = "vertical";
-        console.log(me.parent.scrollableBehavior.scrollView);
+        
         if (210 * events.length > h) {
             h = 210 * events.length;
         }
