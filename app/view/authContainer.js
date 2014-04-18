@@ -99,11 +99,6 @@ loadData: function(calendarId, summary) {
             'dot':''
         },
         {
-            'box':'#27ae60',
-            'timeline':'#31cd73',
-            'dot':''
-        },
-        {
             'box':'#16a085',
             'timeline':'#1abc9c',
             'dot':''
@@ -111,6 +106,11 @@ loadData: function(calendarId, summary) {
         {
             'box':'#c0392b',
             'timeline':'#e74c3c',
+            'dot':''
+        },
+        {
+            'box':'#27ae60',
+            'timeline':'#31cd73',
             'dot':''
         },
         {
