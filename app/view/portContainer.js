@@ -47,7 +47,7 @@ fn: function(element, eOpts) {
     mainCarousel.element.dom.style.background = backgroundColor;
     console.log("Event length: " + events.length);
     
-    if (210 * events.length > h) {
+    if ((210 * events.length) > h) {
         h = 210 * events.length;
     }
     
@@ -65,7 +65,7 @@ fn: function(element, eOpts) {
     document.getElementById(me.element.getId()).addEventListener('DOMAttrModified', function(e){
         if (e.attrName === 'style') {
             document.getElementById(me.element.getId()).style.cssText = "width: 100% !important; height: " + h + "px !important;";
-            console.log('style element changed');
+            
         }
     }, false);
     
@@ -74,6 +74,7 @@ fn: function(element, eOpts) {
         
         if (document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[x].id == me.element.getId()) {
             document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[x].style.cssText = "width: 100% !important; height: " + h + "px !important;";
+            console.log('style text css changed');
         }
     }
     
