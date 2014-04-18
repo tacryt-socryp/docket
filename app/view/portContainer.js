@@ -59,7 +59,7 @@ fn: function(element, eOpts) {
     
     var theLength = document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized").length;
     
-    document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[theLength-1].style.cssText = "width: 100% !important; height: " + h + " !important;";
+    document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[theLength-1].style.cssText = "width: 100% !important; height: " + h + "px !important;";
 
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
