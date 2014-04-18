@@ -209,10 +209,10 @@ function processDescription(description) {
     
 function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
     //Larger Point on timeline
-    addCircle(dotColor,22,3,yloc+170);
+    addCircle(dotColor,22,25,yloc+170);
 
     //Smaller Point on timeline
-    addCircle(boxColor,16,3,yloc+80);
+    addCircle(boxColor,16,19,yloc+170);
 
     addRect(boxColor,(xloc*10),160,xloc+30,yloc+90,3);
     addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
