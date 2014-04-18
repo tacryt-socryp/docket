@@ -3,7 +3,7 @@ Ext.define('Confluent.view.portContainer', {
     alias: 'widget.portContainer',
 
     requires: [
-        'Ext.draw.Component'
+        'Ext.draw.Container'
     ],
 
     config: {
@@ -53,6 +53,10 @@ fn: function(element, eOpts) {
     if (210 * events.length > h) {
         h = 210 * events.length;
     }
+    
+    me.setSize(w,h);
+    surface.setSize(w,h);
+    surface.setBackground(backgroundColor);
 
     //Line across screen
     addRect(timelineColor, 20, h, 20, 0, 0);
@@ -65,11 +69,6 @@ fn: function(element, eOpts) {
     console.log(me);
     console.log("Surface");
     console.log(surface);
-    
-    me.setSize(w,h);
-    surface.setSize(w,h);
-    me.el.setSize(w, h);
-    surface.setBackground(backgroundColor);
 
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({

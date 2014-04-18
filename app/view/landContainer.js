@@ -3,7 +3,7 @@ Ext.define('Confluent.view.landContainer', {
     alias: 'widget.landContainer',
 
     requires: [
-        'Ext.draw.Component'
+        'Ext.draw.Container'
     ],
 
     config: {
@@ -54,18 +54,16 @@ fn: function(element, eOpts) {
         w = 210 * events.length;
     }
 
+    me.setSize(w,h);
+    surface.setSize(w,h);
+    surface.setBackground(backgroundColor);
+    
     //Name of room
     addText("#fff", "36px Arial", roomText, 35, 70);
     addText("#fff", "36px Arial", "+add", displace, 70);
 
     //Line across screen
     addRect(timelineColor, w, 20, 0, yloc+330, 0);
-    
-    me.setSize(w,h);
-    surface.setSize(w,h);
-    console.log(surface);
-    console.log(me);
-    surface.setBackground(backgroundColor);
 
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({
