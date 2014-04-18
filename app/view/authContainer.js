@@ -99,11 +99,6 @@ loadData: function(calendarId, summary) {
             'dot':''
         },
         {
-            'box':'#8e44ad',
-            'timeline':'#9b59b6',
-            'dot':''
-        },
-        {
             'box':'#27ae60',
             'timeline':'#31cd73',
             'dot':''
@@ -118,6 +113,11 @@ loadData: function(calendarId, summary) {
             'timeline':'#e74c3c',
             'dot':''
         },
+        {
+            'box':'#8e44ad',
+            'timeline':'#9b59b6',
+            'dot':''
+        }
     ];
 
     today.setHours(0,0,0,0);
