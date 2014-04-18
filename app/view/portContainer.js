@@ -67,7 +67,6 @@ fn: function(element, eOpts) {
     console.log(surface);
     
     me.setSize(w,h);
-    me.surface.setSize(w,h);
     surface.setSize(w,h);
     me.el.setSize(w, h);
     surface.setBackground(backgroundColor);
