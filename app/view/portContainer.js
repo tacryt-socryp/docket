@@ -42,7 +42,7 @@ fn: function(element, eOpts) {
         dateEnd,
         summary,
         yloc = h/10,
-        xloc = w/10;
+        xloc = w/12;
     
     mainCarousel.element.dom.style.background = backgroundColor;
     console.log("Event length: " + events.length);
