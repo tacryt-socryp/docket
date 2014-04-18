@@ -198,33 +198,16 @@ for (var iter = 0; iter < events.length; iter++) {
         dateStart = "12:00am";
         dateEnd = "11:59pm";
     } else {
-        dateTime = new Date(Date.parse(dateTime));
-
-        if ((dateTime.getDate() == today.getDate()) && (dateTime.getMonth() == today.getMonth())) {
-            dateTime = dateTime.toTimeString().substring(0,5);
-            if (parseInt(dateTime.substring(0,2),10) >= 12) {
-                if (dateTime.substring(0,2) == '12') {
-                    dateTime = dateTime + ' pm';
-                } else if ((parseInt(dateTime.substring(0,2),10)-12) < 10) {
-                    dateTime = '0' + (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
-                } else {
-                    dateTime = (parseInt(dateTime.substring(0,2),10)-12) + dateTime.substring(2) + ' pm';
-                }
-            } else {
-                if (dateTime.substring(0,1) == '0') {
-                    dateTime = '12' + dateTime.substring(2) + ' am';
-                } else if (parseInt(dateTime.substring(0,2),10) < 10) {
-                    dateTime = '0' + dateTime + ' am';
-                } else {
-                    dateTime = dateTime + ' am';
-                }
-            }
-        } else {
-            dateTime = dateTime.toDateString().substring(0,10);
-        }
-
         dateStart = processDate(events[iter].start.dateTime);
         dateEnd = processDate(events[iter].end.dateTime);
+    }
+    
+    date = new Date(Date.parse(dateTime));
+
+    if ((date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
+        dateTime = processDate(dateTime);
+    } else {
+        dateTime = dateTime.toDateString().substring(0,10);
     }
 
     //Larger Point on timeline
