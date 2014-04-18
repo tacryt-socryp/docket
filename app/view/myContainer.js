@@ -231,10 +231,10 @@ for (var iter = 0; iter < events.length; iter++) {
         }
 
         //Time text
-        addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+121, yloc+260);
+        addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+123, yloc+260);
 
         //Date text
-        addText("#fff", "14px Arial", dateTime, xloc+161, yloc+380);
+        addText("#fff", "14px Arial", dateTime, xloc+160, yloc+380);
 
     } else {
 
@@ -250,7 +250,7 @@ for (var iter = 0; iter < events.length; iter++) {
         }
 
         //Time text
-        addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+121, yloc+560);
+        addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+123, yloc+560);
 
         //Date text
         addText("#fff", "14px Arial", dateTime, xloc+160, yloc+308);
