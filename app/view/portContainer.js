@@ -42,7 +42,7 @@ fn: function(element, eOpts) {
         dateEnd,
         summary,
         yloc = h/10,
-        xloc;
+        xloc = w/10;
     
     mainCarousel.element.dom.style.background = backgroundColor;
     console.log("Event length: " + events.length);
@@ -217,7 +217,7 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     addRect(boxColor,300,160,xloc+38,yloc+110,3);
     addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
-    addTriangle(boxColor, xloc+178, yloc+269, true);
+    //addTriangle(boxColor, xloc+178, yloc+269, true);
 
     if (description !== false) {
         addText("#fff", "16px Arial", description, xloc+48,
