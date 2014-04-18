@@ -3,7 +3,7 @@ Ext.define('Confluent.view.landContainer', {
     alias: 'widget.landContainer',
 
     requires: [
-        'Ext.draw.Container'
+        'Ext.draw.Component'
     ],
 
     config: {

@@ -3,7 +3,7 @@ Ext.define('Confluent.view.portContainer', {
     alias: 'widget.portContainer',
 
     requires: [
-        'Ext.draw.Container'
+        'Ext.draw.Component'
     ],
 
     config: {
