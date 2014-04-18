@@ -52,8 +52,6 @@ fn: function(element, eOpts) {
         h = 210 * events.length;
     }
     
-    document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[array_i].setAttribute("style", "width: " + w + " !important; height: " + h + " !important;");
-    
     me.setSize(w,h);
     surface.setSize(w,h);
     surface.setBackground(backgroundColor);
