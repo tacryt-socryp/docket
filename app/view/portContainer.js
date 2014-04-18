@@ -10,7 +10,8 @@ Ext.define('Confluent.view.portContainer', {
         itemId: 'portContainer',
         autoDestroy: false,
         scrollable: {
-            direction: 'vertical'
+            direction: 'vertical',
+            directionLock: true
         },
         items: [{
             xtype: 'draw',
@@ -60,13 +61,15 @@ fn: function(element, eOpts) {
     addText("#fff", "20px Arial", roomText, 5, 30);
     addText("#fff", "20px Arial", "+", displace+170, 30);
     
+    console.log("me");
     console.log(me);
+    console.log("Surface");
     console.log(surface);
     
     me.setSize(w,h);
+    me.surface.setSize(w,h);
     surface.setSize(w,h);
-    console.log(surface);
-    console.log(me);
+    me.el.setSize(w, h);
     surface.setBackground(backgroundColor);
 
 function addRect(fillColor,w,h,x,y,r) {
