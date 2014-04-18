@@ -62,7 +62,8 @@ fn: function(element, eOpts) {
     console.log(me);
     
     me.element.dom.style.cssText = "width: 100% !important; height: " + h + "px !important;";
-
+    console.log(me.element.dom.style.cssText);
+    
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
 
