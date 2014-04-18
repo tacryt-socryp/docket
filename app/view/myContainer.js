@@ -44,6 +44,8 @@ fn: function(element, eOpts) {
         summary,
         yloc = h/10,
         xloc;
+    
+    document.body.style.background = backgroundColor;
 
     if (w < Ext.getBody().getSize().width) {
         w = Ext.getBody().getSize().width;
