@@ -1,1 +1,3 @@
-.x-chart-watermark {display: none;}
+.x-chart-watermark, .x-scroll-indicator, .x-scroll-bar, .x-scroll-bar-y {
+    display: none;
+}
