@@ -172,7 +172,7 @@ function processSummary(summary) {
         summary = '';
     }
     
-    return summary;
+    return (summary,vDisplaceSumm);
 }
     
 function processDescription(description) {
@@ -305,7 +305,7 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
 for (var iter = 0; iter < events.length; iter++) {
     
     xloc = iter*200;
-    summary = processSummary(events[iter].summary);
+    summary,vDisplaceSumm = processSummary(events[iter].summary);
     description = processDescription(events[iter].description);
     vDisplaceSumm = 0;
     vDisplaceDesc = 0;
