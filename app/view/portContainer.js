@@ -44,7 +44,6 @@ fn: function(element, eOpts) {
         dateStart,
         dateEnd,
         summary,
-        landscape = true,
         yloc = h/10,
         xloc;
     
@@ -53,10 +52,6 @@ fn: function(element, eOpts) {
         h = 210 * events.length;
     }
 
-    me.parent.scrollableBehavior.scrollView._scroller._direction
-    me.parent.scrollableBehavior.scrollView._scroller._direction = "vertical";
-
-    landscape = false;
     //Line across screen
     addRect(timelineColor, 20, h, 20, 0, 0);
 
