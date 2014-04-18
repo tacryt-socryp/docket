@@ -48,7 +48,7 @@ fn: function(element, eOpts) {
         yloc = h/10,
         xloc;
     
-    mainCarousel.element.dom.style.background = backgroundColor;
+    //mainCarousel.element.dom.style.background = backgroundColor;
     
     if (w > h && h > yloc+560) {
         if (210 * events.length > w) {
@@ -65,7 +65,6 @@ fn: function(element, eOpts) {
         console.log(mainCarousel);
         console.log(me);
         mainCarousel._direction = "horizontal";
-        mainCarousel._scroller._direction = "horizontal";
         me.parent.scrollableBehavior.scrollView._scroller._direction = "vertical";
         console.log(me.parent.scrollableBehavior.scrollView);
         if (210 * events.length > h) {
