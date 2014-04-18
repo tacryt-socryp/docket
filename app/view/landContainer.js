@@ -49,19 +49,17 @@ fn: function(element, eOpts) {
         xloc;
     
     mainCarousel.element.dom.style.background = backgroundColor;
-    
-    if (w > h && h > yloc+560) {
-        if (210 * events.length > w) {
-            w = 210 * events.length;
-        }
-        
-        //Name of room
-        addText("#fff", "36px Arial", roomText, 35, 70);
-        addText("#fff", "36px Arial", "+add", displace, 70);
 
-        //Line across screen
-        addRect(timelineColor, w, 20, 0, yloc+330, 0);
+    if (210 * events.length > w) {
+        w = 210 * events.length;
     }
+
+    //Name of room
+    addText("#fff", "36px Arial", roomText, 35, 70);
+    addText("#fff", "36px Arial", "+add", displace, 70);
+
+    //Line across screen
+    addRect(timelineColor, w, 20, 0, yloc+330, 0);
     
     me.setSize(w,h);
     surface.setSize(w,h);

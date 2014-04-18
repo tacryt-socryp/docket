@@ -171,7 +171,7 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
             landCarousel.add(obj);
             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
                 Ext.Viewport.setActiveItem('landCarousel');
-            }   
+            }
         } else {
             portCarousel.add(obj);
             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
