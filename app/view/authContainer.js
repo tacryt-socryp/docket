@@ -92,40 +92,32 @@ loadData: function(calendarId, summary) {
         apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
         scopes = 'https://www.googleapis.com/auth/calendar';
 
-    var backgroundColors = [
-    '#0d6289', //Blue
-    '#4E2B52', //Purple
-    '#d27f56', //Orange
-    '#53ab73', //Green
-    '#FF4242', //Red
-    '#D9D1A9'  //Beige
-    ];
-
-    var boxColors = [
-    '#43aad5', //Blue
-    '#436085', //Purple
-    '#F99665', //Orange
-    '#7DCB99', //Green
-    '#FF837E', //Red
-    '#B9C18A'  //Beige
-    ];
-
-    var timelineColors = [
-    '#2b8bb5', //Blue
-    '#5A325F', //Purple
-    '#DA8359', //Orange
-    '#80E2BF', //Green
-    '#EC6B51', //Red
-    '#A4AE6A'  //Beige
-    ];
-
-    var dotColors = [
-    '#176c93', //Blue
-    '#8497BF', //Purple
-    '#EC8E60', //Orange
-    '#C4D7A4', //Green
-    '#FFBFB4', //Red
-    '#97A97F'  //Beige
+    var colors = [
+        {
+            'box':'#2980b9',
+            'timeline':'#3498db',
+            'dot':''
+        },
+        {
+            'box':'#8e44ad',
+            'timeline':'#9b59b6',
+            'dot':''
+        },
+        {
+            'box':'#27ae60',
+            'timeline':'#31cd73',
+            'dot':''
+        },
+        {
+            'box':'#16a085',
+            'timeline':'#1abc9c',
+            'dot':''
+        },
+        {
+            'box':'#c0392b',
+            'timeline':'#e74c3c',
+            'dot':''
+        },
     ];
 
     today.setHours(0,0,0,0);
@@ -165,12 +157,11 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         obj.calendarId = calendarId;
 
         child.roomText = summary;
-        child.backgroundColor = backgroundColors[array_i];
-        child.boxColor = boxColors[array_i];
-        child.timelineColor = timelineColors[array_i];
-        child.dotColor = dotColors[array_i];
+        child.backgroundColor = "#2c3e50";
+        child.boxColor = colors[array_i].box;
+        child.timelineColor = colors[array_i].timeline;
+        child.dotColor = colors[array_i].dot;
         child.events = resp.items;
-        child.array_i = array_i;
         
         if (landscape) {
             landCarousel.add(obj);
