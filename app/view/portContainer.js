@@ -68,7 +68,14 @@ fn: function(element, eOpts) {
             console.log('style element changed');
         }
     }, false);
-    document.getElementById(me.element.getId()).style.cssText = "width: 100% !important; height: " + h + "px !important;";
+    
+    
+    for (var x=0; x < document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized").length; x++) {
+        
+        if (document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[x].id == me.element.getId()) {
+            document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[x].style.cssText = "width: 100% !important; height: " + h + "px !important;";
+        }
+    }
     
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
