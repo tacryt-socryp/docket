@@ -3,7 +3,7 @@ Ext.define('Confluent.view.landCarousel', {
     alias: 'widget.landCarousel',
 
     requires: [
-        'Confluent.view.myContainer'
+        'Confluent.view.landContainer'
     ],
 
     config: {

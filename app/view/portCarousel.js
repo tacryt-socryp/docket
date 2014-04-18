@@ -3,7 +3,7 @@ Ext.define('Confluent.view.portCarousel', {
     alias: 'widget.portCarousel',
 
     requires: [
-        'Confluent.view.myContainer'
+        'Confluent.view.portContainer'
     ],
 
     config: {

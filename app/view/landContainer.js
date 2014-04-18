@@ -1,13 +1,13 @@
-Ext.define('Confluent.view.myContainer', {
+Ext.define('Confluent.view.landContainer', {
     extend: 'Ext.Container',
-    alias: 'widget.myContainer',
+    alias: 'widget.landContainer',
 
     requires: [
         'Ext.draw.Component'
     ],
 
     config: {
-        itemId: 'myContainer',
+        itemId: 'landContainer',
         autoDestroy: false,
         scrollable: {
             direction: 'horizontal',
@@ -29,7 +29,7 @@ fn: function(element, eOpts) {
         dotColor = me.dotColor,
         events = me.events;
     
-    console.log(me);
+    console.log(me.parent);
 
     var mainCarousel = me.parent.parent,
         displace = Ext.getBody().getSize().width - 200,
@@ -48,7 +48,7 @@ fn: function(element, eOpts) {
         yloc = h/10,
         xloc;
     
-    //mainCarousel.element.dom.style.background = backgroundColor;
+    mainCarousel.element.dom.style.background = backgroundColor;
     
     if (w > h && h > yloc+560) {
         if (210 * events.length > w) {
@@ -61,20 +61,6 @@ fn: function(element, eOpts) {
 
         //Line across screen
         addRect(timelineColor, w, 20, 0, yloc+330, 0);
-    } else {
-        if (210 * events.length > h) {
-            h = 210 * events.length;
-        }
-        
-        me.parent.scrollableBehavior.scrollView._scroller._direction = "vertical";
-        
-        landscape = false;
-        //Line across screen
-        addRect(timelineColor, 20, h, 20, 0, 0);
-        
-        //Name of room
-        addText("#fff", "20px Arial", roomText, 5, 30);
-        addText("#fff", "20px Arial", "+", displace+170, 30);
     }
     
     me.setSize(w,h);
@@ -261,30 +247,6 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
     }
 }
 
-function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
-    //Larger Point on timeline
-    addCircle(dotColor,22,xloc+190,yloc+338);
-
-    //Smaller Point on timeline
-    addCircle(boxColor,16,xloc+190,yloc+338);
-
-    addRect(boxColor,300,160,xloc+38,yloc+110,3);
-    addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
-
-    addTriangle(boxColor, xloc+178, yloc+269, true);
-
-    if (description !== false) {
-        addText("#fff", "16px Arial", description, xloc+48,
-            yloc+190+vDisplaceDesc+vDisplaceSumm);
-    }
-
-    //Time text
-    addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+123, yloc+260);
-
-    //Date text
-    addText("#fff", "14px Arial", dateTime, xloc+160, yloc+380);
-}
-
 
 for (var iter = 0; iter < events.length; iter++) {
     
@@ -311,13 +273,8 @@ for (var iter = 0; iter < events.length; iter++) {
         dateTime = date.toDateString().substring(0,10);
     }
     
-    if (landscape) {
-        xloc = iter*200;
-        landscapeRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, iter);
-    } else {
-        yloc = iter*200;
-        portraitRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, iter);
-    }
+    xloc = iter*200;
+    landscapeRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, iter);
 }
 },
 event: 'painted'},
