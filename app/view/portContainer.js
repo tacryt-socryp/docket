@@ -61,13 +61,13 @@ fn: function(element, eOpts) {
     
     console.log(me);
     
-    me.element.dom.addEventListener('DOMAttrModified', function(e){
+    document.getElementById(me.element.getId()).addEventListener('DOMAttrModified', function(e){
         if (e.attrName === 'style') {
-            me.element.dom.style.cssText = "width: 100% !important; height: " + h + "px !important;";
+            document.getElementById(me.element.getId()).style.cssText = "width: 100% !important; height: " + h + "px !important;";
             console.log('style element changed');
         }
     }, false);
-    me.element.dom.style.cssText = "width: 100% !important; height: " + h + "px !important;";
+    document.getElementById(me.element.getId()).style.cssText = "width: 100% !important; height: " + h + "px !important;";
     
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
