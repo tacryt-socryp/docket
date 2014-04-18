@@ -16,7 +16,7 @@ Ext.define('Confluent.view.landContainer', {
         items: [{
             xtype: 'draw',
             events: [],
-            itemId: 'inlineDraw',
+            itemId: 'inlineLandDraw',
             autoDestroy: false,
             listeners: [{
 
@@ -337,7 +337,7 @@ function(authResult) {
             });
 
             request.execute(function(resp) {
-                child = me.query('#inlineDraw')[0];
+                child = me.query('#inlineLandDraw')[0];
                 child.events = resp.items;
                 child.fireEvent('painted',child);
             });

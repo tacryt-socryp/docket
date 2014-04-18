@@ -148,14 +148,17 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         if (landscape) {
             landCarousel = Ext.ComponentQuery.query('#landCarousel')[0];
             obj = new Confluent.view.landContainer();
+            array_i = Ext.ComponentQuery.query('#inlineLandDraw').length - 1;
+            child = Ext.ComponentQuery.query('#inlineLandDraw')[array_i];
         } else {
             portCarousel = Ext.ComponentQuery.query('#portCarousel')[0];
             obj = new Confluent.view.portContainer();
+            array_i = Ext.ComponentQuery.query('#inlinePortDraw').length - 1;
+            child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
         }
         
         
-        array_i = Ext.ComponentQuery.query('#inlineDraw').length - 1;
-        child = Ext.ComponentQuery.query('#inlineDraw')[array_i];
+
 
         obj.roomText = summary;
         obj.calendarId = calendarId;

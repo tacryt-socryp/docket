@@ -16,10 +16,9 @@ Ext.define('Confluent.view.portContainer', {
         items: [{
             xtype: 'draw',
             events: [],
-            itemId: 'inlineDraw',
+            itemId: 'inlinePortDraw',
             autoDestroy: false,
             listeners: [{
-
 fn: function(element, eOpts) {
     var me = this,
         backgroundColor = me.backgroundColor,
@@ -51,17 +50,15 @@ fn: function(element, eOpts) {
     console.log("Event length: " + events.length);
     
     if (210 * events.length > h) {
-        //h = 210 * events.length;
+        h = 210 * events.length;
     }
     
-    h = 3360;
-    
     me.setSize(w,h);
-    me.setHeight(h);
-    console.log("me setHeight: " + h + "getHeight: " + me.getHeight());
     surface.setSize(w,h);
-    surface.setHeight(h);
-    console.log("surface setHeight: " + h + "getHeight: " + surface.getHeight());
+    
+    surface.element.dom.clientHeight = h;
+    surface.element.dom.offsetHeight = h;
+    //Ext.ComponentQuery.query('#inlinePortDraw')[0];
     surface.setBackground(backgroundColor);
 
     //Line across screen
@@ -327,7 +324,7 @@ function(authResult) {
             });
 
             request.execute(function(resp) {
-                child = me.query('#inlineDraw')[0];
+                child = me.query('#inlinePortDraw')[0];
                 child.events = resp.items;
                 child.fireEvent('painted',child);
             });
