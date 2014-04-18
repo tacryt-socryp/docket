@@ -215,20 +215,20 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     addCircle(boxColor,16,19,yloc+170);
 
     addRect(boxColor,(xloc*10),160,xloc+30,yloc+90,3);
-    addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
+    addText("#fff", "22px Arial", summary, xloc+48, yloc+115+vDisplaceSumm);
 
     addTriangle(boxColor, xloc, yloc+269, true);
 
     if (description !== false) {
         addText("#fff", "16px Arial", description, xloc+48,
-            yloc+190+vDisplaceDesc+vDisplaceSumm);
+            yloc+170+vDisplaceDesc+vDisplaceSumm);
     }
 
     //Time text
-    addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+123, yloc+260);
+    addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+123, yloc+240);
 
     //Date text
-    addText("#fff", "14px Arial", dateTime, xloc+160, yloc+380);
+    addText("#fff", "14px Arial", dateTime, xloc+160, yloc+360);
 }
 
 
