@@ -53,14 +53,15 @@ fn: function(element, eOpts) {
     surface.setSize(w,h);
     surface.setBackground(backgroundColor);
     
-function addRect(fillColor,h,w,x,y) {
+function addRect(fillColor,h,w,x,y,r) {
     surface.add({
         type: 'rect',
         fill: fillColor,
         height : h,
         width: w,
         x: x,
-        y: y
+        y: y,
+        r: r
     }).show(true);
 }
 
@@ -132,7 +133,7 @@ function processDate(dateDate) {
 }
 
 //Line across screen
-addRect(timelineColor, 20, w, 0, yloc+330);
+addRect(timelineColor, 20, w, 0, yloc+330, 0);
 
 //Name of room
 addText("#fff", "40px Arial", roomText, 35, 70);
@@ -217,7 +218,7 @@ for (var iter = 0; iter < events.length; iter++) {
     addCircle(boxColor,16,xloc+192,yloc+338);
 
     if (iter % 2 === 0) {
-        addRect(boxColor,160,300,xloc+38,yloc+110);
+        addRect(boxColor,160,300,xloc+38,yloc+110,3);
         addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
         addTriangle(boxColor, xloc+178, yloc+269, true);
@@ -231,11 +232,11 @@ for (var iter = 0; iter < events.length; iter++) {
         addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+121, yloc+260);
 
         //Date text
-        addText("#fff", "14px Arial", dateTime, xloc+165, yloc+380);
+        addText("#fff", "14px Arial", dateTime, xloc+164, yloc+380);
 
     } else {
 
-        addRect(boxColor, 160, 300, xloc+38, yloc+410);
+        addRect(boxColor, 160, 300, xloc+38, yloc+410, 3);
 
         addTriangle(boxColor,xloc+203,yloc+411, false);
 
@@ -250,7 +251,7 @@ for (var iter = 0; iter < events.length; iter++) {
         addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+121, yloc+560);
 
         //Date text
-        addText("#fff", "14px Arial", dateTime, xloc+165, yloc+308);
+        addText("#fff", "14px Arial", dateTime, xloc+164, yloc+308);
     }
 }
 },
