@@ -50,21 +50,23 @@ fn: function(element, eOpts) {
     mainCarousel.element.dom.style.background = backgroundColor;
     console.log("Event length: " + events.length);
     
-    if (210 * events.length > h) {
+    //if (210 * events.length > h) {
         h = 210 * events.length;
-    }
+    //}
     
     me.setSize(w,h);
     me.setHeight(h);
+    console.log("me setHeight: " + h + "getHeight: " + me.getHeight);
     surface.setSize(w,h);
     surface.setHeight(h);
+    console.log("surface setHeight: " + h + "getHeight: " + surface.getHeight);
     surface.setBackground(backgroundColor);
 
     //Line across screen
-    addRect(timelineColor, 20, h, 20, 0, 0);
+    addRect(timelineColor, 10, h, 20, 0, 0);
 
     //Name of room
-    addText("#fff", "20px Arial", roomText, 5, 30);
+    addText("#fff", "20px Arial", roomText, 35, 30);
     addText("#fff", "20px Arial", "+", displace+170, 30);
     
     console.log("me");
