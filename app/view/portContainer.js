@@ -63,12 +63,6 @@ fn: function(element, eOpts) {
     addText("#fff", "20px Arial", roomText, 35, 30);
     addText("#fff", "20px Arial", "+", displace+170, 30);
     
-    mainCarousel.addEventListener('DOMNodeInserted', function() {
-        if (document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized").length > 0) {
-            document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[array_i].setAttribute("style", "width: " + w + " !important; height: " + h + " !important;");
-        }
-    });
-
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({
         type: 'rect',
