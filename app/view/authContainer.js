@@ -17,7 +17,9 @@ Ext.define('Confluent.view.authContainer', {
 
 onContainerPainted: function(element, eOpts) {
     var parameters = {},
-        landscape = (Ext.getBody().getSize().width > Ext.getBody().getSize().height && Ext.getBody().getSize().height > (Ext.getBody().getSize().height/10)+560);
+        h = Ext.getBody().getSize().height,
+        w = Ext.getBody().getSize().width,
+        landscape = (w > h && h > (h/10)+560);
         
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         parameters[key] = value;
@@ -80,7 +82,9 @@ generateItems: function() {
 loadData: function(calendarId, summary) {
     var me = this,
         today = new Date(),
-        landscape = landscape = (Ext.getBody().getSize().width > Ext.getBody().getSize().height && Ext.getBody().getSize().height > (Ext.getBody().getSize().height/10)+560),
+        h = Ext.getBody().getSize().height,
+        w = Ext.getBody().getSize().width,
+        landscape = (w > h && h > (h/10)+560),
         child;
 
     var token = Confluent.app.authToken,
@@ -156,9 +160,6 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
             array_i = Ext.ComponentQuery.query('#inlinePortDraw').length - 1;
             child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
         }
-        
-        
-
 
         obj.roomText = summary;
         obj.calendarId = calendarId;
@@ -176,6 +177,10 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
                 Ext.Viewport.setActiveItem('landCarousel');
             }
         } else {
+            if (210 * child.events.length > h) {
+                h = 210 * child.events.length;
+            }
+            document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[array_i].setAttribute("style", "width: " + w + " !important; height: " + h + " !important;");
             portCarousel.add(obj);
             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
                 Ext.Viewport.setActiveItem('portCarousel');

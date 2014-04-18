@@ -55,10 +55,6 @@ fn: function(element, eOpts) {
     
     me.setSize(w,h);
     surface.setSize(w,h);
-    
-    surface.element.dom.clientHeight = h;
-    surface.element.dom.offsetHeight = h;
-    //Ext.ComponentQuery.query('#inlinePortDraw')[0];
     surface.setBackground(backgroundColor);
 
     //Line across screen
