@@ -209,15 +209,15 @@ function processDescription(description) {
     
 function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
     //Larger Point on timeline
-    addCircle(dotColor,22,xloc+190,yloc+338);
+    addCircle(dotColor,22,30,yloc+338);
 
     //Smaller Point on timeline
-    addCircle(boxColor,16,xloc+190,yloc+338);
+    addCircle(boxColor,16,30,yloc+338);
 
     addRect(boxColor,300,160,xloc+38,yloc+110,3);
     addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
-    //addTriangle(boxColor, xloc+178, yloc+269, true);
+    addTriangle(boxColor, xloc, yloc+269, true);
 
     if (description !== false) {
         addText("#fff", "16px Arial", description, xloc+48,
