@@ -207,7 +207,7 @@ for (var iter = 0; iter < events.length; iter++) {
     if ((date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
         dateTime = processDate(dateTime);
     } else {
-        dateTime = dateTime.toDateString().substring(0,10);
+        dateTime = date.toDateString().substring(0,10);
     }
 
     //Larger Point on timeline
