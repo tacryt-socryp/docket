@@ -48,6 +48,8 @@ fn: function(element, eOpts) {
         xloc;
     
     mainCarousel.element.dom.style.background = backgroundColor;
+    console.log(events.length);
+    
     if (210 * events.length > h) {
         h = 210 * events.length;
     }
@@ -64,6 +66,8 @@ fn: function(element, eOpts) {
     
     me.setSize(w,h);
     surface.setSize(w,h);
+    console.log(surface);
+    console.log(me);
     surface.setBackground(backgroundColor);
 
 function addRect(fillColor,w,h,x,y,r) {
