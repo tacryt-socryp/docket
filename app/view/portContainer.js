@@ -60,6 +60,7 @@ fn: function(element, eOpts) {
     var theLength = document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized").length;
     
     console.log(me);
+    console.log(me.element.getId());
     
     document.getElementById(me.element.getId()).addEventListener('DOMAttrModified', function(e){
         if (e.attrName === 'style') {
