@@ -9,7 +9,9 @@ Ext.define('Confluent.view.portContainer', {
     config: {
         itemId: 'portContainer',
         autoDestroy: false,
-        scroll:'vertical',
+        scrollable: {
+            direction: 'vertical'
+        },
         items: [{
             xtype: 'draw',
             events: [],
