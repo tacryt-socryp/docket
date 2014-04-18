@@ -8,7 +8,7 @@ Ext.define('Confluent.view.portCarousel', {
 
     config: {
         fullscreen: true,
-        height: '100%',
+        height: '10000px',
         itemId: 'portCarousel',
         ui: 'light',
         direction: 'horizontal',
