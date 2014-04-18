@@ -61,7 +61,7 @@ function addRect(fillColor,h,w,x,y,r) {
         width: w,
         x: x,
         y: y,
-        r: r
+        radius: r
     }).show(true);
 }
 
