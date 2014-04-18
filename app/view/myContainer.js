@@ -65,6 +65,9 @@ fn: function(element, eOpts) {
         if (210 * events.length > h) {
             h = 210 * events.length;
         }
+        
+        me.parent.scrollableBehavior.scrollvView._scroller._direction = "vertical";
+        
         landscape = false;
         //Line across screen
         addRect(timelineColor, 20, h, 20, 0, 0);
