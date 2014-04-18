@@ -64,6 +64,7 @@ fn: function(element, eOpts) {
     } else {
         console.log(mainCarousel);
         console.log(me);
+        mainCarousel._direction = "horizontal";
         //mainCarousel._scroller._direction = "horizontal";
         //me.parent.scrollableBehavior.scrollView._scroller._direction = "vertical";
         console.log(me.parent.scrollableBehavior.scrollView);
