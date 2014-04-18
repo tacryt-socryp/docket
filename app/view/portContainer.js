@@ -26,7 +26,6 @@ fn: function(element, eOpts) {
         roomText = me.roomText,
         boxColor = me.boxColor,
         dotColor = me.dotColor,
-        array_i = me.array_i,
         events = me.events;
 
     var mainCarousel = me.parent.parent,
@@ -58,7 +57,9 @@ fn: function(element, eOpts) {
     
     console.log(document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized"));
     
-    document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[array_i].style.cssText = "width: 100% !important; height: " + h + " !important;";
+    var theLength = document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized").length;
+    
+    document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[theLength-1].style.cssText = "width: 100% !important; height: " + h + " !important;";
 
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
