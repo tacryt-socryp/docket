@@ -61,7 +61,7 @@ fn: function(element, eOpts) {
     
     console.log(me);
     
-    document.documentElement.addEventListener('DOMAttrModified', function(e){
+    document.body.addEventListener('DOMAttrModified', function(e){
         if (e.attrName === 'style') {
             me.element.dom.style.cssText = "width: 100% !important; height: " + h + "px !important;";
             console.log('style element changed');
