@@ -66,7 +66,7 @@ fn: function(element, eOpts) {
             h = 210 * events.length;
         }
         
-        me.parent.scrollableBehavior.scrollvView._scroller._direction = "vertical";
+        me.parent.scrollableBehavior.scrollView._scroller._direction = "vertical";
         
         landscape = false;
         //Line across screen
