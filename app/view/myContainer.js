@@ -61,11 +61,17 @@ fn: function(element, eOpts) {
         //Name of room
         addText("#fff", "36px Arial", roomText, 35, 70);
         addText("#fff", "36px Arial", "+add", displace, 70);
+
+        //Line across screen
+        addRect(timelineColor, 20, w, 0, yloc+330, 0);
     } else {
         landscape = false;
         //Name of room
-        addText("#fff", "20px Arial", roomText, 5, 5);
-        addText("#fff", "20px Arial", "+", displace+170, 5);
+        addText("#fff", "20px Arial", roomText, 5, 30);
+        addText("#fff", "20px Arial", "+", displace+170, 30);
+        
+        //Line across screen
+        addRect(timelineColor, 20, w, 0, yloc+330, 0);
     }
 
 function addRect(fillColor,h,w,x,y,r) {
@@ -202,9 +208,6 @@ function processDescription(description) {
 }
     
 function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
-    //Line across screen
-    addRect(timelineColor, 20, w, 0, yloc+330, 0);
-
     //Larger Point on timeline
     addCircle(dotColor,22,xloc+190,yloc+338);
 
