@@ -61,7 +61,7 @@ fn: function(element, eOpts) {
     
     console.log(me);
     
-    document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[theLength-1].style.cssText = "width: 100% !important; height: " + h + "px !important;";
+    document.getElementById(me.id).style.cssText = "width: 100% !important; height: " + h + "px !important;";
 
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
