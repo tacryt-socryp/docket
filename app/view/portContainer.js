@@ -63,7 +63,7 @@ fn: function(element, eOpts) {
                 console.log('style text css changed');
         }
     }
-    }, 500);
+    }, 1000);
     
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
