@@ -26,9 +26,8 @@ fn: function(element, eOpts) {
         roomText = me.roomText,
         boxColor = me.boxColor,
         dotColor = me.dotColor,
+        array_i = me.array_i,
         events = me.events;
-    
-    console.log(me.parent);
 
     var mainCarousel = me.parent.parent,
         displace = Ext.getBody().getSize().width - 200,
@@ -53,6 +52,8 @@ fn: function(element, eOpts) {
         h = 210 * events.length;
     }
     
+    document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[array_i].setAttribute("style", "width: " + w + " !important; height: " + h + " !important;");
+    
     me.setSize(w,h);
     surface.setSize(w,h);
     surface.setBackground(backgroundColor);
@@ -63,11 +64,6 @@ fn: function(element, eOpts) {
     //Name of room
     addText("#fff", "20px Arial", roomText, 35, 30);
     addText("#fff", "20px Arial", "+", displace+170, 30);
-    
-    console.log("me");
-    console.log(me);
-    console.log("Surface");
-    console.log(surface);
 
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({

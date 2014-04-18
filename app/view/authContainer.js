@@ -170,6 +170,7 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         child.timelineColor = timelineColors[array_i];
         child.dotColor = dotColors[array_i];
         child.events = resp.items;
+        child.array_i = array_i;
         
         if (landscape) {
             landCarousel.add(obj);
@@ -180,7 +181,6 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
             if (210 * child.events.length > h) {
                 h = 210 * child.events.length;
             }
-            document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[array_i].setAttribute("style", "width: " + w + " !important; height: " + h + " !important;");
             portCarousel.add(obj);
             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
                 Ext.Viewport.setActiveItem('portCarousel');
