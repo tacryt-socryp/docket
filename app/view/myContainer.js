@@ -28,13 +28,15 @@ fn: function(element, eOpts) {
         boxColor = me.boxColor,
         dotColor = me.dotColor,
         events = me.events;
+    
+    console.log(me);
 
     var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
         displace = Ext.getBody().getSize().width - 200,
         h = Ext.getBody().getSize().height,
+        w = Ext.getBody().getSize().width,
         surface = me.getSurface('main'),
         today = new Date(Date.now()),
-        w = 210 * events.length,
         vDisplaceSumm,
         vDisplaceDesc,
         description,
@@ -47,17 +49,12 @@ fn: function(element, eOpts) {
         xloc;
     
     mainCarousel.element.dom.style.background = backgroundColor;
-
-    if (w < Ext.getBody().getSize().width) {
-        w = Ext.getBody().getSize().width;
-    }
-
-    me.setSize(w,h);
-    surface.setSize(w,h);
-    surface.setBackground(backgroundColor);
     
-    
-    if (Ext.getBody().getSize().width > h && h > yloc+560) {
+    if (w > h && h > yloc+560) {
+        if (210 * events.length > w) {
+            w = 210 * events.length;
+        }
+        
         //Name of room
         addText("#fff", "36px Arial", roomText, 35, 70);
         addText("#fff", "36px Arial", "+add", displace, 70);
@@ -65,14 +62,22 @@ fn: function(element, eOpts) {
         //Line across screen
         addRect(timelineColor, w, 20, 0, yloc+330, 0);
     } else {
+        mainCarousel.direction = "horizontal";
+        if (210 * events.length > h) {
+            h = 210 * events.length;
+        }
         landscape = false;
+        //Line across screen
+        addRect(timelineColor, 20, h, 20, 0, 0);
+        
         //Name of room
         addText("#fff", "20px Arial", roomText, 5, 30);
         addText("#fff", "20px Arial", "+", displace+170, 30);
-        
-        //Line across screen
-        addRect(timelineColor, 20, h, 0, yloc+330, 0);
     }
+    
+    me.setSize(w,h);
+    surface.setSize(w,h);
+    surface.setBackground(backgroundColor);
 
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({
