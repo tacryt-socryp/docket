@@ -26,7 +26,8 @@ Ext.application({
     views: [
         'myContainer',
         'authContainer',
-        'mainCarousel',
+        'portCarousel',
+        'landCarousel',
         'timeSlider',
         'MyFormPanel'
     ],
