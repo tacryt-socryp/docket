@@ -212,10 +212,10 @@ for (var iter = 0; iter < events.length; iter++) {
     }
 
     //Larger Point on timeline
-    addCircle(dotColor,22,xloc+192,yloc+338);
+    addCircle(dotColor,22,xloc+190,yloc+338);
 
     //Smaller Point on timeline
-    addCircle(boxColor,16,xloc+192,yloc+338);
+    addCircle(boxColor,16,xloc+190,yloc+338);
 
     if (iter % 2 === 0) {
         addRect(boxColor,160,300,xloc+38,yloc+110,3);
@@ -232,7 +232,7 @@ for (var iter = 0; iter < events.length; iter++) {
         addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+121, yloc+260);
 
         //Date text
-        addText("#fff", "14px Arial", dateTime, xloc+164, yloc+380);
+        addText("#fff", "14px Arial", dateTime, xloc+163, yloc+380);
 
     } else {
 
@@ -251,7 +251,7 @@ for (var iter = 0; iter < events.length; iter++) {
         addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+121, yloc+560);
 
         //Date text
-        addText("#fff", "14px Arial", dateTime, xloc+164, yloc+308);
+        addText("#fff", "14px Arial", dateTime, xloc+163, yloc+308);
     }
 }
 },
