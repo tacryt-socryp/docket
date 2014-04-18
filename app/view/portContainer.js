@@ -55,28 +55,15 @@ fn: function(element, eOpts) {
     surface.setSize(w,h);
     surface.setBackground(backgroundColor);
     
-    console.log(document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized"));
-    
-    var theLength = document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized").length;
-    
-    console.log(me);
-    console.log(me.element.getId());
-    
-    document.getElementById(me.element.getId()).addEventListener('DOMAttrModified', function(e){
-        if (e.attrName === 'style') {
-            document.getElementById(me.element.getId()).style.cssText = "width: 100% !important; height: " + h + "px !important;";
-            
-        }
-    }, false);
-    
-    
-    for (var x=0; x < document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized").length; x++) {
+    setTimeout(function(){
+        for (var x=0; x < document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized").length; x++) {
         
-        if (document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[x].id == me.element.getId()) {
-            document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[x].style.cssText = "width: 100% !important; height: " + h + "px !important;";
-            console.log('style text css changed');
+            if (document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[x].id == me.element.getId()) {
+                document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[x].style.cssText = "width: 100% !important; height: " + h + "px !important;";
+                console.log('style text css changed');
         }
     }
+    }, 500);
     
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
