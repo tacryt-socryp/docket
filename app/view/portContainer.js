@@ -51,8 +51,10 @@ fn: function(element, eOpts) {
     console.log("Event length: " + events.length);
     
     if (210 * events.length > h) {
-        h = 210 * events.length;
+        //h = 210 * events.length;
     }
+    
+    h = 3360;
     
     me.setSize(w,h);
     me.setHeight(h);
