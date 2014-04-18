@@ -189,7 +189,6 @@ for (var iter = 0; iter < events.length; iter++) {
                     vDisplaceDesc = vDisplaceDesc + 10;
                 }
             }
-            }
         }
     } catch(e) {
         description = false;
