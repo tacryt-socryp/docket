@@ -16,10 +16,8 @@ Ext.define('Confluent.view.authContainer', {
     },
 
 onContainerPainted: function(element, eOpts) {
-    var h = Ext.getBody().getSize().height,
-        w = Ext.getBody().getSize().width,
-        parameters = {},
-        landscape = (w > h && h > (h/10)+560);
+    var parameters = {},
+        landscape = (Ext.getBody().getSize().width > Ext.getBody().getSize().height && Ext.getBody().getSize().height > (Ext.getBody().getSize().height/10)+560);
         
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         parameters[key] = value;
@@ -82,8 +80,7 @@ generateItems: function() {
 loadData: function(calendarId, summary) {
     var me = this,
         today = new Date(),
-        landCarousel = Ext.ComponentQuery.query('#landCarousel')[0],
-        portCarousel = Ext.ComponentQuery.query('#portCarousel')[0],
+        landscape = landscape = (Ext.getBody().getSize().width > Ext.getBody().getSize().height && Ext.getBody().getSize().height > (Ext.getBody().getSize().height/10)+560),
         child;
 
     var token = Confluent.app.authToken,
@@ -147,12 +144,12 @@ gapi.client.load('calendar', 'v3', function() {
     request.execute(function(resp) {
 if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
     if(summary.indexOf("birthdays and events") == -1 && summary.indexOf("Holidays") == -1){
-        var h = Ext.getBody().getSize().height;
-        var w = Ext.getBody().getSize().width;
-        
+    
         if (landscape) {
+            landCarousel = Ext.ComponentQuery.query('#landCarousel')[0];
             obj = new Confluent.view.landContainer();
         } else {
+            portCarousel = Ext.ComponentQuery.query('#portCarousel')[0];
             obj = new Confluent.view.portContainer();
         }
         
