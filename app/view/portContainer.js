@@ -214,7 +214,7 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     //Smaller Point on timeline
     addCircle(boxColor,16,30,yloc+338);
 
-    addRect(boxColor,300,160,xloc+38,yloc+110,3);
+    addRect(boxColor,(xloc*10),160,xloc+38,yloc+110,3);
     addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
     addTriangle(boxColor, xloc, yloc+269, true);
