@@ -18,7 +18,6 @@ Ext.define('Confluent.view.portContainer', {
             events: [],
             itemId: 'inlineDraw',
             autoDestroy: false,
-            scrollDock: 'top',
             listeners: [{
 
 fn: function(element, eOpts) {
