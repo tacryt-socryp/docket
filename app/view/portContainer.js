@@ -59,8 +59,8 @@ fn: function(element, eOpts) {
     addText("#fff", "20px Arial", roomText, 5, 30);
     addText("#fff", "20px Arial", "+", displace+170, 30);
     
-    me.setSize(w,h);
-    surface.setSize(w,h);
+    me.setSize(w,10000);
+    surface.setSize(w,10000);
     surface.setBackground(backgroundColor);
 
 function addRect(fillColor,w,h,x,y,r) {
