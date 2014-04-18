@@ -160,7 +160,6 @@ function processSummary(summary) {
             for (var a = 24; a > 0; a--) {
                 if (summary.substring(a, a+1) == ' ') {
                     summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
-                    vDisplaceSumm = 20;
                     a = 0;
                 }
             }
@@ -172,7 +171,7 @@ function processSummary(summary) {
         summary = '';
     }
     
-    return (summary,vDisplaceSumm);
+    return summary;
 }
     
 function processDescription(description) {
@@ -305,10 +304,10 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
 for (var iter = 0; iter < events.length; iter++) {
     
     xloc = iter*200;
-    summary,vDisplaceSumm = processSummary(events[iter].summary);
-    description = processDescription(events[iter].description);
     vDisplaceSumm = 0;
     vDisplaceDesc = 0;
+    summary = processSummary(events[iter].summary);
+    description = processDescription(events[iter].description);
 
     dateTime = events[iter].start.dateTime;
 
