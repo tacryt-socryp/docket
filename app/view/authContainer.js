@@ -16,14 +16,21 @@ Ext.define('Confluent.view.authContainer', {
     },
 
 onContainerPainted: function(element, eOpts) {
-    var parameters = {};
+    var h = Ext.getBody().getSize().height,
+        w = Ext.getBody().getSize().width,
+        parameters = {},
+        landscape = (w > h && h > (h/10)+560);
+        
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         parameters[key] = value;
     });
 
-    Ext.create('Confluent.view.landCarousel');
-    Ext.create('Confluent.view.portCarousel');
     Ext.create('Confluent.view.MyFormPanel');
+    if (landscape) {
+        Ext.create('Confluent.view.landCarousel');
+    } else {
+        Ext.create('Confluent.view.portCarousel');
+    }
 
     function isEmpty(ob) {
         for (var i in ob) {
@@ -143,7 +150,7 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         var h = Ext.getBody().getSize().height;
         var w = Ext.getBody().getSize().width;
         
-        if (w > h && h > (h/10)+560) {
+        if (landscape) {
             obj = new Confluent.view.landContainer();
         } else {
             obj = new Confluent.view.portContainer();
@@ -163,7 +170,7 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         child.dotColor = dotColors[array_i];
         child.events = resp.items;
         
-        if (w > h && h > (h/10)+560) {
+        if (landscape) {
             landCarousel.add(obj);
             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
                 Ext.Viewport.setActiveItem('landCarousel');
