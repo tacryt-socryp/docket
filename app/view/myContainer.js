@@ -335,7 +335,7 @@ for (var iter = 0; iter < events.length; iter++) {
     if (landscape) {
         landscapeRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, iter);
     } else {
-        portraitRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, i);
+        portraitRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, iter);
     }
 }
 },
