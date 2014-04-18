@@ -42,6 +42,7 @@ fn: function(element, eOpts) {
         dateStart,
         dateEnd,
         summary,
+        landscape = true,
         yloc = h/10,
         xloc;
     
@@ -55,6 +56,18 @@ fn: function(element, eOpts) {
     surface.setSize(w,h);
     surface.setBackground(backgroundColor);
     
+    
+    if (Ext.getBody().getSize().width > h && h > yloc+560) {
+        //Name of room
+        addText("#fff", "36px Arial", roomText, 35, 70);
+        addText("#fff", "36px Arial", "+add", displace, 70);
+    } else {
+        landscape = false;
+        //Name of room
+        addText("#fff", "20px Arial", roomText, 5, 5);
+        addText("#fff", "20px Arial", "+", displace+170, 5);
+    }
+
 function addRect(fillColor,h,w,x,y,r) {
     surface.add({
         type: 'rect',
@@ -133,21 +146,8 @@ function processDate(dateDate) {
 
     return dateDate;
 }
-
-//Line across screen
-addRect(timelineColor, 20, w, 0, yloc+330, 0);
-
-//Name of room
-addText("#fff", "40px Arial", roomText, 35, 70);
-addText("#fff", "36px Arial", "+add", displace, 70);
-
-for (var iter = 0; iter < events.length; iter++) {
-    xloc = iter*200;
-    summary = events[iter].summary;
-    description = events[iter].description;
-    vDisplaceSumm = 0;
-    vDisplaceDesc = 0;
-
+    
+function processSummary(summary) {
     try {
         summary = summary.replace(/\s+/g,' ');
         if (summary.length > 24) {
@@ -165,7 +165,11 @@ for (var iter = 0; iter < events.length; iter++) {
     } catch(e) {
         summary = '';
     }
-
+    
+    return summary;
+}
+    
+function processDescription(description) {
     try {
         description = description.replace(/\s+/g,' ').description.replace(/(\r\n|\n|\r)/gm,' ');
         var spaces = false;
@@ -193,25 +197,13 @@ for (var iter = 0; iter < events.length; iter++) {
     } catch(e) {
         description = false;
     }
-
-    dateTime = events[iter].start.dateTime;
-
-    if (typeof dateTime === 'undefined') {
-        dateTime = events[iter].start.date;
-        dateStart = "12:00am";
-        dateEnd = "11:59pm";
-    } else {
-        dateStart = processDate(events[iter].start.dateTime);
-        dateEnd = processDate(events[iter].end.dateTime);
-    }
     
-    date = new Date(Date.parse(dateTime));
-
-    if ((date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
-        dateTime = processDate(dateTime);
-    } else {
-        dateTime = date.toDateString().substring(0,10);
-    }
+    return description;
+}
+    
+function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
+    //Line across screen
+    addRect(timelineColor, 20, w, 0, yloc+330, 0);
 
     //Larger Point on timeline
     addCircle(dotColor,22,xloc+190,yloc+338);
@@ -219,7 +211,7 @@ for (var iter = 0; iter < events.length; iter++) {
     //Smaller Point on timeline
     addCircle(boxColor,16,xloc+190,yloc+338);
 
-    if (iter % 2 === 0) {
+    if (i % 2 === 0) {
         addRect(boxColor,160,300,xloc+38,yloc+110,3);
         addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
@@ -254,6 +246,90 @@ for (var iter = 0; iter < events.length; iter++) {
 
         //Date text
         addText("#fff", "14px Arial", dateTime, xloc+160, yloc+308);
+    }
+}
+
+function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
+    //Line across screen
+    addRect(timelineColor, 20, w, 0, yloc+330, 0);
+
+    //Larger Point on timeline
+    addCircle(dotColor,22,xloc+190,yloc+338);
+
+    //Smaller Point on timeline
+    addCircle(boxColor,16,xloc+190,yloc+338);
+
+    if (i % 2 === 0) {
+        addRect(boxColor,160,300,xloc+38,yloc+110,3);
+        addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
+
+        addTriangle(boxColor, xloc+178, yloc+269, true);
+
+        if (description !== false) {
+            addText("#fff", "16px Arial", description, xloc+48,
+                yloc+190+vDisplaceDesc+vDisplaceSumm);
+        }
+
+        //Time text
+        addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+123, yloc+260);
+
+        //Date text
+        addText("#fff", "14px Arial", dateTime, xloc+160, yloc+380);
+
+    } else {
+
+        addRect(boxColor, 160, 300, xloc+38, yloc+410, 3);
+
+        addTriangle(boxColor,xloc+203,yloc+411, false);
+
+        addText("#fff", "22px Arial", summary, xloc+48, yloc+435+vDisplaceSumm);
+
+        if (description !== false) {
+            addText("#fff", "16px Arial", description, xloc+48,
+                yloc+485+vDisplaceSumm+vDisplaceDesc);
+        }
+
+        //Time text
+        addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+123, yloc+560);
+
+        //Date text
+        addText("#fff", "14px Arial", dateTime, xloc+160, yloc+308);
+    }
+}
+
+
+
+for (var iter = 0; iter < events.length; iter++) {
+    
+    xloc = iter*200;
+    summary = processSummary(events[iter].summary);
+    description = processDescription(events[iter].description);
+    vDisplaceSumm = 0;
+    vDisplaceDesc = 0;
+
+    dateTime = events[iter].start.dateTime;
+
+    if (typeof dateTime === 'undefined') {
+        dateTime = events[iter].start.date;
+        dateStart = "12:00am";
+        dateEnd = "11:59pm";
+    } else {
+        dateStart = processDate(events[iter].start.dateTime);
+        dateEnd = processDate(events[iter].end.dateTime);
+    }
+    
+    date = new Date(Date.parse(dateTime));
+
+    if ((date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
+        dateTime = processDate(dateTime);
+    } else {
+        dateTime = date.toDateString().substring(0,10);
+    }
+    
+    if (landscape) {
+        landscapeRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, iter);
+    } else {
+        portraitRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, i);
     }
 }
 },
