@@ -55,7 +55,9 @@ fn: function(element, eOpts) {
     }
     
     me.setSize(w,h);
+    me.setHeight(h);
     surface.setSize(w,h);
+    surface.setHeight(h);
     surface.setBackground(backgroundColor);
 
     //Line across screen
