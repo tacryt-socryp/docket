@@ -58,7 +58,7 @@ fn: function(element, eOpts) {
     
     console.log(document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized"));
     
-    document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[0].setAttribute("style", "width: 100% !important; height: " + h + " !important;");
+    document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[array_i].style.cssText = "width: 100% !important; height: " + h + " !important;";
 
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
