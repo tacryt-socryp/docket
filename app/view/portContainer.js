@@ -269,7 +269,8 @@ event: 'painted'},
         var me = this;
         me.callParent();
 
-        me.getSurface('main').element.on({
+        console.log(me);
+        me.element.on({
             tap: me.onTap
         });
 
