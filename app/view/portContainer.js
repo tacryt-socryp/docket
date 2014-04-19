@@ -43,7 +43,7 @@ fn: function(element, eOpts) {
         yloc = h/10,
         xloc = w/12,
         splitPoint = parseInt(((xloc*10)/330)*38+0.5),
-        m = Ext.draw.TextMeasurer;;
+        m = Ext.draw.TextMeasurer;
 
     
     mainCarousel.element.dom.style.background = backgroundColor;
