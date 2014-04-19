@@ -182,13 +182,13 @@ function processDescription(description) {
         description = description.replace(/\s+/g,' ')
         description = description.replace(/(\r\n|\n|\r)/g,' ');
         var noSpaces = true;
-        if (description.length > 43) {
-            if (description.length > 133) {
-                description = description.substring(0,124) + '...';
+        if (description.length > 44) {
+            if (description.length > 132) {
+                description = description.substring(0,132) + '...';
             }
             
-            if (description.length > 84) {
-                 for (var a = 84; a > 0; a--) {
+            if (description.length > 88) {
+                 for (var a = 88; a > 0; a--) {
                     if (description.substring(a, a+1) == ' ') {
                         description = description.substring(0,a) + '\n' + description.substring(a+1);
                         noSpaces = false;
@@ -198,7 +198,7 @@ function processDescription(description) {
                 }
             }
             
-            for (var a = 43; a > 0; a--) {
+            for (var a = 44; a > 0; a--) {
                 if (description.substring(a, a+1) == ' ') {
                     description = description.substring(0,a) + '\n' + description.substring(a+1);
                     noSpaces = false;
@@ -208,7 +208,7 @@ function processDescription(description) {
             }
             
             if (noSpaces) {
-                description = description.substring(0,43) + '\n' + description.substring(43,84);
+                description = description.substring(0,44) + '\n' + description.substring(44,88);
                 vDisplaceDesc = vDisplaceDesc + 5;
             }
         }
@@ -223,7 +223,7 @@ function processDescription(description) {
 function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
 
     //Smaller Point on timeline
-    addCircle(boxColor,16,xloc+200,yloc+339);
+    addCircle(boxColor,16,xloc+205,yloc+339);
 
     if (i % 2 === 0) {
         addRect(boxColor,330,160,xloc+38,yloc+110,3);
