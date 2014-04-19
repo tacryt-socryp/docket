@@ -241,8 +241,8 @@ for (var iter = 0; iter < events.length; iter++) {
     
     vDisplaceDesc = 0;
     summary = processSummary(events[iter].summary);
-    description = processDescription(events[iter].description);
     console.log(description);
+    description = processDescription(events[iter].description);
 
     dateTime = events[iter].start.dateTime;
 
