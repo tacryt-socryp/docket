@@ -317,31 +317,25 @@ event: 'painted'},
     initialize: function() {
         var me = this,
             canvas = me.items.items[0];
-        window.yScrollPosition = 0;
+
+        canvas.yScrollPosition = 0;
         me.callParent();
 
         canvas.element.on({
-            tap: me.onTap
-        });
-        
-        me.element.on({
-            scroll: me.onScroll
+            tap: me.onTap(e,canvas)
         });
         
         me.getScrollable().getScroller().on({
-                'scrollend':function(e){
-                    window.yScrollPosition = e.position.y;
-                    console.log(e.position.y);
-                },
-                scope: me.getScrollable().getScroller()
+            scrollend: me.onScroll(e,canvas),
+            scope: me.getScrollable().getScroller()
         });
 
         window.setInterval(function() {me.reloadData();},900000);
     },
 
-    onTap: function(e) {
+    onTap: function(e,canvas) {
         console.log(e);
-        if ((e.pageY+window.yScrollPosition) <= 80) {
+        if ((e.pageY + canvas.yScrollPosition) <= 80) {
             if (e.pageX >= (Ext.getBody().getSize().width*(2/3))) {
                 var form = new Docket.view.formPanel();
                 Ext.Viewport.add(form);
@@ -349,9 +343,9 @@ event: 'painted'},
         }
     },
     
-    onScroll: function(e) {
+    onScroll: function(e,canvas) {
+        canvas.yScrollPosition = e.position.y;
         console.log(e);
-        
     },
 
     reloadData: function() {
