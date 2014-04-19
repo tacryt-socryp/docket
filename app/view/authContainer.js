@@ -87,7 +87,7 @@ loadData: function(calendarId, summary) {
         landscape = (w > h && h > (h/10)+560),
         child;
 
-    var token = Confluent.app.authToken,
+    var token = Docket.app.authToken,
         clientId = '464168127252.apps.googleusercontent.com',
         apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
         scopes = 'https://www.googleapis.com/auth/calendar';
@@ -138,12 +138,12 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
     
         if (landscape) {
             landCarousel = Ext.ComponentQuery.query('#landCarousel')[0];
-            obj = new Confluent.view.landContainer();
+            obj = new Docket.view.landContainer();
             array_i = Ext.ComponentQuery.query('#inlineLandDraw').length - 1;
             child = Ext.ComponentQuery.query('#inlineLandDraw')[array_i];
         } else {
             portCarousel = Ext.ComponentQuery.query('#portCarousel')[0];
-            obj = new Confluent.view.portContainer();
+            obj = new Docket.view.portContainer();
             array_i = Ext.ComponentQuery.query('#inlinePortDraw').length - 1;
             child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
         }
