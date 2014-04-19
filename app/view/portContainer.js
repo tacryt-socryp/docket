@@ -42,7 +42,7 @@ fn: function(element, eOpts) {
         summary,
         yloc = h/10,
         xloc = w/12,
-        splitPoint = parseInt(((xloc*10)/(2.8947))+0.5);
+        splitPoint = parseInt(((xloc*10)/3)+0.5);
     
     mainCarousel.element.dom.style.background = backgroundColor;
     console.log("Event length: " + events.length);
