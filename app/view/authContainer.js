@@ -25,7 +25,7 @@ onContainerPainted: function(element, eOpts) {
         parameters[key] = value;
     });
 
-    Ext.create('Docket.view.MyFormPanel');
+    Ext.create('Docket.view.formPanel');
     if (landscape) {
         Ext.create('Docket.view.landCarousel');
     } else {

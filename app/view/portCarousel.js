@@ -8,7 +8,7 @@ Ext.define('Docket.view.portCarousel', {
 
     config: {
         fullscreen: true,
-        itemId: 'portCarousel',
+        itemId: 'mainCarousel',
         ui: 'light',
         direction: 'horizontal',
         showAnimation: {

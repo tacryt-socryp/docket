@@ -1,4 +1,4 @@
-Ext.define('Docket.view.MyFormPanel', {
+Ext.define('Docket.view.formPanel', {
     extend: 'Ext.form.Panel',
 
     requires: [
@@ -16,8 +16,8 @@ Ext.define('Docket.view.MyFormPanel', {
         submitted: false,
         centered: true,
         height: '90%',
-        id: 'MyFormPanel',
-        itemId: 'MyFormPanel',
+        id: 'formPanel',
+        itemId: 'formPanel',
         width: '90%',
         hideOnMaskTap: true,
         modal: true,
@@ -328,12 +328,12 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
 }]
     }],
     listeners: [{
-        fn: 'onMyFormPanelHide',
+        fn: 'onFormPanelHide',
         event: 'hide'
     }]
 },
 
-    onMyFormPanelHide: function(component, eOpts) {
+    onFormPanelHide: function(component, eOpts) {
         if (component.submitted) {
             var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
                 myContainer = mainCarousel.getActiveItem();

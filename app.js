@@ -14,7 +14,7 @@ Ext.application({
         'portCarousel',
         'landCarousel',
         'timeSlider',
-        'MyFormPanel'
+        'formPanel'
     ],
     name: 'Docket',
 

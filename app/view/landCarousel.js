@@ -8,7 +8,7 @@ Ext.define('Docket.view.landCarousel', {
 
     config: {
         fullscreen: true,
-        itemId: 'landCarousel',
+        itemId: 'mainCarousel',
         ui: 'light',
         direction: 'vertical',
         showAnimation: {

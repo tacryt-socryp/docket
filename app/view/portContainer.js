@@ -328,7 +328,7 @@ event: 'painted'},
     onTap: function(e) {
         if (e.pageY <= 80) {
             if (e.pageX >= (Ext.getBody().getSize().width/3)) {
-                var form = new Docket.view.MyFormPanel();
+                var form = new Docket.view.formPanel();
                 Ext.Viewport.add(form);
             }
         }
