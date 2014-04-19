@@ -25,7 +25,6 @@ fn: function(element, eOpts) {
         timelineColor = me.timelineColor,
         roomText = me.roomText,
         boxColor = me.boxColor,
-        dotColor = me.dotColor,
         events = me.events;
 
     var mainCarousel = me.parent.parent,
@@ -208,10 +207,7 @@ function processDescription(description) {
 }
     
 function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
-    //Larger Point on timeline
-    addCircle(dotColor,22,25,yloc+170);
-
-    //Smaller Point on timeline
+    //Point on timeline
     addCircle(boxColor,16,19,yloc+170);
 
     addRect(boxColor,(xloc*10),160,(xloc*1.5),yloc+90,3);

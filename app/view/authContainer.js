@@ -96,27 +96,22 @@ loadData: function(calendarId, summary) {
         {
             'box':'#2980b9',
             'timeline':'#3498db',
-            'dot':''
         },
         {
             'box':'#16a085',
             'timeline':'#1abc9c',
-            'dot':''
         },
         {
             'box':'#c0392b',
             'timeline':'#e74c3c',
-            'dot':''
         },
         {
             'box':'#27ae60',
             'timeline':'#31cd73',
-            'dot':''
         },
         {
             'box':'#8e44ad',
             'timeline':'#9b59b6',
-            'dot':''
         }
     ];
 
@@ -160,7 +155,6 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         child.backgroundColor = "#2c3e50";
         child.boxColor = colors[array_i].box;
         child.timelineColor = colors[array_i].timeline;
-        child.dotColor = colors[array_i].dot;
         child.events = resp.items;
         
         if (landscape) {
