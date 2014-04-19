@@ -278,8 +278,8 @@ event: 'painted'},
     },
 
     onTap: function(e) {
-        if (e.pageY <= 70) {
-            if (e.pageX >= (Ext.getBody().getSize().width/2)) {
+        if (e.pageY <= 80) {
+            if (e.pageX >= (Ext.getBody().getSize().width/3)) {
                 var form = new Confluent.view.MyFormPanel();
                 Ext.Viewport.add(form);
             }
