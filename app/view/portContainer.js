@@ -169,6 +169,7 @@ function processSummary(summary) {
             
             if (noSpaces) {
                 summary = summary.substring(0,25) + '\n' + summary.substring(25,50);
+                vDisplaceSumm = 20;
             }
         } else {
             vDisplaceSumm = 0;
