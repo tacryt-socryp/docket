@@ -217,8 +217,6 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     addRect(boxColor,(xloc*9.75),160,(xloc*1.5),yloc+90,3);
     addText("#fff", "22px Arial", summary, xloc+48, yloc+115+vDisplaceSumm);
 
-    addTriangle(boxColor, xloc, yloc+269, true);
-
     if (description !== false) {
         addText("#fff", "16px Arial", description, xloc+48,
             yloc+170+vDisplaceDesc+vDisplaceSumm);
