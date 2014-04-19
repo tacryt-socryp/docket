@@ -207,14 +207,14 @@ function processDescription(description) {
 for (var a = 0; a < divider; a++) {
     
     for (var b = parseInt((description.length/divider)*(a+1)); b > 0; b--) {
-        if (divider > 2) {
+        if (divider > 1) {
             if (description.substring(b, b+1) == ' ') {
             console.log(b);
-            console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
+            console.log(m.measureTextSingleLine(description.substring(0, b),"17px Arial").width 
                         - (xloc*9.8) - sum);
-            if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
+            if (m.measureTextSingleLine(description.substring(0, b),"17px Arial").width 
                         - (xloc*9.8) - sum < (xloc*9.8)) {
-                sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
+                sum = m.measureTextSingleLine(description.substring(0, b),"17px Arial").width - (xloc*9.8);
                 console.log("picked this value");
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
@@ -267,10 +267,10 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     }
 
     //Time text
-    addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+123, yloc+240);
+    addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+123, yloc+250);
 
     //Date text
-    addText("#fff", "14px Arial", dateTime, xloc+160, yloc+360);
+    //addText("#fff", "14px Arial", dateTime, xloc+160, yloc+360);
 }
 
 
