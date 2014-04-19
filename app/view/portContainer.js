@@ -192,46 +192,29 @@ function processSummary(summary) {
     
 function processDescription(description) {
     try {
-        var measured = Ext.draw.TextMeasurer.measureTextSingleLine(description,"16px Arial");
-        console.log(measured);
-        console.log("Description: " + summary);
-        console.log("Description Measured: " + measured);
-        
+        var measureText = Ext.draw.TextMeasurer;
         vDisplaceDesc = 0;
         description = description.replace(/\s+/g,' ')
         description = description.replace(/(\r\n|\n|\r)/g,' ');
-        var noSpaces = true;
-        console.log(splitPoint);
+        var measured = measureText.measureTextSingleLine(description,"16px Arial");
         
-        if (description.length > splitPoint) {
-            if (description.length > (splitPoint*3)) {
-                description = description.substring(0,(splitPoint*3-3)) + '...';
+        console.log("Description: " + summary);
+        console.log("Description Measured: " + measured.width);
+        
+        var divider = parseInt(measured.width/(xloc*10)); // Number of splits
+        vDisplaceDesc = 5*divider;
+        
+        for (var a = 0; a < divider; a++) {
+            if (a == 3) {
+                a = divider;
             }
-            
-            if (description.length > (splitPoint*2)) {
-                 for (var a = (splitPoint*2); a > 0; a--) {
-                    if (description.substring(a, a+1) == ' ') {
-                        description = description.substring(0,a) + '\n' + description.substring(a+1);
-                        noSpaces = false;
-                        a = 0;
-                        vDisplaceDesc = vDisplaceDesc + 5;
-                    }
+            for (var b = (description.length/divider)*(a+1); b > 0; b--) {
+                if (description.substring(b, b+1) == ' ') {
+                    description = description.substring(0,b) + '\n' + description.substring(b+1);
+                    b = 0;
                 }
             }
             
-            for (var a = splitPoint; a > 0; a--) {
-                if (description.substring(a, a+1) == ' ') {
-                    description = description.substring(0,a) + '\n' + description.substring(a+1);
-                    noSpaces = false;
-                    a = 0;
-                    vDisplaceDesc = vDisplaceDesc + 5;
-                }
-            }
-            
-            if (noSpaces) {
-                description = description.substring(0,splitPoint) + '\n' + description.substring(splitPoint,(splitPoint*2));
-                vDisplaceDesc = vDisplaceDesc + 5;
-            }
         }
     } catch(e) {
         console.log(e);
