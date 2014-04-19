@@ -153,7 +153,6 @@ function processDate(dateDate) {
     
 function processSummary(summary) {
     try {
-        var measured = Ext.draw.TextMeasurer.measureTextSingleLine(summary,"22px Arial");
         //console.log("Summary: " + summary);
         //console.log("Summary Measured: " + measured);
         
@@ -193,12 +192,12 @@ function processDescription(description) {
     vDisplaceDesc = 0;
     description = description.replace(/\s+/g,' ')
     description = description.replace(/(\r\n|\n|\r)/g,' ');
-    var measured = m.measureTextSingleLine(description,"16px Arial");
-    var divider = parseInt(measured.width/(xloc*9.8)); // Number of splits
+    var measured = m.measureTextSingleLine(description,"16px Arial").width;
+    var divider = parseInt(measured/(xloc*9.8))+1; // Number of splits
 
     if (divider > 0) {
         console.log("Description: " + description);
-        console.log("Description Measured: " + measured.width);
+        console.log("Description Measured: " + measured);
         console.log("Number of Splits needed: " + divider);
         console.log("Box width: " + (xloc*9.8));
     }
