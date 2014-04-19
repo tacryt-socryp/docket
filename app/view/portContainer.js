@@ -42,7 +42,8 @@ fn: function(element, eOpts) {
         summary,
         yloc = h/10,
         xloc = w/12,
-        splitPoint = parseInt(((xloc*10)/330)*38+0.5);
+        splitPoint = parseInt(((xloc*10)/330)*38+0.5),
+        m = Ext.draw.TextMeasurer;;
 
     
     mainCarousel.element.dom.style.background = backgroundColor;
@@ -188,18 +189,19 @@ function processSummary(summary) {
     
 function processDescription(description) {
     try {
-    var m = Ext.draw.TextMeasurer;
+        
     vDisplaceDesc = 0;
     description = description.replace(/\s+/g,' ')
     description = description.replace(/(\r\n|\n|\r)/g,' ');
     var measured = m.measureTextSingleLine(description,"16px Arial");
+    var divider = parseInt(measured.width/(xloc*9.8)); // Number of splits
 
-    console.log("Description: " + description);
-    console.log("Description Measured: " + measured.width);
-
-    var divider = parseInt(measured.width/(xloc*9.7)); // Number of splits
-    console.log("Number of Splits needed: " + divider);
-    console.log("Box width: " + (xloc*9.7));
+    if (divider > 0) {
+        console.log("Description: " + description);
+        console.log("Description Measured: " + measured.width);
+        console.log("Number of Splits needed: " + divider);
+        console.log("Box width: " + (xloc*9.8));
+    }
 
 for (var a = 0; a < divider; a++) {
     
