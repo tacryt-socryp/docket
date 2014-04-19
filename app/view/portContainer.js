@@ -194,13 +194,22 @@ function processDescription(description) {
             }
             
             if (description.length > 90) {
-                 for (var a = 50; a > 0; a--) {
+                 for (var a = 95; a > 0; a--) {
                     if (description.substring(a, a+1) == ' ') {
                         description = description.substring(0,a) + '\n' + description.substring(a+1);
                         noSpaces = false;
                         a = 0;
                         vDisplaceDesc = vDisplaceDesc + 5;
                     }
+                }
+            }
+            
+            for (var a = 50; a > 0; a--) {
+                if (description.substring(a, a+1) == ' ') {
+                    description = description.substring(0,a) + '\n' + description.substring(a+1);
+                    noSpaces = false;
+                    a = 0;
+                    vDisplaceDesc = vDisplaceDesc + 5;
                 }
             }
             
