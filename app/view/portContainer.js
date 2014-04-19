@@ -155,8 +155,8 @@ function processSummary(summary) {
     try {
         var noSpaces = true;
         summary = summary.replace(/\s+/g,' ');
-        if (summary.length > 25) {
-            for (var a = 25; a > 0; a--) {
+        if (summary.length > (splitPoint*(3/4))) {
+            for (var a = (splitPoint*(3/4)); a > 0; a--) {
                 if (summary.substring(a, a+1) == ' ') {
                     summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
                     vDisplaceSumm = 20;
@@ -164,12 +164,13 @@ function processSummary(summary) {
                     noSpaces = false;
                 }
             }
-            if (summary.length > 50) {
-                summary = summary.substring(0,50) + '...';
+            if (summary.length > (splitPoint*(3/2))) {
+                summary = summary.substring(0,(splitPoint*(3/2))) + '...';
             }
             
             if (noSpaces) {
-                summary = summary.substring(0,25) + '\n' + summary.substring(25,50);
+                summary = summary.substring(0,(splitPoint*(3/4))) + '\n' + 
+                    summary.substring((splitPoint*(3/4)),(splitPoint*(3/2)));
                 vDisplaceSumm = 20;
             }
         } else {
