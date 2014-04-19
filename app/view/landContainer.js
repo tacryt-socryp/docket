@@ -179,7 +179,8 @@ function processSummary(summary) {
 function processDescription(description) {
     try {
         vDisplaceDesc = 0;
-        description = description.replace(/\s+/g,' ').description.replace(/(\r\n|\n|\r)/gm,' ');
+        description = description.replace(/\s+/g,' ')
+        description = description.replace(/(\r\n|\n|\r)/gm,' ');
         var spaces = false;
         if (description.length > 35) {
             if (description.length > 103) {
