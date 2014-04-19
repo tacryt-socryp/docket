@@ -176,7 +176,7 @@ var me = this,
     roomText = myContainer.roomText,
     dateStart = new Date(),
     dateEnd = new Date(),
-    attendee,
+    attendee = '',
     date;
 
 var token = Docket.app.authToken,
@@ -270,11 +270,11 @@ var resource = {
         'dateTime': end
     },
     'attendees': [
-    {
-        'email': calendarId,
-        'displayName': roomText,
-        'responseStatus': 'needsAction'
-    }
+//    {
+//        'email': calendarId,
+//        'displayName': roomText,
+//        'responseStatus': 'needsAction'
+//    }
     ]
 };
 
@@ -283,13 +283,15 @@ guests = guests.replace(/\s+/g, '');
 guests = guests.split(',');
 for (var i=0; i<guests.length; i++) {
     attendee = guests[i];
-    if (attendees !== '') {
+    if (attendee !== '') {
         attendee = attendee.split('@');
-        resource.attendees.push({
-            'email': attendee[0] + '@' + attendee[1],
-            'displayName': attendee[0],
-            'responseStatus': 'needsAction'
-        });
+        if (attendee.length > 1) {
+            resource.attendees.push({
+                'email': attendee[0] + '@' + attendee[1],
+                'displayName': attendee[0],
+                'responseStatus': 'needsAction'
+            });
+        }
     }
 }
 
