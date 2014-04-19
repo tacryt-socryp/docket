@@ -134,9 +134,10 @@ gapi.client.load('calendar', 'v3', function() {
     });
 
     request.execute(function(resp) {
+        console.log(calendarId);
 if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
     if(summary.indexOf("birthdays and events") == -1 && summary.indexOf("Holidays") == -1){
-    
+        console.log("Got past the if! " + calendarId);
         if (landscape) {
             obj = new Docket.view.landContainer();
             array_i = Ext.ComponentQuery.query('#inlineLandDraw').length - 1;
