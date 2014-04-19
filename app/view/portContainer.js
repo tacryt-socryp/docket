@@ -42,7 +42,7 @@ fn: function(element, eOpts) {
         summary,
         yloc = h/10,
         xloc = w/12,
-        splitPoint = parseInt(((xloc*10)/3)+0.5);
+        splitPoint = parseInt((xloc*10)/3);
     
     mainCarousel.element.dom.style.background = backgroundColor;
     console.log("Event length: " + events.length);
@@ -189,10 +189,11 @@ function processDescription(description) {
         description = description.replace(/\s+/g,' ')
         description = description.replace(/(\r\n|\n|\r)/g,' ');
         var noSpaces = true;
+        console.log(splitPoint);
         
         if (description.length > splitPoint) {
             if (description.length > (splitPoint*3)) {
-                description = description.substring(0,114) + '...';
+                description = description.substring(0,(splitPoint*3-3)) + '...';
             }
             
             if (description.length > (splitPoint*2)) {
