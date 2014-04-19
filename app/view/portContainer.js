@@ -192,32 +192,33 @@ function processSummary(summary) {
     
 function processDescription(description) {
     try {
-        var measure = Ext.draw.TextMeasurer;
-        vDisplaceDesc = 0;
-        description = description.replace(/\s+/g,' ')
-        description = description.replace(/(\r\n|\n|\r)/g,' ');
-        var measured = measure.measureTextSingleLine(description,"16px Arial");
-        
-        console.log("Description: " + summary);
-        console.log("Description Measured: " + measured.width);
-        
-        var divider = parseInt(measured.width/(xloc*8)); // Number of splits
-        vDisplaceDesc = 5*divider;
-        
-        for (var a = 0; a < divider; a++) {
-            for (var b = (description.length/divider)*(a+1); b > 0; b--) {
-                if (description.substring(b, b+1) == ' ') {
-                    if (measure.measureTextSingleLine(description.substring(0, b)) < (xloc*10)) {
-                        description = description.substring(0,b) + '\n' + description.substring(b+1);
-                        b = 0;
-                    }
+    var measure = Ext.draw.TextMeasurer;
+    vDisplaceDesc = 0;
+    description = description.replace(/\s+/g,' ')
+    description = description.replace(/(\r\n|\n|\r)/g,' ');
+    var measured = measure.measureTextSingleLine(description,"16px Arial");
+
+    console.log("Description: " + summary);
+    console.log("Description Measured: " + measured.width);
+
+    var divider = parseInt(measured.width/(xloc*8)); // Number of splits
+    vDisplaceDesc = 5*divider;
+
+    for (var a = 0; a < divider; a++) {
+        for (var b = (description.length/divider)*(a+1); b > 0; b--) {
+            if (description.substring(b, b+1) == ' ' &&
+                measure.measureTextSingleLine(description.substring(0, b),"16px Arial") < (xloc*10)) {
+                    description = description.substring(0,b) + '\n' +
+                        description.substring(b+1);
+                    b = 0;
                 }
             }
-            
-            if (a == 2) {
-                a = divider;
-            }
         }
+
+        if (a == 2) {
+            a = divider;
+        }
+    }
     } catch(e) {
         console.log(e);
         description = false;
