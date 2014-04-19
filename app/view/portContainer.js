@@ -41,7 +41,8 @@ fn: function(element, eOpts) {
         dateEnd,
         summary,
         yloc = h/10,
-        xloc = w/12;
+        xloc = w/12,
+        splitPoint = parseInt(((xloc*10)/(2.8947))+0.5);
     
     mainCarousel.element.dom.style.background = backgroundColor;
     console.log("Event length: " + events.length);
@@ -188,13 +189,14 @@ function processDescription(description) {
         description = description.replace(/\s+/g,' ')
         description = description.replace(/(\r\n|\n|\r)/g,' ');
         var noSpaces = true;
-        if (description.length > 45) {
-            if (description.length > 135) {
-                description = description.substring(0,135) + '...';
+        
+        if (description.length > splitPoint) {
+            if (description.length > (splitPoint*3)) {
+                description = description.substring(0,114) + '...';
             }
             
-            if (description.length > 90) {
-                 for (var a = 95; a > 0; a--) {
+            if (description.length > (splitPoint*2)) {
+                 for (var a = (splitPoint*2); a > 0; a--) {
                     if (description.substring(a, a+1) == ' ') {
                         description = description.substring(0,a) + '\n' + description.substring(a+1);
                         noSpaces = false;
@@ -204,7 +206,7 @@ function processDescription(description) {
                 }
             }
             
-            for (var a = 50; a > 0; a--) {
+            for (var a = splitPoint; a > 0; a--) {
                 if (description.substring(a, a+1) == ' ') {
                     description = description.substring(0,a) + '\n' + description.substring(a+1);
                     noSpaces = false;
@@ -214,7 +216,7 @@ function processDescription(description) {
             }
             
             if (noSpaces) {
-                description = description.substring(0,45) + '\n' + description.substring(45,90);
+                description = description.substring(0,splitPoint) + '\n' + description.substring(splitPoint,(splitPoint*2));
                 vDisplaceDesc = vDisplaceDesc + 5;
             }
         }
