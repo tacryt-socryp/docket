@@ -186,27 +186,27 @@ function processDescription(description) {
     try {
         vDisplaceDesc = 0;
         description = description.replace(/\s+/g,' ')
-        description = description.replace(/(\r\n|\n|\r)/gm,' ');
+        description = description.replace(/(\r\n|\n|\r)/g,' ');
         var noSpaces = true;
         if (description.length > 45) {
             if (description.length > 135) {
                 description = description.substring(135) + '...';
             }
             
-            for (var a = description.length; a > 0; a--) {
-                if (description.substring(a, a+1) == ' ') {
-                    description = description.substring(0,a) + '\n' + description.substring(a+1);
-                    noSpaces = false;
-                    a = a-45;
-                    vDisplaceDesc = vDisplaceDesc + 5;
+            if (description.length > 90) {
+                 for (var a = 50; a > 0; a--) {
+                    if (description.substring(a, a+1) == ' ') {
+                        description = description.substring(0,a) + '\n' + description.substring(a+1);
+                        noSpaces = false;
+                        a = 0;
+                        vDisplaceDesc = vDisplaceDesc + 5;
+                    }
                 }
             }
             
             if (noSpaces) {
-                for (var a = description.length; a > 0; a=a-35) {
-                    description = description.substring(0,a) + '\n' + description.substring(a+1);
-                    vDisplaceDesc = vDisplaceDesc + 5;
-                }
+                description = description.substring(0,45) + '\n' + description.substring(45,90);
+                vDisplaceDesc = vDisplaceDesc + 5;
             }
         }
     } catch(e) {
