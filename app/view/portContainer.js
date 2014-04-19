@@ -317,11 +317,11 @@ event: 'painted'},
     initialize: function() {
         var me = this,
             canvas = me.items.items[0],
-            yPosition = 0;
+            me.yPosition = 0;
         me.callParent();
 
         canvas.element.on({
-            tap: me.onTap
+            tap: me.onTap(e,yPosition)
         });
         
         me.element.on({
@@ -330,7 +330,7 @@ event: 'painted'},
         
         me.getScrollable().getScroller().on({
                 'scrollend':function(e){
-                    yPosition = e.position.y;
+                    me.yPosition = e.position.y;
                     console.log(e.position.y);
                 },
                 scope: me.getScrollable().getScroller()
@@ -339,9 +339,9 @@ event: 'painted'},
         window.setInterval(function() {me.reloadData();},900000);
     },
 
-    onTap: function(e) {
+    onTap: function(e, me) {
         console.log(e);
-        if ((e.pageY+yPosition) <= 80) {
+        if ((e.pageY+me.yPosition) <= 80) {
             if (e.pageX >= (Ext.getBody().getSize().width*(2/3))) {
                 var form = new Docket.view.formPanel();
                 Ext.Viewport.add(form);
@@ -351,6 +351,7 @@ event: 'painted'},
     
     onScroll: function(e) {
         console.log(e);
+        
     },
 
     reloadData: function() {
