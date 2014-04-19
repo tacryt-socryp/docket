@@ -212,7 +212,7 @@ function processDescription(description) {
                 }
             }
             
-            if (a == 3) {
+            if (a == 2) {
                 a = divider;
             }
         }
