@@ -201,13 +201,10 @@ function processDescription(description) {
         console.log("Description: " + summary);
         console.log("Description Measured: " + measured.width);
         
-        var divider = parseInt(measured.width/(xloc*11)); // Number of splits
+        var divider = parseInt(measured.width/(xloc*9)); // Number of splits
         vDisplaceDesc = 5*divider;
         
         for (var a = 0; a < divider; a++) {
-            if (a == 3) {
-                a = divider;
-            }
             for (var b = (description.length/divider)*(a+1); b > 0; b--) {
                 if (description.substring(b, b+1) == ' ') {
                     description = description.substring(0,b) + '\n' + description.substring(b+1);
@@ -215,6 +212,9 @@ function processDescription(description) {
                 }
             }
             
+            if (a == 3) {
+                a = divider;
+            }
         }
     } catch(e) {
         console.log(e);
