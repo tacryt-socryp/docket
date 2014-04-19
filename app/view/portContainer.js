@@ -188,11 +188,11 @@ function processSummary(summary) {
     
 function processDescription(description) {
     try {
-    var measure = Ext.draw.TextMeasurer;
+    var m = Ext.draw.TextMeasurer;
     vDisplaceDesc = 0;
     description = description.replace(/\s+/g,' ')
     description = description.replace(/(\r\n|\n|\r)/g,' ');
-    var measured = measure.measureTextSingleLine(description,"16px Arial");
+    var measured = m.measureTextSingleLine(description,"16px Arial");
 
     console.log("Description: " + description);
     console.log("Description Measured: " + measured.width);
@@ -206,12 +206,9 @@ for (var a = 0; a < divider; a++) {
     for (var b = (description.length/divider)*(a+1); b > 0; b--) {
         
         if (description.substring(b, b+1) == ' ') {
-            console.log(measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a * xloc*9.8));
-            if (measure.measureTextSingleLine(
-                        description.substring(0, b),"16px Arial").width - 
-                        (a *xloc*9.8) < (xloc*9.5)) {
-                
-                console.log("if " + (measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a * xloc*9.8)));
+            console.log(measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a*xloc*9.8));
+            if (measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width - 
+                        (a*xloc*9.8) < (xloc*9.6)) {
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
                 b = 0;
                 vDisplaceDesc = vDisplaceDesc+5;
@@ -221,7 +218,7 @@ for (var a = 0; a < divider; a++) {
 
     if (a == 2) {
         description = description.substring(0,(description.length/divider)*(a+1)) + '...';
-        vDisplaceDesc = 5*a;
+        vDisplaceDesc = vDisplaceDesc+5;
         a = divider;
     }
 }
