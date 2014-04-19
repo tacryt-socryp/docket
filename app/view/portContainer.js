@@ -188,24 +188,24 @@ function processDescription(description) {
         description = description.replace(/\s+/g,' ')
         description = description.replace(/(\r\n|\n|\r)/gm,' ');
         var noSpaces = true;
-        if (description.length > 35) {
-            if (description.length > 103) {
-                description = description.substring(104) + '...';
+        if (description.length > 45) {
+            if (description.length > 135) {
+                description = description.substring(135) + '...';
             }
             
             for (var a = description.length; a > 0; a--) {
                 if (description.substring(a, a+1) == ' ') {
                     description = description.substring(0,a) + '\n' + description.substring(a+1);
                     noSpaces = false;
-                    a = a-35;
-                    vDisplaceDesc = vDisplaceDesc + 10;
+                    a = a-45;
+                    vDisplaceDesc = vDisplaceDesc + 5;
                 }
             }
             
             if (noSpaces) {
                 for (var a = description.length; a > 0; a=a-35) {
                     description = description.substring(0,a) + '\n' + description.substring(a+1);
-                    vDisplaceDesc = vDisplaceDesc + 10;
+                    vDisplaceDesc = vDisplaceDesc + 5;
                 }
             }
         }
