@@ -201,7 +201,7 @@ function processDescription(description) {
         console.log("Description: " + summary);
         console.log("Description Measured: " + measured.width);
         
-        var divider = parseInt(measured.width/(xloc*10)); // Number of splits
+        var divider = parseInt(measured.width/(xloc*11)); // Number of splits
         vDisplaceDesc = 5*divider;
         
         for (var a = 0; a < divider; a++) {
