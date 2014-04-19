@@ -258,8 +258,7 @@ for (var iter = 0; iter < events.length; iter++) {
 event: 'painted'},
 {
     fn: function(element, eOpts) {
-        this.setSize(null, Ext.getBody().getSize().height);
-        this.getSurface('main').setSize(null, Ext.getBody().getSize().height);
+        //Replace with real resize code
     },
     event: 'resize'
 }]
@@ -270,7 +269,7 @@ event: 'painted'},
         var me = this;
         me.callParent();
 
-        me.element.on({
+        me.getSurface('main').element.on({
             tap: me.onTap
         });
 
