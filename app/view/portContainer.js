@@ -215,10 +215,10 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     addCircle(boxColor,16,19,yloc+170);
 
     addRect(boxColor,(xloc*10),160,(xloc*1.5),yloc+90,3);
-    addText("#fff", "22px Arial", summary, (xloc*1.55), yloc+115+vDisplaceSumm);
+    addText("#fff", "22px Arial", summary, (xloc*1.6), yloc+115+vDisplaceSumm);
 
     if (description !== false) {
-        addText("#fff", "16px Arial", description, (xloc*1.55),
+        addText("#fff", "16px Arial", description, (xloc*1.6),
             yloc+170+vDisplaceDesc+vDisplaceSumm);
     }
 
