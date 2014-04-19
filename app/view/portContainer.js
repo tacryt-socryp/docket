@@ -207,14 +207,14 @@ function processDescription(description) {
 for (var a = 0; a < divider; a++) {
     
     for (var b = parseInt((description.length/divider)*(a+1)); b > 0; b--) {
-        if (divider > 1) {
+        if (a > 1) {
             if (description.substring(b, b+1) == ' ') {
             console.log(b);
-            console.log(m.measureTextSingleLine(description.substring(0, b),"17px Arial").width 
-                        - (xloc*9.8) - sum);
-            if (m.measureTextSingleLine(description.substring(0, b),"17px Arial").width 
-                        - (xloc*9.8) - sum < (xloc*9.8)) {
-                sum = m.measureTextSingleLine(description.substring(0, b),"17px Arial").width - (xloc*9.8);
+            console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
+                        - (xloc*9.8));
+            if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
+                        - (xloc*9.8) < (xloc*9.8)) {
+                sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
                 console.log("picked this value");
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
