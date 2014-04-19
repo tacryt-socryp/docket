@@ -326,6 +326,13 @@ event: 'painted'},
         me.element.on({
             scroll: me.onScroll
         });
+        
+        me.getScrollable().getScroller().on({
+                'scrollend':function(e){
+                    console.log(e);
+                },
+                scope: me.getScrollable().getScroller()
+        });
 
         window.setInterval(function() {me.reloadData();},900000);
     },
