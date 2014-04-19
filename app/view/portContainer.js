@@ -206,11 +206,12 @@ function processDescription(description) {
     var sum = 0;
 
 for (var a = 0; a < divider; a++) {
+    sum = 0;
     
     for (var b = parseInt((description.length/divider)*(a+1)); b > 0; b--) {
         if (description.substring(b, b+1) == ' ') {
             console.log(b);
-            console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8 - sum));
+            console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8) - sum);
             if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8) - sum < (xloc*9.8)) {
                 
                 sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
@@ -227,7 +228,6 @@ for (var a = 0; a < divider; a++) {
         description = description.substring(0,(description.length/divider)*(a+1)) + '...';
         vDisplaceDesc = vDisplaceDesc+5;
         a = divider;
-        sum = 0;
     }
 }
     } catch(e) {
