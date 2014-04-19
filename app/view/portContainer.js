@@ -197,9 +197,9 @@ function processDescription(description) {
     console.log("Description: " + description);
     console.log("Description Measured: " + measured.width);
 
-    var divider = parseInt(measured.width/(xloc*9.8)); // Number of splits
+    var divider = parseInt(measured.width/(xloc*9.7)); // Number of splits
     console.log("Number of Splits needed: " + divider);
-    console.log("Box width: " + (xloc*9.8));
+    console.log("Box width: " + (xloc*9.7));
 
 for (var a = 0; a < divider; a++) {
     
@@ -207,7 +207,10 @@ for (var a = 0; a < divider; a++) {
         
         if (description.substring(b, b+1) == ' ') {
             console.log(measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a * xloc*9.8));
-            if (measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a * xloc*9.8) < (xloc*9.6)) {
+            if (measure.measureTextSingleLine(
+                        description.substring(0, b),"16px Arial").width - 
+                        (a *xloc*9.8) < (xloc*9.5)) {
+                
                 console.log("if " + (measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a * xloc*9.8)));
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
                 b = 0;
