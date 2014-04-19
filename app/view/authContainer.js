@@ -129,7 +129,7 @@ gapi.client.load('calendar', 'v3', function() {
         'singleEvents': true,
         'orderBy': 'startTime',
         'timeMin': today,
-        'maxResults': 50
+        'maxResults': 70
     });
 
     request.execute(function(resp) {

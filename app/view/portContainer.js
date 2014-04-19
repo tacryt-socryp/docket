@@ -361,7 +361,7 @@ function(authResult) {
                 'singleEvents': true,
                 'orderBy': 'startTime',
                 'timeMin': today,
-                'maxResults': 50
+                'maxResults': 70
             });
 
             request.execute(function(resp) {
