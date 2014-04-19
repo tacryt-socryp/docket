@@ -15,10 +15,10 @@ Ext.define('Confluent.view.MyFormPanel', {
     config: {
         submitted: false,
         centered: true,
-        height: 500,
+        height: '90%',
         id: 'MyFormPanel',
         itemId: 'MyFormPanel',
-        width: 500,
+        width: '90%',
         hideOnMaskTap: true,
         modal: true,
         hideAnimation: {
