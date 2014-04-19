@@ -154,16 +154,16 @@ function processDate(dateDate) {
 function processSummary(summary) {
     try {
         summary = summary.replace(/\s+/g,' ');
-        if (summary.length > 24) {
-            for (var a = 24; a > 0; a--) {
+        if (summary.length > 25) {
+            for (var a = 25; a > 0; a--) {
                 if (summary.substring(a, a+1) == ' ') {
                     summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
                     vDisplaceSumm = 20;
                     a = 0;
                 }
             }
-            if (summary.length > 48) {
-                summary = summary.substring(0,48) + '...';
+            if (summary.length > 50) {
+                summary = summary.substring(0,50) + '...';
             }
         } else {
             vDisplaceSumm = 0;
@@ -215,10 +215,10 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     addCircle(boxColor,16,19,yloc+170);
 
     addRect(boxColor,(xloc*10),160,(xloc*1.5),yloc+90,3);
-    addText("#fff", "22px Arial", summary, xloc+48, yloc+115+vDisplaceSumm);
+    addText("#fff", "22px Arial", summary, (xloc*1.55), yloc+115+vDisplaceSumm);
 
     if (description !== false) {
-        addText("#fff", "16px Arial", description, xloc+48,
+        addText("#fff", "16px Arial", description, (xloc*1.55),
             yloc+170+vDisplaceDesc+vDisplaceSumm);
     }
 
