@@ -202,27 +202,18 @@ function processDescription(description) {
         console.log("Number of Splits needed: " + divider);
         console.log("Box width: " + (xloc*9.8));
     }
-        
-    function sumOfArray(array) {
-        value = 0;
-        for (var x = 0; x < array.length; x++) {
-            value = value + array[x];
-        }
-        
-        return value;
-    }
 
-    var arrayVal = [0];
     var sum = 0;
+
 for (var a = 0; a < divider; a++) {
     
     for (var b = parseInt((description.length/divider)*(a+1)); b > 0; b--) {
         if (description.substring(b, b+1) == ' ') {
             console.log(b);
-            console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a*xloc*9.8));
+            console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8 - sum));
             if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8) - sum < (xloc*9.8)) {
-                arrayVal.push(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8)-sum);
-                sum = sumOfArray(arrayVal);
+                
+                sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
                 console.log("picked this value");
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
@@ -236,7 +227,6 @@ for (var a = 0; a < divider; a++) {
         description = description.substring(0,(description.length/divider)*(a+1)) + '...';
         vDisplaceDesc = vDisplaceDesc+5;
         a = divider;
-        arrayVal = [0];
         sum = 0;
     }
 }
