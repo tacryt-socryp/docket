@@ -23,11 +23,11 @@ Ext.define('Docket.view.formPanel', {
         modal: true,
         hideAnimation: {
             type: 'fadeOut',
-            duration: 200
+            duration: 100
         },
         showAnimation: {
             type: 'fadeIn',
-            duration: 200
+            duration: 100
         },
     items: [{
             xtype: 'textfield',

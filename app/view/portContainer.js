@@ -320,7 +320,8 @@ event: 'painted'},
         me.callParent();
 
         canvas.element.on({
-            tap: me.onTap
+            tap: me.onTap,
+            scrollEnd: me.onScroll
         });
 
         window.setInterval(function() {me.reloadData();},900000);
@@ -334,6 +335,10 @@ event: 'painted'},
                 Ext.Viewport.add(form);
             }
         }
+    },
+    
+    onScroll: function(e) {
+        console.log(e);
     },
 
     reloadData: function() {
