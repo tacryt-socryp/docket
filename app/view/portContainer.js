@@ -44,6 +44,8 @@ fn: function(element, eOpts) {
         xloc = w/12,
         splitPoint = parseInt(((xloc*10)/330)*38+0.5);
     
+    console.log(Ext.draw.TextMeasurer);
+    
     mainCarousel.element.dom.style.background = backgroundColor;
     console.log("Event length: " + events.length);
     
