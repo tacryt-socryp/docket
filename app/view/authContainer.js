@@ -71,6 +71,7 @@ generateItems: function() {
             var request = gapi.client.calendar.calendarList.list();
             request.execute(function(outer) {
                 for (var a = 0; a < outer.items.length; a++) {
+                    console.log(outer.items[a].id);
                     me.loadData(outer.items[a].id, outer.items[a].summary);
                 }
             });
