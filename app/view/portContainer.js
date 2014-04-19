@@ -69,7 +69,7 @@ fn: function(element, eOpts) {
 
     //Name of room
     addText("#fff", "20px Arial", roomText, 35, 30);
-    addRect(timelineColor, 50, 50, 40, 40, 3);
+    addRect(timelineColor, 40, 40, w-40, 10, 3);
     addText("#fff", "24px Arial", "+", w-40, 40);
     
 function addRect(fillColor,w,h,x,y,r) {
