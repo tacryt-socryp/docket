@@ -94,12 +94,12 @@ loadData: function(calendarId, summary) {
 
     var colors = [
         {
-            'box':'#2980b9',
-            'timeline':'#3498db',
-        },
-        {
             'box':'#16a085',
             'timeline':'#1abc9c',
+        },
+        {
+            'box':'#2980b9',
+            'timeline':'#3498db',
         },
         {
             'box':'#c0392b',
