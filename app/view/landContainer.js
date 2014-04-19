@@ -182,7 +182,7 @@ function processDescription(description) {
         description = description.replace(/\s+/g,' ')
         description = description.replace(/(\r\n|\n|\r)/g,' ');
         var noSpaces = true;
-        if (description.length > 42) {
+        if (description.length > 43) {
             if (description.length > 133) {
                 description = description.substring(0,124) + '...';
             }
@@ -198,7 +198,7 @@ function processDescription(description) {
                 }
             }
             
-            for (var a = 42; a > 0; a--) {
+            for (var a = 43; a > 0; a--) {
                 if (description.substring(a, a+1) == ' ') {
                     description = description.substring(0,a) + '\n' + description.substring(a+1);
                     noSpaces = false;
@@ -208,7 +208,7 @@ function processDescription(description) {
             }
             
             if (noSpaces) {
-                description = description.substring(0,42) + '\n' + description.substring(42,84);
+                description = description.substring(0,43) + '\n' + description.substring(43,84);
                 vDisplaceDesc = vDisplaceDesc + 5;
             }
         }
@@ -226,10 +226,10 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
     addCircle(boxColor,16,xloc+200,yloc+339);
 
     if (i % 2 === 0) {
-        addRect(boxColor,320,160,xloc+38,yloc+110,3);
+        addRect(boxColor,330,160,xloc+38,yloc+110,3);
         addText("#fff", "22px Arial", summary, xloc+43, yloc+135+vDisplaceSumm);
 
-        addTriangle(boxColor, xloc+188, yloc+269, true);
+        addTriangle(boxColor, xloc+193, yloc+269, true);
 
         if (description !== false) {
             addText("#fff", "16px Arial", description, xloc+43,
@@ -237,16 +237,16 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
         }
 
         //Time text
-        addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+133, yloc+260);
+        addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+138, yloc+260);
 
         //Date text
-        addText("#fff", "14px Arial", dateTime, xloc+170, yloc+380);
+        addText("#fff", "14px Arial", dateTime, xloc+175, yloc+380);
 
     } else {
 
-        addRect(boxColor, 320,160, xloc+38, yloc+410, 3);
+        addRect(boxColor, 330,160, xloc+38, yloc+410, 3);
 
-        addTriangle(boxColor,xloc+213,yloc+411, false);
+        addTriangle(boxColor,xloc+218,yloc+411, false);
 
         addText("#fff", "22px Arial", summary, xloc+43, yloc+435+vDisplaceSumm);
 
@@ -256,10 +256,10 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
         }
 
         //Time text
-        addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+133, yloc+560);
+        addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+138, yloc+560);
 
         //Date text
-        addText("#fff", "14px Arial", dateTime, xloc+170, yloc+308);
+        addText("#fff", "14px Arial", dateTime, xloc+175, yloc+308);
     }
 }
 
