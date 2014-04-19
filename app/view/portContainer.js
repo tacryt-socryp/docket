@@ -206,8 +206,6 @@ function processDescription(description) {
     var sum = 0;
 
 for (var a = 0; a < divider; a++) {
-    sum = 0;
-    
     for (var b = parseInt((description.length/divider)*(a+1)); b > 0; b--) {
         if (description.substring(b, b+1) == ' ') {
             console.log(b);
