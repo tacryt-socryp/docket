@@ -221,7 +221,7 @@ for (var a = 0; a < divider; a++) {
             console.log(b);
             console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a*xloc*9.8));
             if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8) - sum < (xloc*9.8)) {
-                arrayVal.push(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a*xloc*9.8));
+                arrayVal.push(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8)-sum);
                 sum = sumOfArray(arrayVal);
                 console.log("picked this value");
                 
