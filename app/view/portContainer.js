@@ -315,9 +315,9 @@ event: 'painted'},
     },
 
     initialize: function() {
-        var me = this,
-            surface = me.getSurface('main');
-        console.log(surface);
+        var me = this;
+            //surface = me.chilgetSurface('main');
+        console.log(me);
         me.callParent();
 
         me.element.on({
