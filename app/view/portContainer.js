@@ -193,6 +193,7 @@ function processSummary(summary) {
 function processDescription(description) {
     try {
         var measured = Ext.draw.TextMeasurer.measureTextSingleLine(description,"16px Arial");
+        console.log(measured);
         console.log("Description: " + summary);
         console.log("Description Measured: " + measured);
         
