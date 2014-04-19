@@ -168,6 +168,7 @@ function processSummary(summary) {
             vDisplaceSumm = 0;
         }
     } catch(e) {
+        console.log(e);
         summary = '';
     }
     

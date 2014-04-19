@@ -147,21 +147,22 @@ function processDate(dateDate) {
 function processSummary(summary) {
     try {
         summary = summary.replace(/\s+/g,' ');
-        if (summary.length > 24) {
-            for (var a = 24; a > 0; a--) {
+        if (summary.length > 25) {
+            for (var a = 25; a > 0; a--) {
                 if (summary.substring(a, a+1) == ' ') {
                     summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
                     vDisplaceSumm = 20;
                     a = 0;
                 }
             }
-            if (summary.length > 48) {
-                summary = summary.substring(0,48) + '...';
+            if (summary.length > 50) {
+                summary = summary.substring(0,50) + '...';
             }
         } else {
             vDisplaceSumm = 0;
         }
     } catch(e) {
+        console.log(e);
         summary = '';
     }
     
