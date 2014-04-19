@@ -28,7 +28,6 @@ fn: function(element, eOpts) {
         events = me.events;
 
     var mainCarousel = me.parent.parent,
-        displace = Ext.getBody().getSize().width - 200,
         h = Ext.getBody().getSize().height,
         w = Ext.getBody().getSize().width,
         surface = me.getSurface('main'),
@@ -70,7 +69,8 @@ fn: function(element, eOpts) {
 
     //Name of room
     addText("#fff", "20px Arial", roomText, 35, 30);
-    addText("#fff", "20px Arial", "+", displace+170, 30);
+    addRect(timelineColor, 50, 50, 40, 40, 3);
+    addText("#fff", "24px Arial", "+", w-40, 40);
     
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({
