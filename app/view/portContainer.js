@@ -321,7 +321,7 @@ event: 'painted'},
 
         canvas.element.on({
             tap: me.onTap,
-            scrollEnd: me.onScroll
+            scroll: me.onScroll
         });
 
         window.setInterval(function() {me.reloadData();},900000);
