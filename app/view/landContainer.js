@@ -50,8 +50,8 @@ fn: function(element, eOpts) {
     
     mainCarousel.element.dom.style.background = backgroundColor;
 
-    if (210 * events.length > w) {
-        w = 210 * events.length;
+    if (211 * events.length > w) {
+        w = 211 * events.length;
     }
 
     me.setSize(w,h);
@@ -182,13 +182,13 @@ function processDescription(description) {
         description = description.replace(/\s+/g,' ')
         description = description.replace(/(\r\n|\n|\r)/g,' ');
         var noSpaces = true;
-        if (description.length > 45) {
-            if (description.length > 135) {
-                description = description.substring(0,130) + '...';
+        if (description.length > 42) {
+            if (description.length > 132) {
+                description = description.substring(0,128) + '...';
             }
             
-            if (description.length > 90) {
-                 for (var a = 90; a > 0; a--) {
+            if (description.length > 85) {
+                 for (var a = 85; a > 0; a--) {
                     if (description.substring(a, a+1) == ' ') {
                         description = description.substring(0,a) + '\n' + description.substring(a+1);
                         noSpaces = false;
@@ -198,7 +198,7 @@ function processDescription(description) {
                 }
             }
             
-            for (var a = 45; a > 0; a--) {
+            for (var a = 42; a > 0; a--) {
                 if (description.substring(a, a+1) == ' ') {
                     description = description.substring(0,a) + '\n' + description.substring(a+1);
                     noSpaces = false;
@@ -208,7 +208,7 @@ function processDescription(description) {
             }
             
             if (noSpaces) {
-                description = description.substring(0,45) + '\n' + description.substring(45,90);
+                description = description.substring(0,42) + '\n' + description.substring(42,84);
                 vDisplaceDesc = vDisplaceDesc + 5;
             }
         }
