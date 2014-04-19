@@ -184,7 +184,7 @@ function processDescription(description) {
         var noSpaces = true;
         if (description.length > 45) {
             if (description.length > 135) {
-                description = description.substring(0,135) + '...';
+                description = description.substring(0,130) + '...';
             }
             
             if (description.length > 90) {
@@ -227,12 +227,12 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
 
     if (i % 2 === 0) {
         addRect(boxColor,320,160,xloc+38,yloc+110,3);
-        addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
+        addText("#fff", "22px Arial", summary, xloc+43, yloc+135+vDisplaceSumm);
 
         addTriangle(boxColor, xloc+188, yloc+269, true);
 
         if (description !== false) {
-            addText("#fff", "16px Arial", description, xloc+48,
+            addText("#fff", "16px Arial", description, xloc+43,
                 yloc+190+vDisplaceDesc+vDisplaceSumm);
         }
 
@@ -248,10 +248,10 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
 
         addTriangle(boxColor,xloc+213,yloc+411, false);
 
-        addText("#fff", "22px Arial", summary, xloc+48, yloc+435+vDisplaceSumm);
+        addText("#fff", "22px Arial", summary, xloc+43, yloc+435+vDisplaceSumm);
 
         if (description !== false) {
-            addText("#fff", "16px Arial", description, xloc+48,
+            addText("#fff", "16px Arial", description, xloc+43,
                 yloc+485+vDisplaceSumm+vDisplaceDesc);
         }
 
