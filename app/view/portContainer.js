@@ -193,7 +193,7 @@ function processDescription(description) {
     description = description.replace(/\s+/g,' ')
     description = description.replace(/(\r\n|\n|\r)/g,' ');
     var measured = m.measureTextSingleLine(description,"16px Arial").width;
-    var divider = parseInt(measured/(xloc*9.8)+0.5); // Number of splits
+    var divider = parseInt((measured/(xloc*9.8))+0.5); // Number of splits
 
     if (divider > 0) {
         console.log("Description: " + description);
