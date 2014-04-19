@@ -316,8 +316,8 @@ event: 'painted'},
 
     initialize: function() {
         var me = this,
-            canvas = me.items.items[0],
-            window.yScrollPosition = 0;
+            canvas = me.items.items[0];
+        window.yScrollPosition = 0;
         me.callParent();
 
         canvas.element.on({
