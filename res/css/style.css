@@ -1,3 +1,20 @@
 .x-chart-watermark, .x-scroll-indicator, .x-scroll-bar, .x-scroll-bar-y {
     display: none;
 }
+
+.x-toolbar-dark {
+    background-image: none !important;
+    background-color: #f3f3f3 !important;
+}
+
+.x-button.x-button-confirm, .x-toolbar .x-button.x-button-confirm {
+    border: none !important;
+    background-image: none !important;
+    background-color: #ccc !important;
+}
+
+.x-toolbar .x-button.x-button-confirm.x-button-pressing {
+    border: none !important;
+    background-image: none !important;
+    background-color: #fff !important;
+}
