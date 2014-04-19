@@ -188,7 +188,7 @@ function processDescription(description) {
             }
             
             if (description.length > 90) {
-                 for (var a = 95; a > 0; a--) {
+                 for (var a = 90; a > 0; a--) {
                     if (description.substring(a, a+1) == ' ') {
                         description = description.substring(0,a) + '\n' + description.substring(a+1);
                         noSpaces = false;
@@ -198,7 +198,7 @@ function processDescription(description) {
                 }
             }
             
-            for (var a = 50; a > 0; a--) {
+            for (var a = 45; a > 0; a--) {
                 if (description.substring(a, a+1) == ' ') {
                     description = description.substring(0,a) + '\n' + description.substring(a+1);
                     noSpaces = false;
@@ -229,7 +229,7 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
         addRect(boxColor,320,160,xloc+38,yloc+110,3);
         addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
-        addTriangle(boxColor, xloc+178, yloc+269, true);
+        addTriangle(boxColor, xloc+188, yloc+269, true);
 
         if (description !== false) {
             addText("#fff", "16px Arial", description, xloc+48,
