@@ -193,7 +193,7 @@ function processDescription(description) {
     description = description.replace(/\s+/g,' ')
     description = description.replace(/(\r\n|\n|\r)/g,' ');
     var measured = m.measureTextSingleLine(description,"16px Arial").width;
-    var divider = parseInt(measured/(xloc*9.8))+1; // Number of splits
+    var divider = parseInt(measured/(xloc*9.8)); // Number of splits
 
     if (divider > 0) {
         console.log("Description: " + description);
@@ -209,8 +209,10 @@ for (var a = 0; a < divider; a++) {
     for (var b = parseInt((description.length/divider)*(a+1)); b > 0; b--) {
         if (description.substring(b, b+1) == ' ') {
             console.log(b);
-            console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8) - sum);
-            if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8) - sum < (xloc*9.8)) {
+            console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
+                        - (xloc*9.8) - sum);
+            if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
+                        - (xloc*9.8) - sum < (xloc*9.6)) {
                 sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
                 console.log("picked this value");
                 
