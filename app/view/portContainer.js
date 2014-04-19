@@ -315,13 +315,11 @@ event: 'painted'},
     },
 
     initialize: function() {
-        var me = this;
+        var me = this,
+            canvas = me.items.items[0];
         me.callParent();
-        
-        console.log(me.items.items[0]);
-        var surface = me.items.items[0].getSurface('main');
 
-        me.element.on({
+        canvas.element.on({
             tap: me.onTap
         });
 
@@ -329,8 +327,9 @@ event: 'painted'},
     },
 
     onTap: function(e) {
+        console.log(e);
         if (e.pageY <= 80) {
-            if (e.pageX >= (Ext.getBody().getSize().width/3)) {
+            if (e.pageX >= (Ext.getBody().getSize().width*(2/3))) {
                 var form = new Docket.view.formPanel();
                 Ext.Viewport.add(form);
             }
