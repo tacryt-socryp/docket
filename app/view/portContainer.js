@@ -194,7 +194,7 @@ function processDescription(description) {
     description = description.replace(/(\r\n|\n|\r)/g,' ');
     var measured = measure.measureTextSingleLine(description,"16px Arial");
 
-    console.log("Description: " + summary);
+    console.log("Description: " + description);
     console.log("Description Measured: " + measured.width);
 
     var divider = parseInt(measured.width/(xloc*10)); // Number of splits
@@ -206,7 +206,7 @@ for (var a = 0; a < divider; a++) {
     for (var b = (description.length/divider)*(a+1); b > 0; b--) {
         
         if (description.substring(b, b+1) == ' ') {
-            console.log(measure.measureTextSingleLine(description.substring(0, b),"16px Arial"));
+            console.log(measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width);
             
             description = description.substring(0,b) + '\n' + description.substring(b+1);
             b = 0;
