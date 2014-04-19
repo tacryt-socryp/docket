@@ -320,7 +320,10 @@ event: 'painted'},
         me.callParent();
 
         canvas.element.on({
-            tap: me.onTap,
+            tap: me.onTap
+        });
+        
+        me.element.on({
             scroll: me.onScroll
         });
 
