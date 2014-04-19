@@ -192,11 +192,11 @@ function processSummary(summary) {
     
 function processDescription(description) {
     try {
-        var measureText = Ext.draw.TextMeasurer;
+        var measure = Ext.draw.TextMeasurer;
         vDisplaceDesc = 0;
         description = description.replace(/\s+/g,' ')
         description = description.replace(/(\r\n|\n|\r)/g,' ');
-        var measured = measureText.measureTextSingleLine(description,"16px Arial");
+        var measured = measure.measureTextSingleLine(description,"16px Arial");
         
         console.log("Description: " + summary);
         console.log("Description Measured: " + measured.width);
@@ -207,8 +207,10 @@ function processDescription(description) {
         for (var a = 0; a < divider; a++) {
             for (var b = (description.length/divider)*(a+1); b > 0; b--) {
                 if (description.substring(b, b+1) == ' ') {
-                    description = description.substring(0,b) + '\n' + description.substring(b+1);
-                    b = 0;
+                    if (measure.measureTextSingleLine(description.substring(0, b)) < (xloc*10)) {
+                        description = description.substring(0,b) + '\n' + description.substring(b+1);
+                        b = 0;
+                    }
                 }
             }
             
