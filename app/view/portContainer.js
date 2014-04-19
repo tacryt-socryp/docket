@@ -43,11 +43,9 @@ fn: function(element, eOpts) {
         yloc = h/10,
         xloc = w/12,
         splitPoint = parseInt(((xloc*10)/330)*38+0.5);
-    
-    console.log();
+
     
     mainCarousel.element.dom.style.background = backgroundColor;
-    console.log("Event length: " + events.length);
     
     if ((210 * events.length) > h) {
         h = 210 * events.length;
@@ -62,7 +60,6 @@ fn: function(element, eOpts) {
         
             if (document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[x].id == me.element.getId()) {
                 document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized")[x].style.cssText = "width: 100% !important; height: " + h + "px !important;";
-                console.log('style text css changed');
         }
     }
     }, 1000);
@@ -183,7 +180,6 @@ function processSummary(summary) {
             vDisplaceSumm = 0;
         }
     } catch(e) {
-        console.log(e);
         summary = '';
     }
     
@@ -202,25 +198,28 @@ function processDescription(description) {
     console.log("Description Measured: " + measured.width);
 
     var divider = parseInt(measured.width/(xloc*10)); // Number of splits
-    vDisplaceDesc = 5*divider;
+    console.log("Number of Splits needed: " + divider);
+    console.log("Box width: " + (xloc*10));
 
-    for (var a = 0; a < divider; a++) {
-        for (var b = (description.length/divider)*(a+1); b > 0; b--) {
-            if (description.substring(b, b+1) == ' ' &&
-                measure.measureTextSingleLine(description.substring(0, b),"16px Arial") < (xloc*10)) {
-                    description = description.substring(0,b) + '\n' +
-                        description.substring(b+1);
-                    b = 0;
-                }
-            }
+for (var a = 0; a < divider; a++) {
+    
+    for (var b = (description.length/divider)*(a+1); b > 0; b--) {
+        
+        if (description.substring(b, b+1) == ' ') {
+            console.log(measure.measureTextSingleLine(description.substring(0, b),"16px Arial"));
+            
+            description = description.substring(0,b) + '\n' + description.substring(b+1);
+            b = 0;
         }
+    }
+}
 
         if (a == 2) {
             description = description.substring(0,(description.length/divider)*(a+1)) + '...';
+            vDisplaceDesc = 5*a;
             a = divider;
         }
     } catch(e) {
-        console.log(e);
         description = false;
     }
     
@@ -291,7 +290,6 @@ event: 'painted'},
         var me = this;
         me.callParent();
 
-        console.log(me);
         me.element.on({
             tap: me.onTap
         });
