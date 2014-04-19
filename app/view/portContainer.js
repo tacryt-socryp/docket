@@ -44,7 +44,7 @@ fn: function(element, eOpts) {
         xloc = w/12,
         splitPoint = parseInt(((xloc*10)/330)*38+0.5);
     
-    console.log(Ext.draw.TextMeasurer);
+    console.log();
     
     mainCarousel.element.dom.style.background = backgroundColor;
     console.log("Event length: " + events.length);
@@ -155,6 +155,10 @@ function processDate(dateDate) {
     
 function processSummary(summary) {
     try {
+        var measured = Ext.draw.TextMeasurer.measureTextSingleLine(summary,"22px Arial");
+        console.log("Summary: " + summary);
+        console.log("Summary Measured: " + measured);
+        
         var noSpaces = true;
         summary = summary.replace(/\s+/g,' ');
         if (summary.length > (splitPoint*(3/4))) {
@@ -188,6 +192,10 @@ function processSummary(summary) {
     
 function processDescription(description) {
     try {
+        var measured = Ext.draw.TextMeasurer.measureTextSingleLine(description,"16px Arial");
+        console.log("Description: " + summary);
+        console.log("Description Measured: " + measured);
+        
         vDisplaceDesc = 0;
         description = description.replace(/\s+/g,' ')
         description = description.replace(/(\r\n|\n|\r)/g,' ');
