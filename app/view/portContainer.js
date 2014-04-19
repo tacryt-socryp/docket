@@ -152,6 +152,7 @@ function processDate(dateDate) {
     
 function processSummary(summary) {
     try {
+        var noSpaces = true;
         summary = summary.replace(/\s+/g,' ');
         if (summary.length > 25) {
             for (var a = 25; a > 0; a--) {
@@ -159,10 +160,15 @@ function processSummary(summary) {
                     summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
                     vDisplaceSumm = 20;
                     a = 0;
+                    noSpaces = false;
                 }
             }
             if (summary.length > 50) {
                 summary = summary.substring(0,50) + '...';
+            }
+            
+            if (noSpaces) {
+                summary = summary.substring(0,25) + '\n' + summary.substring(25,50);
             }
         } else {
             vDisplaceSumm = 0;
