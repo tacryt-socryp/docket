@@ -316,9 +316,10 @@ event: 'painted'},
 
     initialize: function() {
         var me = this;
-            //surface = me.chilgetSurface('main');
-        console.log(me);
         me.callParent();
+        
+        console.log(me.items.items[0]);
+        var surface = me.items.items[0].getSurface('main');
 
         me.element.on({
             tap: me.onTap
