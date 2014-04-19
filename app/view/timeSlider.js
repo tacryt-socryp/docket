@@ -1,4 +1,4 @@
-Ext.define('Confluent.view.timeSlider', {
+Ext.define('Docket.view.timeSlider', {
     extend: 'Ext.field.Slider',
     alias: 'widget.timeSlider',
 

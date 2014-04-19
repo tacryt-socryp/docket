@@ -1,8 +1,8 @@
-Ext.define('Confluent.view.MyFormPanel', {
+Ext.define('Docket.view.MyFormPanel', {
     extend: 'Ext.form.Panel',
 
     requires: [
-        'Confluent.view.timeSlider',
+        'Docket.view.timeSlider',
         'Ext.field.TextArea',
         'Ext.field.DatePicker',
         'Ext.picker.Date',
@@ -179,7 +179,7 @@ var me = this,
     attendee,
     date;
 
-var token = Confluent.app.authToken,
+var token = Docket.app.authToken,
     clientId = '464168127252.apps.googleusercontent.com',
     apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
     scopes = 'https://www.googleapis.com/auth/calendar';

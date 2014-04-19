@@ -1,4 +1,4 @@
-Ext.define('Confluent.view.authContainer', {
+Ext.define('Docket.view.authContainer', {
     extend: 'Ext.Container',
 
     config: {
@@ -25,11 +25,11 @@ onContainerPainted: function(element, eOpts) {
         parameters[key] = value;
     });
 
-    Ext.create('Confluent.view.MyFormPanel');
+    Ext.create('Docket.view.MyFormPanel');
     if (landscape) {
-        Ext.create('Confluent.view.landCarousel');
+        Ext.create('Docket.view.landCarousel');
     } else {
-        Ext.create('Confluent.view.portCarousel');
+        Ext.create('Docket.view.portCarousel');
     }
 
     function isEmpty(ob) {
@@ -42,7 +42,7 @@ onContainerPainted: function(element, eOpts) {
     if (isEmpty(parameters)) {
         window.location.href = 'login.html';
     } else {
-        Confluent.app.authToken = decodeURI(parameters.auth);
+        Docket.app.authToken = decodeURI(parameters.auth);
         this.generateItems();
     }
 },
@@ -53,7 +53,7 @@ onAuthContainerDeactivate: function(oldActiveItem, container, newActiveItem, eOp
 
 generateItems: function() {
     var me = this,
-        token = Confluent.app.authToken,
+        token = Docket.app.authToken,
         clientId = '464168127252.apps.googleusercontent.com',
         apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
         scopes = 'https://www.googleapis.com/auth/calendar';

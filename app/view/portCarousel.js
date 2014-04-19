@@ -1,9 +1,9 @@
-Ext.define('Confluent.view.portCarousel', {
+Ext.define('Docket.view.portCarousel', {
     extend: 'Ext.carousel.Carousel',
     alias: 'widget.portCarousel',
 
     requires: [
-        'Confluent.view.portContainer'
+        'Docket.view.portContainer'
     ],
 
     config: {

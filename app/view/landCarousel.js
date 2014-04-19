@@ -1,9 +1,9 @@
-Ext.define('Confluent.view.landCarousel', {
+Ext.define('Docket.view.landCarousel', {
     extend: 'Ext.carousel.Carousel',
     alias: 'widget.landCarousel',
 
     requires: [
-        'Confluent.view.landContainer'
+        'Docket.view.landContainer'
     ],
 
     config: {

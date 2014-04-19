@@ -16,11 +16,11 @@ Ext.application({
         'timeSlider',
         'MyFormPanel'
     ],
-    name: 'Confluent',
+    name: 'Docket',
 
     launch: function() {
 
-        Ext.create('Confluent.view.authContainer', {fullscreen: true});
+        Ext.create('Docket.view.authContainer', {fullscreen: true});
     }
 
 });

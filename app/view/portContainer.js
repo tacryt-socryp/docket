@@ -1,4 +1,4 @@
-Ext.define('Confluent.view.portContainer', {
+Ext.define('Docket.view.portContainer', {
     extend: 'Ext.Container',
     alias: 'widget.portContainer',
 
@@ -280,7 +280,7 @@ event: 'painted'},
     onTap: function(e) {
         if (e.pageY <= 80) {
             if (e.pageX >= (Ext.getBody().getSize().width/3)) {
-                var form = new Confluent.view.MyFormPanel();
+                var form = new Docket.view.MyFormPanel();
                 Ext.Viewport.add(form);
             }
         }
@@ -293,7 +293,7 @@ var me = this,
     calendarId = me.calendarId,
     child;
 
-var token = Confluent.app.authToken,
+var token = Docket.app.authToken,
     clientId = '464168127252.apps.googleusercontent.com',
     apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
     scopes = 'https://www.googleapis.com/auth/calendar';
