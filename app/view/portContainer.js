@@ -316,7 +316,8 @@ event: 'painted'},
 
     initialize: function() {
         var me = this,
-            canvas = me.items.items[0];
+            canvas = me.items.items[0],
+            yPosition = 0;
         me.callParent();
 
         canvas.element.on({
@@ -329,7 +330,8 @@ event: 'painted'},
         
         me.getScrollable().getScroller().on({
                 'scrollend':function(e){
-                    console.log(e);
+                    yPosition = e.position.y;
+                    console.log(e.position.y);
                 },
                 scope: me.getScrollable().getScroller()
         });
@@ -339,7 +341,7 @@ event: 'painted'},
 
     onTap: function(e) {
         console.log(e);
-        if (e.pageY <= 80) {
+        if ((e.pageY+yPosition) <= 80) {
             if (e.pageX >= (Ext.getBody().getSize().width*(2/3))) {
                 var form = new Docket.view.formPanel();
                 Ext.Viewport.add(form);
