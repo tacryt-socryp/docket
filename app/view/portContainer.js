@@ -212,7 +212,7 @@ for (var a = 0; a < divider; a++) {
             console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8) - sum);
             if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8) - sum < (xloc*9.8)) {
                 
-                sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
+                sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width;
                 console.log("picked this value");
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
