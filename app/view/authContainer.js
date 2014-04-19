@@ -137,16 +137,16 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
     if(summary.indexOf("birthdays and events") == -1 && summary.indexOf("Holidays") == -1){
     
         if (landscape) {
-            landCarousel = Ext.ComponentQuery.query('#landCarousel')[0];
             obj = new Docket.view.landContainer();
             array_i = Ext.ComponentQuery.query('#inlineLandDraw').length - 1;
             child = Ext.ComponentQuery.query('#inlineLandDraw')[array_i];
         } else {
-            portCarousel = Ext.ComponentQuery.query('#portCarousel')[0];
             obj = new Docket.view.portContainer();
             array_i = Ext.ComponentQuery.query('#inlinePortDraw').length - 1;
             child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
         }
+        
+        mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
 
         obj.roomText = summary;
         obj.calendarId = calendarId;
@@ -157,16 +157,13 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         child.timelineColor = colors[array_i].timeline;
         child.events = resp.items;
         
+        mainCarousel.add(obj);
+        
         if (landscape) {
-            landCarousel.add(obj);
             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
                 Ext.Viewport.setActiveItem('landCarousel');
             }
         } else {
-            if (210 * child.events.length > h) {
-                h = 210 * child.events.length;
-            }
-            portCarousel.add(obj);
             if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
                 Ext.Viewport.setActiveItem('portCarousel');
             }
