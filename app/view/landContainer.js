@@ -232,7 +232,7 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
         addTriangle(boxColor, xloc+193, yloc+269, true);
 
         if (description !== false) {
-            addText("#fff", "16px Arial", description, xloc+43,
+            addText("#fff", "15px Arial", description, xloc+43,
                 yloc+190+vDisplaceDesc+vDisplaceSumm);
         }
 
@@ -251,7 +251,7 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
         addText("#fff", "22px Arial", summary, xloc+43, yloc+435+vDisplaceSumm);
 
         if (description !== false) {
-            addText("#fff", "16px Arial", description, xloc+43,
+            addText("#fff", "15px Arial", description, xloc+43,
                 yloc+485+vDisplaceSumm+vDisplaceDesc);
         }
 
