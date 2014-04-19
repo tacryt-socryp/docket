@@ -322,11 +322,11 @@ event: 'painted'},
         me.callParent();
 
         canvas.element.on({
-            tap: me.onTap(e,canvas)
+            tap: me.onTap(canvas)
         });
         
         me.getScrollable().getScroller().on({
-            scrollend: me.onScroll(e,canvas),
+            scrollend: me.onScroll(canvas),
             scope: me.getScrollable().getScroller()
         });
 
