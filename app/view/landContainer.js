@@ -182,13 +182,13 @@ function processDescription(description) {
         description = description.replace(/\s+/g,' ')
         description = description.replace(/(\r\n|\n|\r)/g,' ');
         var noSpaces = true;
-        if (description.length > 44) {
-            if (description.length > 132) {
+        if (description.length > 41) {
+            if (description.length > 123) {
                 description = description.substring(0,132) + '...';
             }
             
-            if (description.length > 88) {
-                 for (var a = 88; a > 0; a--) {
+            if (description.length > 82) {
+                 for (var a = 82; a > 0; a--) {
                     if (description.substring(a, a+1) == ' ') {
                         description = description.substring(0,a) + '\n' + description.substring(a+1);
                         noSpaces = false;
@@ -198,7 +198,7 @@ function processDescription(description) {
                 }
             }
             
-            for (var a = 44; a > 0; a--) {
+            for (var a = 41; a > 0; a--) {
                 if (description.substring(a, a+1) == ' ') {
                     description = description.substring(0,a) + '\n' + description.substring(a+1);
                     noSpaces = false;
@@ -208,7 +208,7 @@ function processDescription(description) {
             }
             
             if (noSpaces) {
-                description = description.substring(0,44) + '\n' + description.substring(44,88);
+                description = description.substring(0,41) + '\n' + description.substring(41,82);
                 vDisplaceDesc = vDisplaceDesc + 5;
             }
         }
