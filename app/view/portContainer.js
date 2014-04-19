@@ -213,13 +213,13 @@ for (var a = 0; a < divider; a++) {
             }
         }
     }
-}
 
-        if (a == 2) {
-            description = description.substring(0,(description.length/divider)*(a+1)) + '...';
-            vDisplaceDesc = 5*a;
-            a = divider;
-        }
+    if (a == 2) {
+        description = description.substring(0,(description.length/divider)*(a+1)) + '...';
+        vDisplaceDesc = 5*a;
+        a = divider;
+    }
+}
     } catch(e) {
         description = false;
     }
