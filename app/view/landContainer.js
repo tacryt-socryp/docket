@@ -203,6 +203,7 @@ function processDescription(description) {
             }
         }
     } catch(e) {
+        console.log(e);
         description = false;
     }
     
