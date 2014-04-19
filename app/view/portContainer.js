@@ -153,8 +153,8 @@ function processDate(dateDate) {
 function processSummary(summary) {
     try {
         var measured = Ext.draw.TextMeasurer.measureTextSingleLine(summary,"22px Arial");
-        console.log("Summary: " + summary);
-        console.log("Summary Measured: " + measured);
+        //console.log("Summary: " + summary);
+        //console.log("Summary Measured: " + measured);
         
         var noSpaces = true;
         summary = summary.replace(/\s+/g,' ');
