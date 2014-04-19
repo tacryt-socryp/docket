@@ -68,9 +68,9 @@ fn: function(element, eOpts) {
     addRect(timelineColor, 20, h, 10, 0, 0);
 
     //Name of room
-    addText("#fff", "20px Arial", roomText, 35, 30);
-    addRect(timelineColor, 40, 40, w-40, 10, 3);
-    addText("#fff", "24px Arial", "+", w-40, 40);
+    addText("#fff", "20px Arial", roomText, 35, 35);
+    addRect(timelineColor, 40, 40, w-60, 10, 3);
+    addText("#fff", "24px Arial", "+", w-40, 35);
     
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({
