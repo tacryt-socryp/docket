@@ -221,14 +221,12 @@ function processDescription(description) {
 }
     
 function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
-    //Larger Point on timeline
-    addCircle(dotColor,22,xloc+190,yloc+338);
 
     //Smaller Point on timeline
-    addCircle(boxColor,16,xloc+190,yloc+338);
+    addCircle(boxColor,16,xloc+200,yloc+339);
 
     if (i % 2 === 0) {
-        addRect(boxColor,300,160,xloc+38,yloc+110,3);
+        addRect(boxColor,320,160,xloc+38,yloc+110,3);
         addText("#fff", "22px Arial", summary, xloc+48, yloc+135+vDisplaceSumm);
 
         addTriangle(boxColor, xloc+178, yloc+269, true);
@@ -239,16 +237,16 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
         }
 
         //Time text
-        addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+123, yloc+260);
+        addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, xloc+133, yloc+260);
 
         //Date text
-        addText("#fff", "14px Arial", dateTime, xloc+160, yloc+380);
+        addText("#fff", "14px Arial", dateTime, xloc+170, yloc+380);
 
     } else {
 
-        addRect(boxColor, 300,160, xloc+38, yloc+410, 3);
+        addRect(boxColor, 320,160, xloc+38, yloc+410, 3);
 
-        addTriangle(boxColor,xloc+203,yloc+411, false);
+        addTriangle(boxColor,xloc+213,yloc+411, false);
 
         addText("#fff", "22px Arial", summary, xloc+48, yloc+435+vDisplaceSumm);
 
@@ -258,10 +256,10 @@ function landscapeRender(summary,description,dateStart,dateEnd,dateTime,xloc,ylo
         }
 
         //Time text
-        addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+123, yloc+560);
+        addText("#fff", "14px Arial", dateStart + " - " + dateEnd, xloc+133, yloc+560);
 
         //Date text
-        addText("#fff", "14px Arial", dateTime, xloc+160, yloc+308);
+        addText("#fff", "14px Arial", dateTime, xloc+170, yloc+308);
     }
 }
 
