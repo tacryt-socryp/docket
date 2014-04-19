@@ -218,7 +218,6 @@ function processDescription(description) {
         if (a == 2) {
             a = divider;
         }
-    }
     } catch(e) {
         console.log(e);
         description = false;
