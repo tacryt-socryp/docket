@@ -207,9 +207,10 @@ for (var a = 0; a < divider; a++) {
         
         if (description.substring(b, b+1) == ' ') {
             console.log(measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width);
-            
-            description = description.substring(0,b) + '\n' + description.substring(b+1);
-            b = 0;
+            if (measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width - ((a+1) * xloc*10) < (xloc*10)) {
+                description = description.substring(0,b) + '\n' + description.substring(b+1);
+                b = 0;
+            }
         }
     }
 }
