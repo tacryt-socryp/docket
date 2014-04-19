@@ -207,7 +207,7 @@ for (var a = 0; a < divider; a++) {
         
         if (description.substring(b, b+1) == ' ') {
             console.log(measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width);
-            if (measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a * xloc*9.8) < (xloc*9.8)) {
+            if (measure.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (a * xloc*9.8) < (xloc*9.7)) {
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
                 b = 0;
                 vDisplaceDesc = vDisplaceDesc+5;
