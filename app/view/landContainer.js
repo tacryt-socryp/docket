@@ -184,7 +184,7 @@ function processDescription(description) {
         var noSpaces = true;
         if (description.length > 41) {
             if (description.length > 123) {
-                description = description.substring(0,132) + '...';
+                description = description.substring(0,121) + '...';
             }
             
             if (description.length > 82) {
