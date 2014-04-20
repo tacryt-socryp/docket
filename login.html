@@ -22,7 +22,7 @@ function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('div-button');
   if (authResult) {
     authorizeButton.style.visibility = 'hidden';
-    window.setTimeout(callForToken, 500);
+    window.setTimeout(callForToken, 1000);
   } else {
     authorizeButton.style.visibility = 'visible';
     authorizeButton.onclick = handleAuthClick;
