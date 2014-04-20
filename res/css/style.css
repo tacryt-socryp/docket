@@ -19,6 +19,18 @@
     background-color: #fff !important;
 }
 
+.x-toolbar-dark .x-button {
+    border: none !important;
+    background-image: none !important;
+    background-color: #ccc !important;
+}
+
+.x-toolbar-dark .x-button.x-button-pressing {
+    border: none !important;
+    background-image: none !important;
+    background-color: #ccc !important;
+}
+
 .x-toolbar.x-docked-bottom {
     border: none !important;
 }
