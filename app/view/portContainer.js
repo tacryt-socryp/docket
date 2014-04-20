@@ -373,7 +373,6 @@ var token = Docket.app.authToken,
 nextYear.setFullYear(today.getFullYear());
 nextYear = nextYear.toISOString();
 
-today.setHours(0,0,0,0);
 today = today.toISOString();
 
 gapi.client.setApiKey(apiKey);

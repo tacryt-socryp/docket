@@ -110,7 +110,6 @@ loadData: function(calendarId, summary) {
         }
     ];
 
-    today.setHours(0,0,0,0);
     today = today.toISOString();
 
     gapi.client.setApiKey(apiKey);
