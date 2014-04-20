@@ -168,7 +168,8 @@ change: function(f) {
             width: '40%',
             text: 'Cancel',
             handler: function(button, event) {
-                var formPanel = me.getParent().getParent();
+                var me = this,
+                    formPanel = me.getParent().getParent();
                 formPanel.hide();
             }
         },
