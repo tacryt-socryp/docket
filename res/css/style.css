@@ -3,24 +3,50 @@
 }
 
 .x-toolbar-dark {
+    border: none !important;
+    border-top-color: none !important;
     background-image: none !important;
     background-color: #f3f3f3 !important;
 }
 
 .x-button.x-button-confirm, .x-toolbar .x-button.x-button-confirm {
     border: none !important;
+    border-top-color: none !important;
     background-image: none !important;
     background-color: #ccc !important;
 }
 
 .x-toolbar .x-button.x-button-confirm.x-button-pressing {
     border: none !important;
+    border-top-color: none !important;
     background-image: none !important;
-    background-color: #fff !important;
+    background-color: #ccc !important;
 }
 
 .x-toolbar-dark .x-button {
     border: none !important;
+    border-top-color: none !important;
+    background-image: none !important;
+    background-color: #ccc !important;
+}
+
+.x-button, .x-toolbar .x-button {
+    border: none !important;
+    border-top-color: none !important;
+    background-image: none !important;
+    background-color: #ccc !important;
+}
+
+.x-button.x-button-action, .x-toolbar .x-button.x-button-action {
+    border: none !important;
+    border-top-color: none !important;
+    background-image: none !important;
+    background-color: #ccc !important;
+}
+
+.x-button.x-button-action, .x-toolbar .x-button.x-button-action {
+    border: none !important;
+    border-top-color: none !important;
     background-image: none !important;
     background-color: #ccc !important;
 }
