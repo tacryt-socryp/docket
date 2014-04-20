@@ -55,7 +55,7 @@ Ext.define('Docket.view.formPanel', {
             layout: 'hbox',
             items: [{
             xtype: 'container',
-            width: 150,
+            width: 200,
             items: [{
                     xtype: 'timeSlider',
                     listeners: {
@@ -105,7 +105,7 @@ Ext.define('Docket.view.formPanel', {
     layout: 'hbox',
     items: [{
         xtype: 'container',
-        width: 150,
+        width: 200,
         items: [{
             xtype: 'timeSlider',
             listeners: {

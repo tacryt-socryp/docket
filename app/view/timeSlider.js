@@ -3,8 +3,8 @@ Ext.define('Docket.view.timeSlider', {
     alias: 'widget.timeSlider',
 
     config: {
-        width: 515,
-        labelWidth: 180,
+        width: 200,
+        labelWidth: 0,
         required: true,
         maxValue: 48
     },
