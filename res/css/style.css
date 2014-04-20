@@ -1,3 +1,7 @@
+body {
+    background-color: #2c3e50 !important;
+}
+
 .x-chart-watermark, .x-scroll-indicator, .x-scroll-bar, .x-scroll-bar-y {
     display: none;
 }
