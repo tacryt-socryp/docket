@@ -300,7 +300,7 @@ for (var iter = 0; iter < events.length; iter++) {
         console.log(date.toDateString());
         dateTime = date.toDateString().substring(4,10);
         if (dateTime.substring(4,5) == "0") {
-            dateTime = dateTime.substring(0,4) + dateTime.substring(5);
+            dateTime = ' ' + dateTime.substring(0,4) + dateTime.substring(5);
             console.log(dateTime.substring(4,5));
         }
     }
