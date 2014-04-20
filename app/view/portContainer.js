@@ -295,8 +295,7 @@ for (var iter = 0; iter < events.length; iter++) {
     date = new Date(Date.parse(dateTime));
 
     if ((date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
-        dateTime = processDate(dateTime);
-        console.log(date.toDateString());
+        dateTime = '';
     } else {
         console.log(date.toDateString());
         dateTime = date.toDateString().substring(0,10);
