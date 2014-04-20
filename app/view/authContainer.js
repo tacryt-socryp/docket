@@ -89,24 +89,24 @@ loadData: function(calendarId, summary) {
 
     var colors = [
         {
-            'box':'#16a085',
-            'timeline':'#1abc9c',
+            'timeline':'#16a085',
+            'box':'#1abc9c',
         },
         {
-            'box':'#2980b9',
-            'timeline':'#3498db',
+            'timeline':'#2980b9',
+            'box':'#3498db',
         },
         {
-            'box':'#c0392b',
-            'timeline':'#e74c3c',
+            'timeline':'#c0392b',
+            'box':'#e74c3c',
         },
         {
-            'box':'#27ae60',
-            'timeline':'#31cd73',
+            'timeline':'#27ae60',
+            'box':'#31cd73',
         },
         {
-            'box':'#8e44ad',
-            'timeline':'#9b59b6',
+            'timeline':'#8e44ad',
+            'box':'#9b59b6',
         }
     ];
 
