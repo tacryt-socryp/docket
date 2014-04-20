@@ -165,7 +165,7 @@ change: function(f) {
                 var cmp = Ext.getCmp('formPanel');
                 window.setTimeout(function(){
                     cmp.getScrollable().getScroller().scrollToEnd();
-                },100);
+                },500);
                 
             }
         }
