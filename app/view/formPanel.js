@@ -55,7 +55,7 @@ Ext.define('Docket.view.formPanel', {
             layout: 'hbox',
             items: [{
             xtype: 'container',
-            width: 515,
+            width: 207,
             items: [{
                     xtype: 'timeSlider',
                     listeners: {
@@ -85,7 +85,7 @@ Ext.define('Docket.view.formPanel', {
                         }
                     },
                     label: 'Start:',
-                    labelWidth: 179
+                    labelWidth: 70
                 }
             ]
         },
@@ -96,7 +96,7 @@ Ext.define('Docket.view.formPanel', {
             itemId: 'startLabel',
             padding: '20 0 0 0',
             style: 'background:#FFF;font-size:90%;',
-            width: 80
+            width: 70
         }
     ]
 },
@@ -105,7 +105,7 @@ Ext.define('Docket.view.formPanel', {
     layout: 'hbox',
     items: [{
         xtype: 'container',
-        width: 515,
+        width: 207,
         items: [{
             xtype: 'timeSlider',
             listeners: {
@@ -135,7 +135,7 @@ change: function(f) {
 }
             },
             label: 'End: ',
-            labelWidth: 179
+            labelWidth: 70
         }]
     },
         {
@@ -145,7 +145,7 @@ change: function(f) {
             itemId: 'endLabel',
             padding: '20 0 0 0',
             style: 'background:#FFF; font-size:90%;',
-            width: 80
+            width: 70
         }
     ]},
     {
