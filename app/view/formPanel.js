@@ -64,7 +64,11 @@ Ext.define('Docket.view.formPanel', {
                             var minutes = (hours - parseInt(hours, 10)) * 60;
                             var ampm = ' am';
                             hours = parseInt(hours, 10);
-                            if (hours > 12) {
+                            if (hours == 24) {
+                                hours = 11;
+                                minutes = 59;
+                                ampm = ' pm';
+                            } else if (hours > 12) {
                                 hours = hours - 12;
                                 ampm = ' pm';
                             } else if (hours == 12) {
@@ -114,7 +118,11 @@ change: function(f) {
     var minutes = (hours - parseInt(hours, 10)) * 60;
     var ampm = ' am';
     hours = parseInt(hours, 10);
-    if (hours > 12) {
+    if (hours == 24) {
+        hours = 11;
+        minutes = 59;
+        ampm = ' pm';
+    } else if (hours > 12) {
         hours = hours - 12;
         ampm = ' pm';
     } else if (hours == 12) {
