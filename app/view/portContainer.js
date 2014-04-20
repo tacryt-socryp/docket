@@ -355,6 +355,7 @@ event: 'painted'},
     reloadData: function() {
 var me = this,
     today = new Date(),
+    nextYear = new Date(),
     mainCarousel,
     calendarId = me.calendarId,
     child;
@@ -363,6 +364,9 @@ var token = Docket.app.authToken,
     clientId = '464168127252.apps.googleusercontent.com',
     apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
     scopes = 'https://www.googleapis.com/auth/calendar';
+
+nextYear.setFullYear(today.getFullYear());
+nextYear = nextYear.toISOString();
 
 today.setHours(0,0,0,0);
 today = today.toISOString();
@@ -379,7 +383,8 @@ function(authResult) {
                 'singleEvents': true,
                 'orderBy': 'startTime',
                 'timeMin': today,
-                'maxResults': 70
+                'maxResults': 70,
+                'timeMax': nextYear
             });
 
             request.execute(function(resp) {
