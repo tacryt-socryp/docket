@@ -82,7 +82,7 @@ function handleAuthResult(authResult) {
     authorizeButton.style.visibility = 'hidden';
     window.setTimeout(callForToken, 2000);
   } else {
-    authorizeButton.style.visibility = '';
+    authorizeButton.style.visibility = 'visible';
     authorizeButton.onclick = handleAuthClick;
    }
 }
