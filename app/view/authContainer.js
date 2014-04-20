@@ -88,23 +88,23 @@ loadData: function(calendarId, summary) {
         scopes = 'https://www.googleapis.com/auth/calendar';
 
     var colors = [
-        {
+        { //Turquoise
             'timeline':'#16a085',
             'box':'#1abc9c',
         },
-        {
+        { //Blue
             'timeline':'#2980b9',
             'box':'#3498db',
         },
-        {
-            'timeline':'#c0392b',
-            'box':'#e74c3c',
-        },
-        {
+        { //Purple
             'timeline':'#27ae60',
             'box':'#31cd73',
         },
-        {
+        { //Red
+            'timeline':'#c0392b',
+            'box':'#e74c3c',
+        },
+        { //Green
             'timeline':'#8e44ad',
             'box':'#9b59b6',
         }
@@ -133,6 +133,10 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         obj = new Docket.view.portContainer();
         array_i = Ext.ComponentQuery.query('#inlinePortDraw').length - 1;
         child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
+        
+        if(array_i > 4) {
+            array_i = 0;
+        }
         
         mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
 
