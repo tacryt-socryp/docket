@@ -7,13 +7,6 @@ var clientId = '464168127252.apps.googleusercontent.com';
 var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
 var scopes = 'https://www.googleapis.com/auth/calendar';
         
-function addListener() {
-    addEventListener('DOMSubtreeModified', function(e){
-        if (document.getElementsByTagName("iframe").length > 1) {
-            callForToken();
-        }
-    });
-}      
 
 function handleClientLoad() {
   gapi.client.setApiKey(apiKey);
@@ -26,7 +19,9 @@ function checkAuth() {
 
 function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('div-button');
-  if (!authResult) {
+  if (authResult) {
+    callForToken();
+  } else {
     authorizeButton.style.visibility = 'visible';
     authorizeButton.onclick = handleAuthClick;
   }
@@ -39,11 +34,10 @@ function handleAuthClick(event) {
 
 function callForToken() {
   var tokenVal = gapi.auth.getToken();
+  console.log(tokenVal);
   var redirect = "index.html?auth=" + encodeURIComponent(tokenVal['access_token']);
   window.location.href = redirect;
 }
-        
-window.onload = addListener();
     </script>
       
     <title>Docket</title>
