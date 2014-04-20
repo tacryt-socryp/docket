@@ -132,19 +132,19 @@ function processDate(dateDate) {
     dateDate = dateDate.toTimeString().substring(0,5);
     if (parseInt(dateDate.substring(0,2),10) >= 12) {
         if (dateDate.substring(0,2) == '12') {
-            dateDate = dateDate + ' pm';
+            dateDate = dateDate + 'pm';
         } else if ((parseInt(dateDate.substring(0,2),10)-12) < 10) {
-            dateDate = '0' + (parseInt(dateDate.substring(0,2),10)-12) + dateDate.substring(2) + ' pm';
+            dateDate = (parseInt(dateDate.substring(0,2),10)-12) + dateDate.substring(2) + 'pm';
         } else {
-            dateDate = (parseInt(dateDate.substring(0,2),10)-12) + dateDate.substring(2) + ' pm';
+            dateDate = (parseInt(dateDate.substring(0,2),10)-12) + dateDate.substring(2) + 'pm';
         }
     } else {
         if (dateDate.substring(0,1) == '0') {
-            dateDate = '12' + dateDate.substring(2) + ' am';
+            dateDate = '12' + dateDate.substring(2) + 'am';
         } else if (parseInt(dateDate.substring(0,2),10) < 10) {
-            dateDate = '0' + dateDate + ' am';
+            dateDate = dateDate + 'am';
         } else {
-            dateDate = dateDate + ' am';
+            dateDate = dateDate + 'am';
         }
     }
 
@@ -267,7 +267,7 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     }
 
     //Time text
-    addText("#fff", "15px Arial", dateStart + ' - ' + dateEnd, (xloc*1.6), yloc+250);
+    addText("#fff", "15px Arial", dateStart + ' - ' + dateEnd, (xloc*6.5)-65, yloc+250);
 
     //Date text
     addText("#fff", "15px Arial", dateTime, (xloc*9.6), yloc+250);
