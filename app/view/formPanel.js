@@ -162,10 +162,8 @@ change: function(f) {
         placeHolder: 'Guests',
         listeners:{
             focus: function(e){
-                console.log(e);
-                var elem = document.getElementsByTagName('form')[0];
-                console.log(elem);
-                elem.scrollTop = elem.scrollHeight;
+                var cmp = Ext.getCmp('formPanel');
+                cmp.getScrollable().getScroller().scrollToEnd();
             }
         }
     },
