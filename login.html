@@ -6,15 +6,13 @@
 var clientId = '464168127252.apps.googleusercontent.com';
 var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
 var scopes = 'https://www.googleapis.com/auth/calendar';
-
-window.onload = addListener();
         
 function addListener() {
-    document.body.addEventListener('DOMSubtreeModified', function(e){
-        if (document.body.getElementsByTagName("iframe").length > 0) {
+    addEventListener('DOMSubtreeModified', function(e){
+        if (document.getElementsByTagName("iframe").length > 0) {
             callForToken();
         }
-    }); 
+    });
 }      
 
 function handleClientLoad() {
@@ -44,6 +42,8 @@ function callForToken() {
   var redirect = "index.html?auth=" + encodeURIComponent(tokenVal['access_token']);
   window.location.href = redirect;
 }
+        
+window.onload = addListener();
     </script>
       
     <title>Docket</title>
