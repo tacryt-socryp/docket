@@ -298,7 +298,7 @@ for (var iter = 0; iter < events.length; iter++) {
         dateTime = '';
     } else {
         console.log(date.toDateString());
-        dateTime = date.toDateString().substring(0,10);
+        dateTime = date.toDateString().substring(4,10);
     }
     
     yloc = iter*200;
