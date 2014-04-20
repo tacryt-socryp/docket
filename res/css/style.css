@@ -109,3 +109,7 @@
 .x-form-label {
     background-color: #f3f3f3 !important;
 }
+
+.x-field-select .x-input-el {
+    -webkit-text-fill-color: #555;
+}
