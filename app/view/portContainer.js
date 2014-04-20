@@ -41,7 +41,7 @@ fn: function(element, eOpts) {
         summary,
         yloc = h/10,
         xloc = w/12,
-        splitPoint = parseInt(((xloc*10)/330)*38+0.5),
+        splitPoint = parseInt(((xloc*10)/330)*39+0.5),
         m = Ext.draw.TextMeasurer;
 
     
