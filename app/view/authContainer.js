@@ -19,19 +19,14 @@ Ext.define('Docket.view.authContainer', {
 onContainerPainted: function(element, eOpts) {
     var parameters = {},
         h = Ext.getBody().getSize().height,
-        w = Ext.getBody().getSize().width,
-        landscape = (w > h && h > (h/10)+560);
+        w = Ext.getBody().getSize().width;
         
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         parameters[key] = value;
     });
 
     Ext.create('Docket.view.formPanel');
-    if (landscape) {
-        Ext.create('Docket.view.landCarousel');
-    } else {
-        Ext.create('Docket.view.portCarousel');
-    }
+    Ext.create('Docket.view.portCarousel');
 
     function isEmpty(ob) {
         for (var i in ob) {
@@ -85,7 +80,6 @@ loadData: function(calendarId, summary) {
         today = new Date(),
         h = Ext.getBody().getSize().height,
         w = Ext.getBody().getSize().width,
-        landscape = (w > h && h > (h/10)+560),
         child;
 
     var token = Docket.app.authToken,
@@ -136,15 +130,10 @@ gapi.client.load('calendar', 'v3', function() {
     request.execute(function(resp) {
 if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
     if(summary.indexOf("birthdays and events") == -1 && summary.indexOf("Holidays") == -1){
-        if (landscape) {
-            obj = new Docket.view.landContainer();
-            array_i = Ext.ComponentQuery.query('#inlineLandDraw').length - 1;
-            child = Ext.ComponentQuery.query('#inlineLandDraw')[array_i];
-        } else {
-            obj = new Docket.view.portContainer();
-            array_i = Ext.ComponentQuery.query('#inlinePortDraw').length - 1;
-            child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
-        }
+
+        obj = new Docket.view.portContainer();
+        array_i = Ext.ComponentQuery.query('#inlinePortDraw').length - 1;
+        child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
         
         mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
 
@@ -159,14 +148,8 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         
         mainCarousel.add(obj);
         
-        if (landscape) {
-            if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
-                Ext.Viewport.setActiveItem('landCarousel');
-            }
-        } else {
-            if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
-                Ext.Viewport.setActiveItem('portCarousel');
-            }
+        if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
+            Ext.Viewport.setActiveItem('portCarousel');
         }
     }
 }

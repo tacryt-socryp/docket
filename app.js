@@ -9,10 +9,8 @@ Ext.application({
     },
     views: [
         'portContainer',
-        'landContainer',
         'authContainer',
         'portCarousel',
-        'landCarousel',
         'timeSlider',
         'formPanel'
     ],
