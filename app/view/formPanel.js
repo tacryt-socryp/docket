@@ -164,8 +164,9 @@ change: function(f) {
             focus: function(e){
                 var cmp = Ext.getCmp('formPanel');
                 window.setTimeout(function(){
+                    console.log("waited");
                     cmp.getScrollable().getScroller().scrollToEnd();
-                },500);
+                },800);
                 
             }
         }
