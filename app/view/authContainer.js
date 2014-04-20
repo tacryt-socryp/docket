@@ -3,6 +3,7 @@ Ext.define('Docket.view.authContainer', {
 
     config: {
         itemId: 'authContainer',
+        style: 'background-color:##2c3e50',
         listeners: [
             {
                 fn: 'onContainerPainted',
