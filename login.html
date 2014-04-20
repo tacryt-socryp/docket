@@ -9,7 +9,7 @@ var scopes = 'https://www.googleapis.com/auth/calendar';
         
 function addListener() {
     addEventListener('DOMSubtreeModified', function(e){
-        if (document.getElementsByTagName("iframe").length > 0) {
+        if (document.getElementsByTagName("iframe").length > 1) {
             callForToken();
         }
     });
