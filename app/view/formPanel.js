@@ -326,7 +326,7 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
     },
     ui: 'confirm',
     width: '120px',
-    text: 'Submit'
+    text: 'Add'
 }]
     }],
     listeners: [{
