@@ -86,3 +86,25 @@
     background: none !important;
     background-color: #fff !important;
 }
+
+.x-slider:before {
+    background-image:none !important;
+}
+
+.x-thumb:after {
+    border: 1px solid #bbb !important;
+    background-image: none !important;
+    background-color: #ccc !important;
+}
+
+.x-thumb.x-dragging:after {
+    background-image: none !important;
+}
+
+.x-form .x-scroll-container {
+    background-color: none !important;
+}
+
+.x-form-label {
+    background-color: #f3f3f3 !important;
+}
