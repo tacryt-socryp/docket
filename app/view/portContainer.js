@@ -295,10 +295,13 @@ for (var iter = 0; iter < events.length; iter++) {
     date = new Date(Date.parse(dateTime));
 
     if ((date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
-        dateTime = '';
+        dateTime = 'Today';
     } else {
         console.log(date.toDateString());
         dateTime = date.toDateString().substring(4,10);
+        if (dateTime.substring(4,5) == "0") {
+            console.log(dateTime.substring(4,5));
+        }
     }
     
     yloc = iter*200;
