@@ -163,7 +163,10 @@ change: function(f) {
         listeners:{
             focus: function(e){
                 var cmp = Ext.getCmp('formPanel');
-                cmp.getScrollable().getScroller().scrollToEnd();
+                window.setTimeout(function(){
+                    cmp.getScrollable().getScroller().scrollToEnd();
+                },100);
+                
             }
         }
     },
