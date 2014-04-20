@@ -84,8 +84,8 @@ Ext.define('Docket.view.formPanel', {
 
                         }
                     },
-                    label: 'Start:',
-                    labelWidth: 70
+                    label: '',
+                    labelWidth: 0
                 }
             ]
         },
@@ -134,8 +134,8 @@ change: function(f) {
 
 }
             },
-            label: 'End: ',
-            labelWidth: 70
+            label: '',
+            labelWidth: 0
         }]
     },
         {
