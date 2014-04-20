@@ -166,7 +166,11 @@ change: function(f) {
             xtype: 'button',
             ui: 'confirm',
             width: '40%',
-            text: 'Cancel'
+            text: 'Cancel',
+            handler: function(button, event) {
+                var formPanel = me.getParent().getParent();
+                formPanel.hide();
+            }
         },
         {
             xtype: 'button',
