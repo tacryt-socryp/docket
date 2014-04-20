@@ -163,7 +163,7 @@ change: function(f) {
         listeners:{
             focus: function(e){
                 console.log(e);
-                var elem = document.getElementById('formPanel');
+                var elem = document.getElementsByTagName('form')[0];
                 console.log(elem);
                 elem.scrollTop = elem.scrollHeight;
             }
