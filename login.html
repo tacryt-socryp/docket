@@ -8,7 +8,6 @@
 var clientId = '464168127252.apps.googleusercontent.com';
 var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
 var scopes = 'https://www.googleapis.com/auth/calendar';
-var checked = false;
 
 function handleClientLoad() {
   gapi.client.setApiKey(apiKey);
@@ -23,7 +22,7 @@ function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('div-button');
   if (authResult) {
     authorizeButton.style.visibility = 'hidden';
-    window.setTimeout(callForToken, 2000);
+    window.setTimeout(callForToken, 500);
   } else {
     authorizeButton.style.visibility = 'visible';
     authorizeButton.onclick = handleAuthClick;
@@ -46,11 +45,11 @@ function callForToken() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" sizes="any" href="res/img/icon.png">
+    <link rel="prerender" href="index.html">
       
     <style>
     body {
       background: #2c3e50;
-      color:#FFF;
       text-align:center;
       overflow-y: scroll;
       overflow-x: hidden;
@@ -97,5 +96,6 @@ function callForToken() {
     <div id="div-button" onclick='handleAuthClick();'>
         <a href='#' id='authorize-button'>Login</a>
     </div>
+    
   </body>
 </html>
