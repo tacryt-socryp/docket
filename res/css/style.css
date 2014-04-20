@@ -18,3 +18,13 @@
     background-image: none !important;
     background-color: #fff !important;
 }
+
+.x-toolbar.x-docked-bottom {
+    border: none !important;
+}
+
+.x-form.x-floating {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background-color: #f3f3f3 !important;
+}
