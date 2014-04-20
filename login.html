@@ -7,11 +7,15 @@ var clientId = '464168127252.apps.googleusercontent.com';
 var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
 var scopes = 'https://www.googleapis.com/auth/calendar';
 
-document.body.addEventListener('DOMSubtreeModified', function(e){
-    if (document.body.getElementsByTagName("iframe").length > 0) {
-        callForToken();
-    }
-});        
+window.onload = addListener();
+        
+function addListener() {
+    document.body.addEventListener('DOMSubtreeModified', function(e){
+        if (document.body.getElementsByTagName("iframe").length > 0) {
+            callForToken();
+        }
+    }); 
+}      
 
 function handleClientLoad() {
   gapi.client.setApiKey(apiKey);
