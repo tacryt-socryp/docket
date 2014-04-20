@@ -161,7 +161,14 @@ change: function(f) {
             type: 'hbox',
             pack: 'center'
         },
-        items: [{
+        items: [
+        {
+            xtype: 'button',
+            ui: 'confirm',
+            width: '40%',
+            text: 'Cancel'
+        },
+        {
             xtype: 'button',
 handler: function(button, event) {
 var me = this,
@@ -325,7 +332,7 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
     });
     },
     ui: 'confirm',
-    width: '120px',
+    width: '40%',
     text: 'Add'
 }]
     }],
