@@ -267,10 +267,10 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     }
 
     //Time text
-    addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, (xloc*6.5)-60, yloc+250);
+    addText("#fff", "15px Arial", dateStart + ' - ' + dateEnd, (xloc*6.5)-60, yloc+250);
 
     //Date text
-    addText("#fff", "16px Arial", dateTime, (xloc*9.5), yloc+250);
+    addText("#fff", "15px Arial", dateTime, (xloc*9.5), yloc+250);
 }
 
 
