@@ -97,16 +97,16 @@ loadData: function(calendarId, summary) {
             'box':'#3498db',
         },
         { //Purple
+            'timeline':'#8e44ad',
+            'box':'#9b59b6',
+        },
+        { //Green
             'timeline':'#27ae60',
             'box':'#31cd73',
         },
         { //Red
             'timeline':'#c0392b',
             'box':'#e74c3c',
-        },
-        { //Green
-            'timeline':'#8e44ad',
-            'box':'#9b59b6',
         }
     ];
 
