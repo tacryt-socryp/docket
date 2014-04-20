@@ -159,7 +159,15 @@ change: function(f) {
     {
         xtype: 'textareafield',
         cls: 'eventGuest',
-        placeHolder: 'Guests'
+        placeHolder: 'Guests',
+        listeners:{
+            focus: function(e){
+                console.log(e);
+                var elem = document.getElementById('formPanel');
+                console.log(elem);
+                elem.scrollTop = elem.scrollHeight;
+            }
+        }
     },
     {
         xtype: 'toolbar',
