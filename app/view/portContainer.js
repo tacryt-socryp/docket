@@ -270,7 +270,7 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     addText("#fff", "14px Arial", dateStart + ' - ' + dateEnd, (xloc*6.5)-60, yloc+250);
 
     //Date text
-    addText("#fff", "18px Arial", dateTime, (xloc*9.5), yloc+250);
+    addText("#fff", "16px Arial", dateTime, (xloc*9.5), yloc+250);
 }
 
 
@@ -296,6 +296,7 @@ for (var iter = 0; iter < events.length; iter++) {
 
     if ((date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
         dateTime = processDate(dateTime);
+        console.log(date.toDateString());
     } else {
         console.log(date.toDateString());
         dateTime = date.toDateString().substring(0,10);
