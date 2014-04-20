@@ -95,7 +95,7 @@ Ext.define('Docket.view.formPanel', {
             html: '12:00 am',
             itemId: 'startLabel',
             padding: '20 0 0 0',
-            style: 'background:#FFF;font-size:90%;',
+            style: 'background:#FFF; color: #333; font-size:90%;',
             width: '25%'
         }
     ]
@@ -144,7 +144,7 @@ change: function(f) {
             html: '12:00 am',
             itemId: 'endLabel',
             padding: '20 0 0 0',
-            style: 'background:#FFF; font-size:90%;',
+            style: 'background:#FFF; color: #333; font-size:90%;',
             width: '25%'
         }
     ]},
