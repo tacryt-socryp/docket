@@ -15,10 +15,10 @@ Ext.define('Docket.view.formPanel', {
     config: {
         submitted: false,
         centered: true,
-        height: '90%',
+        height: '100%',
         id: 'formPanel',
         itemId: 'formPanel',
-        width: '90%',
+        width: '100%',
         hideOnMaskTap: true,
         modal: true,
         hideAnimation: {
