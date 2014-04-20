@@ -33,19 +33,19 @@ Ext.define('Docket.view.formPanel', {
             xtype: 'textfield',
             cls: 'eventTitle',
             itemId: 'eventTitle',
-            label: 'Summary: '
+            placeHolder: 'Summary'
         },
         {
             xtype: 'textareafield',
             cls: 'eventDescription',
             itemId: 'eventDescription',
-            label: 'Description: ',
+            placeHolder: 'Description',
             autoCapitalize: true
         },
         {
             xtype: 'datepickerfield',
             itemId: 'datepicker',
-            label: 'Date: ',
+            placeHolder: 'Date: ',
             picker: {
                 itemId: 'picker'
             }
@@ -55,7 +55,7 @@ Ext.define('Docket.view.formPanel', {
             layout: 'hbox',
             items: [{
             xtype: 'container',
-            width: 200,
+            width: '70%',
             items: [{
                     xtype: 'timeSlider',
                     listeners: {
@@ -96,7 +96,7 @@ Ext.define('Docket.view.formPanel', {
             itemId: 'startLabel',
             padding: '20 0 0 0',
             style: 'background:#FFF;font-size:90%;',
-            width: 70
+            width: '30%'
         }
     ]
 },
@@ -105,7 +105,7 @@ Ext.define('Docket.view.formPanel', {
     layout: 'hbox',
     items: [{
         xtype: 'container',
-        width: 200,
+        width: '80%',
         items: [{
             xtype: 'timeSlider',
             listeners: {
@@ -145,13 +145,13 @@ change: function(f) {
             itemId: 'endLabel',
             padding: '20 0 0 0',
             style: 'background:#FFF; font-size:90%;',
-            width: 70
+            width: '20%'
         }
     ]},
     {
         xtype: 'textareafield',
         cls: 'eventGuest',
-        label: 'Guests:'
+        placeHolder: 'Guests'
     },
     {
         xtype: 'toolbar',
