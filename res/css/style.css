@@ -70,3 +70,19 @@
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
 }
+
+.x-picker-bar {
+    border-top: 0.12em solid #006bb6;
+    border-bottom: 0.12em solid #006bb6;
+    background-image: none;
+    background-color: rgba(13,148,242,0.3);
+    background-image: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.x-picker .x-picker-inner {
+    background: none !important;
+    background-color: #fff !important;
+}
