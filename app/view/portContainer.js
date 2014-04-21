@@ -315,7 +315,7 @@ event: 'painted'},
             scope: me.getScrollable().getScroller()
         });
 
-        setTimeout(me.reloadData(),100000);
+        //setTimeout(me.reloadData(),100000);
     },
 
     onTap: function(e,canvas) {
@@ -343,7 +343,7 @@ var child = me.items;
 if (Ext.isDefined(child) && Ext.isDefined(child.items) && child.items.length > 0) {
     child = child.items[0];
         
-        setTimeout(me.reloadData, 10000);
+        me.setTimeout(me.reloadData, 10000);
 
 var token = Docket.app.authToken,
     clientId = '464168127252.apps.googleusercontent.com',
