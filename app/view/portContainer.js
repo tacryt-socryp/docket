@@ -288,7 +288,7 @@ for (var iter = 0; iter < events.length; iter++) {
             } else if (dateTime == "Thu") {
                 dateTime = "  Thurs";
             } else if (dateTime == "Fri") {
-                dateTime = "   Fri";
+                dateTime = "    Fri";
             } else if (dateTime == "Sat") {
                 dateTime = "    Sat";
             } else {
