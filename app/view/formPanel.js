@@ -339,7 +339,6 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
                     'resource': resource
                 });
                 request.execute(function(resp) {
-                    console.log(resp);
                     if (resp.id) {
                         console.log("Success!");
                     } else{

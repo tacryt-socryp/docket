@@ -41,7 +41,6 @@ fn: function(element, eOpts) {
         summary,
         yloc = h/10,
         xloc = w/12,
-        splitPoint = parseInt(((xloc*10)/330)*40),
         m = Ext.draw.TextMeasurer;
 
     
@@ -105,26 +104,6 @@ function addCircle(fillColor,r,x,y) {
     }).show(true);
 }
     
-function addTriangle(fillColor,x,y,orientation) {
-    if (orientation) {
-        surface.add({
-            type: 'path',
-            path: 'M ' + x + ' ' + y + ' ' +
-                'l ' + 25 + ' ' + 0 + ' ' +
-                'l ' + -12 + ' ' + 10 + 'z',
-            fillStyle: fillColor
-        }).show(true);
-    } else {
-        surface.add({
-            type: 'path',
-            path: 'M ' + x + ' ' + y + ' ' +
-                'l ' + -25 + ' ' + 0 + ' ' +
-                'l ' + 12 + ' ' + -10 + 'z',
-            fillStyle: fillColor
-        }).show(true);
-    }
-}
-    
 function processDate(dateDate) {
     dateDate = Date.parse(dateDate);
     dateDate = new Date(dateDate);
@@ -153,34 +132,52 @@ function processDate(dateDate) {
     
 function processSummary(summary) {
     try {
-        //console.log("Summary: " + summary);
-        //console.log("Summary Measured: " + measured);
         
-        var noSpaces = true;
-        summary = summary.replace(/\s+/g,' ');
-        if (summary.length > (splitPoint*(3/4))) {
-            for (var a = (splitPoint*(3/4)); a > 0; a--) {
-                if (summary.substring(a, a+1) == ' ') {
-                    summary = summary.substring(0,a) + '\n' + summary.substring(a+1);
-                    vDisplaceSumm = 20;
-                    a = 0;
-                    noSpaces = false;
-                }
+    vDisplaceSumm = 0;
+    summary = summary.replace(/\s+/g,' ')
+    var measured = m.measureTextSingleLine(summary,"22px Arial").width;
+    var divider = parseInt(measured/(xloc*9.8)); // Number of splits
+        
+        
+    var sum = 0;
+for (var a = 0; a < divider; a++) {
+    
+    for (var b = parseInt((summary.length/divider)*(a+1)); b > 0; b--) {
+        if (a > 0) {
+            if (summary.substring(b, b+1) == ' ') {
+
+            if (m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width 
+                        - (xloc*9.8) - sum < (xloc*9.8)) {
+                sum = m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width - (xloc*9.8);
+                
+                summary = summary.substring(0,b) + '\n' + summary.substring(b+1);
+                b = 0;
+                vDisplaceSumm = vDisplaceSumm+10;
             }
-            if (summary.length > (splitPoint*(3/2))) {
-                summary = summary.substring(0,(splitPoint*(3/2))) + '...';
-            }
-            
-            if (noSpaces) {
-                summary = summary.substring(0,(splitPoint*(3/4))) + '\n' + 
-                    summary.substring((splitPoint*(3/4)),(splitPoint*(3/2)));
-                vDisplaceSumm = 20;
             }
         } else {
-            vDisplaceSumm = 0;
+            if (summary.substring(b, b+1) == ' ') {
+            if (m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width 
+                        - sum < (xloc*9.8)) {
+                sum = m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width - (xloc*9.8);
+                
+                summary = summary.substring(0,b) + '\n' + summary.substring(b+1);
+                b = 0;
+                vDisplaceSumm = vDisplaceSumm+10;
+            }
+            }
         }
+    }
+
+    if (a == 1) {
+        description = description.substring(0,(description.length/divider)*(a+1)) + '...';
+        vDisplaceSumm = vDisplaceSumm+10;
+        a = divider;
+        sum = 0;
+    }
+}
     } catch(e) {
-        summary = '';
+        summary = false;
     }
     
     return summary;
@@ -194,13 +191,6 @@ function processDescription(description) {
     description = description.replace(/(\r\n|\n|\r)/g,' ');
     var measured = m.measureTextSingleLine(description,"16px Arial").width;
     var divider = parseInt(measured/(xloc*9.8)); // Number of splits
-
-    if (divider > 0) {
-        console.log("Description: " + description);
-        console.log("Description Measured: " + measured);
-        console.log("Number of Splits needed: " + divider);
-        console.log("Box width: " + (xloc*9.8));
-    }
         
         
     var sum = 0;
@@ -209,13 +199,10 @@ for (var a = 0; a < divider; a++) {
     for (var b = parseInt((description.length/divider)*(a+1)); b > 0; b--) {
         if (a > 0) {
             if (description.substring(b, b+1) == ' ') {
-            console.log(b);
-            console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
-                        - (xloc*9.8) - sum);
+
             if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
                         - (xloc*9.8) - sum < (xloc*9.8)) {
                 sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
-                console.log("picked this value");
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
                 b = 0;
@@ -224,13 +211,9 @@ for (var a = 0; a < divider; a++) {
             }
         } else {
             if (description.substring(b, b+1) == ' ') {
-            console.log(b);
-            console.log(m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
-                        - sum);
             if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
                         - sum < (xloc*9.8)) {
                 sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
-                console.log("picked this value");
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
                 b = 0;
@@ -278,7 +261,6 @@ for (var iter = 0; iter < events.length; iter++) {
     
     vDisplaceDesc = 0;
     summary = processSummary(events[iter].summary);
-    console.log(description);
     description = processDescription(events[iter].description);
 
     dateTime = events[iter].start.dateTime;
@@ -297,11 +279,9 @@ for (var iter = 0; iter < events.length; iter++) {
     if ((date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
         dateTime = 'Today';
     } else {
-        console.log(date.toDateString());
         dateTime = date.toDateString().substring(4,10);
         if (dateTime.substring(4,5) == "0") {
             dateTime = ' ' + dateTime.substring(0,4) + dateTime.substring(5);
-            console.log(dateTime.substring(4,5));
         }
     }
     
@@ -343,7 +323,6 @@ event: 'painted'},
     },
 
     onTap: function(e,canvas) {
-        console.log(e);
         if ((e.pageY + canvas.yScrollPosition) <= 80) {
             if (e.pageX >= (Ext.getBody().getSize().width*(2/3))) {
                 var form = new Docket.view.formPanel();
@@ -354,7 +333,6 @@ event: 'painted'},
     
     onScroll: function(e,canvas) {
         canvas.yScrollPosition = e.position.y;
-        console.log(e);
     },
 
     reloadData: function() {
