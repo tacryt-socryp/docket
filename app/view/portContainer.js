@@ -151,8 +151,8 @@ for (var a = 0; a < divider; a++) {
         } else {
             if (summary.substring(b, b+1) == ' ') {
             if (m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width 
-                        - sum < (xloc*9.7)) {
-                sum = m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width - (xloc*9.7);
+                        - sum < (xloc*9.6)) {
+                sum = m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width - (xloc*9.6);
                 
                 summary = summary.substring(0,b) + '\n' + summary.substring(b+1);
                 b = 0;
