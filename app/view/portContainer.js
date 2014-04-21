@@ -177,6 +177,7 @@ function processDescription(description) {
         
         
     var sum = 0;
+    var noSpaces = true;
 for (var a = 0; a < divider; a++) {
     
     for (var b = parseInt((description.length/divider)*(a+1)); b > 0; b--) {
@@ -189,6 +190,7 @@ for (var a = 0; a < divider; a++) {
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
                 b = 0;
+                noSpaces = false;
                 vDisplaceDesc = vDisplaceDesc+5;
             }
             }
@@ -200,6 +202,7 @@ for (var a = 0; a < divider; a++) {
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
                 b = 0;
+                noSpaces = false;
                 vDisplaceDesc = vDisplaceDesc+5;
             }
             }
@@ -213,6 +216,10 @@ for (var a = 0; a < divider; a++) {
         sum = 0;
     }
 }
+    if (noSpaces) {
+        description = description.substring(0,(description.length/divider))) + '...';
+    }
+
     } catch(e) {
         description = false;
     }
