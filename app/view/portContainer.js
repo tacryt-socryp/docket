@@ -47,8 +47,8 @@ fn: function(element, eOpts) {
     
     mainCarousel.element.dom.style.background = backgroundColor;
     
-    if ((212 * events.length) > h) {
-        h = 212 * events.length;
+    if ((210 * events.length + 100) > h) {
+        h = 210 * events.length + 100;
     }
     
     me.setSize(w,h);
