@@ -277,11 +277,7 @@ for (var iter = 0; iter < events.length; iter++) {
     } else {
         if (today.getDate() > parseInt(date.toDateString().substring(8,10)) &&
             today.getDate() < parseInt(date.toDateString().substring(8,10))+8) {
-            console.log(date.toDateString());
-            dateTime = date.toDateString().substring(4,10);
-            if (dateTime.substring(4,5) == "0") {
-                dateTime = ' ' + dateTime.substring(0,4) + dateTime.substring(5);
-            }
+            dateTime = date.toDateString().substring(0,3);
         } else {
             dateTime = date.toDateString().substring(4,10);
             if (dateTime.substring(4,5) == "0") {
