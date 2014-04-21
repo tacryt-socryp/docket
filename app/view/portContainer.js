@@ -216,10 +216,10 @@ for (var a = 0; a < divider; a++) {
         sum = 0;
     }
 }
-    if (noSpaces && description.length > 15) {
+    if (noSpaces && measured > (xloc*9.8)) {
         for (var b = description.length; b > 0; b--) {
             if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width
-                        < (xloc*9)) {
+                        < (xloc*9.8)) {
                 description = description.substring(0,b) + '...';
             }
         }
