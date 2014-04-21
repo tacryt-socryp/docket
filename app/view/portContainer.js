@@ -272,7 +272,7 @@ for (var iter = 0; iter < events.length; iter++) {
     
     date = new Date(Date.parse(dateTime));
 
-    if ((date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
+    if ((date.getFullYear() == today.getFullYear()) && (date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
         dateTime = 'Today';
     } else {
         dateTime = date.toDateString().substring(4,10);
