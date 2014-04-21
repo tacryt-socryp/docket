@@ -185,7 +185,7 @@ for (var a = 0; a < divider; a++) {
             if (description.substring(b, b+1) == ' ') {
 
             if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
-                        - (xloc*9.8) - sum < (xloc*9.6)) {
+                        - (xloc*9.8) - sum < (xloc*9.5)) {
                 sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
@@ -197,7 +197,7 @@ for (var a = 0; a < divider; a++) {
         } else {
             if (description.substring(b, b+1) == ' ') {
             if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
-                        - sum < (xloc*9.6)) {
+                        - sum < (xloc*9.5)) {
                 sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
@@ -219,7 +219,7 @@ for (var a = 0; a < divider; a++) {
     if (noSpaces && measured > (xloc*9.8)) {
         for (var b = description.length; b > 0; b--) {
             if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width
-                        < (xloc*10)) {
+                        < (xloc*9.5)) {
                 description = description.substring(0,b) + '...';
                 b = 0;
             }
