@@ -314,8 +314,10 @@ event: 'painted'},
             },
             scope: me.getScrollable().getScroller()
         });
+        
+        
 
-        //setTimeout(me.reloadData(),100000);
+        setTimeout(me.reloadData(me),100000);
     },
 
     onTap: function(e,canvas) {
@@ -331,9 +333,8 @@ event: 'painted'},
         canvas.yScrollPosition = e.position.y;
     },
 
-    reloadData: function() {
-var me = this,
-    today = new Date(),
+    reloadData: function(me) {
+var today = new Date(),
     nextYear = new Date(),
     mainCarousel,
     calendarId = me.calendarId;
@@ -343,7 +344,7 @@ var child = me.items;
 if (Ext.isDefined(child) && Ext.isDefined(child.items) && child.items.length > 0) {
     child = child.items[0];
         
-        me.setTimeout(me.reloadData, 10000);
+        setTimeout(me.reloadData(me), 10000);
 
 var token = Docket.app.authToken,
     clientId = '464168127252.apps.googleusercontent.com',
