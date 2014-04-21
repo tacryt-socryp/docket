@@ -339,7 +339,10 @@ var me = this,
     calendarId = me.calendarId;
         
     console.log(me);
-var child = me.items.items[0];
+var child = me.items;
+if (Ext.isDefined(child) && Ext.isDefined(child.items) && child.items.length > 0) {
+    child = child.items[0];
+}
         
         setTimeout(me.reloadData, 10000);
 
