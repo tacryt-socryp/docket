@@ -192,7 +192,8 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
                 Ext.Viewport.setActiveItem('portCarousel');
             }
         });
-    }
+    });
+}
 }
         
 });
