@@ -369,6 +369,7 @@ function(authResult) {
 
             request.execute(function(resp) {
                 console.log("data reloaded");
+                console.log(me);
                 child = me.query('#inlinePortDraw')[0];
                 child.events = resp.items;
                 child.fireEvent('painted',child);
