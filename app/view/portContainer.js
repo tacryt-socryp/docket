@@ -315,7 +315,7 @@ event: 'painted'},
             scope: me.getScrollable().getScroller()
         });
 
-        window.setInterval(function() {me.reloadData();},100000);
+        setTimeout(me.reloadData(),100000);
     },
 
     onTap: function(e,canvas) {
@@ -332,6 +332,7 @@ event: 'painted'},
     },
 
     reloadData: function() {
+        setTimeout(me.reloadData, 10000);
 var me = this,
     today = new Date(),
     nextYear = new Date(),
