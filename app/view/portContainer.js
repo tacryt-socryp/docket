@@ -369,6 +369,7 @@ function(authResult) {
 
             request.execute(function(resp) {
                 console.log(me);
+                console.log(child);
                 child.events = resp.items;
                 child.fireEvent('painted',child);
             });
