@@ -59,33 +59,29 @@ function callForToken() {
     }
 
     #logo {
-        position:absolute;
-        top:50%;
-        left:50%;
+        margin-top:50%;
         height:256px;
         width:256px;
-        margin-top:-128px;
-        margin-left:-128px;
+        margin-right:auto;
+        margin-left:auto;
+        text-align:center;
+        display:block;
     }
 
     #div-button {
-        visibility:hidden;
-        position:absolute;
-        top:85%;
-        left:25%;
-        width: 50%;
-        font: bold 20px Helvetica, Arial, sans-serif;
-        padding: 8px 8px 8px 8px;
-        border: 1px solid #3079ED !important;
-        background: #4B8DF8;
+        visibility:visible;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        height: 31px;
+        line-height: 31px;
+        background-color: rgb(221, 75, 57);
         border-radius: 3px;
-        transition: border .20s;
-        text-shadow: 0 1px 0 #2F5BB7 !important;
-    }
-
-    #div-button:hover {
-        border: 1px solid #2F5BB7 !important;
-        background: #3F83F1;
+        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px 0px;
+        width: 150px;
+        margin-top:85px;
+        margin-right:auto;
+        margin-left:auto;
     }
     </style>
   </head>
@@ -93,7 +89,7 @@ function callForToken() {
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
     <div id="logo"><img src="res/img/icon.png" width="256" height="256" alt="Calendar Icon" /></div>
     <div id="div-button" onclick='handleAuthClick();'>
-        <a href='#' id='authorize-button'>Login</a>
+        <a href='#' id='authorize-button'>Sign in with Google</a>
     </div>
     
   </body>
