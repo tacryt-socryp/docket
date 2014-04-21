@@ -136,7 +136,7 @@ function processSummary(summary) {
     vDisplaceSumm = 0;
     summary = summary.replace(/\s+/g,' ')
     var measured = m.measureTextSingleLine(summary,"22px Arial").width;
-    var divider = parseInt(measured/(xloc*9.8)); // Number of splits
+    var divider = parseInt(measured/(xloc*9.5)); // Number of splits
         
         
     var sum = 0;
@@ -150,10 +150,7 @@ for (var a = 0; a < divider; a++) {
             sum = 0;
         } else {
             if (summary.substring(b, b+1) == ' ') {
-            if (m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width 
-                        - sum < (xloc*9.6)) {
-                sum = m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width - (xloc*9.6);
-                
+            if (m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width < (xloc*9.5)) {
                 summary = summary.substring(0,b) + '\n' + summary.substring(b+1);
                 b = 0;
                 vDisplaceSumm = vDisplaceSumm+20;
