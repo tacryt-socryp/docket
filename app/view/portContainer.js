@@ -336,8 +336,10 @@ var me = this,
     today = new Date(),
     nextYear = new Date(),
     mainCarousel,
-    calendarId = me.calendarId,
-    child = me.items.items[0];
+    calendarId = me.calendarId;
+        
+    console.log(me);
+var child = me.items.items[0];
         
         setTimeout(me.reloadData, 10000);
 
@@ -369,7 +371,6 @@ function(authResult) {
 
             request.execute(function(resp) {
                 if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
-                    console.log(me);
                     console.log(child);
                     child.events = resp.items;
                     child.fireEvent('painted',child);
