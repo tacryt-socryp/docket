@@ -278,22 +278,9 @@ for (var iter = 0; iter < events.length; iter++) {
         if (today.getDate() < parseInt(date.toDateString().substring(8,10)) &&
             today.getDate()+7 > parseInt(date.toDateString().substring(8,10))) {
             dateTime = date.toDateString().substring(0,3);
-            console.log(dateTime);
-            
-            if (dateTime == "Mon") {
-                dateTime = "Monday";
-            } else if (dateTime == "Tue") {
-                dateTime = "Tuesday";
-            } else if (dateTime == "Wed") {
-                dateTime = "Wednesday";
-            } else if (dateTime == "Thu") {
-                dateTime = "Thursday";
-            } else if (dateTime == "Fri") {
-                dateTime = "Friday";
-            } else if (dateTime == "Sat") {
-                dateTime = "Saturday";
-            } else {
-                dateTime = "Sunday";
+
+            if (dateTime == "Thu") {
+                dateTime = "Thurs";
             }
         } else {
             dateTime = date.toDateString().substring(4,10);
