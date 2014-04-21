@@ -337,6 +337,8 @@ var today = new Date(),
     mainCarousel,
     calendarId = me.calendarId,
     child = me.items.items[0];
+        
+    console.log(me);
     
     setTimeout(me.reloadData, 900000, me);
 
