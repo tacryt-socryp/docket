@@ -217,7 +217,7 @@ for (var a = 0; a < divider; a++) {
     }
 }
     if (noSpaces) {
-        description = description.substring(0,(description.length/divider))) + '...';
+        description = description.substring(0,(description.length/divider)) + '...';
     }
 
     } catch(e) {
