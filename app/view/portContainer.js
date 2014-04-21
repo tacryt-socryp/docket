@@ -332,13 +332,14 @@ event: 'painted'},
     },
 
     reloadData: function() {
-        setTimeout(me.reloadData, 10000);
 var me = this,
     today = new Date(),
     nextYear = new Date(),
     mainCarousel,
     calendarId = me.calendarId,
     child;
+        
+        setTimeout(me.reloadData, 10000);
 
 var token = Docket.app.authToken,
     clientId = '464168127252.apps.googleusercontent.com',
