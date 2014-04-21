@@ -334,7 +334,6 @@ event: 'painted'},
     reloadData: function(me) {
 var today = new Date(),
     nextYear = new Date(),
-    mainCarousel,
     calendarId = me.calendarId,
     child = me.items.items[0];
         
@@ -370,6 +369,7 @@ function(authResult) {
 
             request.execute(function(resp) {
                 console.log(resp);
+                console.log(resp.items);
                 if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
                     console.log(child);
                     child.events = resp.items;
