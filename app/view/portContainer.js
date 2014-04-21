@@ -278,6 +278,7 @@ for (var iter = 0; iter < events.length; iter++) {
         if (today.getDate() < parseInt(date.toDateString().substring(8,10)) &&
             today.getDate()+7 > parseInt(date.toDateString().substring(8,10))) {
             dateTime = date.toDateString().substring(0,3);
+            console.log(dateTime);
             
             if (dateTime.equals("Mon")) {
                 dateTime = "Monday";
