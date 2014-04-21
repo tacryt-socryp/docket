@@ -315,7 +315,7 @@ event: 'painted'},
             scope: me.getScrollable().getScroller()
         });
 
-        window.setInterval(function() {me.reloadData();},900000);
+        window.setInterval(function() {me.reloadData();},100000);
     },
 
     onTap: function(e,canvas) {
@@ -366,6 +366,7 @@ function(authResult) {
             });
 
             request.execute(function(resp) {
+                console.log("data reloaded");
                 child = me.query('#inlinePortDraw')[0];
                 child.events = resp.items;
                 child.fireEvent('painted',child);
