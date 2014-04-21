@@ -337,7 +337,7 @@ var me = this,
     nextYear = new Date(),
     mainCarousel,
     calendarId = me.calendarId,
-    child;
+    child = me.items.items[0];
         
         setTimeout(me.reloadData, 10000);
 
@@ -368,7 +368,7 @@ function(authResult) {
             });
 
             request.execute(function(resp) {
-                child = me.items.items[0];
+                console.log(me);
                 child.events = resp.items;
                 child.fireEvent('painted',child);
             });
