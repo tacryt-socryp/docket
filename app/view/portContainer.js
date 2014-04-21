@@ -368,10 +368,12 @@ function(authResult) {
             });
 
             request.execute(function(resp) {
-                console.log(me);
-                console.log(child);
-                child.events = resp.items;
-                child.fireEvent('painted',child);
+                if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
+                    console.log(me);
+                    console.log(child);
+                    child.events = resp.items;
+                    child.fireEvent('painted',child);
+                }
             });
         });
     } else {
