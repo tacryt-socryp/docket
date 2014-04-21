@@ -331,7 +331,7 @@ event: 'painted'},
         canvas.yScrollPosition = e.position.y;
     },
 
-    reloadData: function() {
+    reloadData: function(me) {
 var today = new Date(),
     nextYear = new Date(),
     mainCarousel,
