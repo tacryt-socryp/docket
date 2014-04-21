@@ -13,7 +13,6 @@ Ext.define('Docket.view.formPanel', {
     ],
 
     config: {
-        submitted: false,
         centered: true,
         height: '90%',
         id: 'formPanel',
@@ -341,12 +340,14 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
                 request.execute(function(resp) {
                     if (resp.id) {
                         console.log("Success!");
+                        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+                            myContainer = mainCarousel.getActiveItem();
+                        setTimeout(myContainer.reloadData, 2000, myContainer);
                     } else{
                         console.log(" Error! ");
                     }
-                    var formPanel = me.getParent().getParent();
-                    formPanel.submitted = true;
-                    formPanel.hide();
+                    
+                    me.getParent().getParent().hide();
                 });
             });
         }
@@ -364,11 +365,6 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
 },
 
     onFormPanelHide: function(component, eOpts) {
-        if (component.submitted) {
-            var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
-                myContainer = mainCarousel.getActiveItem();
-            window.setTimeout(myContainer.reloadData, 2000, myContainer);
-        }
         window.setTimeout(function() {component.destroy();}, 2500);
     },
 
