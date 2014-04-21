@@ -317,7 +317,7 @@ event: 'painted'},
         
         
 
-        setTimeout(me.reloadData(me),100000);
+        //setTimeout(me.reloadData(me),100000);
     },
 
     onTap: function(e,canvas) {
