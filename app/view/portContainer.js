@@ -144,36 +144,22 @@ for (var a = 0; a < divider; a++) {
     
     for (var b = parseInt((summary.length/divider)*(a+1)); b > 0; b--) {
         if (a > 0) {
-            if (summary.substring(b, b+1) == ' ') {
-
-            if (m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width 
-                        - (xloc*9.8) - sum < (xloc*9.8)) {
-                sum = m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width - (xloc*9.8);
-                
-                summary = summary.substring(0,b) + '\n' + summary.substring(b+1);
-                b = 0;
-                vDisplaceSumm = vDisplaceSumm+10;
-            }
-            }
+            summary = summary.substring(0,(summary.length/divider)*(a+1)) + '...';
+            vDisplaceSumm = vDisplaceSumm+20;
+            a = divider;
+            sum = 0;
         } else {
             if (summary.substring(b, b+1) == ' ') {
             if (m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width 
-                        - sum < (xloc*9.8)) {
-                sum = m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width - (xloc*9.8);
+                        - sum < (xloc*9.7)) {
+                sum = m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width - (xloc*9.7);
                 
                 summary = summary.substring(0,b) + '\n' + summary.substring(b+1);
                 b = 0;
-                vDisplaceSumm = vDisplaceSumm+10;
+                vDisplaceSumm = vDisplaceSumm+20;
             }
             }
         }
-    }
-
-    if (a == 1) {
-        description = description.substring(0,(description.length/divider)*(a+1)) + '...';
-        vDisplaceSumm = vDisplaceSumm+10;
-        a = divider;
-        sum = 0;
     }
 }
     } catch(e) {
