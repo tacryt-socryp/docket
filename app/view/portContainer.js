@@ -275,9 +275,18 @@ for (var iter = 0; iter < events.length; iter++) {
     if ((date.getFullYear() == today.getFullYear()) && (date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
         dateTime = 'Today';
     } else {
-        dateTime = date.toDateString().substring(4,10);
-        if (dateTime.substring(4,5) == "0") {
-            dateTime = ' ' + dateTime.substring(0,4) + dateTime.substring(5);
+        if (today.getDate() > parseInt(date.toDateString().substring(8,10)) &&
+            today.getDate() < parseInt(date.toDateString().substring(8,10))+8) {
+            console.log(date.toDateString());
+            dateTime = date.toDateString().substring(4,10);
+            if (dateTime.substring(4,5) == "0") {
+                dateTime = ' ' + dateTime.substring(0,4) + dateTime.substring(5);
+            }
+        } else {
+            dateTime = date.toDateString().substring(4,10);
+            if (dateTime.substring(4,5) == "0") {
+                dateTime = ' ' + dateTime.substring(0,4) + dateTime.substring(5);
+            }
         }
     }
     
