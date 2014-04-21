@@ -280,19 +280,19 @@ for (var iter = 0; iter < events.length; iter++) {
             dateTime = date.toDateString().substring(0,3);
             
             if (dateTime == "Mon") {
-                dateTime = " Mon";
+                dateTime = "   Mon";
             } else if (dateTime == "Tue") {
-                dateTime = " Tue";
+                dateTime = "   Tue";
             } else if (dateTime == "Wed") {
-                dateTime = " Wed";
+                dateTime = "   Wed";
             } else if (dateTime == "Thu") {
-                dateTime = " Thurs";
+                dateTime = "  Thurs";
             } else if (dateTime == "Fri") {
-                dateTime = " Fri";
+                dateTime = "   Fri";
             } else if (dateTime == "Sat") {
-                dateTime = " Sat";
+                dateTime = "   Sat";
             } else {
-                dateTime = " Sun";
+                dateTime = "   Sun";
             }
         } else {
             dateTime = date.toDateString().substring(4,10);
