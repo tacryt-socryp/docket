@@ -67,7 +67,11 @@ generateItems: function() {
             var request = gapi.client.calendar.calendarList.list();
             request.execute(function(outer) {
                 for (var a = 0; a < outer.items.length; a++) {
-                    me.loadData(outer.items[a].id, outer.items[a].summary);
+                    if (a == outer.items.length-1) {
+                        me.loadData(outer.items[a].id, outer.items[a].summary, true);
+                    } else {
+                        me.loadData(outer.items[a].id, outer.items[a].summary, false);
+                    }
                 }
             });
         });
@@ -75,7 +79,7 @@ generateItems: function() {
     });
 },
 
-loadData: function(calendarId, summary) {
+loadData: function(calendarId, summary, lastCal) {
     var me = this,
         today = new Date(),
         h = Ext.getBody().getSize().height,
@@ -154,6 +158,40 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
             Ext.Viewport.setActiveItem('portCarousel');
         }
+    }
+} else {
+    if (lastCal) {
+       gapi.client.load('calendar', 'v3', function() {
+        var request = gapi.client.calendar.events.list({
+            'calendarId': 'primary',
+            'singleEvents': true,
+            'orderBy': 'startTime',
+            'timeMin': today,
+            'maxResults': 70
+        }); 
+            
+        request.execute(function(resp) {
+            obj = new Docket.view.portContainer();
+            array_i = Ext.ComponentQuery.query('#inlinePortDraw').length - 1;
+            child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
+            
+            mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
+
+            obj.roomText = summary;
+            obj.calendarId = calendarId;
+
+            child.roomText = summary;
+            child.backgroundColor = "#2c3e50";
+            child.boxColor = colors[array_i].box;
+            child.timelineColor = colors[array_i].timeline;
+            child.events = [];
+            
+            mainCarousel.add(obj);
+            
+            if (me.getItemId() == Ext.Viewport.getActiveItem().getItemId()) {
+                Ext.Viewport.setActiveItem('portCarousel');
+            }
+        });
     }
 }
         
