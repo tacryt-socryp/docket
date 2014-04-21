@@ -315,7 +315,7 @@ event: 'painted'},
             scope: me.getScrollable().getScroller()
         });
 
-        setTimeout(me.reloadData,100000,me);
+        setTimeout(me.reloadData,10000,me);
     },
 
     onTap: function(e,canvas) {
