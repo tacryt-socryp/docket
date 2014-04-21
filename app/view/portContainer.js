@@ -379,7 +379,5 @@ function(authResult) {
     }
 });
 
-}
-
     }
 });
