@@ -280,17 +280,17 @@ for (var iter = 0; iter < events.length; iter++) {
             dateTime = date.toDateString().substring(0,3);
             console.log(dateTime);
             
-            if (dateTime.equals("Mon")) {
+            if (dateTime == "Mon") {
                 dateTime = "Monday";
-            } else if (dateTime.equals("Tue")) {
+            } else if (dateTime == "Tue") {
                 dateTime = "Tuesday";
-            } else if (dateTime.equals("Wed")) {
+            } else if (dateTime == "Wed") {
                 dateTime = "Wednesday";
-            } else if (dateTime.equals("Thu")) {
+            } else if (dateTime == "Thu") {
                 dateTime = "Thursday";
-            } else if (dateTime.equals("Fri")) {
+            } else if (dateTime == "Fri") {
                 dateTime = "Friday";
-            } else if (dateTime.equals("Sat")) {
+            } else if (dateTime == "Sat") {
                 dateTime = "Saturday";
             } else {
                 dateTime = "Sunday";
