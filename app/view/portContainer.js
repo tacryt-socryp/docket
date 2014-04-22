@@ -385,7 +385,7 @@ function(authResult) {
 
             request.execute(function(resp) {
                 if (typeof resp.items == "undefined") {
-                    setTimeout(me.reloadRequest, 1500, me);
+                    //setTimeout(me.reloadRequest, 1500, me);
                 } else if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
                     console.log(child);
                     child.events = resp.items;
