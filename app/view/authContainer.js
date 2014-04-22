@@ -83,6 +83,7 @@ loadData: function(calendarId, summary, lastCal) {
         today = new Date(),
         h = Ext.getBody().getSize().height,
         w = Ext.getBody().getSize().width,
+        mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
         child;
 
     var token = Docket.app.authToken,
@@ -141,8 +142,6 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         if(array_i > 4) {
             array_i = 0;
         }
-        
-        mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
 
         obj.roomText = summary;
         obj.calendarId = calendarId;
@@ -174,6 +173,10 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
             obj = new Docket.view.portContainer();
             array_i = Ext.ComponentQuery.query('#inlinePortDraw').length - 1;
             child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
+            
+            if(array_i > 4) {
+                array_i = 0;
+            }
             
             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
 
