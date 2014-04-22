@@ -351,18 +351,13 @@ event: 'painted'},
     onScroll: function(e,canvas) {
         canvas.yScrollPosition = e.position.y;
     },
-
-    reloadData: function(me) {
+    
+    reloadRequest: function(me) {
 var today = new Date(),
     nextYear = new Date(),
     calendarId = me.calendarId,
-    child = me.items.items[0];
-        
-    console.log(me);
-    
-    setTimeout(me.reloadData, 900000, me);
-
-var token = Docket.app.authToken,
+    child = me.items.items[0],
+    token = Docket.app.authToken,
     clientId = '464168127252.apps.googleusercontent.com',
     apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
     scopes = 'https://www.googleapis.com/auth/calendar';
@@ -389,9 +384,9 @@ function(authResult) {
             });
 
             request.execute(function(resp) {
-                console.log(resp);
-                console.log(resp.items);
-                if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
+                if (typeof resp.items == "undefined") {
+                    setTimeout(me.reloadRequest, 1500, me);
+                } else if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
                     console.log(child);
                     child.events = resp.items;
                     child.fireEvent('painted',child);
@@ -402,6 +397,11 @@ function(authResult) {
         window.location.reload();
     }
 });
+    },
 
-    }
+    reloadData: function(me) {
+        me.reloadRequest(me);
+        
+        setTimeout(me.reloadData, 900000, me);
+}
 });
