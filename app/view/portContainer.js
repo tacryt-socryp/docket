@@ -373,6 +373,9 @@ event: 'painted'},
     },
     
     reloadRequest: function(me) {
+        console.log("reloadRequest");
+        console.log(me);
+        
 var today = new Date(),
     nextYear = new Date(),
     calendarId = me.calendarId,
@@ -381,6 +384,8 @@ var today = new Date(),
     clientId = '464168127252.apps.googleusercontent.com',
     apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
     scopes = 'https://www.googleapis.com/auth/calendar';
+        
+console.log(child);
 
 nextYear.setFullYear(today.getFullYear());
 nextYear = nextYear.toISOString();
@@ -412,10 +417,13 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
     },
 
     reloadData: function(me) {
+        console.log("reloadData");
+        console.log(me);
         me.reloadRequest.call(me);
         
         setTimeout(function() {
             me.reloadData.call(me);
-        }, 900000);
+        }, 60000);
+        //}, 900000);
 }
 });

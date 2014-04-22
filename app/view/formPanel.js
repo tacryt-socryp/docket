@@ -218,8 +218,6 @@ function returnTimestamp(date) {
         months = date.getMonth() + 1,
         days = date.getDate(),
         timezone = ((date.getTimezoneOffset()/60)*-1);
-    
-    console.log(date);
 
     if (hours < 10) {
         hours = '0' + hours;
@@ -251,7 +249,6 @@ function returnTimestamp(date) {
 
 try {
     date = Ext.ComponentQuery.query('#picker')[0].getValue();
-    console.log(date);
 } catch(e) {
     date = new Date();
 }
@@ -270,8 +267,6 @@ if (hours.toString() == "NaN") {
 if (minutes.toString() == "NaN") {
     minutes = 0;
 }
-
-console.log(hours + ":" + minutes);
 
 
 if ((start.substring(6,8) == 'pm') && (hours != 12)) {
@@ -362,7 +357,6 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
                 request.execute(function(resp) {
                     console.log(resp);
                     if (resp.id) {
-                        console.log("Success!");
                         var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
                             myContainer = mainCarousel.getActiveItem();
                         setTimeout(function() {
@@ -371,7 +365,6 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
                         me.getParent().getParent().hide();
                     } else {
                         alert('There was an error while adding your event.');
-                        console.log(" Error! ");
                     }
                 });
             });
