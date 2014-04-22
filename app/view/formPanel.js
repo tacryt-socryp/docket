@@ -218,6 +218,8 @@ function returnTimestamp(date) {
         months = date.getMonth() + 1,
         days = date.getDate(),
         timezone = ((date.getTimezoneOffset()/60)*-1);
+    
+    console.log(date);
 
     if (hours < 10) {
         hours = '0' + hours;
@@ -249,6 +251,7 @@ function returnTimestamp(date) {
 
 try {
     date = Ext.ComponentQuery.query('#picker')[0].getValue();
+    console.log(date);
 } catch(e) {
     date = new Date();
 }
@@ -259,14 +262,9 @@ dateStart.setFullYear(date.getFullYear());
 
 hours = parseInt(start.substring(0,2),10);
 minutes = parseInt(start.substring(3,5),10);
-    
-if (hours.toString() == "NaN") {
-    hours = 0;
-}
 
-if (minutes.toString() == "NaN") {
-    minutes = 0;
-}
+console.log(hours + ":" + minutes);
+
 
 if ((start.substring(6,8) == 'pm') && (hours != 12)) {
     hours = hours + 12;
