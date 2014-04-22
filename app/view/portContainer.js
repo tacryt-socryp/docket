@@ -372,13 +372,19 @@ gapi.auth.setToken(token);
 gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
     gapi.client.load('calendar', 'v3', function() {
         var request = gapi.client.calendar.events.list({
-            'calendarId': '00emtpt9svqg9hqvrnks6iooko@group.calendar.google.com',
+            'calendarId': calendarId,
             'singleEvents': true,
             'orderBy': 'startTime',
+            'timeMin': today,
+            'timeMax': nextYear,
             'maxResults': 70
         });
         request.execute(function(resp) {
             console.log(resp);
+            if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
+                child.events = resp.items;
+                child.fireEvent('painted',child);
+            }
         });
     });
 });
