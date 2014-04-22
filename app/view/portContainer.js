@@ -372,11 +372,12 @@ event: 'painted'},
         canvas.yScrollPosition = e.position.y;
     },
     
-    reloadRequest: function(myContainer) {
+    reloadRequest: function() {
         console.log("reloadRequest");
-        console.log(myContainer);
+        console.log(this);
         
-var today = new Date(),
+var me = this,
+    today = new Date(),
     nextYear = new Date(),
     calendarId = me.calendarId,
     child = me.items.items[0],
@@ -419,10 +420,10 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
     reloadData: function(me) {
         console.log("reloadData");
         console.log(me);
-        me.reloadRequest.call(me);
+        //me.reloadRequest.call(me);
         
-        setTimeout(function() {
-            me.reloadData.call(me);
-        }, 900000);
+        //setTimeout(function() {
+        //    me.reloadData.call(me);
+        //}, 900000);
 }
 });
