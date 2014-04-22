@@ -140,7 +140,7 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
         
         if(array_i > 4) {
-            array_i = 0;
+            array_i = array_i % 4;
         }
 
         obj.roomText = summary;
@@ -175,7 +175,7 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
             child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];
             
             if(array_i > 4) {
-                array_i = 0;
+                array_i = array_i % 4;
             }
             
             mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0];
