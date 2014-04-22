@@ -372,9 +372,9 @@ event: 'painted'},
         canvas.yScrollPosition = e.position.y;
     },
     
-    reloadRequest: function(me) {
+    reloadRequest: function(myContainer) {
         console.log("reloadRequest");
-        console.log(me);
+        console.log(myContainer);
         
 var today = new Date(),
     nextYear = new Date(),
