@@ -420,10 +420,10 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
     reloadData: function(me) {
         console.log("reloadData");
         console.log(me);
-        //me.reloadRequest.call(me);
+        me.reloadRequest.call(me);
         
-        //setTimeout(function() {
-        //    me.reloadData.call(me);
-        //}, 900000);
+        setTimeout(function() {
+            me.reloadData.call(me);
+        }, 900000);
 }
 });
