@@ -388,34 +388,6 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
         });
     });
 });
-
-/*gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
-function(authResult) {
-    if (authResult) {
-        gapi.client.load('calendar', 'v3', function() {
-            var request = gapi.client.calendar.events.list({
-                'calendarId': calendarId,
-                'singleEvents': true,
-                'orderBy': 'startTime',
-                'timeMin': today,
-                'maxResults': 70,
-                'timeMax': nextYear
-            });
-
-            request.execute(function(resp) {
-                if (typeof resp.items == "undefined") {
-                    //setTimeout(me.reloadRequest, 1500, me);
-                } else if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
-                    console.log(child);
-                    child.events = resp.items;
-                    child.fireEvent('painted',child);
-                }
-            });
-        });
-    } else {
-        window.location.reload();
-    }
-});*/
     },
 
     reloadData: function(me) {
