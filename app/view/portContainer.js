@@ -20,6 +20,7 @@ Ext.define('Docket.view.portContainer', {
             autoDestroy: false,
             listeners: [{
 fn: function(element, eOpts) {
+    console.log('painted');
     var me = this,
         backgroundColor = me.backgroundColor,
         timelineColor = me.timelineColor,
