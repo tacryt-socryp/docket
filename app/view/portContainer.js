@@ -292,11 +292,10 @@ for (var iter = 0; iter < events.length; iter++) {
     
     date = new Date(Date.parse(dateTime));
 
-    if ((date.getFullYear() == today.getFullYear()) && (date.getDate() == today.getDate()) && (date.getMonth() == today.getMonth())) {
+    if (date.getFullYear() == today.getFullYear() && date.getDate() == today.getDate() && date.getMonth() == today.getMonth()) {
         dateTime = 'Today';
     } else {
-        if (today.getDate() < parseInt(date.toDateString().substring(8,10)) &&
-            today.getDate()+7 > parseInt(date.toDateString().substring(8,10))) {
+        if (today.getMonth() == date.getMonth() && today.getDate() < parseInt(date.toDateString().substring(8,10)) && today.getDate()+7 > parseInt(date.toDateString().substring(8,10))) {
             dateTime = date.toDateString().substring(0,3);
             
             if (dateTime == "Mon") {
