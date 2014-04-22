@@ -355,12 +355,9 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
                     'resource': resource
                 });
                 request.execute(function(resp) {
-                    console.log(resp);
                     if (resp.id) {
                         var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
                             myContainer = mainCarousel.getActiveItem();
-                        console.log(mainCarousel);
-                        console.log(myContainer);
                         setTimeout(function() {
                             myContainer.reloadRequest.call(myContainer);
                         }, 2000);

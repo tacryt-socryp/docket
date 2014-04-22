@@ -325,13 +325,7 @@ for (var iter = 0; iter < events.length; iter++) {
     portraitRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, iter);
 }
 },
-event: 'painted'},
-{
-    fn: function(element, eOpts) {
-        //Replace with real resize code
-    },
-    event: 'resize'
-}]
+event: 'painted'}]
         }]
     },
 
@@ -383,8 +377,6 @@ var me = this,
     clientId = '464168127252.apps.googleusercontent.com',
     apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
     scopes = 'https://www.googleapis.com/auth/calendar';
-        
-console.log(child);
 
 nextYear.setFullYear(today.getFullYear());
 nextYear = nextYear.toISOString();
@@ -406,7 +398,7 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
             console.log(resp);
             if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0])) {
                 child.events = resp.items;
-                child.fireEvent('painted',child);
+                child.fireEvent('painted',me);
             }
         });
     });
