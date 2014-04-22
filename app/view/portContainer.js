@@ -318,14 +318,15 @@ event: 'painted'},
 
     initialize: function() {
         var me = this,
-            canvas = me.items.items[0];
+            canvas = me.items.items[0],
+            w = Ext.getBody().getSize().width;
 
         canvas.yScrollPosition = 0;
         me.callParent();
 
         canvas.element.on({
             tap: function(e){
-                me.onTap(e,canvas);
+                me.onTap(e,canvas,w);
             }
         });
         
@@ -339,12 +340,10 @@ event: 'painted'},
         setTimeout(me.reloadData,900000,me);
     },
 
-    onTap: function(e,canvas) {
-        if ((e.pageY + canvas.yScrollPosition) <= 80) {
-            if (e.pageX >= (Ext.getBody().getSize().width*(2/3))) {
-                var form = new Docket.view.formPanel();
-                Ext.Viewport.add(form);
-            }
+    onTap: function(e,canvas,w) {
+        if ((e.pageY + canvas.yScrollPosition) <= 80 && e.pageX >= w*(2/3)) {
+            var form = new Docket.view.formPanel();
+            Ext.Viewport.add(form);
         }
     },
     
