@@ -233,6 +233,7 @@ for (var a = 0; a < divider; a++) {
                     for (var y = descriptionCheck[x].length; y > 0; y--) {
                         if (m.measureTextSingleLine(descriptionCheck[x].substring(0,y),"16px Arial").width < (xloc*9.5)) {
                             descriptionCheck[x] = descriptionCheck[x].substring(0,y);
+                            y = 0;
                         }
                     }
                 }
