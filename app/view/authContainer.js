@@ -130,6 +130,7 @@ gapi.client.load('calendar', 'v3', function() {
     });
 
     request.execute(function(resp) {
+        console.log(resp)
 if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
     if(summary.indexOf("birthdays and events") == -1 && summary.indexOf("Holidays") == -1){
 
