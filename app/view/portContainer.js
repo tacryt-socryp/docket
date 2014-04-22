@@ -215,20 +215,36 @@ for (var a = 0; a < divider; a++) {
         a = divider;
         sum = 0;
     }
-}
-    if (noSpaces && measured > (xloc*9.8)) {
-        for (var b = description.length; b > 0; b--) {
-            if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width
+}       
+        
+    if (measured > (xloc*9.8)) {
+        if (noSpaces) {
+            for (var b = description.length; b > 0; b--) {
+                if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width
                         < (xloc*9)) {
-                description = description.substring(0,b) + '...';
-                b = 0;
+                    description = description.substring(0,b) + '...';
+                    b = 0;
+                }
             }
+        } else {
+            var descriptionCheck = description.split('\n');
+            for (var x = 0; x < descriptionCheck.length; x++) {
+                if (m.measureTextSingleLine(descriptionCheck[x],"16px Arial").width > (xloc*9.5)) {
+                    for (var y = descriptionCheck[x].length; y > 0; y--) {
+                        if (m.measureTextSingleLine(descriptionCheck[x].substring(0,y),"16px Arial").width < (xloc*9.5)) {
+                            descriptionCheck[x] = descriptionCheck[x].substring(0,y);
+                        }
+                    }
+                }
+            }
+
+            description = descriptionCheck.join('\n');
         }
     }
 
-    } catch(e) {
-        description = false;
-    }
+} catch(e) {
+    description = false;
+}
     
     return description;
 }
@@ -391,8 +407,8 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
     },
 
     reloadData: function(me) {
-        me.reloadRequest(me);
+        //me.reloadRequest(me);
         
-        setTimeout(me.reloadData, 900000, me);
+        //setTimeout(me.reloadData, 900000, me);
 }
 });
