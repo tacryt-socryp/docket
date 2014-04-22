@@ -17,16 +17,11 @@ Ext.define('Docket.view.authContainer', {
     },
 
 onContainerPainted: function(element, eOpts) {
-    var parameters = {},
-        h = Ext.getBody().getSize().height,
-        w = Ext.getBody().getSize().width;
+    var parameters = {};
         
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         parameters[key] = value;
     });
-
-    Ext.create('Docket.view.formPanel');
-    Ext.create('Docket.view.portCarousel');
 
     function isEmpty(ob) {
         for (var i in ob) {
@@ -38,6 +33,10 @@ onContainerPainted: function(element, eOpts) {
     if (isEmpty(parameters)) {
         window.location.href = 'login.html';
     } else {
+        var h = Ext.getBody().getSize().height,
+            w = Ext.getBody().getSize().width;
+        Ext.create('Docket.view.formPanel');
+        Ext.create('Docket.view.portCarousel');
         Docket.app.authToken = decodeURI(parameters.auth);
         this.generateItems();
     }
