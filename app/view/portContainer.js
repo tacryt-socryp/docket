@@ -423,7 +423,6 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
         
         setTimeout(function() {
             me.reloadData.call(me);
-        }, 60000);
-        //}, 900000);
+        }, 900000);
 }
 });
