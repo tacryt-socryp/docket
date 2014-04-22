@@ -338,6 +338,7 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
                     'resource': resource
                 });
                 request.execute(function(resp) {
+                    console.log(resp);
                     if (resp.id) {
                         console.log("Success!");
                         var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
@@ -345,7 +346,8 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
                         setTimeout(function() {
                             myContainer.reloadRequest.call(myContainer);
                         }, 2000);
-                    } else{
+                    } else {
+                        alert('There was an error while adding your event.');
                         console.log(" Error! ");
                     }
                     
