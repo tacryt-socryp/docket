@@ -373,8 +373,6 @@ event: 'painted'},
     },
     
     reloadRequest: function() {
-        console.log("reloadRequest");
-        console.log(this);
         
 var me = this,
     today = new Date(),
@@ -417,9 +415,8 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
 });
     },
 
-    reloadData: function(me) {
-        console.log("reloadData");
-        console.log(me);
+    reloadData: function() {
+        var me = this;
         me.reloadRequest.call(me);
         
         setTimeout(function() {
