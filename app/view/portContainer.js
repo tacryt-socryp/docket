@@ -356,7 +356,9 @@ event: 'painted'},
             scope: me.getScrollable().getScroller()
         });
 
-        setTimeout(me.reloadData,900000,me);
+        setTimeout(function() {
+            me.reloadData.call(me);
+        },900000);
     },
 
     onTap: function(e,canvas,w) {
@@ -410,8 +412,10 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
     },
 
     reloadData: function(me) {
-        //me.reloadRequest(me);
+        me.reloadRequest.call(me);
         
-        //setTimeout(me.reloadData, 900000, me);
+        setTimeout(function() {
+            me.reloadData.call(me);
+        }, 900000);
 }
 });
