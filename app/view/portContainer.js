@@ -255,7 +255,10 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     addCircle(boxColor,16,20,yloc+175);
 
     addRect(boxColor,(xloc*10),170,(xloc*1.5),yloc+90,3);
-    addText("#fff", "22px Arial", summary, (xloc*1.6), yloc+115+vDisplaceSumm);
+    
+    if (summary !== false) {
+        addText("#fff", "22px Arial", summary, (xloc*1.6), yloc+115+vDisplaceSumm);
+    }
 
     if (description !== false) {
         addText("#fff", "16px Arial", description, (xloc*1.6),
@@ -398,7 +401,7 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
         });
         request.execute(function(resp) {
             console.log(resp);
-            if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0]) && Ext.isDefined(resp.items[0].summary) && Ext.isDefined(resp.items[0].summary.length)) {
+            if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0])) {
                 child.events = resp.items;
                 child.fireEvent('painted',child);
             }
