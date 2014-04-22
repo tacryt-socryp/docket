@@ -259,6 +259,14 @@ dateStart.setFullYear(date.getFullYear());
 
 hours = parseInt(start.substring(0,2),10);
 minutes = parseInt(start.substring(3,5),10);
+    
+if (hours.toString() == "NaN") {
+    hours = 0;
+}
+
+if (minutes.toString() == "NaN") {
+    minutes = 0;
+}
 
 if ((start.substring(6,8) == 'pm') && (hours != 12)) {
     hours = hours + 12;
