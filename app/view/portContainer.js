@@ -400,8 +400,7 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
             'calendarId': calendarId,
             'singleEvents': true,
             'orderBy': 'startTime',
-            'timeMin': today,
-            'timeMax': nextYear
+            'timeMin': today
         });
         request.execute(function(resp) {
             console.log(resp);
