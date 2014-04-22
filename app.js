@@ -8,11 +8,11 @@ Ext.application({
         
     },
     views: [
-        'portContainer',
         'authContainer',
         'portCarousel',
-        'timeSlider',
-        'formPanel'
+        'portContainer',
+        'formPanel',
+        'timeSlider'
     ],
     name: 'Docket',
 
