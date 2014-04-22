@@ -363,7 +363,7 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
                         console.log(myContainer);
                         setTimeout(function() {
                             console.log(myContainer);
-                            myContainer.reloadRequest.call(myContainer);
+                            //myContainer.reloadRequest.call(myContainer);
                         }, 2000);
                         me.getParent().getParent().hide();
                     } else {
