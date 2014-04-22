@@ -369,8 +369,22 @@ today = today.toISOString();
 
 gapi.client.setApiKey(apiKey);
 gapi.auth.setToken(token);
+        
+gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
+    gapi.client.load('calendar', 'v3', function() {
+        var request = gapi.client.calendar.events.list({
+            'calendarId': '00emtpt9svqg9hqvrnks6iooko@group.calendar.google.com',
+            'singleEvents': true,
+            'orderBy': 'startTime',
+            'maxResults': 70
+        });
+        request.execute(function(resp) {
+            console.log(resp);
+        });
+    });
+});
 
-gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
+/*gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true},
 function(authResult) {
     if (authResult) {
         gapi.client.load('calendar', 'v3', function() {
@@ -396,7 +410,7 @@ function(authResult) {
     } else {
         window.location.reload();
     }
-});
+});*/
     },
 
     reloadData: function(me) {

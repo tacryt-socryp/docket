@@ -168,7 +168,7 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
             'orderBy': 'startTime',
             'timeMin': today,
             'maxResults': 70
-        }); 
+        });
             
         request.execute(function(resp) {
             obj = new Docket.view.portContainer();
