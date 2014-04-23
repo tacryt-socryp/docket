@@ -366,8 +366,8 @@ event: 'painted'}]
                 bottom = (yPos-100)/200;
             console.log("Top bounds : " + top);
             console.log("Bottom bounds : " + bottom);
-            console.log("yPos%200 : " + (yPos-250)%200);
-            console.log("yPos/200 : " + (yPos-250)/200);
+            console.log("yPos%200 : " + (yPos-90)%200);
+            console.log("yPos/200 : " + (yPos-90)/200);
             
             
             //(yPos-250)/200 < x top
