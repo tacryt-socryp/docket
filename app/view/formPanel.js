@@ -192,7 +192,9 @@ change: function(f) {
         {
             xtype: 'button',
 handler: function(button, event) {
-var me = this,
+button.disabled = true;
+
+    var me = this,
     summary = document.getElementsByClassName('x-input-text')[0].value,
     description = document.getElementsByClassName('x-input-text')[1].value,
     guests = document.getElementsByClassName('x-input-text')[3].value,
