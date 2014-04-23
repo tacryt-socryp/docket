@@ -20,6 +20,7 @@ Ext.define('Docket.view.portContainer', {
             autoDestroy: false,
             listeners: [{
 fn: function(element, eOpts) {
+    console.log(this);
     var me = this,
         backgroundColor = me.backgroundColor,
         timelineColor = me.timelineColor,
@@ -133,7 +134,7 @@ function processDate(dateDate) {
     
 function processSummary(summary) {
     try {
-        
+        console.log(summary);
     vDisplaceSumm = 0;
     summary = summary.replace(/\s+/g,' ')
     var measured = m.measureTextSingleLine(summary,"22px Arial").width;
@@ -169,7 +170,7 @@ for (var a = 0; a < divider; a++) {
     
 function processDescription(description) {
     try {
-        
+        console.log(description);
     vDisplaceDesc = 0;
     description = description.replace(/\s+/g,' ')
     description = description.replace(/(\r\n|\n|\r)/g,' ');
