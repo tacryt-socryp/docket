@@ -59,6 +59,9 @@ Ext.define('Docket.view.formPanel', {
             items: [{
                     xtype: 'timeSlider',
                     listeners: {
+                        initialize: function(f) {
+                            console.log(f);
+                        },
                         change: function(f) {
                             var hours = f.getValue() / 2;
                             var minutes = (hours - parseInt(hours, 10)) * 60;
@@ -85,7 +88,6 @@ Ext.define('Docket.view.formPanel', {
 
                             var startLabel = document.getElementsByClassName('startLabel')[0];
                             startLabel.innerText = hours + ':' + minutes + ampm;
-
                         }
                     },
                     label: '',
