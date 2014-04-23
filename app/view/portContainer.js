@@ -20,7 +20,6 @@ Ext.define('Docket.view.portContainer', {
             autoDestroy: false,
             listeners: [{
 fn: function(element, eOpts) {
-    console.log('painted');
     var me = this,
         backgroundColor = me.backgroundColor,
         timelineColor = me.timelineColor,
@@ -54,6 +53,7 @@ fn: function(element, eOpts) {
     me.setSize(w,h);
     surface.setSize(w,h);
     surface.setBackground(backgroundColor);
+    addRect(backgroundColor,w,h,0,0,0);
     
     setTimeout(function(){
         for (var x=0; x < document.getElementsByClassName("x-container x-draw-component x-paint-monitored x-size-monitored x-sized").length; x++) {
@@ -472,8 +472,6 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
             console.log(resp);
             if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0])) {
                 child.events = resp.items;
-                console.log(child.element);
-                child.getSurface().clear();
                 child.element.redraw();
             } else {
                 setTimeout(function(){
