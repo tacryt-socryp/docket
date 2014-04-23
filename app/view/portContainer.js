@@ -344,7 +344,7 @@ event: 'painted'}]
             },
             taphold: function(e){
                 if (window.confirm("Delete event?")) { 
-                    me.deleteEvent(e,canvas);
+                    me.deleteEvent(e,canvas,w);
                 }
             }
         });
@@ -391,7 +391,7 @@ event: 'painted'}]
         canvas.yScrollPosition = e.position.y;
     },
     
-    deleteEvent: function(e,canvas) {  
+    deleteEvent: function(e,canvas,w) {  
 var me = this,
     yPos = e.pageY + canvas.yScrollPosition;
 
