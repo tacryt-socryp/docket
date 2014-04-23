@@ -358,10 +358,10 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
                 if (resp.id) {
                     var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
                         myContainer = mainCarousel.getActiveItem();
+                    me.getParent().getParent().hide();
                     setTimeout(function() {
                         myContainer.reloadRequest.call(myContainer);
                     }, 2000);
-                    me.getParent().getParent().hide();
                 } else {
                     alert('There was an error while adding your event.');
                 }
