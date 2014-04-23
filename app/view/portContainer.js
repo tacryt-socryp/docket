@@ -472,7 +472,7 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
             console.log(resp);
             if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0])) {
                 child.events = resp.items;
-                console.log(child);
+                console.log(child.getSurface());
                 //child.surface.removeAll();
                 child.element.redraw();
             } else {
