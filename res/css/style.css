@@ -117,3 +117,9 @@ body {
 .x-field-select .x-input-el {
     -webkit-text-fill-color: #555;
 }
+
+.x-msgbox {
+    border: 0.15em solid #f3f3f3 !important;
+    box-shadow: none !important;
+    background-color:#fff !important;
+}
