@@ -207,8 +207,6 @@ handler: function(button, event) {
     dateEnd = new Date(),
     attendee = '',
     date;
-if (me.getParent().getParent().submitted == false) {
-    me.getParent().getParent().submitted = true;
 
 var token = Docket.app.authToken,
     clientId = '464168127252.apps.googleusercontent.com',
@@ -372,7 +370,6 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
         });
     }
 });
-}
     },
     ui: 'confirm',
     width: '40%',
