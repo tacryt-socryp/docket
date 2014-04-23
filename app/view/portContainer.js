@@ -362,7 +362,7 @@ event: 'painted'}]
             var form = new Docket.view.formPanel();
             Ext.Viewport.add(form);
         } else if (e.pageX > (w/12)*1.6 && e.pageX < (w/12)*11.4) {
-            var remainder = (yPos-90)%200),
+            var remainder = (yPos-90)%200,
                 boxNum = -1;
             
             if (remainder > 15 && remainder < 140) {
