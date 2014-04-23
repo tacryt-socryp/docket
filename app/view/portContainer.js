@@ -374,7 +374,7 @@ event: 'painted'}]
                     for (var a=0; a < description.length; a++) {
                         search = description[a].search('://');
                         if (search > -1) {
-                            window.location.replace(description[a]);
+                            window.location.href = description[a];
                         }
                     }
                 }

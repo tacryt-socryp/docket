@@ -35,7 +35,7 @@ function handleAuthClick(event) {
 function callForToken() {
   var tokenVal = gapi.auth.getToken();
   var redirect = "index.html?auth=" + encodeURIComponent(tokenVal['access_token']);
-  window.location.href = redirect;
+  window.location.replace(redirect);
 }
     </script>
       
