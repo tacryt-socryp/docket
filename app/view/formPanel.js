@@ -192,8 +192,8 @@ change: function(f) {
         {
             xtype: 'button',
 handler: function(button, event) {
-button.disabled = true;
-
+    console.log(button);
+    button.disabled = true;
     var me = this,
     summary = document.getElementsByClassName('x-input-text')[0].value,
     description = document.getElementsByClassName('x-input-text')[1].value,
