@@ -367,7 +367,8 @@ event: 'painted'}]
             
             if (remainder > 15 && remainder < 140) {
                 boxNum = parseInt((yPos-90)/200);
-                if (boxNum < canvas.events.length) {
+                if (boxNum < canvas.events.length && typeof canvas.events[boxNum].description !== "undefined") {
+                    
                     var description = canvas.events[boxNum].description.split(' ');
                     var search = -1;
                     description = description.split('\n');
