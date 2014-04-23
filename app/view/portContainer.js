@@ -392,8 +392,9 @@ event: 'painted'}]
         canvas.yScrollPosition = e.position.y;
     },
     
-    deleteEvent: function(e,canvas,w) {  
+    deleteEvent: function(e,canvas,w) { 
 var me = this,
+    child = me.items.items[0],
     yPos = e.pageY + canvas.yScrollPosition;
 
 function deleteRequest(eventId) {
@@ -401,7 +402,6 @@ function deleteRequest(eventId) {
         clientId = '464168127252.apps.googleusercontent.com',
         apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
         scopes = 'https://www.googleapis.com/auth/calendar',
-        child = me.items.items[0],
         calendarId = me.calendarId;
         
     
@@ -434,7 +434,7 @@ if (yPos > 80 && e.pageX > (w/12)*1.6 && e.pageX < (w/12)*11.4) {
 
     if (remainder > 15 && remainder < 140) {
         boxNum = parseInt((yPos-90)/200);
-        
+        deleteRequest(child.events[boxNum].id);
     }
 }
     },
