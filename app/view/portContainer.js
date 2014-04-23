@@ -357,7 +357,7 @@ event: 'painted'}]
     },
 
     onTap: function(e,canvas,w) {
-        if ((e.pageY + canvas.yScrollPosition) <= 80 && e.pageX >= w*(2/3)) {
+        if (e.pageY + canvas.yScrollPosition <= 80 && e.pageX >= w-80) {
             var form = new Docket.view.formPanel();
             Ext.Viewport.add(form);
         }
