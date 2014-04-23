@@ -16,6 +16,7 @@ Ext.define('Docket.view.formPanel', {
         centered: true,
         height: '90%',
         id: 'formPanel',
+        submitted: false,
         itemId: 'formPanel',
         width: '90%',
         hideOnMaskTap: true,
@@ -192,8 +193,6 @@ change: function(f) {
         {
             xtype: 'button',
 handler: function(button, event) {
-    console.log(button);
-    button.disabled = true;
     var me = this,
     summary = document.getElementsByClassName('x-input-text')[0].value,
     description = document.getElementsByClassName('x-input-text')[1].value,
@@ -208,6 +207,8 @@ handler: function(button, event) {
     dateEnd = new Date(),
     attendee = '',
     date;
+if (me.getParent().getParent().submitted == false) {
+    me.getParent().getParent().submitted = true;
 
 var token = Docket.app.authToken,
     clientId = '464168127252.apps.googleusercontent.com',
@@ -363,7 +364,7 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
                     me.getParent().getParent().hide();
                     setTimeout(function() {
                         myContainer.reloadRequest.call(myContainer);
-                    }, 2000);
+                    }, 2500);
                 } else {
                     alert('There was an error while adding your event.');
                 }
@@ -371,6 +372,7 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
         });
     }
 });
+}
     },
     ui: 'confirm',
     width: '40%',
