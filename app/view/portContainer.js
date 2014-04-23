@@ -342,7 +342,7 @@ event: 'painted'}]
             tap: function(e){
                 me.onTap(e,canvas,w);
             },
-            longpress: function(e){
+            itemtaphold: function(e){
                 if (window.confirm("Delete event?")) { 
                     me.deleteEvent(e);
                 }
