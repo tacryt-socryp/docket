@@ -10,7 +10,7 @@ body {
     border: none !important;
     border-top-color: none !important;
     background-image: none !important;
-    background-color: #f3f3f3 !important;
+    background-color: #fff !important;
 }
 
 .x-button.x-button-confirm, .x-toolbar .x-button.x-button-confirm {
@@ -122,4 +122,9 @@ body {
     border: 0.15em solid #f3f3f3 !important;
     box-shadow: none !important;
     background-color:#fff !important;
+}
+
+.x-msgbox-dark .x-msgbox-text {
+    color: #555 !important;
+    text-shadow: none !important;
 }
