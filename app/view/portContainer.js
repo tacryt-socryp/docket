@@ -469,8 +469,14 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
         request.execute(function(resp) {
             console.log(resp);
             if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0])) {
-                child.events = resp.items;
-                child.element.redraw();
+                if (child.events == resp.items) {
+                    setTimeout(function(){
+                        me.reloadRequest.call(me);
+                    }, 2500);
+                } else {
+                    child.events = resp.items;
+                    child.element.redraw();
+                }
             } else {
                 setTimeout(function(){
                     me.reloadRequest.call(me);
