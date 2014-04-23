@@ -343,7 +343,8 @@ event: 'painted'}]
                 me.onTap(e,canvas,w);
             },
             taphold: function(e){
-                if (window.confirm("Delete event?")) { 
+                console.log(e);
+                if (window.confirm("Delete event?")) {
                     me.deleteEvent(e,canvas,w);
                 }
             }
