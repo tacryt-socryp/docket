@@ -344,7 +344,7 @@ event: 'painted'}]
             },
             taphold: function(e){
                 if (window.confirm("Delete event?")) { 
-                    me.deleteEvent(e);
+                    me.deleteEvent(e,canvas);
                 }
             }
         });
@@ -391,7 +391,7 @@ event: 'painted'}]
         canvas.yScrollPosition = e.position.y;
     },
     
-    deleteEvent: function(e) {  
+    deleteEvent: function(e,canvas) {  
 var me = this,
     yPos = e.pageY + canvas.yScrollPosition;
 
@@ -400,8 +400,9 @@ function deleteRequest(eventId) {
         clientId = '464168127252.apps.googleusercontent.com',
         apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
         scopes = 'https://www.googleapis.com/auth/calendar',
-        calendarId = me.calendarId,
-        child = me.items.items[0];
+        child = me.items.items[0],
+        calendarId = me.calendarId;
+        
     
     try {
         gapi.client.setApiKey(apiKey);
