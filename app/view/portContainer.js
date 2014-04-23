@@ -341,12 +341,12 @@ event: 'painted'}]
         canvas.element.on({
             tap: function(e){
                 me.onTap(e,canvas,w);
-            },
-            taphold: function(e){
+            }
+            /*taphold: function(e){
                 if (window.confirm("Delete event?")) { 
                     me.deleteEvent(e,canvas,w);
                 }
-            }
+            }*/
         });
         
         me.getScrollable().getScroller().on({
