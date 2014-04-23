@@ -341,6 +341,11 @@ event: 'painted'}]
         canvas.element.on({
             tap: function(e){
                 me.onTap(e,canvas,w);
+            },
+            taphold: function(e){
+                if (window.confirm("Delete event?")) { 
+                    me.deleteEvent(e);
+                }
             }
         });
         
@@ -384,6 +389,52 @@ event: 'painted'}]
     
     onScroll: function(e,canvas) {
         canvas.yScrollPosition = e.position.y;
+    },
+    
+    deleteEvent: function(e) {  
+var me = this,
+    yPos = e.pageY + canvas.yScrollPosition;
+
+function deleteRequest(eventId) {
+    var token = Docket.app.authToken,
+        clientId = '464168127252.apps.googleusercontent.com',
+        apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
+        scopes = 'https://www.googleapis.com/auth/calendar',
+        calendarId = me.calendarId,
+        child = me.items.items[0];
+    
+    try {
+        gapi.client.setApiKey(apiKey);
+        gapi.auth.setToken(token);
+    } catch(e) {
+        window.location.reload();
+    }
+
+    gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
+        if (authResult) {
+            gapi.client.load('calendar', 'v3', function() {
+                var request = gapi.client.calendar.events.delete({
+                    'calendarId': calendarId,
+                    'eventId': eventId
+                });
+                request.execute(function(resp) {
+                    console.log(resp);
+                    me.reloadData.call(me);
+                });
+            });
+        }
+    });
+}
+
+if (yPos > 80 && e.pageX > (w/12)*1.6 && e.pageX < (w/12)*11.4) {
+    var remainder = (yPos-90)%200,
+        boxNum = -1;
+
+    if (remainder > 15 && remainder < 140) {
+        boxNum = parseInt((yPos-90)/200);
+        
+    }
+}
     },
     
     reloadRequest: function() {

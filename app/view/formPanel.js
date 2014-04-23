@@ -348,27 +348,27 @@ try {
 }
 
 gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
-        if (authResult) {
-            gapi.client.load('calendar', 'v3', function() {
-                var request = gapi.client.calendar.events.insert({
-                    'calendarId': calendarId,
-                    'resource': resource
-                });
-                request.execute(function(resp) {
-                    if (resp.id) {
-                        var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
-                            myContainer = mainCarousel.getActiveItem();
-                        setTimeout(function() {
-                            myContainer.reloadRequest.call(myContainer);
-                        }, 2000);
-                        me.getParent().getParent().hide();
-                    } else {
-                        alert('There was an error while adding your event.');
-                    }
-                });
+    if (authResult) {
+        gapi.client.load('calendar', 'v3', function() {
+            var request = gapi.client.calendar.events.insert({
+                'calendarId': calendarId,
+                'resource': resource
             });
-        }
-    });
+            request.execute(function(resp) {
+                if (resp.id) {
+                    var mainCarousel = Ext.ComponentQuery.query('#mainCarousel')[0],
+                        myContainer = mainCarousel.getActiveItem();
+                    setTimeout(function() {
+                        myContainer.reloadRequest.call(myContainer);
+                    }, 2000);
+                    me.getParent().getParent().hide();
+                } else {
+                    alert('There was an error while adding your event.');
+                }
+            });
+        });
+    }
+});
     },
     ui: 'confirm',
     width: '40%',
