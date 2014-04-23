@@ -59,14 +59,11 @@ Ext.define('Docket.view.formPanel', {
             items: [{
                     xtype: 'timeSlider',
                     listeners: {
-                        initialize: function(f) {
-                            console.log(f);
-                        },
                         change: function(f) {
                             var hours = f.getValue() / 2;
-                            var minutes = (hours - parseInt(hours, 10)) * 60;
+                            var minutes = (hours - parseInt(hours)) * 60;
                             var ampm = ' am';
-                            hours = parseInt(hours, 10);
+                            hours = parseInt(hours);
                             if (hours == 24) {
                                 hours = 11;
                                 minutes = 59;
@@ -117,9 +114,9 @@ Ext.define('Docket.view.formPanel', {
             listeners: {
 change: function(f) {
     var hours = f.getValue() / 2;
-    var minutes = (hours - parseInt(hours, 10)) * 60;
+    var minutes = (hours - parseInt(hours)) * 60;
     var ampm = ' am';
-    hours = parseInt(hours, 10);
+    hours = parseInt(hours);
     if (hours == 24) {
         hours = 11;
         minutes = 59;
