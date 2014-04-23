@@ -357,9 +357,21 @@ event: 'painted'}]
     },
 
     onTap: function(e,canvas,w) {
-        if (e.pageY + canvas.yScrollPosition <= 80 && e.pageX >= w-80) {
+        var yPos = e.pageY + canvas.yScrollPosition;
+        if (yPos <= 80 && e.pageX >= w-80) {
             var form = new Docket.view.formPanel();
             Ext.Viewport.add(form);
+        } else if (e.pageX > (w/12)*1.6 && e.pageX < (w/12)*11.4) {
+            var top = (yPos-250)/200,
+                bottom = (yPos-100)/200;
+            console.log("Top bounds : " + top);
+            console.log("Bottom bounds : " + bottom);
+            console.log("yPos%200 : " + ypos%200);
+            console.log("yPos/200 : " + ypos/200);
+            
+            
+            //(yPos-250)/200 < x top
+            //(yPos-100)/200 > x bottom   
         }
     },
     
