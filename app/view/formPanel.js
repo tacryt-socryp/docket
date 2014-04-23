@@ -207,6 +207,8 @@ handler: function(button, event) {
     dateEnd = new Date(),
     attendee = '',
     date;
+    
+    me.disable();
 
 var token = Docket.app.authToken,
     clientId = '464168127252.apps.googleusercontent.com',
