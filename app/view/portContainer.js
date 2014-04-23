@@ -343,9 +343,11 @@ event: 'painted'}]
                 me.onTap(e,canvas,w);
             },
             taphold: function(e){
-                if (window.confirm("Delete event?")) {
-                    me.deleteEvent(e,canvas,w);
-                }
+                Ext.Msg.confirm('', 'Delete Event?', function (button){
+                    if (button == 'yes') {
+                        me.deleteEvent(e,canvas,w);
+                    }
+                });
             }
         });
         
