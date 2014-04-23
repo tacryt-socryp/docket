@@ -379,9 +379,6 @@ event: 'painted'}]
                     }
                 }
             }
-            
-            //(yPos-250)/200 < x top
-            //(yPos-100)/200 > x bottom   
         }
     },
     
