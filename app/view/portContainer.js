@@ -252,6 +252,7 @@ for (var a = 0; a < divider; a++) {
 }
     
 function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
+    console.log("portraitRender called");
     //Point on timeline
     addCircle(boxColor,16,20,yloc+175);
 
