@@ -362,13 +362,23 @@ event: 'painted'}]
             var form = new Docket.view.formPanel();
             Ext.Viewport.add(form);
         } else if (e.pageX > (w/12)*1.6 && e.pageX < (w/12)*11.4) {
-            var top = (yPos-250)/200,
-                bottom = (yPos-100)/200;
-            console.log("Top bounds : " + top);
-            console.log("Bottom bounds : " + bottom);
-            console.log("yPos%200 : " + (yPos-90)%200);
-            console.log("yPos/200 : " + (yPos-90)/200);
+            var remainder = (yPos-90)%200),
+                boxNum = -1;
             
+            if (remainder > 15 && remainder < 140) {
+                boxNum = parseInt((yPos-90)/200);
+                if (boxNum < canvas.events.length) {
+                    var description = canvas.events[boxNum].description.split(' ');
+                    var search = -1;
+                    description = description.split('\n');
+                    for (var a=0; a < description.length; a++) {
+                        search = description[a].search('://');
+                        if (search > -1) {
+                            window.location.replace(description[a]);
+                        }
+                    }
+                }
+            }
             
             //(yPos-250)/200 < x top
             //(yPos-100)/200 > x bottom   
