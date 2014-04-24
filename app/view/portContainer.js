@@ -20,7 +20,6 @@ Ext.define('Docket.view.portContainer', {
             autoDestroy: false,
             listeners: [{
 fn: function(element, eOpts) {
-    console.log(this);
     var me = this,
         backgroundColor = me.backgroundColor,
         timelineColor = me.timelineColor,
@@ -67,10 +66,11 @@ fn: function(element, eOpts) {
     
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
+    addRect(timelineColor, w, 40, 0, 0, 0);
 
     //Name of room
     addText("#fff", "20px Arial", roomText, 35, 35);
-    addRect(boxColor, 40, 40, w-55, 7, 3);
+    //addRect(boxColor, 40, 40, w-55, 7, 3);
     addText("#fff", "24px Arial", "+", w-42, 35);
     
 function addRect(fillColor,w,h,x,y,r) {
@@ -134,7 +134,6 @@ function processDate(dateDate) {
     
 function processSummary(summary) {
     try {
-        console.log(summary);
     vDisplaceSumm = 0;
     summary = summary.replace(/\s+/g,' ')
     var measured = m.measureTextSingleLine(summary,"22px Arial").width;
@@ -162,7 +161,6 @@ for (var a = 0; a < divider; a++) {
     }
 }
     } catch(e) {
-        console.log(e);
         summary = false;
     }
     
@@ -171,7 +169,6 @@ for (var a = 0; a < divider; a++) {
     
 function processDescription(description) {
     try {
-        console.log(description);
     vDisplaceDesc = 0;
     description = description.replace(/\s+/g,' ')
     description = description.replace(/(\r\n|\n|\r)/g,' ');
@@ -247,7 +244,6 @@ for (var a = 0; a < divider; a++) {
     }
 
 } catch(e) {
-    console.log(e);
     description = false;
 }
     
@@ -255,7 +251,6 @@ for (var a = 0; a < divider; a++) {
 }
     
 function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
-    console.log("portraitRender called");
     //Point on timeline
     addCircle(boxColor,16,20,yloc+175);
 
@@ -413,7 +408,6 @@ function deleteRequest(eventId) {
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
     } catch(e) {
-        console.log(e);
         window.location.reload();
     }
 
@@ -425,7 +419,6 @@ function deleteRequest(eventId) {
                     'eventId': eventId
                 });
                 request.execute(function(resp) {
-                    console.log(resp);
                     me.reloadData.call(me);
                 });
             });
@@ -475,7 +468,6 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
             'timeMin': today
         });
         request.execute(function(resp) {
-            console.log(resp);
             if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0])) {
                 child.events = resp.items;
                 child.element.redraw();
