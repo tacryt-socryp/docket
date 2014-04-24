@@ -277,7 +277,7 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
 
 
 for (var iter = 0; iter < events.length; iter++) {
-    
+    if (iter < 70) { 
     vDisplaceDesc = 0;
     summary = processSummary(events[iter].summary);
     description = processDescription(events[iter].description);
@@ -326,6 +326,7 @@ for (var iter = 0; iter < events.length; iter++) {
     
     yloc = iter*200;
     portraitRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, iter);
+}
 }
 },
 event: 'painted'}]
