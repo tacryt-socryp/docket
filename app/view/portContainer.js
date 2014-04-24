@@ -66,7 +66,7 @@ fn: function(element, eOpts) {
     
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
-    addRect(timelineColor, w, 40, 0, 0, 0);
+    addRect(timelineColor, w, 50, 0, 0, 0);
 
     //Name of room
     addText("#fff", "20px Arial", roomText, 35, 35);
