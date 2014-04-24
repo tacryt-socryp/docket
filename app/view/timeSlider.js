@@ -1,6 +1,5 @@
 Ext.define('Docket.view.timeSlider', {
     extend: 'Ext.field.Slider',
-    alias: 'widget.timeSlider',
 
     config: {
         labelWidth: 0,
@@ -16,5 +15,4 @@ Ext.define('Docket.view.timeSlider', {
             drag: 'onSliderChange'
         });
     }
-
 });
