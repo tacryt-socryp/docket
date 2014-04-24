@@ -17,7 +17,7 @@ Ext.define('Docket.view.portContainer', {
             xtype: 'draw',
             events: [],
             itemId: 'inlinePortDraw',
-            autoDestroy: false,
+            autoDestroy: true,
             listeners: [{
 fn: function(element, eOpts) {
     var me = this,
