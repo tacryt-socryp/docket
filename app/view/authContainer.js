@@ -131,7 +131,6 @@ gapi.client.load('calendar', 'v3', function() {
     });
 
     request.execute(function(resp) {
-        console.log(resp);
 if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0])) {
     if(summary.indexOf("birthdays and events") == -1 && summary.indexOf("Holidays") == -1){
 
@@ -170,7 +169,6 @@ if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items
         });
             
         request.execute(function(resp) {
-            console.log(resp);
             obj = new Docket.view.portContainer();
             array_i = Ext.ComponentQuery.query('#inlinePortDraw').length - 1;
             child = Ext.ComponentQuery.query('#inlinePortDraw')[array_i];

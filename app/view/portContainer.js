@@ -65,13 +65,13 @@ fn: function(element, eOpts) {
     }, 1000);
     
     //Line across screen
-    addRect(timelineColor, 19, h, 10, 0, 0);
+    addRect(timelineColor, 20, h, 10, 0, 0);
     //addRect(timelineColor, w, 50, 0, 0, 0);
 
     //Name of room
     addText("#fff", "20px Arial", roomText, 35, 30);
-    addRect(boxColor, 40, 40, w-55, 7, 3);
-    addText("#fff", "24px Arial", "+", w-42, 35);
+    addRect(boxColor, 40, 40, w-55, 5, 3);
+    addText("#fff", "24px Arial", "+", w-42, 33);
     
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({
@@ -252,7 +252,7 @@ for (var a = 0; a < divider; a++) {
     
 function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
     //Point on timeline
-    addCircle(boxColor,16,19,yloc+175);
+    addCircle(boxColor,16,20,yloc+175);
 
     addRect(boxColor,(xloc*10),170,(xloc*1.5),yloc+90,3);
     
