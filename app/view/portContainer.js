@@ -162,6 +162,7 @@ for (var a = 0; a < divider; a++) {
     }
 }
     } catch(e) {
+        console.log(e);
         summary = false;
     }
     
@@ -246,6 +247,7 @@ for (var a = 0; a < divider; a++) {
     }
 
 } catch(e) {
+    console.log(e);
     description = false;
 }
     
@@ -277,7 +279,6 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
 
 
 for (var iter = 0; iter < events.length; iter++) {
-    if (iter < 25) { 
     vDisplaceDesc = 0;
     summary = processSummary(events[iter].summary);
     description = processDescription(events[iter].description);
@@ -326,7 +327,6 @@ for (var iter = 0; iter < events.length; iter++) {
     
     yloc = iter*200;
     portraitRender(summary, description, dateStart, dateEnd, dateTime, xloc, yloc, iter);
-}
 }
 },
 event: 'painted'}]
@@ -413,6 +413,7 @@ function deleteRequest(eventId) {
         gapi.client.setApiKey(apiKey);
         gapi.auth.setToken(token);
     } catch(e) {
+        console.log(e);
         window.location.reload();
     }
 
