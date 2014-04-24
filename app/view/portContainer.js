@@ -65,7 +65,7 @@ fn: function(element, eOpts) {
     }, 1000);
     
     //Line across screen
-    addRect(timelineColor, 20, h, 10, 0, 0);
+    addRect(timelineColor, 19, h, 10, 0, 0);
     //addRect(timelineColor, w, 50, 0, 0, 0);
 
     //Name of room
@@ -252,7 +252,7 @@ for (var a = 0; a < divider; a++) {
     
 function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc,i){
     //Point on timeline
-    addCircle(boxColor,16,20,yloc+175);
+    addCircle(boxColor,16,19,yloc+175);
 
     addRect(boxColor,(xloc*10),170,(xloc*1.5),yloc+90,3);
     
