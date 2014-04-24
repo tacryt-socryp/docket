@@ -70,8 +70,8 @@ fn: function(element, eOpts) {
 
     //Name of room
     addText("#fff", "20px Arial", roomText, 35, 30);
-    //addRect(boxColor, 40, 40, w-55, 7, 3);
-    addText("#fff", "24px Arial", "+", w-42, 30);
+    addRect(boxColor, 40, 40, w-55, 7, 3);
+    addText("#fff", "24px Arial", "+", w-42, 35);
     
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({
