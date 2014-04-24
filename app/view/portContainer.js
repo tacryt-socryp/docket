@@ -277,7 +277,7 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
 
 
 for (var iter = 0; iter < events.length; iter++) {
-    if (iter < 70) { 
+    if (iter < 25) { 
     vDisplaceDesc = 0;
     summary = processSummary(events[iter].summary);
     description = processDescription(events[iter].description);
@@ -438,7 +438,9 @@ if (yPos > 80 && e.pageX > (w/12)*1.6 && e.pageX < (w/12)*11.4) {
 
     if (remainder > 15 && remainder < 140) {
         boxNum = parseInt((yPos-90)/200);
-        deleteRequest(child.events[boxNum].id);
+        if (boxNum >= 0) {
+            deleteRequest(child.events[boxNum].id);
+        }
     }
 }
     },
