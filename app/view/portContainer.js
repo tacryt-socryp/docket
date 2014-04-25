@@ -1,5 +1,6 @@
 Ext.define('Docket.view.portContainer', {
     extend: 'Ext.Container',
+    alias: 'widget.portContainer',
 
     requires: [
         'Ext.draw.Component'
@@ -7,6 +8,7 @@ Ext.define('Docket.view.portContainer', {
 
     config: {
         itemId: 'portContainer',
+        autoDestroy: false,
         scrollable: {
             direction: 'vertical',
             directionLock: true
@@ -15,6 +17,7 @@ Ext.define('Docket.view.portContainer', {
             xtype: 'draw',
             events: [],
             itemId: 'inlinePortDraw',
+            autoDestroy: true,
             listeners: [{
 fn: function(element, eOpts) {
     var me = this,

@@ -16,6 +16,7 @@ Ext.define('Docket.view.formPanel', {
         centered: true,
         height: '90%',
         id: 'formPanel',
+        submitted: false,
         itemId: 'formPanel',
         width: '90%',
         hideOnMaskTap: true,
@@ -315,7 +316,13 @@ var resource = {
     'end': {
         'dateTime': end
     },
-    'attendees': []
+    'attendees': [
+//    {
+//        'email': calendarId,
+//        'displayName': roomText,
+//        'responseStatus': 'needsAction'
+//    }
+    ]
 };
 
 guests = guests.replace(/(\r\n|\n|\r)/gm,'');

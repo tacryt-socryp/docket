@@ -1,7 +1,12 @@
-Ext.Loader.setConfig({});
+Ext.Loader.setConfig({
+
+});
+
 
 Ext.application({
-    authToken: {},
+    authToken: {
+        
+    },
     views: [
         'authContainer',
         'portCarousel',
@@ -10,7 +15,10 @@ Ext.application({
         'timeSlider'
     ],
     name: 'Docket',
+
     launch: function() {
+
         Ext.create('Docket.view.authContainer', {fullscreen: true});
     }
+
 });
