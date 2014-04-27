@@ -362,6 +362,7 @@ event: 'painted'}]
     },
 
     onTap: function(e,canvas,w) {
+        console.log(e.duration);
         if (typeof e.duration == "undefined") {
         var yPos = e.pageY + canvas.yScrollPosition;
         if (yPos <= 80 && e.pageX >= w-80) {
