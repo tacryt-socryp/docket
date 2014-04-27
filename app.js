@@ -1,8 +1,3 @@
-Ext.Loader.setConfig({
-
-});
-
-
 Ext.application({
     authToken: {
         
@@ -17,7 +12,6 @@ Ext.application({
     name: 'Docket',
 
     launch: function() {
-
         Ext.create('Docket.view.authContainer', {fullscreen: true});
     }
 
