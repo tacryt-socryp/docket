@@ -316,13 +316,7 @@ var resource = {
     'end': {
         'dateTime': end
     },
-    'attendees': [
-//    {
-//        'email': calendarId,
-//        'displayName': roomText,
-//        'responseStatus': 'needsAction'
-//    }
-    ]
+    'attendees': []
 };
 
 guests = guests.replace(/(\r\n|\n|\r)/gm,'');

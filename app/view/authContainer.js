@@ -6,8 +6,8 @@ Ext.define('Docket.view.authContainer', {
         style: 'background-color:##2c3e50',
         listeners: [
             {
-                fn: 'onContainerPainted',
-                event: 'painted'
+                fn: 'onContainerInitialize',
+                event: 'initialize'
             },
             {
                 fn: 'onAuthContainerDeactivate',
@@ -16,7 +16,7 @@ Ext.define('Docket.view.authContainer', {
         ]
     },
 
-onContainerPainted: function(element, eOpts) {
+onContainerInitialize: function(element, eOpts) {
     var parameters = {};
         
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
