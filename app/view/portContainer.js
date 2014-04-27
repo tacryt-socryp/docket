@@ -337,12 +337,6 @@ event: 'painted'}]
         me.callParent();
 
         canvas.element.on({
-            touchstart: function(e) {
-                console.log(e);
-            },
-            touchend: function(e) {
-                console.log(e);
-            },
             tap: function(e){
                 me.onTap(e,canvas,w);
             },
@@ -368,7 +362,7 @@ event: 'painted'}]
     },
 
     onTap: function(e,canvas,w) {
-        console.log(e);
+        if (typeof e.duration == "undefined") {
         var yPos = e.pageY + canvas.yScrollPosition;
         if (yPos <= 80 && e.pageX >= w-80) {
             var form = new Docket.view.formPanel();
@@ -391,6 +385,7 @@ event: 'painted'}]
                     }
                 }
             }
+        }
         }
     },
     
