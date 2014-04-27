@@ -337,6 +337,12 @@ event: 'painted'}]
         me.callParent();
 
         canvas.element.on({
+            touchstart: function(e) {
+                console.log(e);
+            },
+            touchend: function(e) {
+                console.log(e);
+            },
             tap: function(e){
                 me.onTap(e,canvas,w);
             },
