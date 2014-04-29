@@ -352,23 +352,23 @@ event: 'painted'}]
                         xtype: 'button',
                         text: 'Edit',
                         itemId: 'ok',
-                        ui: 'action'
+                        ui: 'action',
+                        handler: function(button) {
+                            me.editEvent(e,canvas,w);
+                        }
                     },
                     {
                         xtype: 'button',
                         text: 'Delete',
                         itemId: 'yes',
-                        ui: 'action'
+                        ui: 'action',
+                        handler: function(button) {
+                            me.deleteEvent(e,canvas,w);
+                        }
                     }
                 ]);
                 
                 editDelete.show();
-                
-                /*Ext.Msg.confirm('', 'Edit or delete event?', function (button){
-                    if (button == 'yes') {
-                        me.deleteEvent(e,canvas,w);
-                    }
-                });*/
             }
         });
         
@@ -437,6 +437,7 @@ function editRequest(eventId) {
     gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
         if (authResult) {
             gapi.client.load('calendar', 'v3', function() {
+                console.log('EDITED');
                 //var request = gapi.client.calendar.events.delete({
                 //    'calendarId': calendarId,
                 //    'eventId': eventId
