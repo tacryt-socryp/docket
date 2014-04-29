@@ -343,8 +343,9 @@ event: 'painted'}]
             },
             taphold: function(e){
                 Ext.Msg.defaultAllowedConfig.hideOnMaskTap = true;
-                Ext.Msg.defaultAllowedConfig.statics.YES = {text : 'Edit',    itemId : 'yes', ui : 'action' };
-                Ext.Msg.defaultAllowedConfig.statics.NO = {text : 'Delete',    itemId : 'no', ui : 'action' };
+                console.log(Ext.Msg.defaultAllowedConfig);
+                Ext.Msg.defaultAllowedConfig.YES = {text : 'Edit',    itemId : 'yes', ui : 'action' };
+                Ext.Msg.defaultAllowedConfig.NO = {text : 'Delete',    itemId : 'no', ui : 'action' };
                 
                 Ext.Msg.confirm('', 'Edit or delete event?', function (button){
                     if (button == 'ok') {
