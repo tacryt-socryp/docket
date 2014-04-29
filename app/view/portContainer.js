@@ -342,8 +342,8 @@ event: 'painted'}]
                 me.onTap(e,canvas,w);
             },
             taphold: function(e){
-                Ext.override(Ext.MessageBox, {
-                    hideOnMaskTap: true,
+                Ext.Msg.defaultAllowedConfig.hideOnMaskTap = true;
+                Ext.override(Ext.Msg, {
                     YES: {text : 'Edit',    itemId : 'yes', ui : 'action' },
                     NO: {text : 'Delete',    itemId : 'no', ui : 'action' },
                     YESNO: [Ext.MessageBox.YES, Ext.MessageBox.NO]
