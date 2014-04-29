@@ -355,6 +355,7 @@ event: 'painted'}]
                         ui: 'action',
                         handler: function(button) {
                             me.editEvent(e,canvas,w);
+                            me.hide();
                         }
                     },
                     {
@@ -364,6 +365,7 @@ event: 'painted'}]
                         ui: 'action',
                         handler: function(button) {
                             me.deleteEvent(e,canvas,w);
+                            me.hide();
                         }
                     }
                 ]);
