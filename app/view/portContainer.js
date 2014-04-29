@@ -342,8 +342,12 @@ event: 'painted'}]
                 me.onTap(e,canvas,w);
             },
             taphold: function(e){
-                Ext.Msg.defaultAllowedConfig.hideOnMaskTap = true;
-                Ext.Msg.defaultAllowedConfig.buttons = [
+                var editDelete = new Ext.Msg({
+                    hideOnMaskTap: true
+                });
+                
+                editDelete.setMessage('Edit or delete event?');
+                editDelete.setButtons([
                     {
                         xtype: 'button',
                         text: 'Edit',
@@ -356,17 +360,15 @@ event: 'painted'}]
                         itemId: 'yes',
                         ui: 'action'
                     }
-                ];
-                console.log(Ext.Msg.defaultAllowedConfig);
+                ]);
                 
-                Ext.Msg.confirm('', 'Edit or delete event?', function (button){
-                    if (button == 'ok') {
-                        console.log('edit');
-                        me.editEvent(e,canvas,w);
-                    } else if (button == 'yes') {
+                editDelete.show();
+                
+                /*Ext.Msg.confirm('', 'Edit or delete event?', function (button){
+                    if (button == 'yes') {
                         me.deleteEvent(e,canvas,w);
                     }
-                });
+                });*/
             }
         });
         
