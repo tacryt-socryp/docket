@@ -342,6 +342,7 @@ event: 'painted'}]
                 me.onTap(e,canvas,w);
             },
             taphold: function(e){
+                e.stopPropagation();
                 var editDelete = new Ext.MessageBox({
                     hideOnMaskTap: true
                 });
