@@ -343,11 +343,8 @@ event: 'painted'}]
             },
             taphold: function(e){
                 Ext.Msg.defaultAllowedConfig.hideOnMaskTap = true;
-                Ext.override(Ext.Msg, {
-                    YES: {text : 'Edit',    itemId : 'yes', ui : 'action' },
-                    NO: {text : 'Delete',    itemId : 'no', ui : 'action' },
-                    YESNO: [Ext.MessageBox.YES, Ext.MessageBox.NO]
-                });
+                Ext.Msg.defaultAllowedConfig.statics.YES = {text : 'Edit',    itemId : 'yes', ui : 'action' };
+                Ext.Msg.defaultAllowedConfig.statics.NO = {text : 'Delete',    itemId : 'no', ui : 'action' };
                 
                 Ext.Msg.confirm('', 'Edit or delete event?', function (button){
                     if (button == 'ok') {
