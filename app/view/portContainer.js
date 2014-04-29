@@ -343,8 +343,10 @@ event: 'painted'}]
             },
             taphold: function(e){
                 Ext.override(Ext.MessageBox, {
-                    YESNO: [{text : 'Edit',    itemId : 'ok', ui : 'action' },
-                            {text : 'Delete',    itemId : 'yes', ui : 'action' }]
+                    hideOnMaskTap: true,
+                    YES: {text : 'Edit',    itemId : 'yes', ui : 'action' },
+                    NO: {text : 'Delete',    itemId : 'no', ui : 'action' },
+                    YESNO: [Ext.MessageBox.YES, Ext.MessageBox.NO]
                 });
                 
                 Ext.Msg.confirm('', 'Edit or delete event?', function (button){
