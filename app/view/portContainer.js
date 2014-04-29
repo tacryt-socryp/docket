@@ -342,8 +342,16 @@ event: 'painted'}]
                 me.onTap(e,canvas,w);
             },
             taphold: function(e){
-                Ext.Msg.confirm('', 'Delete Event?', function (button){
-                    if (button == 'yes') {
+                Ext.override(Ext.MessageBox, {
+                    YESNO: [{text : 'Edit',    itemId : 'ok', ui : 'action' },
+                            {text : 'Delete',    itemId : 'yes', ui : 'action' }]
+                });
+                
+                Ext.Msg.confirm('', 'Edit or delete event?', function (button){
+                    if (button == 'ok') {
+                        console.log('edit');
+                        me.editEvent(e,canvas,w);
+                    } else if (button == 'yes') {
                         me.deleteEvent(e,canvas,w);
                     }
                 });
@@ -392,7 +400,56 @@ event: 'painted'}]
         canvas.yScrollPosition = e.position.y;
     },
     
-    deleteEvent: function(e,canvas,w) { 
+    editEvent: function(e,canvas,w) {
+var me = this,
+    child = me.items.items[0],
+    yPos = e.pageY + canvas.yScrollPosition;
+        
+function editRequest(eventId) {
+    var token = Docket.app.authToken,
+        clientId = '464168127252.apps.googleusercontent.com',
+        apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
+        scopes = 'https://www.googleapis.com/auth/calendar',
+        calendarId = me.calendarId;
+        
+    
+    try {
+        gapi.client.setApiKey(apiKey);
+        gapi.auth.setToken(token);
+    } catch(e) {
+        window.location.reload();
+    }
+
+    gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, function(authResult) {
+        if (authResult) {
+            gapi.client.load('calendar', 'v3', function() {
+                //var request = gapi.client.calendar.events.delete({
+                //    'calendarId': calendarId,
+                //    'eventId': eventId
+                //});
+                //request.execute(function(resp) {
+                //    me.reloadData.call(me);
+                //});
+            });
+        }
+    });
+}
+        
+if (yPos > 80 && e.pageX > (w/12)*1.6 && e.pageX < (w/12)*11.4) {
+    var remainder = (yPos-90)%200,
+        boxNum = -1;
+
+    if (remainder > 15 && remainder < 140) {
+        boxNum = parseInt((yPos-90)/200);
+        if (boxNum >= 0) {
+            editRequest(child.events[boxNum].id);
+        }
+    }
+}
+        
+    },
+    
+    deleteEvent: function(e,canvas,w) {
 var me = this,
     child = me.items.items[0],
     yPos = e.pageY + canvas.yScrollPosition;
