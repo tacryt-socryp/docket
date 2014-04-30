@@ -257,12 +257,12 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     addRect(boxColor,(xloc*10),170,(xloc*1.5),yloc+90,3);
     
     if (summary !== false) {
-        addText("#fff", "22px OpenSans", summary, (xloc*1.7), yloc+120+vDisplaceSumm);
+        addText("#fff", "22px OpenSans", summary, (xloc*1.7), yloc+118+vDisplaceSumm);
     }
 
     if (description !== false) {
         addText("#fff", "16px OpenSans", description, (xloc*1.7),
-            yloc+175+vDisplaceDesc+vDisplaceSumm);
+            yloc+173+vDisplaceDesc+vDisplaceSumm);
     }
 
     //Time text
