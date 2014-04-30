@@ -9,5 +9,6 @@
     "name": "Logan Allen",
     "url": "http://loganallen.co"
   },
+  "orientation": ["portrait"],
   "default_locale": "en"
 }
