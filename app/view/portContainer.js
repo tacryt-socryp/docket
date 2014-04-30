@@ -69,9 +69,9 @@ fn: function(element, eOpts) {
     //addRect(timelineColor, w, 50, 0, 0, 0);
 
     //Name of room
-    addText("#fff", "20px Arial", roomText, 33, 30);
+    addText("#fff", "20px OpenSans", roomText, 33, 30);
     addRect(boxColor, 40, 40, w-55, 5, 3);
-    addText("#fff", "24px Arial", "+", w-42, 33);
+    addText("#fff", "24px OpenSans", "+", w-42, 33);
     
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({
@@ -136,7 +136,7 @@ function processSummary(summary) {
     try {
     vDisplaceSumm = 0;
     summary = summary.replace(/\s+/g,' ')
-    var measured = m.measureTextSingleLine(summary,"22px Arial").width;
+    var measured = m.measureTextSingleLine(summary,"22px OpenSans").width;
     var divider = parseInt(measured/(xloc*9.3)); // Number of splits
         
         
@@ -151,7 +151,7 @@ for (var a = 0; a < divider; a++) {
             sum = 0;
         } else {
             if (summary.substring(b, b+1) == ' ') {
-            if (m.measureTextSingleLine(summary.substring(0, b),"22px Arial").width < (xloc*9.3)) {
+            if (m.measureTextSingleLine(summary.substring(0, b),"22px OpenSans").width < (xloc*9.3)) {
                 summary = summary.substring(0,b) + '\n' + summary.substring(b+1);
                 b = 0;
                 vDisplaceSumm = vDisplaceSumm+20;
@@ -172,7 +172,7 @@ function processDescription(description) {
     vDisplaceDesc = 0;
     description = description.replace(/\s+/g,' ')
     description = description.replace(/(\r\n|\n|\r)/g,' ');
-    var measured = m.measureTextSingleLine(description,"16px Arial").width;
+    var measured = m.measureTextSingleLine(description,"16px OpenSans").width;
     var divider = parseInt(measured/(xloc*9.8)); // Number of splits
         
         
@@ -184,9 +184,9 @@ for (var a = 0; a < divider; a++) {
         if (a > 0) {
             if (description.substring(b, b+1) == ' ') {
 
-            if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
+            if (m.measureTextSingleLine(description.substring(0, b),"16px OpenSans").width 
                         - (xloc*9.8) - sum < (xloc*9.5)) {
-                sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
+                sum = m.measureTextSingleLine(description.substring(0, b),"16px OpenSans").width - (xloc*9.8);
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
                 b = 0;
@@ -196,9 +196,9 @@ for (var a = 0; a < divider; a++) {
             }
         } else {
             if (description.substring(b, b+1) == ' ') {
-            if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width 
+            if (m.measureTextSingleLine(description.substring(0, b),"16px OpenSans").width 
                         - sum < (xloc*9.5)) {
-                sum = m.measureTextSingleLine(description.substring(0, b),"16px Arial").width - (xloc*9.8);
+                sum = m.measureTextSingleLine(description.substring(0, b),"16px OpenSans").width - (xloc*9.8);
                 
                 description = description.substring(0,b) + '\n' + description.substring(b+1);
                 b = 0;
@@ -220,7 +220,7 @@ for (var a = 0; a < divider; a++) {
     if (measured > (xloc*9.8)) {
         if (noSpaces) {
             for (var b = description.length; b > 0; b--) {
-                if (m.measureTextSingleLine(description.substring(0, b),"16px Arial").width
+                if (m.measureTextSingleLine(description.substring(0, b),"16px OpenSans").width
                         < (xloc*9)) {
                     description = description.substring(0,b) + '...';
                     b = 0;
@@ -229,9 +229,9 @@ for (var a = 0; a < divider; a++) {
         } else {
             var descriptionCheck = description.split('\n');
             for (var x = 0; x < descriptionCheck.length; x++) {
-                if (m.measureTextSingleLine(descriptionCheck[x],"16px Arial").width > (xloc*9.5)) {
+                if (m.measureTextSingleLine(descriptionCheck[x],"16px OpenSans").width > (xloc*9.5)) {
                     for (var y = descriptionCheck[x].length; y > 0; y--) {
-                        if (m.measureTextSingleLine(descriptionCheck[x].substring(0,y),"16px Arial").width < (xloc*9.5)) {
+                        if (m.measureTextSingleLine(descriptionCheck[x].substring(0,y),"16px OpenSans").width < (xloc*9.5)) {
                             descriptionCheck[x] = descriptionCheck[x].substring(0,y);
                             y = 0;
                         }
@@ -257,19 +257,19 @@ function portraitRender(summary,description,dateStart,dateEnd,dateTime,xloc,yloc
     addRect(boxColor,(xloc*10),170,(xloc*1.5),yloc+90,3);
     
     if (summary !== false) {
-        addText("#fff", "22px Arial", summary, (xloc*1.7), yloc+120+vDisplaceSumm);
+        addText("#fff", "22px OpenSans", summary, (xloc*1.7), yloc+120+vDisplaceSumm);
     }
 
     if (description !== false) {
-        addText("#fff", "16px Arial", description, (xloc*1.7),
+        addText("#fff", "16px OpenSans", description, (xloc*1.7),
             yloc+175+vDisplaceDesc+vDisplaceSumm);
     }
 
     //Time text
-    addText("#fff", "15px Arial", dateStart + ' - ' + dateEnd, (xloc*6.5)-65, yloc+250);
+    addText("#fff", "15px OpenSans", dateStart + ' - ' + dateEnd, (xloc*6.5)-65, yloc+250);
 
     //Date text
-    addText("#fff", "15px Arial", dateTime, (xloc*9.6), yloc+250);
+    addText("#fff", "15px OpenSans", dateTime, (xloc*9.6), yloc+250);
 }
 
 
