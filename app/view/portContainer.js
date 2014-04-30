@@ -347,7 +347,7 @@ event: 'painted'}]
                     hideOnMaskTap: true
                 });
                 
-                editDelete.setMessage('Edit or delete event?');
+                editDelete.setMessage('Delete event?');
                 editDelete.setButtons([
                     /*{
                         xtype: 'button',
