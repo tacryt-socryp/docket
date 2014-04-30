@@ -71,7 +71,7 @@ fn: function(element, eOpts) {
     //Name of room
     addText("#fff", "20px OpenSans", roomText, 33, 30);
     addRect(boxColor, 40, 40, w-55, 5, 3);
-    addText("#fff", "28px OpenSans", "+", w-48, 35);
+    addText("#fff", "28px OpenSans", "+", w-42, 36);
     
 function addRect(fillColor,w,h,x,y,r) {
     surface.add({
