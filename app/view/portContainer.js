@@ -349,7 +349,7 @@ event: 'painted'}]
                 
                 editDelete.setMessage('Edit or delete event?');
                 editDelete.setButtons([
-                    {
+                    /*{
                         xtype: 'button',
                         text: 'Edit',
                         itemId: 'ok',
@@ -358,7 +358,7 @@ event: 'painted'}]
                             me.editEvent(e,canvas,w);
                             editDelete.hide();
                         }
-                    },
+                    },*/
                     {
                         xtype: 'button',
                         text: 'Delete',
