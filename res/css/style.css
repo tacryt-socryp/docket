@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'OpenSans';
-  src: url('res/font/OpenSans-Regular.ttf') format('truetype');
+  src: url('../font/OpenSans-Regular.ttf') format('truetype');
 }
 
 body {
