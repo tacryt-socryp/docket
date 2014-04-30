@@ -3,7 +3,7 @@
   "description": "Docket is a calendar re-imagined for phones and tablets. By combining a minimalist style with a timeline-based stream of upcoming events, Docket is a new look at the way we interact with our schedules. It's light, fast, and intuitive.",
   "launch_path": "login.html",
   "icons": {
-    "128": "res/img/icon.png"
+    "128": "res/img/firefoxos-icon.png"
   },
   "developer": {
     "name": "Logan Allen",
