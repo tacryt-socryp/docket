@@ -23,9 +23,13 @@
         Ext.theme = {
             name: "Default"
         };
+        
+        var script2 = document.createElement('script');
+        script2.type = 'text/javascript';
+        script2.src = 'app.js';
+        head.appendChild(script2);
     </script>
     <script src="https://apis.google.com/js/client.js" id="gapi"></script>
-    <script type="text/javascript" src="app.js"></script>
 </head>
 <body></body>
 </html>
