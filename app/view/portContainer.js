@@ -52,7 +52,6 @@ fn: function(element, eOpts) {
     
     me.setSize(w,h);
     surface.setSize(w,h);
-    surface.setBackground(backgroundColor);
     addRect(backgroundColor,w,h,0,0,0);
     
     setTimeout(function(){
