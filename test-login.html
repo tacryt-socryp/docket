@@ -26,20 +26,31 @@ a {
 text-decoration:none;
 color:#FFF;
 }
+    
+#container {
+    height: 192px;
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* remove the gap between inline(-block) elements */
+}
+
+#container:before {    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
 
 #logo {
-    height:100%;
-    vertical-align:middle;
-    width:192px;
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    font: 16px/1 Arial sans-serif;        /* <-- reset the font property */
     margin-right:auto;
     margin-left:auto;
-    display:inline-block;
 }
     
 
 #signinButton {
-    position:relative;
-    top:50%;
+    display:block;
     font-family: Roboto, sans-serif;
     font-size: 12px;
     font-weight: bold;
@@ -64,7 +75,9 @@ color:#FFF;
 </head>
 <body>
 
-<div id="logo"><img src="res/img/icon.png" width="192" height="192" alt="Calendar Icon" /></div>
+<div id="container">
+    <img id="logo" src="res/img/icon.png" width="192" height="192" alt="Calendar Icon" />
+</div>
 
 
 
