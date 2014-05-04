@@ -31,6 +31,27 @@ text-align:center;
 display:block;
 }
     
+#container {
+    height: 530px;
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* remove the gap between inline(-block) elements */
+}
+
+#container:before {    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
+
+#logo {
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    font: 16px/1 Arial sans-serif;        /* <-- reset the font property */
+    margin-right:auto;
+    margin-left:auto;
+}
+    
 
 #signinButton {
     font-family: Roboto, sans-serif;

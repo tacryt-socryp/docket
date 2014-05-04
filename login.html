@@ -20,6 +20,19 @@ a {
     text-decoration:none;
     color:#FFF;
 }
+    
+#container {
+    height: 530px;
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* remove the gap between inline(-block) elements */
+}
+
+#container:before {    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
 
 #logo {
     margin-top:40%;
@@ -30,7 +43,6 @@ a {
     text-align:center;
     display:block;
 }
-    
 
 #signinButton {
     font-family: Roboto, sans-serif;
@@ -88,7 +100,9 @@ function callForToken() {
       
   </head>
   <body>
-    <div id="logo"><img src="res/img/icon.png" width="192" height="192" alt="Calendar Icon" /></div>
+    <div id="container">
+        <img id="logo" src="res/img/icon.png" width="192" height="192" alt="Calendar Icon" />
+    </div>
     <div id="signinButton" onclick='handleAuthClick();'>
         <a href='#'>Sign in with Google</a>
     </div>
