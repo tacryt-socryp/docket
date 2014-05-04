@@ -397,6 +397,10 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
             guests = document.getElementsByClassName('x-input-text')[3].value,
             start = document.getElementsByClassName('startLabel')[0].innerHTML,
             end = document.getElementsByClassName('endLabel')[0].innerHTML;
+        
+        this.down('#eventTitle').setValue(originalEvent.summary);
+        this.down('#eventDescription').setValue(originalEvent.description);
+        //this.down('#eventGuest').setValue(originalEvent);
         console.log(this.originalEvent);
     }
 

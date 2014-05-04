@@ -421,12 +421,13 @@ var me = this,
     child = me.items.items[0],
     yPos = e.pageY + canvas.yScrollPosition;
         
-function editRequest(eventId) {
+function editRequest(event) {
     var token = Docket.app.authToken,
         clientId = '464168127252.apps.googleusercontent.com',
         apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o',
         scopes = 'https://www.googleapis.com/auth/calendar',
-        calendarId = me.calendarId;
+        calendarId = me.calendarId,
+        form = new Docket.view.editPanel();
         
     
     try {
@@ -440,13 +441,14 @@ function editRequest(eventId) {
         if (authResult) {
             gapi.client.load('calendar', 'v3', function() {
                 console.log('EDITED');
-                //var request = gapi.client.calendar.events.delete({
-                //    'calendarId': calendarId,
-                //    'eventId': eventId
-                //});
-                //request.execute(function(resp) {
-                //    me.reloadData.call(me);
-                //});
+                var request = gapi.client.calendar.events.delete({
+                    'calendarId': calendarId,
+                    'eventId': eventId
+                });
+                request.execute(function(resp) {
+                    form.originalEvent = event;
+                    Ext.Viewport.add(form);
+                });
             });
         }
     });
@@ -459,7 +461,7 @@ if (yPos > 80 && e.pageX > (w/12)*1.6 && e.pageX < (w/12)*11.4) {
     if (remainder > 15 && remainder < 140) {
         boxNum = parseInt((yPos-90)/200);
         if (boxNum >= 0) {
-            editRequest(child.events[boxNum].id);
+            editRequest(child.events[boxNum]);
         }
     }
 }
