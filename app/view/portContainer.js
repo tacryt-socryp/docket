@@ -494,7 +494,9 @@ function deleteRequest(eventId) {
                     'eventId': eventId
                 });
                 request.execute(function(resp) {
-                    me.reloadData.call(me);
+                    setTimeout(function(){
+                        me.reloadRequest.call(me);
+                    }, 1000);
                 });
             });
         }
@@ -543,7 +545,9 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
             'timeMin': today
         });
         request.execute(function(resp) {
+            console.log(resp);
             if (Ext.isDefined(resp) && Ext.isDefined(resp.items) && Ext.isDefined(resp.items[0])) {
+                console.log("Inside the if");
                 child.events = resp.items;
                 child.element.redraw();
             } else {
@@ -558,7 +562,10 @@ gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, funct
 
     reloadData: function() {
         var me = this;
-        me.reloadRequest.call(me);
+        
+        setTimeout(function(){
+            me.reloadRequest.call(me);
+        }, 1000);
         
         setTimeout(function() {
             me.reloadData.call(me);
