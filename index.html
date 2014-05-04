@@ -9,27 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" sizes="any" href="res/img/icon.png">
+    <script src="http://cdn.sencha.com/touch/sencha-touch-2.3.1/sencha-touch-all.js"></script>
+    <script src="https://apis.google.com/js/client.js" id="gapi"></script>
+    <script src="app.js"></script>
     <script>
-        var ua = navigator.userAgent.toLowerCase();
-        var isAndroid = ua.indexOf("docket") > -1;
-        if(!isAndroid) {
-            var head = document.getElementsByTagName('head')[0];
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = 'http://cdn.sencha.com/touch/sencha-touch-2.3.1/sencha-touch-all.js';
-            head.appendChild(script);
-        }
         var Ext = Ext || {};
         Ext.theme = {
             name: "Default"
         };
-        
-        var script2 = document.createElement('script');
-        script2.type = 'text/javascript';
-        script2.src = 'app.js';
-        head.appendChild(script2);
     </script>
-    <script src="https://apis.google.com/js/client.js" id="gapi"></script>
 </head>
 <body></body>
 </html>

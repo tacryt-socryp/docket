@@ -6,53 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" sizes="any" href="res/img/icon.png">
-    <link rel="prerender" href="index.html">
+    <link rel="prefetch" href="index.html">
       
-    <style>
-    body {
-      background: #2c3e50;
-      text-align:center;
-      overflow-y: scroll;
-      overflow-x: hidden;
-    }
+<style>
+body {
+    background: #2c3e50;
+    text-align:center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
-    a {
-      text-decoration:none;
-      color:#FFF;
-    }
+a {
+    text-decoration:none;
+    color:#FFF;
+}
 
-    #logo {
-        margin-top:40%;
-        height:192px;
-        width:192px;
-        margin-right:auto;
-        margin-left:auto;
-        text-align:center;
-        display:block;
-    }
+#logo {
+    margin-top:40%;
+    height:192px;
+    width:192px;
+    margin-right:auto;
+    margin-left:auto;
+    text-align:center;
+    display:block;
+}
+    
 
-    #div-button {
-        visibility:hidden;
-        font-family: Roboto, Arial, sans-serif;
-        font-size: 12px;
-        font-weight: bold;
-        height: 31px;
-        line-height: 31px;
-        background-color: rgb(221, 75, 57);
-        border-radius: 3px;
-        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px 0px;
-        width: 150px;
-        margin-top:85px;
-        margin-right:auto;
-        margin-left:auto;
-        text-align:center;
-    }
-    </style>
+#signinButton {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 31px;
+    line-height: 31px;
+    background-color: rgb(221, 75, 57);
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px 0px;
+    width: 150px;
+    margin-top:85px;
+    margin-right:auto;
+    margin-left:auto;
+    text-align:center;
+}
+</style>
       
     <script>
 var clientId = '464168127252.apps.googleusercontent.com';
 var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
 var scopes = 'https://www.googleapis.com/auth/calendar';
+var redirect = 'http://loganallen.co/docket/login.html';
 
 function handleClientLoad() {
     gapi.client.setApiKey(apiKey);
@@ -74,7 +75,7 @@ function handleAuthResult(authResult) {
 }
 
 function handleAuthClick(event) {
-    gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false, redirect_uri: "http://loganallen.co/docket/login.html"}, handleAuthResult);
+    gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false, redirect_uri: redirect}, handleAuthResult);
     return false;
 }
 
