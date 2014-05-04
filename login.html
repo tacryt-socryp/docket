@@ -2,43 +2,6 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script>
-var clientId = '464168127252.apps.googleusercontent.com';
-var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
-var scopes = 'https://www.googleapis.com/auth/calendar';
-        
-
-function handleClientLoad() {
-  gapi.client.setApiKey(apiKey);
-  checkAuth();
-}
-
-function checkAuth() {
-  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
-}
-
-function handleAuthResult(authResult) {
-  var authorizeButton = document.getElementById('div-button');
-  if (authResult) {
-    callForToken();
-  } else {
-    authorizeButton.style.visibility = 'visible';
-    authorizeButton.onclick = handleAuthClick;
-  }
-}
-
-function handleAuthClick(event) {
-  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
-  return false;
-}
-
-function callForToken() {
-  var tokenVal = gapi.auth.getToken();
-  var redirect = "index.html?auth=" + encodeURIComponent(tokenVal['access_token']);
-  window.location.replace(redirect);
-}
-    </script>
-      
     <title>Docket</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
@@ -85,11 +48,48 @@ function callForToken() {
         text-align:center;
     }
     </style>
+      
+    <script>
+var clientId = '464168127252.apps.googleusercontent.com';
+var apiKey = 'AIzaSyAy7JAsd5JlzjTR_fkkarby9N1c3YkhY6o';
+var scopes = 'https://www.googleapis.com/auth/calendar';
+
+function handleClientLoad() {
+    gapi.client.setApiKey(apiKey);
+    checkAuth();
+}
+
+function checkAuth() {
+    gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
+}
+
+function handleAuthResult(authResult) {
+    var authorizeButton = document.getElementById('div-button');
+    if (authResult) {
+        callForToken();
+    } else {
+        authorizeButton.style.visibility = 'visible';
+        authorizeButton.onclick = handleAuthClick;
+    }
+}
+
+function handleAuthClick(event) {
+    gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false, redirect_uri: "http://loganallen.co/docket/login.html"}, handleAuthResult);
+    return false;
+}
+
+function callForToken() {
+    var tokenVal = gapi.auth.getToken();
+    var redirect = "index.html?auth=" + encodeURIComponent(tokenVal['access_token']);
+    window.location.replace(redirect);
+}
+    </script>
+      
   </head>
   <body>
     <div id="logo"><img src="res/img/icon.png" width="192" height="192" alt="Calendar Icon" /></div>
     <div id="div-button" onclick='handleAuthClick();'>
-        <a href='#' id='authorize-button'>Sign in with Google</a>
+        <a href='#'>Sign in with Google</a>
     </div>
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
   </body>
