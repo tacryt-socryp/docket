@@ -9,7 +9,7 @@
       
     <style>
     body {
-      background: #77dac5;
+      background: #2c3e50;
       text-align:center;
       overflow-y: scroll;
       overflow-x: hidden;
@@ -73,20 +73,22 @@ function handleAuthResult(authResult) {
 }
 
 function handleAuthClick(event) {
-    gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false, redirect_uri: "http://loganallen.co/docket/login.html"}, handleAuthResult);
+    gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false, redirect_uri: "http://www.loganallen.co/docket/login.html"}, handleAuthResult);
     return false;
 }
 
 function callForToken() {
     var tokenVal = gapi.auth.getToken();
+    console.log(tokenVal);
     var redirect = "index.html?auth=" + encodeURIComponent(tokenVal['access_token']);
     window.location.replace(redirect);
 }
+
     </script>
       
   </head>
   <body>
-    <div id="logo"><img src="res/img/splash.png" width="192" height="192" alt="Calendar Icon" /></div>
+    <div id="logo"><img src="res/img/icon.png" width="192" height="192" alt="Calendar Icon" /></div>
     <div id="div-button" onclick='handleAuthClick();'>
         <a href='#'>Sign in with Google</a>
     </div>
