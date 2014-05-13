@@ -394,7 +394,7 @@ event: 'painted'}]
             var remainder = (yPos-90)%200,
                 boxNum = -1;
             
-            if (e.touch.timeStamp === e.timeStamp &&
+            if (e.touch.timeStamp+900 < e.timeStamp &&
                 remainder > 15 && remainder < 140) {
                 boxNum = parseInt((yPos-90)/200);
                 if (boxNum < canvas.events.length && typeof canvas.events[boxNum].description !== "undefined") {
