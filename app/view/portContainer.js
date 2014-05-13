@@ -65,7 +65,6 @@ fn: function(element, eOpts) {
     
     //Line across screen
     addRect(timelineColor, 20, h, 10, 0, 0);
-    //addRect(timelineColor, w, 50, 0, 0, 0);
 
     //Name of room
     addText("#fff", "20px OpenSans", roomText, 33, 30);
@@ -395,7 +394,7 @@ event: 'painted'}]
             var remainder = (yPos-90)%200,
                 boxNum = -1;
             
-            if (e.touch.timeStamp < e.timeStamp+1000 &&
+            if (e.touch.timeStamp === e.timeStamp &&
                 remainder > 15 && remainder < 140) {
                 boxNum = parseInt((yPos-90)/200);
                 if (boxNum < canvas.events.length && typeof canvas.events[boxNum].description !== "undefined") {
